@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "season": 2024,
+    "round": 18,
+    "generatedAt": "2026-05-29T00:00:00Z",
+    "note": "Sample wireframe data — replace with ETL output"
+  },
+  "leagueOverview": {
+    "avgUnavailableValue": 42.3,
+    "clubsAboveExpectation": 6,
+    "clubsBelowExpectation": 12,
+    "topUnavailableClub": "Gold Coast",
+    "correlationUnavailableToWins": -0.61
+  },
+  "clubUnavailableByRound": [
+    { "round": 1, "value": 28, "wins": 1 },
+    { "round": 2, "value": 35, "wins": 0 },
+    { "round": 3, "value": 31, "wins": 1 },
+    { "round": 4, "value": 45, "wins": 0 },
+    { "round": 5, "value": 38, "wins": 1 },
+    { "round": 6, "value": 52, "wins": 0 },
+    { "round": 7, "value": 41, "wins": 1 },
+    { "round": 8, "value": 48, "wins": 0 },
+    { "round": 9, "value": 36, "wins": 1 },
+    { "round": 10, "value": 44, "wins": 1 },
+    { "round": 11, "value": 55, "wins": 0 },
+    { "round": 12, "value": 39, "wins": 1 },
+    { "round": 13, "value": 47, "wins": 0 },
+    { "round": 14, "value": 33, "wins": 1 },
+    { "round": 15, "value": 50, "wins": 0 },
+    { "round": 16, "value": 42, "wins": 1 },
+    { "round": 17, "value": 58, "wins": 0 },
+    { "round": 18, "value": 46, "wins": 1 }
+  ],
+  "clubRankings": [
+    { "club": "Collingwood", "unavailableValue": 312, "expectedWins": 14.2, "actualWins": 16, "delta": 1.8 },
+    { "club": "Brisbane", "unavailableValue": 298, "expectedWins": 13.8, "actualWins": 15, "delta": 1.2 },
+    { "club": "Carlton", "unavailableValue": 385, "expectedWins": 11.5, "actualWins": 12, "delta": 0.5 },
+    { "club": "Geelong", "unavailableValue": 410, "expectedWins": 10.2, "actualWins": 10, "delta": -0.2 },
+    { "club": "Gold Coast", "unavailableValue": 520, "expectedWins": 6.1, "actualWins": 5, "delta": -1.1 },
+    { "club": "West Coast", "unavailableValue": 545, "expectedWins": 4.8, "actualWins": 3, "delta": -1.8 }
+  ],
+  "topUnavailablePlayers": [
+    { "player": "Marcus Bontempelli", "club": "Western Bulldogs", "roundsMissed": 4, "pvs": 9.2, "status": "unavailable" },
+    { "player": "Lachie Neale", "club": "Brisbane", "roundsMissed": 3, "pvs": 8.8, "status": "vfl_only" },
+    { "player": "Patrick Cripps", "club": "Carlton", "roundsMissed": 2, "pvs": 8.5, "status": "intermittent" },
+    { "player": "Jeremy Cameron", "club": "Geelong", "roundsMissed": 2, "pvs": 8.1, "status": "unavailable" },
+    { "player": "Hugh McCluggage", "club": "Brisbane", "roundsMissed": 1, "pvs": 7.4, "status": "unavailable" }
+  ],
+  "continuity": [
+    { "archetype": "Key Defender", "changes": 8, "score": 0.72 },
+    { "archetype": "Inside Mid", "changes": 14, "score": 0.58 },
+    { "archetype": "Key Forward", "changes": 6, "score": 0.81 },
+    { "archetype": "Ruck", "changes": 4, "score": 0.88 },
+    { "archetype": "Outside Mid", "changes": 11, "score": 0.64 }
+  ],
+  "regression": {
+    "model": "linear",
+    "rSquared": 0.42,
+    "coefficients": {
+      "intercept": 12.4,
+      "unavailableValue": -0.18,
+      "top5Unavailable": -0.31,
+      "continuityScore": 2.1
+    },
+    "interpretation": "Each +10 PVS unavailable correlates with ~1.8 fewer expected wins (sample)."
+  }
+}

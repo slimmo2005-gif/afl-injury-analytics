@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://afl-unavailability.local/schemas/metrics.json",
+  "title": "FrontendMetricsBundle",
+  "type": "object",
+  "required": ["meta", "leagueOverview", "clubRankings"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["season", "round", "generatedAt"],
+      "properties": {
+        "season": { "type": "integer", "minimum": 2012 },
+        "round": { "type": "integer", "minimum": 0 },
+        "generatedAt": { "type": "string", "format": "date-time" },
+        "note": { "type": "string" }
+      }
+    },
+    "leagueOverview": {
+      "type": "object",
+      "properties": {
+        "avgUnavailableValue": { "type": "number" },
+        "clubsAboveExpectation": { "type": "integer" },
+        "clubsBelowExpectation": { "type": "integer" },
+        "topUnavailableClub": { "type": "string" },
+        "correlationUnavailableToWins": { "type": "number" }
+      }
+    },
+    "clubRankings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["club", "unavailableValue", "expectedWins", "actualWins"],
+        "properties": {
+          "club": { "type": "string" },
+          "unavailableValue": { "type": "number" },
+          "expectedWins": { "type": "number" },
+          "actualWins": { "type": "number" },
+          "delta": { "type": "number" }
+        }
+      }
+    }
+  }
+}

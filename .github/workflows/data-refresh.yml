@@ -1,0 +1,32 @@
+name: Weekly data refresh
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Monday 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pipeline deps
+        run: |
+          pip install -r data-pipeline/requirements.txt
+
+      - name: Run ETL (stub)
+        run: |
+          echo "ETL pipeline not yet implemented — Phase 1"
+          # python -m data_pipeline.run --season all
+
+      - name: Data quality checks (stub)
+        run: |
+          echo "Schema drift / quality checks — TODO"
+
+      # When ETL exists: commit parquet/json to repo or upload as artifact
+      # Frontend build can copy shared/output/*.json into frontend/public/data/

@@ -1,0 +1,11 @@
+{
+  "name": "afl-injury-analytics",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AFL injury-adjusted team performance analytics",
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "preview": "npm run preview --prefix frontend"
+  }
+}
