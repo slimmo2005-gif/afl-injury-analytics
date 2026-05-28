@@ -8,22 +8,21 @@
 - [x] Folder structure + schema stubs
 - [x] Sample regression coefficients in UI
 
-## Phase 1 — Availability database (4–6 weeks)
+## Phase 1 — Availability database (in progress)
 
-1. **Ingest**
-   - Fixtures, results, lineups via fitzRoy / AFL Tables / Squiggle
-   - Player metadata + draft picks where available
-2. **Normalize**
-   - `players`, `matches`, `selections`, `participation` tables in DuckDB
-3. **Derive**
-   - Weekly availability status per player
-   - VFL flag when data exists (nullable)
-4. **Export**
-   - `availability_by_round.parquet`
-   - `frontend/public/data/metrics.json`
-5. **Validate**
-   - Coverage report from 2012
-   - Schema contract tests in CI
+1. **Ingest** ✅ (initial)
+   - Squiggle: fixtures/results (`matches`)
+   - Fryzigg: player participation (`player_games`, 2012+)
+   - VFL: nullable — not populated yet
+2. **Normalize** ✅
+   - DuckDB: `matches`, `player_games`, `squad_players`, `availability`, `team_round_summary`
+3. **Derive** ✅
+   - Availability inferred: AFL played vs squad member absent
+4. **Export** ✅
+   - `shared/output/metrics.json` + `frontend/public/data/metrics.json`
+   - Parquet export in weekly GitHub Action
+5. **Validate** ⏳
+   - Basic checks in `validate.py`; CI schema tests TODO
 
 ## Phase 2 — Value & analytics (4–8 weeks)
 

@@ -1,12 +1,10 @@
 import PageHeader from '../components/PageHeader'
 import StatCard from '../components/StatCard'
-import mock from '../data/mockMetrics.json'
-import type { MockMetrics } from '../types/metrics'
-
-const data = mock as MockMetrics
-const { regression } = data
+import { useMetricsContext } from '../context/MetricsContext'
 
 export default function ModelInsights() {
+  const { data } = useMetricsContext()
+  const { regression } = data
   return (
     <>
       <PageHeader

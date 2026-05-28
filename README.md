@@ -58,9 +58,18 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/MVP_ROADMAP.md](docs/
 - DuckDB locally → export Parquet + JSON for static frontend
 - Availability inferred: AFL selected / VFL only / neither = unavailable
 
-## Wireframe status
+## Data pipeline (Phase 1)
+
+```bash
+pip install -e data-pipeline
+python -m data_pipeline run --from-season 2012 --to-season 2024
+```
+
+Sources: [Squiggle API](https://api.squiggle.com.au), [Fryzigg](http://www.fryziggafl.net/) (fitzRoy ecosystem). Availability is inferred from AFL selection — not official injury lists.
+
+## Status
 
 - ✅ Dashboard UI with 6 pages
-- ✅ Sample metrics + charts + regression preview
-- ✅ GitHub Actions deploy workflow
-- ⏳ Real ETL and data (Phase 1)
+- ✅ Phase 1 ETL + real metrics JSON (2012–2024 participation)
+- ✅ GitHub Actions deploy + weekly data refresh
+- ⏳ Phase 2: Player Value Score, VFL data, full regression

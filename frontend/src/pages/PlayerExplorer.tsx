@@ -1,8 +1,6 @@
 import PageHeader from '../components/PageHeader'
-import mock from '../data/mockMetrics.json'
-import type { MockMetrics, UnavailablePlayer } from '../types/metrics'
-
-const data = mock as MockMetrics
+import { useMetricsContext } from '../context/MetricsContext'
+import type { UnavailablePlayer } from '../types/metrics'
 
 const statusColors: Record<UnavailablePlayer['status'], string> = {
   unavailable: 'bg-red-500/20 text-red-300',
@@ -11,6 +9,8 @@ const statusColors: Record<UnavailablePlayer['status'], string> = {
 }
 
 export default function PlayerExplorer() {
+  const { data } = useMetricsContext()
+
   return (
     <>
       <PageHeader
@@ -46,7 +46,7 @@ export default function PlayerExplorer() {
         </table>
       </div>
       <p className="text-xs text-slate-600 mt-4">
-        Availability inferred from AFL/VFL selection — not official injury lists (Phase 1).
+        Availability inferred from AFL participation — not official injury lists (Phase 1).
       </p>
     </>
   )

@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import { useMetricsContext } from '../context/MetricsContext'
 
 const nav = [
   { to: '/', label: 'League' },
@@ -10,6 +11,12 @@ const nav = [
 ]
 
 export default function Layout() {
+  const { source, data, loading } = useMetricsContext()
+  const badge =
+    source === 'live'
+      ? { text: `Live · ${data.meta.season}`, className: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' }
+      : { text: 'Demo data', className: 'bg-amber-500/20 text-amber-300 border-amber-500/30' }
+
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-10">
@@ -20,11 +27,13 @@ export default function Layout() {
               <h1 className="text-lg font-semibold text-afl-gold tracking-tight">
                 AFL Unavailability Analytics
               </h1>
-              <p className="text-xs text-slate-400">Injury-adjusted team performance · Wireframe MVP</p>
+              <p className="text-xs text-slate-400">
+                {loading ? 'Loading metrics…' : data.meta.note ?? 'Injury-adjusted team performance'}
+              </p>
             </div>
           </div>
-          <span className="text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
-            Demo data
+          <span className={`text-xs px-2 py-1 rounded border ${badge.className}`}>
+            {badge.text}
           </span>
         </div>
         <nav className="max-w-7xl mx-auto px-4 flex gap-1 overflow-x-auto pb-2">

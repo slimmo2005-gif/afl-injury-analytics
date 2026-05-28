@@ -1,0 +1,379 @@
+{
+  "meta": {
+    "season": 2024,
+    "round": 24,
+    "generatedAt": "2026-05-28T23:14:30.026354+00:00",
+    "note": "Phase 1 real data (2024). PVS is provisional until Phase 2 model.",
+    "dataSource": "Squiggle + Fryzigg"
+  },
+  "leagueOverview": {
+    "avgUnavailableValue": 15.4,
+    "clubsAboveExpectation": 8,
+    "clubsBelowExpectation": 7,
+    "topUnavailableClub": "Richmond",
+    "correlationUnavailableToWins": -0.88
+  },
+  "clubUnavailableByRound": [
+    {
+      "round": 0,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 1,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 2,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 3,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 4,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 5,
+      "value": 37,
+      "wins": 0
+    },
+    {
+      "round": 6,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 7,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 8,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 9,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 10,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 11,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 12,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 13,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 14,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 15,
+      "value": 37,
+      "wins": 0
+    },
+    {
+      "round": 16,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 17,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 18,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 19,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 20,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 21,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 22,
+      "value": 14,
+      "wins": 0
+    },
+    {
+      "round": 23,
+      "value": 14,
+      "wins": 1
+    },
+    {
+      "round": 24,
+      "value": 14,
+      "wins": 1
+    }
+  ],
+  "clubRankings": [
+    {
+      "club": "Adelaide",
+      "unavailableValue": 446,
+      "expectedWins": 7.8,
+      "actualWins": 8,
+      "delta": 0.2
+    },
+    {
+      "club": "Brisbane Lions",
+      "unavailableValue": 396,
+      "expectedWins": 10.7,
+      "actualWins": 14,
+      "delta": 3.3
+    },
+    {
+      "club": "Carlton",
+      "unavailableValue": 396,
+      "expectedWins": 10.7,
+      "actualWins": 13,
+      "delta": 2.3
+    },
+    {
+      "club": "Collingwood",
+      "unavailableValue": 396,
+      "expectedWins": 10.7,
+      "actualWins": 12,
+      "delta": 1.3
+    },
+    {
+      "club": "Essendon",
+      "unavailableValue": 346,
+      "expectedWins": 13.6,
+      "actualWins": 11,
+      "delta": -2.6
+    },
+    {
+      "club": "Fremantle",
+      "unavailableValue": 371,
+      "expectedWins": 12.1,
+      "actualWins": 12,
+      "delta": -0.1
+    },
+    {
+      "club": "Geelong",
+      "unavailableValue": 346,
+      "expectedWins": 13.6,
+      "actualWins": 15,
+      "delta": 1.4
+    },
+    {
+      "club": "Gold Coast",
+      "unavailableValue": 421,
+      "expectedWins": 9.2,
+      "actualWins": 11,
+      "delta": 1.8
+    },
+    {
+      "club": "Greater Western Sydney",
+      "unavailableValue": 321,
+      "expectedWins": 15.0,
+      "actualWins": 15,
+      "delta": -0.0
+    },
+    {
+      "club": "Hawthorn",
+      "unavailableValue": 321,
+      "expectedWins": 15.0,
+      "actualWins": 14,
+      "delta": -1.0
+    },
+    {
+      "club": "Melbourne",
+      "unavailableValue": 371,
+      "expectedWins": 12.1,
+      "actualWins": 11,
+      "delta": -1.1
+    },
+    {
+      "club": "North Melbourne",
+      "unavailableValue": 446,
+      "expectedWins": 7.8,
+      "actualWins": 3,
+      "delta": -4.8
+    },
+    {
+      "club": "Port Adelaide",
+      "unavailableValue": 321,
+      "expectedWins": 15.0,
+      "actualWins": 16,
+      "delta": 1.0
+    },
+    {
+      "club": "Richmond",
+      "unavailableValue": 521,
+      "expectedWins": 3.4,
+      "actualWins": 2,
+      "delta": -1.4
+    },
+    {
+      "club": "St Kilda",
+      "unavailableValue": 421,
+      "expectedWins": 9.2,
+      "actualWins": 11,
+      "delta": 1.8
+    },
+    {
+      "club": "Sydney",
+      "unavailableValue": 246,
+      "expectedWins": 19.4,
+      "actualWins": 17,
+      "delta": -2.4
+    },
+    {
+      "club": "West Coast",
+      "unavailableValue": 471,
+      "expectedWins": 6.3,
+      "actualWins": 5,
+      "delta": -1.3
+    },
+    {
+      "club": "Western Bulldogs",
+      "unavailableValue": 371,
+      "expectedWins": 12.1,
+      "actualWins": 14,
+      "delta": 1.9
+    }
+  ],
+  "topUnavailablePlayers": [
+    {
+      "player": "Charlie Clarke",
+      "club": "Western Bulldogs",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    },
+    {
+      "player": "Connor O'Sullivan",
+      "club": "Geelong",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    },
+    {
+      "player": "Peter Ladhams",
+      "club": "Sydney",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    },
+    {
+      "player": "Patrick Parnell",
+      "club": "Adelaide",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    },
+    {
+      "player": "Loch Rawlinson",
+      "club": "West Coast",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    },
+    {
+      "player": "Brad Crouch",
+      "club": "St Kilda",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    },
+    {
+      "player": "Brandon Ryan",
+      "club": "Brisbane Lions",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    },
+    {
+      "player": "Charlie Spargo",
+      "club": "Melbourne",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    },
+    {
+      "player": "Sam Weideman",
+      "club": "Essendon",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    },
+    {
+      "player": "Sam Durdin",
+      "club": "Carlton",
+      "roundsMissed": 24,
+      "pvs": 9.5,
+      "status": "unavailable"
+    }
+  ],
+  "continuity": [
+    {
+      "archetype": "Richmond",
+      "changes": 5,
+      "score": 0.78
+    },
+    {
+      "archetype": "Collingwood",
+      "changes": 5,
+      "score": 0.8
+    },
+    {
+      "archetype": "Gold Coast",
+      "changes": 5,
+      "score": 0.8
+    },
+    {
+      "archetype": "Carlton",
+      "changes": 5,
+      "score": 0.8
+    },
+    {
+      "archetype": "Greater Western Sydney",
+      "changes": 4,
+      "score": 0.82
+    }
+  ],
+  "regression": {
+    "model": "linear",
+    "rSquared": 0.77,
+    "coefficients": {
+      "intercept": 33.71,
+      "unavailableSlots": -0.0581
+    },
+    "interpretation": "Each +100 unavailable player-slots correlates with ~5.8 fewer wins (season 2024, n=18 clubs)."
+  }
+}

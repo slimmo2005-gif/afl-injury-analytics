@@ -10,12 +10,10 @@ import {
 import FilterBar from '../components/FilterBar'
 import PageHeader from '../components/PageHeader'
 import StatCard from '../components/StatCard'
-import mock from '../data/mockMetrics.json'
-import type { MockMetrics } from '../types/metrics'
-
-const data = mock as MockMetrics
+import { useMetricsContext } from '../context/MetricsContext'
 
 export default function LeagueOverview() {
+  const { data } = useMetricsContext()
   const { leagueOverview, clubRankings } = data
 
   return (

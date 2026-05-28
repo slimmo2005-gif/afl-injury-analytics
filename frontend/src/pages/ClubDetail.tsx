@@ -11,12 +11,10 @@ import {
 import FilterBar from '../components/FilterBar'
 import PageHeader from '../components/PageHeader'
 import StatCard from '../components/StatCard'
-import mock from '../data/mockMetrics.json'
-import type { MockMetrics } from '../types/metrics'
-
-const data = mock as MockMetrics
+import { useMetricsContext } from '../context/MetricsContext'
 
 export default function ClubDetail() {
+  const { data } = useMetricsContext()
   const rounds = data.clubUnavailableByRound
   const totalUnavailable = rounds.reduce((s, r) => s + r.value, 0)
 

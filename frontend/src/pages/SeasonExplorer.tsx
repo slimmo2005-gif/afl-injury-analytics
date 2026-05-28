@@ -1,7 +1,9 @@
 import PageHeader from '../components/PageHeader'
 import StatCard from '../components/StatCard'
+import { useMetricsContext } from '../context/MetricsContext'
 
 export default function SeasonExplorer() {
+  const { data, source } = useMetricsContext()
   return (
     <>
       <PageHeader
@@ -10,8 +12,12 @@ export default function SeasonExplorer() {
       />
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
-          <StatCard label="Seasons in DB" value="2012–2024" accent="gold" />
-          <StatCard label="Rounds processed" value="3,102" hint="Placeholder" />
+          <StatCard label="Active season" value={data.meta.season} accent="gold" />
+          <StatCard
+            label="Data source"
+            value={source === 'live' ? (data.meta.dataSource ?? 'ETL') : 'Mock'}
+            hint={data.meta.generatedAt?.slice(0, 10)}
+          />
           <div className="rounded-xl border border-dashed border-slate-700 p-8 text-center text-slate-500 text-sm">
             Ladder-adjusted chart · win % vs unavailable value · rolling form
             <br />

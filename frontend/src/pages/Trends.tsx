@@ -8,12 +8,10 @@ import {
   YAxis,
 } from 'recharts'
 import PageHeader from '../components/PageHeader'
-import mock from '../data/mockMetrics.json'
-import type { MockMetrics } from '../types/metrics'
-
-const data = mock as MockMetrics
+import { useMetricsContext } from '../context/MetricsContext'
 
 export default function Trends() {
+  const { data } = useMetricsContext()
   return (
     <>
       <PageHeader

@@ -27,7 +27,13 @@ export interface ContinuityMetric {
 }
 
 export interface MockMetrics {
-  meta: { season: number; round: number; generatedAt: string; note: string }
+  meta: {
+    season: number
+    round: number
+    generatedAt: string
+    note: string
+    dataSource?: string
+  }
   leagueOverview: {
     avgUnavailableValue: number
     clubsAboveExpectation: number

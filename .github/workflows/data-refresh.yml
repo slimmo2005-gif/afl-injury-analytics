@@ -2,8 +2,11 @@ name: Weekly data refresh
 
 on:
   schedule:
-    - cron: '0 6 * * 1' # Monday 06:00 UTC
+    - cron: '0 6 * * 1'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   refresh:
@@ -15,18 +18,27 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install pipeline deps
-        run: |
-          pip install -r data-pipeline/requirements.txt
+      - name: Install pipeline
+        run: pip install -e data-pipeline
 
-      - name: Run ETL (stub)
-        run: |
-          echo "ETL pipeline not yet implemented — Phase 1"
-          # python -m data_pipeline.run --season all
+      - name: Run ETL (2012–current)
+        run: python -m data_pipeline run --from-season 2012 --to-season 2024
 
-      - name: Data quality checks (stub)
+      - name: Export parquet snapshot
         run: |
-          echo "Schema drift / quality checks — TODO"
+          python -c "
+          import duckdb
+          from pathlib import Path
+          con = duckdb.connect('data-pipeline/processed/afl_analytics.duckdb', read_only=True)
+          out = Path('shared/output')
+          out.mkdir(parents=True, exist_ok=True)
+          con.execute(\"COPY availability TO 'shared/output/availability.parquet' (FORMAT PARQUET)\")
+          "
 
-      # When ETL exists: commit parquet/json to repo or upload as artifact
-      # Frontend build can copy shared/output/*.json into frontend/public/data/
+      - name: Commit data artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add shared/output/ frontend/public/data/
+          git diff --staged --quiet || git commit -m "chore: weekly data refresh"
+          git push
