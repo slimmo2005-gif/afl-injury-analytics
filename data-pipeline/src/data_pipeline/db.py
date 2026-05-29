@@ -29,6 +29,8 @@ CREATE TABLE IF NOT EXISTS player_games (
     match_date DATE,
     disposals INTEGER,
     goals INTEGER,
+    score_involvements DOUBLE,
+    player_position VARCHAR,
     source VARCHAR DEFAULT 'fryzigg',
     PRIMARY KEY (player_id, season, round, match_id)
 );
@@ -39,6 +41,30 @@ CREATE TABLE IF NOT EXISTS squad_players (
     team VARCHAR NOT NULL,
     season INTEGER NOT NULL,
     games_played INTEGER NOT NULL,
+    PRIMARY KEY (player_id, team, season)
+);
+
+CREATE TABLE IF NOT EXISTS player_profiles (
+    player_id VARCHAR NOT NULL,
+    player_name VARCHAR NOT NULL,
+    team VARCHAR NOT NULL,
+    season INTEGER NOT NULL,
+    debut_season INTEGER NOT NULL,
+    age_est DOUBLE NOT NULL,
+    draft_pick INTEGER NOT NULL,
+    archetype VARCHAR NOT NULL,
+    PRIMARY KEY (player_id, team, season)
+);
+
+CREATE TABLE IF NOT EXISTS player_value (
+    player_id VARCHAR NOT NULL,
+    team VARCHAR NOT NULL,
+    season INTEGER NOT NULL,
+    games INTEGER NOT NULL,
+    performance_score DOUBLE NOT NULL,
+    potential_score DOUBLE NOT NULL,
+    pvs DOUBLE NOT NULL,
+    age_perf_weight DOUBLE NOT NULL,
     PRIMARY KEY (player_id, team, season)
 );
 
@@ -62,10 +88,42 @@ CREATE TABLE IF NOT EXISTS team_round_summary (
     players_played INTEGER NOT NULL,
     players_unavailable INTEGER NOT NULL,
     unavailable_rate DOUBLE NOT NULL,
+    unavailable_pvs_total DOUBLE DEFAULT 0,
+    unavailable_pvs_top5 DOUBLE DEFAULT 0,
     won BOOLEAN,
     PRIMARY KEY (team, season, round)
 );
+
+CREATE TABLE IF NOT EXISTS team_round_value (
+    team VARCHAR NOT NULL,
+    season INTEGER NOT NULL,
+    round INTEGER NOT NULL,
+    unavailable_pvs_total DOUBLE NOT NULL,
+    unavailable_pvs_top5 DOUBLE NOT NULL,
+    unavailable_pvs_top10 DOUBLE NOT NULL,
+    unavailable_pvs_u22 DOUBLE NOT NULL,
+    unavailable_pvs_28plus DOUBLE NOT NULL,
+    unavailable_pvs_intermittent DOUBLE NOT NULL,
+    won BOOLEAN,
+    PRIMARY KEY (team, season, round)
+);
+
+CREATE TABLE IF NOT EXISTS archetype_continuity (
+    team VARCHAR NOT NULL,
+    season INTEGER NOT NULL,
+    archetype VARCHAR NOT NULL,
+    avg_changes DOUBLE NOT NULL,
+    continuity_score DOUBLE NOT NULL,
+    PRIMARY KEY (team, season, archetype)
+);
 """
+
+MIGRATIONS = [
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS score_involvements DOUBLE",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS player_position VARCHAR",
+    "ALTER TABLE team_round_summary ADD COLUMN IF NOT EXISTS unavailable_pvs_total DOUBLE DEFAULT 0",
+    "ALTER TABLE team_round_summary ADD COLUMN IF NOT EXISTS unavailable_pvs_top5 DOUBLE DEFAULT 0",
+]
 
 
 def connect(db_path: Path | None = None) -> duckdb.DuckDBPyConnection:
@@ -76,4 +134,9 @@ def connect(db_path: Path | None = None) -> duckdb.DuckDBPyConnection:
         s = stmt.strip()
         if s:
             con.execute(s)
+    for stmt in MIGRATIONS:
+        try:
+            con.execute(stmt)
+        except duckdb.Error:
+            pass
     return con

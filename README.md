@@ -72,4 +72,5 @@ Sources: [Squiggle API](https://api.squiggle.com.au), [Fryzigg](http://www.fryzi
 - ✅ Dashboard UI with 6 pages
 - ✅ Phase 1 ETL + real metrics JSON (2012–2024 participation)
 - ✅ GitHub Actions deploy + weekly data refresh
-- ⏳ Phase 2: Player Value Score, VFL data, full regression
+- ✅ Phase 2: PVS model, PVS-weighted unavailability, archetype continuity, filters
+- ⏳ VFL data, draft CSV enrichment, ladder-adjusted residuals

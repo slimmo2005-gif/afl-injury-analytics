@@ -8,10 +8,10 @@ import {
   YAxis,
 } from 'recharts'
 import PageHeader from '../components/PageHeader'
-import { useMetricsContext } from '../context/MetricsContext'
+import { useSeasonData } from '../hooks/useSeasonData'
 
 export default function Trends() {
-  const { data } = useMetricsContext()
+  const data = useSeasonData()
   return (
     <>
       <PageHeader

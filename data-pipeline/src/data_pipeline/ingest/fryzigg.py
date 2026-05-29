@@ -73,8 +73,13 @@ def load_player_games(
         raw["goals"] = pd.to_numeric(raw["goals"], errors="coerce").fillna(0).astype(int)
     else:
         raw["goals"] = 0
+    if "score_involvements" in raw.columns:
+        raw["score_involvements"] = pd.to_numeric(raw["score_involvements"], errors="coerce")
+    else:
+        raw["score_involvements"] = None
+    raw["player_position"] = raw.get("player_position", pd.Series(dtype=str))
 
-    out = raw[cols + ["disposals", "goals"]].drop_duplicates(
+    out = raw[cols + ["disposals", "goals", "score_involvements", "player_position"]].drop_duplicates(
         subset=["player_id", "team", "season", "round", "match_id"]
     )
     out["match_date"] = out["match_date"].dt.date

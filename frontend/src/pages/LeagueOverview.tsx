@@ -10,10 +10,10 @@ import {
 import FilterBar from '../components/FilterBar'
 import PageHeader from '../components/PageHeader'
 import StatCard from '../components/StatCard'
-import { useMetricsContext } from '../context/MetricsContext'
+import { useSeasonData } from '../hooks/useSeasonData'
 
 export default function LeagueOverview() {
-  const { data } = useMetricsContext()
+  const data = useSeasonData()
   const { leagueOverview, clubRankings } = data
 
   return (
@@ -46,6 +46,7 @@ export default function LeagueOverview() {
                 labelStyle={{ color: '#f5c518' }}
               />
               <Bar dataKey="unavailableValue" name="Unavailable PVS" fill="#0d3d2e" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="unavailableTop5" name="Top-5 PVS" fill="#164e63" radius={[4, 4, 0, 0]} />
               <Bar dataKey="actualWins" name="Actual wins" fill="#f5c518" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

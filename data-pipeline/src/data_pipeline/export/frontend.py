@@ -8,9 +8,9 @@ from pathlib import Path
 
 import duckdb
 import numpy as np
-import pandas as pd
 
 from ..config import DEFAULT_SEASON, FRONTEND_DATA, SHARED_OUTPUT
+from ..transform.continuity import continuity_for_season
 
 
 def _linear_regression(x: np.ndarray, y: np.ndarray) -> tuple[float, float, float]:
@@ -25,148 +25,156 @@ def _linear_regression(x: np.ndarray, y: np.ndarray) -> tuple[float, float, floa
     return intercept, slope, r2
 
 
-def build_metrics_bundle(con: duckdb.DuckDBPyConnection, season: int = DEFAULT_SEASON) -> dict:
+def _player_status(row) -> str:
+    if row["status"] == "intermittent":
+        return "intermittent"
+    if row.get("vfl_played"):
+        return "vfl_only"
+    return "unavailable"
+
+
+def build_season_bundle(
+    con: duckdb.DuckDBPyConnection,
+    season: int,
+    default_club: str = "Collingwood",
+) -> dict:
     club_season = con.execute(
         """
         SELECT
-            team AS club,
-            season,
-            SUM(players_unavailable) AS unavailable_slots,
-            SUM(CASE WHEN won THEN 1 ELSE 0 END) AS actual_wins,
+            tr.team AS club,
+            tr.season,
+            SUM(COALESCE(v.unavailable_pvs_total, 0)) AS unavailable_value,
+            SUM(COALESCE(v.unavailable_pvs_top5, 0)) AS unavailable_top5,
+            SUM(tr.players_unavailable) AS unavailable_slots,
+            SUM(CASE WHEN tr.won THEN 1 ELSE 0 END) AS actual_wins,
             COUNT(*) AS rounds_with_data
-        FROM team_round_summary
-        WHERE season = ?
-        GROUP BY team, season
-        ORDER BY unavailable_slots DESC
+        FROM team_round_summary tr
+        LEFT JOIN team_round_value v
+            ON tr.team = v.team AND tr.season = v.season AND tr.round = v.round
+        WHERE tr.season = ?
+        GROUP BY tr.team, tr.season
+        ORDER BY unavailable_value DESC
         """,
         [season],
     ).df()
 
     if club_season.empty:
-        raise ValueError(f"No team_round_summary data for season {season}")
+        raise ValueError(f"No data for season {season}")
 
-    x = club_season["unavailable_slots"].to_numpy(dtype=float)
+    x = club_season["unavailable_value"].to_numpy(dtype=float)
     y = club_season["actual_wins"].to_numpy(dtype=float)
     intercept, slope, r2 = _linear_regression(x, y)
-    expected = intercept + slope * x
-    club_season["expected_wins"] = expected.clip(min=0)
+    club_season["expected_wins"] = (intercept + slope * x).clip(min=0)
     club_season["delta"] = club_season["actual_wins"] - club_season["expected_wins"]
 
-    avg_unavail = float(club_season["unavailable_slots"].mean() / club_season["rounds_with_data"].mean())
+    avg_unavail = float(club_season["unavailable_value"].mean() / club_season["rounds_with_data"].mean())
     above = int((club_season["delta"] > 0.5).sum())
     below = int((club_season["delta"] < -0.5).sum())
     corr = float(np.corrcoef(x, y)[0, 1]) if len(x) > 1 else 0.0
 
-    default_club = club_season.iloc[0]["club"]
-    if "Collingwood" in club_season["club"].values:
-        default_club = "Collingwood"
+    clubs = club_season["club"].tolist()
+    if default_club not in clubs:
+        default_club = str(club_season.iloc[0]["club"])
 
-    by_round = con.execute(
-        """
-        SELECT
-            round,
-            SUM(players_unavailable) AS value,
-            MAX(CASE WHEN won THEN 1 ELSE 0 END) AS wins
-        FROM team_round_summary
-        WHERE season = ? AND team = ?
-        GROUP BY round
-        ORDER BY round
-        """,
-        [season, default_club],
-    ).df()
+    def _club_round_df(club: str):
+        df = con.execute(
+            """
+            SELECT
+                tr.round,
+                COALESCE(v.unavailable_pvs_total, 0) AS value,
+                COALESCE(v.unavailable_pvs_top5, 0) AS top5,
+                CASE WHEN tr.won THEN 1 ELSE 0 END AS wins
+            FROM team_round_summary tr
+            LEFT JOIN team_round_value v
+                ON tr.team = v.team AND tr.season = v.season AND tr.round = v.round
+            WHERE tr.season = ? AND tr.team = ?
+            ORDER BY tr.round
+            """,
+            [season, club],
+        ).df()
+        return df
+
+    by_round = _club_round_df(default_club)
+    club_series = {}
+    for club in clubs:
+        cdf = _club_round_df(club)
+        club_series[club] = [
+            {
+                "round": int(r),
+                "value": round(float(v), 1),
+                "top5": round(float(t5), 1),
+                "wins": int(w),
+            }
+            for r, v, t5, w in zip(cdf["round"], cdf["value"], cdf["top5"], cdf["wins"])
+        ]
 
     top_players = con.execute(
         """
         SELECT
-            player_name AS player,
-            team AS club,
-            COUNT(*) FILTER (WHERE NOT afl_played) AS rounds_missed,
-            COUNT(*) FILTER (WHERE afl_played) AS rounds_played
-        FROM availability
-        WHERE season = ?
-        GROUP BY player_id, player_name, team
+            a.player_name AS player,
+            a.team AS club,
+            a.status,
+            COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
+            MAX(v.pvs) AS pvs,
+            SUM(CASE WHEN NOT a.afl_played THEN v.pvs ELSE 0 END) AS unavailable_pvs
+        FROM availability a
+        JOIN player_value v
+            ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
+        WHERE a.season = ?
+        GROUP BY a.player_id, a.player_name, a.team, a.status
         HAVING rounds_missed > 0
-        ORDER BY rounds_missed DESC
+        ORDER BY unavailable_pvs DESC
         LIMIT 10
         """,
         [season],
     ).df()
 
-    continuity = con.execute(
+    continuity = continuity_for_season(con, season)
+
+    # Margin regression (club-season): unavailable PVS vs avg margin
+    margins = con.execute(
         """
-        WITH played AS (
-            SELECT team, season, round, player_id
-            FROM availability
-            WHERE afl_played
+        WITH team_margin AS (
+            SELECT season, home_team AS team, home_score - away_score AS margin, round
+            FROM matches WHERE season = ?
+            UNION ALL
+            SELECT season, away_team, away_score - home_score, round
+            FROM matches WHERE season = ?
         ),
-        changes AS (
-            SELECT
-                a.team,
-                a.season,
-                a.round,
-                COUNT(DISTINCT a.player_id) AS current_players,
-                COUNT(DISTINCT b.player_id) AS returning_players
-            FROM played a
-            LEFT JOIN played b
-                ON a.team = b.team
-                AND a.season = b.season
-                AND a.round = b.round + 1
-                AND a.player_id = b.player_id
-            WHERE a.round > 1
-            GROUP BY a.team, a.season, a.round
+        club_margin AS (
+            SELECT team, AVG(margin) AS avg_margin FROM team_margin GROUP BY team
+        ),
+        club_unavail AS (
+            SELECT team, SUM(unavailable_pvs_total) AS unavail
+            FROM team_round_value WHERE season = ? GROUP BY team
         )
-        SELECT
-            team,
-            AVG(current_players - returning_players) AS avg_changes,
-            AVG(returning_players::DOUBLE / NULLIF(current_players, 0)) AS continuity_score
-        FROM changes
-        WHERE season = ?
-        GROUP BY team
-        ORDER BY avg_changes DESC
-        LIMIT 5
+        SELECT c.team, c.avg_margin, u.unavail
+        FROM club_margin c
+        JOIN club_unavail u ON c.team = u.team
         """,
-        [season],
+        [season, season, season],
     ).df()
 
-    continuity_rows = [
+    margin_r2 = 0.0
+    margin_slope = 0.0
+    if len(margins) >= 3:
+        mx = margins["unavail"].to_numpy(dtype=float)
+        my = margins["avg_margin"].to_numpy(dtype=float)
+        _, margin_slope, margin_r2 = _linear_regression(mx, my)
+
+    player_rows = [
         {
-            "archetype": row["team"],
-            "changes": int(round(row["avg_changes"])),
-            "score": round(float(row["continuity_score"]), 2),
+            "player": row["player"],
+            "club": row["club"],
+            "roundsMissed": int(row["rounds_missed"]),
+            "pvs": round(float(row["pvs"]), 1),
+            "unavailablePvs": round(float(row["unavailable_pvs"]), 1),
+            "status": _player_status(row),
         }
-        for _, row in continuity.iterrows()
-    ] or [
-        {"archetype": "League avg", "changes": 0, "score": 0.0},
+        for _, row in top_players.iterrows()
     ]
 
-    player_rows = []
-    for _, row in top_players.iterrows():
-        missed = int(row["rounds_missed"])
-        played = int(row["rounds_played"])
-        if missed >= played and missed >= 3:
-            status = "unavailable"
-        elif missed >= 2:
-            status = "intermittent"
-        else:
-            status = "vfl_only"
-        player_rows.append(
-            {
-                "player": row["player"],
-                "club": row["club"],
-                "roundsMissed": missed,
-                "pvs": round(min(9.5, 5.0 + missed * 0.4), 1),
-                "status": status,
-            }
-        )
-
     return {
-        "meta": {
-            "season": season,
-            "round": int(by_round["round"].max()) if not by_round.empty else 0,
-            "generatedAt": datetime.now(timezone.utc).isoformat(),
-            "note": f"Phase 1 real data ({season}). PVS is provisional until Phase 2 model.",
-            "dataSource": "Squiggle + Fryzigg",
-        },
         "leagueOverview": {
             "avgUnavailableValue": round(avg_unavail, 1),
             "clubsAboveExpectation": above,
@@ -175,13 +183,19 @@ def build_metrics_bundle(con: duckdb.DuckDBPyConnection, season: int = DEFAULT_S
             "correlationUnavailableToWins": round(corr, 2),
         },
         "clubUnavailableByRound": [
-            {"round": int(r), "value": int(v), "wins": int(w)}
-            for r, v, w in zip(by_round["round"], by_round["value"], by_round["wins"])
+            {
+                "round": int(r),
+                "value": round(float(v), 1),
+                "top5": round(float(t5), 1),
+                "wins": int(w),
+            }
+            for r, v, t5, w in zip(by_round["round"], by_round["value"], by_round["top5"], by_round["wins"])
         ],
         "clubRankings": [
             {
                 "club": row["club"],
-                "unavailableValue": int(row["unavailable_slots"]),
+                "unavailableValue": round(float(row["unavailable_value"]), 1),
+                "unavailableTop5": round(float(row["unavailable_top5"]), 1),
                 "expectedWins": round(float(row["expected_wins"]), 1),
                 "actualWins": int(row["actual_wins"]),
                 "delta": round(float(row["delta"]), 1),
@@ -189,19 +203,68 @@ def build_metrics_bundle(con: duckdb.DuckDBPyConnection, season: int = DEFAULT_S
             for _, row in club_season.sort_values("club").iterrows()
         ],
         "topUnavailablePlayers": player_rows,
-        "continuity": continuity_rows,
+        "continuity": continuity or [{"archetype": "League avg", "changes": 0, "score": 0.0}],
         "regression": {
             "model": "linear",
             "rSquared": round(r2, 2),
+            "marginRSquared": round(margin_r2, 2),
             "coefficients": {
                 "intercept": round(intercept, 2),
-                "unavailableSlots": round(slope, 4),
+                "unavailablePvs": round(slope, 4),
+                "marginPer100Pvs": round(margin_slope * 100, 2),
             },
             "interpretation": (
-                f"Each +100 unavailable player-slots correlates with ~{abs(slope * 100):.1f} "
-                f"{'fewer' if slope < 0 else 'more'} wins (season {season}, n={len(club_season)} clubs)."
+                f"Each +100 unavailable PVS correlates with ~{abs(slope * 100):.1f} "
+                f"{'fewer' if slope < 0 else 'more'} wins (season {season}). "
+                f"PVS combines rolling performance (disposals, goals, score involvements) "
+                f"with draft-potential prior and smooth age weighting."
             ),
         },
+        "clubs": clubs,
+        "defaultClub": default_club,
+        "clubSeries": club_series,
+    }
+
+
+def build_metrics_bundle(
+    con: duckdb.DuckDBPyConnection,
+    season: int = DEFAULT_SEASON,
+    export_all_seasons: bool = True,
+) -> dict:
+    seasons_df = con.execute(
+        "SELECT DISTINCT season FROM team_round_value ORDER BY season"
+    ).df()
+    seasons = [int(s) for s in seasons_df["season"].tolist()]
+    if not seasons:
+        seasons = [season]
+
+    season_bundles = {}
+    for s in seasons:
+        try:
+            season_bundles[str(s)] = build_season_bundle(con, s)
+        except ValueError as exc:
+            print(f"[export] skip season {s}: {exc}")
+
+    if not season_bundles:
+        raise ValueError("No season bundles exported")
+
+    primary_key = str(season) if str(season) in season_bundles else list(season_bundles.keys())[-1]
+    primary = season_bundles[primary_key]
+
+    return {
+        "meta": {
+            "season": int(primary_key),
+            "round": int(
+                max((r["round"] for r in primary["clubUnavailableByRound"]), default=0)
+            ),
+            "generatedAt": datetime.now(timezone.utc).isoformat(),
+            "note": f"Phase 2 — PVS-weighted unavailability ({primary_key})",
+            "dataSource": "Squiggle + Fryzigg",
+            "defaultSeason": int(primary_key),
+            "seasons": [int(s) for s in season_bundles.keys()],
+        },
+        "seasons": season_bundles,
+        **primary,
     }
 
 

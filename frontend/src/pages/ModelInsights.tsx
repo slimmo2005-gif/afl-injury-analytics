@@ -1,9 +1,9 @@
 import PageHeader from '../components/PageHeader'
 import StatCard from '../components/StatCard'
-import { useMetricsContext } from '../context/MetricsContext'
+import { useSeasonData } from '../hooks/useSeasonData'
 
 export default function ModelInsights() {
-  const { data } = useMetricsContext()
+  const data = useSeasonData()
   const { regression } = data
   return (
     <>
@@ -13,8 +13,13 @@ export default function ModelInsights() {
       />
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
         <StatCard label="Model" value={regression.model} accent="gold" />
-        <StatCard label="R²" value={regression.rSquared.toFixed(2)} />
-        <StatCard label="Approach" value="Interpretable" hint="No black-box ML in v1" accent="green" />
+        <StatCard label="Wins R²" value={regression.rSquared.toFixed(2)} />
+        <StatCard
+          label="Margin R²"
+          value={(regression.marginRSquared ?? 0).toFixed(2)}
+          hint="Unavailable PVS vs avg margin"
+          accent="green"
+        />
       </div>
       <div className="grid md:grid-cols-2 gap-6">
         <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
@@ -29,11 +34,11 @@ export default function ModelInsights() {
           </dl>
         </div>
         <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
-          <h3 className="text-sm font-medium text-slate-300 mb-3">PVS formula (planned)</h3>
+          <h3 className="text-sm font-medium text-slate-300 mb-3">PVS formula</h3>
           <p className="text-sm text-slate-400 leading-relaxed">
-            Hybrid score: performance (rolling multi-year stats, disposals, score involvements) blended with
-            potential (draft pick curve). Age-weighted smoothly — e.g. 18yo ≈ 30% perf / 70% potential;
-            25+ ≈ 100% performance.
+            PVS = w(age) × performance + (1 − w(age)) × potential. Performance uses rolling z-scored
+            disposals, goals, and score involvements. Potential follows an exponential draft-pick curve
+            (pick 1 ≈ 9.5, pick 50 ≈ 2). At age 18, w ≈ 30%; at 25+, w = 100%.
           </p>
           <p className="text-sm text-slate-500 mt-4 italic">{regression.interpretation}</p>
         </div>

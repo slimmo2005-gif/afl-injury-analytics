@@ -1,9 +1,13 @@
 import PageHeader from '../components/PageHeader'
 import StatCard from '../components/StatCard'
 import { useMetricsContext } from '../context/MetricsContext'
+import { useFilters } from '../context/FilterContext'
+import { useSeasonData } from '../hooks/useSeasonData'
 
 export default function SeasonExplorer() {
-  const { data, source } = useMetricsContext()
+  const { source } = useMetricsContext()
+  const data = useSeasonData()
+  const { filters } = useFilters()
   return (
     <>
       <PageHeader
@@ -12,7 +16,7 @@ export default function SeasonExplorer() {
       />
       <div className="grid md:grid-cols-2 gap-6">
         <div className="space-y-4">
-          <StatCard label="Active season" value={data.meta.season} accent="gold" />
+          <StatCard label="Selected season" value={filters.season} accent="gold" />
           <StatCard
             label="Data source"
             value={source === 'live' ? (data.meta.dataSource ?? 'ETL') : 'Mock'}

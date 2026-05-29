@@ -88,6 +88,8 @@ def build_availability(con: duckdb.DuckDBPyConnection) -> None:
             a.players_played,
             a.players_unavailable,
             a.players_unavailable::DOUBLE / NULLIF(a.squad_size, 0) AS unavailable_rate,
+            0.0 AS unavailable_pvs_total,
+            0.0 AS unavailable_pvs_top5,
             mr.winner_team = a.team AS won
         FROM avail a
         LEFT JOIN match_results mr

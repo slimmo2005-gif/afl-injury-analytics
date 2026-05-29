@@ -11,6 +11,9 @@ from .export.frontend import write_metrics
 from .ingest.fryzigg import load_player_games
 from .ingest.squiggle import fetch_all_seasons
 from .transform.availability import build_availability
+from .transform.continuity import build_archetype_continuity
+from .transform.pvs import build_player_profiles, build_player_value
+from .transform.unavailability import build_team_round_value, enrich_availability_status
 from .validate import run_checks
 
 
@@ -48,6 +51,17 @@ def run_pipeline(
 
     print("[pipeline] building availability …")
     build_availability(con)
+    enrich_availability_status(con)
+
+    print("[pipeline] building player profiles and PVS …")
+    build_player_profiles(con)
+    build_player_value(con)
+
+    print("[pipeline] building PVS-weighted unavailability …")
+    build_team_round_value(con)
+
+    print("[pipeline] building archetype continuity …")
+    build_archetype_continuity(con)
 
     issues = run_checks(con, export_season)
     for issue in issues:

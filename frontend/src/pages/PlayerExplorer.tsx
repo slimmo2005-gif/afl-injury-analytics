@@ -1,5 +1,5 @@
 import PageHeader from '../components/PageHeader'
-import { useMetricsContext } from '../context/MetricsContext'
+import { useSeasonData } from '../hooks/useSeasonData'
 import type { UnavailablePlayer } from '../types/metrics'
 
 const statusColors: Record<UnavailablePlayer['status'], string> = {
@@ -9,7 +9,7 @@ const statusColors: Record<UnavailablePlayer['status'], string> = {
 }
 
 export default function PlayerExplorer() {
-  const { data } = useMetricsContext()
+  const data = useSeasonData()
 
   return (
     <>

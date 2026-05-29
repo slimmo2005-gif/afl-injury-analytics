@@ -24,14 +24,16 @@
 5. **Validate** ⏳
    - Basic checks in `validate.py`; CI schema tests TODO
 
-## Phase 2 — Value & analytics (4–8 weeks)
+## Phase 2 — Value & analytics ✅ (initial)
 
-1. PVS hybrid model (performance + draft potential + age curve)
-2. Team-round unavailability aggregates
-3. Continuity metrics (archetypes)
-4. Linear regression → wins, margin, ladder residuals
-5. Wire all charts to real exports
-6. Enable weekly `data-refresh.yml` to commit outputs
+1. PVS hybrid model ✅ — performance z-scores + draft curve + age weighting
+2. Team-round unavailability aggregates ✅ — total, top-5, top-10, age cohorts
+3. Continuity metrics (archetypes) ✅ — by positional archetype
+4. Linear regression ✅ — unavailable PVS vs wins and margin
+5. Wire charts + season/club filters ✅
+6. Weekly `data-refresh.yml` ✅
+
+**Remaining:** VFL data, real draft CSV enrichment, ladder-adjusted residuals, exact archetype from tracking
 
 ## Suggested first ETL tasks
 
