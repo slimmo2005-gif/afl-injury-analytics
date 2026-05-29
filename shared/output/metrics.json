@@ -2,7 +2,7 @@
   "meta": {
     "season": 2024,
     "round": 24,
-    "generatedAt": "2026-05-29T01:29:58.427865+00:00",
+    "generatedAt": "2026-05-29T02:36:15.314355+00:00",
     "note": "Phase 2 \u2014 PVS + national draft + VFL (2024)",
     "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
     "defaultSeason": 2024,
@@ -352,16 +352,16 @@
           "status": "unavailable"
         },
         {
-          "player": "Angus Graham",
-          "club": "Richmond",
+          "player": "Ben Warren",
+          "club": "North Melbourne",
           "roundsMissed": 22,
           "pvs": 2.9,
           "unavailablePvs": 63.4,
           "status": "unavailable"
         },
         {
-          "player": "Ben Warren",
-          "club": "North Melbourne",
+          "player": "Angus Graham",
+          "club": "Richmond",
           "roundsMissed": 22,
           "pvs": 2.9,
           "unavailablePvs": 63.4,
