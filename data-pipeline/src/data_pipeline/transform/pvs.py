@@ -56,15 +56,31 @@ def build_player_profiles(con: duckdb.DuckDBPyConnection) -> None:
     games["age_est"] = (games["season"] - games["debut_season"] + 18).clip(17, 40)
     games["archetype"] = games["player_position"].map(map_position)
 
-    draft_file = ROOT / "shared" / "data" / "draft_picks.csv"
-    if draft_file.exists():
-        draft = pd.read_csv(draft_file, dtype={"player_id": str})
-        games = games.merge(draft[["player_id", "draft_pick"]], on="player_id", how="left")
-    else:
-        games["draft_pick"] = np.nan
+    draft_pick_col: pd.Series | None = None
+    try:
+        draft_db = con.execute(
+            """
+            SELECT player_id, draft_year AS season, MIN(draft_pick) AS draft_pick
+            FROM draft_picks
+            GROUP BY 1, 2
+            """
+        ).df()
+        if not draft_db.empty:
+            games = games.merge(draft_db, on=["player_id", "season"], how="left")
+            draft_pick_col = games["draft_pick"]
+    except duckdb.CatalogException:
+        pass
+
+    if draft_pick_col is None and "draft_pick" not in games.columns:
+        draft_file = ROOT / "shared" / "data" / "draft_picks.csv"
+        if draft_file.exists():
+            draft = pd.read_csv(draft_file, dtype={"player_id": str})
+            games = games.merge(draft[["player_id", "draft_pick"]], on="player_id", how="left")
+        else:
+            games["draft_pick"] = np.nan
 
     is_rookie = games["season"] == games["debut_season"]
-    games["draft_pick"] = games["draft_pick"].astype(float)
+    games["draft_pick"] = pd.to_numeric(games.get("draft_pick"), errors="coerce")
     games.loc[games["draft_pick"].isna() & is_rookie, "draft_pick"] = ROOKIE_DRAFT_PICK
     games.loc[games["draft_pick"].isna(), "draft_pick"] = DEFAULT_DRAFT_PICK
     games["draft_pick"] = games["draft_pick"].astype(int)

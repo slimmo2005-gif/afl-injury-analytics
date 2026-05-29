@@ -104,6 +104,7 @@ CREATE TABLE IF NOT EXISTS team_round_value (
     unavailable_pvs_u22 DOUBLE NOT NULL,
     unavailable_pvs_28plus DOUBLE NOT NULL,
     unavailable_pvs_intermittent DOUBLE NOT NULL,
+    unavailable_pvs_vfl_only DOUBLE NOT NULL DEFAULT 0,
     won BOOLEAN,
     PRIMARY KEY (team, season, round)
 );
@@ -116,6 +117,28 @@ CREATE TABLE IF NOT EXISTS archetype_continuity (
     continuity_score DOUBLE NOT NULL,
     PRIMARY KEY (team, season, archetype)
 );
+
+CREATE TABLE IF NOT EXISTS draft_picks (
+    player_id VARCHAR NOT NULL,
+    player_name VARCHAR NOT NULL,
+    draft_year INTEGER NOT NULL,
+    draft_pick INTEGER NOT NULL,
+    drafted_club VARCHAR NOT NULL,
+    player_name_norm VARCHAR,
+    PRIMARY KEY (player_id, draft_year)
+);
+
+CREATE TABLE IF NOT EXISTS vfl_games (
+    player_name VARCHAR NOT NULL,
+    player_name_norm VARCHAR NOT NULL,
+    afl_club VARCHAR NOT NULL,
+    vfl_team VARCHAR,
+    season INTEGER NOT NULL,
+    round INTEGER NOT NULL,
+    game_slug VARCHAR,
+    player_id VARCHAR,
+    PRIMARY KEY (player_name_norm, afl_club, season, round, game_slug)
+);
 """
 
 MIGRATIONS = [
@@ -123,6 +146,7 @@ MIGRATIONS = [
     "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS player_position VARCHAR",
     "ALTER TABLE team_round_summary ADD COLUMN IF NOT EXISTS unavailable_pvs_total DOUBLE DEFAULT 0",
     "ALTER TABLE team_round_summary ADD COLUMN IF NOT EXISTS unavailable_pvs_top5 DOUBLE DEFAULT 0",
+    "ALTER TABLE team_round_value ADD COLUMN IF NOT EXISTS unavailable_pvs_vfl_only DOUBLE DEFAULT 0",
 ]
 
 

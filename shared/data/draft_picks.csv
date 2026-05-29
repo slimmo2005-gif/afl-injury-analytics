@@ -1,1 +1,894 @@
-player_id,draft_pick
+player_id,player_name,player_name_norm,draft_year,draft_pick,drafted_club
+11959,Ben Jacobs,ben jacobs,2012,37,North Melbourne
+11975,Taylor Hine,taylor hine,2012,61,North Melbourne
+12147,Lachie Whitfield,lachie whitfield,2012,1,Greater Western Sydney
+12146,Lachie Plowman,lachie plowman,2012,3,Greater Western Sydney
+12151,Jimmy Toumpas,jimmy toumpas,2012,4,Melbourne
+12173,Jake Stringer,jake stringer,2012,5,Western Bulldogs
+12172,Jack Macrae,jack macrae,2012,6,Western Bulldogs
+12155,Ollie Wines,ollie wines,2012,7,Port Adelaide
+12168,Sam Mayes,sam mayes,2012,8,Brisbane Lions
+12180,Nick Vlastuin,nick vlastuin,2012,9,Richmond
+12205,Joe Daniher,joe daniher,2012,10,Essendon
+12195,Troy Menzel,troy menzel,2012,11,Carlton
+12234,Kristian Jaksch,kristian jaksch,2012,12,Greater Western Sydney
+12187,Jesse Lonergan,jesse lonergan,2012,13,Gold Coast
+12185,Aidan Corr,aidan corr,2012,14,Greater Western Sydney
+12227,Taylor Garner,taylor garner,2012,15,North Melbourne
+12191,Jackson Thurlow,jackson thurlow,2012,16,Geelong
+12238,Josh Simpson,josh simpson,2012,17,Fremantle
+12223,Brodie Grundy,brodie grundy,2012,18,Collingwood
+12183,Ben Kennedy,ben kennedy,2012,19,Collingwood
+12197,Nathan Hrovat,nathan hrovat,2012,21,Western Bulldogs
+12176,Marco Paparone,marco paparone,2012,23,Brisbane Lions
+12166,Nathan Wright,nathan wright,2012,24,St Kilda
+12152,Jack Viney,jack viney,2012,26,Melbourne
+12239,James Stewart,james stewart,2012,27,Greater Western Sydney
+12170,Tanner Smith,tanner smith,2012,36,Fremantle
+12177,Brodie Murdoch,brodie murdoch,2012,40,St Kilda
+12229,Matt McDonough,matt mcdonough,2012,42,Richmond
+12178,Josh Saunders,josh saunders,2012,43,St Kilda
+12190,Dean Kent,dean kent,2012,48,Melbourne
+12210,Lachie Hunter,lachie hunter,2012,49,Western Bulldogs
+12150,Matt Jones,matt jones,2012,52,Melbourne
+12230,Nick Graham,nick graham,2012,54,Carlton
+12203,Timmy Sumner,timmy sumner,2012,55,Gold Coast
+12219,Adam Carter,adam carter,2012,59,West Coast
+12193,Mark Hutchings,mark hutchings,2012,60,West Coast
+12162,Dean Terlich,dean terlich,2012,68,Melbourne
+12144,Nick Kommer,nick kommer,2012,73,Essendon
+12293,Tim Broomhead,tim broomhead,2012,20,Collingwood
+12304,Dean Towers,dean towers,2012,22,Sydney
+12317,Spencer White,spencer white,2012,25,St Kilda
+12250,Tim O'Brien,tim o'brien,2012,28,Hawthorn
+12244,Tom Clurey,tom clurey,2012,29,Port Adelaide
+12253,Michael Close,michael close,2012,32,Brisbane Lions
+12267,Jason Ashby,jason ashby,2012,34,Essendon
+12316,Jackson Ramsay,jackson ramsay,2012,38,Collingwood
+12311,Max Duffy,max duffy,2012,39,Fremantle
+12321,Mason Wood,mason wood,2012,41,North Melbourne
+12266,Brant Colledge,brant colledge,2012,45,West Coast
+12307,Tim Membrey,tim membrey,2012,46,Sydney
+12273,Dylan van Unen,dylan van unen,2012,51,Essendon
+12248,Martin Gleeson,martin gleeson,2012,53,Essendon
+12264,Daniel Currie,daniel currie,2012,56,North Melbourne
+12241,Clay Cameron,clay cameron,2012,58,Gold Coast
+12291,Brad Hartman,brad hartman,2012,77,Geelong
+12276,Tom Boyd,tom boyd,2013,1,Greater Western Sydney
+12262,Josh Kelly,josh kelly,2013,2,Greater Western Sydney
+12255,Jack Billings,jack billings,2013,3,St Kilda
+12277,Marcus Bontempelli,marcus bontempelli,2013,4,Western Bulldogs
+12263,Kade Kolodjashnij,kade kolodjashnij,2013,5,Gold Coast
+12252,James Aish,james aish,2013,7,Brisbane Lions
+12246,Luke McDonald,luke mcdonald,2013,8,North Melbourne
+12280,Christian Salem,christian salem,2013,9,Melbourne
+12260,Dom Sheed,dom sheed,2013,11,West Coast
+12285,Ben Lennon,ben lennon,2013,12,Richmond
+12269,Patrick Cripps,patrick cripps,2013,13,Carlton
+12294,Zak Jones,zak jones,2013,15,Sydney
+12292,Darcy Lang,darcy lang,2013,16,Geelong
+12302,Michael Apeness,michael apeness,2013,17,Fremantle
+12256,Luke Dunstan,luke dunstan,2013,18,St Kilda
+12282,Blake Acres,blake acres,2013,19,St Kilda
+12315,Jack Leslie,jack leslie,2013,20,Gold Coast
+12245,Jarman Impey,jarman impey,2013,21,Port Adelaide
+12274,Darcy Gardiner,darcy gardiner,2013,22,Brisbane Lions
+12265,Matt Crouch,matt crouch,2013,23,Adelaide
+12281,Billy Hartung,billy hartung,2013,24,Hawthorn
+12297,Daniel McStay,daniel mcstay,2013,25,Brisbane Lions
+12249,Zach Merrett,zach merrett,2013,26,Essendon
+12242,Sean Lemmens,sean lemmens,2013,27,Gold Coast
+12254,Lewis Taylor,lewis taylor,2013,28,Brisbane Lions
+12289,Rory Lobb,rory lobb,2013,29,Greater Western Sydney
+12271,Tom Cutler,tom cutler,2013,33,Brisbane Lions
+12272,Nick Robertson,nick robertson,2013,34,Brisbane Lions
+12296,Ben Brown,ben brown,2013,47,North Melbourne
+11950,Nathan Gordon,nathan gordon,2013,50,Richmond
+12314,Nick Holman,nick holman,2013,51,Carlton
+12308,Orazio Fantasia,orazio fantasia,2013,55,Essendon
+12299,Mitch Honeychurch,mitch honeychurch,2013,60,Western Bulldogs
+12312,Jonathan Freeman,jonathan freeman,2013,62,Brisbane Lions
+12240,Tom Langdon,tom langdon,2013,65,Collingwood
+12268,Sam Lloyd,sam lloyd,2013,66,Richmond
+12392,Matthew Scharenberg,matthew scharenberg,2013,6,Collingwood
+12353,Trent Dumont,trent dumont,2013,30,North Melbourne
+12379,Toby Nankervis,toby nankervis,2013,35,Sydney
+12361,Alex Pearce,alex pearce,2013,37,Fremantle
+12378,Jake Kolodjashnij,jake kolodjashnij,2013,41,Geelong
+12391,Tom Barrass,tom barrass,2013,43,West Coast
+12387,Riley Knight,riley knight,2013,46,Adelaide
+12342,James Sicily,james sicily,2013,56,Hawthorn
+12405,Brady Grey,brady grey,2013,58,Fremantle
+12365,Karl Amon,karl amon,2013,68,Port Adelaide
+12394,Jonathon Marsh,jonathon marsh,2013,77,Collingwood
+12408,Jake Barrett,jake barrett,2013,97,Greater Western Sydney
+12343,Paddy McCartin,paddy mccartin,2014,1,St Kilda
+12325,Angus Brayshaw,angus brayshaw,2014,3,Melbourne
+12333,Jordan De Goey,jordan de goey,2014,5,Collingwood
+12376,Caleb Marchbank,caleb marchbank,2014,6,Greater Western Sydney
+12371,Peter Wright,peter wright,2014,8,Gold Coast
+12381,Darcy Moore,darcy moore,2014,9,Collingwood
+12338,Nakia Cockatoo,nakia cockatoo,2014,10,Geelong
+12340,Liam Duggan,liam duggan,2014,11,West Coast
+12354,Corey Ellis,corey ellis,2014,12,Richmond
+12393,Lachie Weller,lachie weller,2014,13,Fremantle
+12359,Jake Lever,jake lever,2014,14,Adelaide
+12328,Jarrod Garlett,jarrod garlett,2014,15,Gold Coast
+12358,Kyle Langford,kyle langford,2014,17,Essendon
+12331,Isaac Heeney,isaac heeney,2014,18,Sydney
+12350,Blaine Boekhorst,blaine boekhorst,2014,19,Carlton
+12384,Jayden Laverde,jayden laverde,2014,20,Essendon
+12390,Hugh Goddard,hugh goddard,2014,21,St Kilda
+12357,Daniel McKenzie,daniel mckenzie,2014,22,St Kilda
+12377,Jack Steele,jack steele,2014,24,Greater Western Sydney
+12373,Toby McLean,toby mclean,2014,26,Western Bulldogs
+12348,Lukas Webb,lukas webb,2014,27,Western Bulldogs
+12329,Touk Miller,touk miller,2014,29,Gold Coast
+12380,Brayden Maynard,brayden maynard,2014,30,Collingwood
+12368,Daniel Howe,daniel howe,2014,31,Hawthorn
+12334,Tom Lamb,tom lamb,2014,32,West Coast
+12364,Connor Menadue,connor menadue,2014,33,Richmond
+12404,Connor Blakely,connor blakely,2014,34,Fremantle
+12396,James Rose,james rose,2014,37,Sydney
+12375,Alex Neal-Bullen,alex neal-bullen,2014,40,Melbourne
+12336,Jack Lonie,jack lonie,2014,41,St Kilda
+12360,Billy Stretch,billy stretch,2014,42,Melbourne
+12366,Liam Dawson,liam dawson,2014,44,Brisbane Lions
+12362,Bailey Dale,bailey dale,2014,45,Western Bulldogs
+12382,Caleb Daniel,caleb daniel,2014,46,Western Bulldogs
+12339,Cory Gregson,cory gregson,2014,47,Geelong
+12335,Jackson Nelson,jackson nelson,2014,51,West Coast
+12349,Nathan Drummond,nathan drummond,2014,52,Richmond
+12402,Oscar McDonald,oscar mcdonald,2014,53,Melbourne
+12401,Ed Langdon,ed langdon,2014,54,Fremantle
+12323,Clem Smith,clem smith,2014,60,Carlton
+12347,Harris Andrews,harris andrews,2014,61,Brisbane Lions
+12399,Zaine Cordy,zaine cordy,2014,62,Western Bulldogs
+12332,Jaden McGrath,jaden mcgrath,2014,73,Brisbane Lions
+12437,Christian Petracca,christian petracca,2014,2,Melbourne
+12448,Jack Hiscox,jack hiscox,2014,38,Sydney
+12415,Mitch McGovern,mitch mcgovern,2014,43,Adelaide
+12430,Matthew Goodyear,matthew goodyear,2014,48,Collingwood
+12424,Marc Pittonet,marc pittonet,2014,50,Hawthorn
+12426,Dougal Howard,dougal howard,2014,56,Port Adelaide
+12458,Logan Austin,logan austin,2014,69,Port Adelaide
+12486,Jesse Palmer,jesse palmer,2014,78,Port Adelaide
+12490,Josh Clayton,josh clayton,2014,86,Brisbane Lions
+12410,Jacob Weitering,jacob weitering,2015,1,Carlton
+12423,Josh Schache,josh schache,2015,2,Brisbane Lions
+12418,Callum Mills,callum mills,2015,3,Sydney
+12411,Clayton Oliver,clayton oliver,2015,4,Melbourne
+12414,Darcy Parish,darcy parish,2015,5,Essendon
+12475,Aaron Francis,aaron francis,2015,6,Essendon
+12447,Jacob Hopper,jacob hopper,2015,7,Greater Western Sydney
+12412,Callum Ah Chee,callum ah chee,2015,8,Gold Coast
+12481,Sam Weideman,sam weideman,2015,9,Melbourne
+12416,Wayne Milera,wayne milera,2015,11,Adelaide
+12428,Charlie Curnow,charlie curnow,2015,12,Carlton
+12463,Matthew Kennedy,matthew kennedy,2015,13,Greater Western Sydney
+12462,Eric Hipwood,eric hipwood,2015,14,Brisbane Lions
+12409,Daniel Rioli,daniel rioli,2015,15,Richmond
+12470,Harry Himmelberg,harry himmelberg,2015,16,Greater Western Sydney
+12422,Jade Gresham,jade gresham,2015,18,St Kilda
+12485,Ryan Burton,ryan burton,2015,19,Hawthorn
+12489,Brayden Fiorini,brayden fiorini,2015,20,Gold Coast
+12438,Kieran Lovell,kieran lovell,2015,22,Hawthorn
+12484,David Cuningham,david cuningham,2015,23,Carlton
+12441,Ben Keays,ben keays,2015,24,Brisbane Lions
+12421,Josh Dunkley,josh dunkley,2015,25,Western Bulldogs
+12451,Kieran Collins,kieran collins,2015,26,Western Bulldogs
+12434,Darcy Tucker,darcy tucker,2015,27,Fremantle
+12445,Mason Redman,mason redman,2015,30,Essendon
+12469,Ryan Clarke,ryan clarke,2015,31,North Melbourne
+12472,Josh Schoenfeld,josh schoenfeld,2015,34,Gold Coast
+12420,Marcus Adams,marcus adams,2015,35,Western Bulldogs
+12454,Tom Cole,tom cole,2015,36,West Coast
+12492,Riley Bonner,riley bonner,2015,37,Port Adelaide
+12450,Rhys Mathieson,rhys mathieson,2015,39,Brisbane Lions
+12494,Brandon White,brandon white,2015,40,St Kilda
+12461,Corey Wagner,corey wagner,2015,43,North Melbourne
+12477,Blake Hardwick,blake hardwick,2015,44,Hawthorn
+12449,Bailey Williams,bailey williams,2015,48,Western Bulldogs
+12468,Oleg Markov,oleg markov,2015,50,Richmond
+12439,Mackenzie Willis,mackenzie willis,2015,52,Gold Coast
+12466,Jack Silvagni,jack silvagni,2015,53,Carlton
+12453,Sam Collins,sam collins,2015,55,Fremantle
+12460,Tom Phillips,tom phillips,2015,58,Collingwood
+12473,Shane Yarran,shane yarran,2015,61,Fremantle
+12478,Rupert Wills,rupert wills,2015,63,Collingwood
+12444,Ben Crocker,ben crocker,2015,65,Collingwood
+12474,Sam Menegola,sam menegola,2015,66,Geelong
+12464,Nathan Broad,nathan broad,2015,67,Richmond
+12427,Michael Hartley,michael hartley,2015,68,Essendon
+12575,Harry McKay,harry mckay,2015,10,Carlton
+12588,Ben McKay,ben mckay,2015,21,North Melbourne
+12577,Luke Partington,luke partington,2015,28,West Coast
+12523,Harley Balic,harley balic,2015,38,Fremantle
+12531,Aidyn Johnson,aidyn johnson,2015,45,Port Adelaide
+12579,Sam Skinner,sam skinner,2015,47,Brisbane Lions
+12519,Jordan Dawson,jordan dawson,2015,56,Sydney
+12536,Kurt Mutimer,kurt mutimer,2015,57,West Coast
+12509,Declan Mountford,declan mountford,2015,60,North Melbourne
+12558,Wylie Buzza,wylie buzza,2015,69,Geelong
+12505,Andrew McGrath,andrew mcgrath,2016,1,Essendon
+12512,Tim Taranto,tim taranto,2016,2,Greater Western Sydney
+12526,Hugh McCluggage,hugh mccluggage,2016,3,Brisbane Lions
+12506,Ben Ainsworth,ben ainsworth,2016,4,Gold Coast
+12574,Will Setterfield,will setterfield,2016,5,Greater Western Sydney
+12496,Sam Petrevski-Seton,sam petrevski-seton,2016,6,Carlton
+12571,Jack Scrimshaw,jack scrimshaw,2016,7,Gold Coast
+12524,Griffin Logue,griffin logue,2016,8,Fremantle
+12549,Will Brodie,will brodie,2016,9,Gold Coast
+12507,Jack Bowes,jack bowes,2016,10,Gold Coast
+12501,Oliver Florent,oliver florent,2016,11,Sydney
+12511,Jy Simpkin,jy simpkin,2016,12,North Melbourne
+12541,Harry Perryman,harry perryman,2016,14,Greater Western Sydney
+12543,Jordan Gallucci,jordan gallucci,2016,15,Adelaide
+12581,Todd Marshall,todd marshall,2016,16,Port Adelaide
+12525,Jarrod Berry,jarrod berry,2016,17,Brisbane Lions
+12504,Sam Powell-Pepper,sam powell-pepper,2016,18,Port Adelaide
+12548,Tim English,tim english,2016,19,Western Bulldogs
+12516,Will Hayward,will hayward,2016,21,Sydney
+12554,Alex Witherden,alex witherden,2016,23,Brisbane Lions
+12530,Cedric Cox,cedric cox,2016,24,Brisbane Lions
+12529,Ben Long,ben long,2016,25,St Kilda
+12513,Brandan Parfitt,brandan parfitt,2016,26,Geelong
+12528,Zac Fisher,zac fisher,2016,27,Carlton
+12586,Patrick Lipinski,patrick lipinski,2016,28,Western Bulldogs
+12542,Shai Bolton,shai bolton,2016,29,Richmond
+12583,Josh Begley,josh begley,2016,31,Essendon
+12564,Joe Atley,joe atley,2016,32,Port Adelaide
+12570,Josh Williams,josh williams,2016,36,North Melbourne
+12555,Sean Darcy,sean darcy,2016,38,Fremantle
+12565,Josh Battle,josh battle,2016,39,St Kilda
+12514,Tom Stewart,tom stewart,2016,40,Geelong
+12552,Brennan Cox,brennan cox,2016,41,Fremantle
+12499,Mitch Hannan,mitch hannan,2016,46,Melbourne
+12495,Harrison Macreadie,harrison macreadie,2016,47,Carlton
+12567,Lewis Young,lewis young,2016,49,Western Bulldogs
+12587,Kayle Kirby,kayle kirby,2016,50,Collingwood
+12584,Jack Graham,jack graham,2016,53,Richmond
+12578,Jacob Allison,jacob allison,2016,55,Brisbane Lions
+12582,Josh Daicos,josh daicos,2016,57,Collingwood
+12532,Cameron Polson,cameron polson,2016,59,Carlton
+12550,Luke Ryan,luke ryan,2016,66,Fremantle
+12538,Brad Scheer,brad scheer,2016,67,Gold Coast
+12569,Nick Larkey,nick larkey,2016,73,North Melbourne
+12585,Harry Morrison,harry morrison,2016,74,Hawthorn
+12608,Daniel Venables,daniel venables,2016,13,West Coast
+12635,Isaac Cumming,isaac cumming,2016,20,Greater Western Sydney
+12640,Jordan Ridley,jordan ridley,2016,22,Essendon
+12627,Kobe Mutch,kobe mutch,2016,42,Essendon
+12606,Esava Ratugolea,esava ratugolea,2016,43,Geelong
+12621,Myles Poholke,myles poholke,2016,44,Adelaide
+12666,Darcy Cameron,darcy cameron,2016,48,Sydney
+12613,Willie Rioli,willie rioli,2016,52,West Coast
+12637,Ed Phillips,ed phillips,2016,56,St Kilda
+12657,Quinton Narkle,quinton narkle,2016,60,Geelong
+12639,Dylan Clarke,dylan clarke,2016,63,Essendon
+12672,Ryan Abbott,ryan abbott,2016,69,Geelong
+12670,Fergus Greene,fergus greene,2016,70,Western Bulldogs
+12654,Ryan Garthwaite,ryan garthwaite,2016,72,Richmond
+12643,Mitch Lewis,mitch lewis,2016,76,Hawthorn
+12609,Jake Waterman,jake waterman,2016,77,West Coast
+12594,Cam Rayner,cam rayner,2017,1,Brisbane Lions
+12596,Andrew Brayshaw,andrew brayshaw,2017,2,Fremantle
+12589,Paddy Dow,paddy dow,2017,3,Carlton
+12599,Luke Davies-Uniacke,luke davies-uniacke,2017,4,North Melbourne
+12610,Adam Cerra,adam cerra,2017,5,Fremantle
+12598,Jaidyn Stephenson,jaidyn stephenson,2017,6,Collingwood
+12593,Hunter Clark,hunter clark,2017,7,St Kilda
+12615,Nick Coffield,nick coffield,2017,8,St Kilda
+12602,Aaron Naughton,aaron naughton,2017,9,Western Bulldogs
+12618,Lochie O'Brien,lochie o'brien,2017,10,Carlton
+12676,Aiden Bonar,aiden bonar,2017,11,Greater Western Sydney
+12591,Darcy Fogarty,darcy fogarty,2017,12,Adelaide
+12652,Jarrod Brander,jarrod brander,2017,13,West Coast
+12617,Zac Bailey,zac bailey,2017,15,Brisbane Lions
+12612,Ed Richards,ed richards,2017,16,Western Bulldogs
+12616,Jack Higgins,jack higgins,2017,17,Richmond
+12673,Brandon Starcevich,brandon starcevich,2017,18,Brisbane Lions
+12658,Wil Powell,wil powell,2017,19,Gold Coast
+12662,Oscar Allen,oscar allen,2017,21,West Coast
+12669,Will Walker,will walker,2017,23,North Melbourne
+12605,Tim Kelly,tim kelly,2017,24,Geelong
+12607,Liam Ryan,liam ryan,2017,26,West Coast
+12663,Brent Daniels,brent daniels,2017,27,Greater Western Sydney
+12651,Sam Taylor,sam taylor,2017,28,Greater Western Sydney
+12628,Charlie Spargo,charlie spargo,2017,29,Melbourne
+12681,Tom De Koning,tom de koning,2017,30,Carlton
+12603,Bayley Fritsch,bayley fritsch,2017,31,Melbourne
+12636,Brayden Ainsworth,brayden ainsworth,2017,32,West Coast
+12634,Tom McCartin,tom mccartin,2017,33,Sydney
+12660,Harrison Petty,harrison petty,2017,37,Melbourne
+12630,Jack Petruccelle,jack petruccelle,2017,38,West Coast
+12680,Nathan Murphy,nathan murphy,2017,39,Collingwood
+12631,Charlie Ballard,charlie ballard,2017,42,Gold Coast
+12626,James Worpel,james worpel,2017,45,Hawthorn
+12677,Ben Paton,ben paton,2017,46,St Kilda
+12671,Kane Farrell,kane farrell,2017,51,Port Adelaide
+12632,Brayden Crossley,brayden crossley,2017,52,Gold Coast
+12644,Ryley Stoddart,ryley stoddart,2017,53,Sydney
+12600,Zac Langdon,zac langdon,2017,56,Greater Western Sydney
+12611,Mitch Crowden,mitch crowden,2017,59,Fremantle
+12624,Nick Shipley,nick shipley,2017,64,Greater Western Sydney
+12679,Sam Switkowski,sam switkowski,2017,73,Fremantle
+12650,Scott Jones,scott jones,2017,75,Fremantle
+12619,Matt Guelfi,matt guelfi,2017,76,Essendon
+12730,Callum Coleman-Jones,callum coleman-jones,2017,20,Richmond
+12686,Noah Balta,noah balta,2017,25,Richmond
+12733,Patrick Naish,patrick naish,2017,34,Richmond
+12689,Charlie Constable,charlie constable,2017,36,Geelong
+12760,Hugh Dixon,hugh dixon,2017,44,Fremantle
+12723,Oskar Baker,oskar baker,2017,48,Melbourne
+12690,Gryan Miers,gryan miers,2017,57,Geelong
+12727,Joel Garner,joel garner,2017,60,Port Adelaide
+12739,Kyron Hayden,kyron hayden,2017,62,North Melbourne
+12757,Brandon Zerk-Thatcher,brandon zerk-thatcher,2017,66,Essendon
+12710,Dylan Moore,dylan moore,2017,67,Hawthorn
+12751,Angus Schumacher,angus schumacher,2017,70,Carlton
+12685,Sam Walsh,sam walsh,2018,1,Carlton
+12703,Jack Lukosius,jack lukosius,2018,2,Gold Coast
+12696,Connor Rozee,connor rozee,2018,5,Port Adelaide
+12728,Ben King,ben king,2018,6,Gold Coast
+12698,Bailey Smith,bailey smith,2018,7,Western Bulldogs
+12707,Tarryn Thomas,tarryn thomas,2018,8,North Melbourne
+12697,Chayce Jones,chayce jones,2018,9,Adelaide
+12699,Nick Blakey,nick blakey,2018,10,Sydney
+12752,Jye Caldwell,jye caldwell,2018,11,Greater Western Sydney
+12693,Zak Butters,zak butters,2018,12,Port Adelaide
+12740,Isaac Quaynor,isaac quaynor,2018,13,Collingwood
+12714,Jackson Hately,jackson hately,2018,14,Greater Western Sydney
+12688,Jordan Clark,jordan clark,2018,15,Geelong
+12695,Xavier Duursma,xavier duursma,2018,18,Port Adelaide
+12721,Liam Stocker,liam stocker,2018,19,Carlton
+12744,Bobby Hill,bobby hill,2018,24,Greater Western Sydney
+12715,James Rowbottom,james rowbottom,2018,25,Sydney
+12748,Rhylee West,rhylee west,2018,26,Western Bulldogs
+12692,Tom Sparrow,tom sparrow,2018,27,Melbourne
+12736,Jarrod Cameron,jarrod cameron,2018,39,West Coast
+12712,Jack Ross,jack ross,2018,43,Richmond
+12711,Justin McInerney,justin mcinerney,2018,44,Sydney
+12722,Curtis Taylor,curtis taylor,2018,46,North Melbourne
+12700,Matthew Parker,matthew parker,2018,47,St Kilda
+12705,Bailey Scott,bailey scott,2018,49,North Melbourne
+12734,Nick Hind,nick hind,2018,54,St Kilda
+12719,Noah Answerth,noah answerth,2018,55,Brisbane Lions
+12691,Marty Hore,marty hore,2018,56,Melbourne
+12704,Lachie Schultz,lachie schultz,2018,57,Fremantle
+12731,Brett Bewley,brett bewley,2018,59,Fremantle
+12749,Connor Idun,connor idun,2018,61,Greater Western Sydney
+12726,Darcy Fort,darcy fort,2018,65,Geelong
+12724,Robbie Young,robbie young,2018,67,St Kilda
+12755,Caleb Graham,caleb graham,2018,71,Gold Coast
+12713,Brayden Ham,brayden ham,2018,72,Essendon
+12716,Will Hayes,will hayes,2018,78,Western Bulldogs
+12797,Izak Rankine,izak rankine,2018,3,Gold Coast
+12771,Max King,max king,2018,4,St Kilda
+12780,Ned McHenry,ned mchenry,2018,16,Adelaide
+12764,Sam Sturt,sam sturt,2018,17,Fremantle
+12822,Xavier O'Halloran,xavier o'halloran,2018,22,Greater Western Sydney
+12834,Xavier O'Neill,xavier o'neill,2018,28,West Coast
+12792,Will Kelly,will kelly,2018,29,Collingwood
+12783,Will Hamill,will hamill,2018,30,Adelaide
+12848,Luke Foley,luke foley,2018,31,West Coast
+12781,Laitham Vandermeer,laitham vandermeer,2018,37,Western Bulldogs
+12830,Irving Mosquito,irving mosquito,2018,38,Essendon
+12824,Jack Bytel,jack bytel,2018,41,St Kilda
+12762,Ben Cavarra,ben cavarra,2018,45,Western Bulldogs
+12844,Ben Jarvis,ben jarvis,2018,48,Geelong
+12826,Zac Foot,zac foot,2018,51,Sydney
+12818,Lachlan Sholl,lachlan sholl,2018,64,Adelaide
+12773,Toby Bedford,toby bedford,2018,75,Melbourne
+12814,Boyd Woodcock,boyd woodcock,2018,76,Port Adelaide
+12793,Atu Bosenavulagi,atu bosenavulagi,2018,77,Collingwood
+12769,Matt Rowell,matt rowell,2019,1,Gold Coast
+12767,Noah Anderson,noah anderson,2019,2,Gold Coast
+12779,Luke Jackson,luke jackson,2019,3,Melbourne
+12782,Lachie Ash,lachie ash,2019,4,Greater Western Sydney
+12798,Dylan Stephens,dylan stephens,2019,5,Sydney
+12765,Fischer McAsey,fischer mcasey,2019,6,Adelaide
+12777,Hayden Young,hayden young,2019,7,Fremantle
+12786,Caleb Serong,caleb serong,2019,8,Fremantle
+12831,Liam Henry,liam henry,2019,9,Fremantle
+12766,Tom Green,tom green,2019,10,Greater Western Sydney
+12825,Sam Flanders,sam flanders,2019,11,Gold Coast
+12774,Kysaiah Pickett,kysaiah pickett,2019,12,Melbourne
+12794,Will Day,will day,2019,13,Hawthorn
+12801,Cody Weightman,cody weightman,2019,15,Western Bulldogs
+12770,Mitch Georgiades,mitch georgiades,2019,18,Port Adelaide
+12785,Sam Philp,sam philp,2019,20,Carlton
+12836,Thomson Dow,thomson dow,2019,21,Richmond
+12772,Deven Robertson,deven robertson,2019,22,Brisbane Lions
+12817,Harry Schoenberg,harry schoenberg,2019,24,Adelaide
+12821,Jeremy Sharp,jeremy sharp,2019,27,Gold Coast
+12846,Finn Maginness,finn maginness,2019,29,Hawthorn
+12778,Trent Rivers,trent rivers,2019,32,Melbourne
+12788,Jack Mahony,jack mahony,2019,34,North Melbourne
+12840,Flynn Perez,flynn perez,2019,35,North Melbourne
+12802,Elijah Taylor,elijah taylor,2019,36,Sydney
+12838,Keidean Coleman,keidean coleman,2019,37,Brisbane Lions
+12799,Chad Warner,chad warner,2019,39,Sydney
+12835,Jake Riccardi,jake riccardi,2019,51,Greater Western Sydney
+12804,Ryan Byrnes,ryan byrnes,2019,52,St Kilda
+12784,Louis Butler,louis butler,2019,53,Western Bulldogs
+12819,Trey Ruscoe,trey ruscoe,2019,55,Collingwood
+12800,Ned Cahill,ned cahill,2019,56,Essendon
+12795,Josh Morris,josh morris,2019,57,Hawthorn
+12849,Jy Farrar,jy farrar,2019,60,Gold Coast
+12803,Michael Frederick,michael frederick,2019,61,Fremantle
+12827,Tom Hutchesson,tom hutchesson,2019,65,Greater Western Sydney
+12868,Miles Bergman,miles bergman,2019,14,Port Adelaide
+12938,Brodie Kemp,brodie kemp,2019,17,Carlton
+12892,Sam De Koning,sam de koning,2019,19,Geelong
+12920,Dylan Williams,dylan williams,2019,23,Port Adelaide
+12916,Josh Worrell,josh worrell,2019,28,Adelaide
+12857,Harrison Jones,harrison jones,2019,30,Essendon
+12939,Charlie Comben,charlie comben,2019,31,North Melbourne
+12900,Nick Bryan,nick bryan,2019,38,Essendon
+12894,Jay Rantall,jay rantall,2019,40,Collingwood
+12873,Francis Evans,francis evans,2019,41,Geelong
+12906,Ronin O'Connor,ronin o'connor,2019,42,Adelaide
+12885,Will Martyn,will martyn,2019,44,Richmond
+12909,Trent Bianco,trent bianco,2019,45,Collingwood
+12904,Hugo Ralphsmith,hugo ralphsmith,2019,46,Richmond
+12942,Lachlan Gollant,lachlan gollant,2019,48,Adelaide
+12874,Jaxon Prior,jaxon prior,2019,59,Brisbane Lions
+12908,Riley Garcia,riley garcia,2019,62,Western Bulldogs
+12919,Leo Connolly,leo connolly,2019,64,St Kilda
+12924,Jamarra Ugle-Hagan,jamarra ugle-hagan,2020,1,Western Bulldogs
+12893,Riley Thilthorpe,riley thilthorpe,2020,2,Adelaide
+12878,Will Phillips,will phillips,2020,3,North Melbourne
+12863,Logan McDonald,logan mcdonald,2020,4,Sydney
+12865,Braeden Campbell,braeden campbell,2020,5,Sydney
+12921,Denver Grainger-Barras,denver grainger-barras,2020,6,Hawthorn
+12858,Nik Cox,nik cox,2020,8,Essendon
+12880,Archie Perkins,archie perkins,2020,9,Essendon
+12891,Zach Reid,zach reid,2020,10,Essendon
+12922,Luke Pedlar,luke pedlar,2020,11,Adelaide
+12870,Tanner Bruhn,tanner bruhn,2020,12,Greater Western Sydney
+12867,Tom Powell,tom powell,2020,13,North Melbourne
+12876,Heath Chapman,heath chapman,2020,14,Fremantle
+12887,Conor Stone,conor stone,2020,15,Greater Western Sydney
+12883,Lachie Jones,lachie jones,2020,16,Port Adelaide
+12850,Oliver Henry,oliver henry,2020,17,Collingwood
+12889,Finlay Macrae,finlay macrae,2020,19,Collingwood
+12882,Max Holmes,max holmes,2020,20,Geelong
+12933,Jake Bowey,jake bowey,2020,21,Melbourne
+12936,Brayden Cook,brayden cook,2020,25,Adelaide
+12855,Sam Berry,sam berry,2020,28,Adelaide
+12897,Caleb Poulter,caleb poulter,2020,30,Collingwood
+12864,Errol Gulden,errol gulden,2020,32,Sydney
+12859,Connor Downie,connor downie,2020,35,Hawthorn
+12866,Charlie Lazzaro,charlie lazzaro,2020,36,North Melbourne
+12937,Corey Durdin,corey durdin,2020,37,Carlton
+12856,James Rowe,james rowe,2020,38,Adelaide
+12918,Samson Ryan,samson ryan,2020,40,Richmond
+12943,Phoenix Spicer,phoenix spicer,2020,42,North Melbourne
+12862,Harry Sharp,harry sharp,2020,43,Brisbane Lions
+12877,Beau McCreery,beau mccreery,2020,44,Collingwood
+12871,Tom Highmore,tom highmore,2020,45,St Kilda
+12860,Tyler Brockman,tyler brockman,2020,46,Hawthorn
+12915,Brandon Walker,brandon walker,2020,50,Fremantle
+12935,Maurice Rioli,maurice rioli,2020,51,Richmond
+12912,Luke Edwards,luke edwards,2020,52,West Coast
+12914,Joel Western,joel western,2020,54,Fremantle
+12923,Eddie Ford,eddie ford,2020,56,North Melbourne
+12886,Isiah Winder,isiah winder,2020,57,West Coast
+13017,Elijah Hollands,elijah hollands,2020,7,Gold Coast
+13002,Ryan Angwin,ryan angwin,2020,18,Greater Western Sydney
+12966,Reef McInnes,reef mcinnes,2020,23,Collingwood
+12964,Nathan O'Driscoll,nathan o'driscoll,2020,27,Fremantle
+12995,Shannon Neale,shannon neale,2020,33,Geelong
+12980,Jack Carroll,jack carroll,2020,41,Carlton
+13007,Dominic Bedendo,dominic bedendo,2020,55,Western Bulldogs
+12992,Jacob Wehr,jacob wehr,2020,59,Greater Western Sydney
+12955,Jason Horne-Francis,jason horne-francis,2021,1,North Melbourne
+13023,Sam Darcy,sam darcy,2021,2,Western Bulldogs
+12970,Finn Callaghan,finn callaghan,2021,3,Greater Western Sydney
+12948,Nick Daicos,nick daicos,2021,4,Collingwood
+13019,Mac Andrew,mac andrew,2021,5,Gold Coast
+12957,Josh Rachele,josh rachele,2021,6,Adelaide
+12954,Josh Ward,josh ward,2021,7,Hawthorn
+12983,Jye Amiss,jye amiss,2021,8,Fremantle
+12944,Josh Gibcus,josh gibcus,2021,9,Richmond
+12967,Neil Erasmus,neil erasmus,2021,10,Fremantle
+12947,Nasiah Wanganeen-Milera,nasiah wanganeen-milera,2021,11,St Kilda
+12962,Josh Sinn,josh sinn,2021,12,Port Adelaide
+12972,Ben Hobbs,ben hobbs,2021,13,Essendon
+13018,Leek Aleer,leek aleer,2021,15,Greater Western Sydney
+12951,Angus Sheldrick,angus sheldrick,2021,18,Sydney
+12969,Kai Lohmann,kai lohmann,2021,20,Brisbane Lions
+13024,Josh Goater,josh goater,2021,22,North Melbourne
+12989,Sam Butler,sam butler,2021,23,Hawthorn
+12985,Mitch Knevitt,mitch knevitt,2021,25,Geelong
+12953,Connor Macdonald,connor macdonald,2021,26,Hawthorn
+12991,Jesse Motlop,jesse motlop,2021,27,Carlton
+13015,Tyler Sonsie,tyler sonsie,2021,28,Richmond
+12997,Judson Clarke,judson clarke,2021,30,Richmond
+12958,Brady Hough,brady hough,2021,31,West Coast
+12945,Mitch Owens,mitch owens,2021,33,St Kilda
+12993,Matt Roberts,matt roberts,2021,34,Sydney
+12975,Paul Curtis,paul curtis,2021,35,North Melbourne
+12956,Jake Soligo,jake soligo,2021,36,Adelaide
+13001,Rhett Bazzo,rhett bazzo,2021,37,West Coast
+12981,Miller Bergman,miller bergman,2021,38,North Melbourne
+13003,James Tunstill,james tunstill,2021,41,Brisbane Lions
+12986,Alastair Lord,alastair lord,2021,46,Essendon
+12968,Marcus Windhager,marcus windhager,2021,47,St Kilda
+13022,Jai Serong,jai serong,2021,53,Hawthorn
+12960,Jack Williams,jack williams,2021,57,West Coast
+13005,Jackson Archer,jackson archer,2021,59,North Melbourne
+13011,Jase Burgoyne,jase burgoyne,2021,60,Port Adelaide
+12988,Luke Cleary,luke cleary,2021,61,Western Bulldogs
+12977,Greg Clark,greg clark,2021,62,West Coast
+13033,Campbell Chesser,campbell chesser,2021,14,West Coast
+13027,Darcy Wilmot,darcy wilmot,2021,16,Brisbane Lions
+13097,Tom Brown,tom brown,2021,17,Richmond
+13048,Jacob van Rooyen,jacob van rooyen,2021,19,Melbourne
+13095,Toby Conway,toby conway,2021,24,Geelong
+13076,Sam Banks,sam banks,2021,29,Richmond
+13053,Corey Warner,corey warner,2021,40,Sydney
+13068,Josh Fahey,josh fahey,2021,42,Greater Western Sydney
+13047,Arthur Jones,arthur jones,2021,43,Western Bulldogs
+13070,Harvey Harrison,harvey harrison,2021,52,Collingwood
+13074,Dante Visentini,dante visentini,2021,56,Port Adelaide
+13043,Cooper Whyte,cooper whyte,2021,64,Geelong
+13078,Taj Woewodin,taj woewodin,2021,65,Melbourne
+13054,Aaron Cadman,aaron cadman,2022,1,Greater Western Sydney
+13034,Will Ashcroft,will ashcroft,2022,2,Brisbane Lions
+13030,Harry Sheezel,harry sheezel,2022,3,North Melbourne
+13065,George Wardlaw,george wardlaw,2022,4,North Melbourne
+13087,Elijah Tsatas,elijah tsatas,2022,5,Essendon
+13050,Bailey Humphrey,bailey humphrey,2022,6,Gold Coast
+13039,Cam Mackenzie,cam mackenzie,2022,7,Hawthorn
+13062,Jhye Clark,jhye clark,2022,8,Geelong
+13032,Reuben Ginbey,reuben ginbey,2022,9,West Coast
+13042,Mattaes Phillipou,mattaes phillipou,2022,10,St Kilda
+13029,Oliver Hollands,oliver hollands,2022,11,Carlton
+13072,Jaspa Fletcher,jaspa fletcher,2022,12,Brisbane Lions
+13045,Elijah Hewett,elijah hewett,2022,14,West Coast
+13046,Harry Rowston,harry rowston,2022,16,Greater Western Sydney
+13038,Max Michalanney,max michalanney,2022,17,Adelaide
+13059,Josh Weddle,josh weddle,2022,18,Hawthorn
+13075,Harry Barnett,harry barnett,2022,23,West Coast
+13090,Jakob Ryan,jakob ryan,2022,28,Collingwood
+13089,Toby McMullin,toby mcmullin,2022,34,Greater Western Sydney
+13092,Henry Hustwaite,henry hustwaite,2022,37,Hawthorn
+13093,Tom Emmett,tom emmett,2022,41,Fremantle
+13069,Bailey Macdonald,bailey macdonald,2022,51,Hawthorn
+13079,Cooper Harvey,cooper harvey,2022,56,North Melbourne
+13031,Noah Long,noah long,2022,58,West Coast
+13128,Darcy Jones,darcy jones,2022,21,Greater Western Sydney
+13156,Max Gruzewski,max gruzewski,2022,22,Greater Western Sydney
+13136,Charlie Clarke,charlie clarke,2022,24,Western Bulldogs
+13130,Jaxon Binns,jaxon binns,2022,32,Carlton
+13159,Hugh Davies,hugh davies,2022,33,Fremantle
+13110,Harvey Gallagher,harvey gallagher,2022,39,Western Bulldogs
+13117,Caleb Mitchell,caleb mitchell,2022,40,Sydney
+13151,Billy Dowling,billy dowling,2022,43,Adelaide
+13141,Joe Richards,joe richards,2022,48,Collingwood
+13150,Kaleb Smith,kaleb smith,2022,49,Richmond
+13166,Hugh Bond,hugh bond,2022,50,Adelaide
+13144,Steely Green,steely green,2022,55,Richmond
+13112,Harley Reid,harley reid,2023,1,West Coast
+13105,Colby McKercher,colby mckercher,2023,2,North Melbourne
+13114,Jed Walter,jed walter,2023,3,Gold Coast
+13104,Zane Duursma,zane duursma,2023,4,North Melbourne
+13103,Nick Watson,nick watson,2023,5,Hawthorn
+13111,Ryley Sanders,ryley sanders,2023,6,Western Bulldogs
+13099,Caleb Windsor,caleb windsor,2023,7,Melbourne
+13121,Ethan Read,ethan read,2023,9,Gold Coast
+13149,Nate Caddy,nate caddy,2023,10,Essendon
+13125,Connor O'Sullivan,connor o'sullivan,2023,11,Geelong
+13123,Koltyn Tholstrup,koltyn tholstrup,2023,13,Melbourne
+13127,Jake Rogers,jake rogers,2023,14,Gold Coast
+13109,Darcy Wilson,darcy wilson,2023,18,St Kilda
+13145,Wil Dawson,wil dawson,2023,22,North Melbourne
+13129,Riley Hardeman,riley hardeman,2023,23,North Melbourne
+13157,Caiden Cleary,caiden cleary,2023,24,Sydney
+13120,Will Graham,will graham,2023,26,Gold Coast
+13108,Lance Collard,lance collard,2023,28,St Kilda
+13172,Ashton Moir,ashton moir,2023,29,Carlton
+13138,Logan Morris,logan morris,2023,31,Brisbane Lions
+13116,Angus Hastie,angus hastie,2023,33,St Kilda
+13131,Cooper Simpson,cooper simpson,2023,35,Fremantle
+13107,Shaun Mannagh,shaun mannagh,2023,36,Geelong
+13154,Tew Jiath,tew jiath,2023,37,Collingwood
+13168,Clay Hall,clay hall,2023,38,West Coast
+13122,Kane McAuliffe,kane mcauliffe,2023,40,Richmond
+13165,Joe Fonti,joe fonti,2023,44,Greater Western Sydney
+13140,Joel Freijah,joel freijah,2023,45,Western Bulldogs
+13135,Harvey Johnston,harvey johnston,2023,49,West Coast
+13124,Hugo Garcia,hugo garcia,2023,50,St Kilda
+13169,Archie Roberts,archie roberts,2023,54,Essendon
+13137,Calsher Dear,calsher dear,2023,56,Hawthorn
+13163,Will Lorenz,will lorenz,2023,57,Port Adelaide
+13101,Harvey Thomas,harvey thomas,2023,59,Greater Western Sydney
+13153,Arie Schoenmaker,arie schoenmaker,2023,62,St Kilda
+13162,Lawson Humphries,lawson humphries,2023,63,Geelong
+,Jonathan O'Rourke,jonathan o'rourke,2012,2,Greater Western Sydney
+,Mason Shaw,mason shaw,2012,30,Port Adelaide
+,Tom Temay,tom temay,2012,35,Carlton
+,Mitchell Wilkins,mitchell wilkins,2012,47,North Melbourne
+,Sam Siggins,sam siggins,2012,62,Adelaide
+,Sean Gregory,sean gregory,2012,88,Essendon
+,Cameron McCarthy,cameron mccarthy,2013,14,Greater Western Sydney
+,Dayle Garlett,dayle garlett,2013,38,Hawthorn
+,Cameron Giles,cameron giles,2013,39,Carlton
+,Jay Kennedy-Harris,jay kennedy-harris,2013,40,Melbourne
+,Matt Fuller,matt fuller,2013,42,Western Bulldogs
+,Mitchell Harvey,mitchell harvey,2013,45,Port Adelaide
+,Dylan Main,dylan main,2013,49,West Coast
+,Patrick McKenna,patrick mckenna,2014,23,Greater Western Sydney
+,Dillon Viojo-Rainbow,dillon viojo-rainbow,2014,28,Carlton
+,Harrison Wigg,harrison wigg,2014,35,Adelaide
+,Declan Hamilton,declan hamilton,2014,39,Western Bulldogs
+,Dean Gore,dean gore,2014,55,Geelong
+,Harry Dear,harry dear,2014,58,Adelaide
+,Jayden Foster,jayden foster,2014,63,Carlton
+,Josh Watts,josh watts,2014,65,Brisbane Lions
+,Damien Cavka,damien cavka,2014,66,West Coast
+,Abe Davis,abe davis,2014,70,Sydney
+,Reece McKenzie,reece mckenzie,2014,77,Richmond
+,Josh McGuinness,josh mcguinness,2014,81,Brisbane Lions
+,Mitch Hibberd,mitch hibberd,2015,33,North Melbourne
+,Matthew Flynn,matthew flynn,2015,41,Greater Western Sydney
+,Mitch King,mitch king,2015,42,Melbourne
+,Liam Hulett,liam hulett,2015,46,Melbourne
+,Tyrone Leonardis,tyrone leonardis,2015,51,Sydney
+,Matthew Allen,matthew allen,2015,62,West Coast
+,Yestin Eades,yestin eades,2015,64,Essendon
+,Matthew Hayball,matthew hayball,2015,70,Geelong
+,Sam McLarty,sam mclarty,2016,30,Collingwood
+,Declan Watson,declan watson,2016,34,North Melbourne
+,Jack Maibaum,jack maibaum,2016,45,Sydney
+,Elliot Himmelberg,elliot himmelberg,2016,51,Adelaide
+,Lachie Tiziani,lachie tiziani,2016,54,Greater Western Sydney
+,Tom Williamson,tom williamson,2016,61,Carlton
+,Matt Signorello,matt signorello,2016,62,Adelaide
+,Dion Johnstone,dion johnstone,2016,64,Melbourne
+,Patrick Kerr,patrick kerr,2016,65,Carlton
+,Timm House,timm house,2016,68,Geelong
+,Corey Lyons,corey lyons,2016,71,Brisbane Lions
+,Matt Ling,matt ling,2017,14,Sydney
+,Lachlan Fogarty,lachlan fogarty,2017,22,Geelong
+,Toby Wooller,toby wooller,2017,41,Brisbane Lions
+,Jordan Houlahan,jordan houlahan,2017,49,Essendon
+,Connor Nutting,connor nutting,2017,55,Gold Coast
+,Jake Patmore,jake patmore,2017,58,Port Adelaide
+,Tom North,tom north,2017,65,Fremantle
+,Jackson Ross,jackson ross,2017,71,Hawthorn
+,Ely Smith,ely smith,2018,21,Brisbane Lions
+,Jez McLennan,jez mclennan,2018,23,Gold Coast
+,Luke Valente,luke valente,2018,32,Fremantle
+,Tom Berry,tom berry,2018,36,Brisbane Lions
+,Thomas Joyce,thomas joyce,2018,40,Brisbane Lions
+,Connor McFadyen,connor mcfadyen,2018,42,Brisbane Lions
+,Jacob Kennerley,jacob kennerley,2018,50,Geelong
+,Aaron Nietschke,aaron nietschke,2018,53,Melbourne
+,Fraser Turner,fraser turner,2018,58,Richmond
+,Noah Gown,noah gown,2018,60,Essendon
+,Luke English,luke english,2018,62,Richmond
+,Mathew Walker,mathew walker,2018,63,Hawthorn
+,Finbar O'Dwyer,finbar o'dwyer,2018,66,Carlton
+,Jake Tarca,jake tarca,2018,68,Geelong
+,Joel Crocker,joel crocker,2018,69,North Melbourne
+,Ben Silvagni,ben silvagni,2018,70,Carlton
+,Riley Grundy,riley grundy,2018,73,Port Adelaide
+,Oscar Brownless,oscar brownless,2018,74,Geelong
+,Brock Smith,brock smith,2019,33,Brisbane Lions
+,Sam Ramsay,sam ramsay,2019,47,Carlton
+,Cameron Taheny,cameron taheny,2019,50,Geelong
+,Lachlan Johnson,lachlan johnson,2019,63,Essendon
+,Blake Coleman,blake coleman,2020,24,Brisbane Lions
+,Matt Allison,matt allison,2020,26,St Kilda
+,Liam McMahon,liam mcmahon,2020,31,Collingwood
+,Fraser Rosman,fraser rosman,2020,34,Melbourne
+,Josh Eyre,josh eyre,2020,39,Essendon
+,Nick Stevens,nick stevens,2020,47,Geelong
+,Cody Brand,cody brand,2020,53,Essendon
+,Matt Johnson,matt johnson,2021,21,Fremantle
+,James Willis,james willis,2021,32,Geelong
+,Arlo Draper,arlo draper,2021,45,Collingwood
+,Flynn Kroeger,flynn kroeger,2021,48,Geelong
+,Cooper Murley,cooper murley,2021,49,Collingwood
+,Garrett McDonagh,garrett mcdonagh,2021,50,Essendon
+,Oscar Adams,oscar adams,2021,51,St Kilda
+,Eric Benning,eric benning,2021,54,Fremantle
+,Hugh Jackson,hugh jackson,2021,55,Port Adelaide
+,Lachlan Rankin,lachlan rankin,2021,58,Sydney
+,Jedd Busslinger,jedd busslinger,2022,13,Western Bulldogs
+,Matthew Jefferson,matthew jefferson,2022,15,Melbourne
+,Ed Allan,ed allan,2022,19,Collingwood
+,Jacob Konstanty,jacob konstanty,2022,20,Sydney
+,Lewis Hayes,lewis hayes,2022,25,Essendon
+,Brayden George,brayden george,2022,26,North Melbourne
+,Cooper Vickery,cooper vickery,2022,27,Sydney
+,Coby Burgiel,coby burgiel,2022,29,West Coast
+,Lachie Cowan,lachie cowan,2022,30,Carlton
+,James Van Es,james van es,2022,31,St Kilda
+,Olli Hotton,olli hotton,2022,35,St Kilda
+,Tom McCallum,tom mccallum,2022,36,Port Adelaide
+,Jed Adams,jed adams,2022,38,Melbourne
+,Max Knobel,max knobel,2022,42,Fremantle
+,Isaac Keeler,isaac keeler,2022,44,St Kilda
+,Jack O'Sullivan,jack o'sullivan,2022,46,Hawthorn
+,Harry Lemmey,harry lemmey,2022,47,Carlton
+,Phoenix Foster,phoenix foster,2022,52,Geelong
+,Thomas Scully,thomas scully,2022,53,Port Adelaide
+,Jayden Davey,jayden davey,2022,54,Essendon
+,Kyle Marshall,kyle marshall,2022,59,Port Adelaide
+,Dan Curtin,dan curtin,2023,8,Adelaide
+,Phoenix Gothard,phoenix gothard,2023,12,Greater Western Sydney
+,Jordan Croft,jordan croft,2023,15,Western Bulldogs
+,Will Green,will green,2023,16,Sydney
+,James Leake,james leake,2023,17,Greater Western Sydney
+,Will McCabe,will mccabe,2023,19,Hawthorn
+,Taylor Goad,taylor goad,2023,20,North Melbourne
+,Charlie Edwards,charlie edwards,2023,21,Adelaide
+,Harry Demattia,harry demattia,2023,25,Collingwood
+,Oscar Ryan,oscar ryan,2023,27,Adelaide
+,Archer Reid,archer reid,2023,30,West Coast
+,Mitch Edwards,mitch edwards,2023,32,Geelong
+,Billy Wilson,billy wilson,2023,34,Carlton
+,Luamon Lual,luamon lual,2023,39,Essendon
+,Ollie Murphy,ollie murphy,2023,41,Fremantle
+,Luke Lloyd,luke lloyd,2023,42,Brisbane Lions
+,Liam Fawcett,liam fawcett,2023,43,Richmond
+,Bodie Ryan,bodie ryan,2023,46,Hawthorn
+,Lachlan Smith,lachlan smith,2023,47,Western Bulldogs
+,Tom Anastasopoulos,tom anastasopoulos,2023,48,Port Adelaide
+,Zane Zakostelsky,zane zakostelsky,2023,51,Brisbane Lions
+,Lachlan Charleson,lachlan charleson,2023,52,Port Adelaide
+,Patrick Snell,patrick snell,2023,53,Sydney
+,Aiden O'Driscoll,aiden o'driscoll,2023,55,Western Bulldogs
+,George Stevens,george stevens,2023,58,Geelong
+,Jack Delean,jack delean,2023,60,Fremantle
+,Oli Wiltshire,oli wiltshire,2023,61,Geelong
+,Reece Torrent,reece torrent,2023,64,Brisbane Lions
+,Sam Lalor,sam lalor,2024,1,Richmond
+,Finn O'Sullivan,finn o'sullivan,2024,2,North Melbourne
+,Jagga Smith,jagga smith,2024,3,Carlton
+,Sid Draper,sid draper,2024,4,Adelaide
+,Levi Ashcroft,levi ashcroft,2024,5,Brisbane Lions
+,Harvey Langford,harvey langford,2024,6,Melbourne
+,Josh Smillie,josh smillie,2024,7,Richmond
+,Tobie Travaglia,tobie travaglia,2024,8,St Kilda
+,Leo Lombard,leo lombard,2024,9,Gold Coast
+,Alix Tauru,alix tauru,2024,10,St Kilda
+,Xavier Lindsay,xavier lindsay,2024,11,Melbourne
+,Taj Hotton,taj hotton,2024,12,Richmond
+,Isaac Kako,isaac kako,2024,13,Essendon
+,Jonty Faull,jonty faull,2024,14,Richmond
+,Joe Berry,joe berry,2024,15,Port Adelaide
+,Bo Allan,bo allan,2024,16,West Coast
+,Murphy Reid,murphy reid,2024,17,Fremantle
+,Ollie Hannaford,ollie hannaford,2024,18,Greater Western Sydney
+,Harry Oliver,harry oliver,2024,19,Greater Western Sydney
+,Cooper Hynes,cooper hynes,2024,20,Western Bulldogs
+,Luke Trainor,luke trainor,2024,21,Richmond
+,Jesse Dattoli,jesse dattoli,2024,22,Sydney
+,Harry Armstrong,harry armstrong,2024,23,Richmond
+,Cody Angove,cody angove,2024,24,Greater Western Sydney
+,Sam Marshall,sam marshall,2024,25,Brisbane Lions
+,Ned Bowman,ned bowman,2024,26,Sydney
+,Matt Whitlock,matt whitlock,2024,27,North Melbourne
+,Tom Sims,tom sims,2024,28,Richmond
+,Lachie Jaques,lachie jaques,2024,29,Western Bulldogs
+,Jobe Shanahan,jobe shanahan,2024,30,West Coast
+,Josh Dolan,josh dolan,2024,31,Western Bulldogs
+,James Barrat,james barrat,2024,32,St Kilda
+,Jack Whitlock,jack whitlock,2024,33,Port Adelaide
+,Charlie Nicholls,charlie nicholls,2024,34,Fremantle
+,Noah Mraz,noah mraz,2024,35,Hawthorn
+,Jack Ough,jack ough,2024,36,Greater Western Sydney
+,Kayle Gerreyn,kayle gerreyn,2024,37,Essendon
+,Christian Moraes,christian moraes,2024,38,Port Adelaide
+,Angus Clarke,angus clarke,2024,39,Essendon
+,Harry O'Farrell,harry o'farrell,2024,40,Carlton
+,Riley Bice,riley bice,2024,41,Sydney
+,Ty Gallop,ty gallop,2024,42,Brisbane Lions
+,Ben Camporeale,ben camporeale,2024,43,Carlton
+,Jay Polkinghorne,jay polkinghorne,2024,44,Geelong
+,Hugh Boxshall,hugh boxshall,2024,45,St Kilda
+,Tom Gross,tom gross,2024,46,West Coast
+,Joel Cochran,joel cochran,2024,47,Collingwood
+,Lucca Grego,lucca grego,2024,48,West Coast
+,Cooper Bell,cooper bell,2024,49,Gold Coast
+,Charlie West,charlie west,2024,50,Collingwood
+,Sam Davidson,sam davidson,2024,51,Western Bulldogs
+,Jacob Molier,jacob molier,2024,52,Geelong
+,Alex Dodson,alex dodson,2024,53,St Kilda
+,Lucas Camporeale,lucas camporeale,2024,54,Carlton
+,Riak Andrew,riak andrew,2024,55,Sydney
+,Luke Urquhart,luke urquhart,2024,57,North Melbourne
+,Jasper Alger,jasper alger,2024,58,Richmond
+,Tyler Welsh,tyler welsh,2024,59,Adelaide
+,Patrick Said,patrick said,2024,60,St Kilda
+,Rhys Unwin,rhys unwin,2024,61,Essendon
+,Luke Kennedy,luke kennedy,2024,62,Western Bulldogs
+,Jaren Carr,jaren carr,2024,63,Fremantle
+,Cody Anderson,cody anderson,2024,64,Hawthorn
+,Hamish Davis,hamish davis,2024,65,West Coast
+,Lennox Hofmann,lennox hofmann,2024,66,Geelong
+,River Stevens,river stevens,2024,67,North Melbourne
+,Aidan Johnson,aidan johnson,2024,68,Melbourne
+,Keighton Matofai-Forbes,keighton matofai-forbes,2024,69,Geelong
+,Zak Johnson,zak johnson,2024,70,Essendon
+,Logan Smith,logan smith,2024,71,Greater Western Sydney
+11548,Mitch Brown,mitch brown,2015,54,Essendon
+11753,Matt de Boer,matt de boer,2016,58,Greater Western Sydney
+11020,Ben Johnson,ben johnson,2019,58,West Coast
+11550,Alwyn Davey,alwyn davey,2022,45,Essendon
+12300,Dom Barry,dom barry,2017,61,Port Adelaide
+12281,Billy Hartung,billy hartung,2017,77,North Melbourne
+12324,Kamdyn McIntosh,kamdyn mcintosh,2012,31,Richmond
+12363,Liam McBean,liam mcbean,2012,33,Richmond
+12386,Josh Prudden,josh prudden,2012,50,Western Bulldogs
+12351,Matthew Dick,matthew dick,2012,64,Sydney
+12389,Rory Atkins,rory atkins,2012,81,Adelaide
+12328,Jarrod Garlett,jarrod garlett,2017,78,Carlton
+12452,Harrison Marsh,harrison marsh,2012,44,Sydney
+12443,Kaiden Brand,kaiden brand,2012,66,Hawthorn
+12459,Lewis Pierce,lewis pierce,2012,75,St Kilda
+12479,Malcolm Karpany,malcolm karpany,2013,31,West Coast
+12417,George Hewett,george hewett,2013,32,Sydney
+12456,Jarrad Jansen,jarrad jansen,2013,36,Geelong
+12442,Aliir Aliir,aliir aliir,2013,44,Sydney
+12429,Darcy Byrne-Jones,darcy byrne-jones,2013,52,Port Adelaide
+12433,Jayden Hunt,jayden hunt,2013,57,Melbourne
+12449,Bailey Williams,bailey williams,2018,35,West Coast
+12461,Corey Wagner,corey wagner,2022,57,Fremantle
+12497,Jarrod Pickett,jarrod pickett,2014,4,Greater Western Sydney
+12520,Sam Durdin,sam durdin,2014,16,North Melbourne
+12562,Dan Nielson,dan nielson,2014,25,North Melbourne
+12534,Ed Vickers-Willis,ed vickers-willis,2014,36,North Melbourne
+12518,Teia Miles,teia miles,2014,49,Hawthorn
+12545,Jordan Cunico,jordan cunico,2014,59,Geelong
+12498,Dan Butler,dan butler,2014,67,Richmond
+12556,Josh Deluca,josh deluca,2014,68,Fremantle
+12557,Jeremy Finlayson,jeremy finlayson,2014,85,Greater Western Sydney
+12675,Nathan Freeman,nathan freeman,2013,10,Collingwood
+12646,Paul Ahern,paul ahern,2014,7,Greater Western Sydney
+12682,Billy Frampton,billy frampton,2014,84,Port Adelaide
+12590,Tom Doedee,tom doedee,2015,17,Adelaide
+12664,Alex Morgan,alex morgan,2015,29,Essendon
+12659,Brayden Sier,brayden sier,2015,32,Collingwood
+12641,Bailey Rice,bailey rice,2015,49,St Kilda
+12732,Ryan Gardner,ryan gardner,2015,59,Geelong
+12694,Willem Drew,willem drew,2016,33,Port Adelaide
+12709,Josh Rotham,josh rotham,2016,37,West Coast
+12737,Ben Davis,ben davis,2016,75,Adelaide
+12689,Charlie Constable,charlie constable,2021,63,Gold Coast
+12716,Will Hayes,will hayes,2024,56,Collingwood
+12796,Andrew McPherson,andrew mcpherson,2017,40,Adelaide
+12810,Connor Ballenden,connor ballenden,2017,43,Brisbane Lions
+12763,Tyler Brown,tyler brown,2017,50,Collingwood
+12815,Jack Payne,jack payne,2017,54,Brisbane Lions
+12843,Hamish Brayshaw,hamish brayshaw,2017,68,West Coast
+12789,Tristan Xerri,tristan xerri,2017,72,North Melbourne
+12805,Callum Porter,callum porter,2017,74,Western Bulldogs
+12879,Alec Waterman,alec waterman,2014,76,West Coast
+12910,Callum Brown,callum brown,2016,35,Collingwood
+12911,Oscar Clavarino,oscar clavarino,2017,35,St Kilda
+12940,Ben Miller,ben miller,2017,63,Richmond
+12854,Lloyd Meek,lloyd meek,2017,69,Fremantle
+12896,Riley Collier-Dawkins,riley collier-dawkins,2018,20,Richmond
+12853,James Jordon,james jordon,2018,33,Melbourne
+12905,Kieren Briggs,kieren briggs,2018,34,Greater Western Sydney
+12861,Jacob Koschitzke,jacob koschitzke,2018,52,Hawthorn
+12971,Sam Hayes,sam hayes,2017,47,Port Adelaide
+12984,Cooper Stephens,cooper stephens,2019,16,Geelong
+12952,Jackson Mead,jackson mead,2019,25,Port Adelaide
+12994,Noah Cumberland,noah cumberland,2019,43,Richmond
+12959,Callum Jamieson,callum jamieson,2019,49,West Coast
+12990,Bigoa Nyuon,bigoa nyuon,2019,54,Richmond
+13052,Will Gould,will gould,2019,26,Sydney
+13035,Bailey Laurie,bailey laurie,2020,22,Melbourne
+13055,Seamus Mitchell,seamus mitchell,2020,29,Hawthorn
+13056,Ollie Lord,ollie lord,2020,49,Port Adelaide
+13064,Cameron Fleeton,cameron fleeton,2020,58,Greater Western Sydney
+13167,Henry Smith,henry smith,2020,48,Brisbane Lions
+13098,Blake Howes,blake howes,2021,39,Melbourne
+13161,Zac Taylor,zac taylor,2021,44,Adelaide

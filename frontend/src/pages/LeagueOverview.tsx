@@ -23,10 +23,18 @@ export default function LeagueOverview() {
         subtitle="Which clubs lose the most player value to unavailability, and who beats injury-adjusted expectations?"
       />
       <FilterBar />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
         <StatCard label="Avg unavailable PVS / club" value={leagueOverview.avgUnavailableValue} accent="gold" />
         <StatCard label="Above expectation" value={leagueOverview.clubsAboveExpectation} hint="Outperform injury model" accent="green" />
         <StatCard label="Below expectation" value={leagueOverview.clubsBelowExpectation} accent="red" />
+        {leagueOverview.totalVflOnlyPvs != null && (
+          <StatCard
+            label="VFL-only PVS"
+            value={leagueOverview.totalVflOnlyPvs}
+            hint="Played reserves, not AFL"
+            accent="gold"
+          />
+        )}
         <StatCard
           label="Unavailable ↔ wins"
           value={leagueOverview.correlationUnavailableToWins.toFixed(2)}

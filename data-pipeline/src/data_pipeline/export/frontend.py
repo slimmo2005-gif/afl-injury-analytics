@@ -113,7 +113,7 @@ def build_season_bundle(
         SELECT
             a.player_name AS player,
             a.team AS club,
-            a.status,
+            MAX(a.status) AS status,
             COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
             MAX(v.pvs) AS pvs,
             SUM(CASE WHEN NOT a.afl_played THEN v.pvs ELSE 0 END) AS unavailable_pvs
@@ -121,13 +121,21 @@ def build_season_bundle(
         JOIN player_value v
             ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
         WHERE a.season = ?
-        GROUP BY a.player_id, a.player_name, a.team, a.status
+        GROUP BY a.player_id, a.player_name, a.team
         HAVING rounds_missed > 0
         ORDER BY unavailable_pvs DESC
         LIMIT 10
         """,
         [season],
     ).df()
+
+    vfl_summary = con.execute(
+        """
+        SELECT COALESCE(SUM(unavailable_pvs_vfl_only), 0)
+        FROM team_round_value WHERE season = ?
+        """,
+        [season],
+    ).fetchone()[0]
 
     continuity = continuity_for_season(con, season)
 
@@ -177,6 +185,7 @@ def build_season_bundle(
     return {
         "leagueOverview": {
             "avgUnavailableValue": round(avg_unavail, 1),
+            "totalVflOnlyPvs": round(float(vfl_summary), 1),
             "clubsAboveExpectation": above,
             "clubsBelowExpectation": below,
             "topUnavailableClub": str(club_season.iloc[0]["club"]),
@@ -258,8 +267,8 @@ def build_metrics_bundle(
                 max((r["round"] for r in primary["clubUnavailableByRound"]), default=0)
             ),
             "generatedAt": datetime.now(timezone.utc).isoformat(),
-            "note": f"Phase 2 — PVS-weighted unavailability ({primary_key})",
-            "dataSource": "Squiggle + Fryzigg",
+            "note": f"Phase 2 — PVS + national draft + VFL ({primary_key})",
+            "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
             "defaultSeason": int(primary_key),
             "seasons": [int(s) for s in season_bundles.keys()],
         },

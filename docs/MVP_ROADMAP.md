@@ -33,7 +33,13 @@
 5. Wire charts + season/club filters ✅
 6. Weekly `data-refresh.yml` ✅
 
-**Remaining:** VFL data, real draft CSV enrichment, ladder-adjusted residuals, exact archetype from tracking
+**Remaining:** VFL 2012–2020 (source gap), ladder-adjusted residuals, exact archetype from tracking
+
+### Draft + VFL integration ✅
+
+- National draft scraped from Draftguru → `draft_picks` table + `shared/data/draft_picks.csv`
+- VFL box scores from vfl.aflmstats.com (2021–2024) → `vfl_only` status on availability
+- PVS potential component uses real draft pick when matched (~76% link rate)
 
 ## Suggested first ETL tasks
 

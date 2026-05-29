@@ -46,7 +46,7 @@ export default function PlayerExplorer() {
         </table>
       </div>
       <p className="text-xs text-slate-600 mt-4">
-        Availability inferred from AFL participation — not official injury lists (Phase 1).
+        Status: AFL played, VFL-only (reserves), intermittent, or unavailable. Draft picks from Draftguru.
       </p>
     </>
   )

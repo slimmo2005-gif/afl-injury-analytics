@@ -2,9 +2,9 @@
   "meta": {
     "season": 2024,
     "round": 24,
-    "generatedAt": "2026-05-29T01:02:27.032362+00:00",
-    "note": "Phase 2 \u2014 PVS-weighted unavailability (2024)",
-    "dataSource": "Squiggle + Fryzigg",
+    "generatedAt": "2026-05-29T01:29:58.427865+00:00",
+    "note": "Phase 2 \u2014 PVS + national draft + VFL (2024)",
+    "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
     "defaultSeason": 2024,
     "seasons": [
       2012,
@@ -25,7 +25,8 @@
   "seasons": {
     "2012": {
       "leagueOverview": {
-        "avgUnavailableValue": 46.9,
+        "avgUnavailableValue": 46.8,
+        "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 8,
         "clubsBelowExpectation": 8,
         "topUnavailableClub": "Greater Western Sydney",
@@ -200,9 +201,9 @@
           "club": "Collingwood",
           "unavailableValue": 1049.7,
           "unavailableTop5": 352.2,
-          "expectedWins": 11.4,
+          "expectedWins": 11.3,
           "actualWins": 16,
-          "delta": 4.6
+          "delta": 4.7
         },
         {
           "club": "Essendon",
@@ -230,11 +231,11 @@
         },
         {
           "club": "Gold Coast",
-          "unavailableValue": 1476.1,
+          "unavailableValue": 1455.7,
           "unavailableTop5": 347.2,
-          "expectedWins": 5.2,
+          "expectedWins": 5.5,
           "actualWins": 3,
-          "delta": -2.2
+          "delta": -2.5
         },
         {
           "club": "Greater Western Sydney",
@@ -264,17 +265,17 @@
           "club": "North Melbourne",
           "unavailableValue": 869.3,
           "unavailableTop5": 354.3,
-          "expectedWins": 14.0,
+          "expectedWins": 13.9,
           "actualWins": 14,
-          "delta": 0.0
+          "delta": 0.1
         },
         {
           "club": "Port Adelaide",
-          "unavailableValue": 958.5,
-          "unavailableTop5": 343.7,
-          "expectedWins": 12.7,
+          "unavailableValue": 949.9,
+          "unavailableTop5": 343.3,
+          "expectedWins": 12.8,
           "actualWins": 5,
-          "delta": -7.7
+          "delta": -7.8
         },
         {
           "club": "Richmond",
@@ -296,9 +297,9 @@
           "club": "Sydney",
           "unavailableValue": 653.0,
           "unavailableTop5": 339.7,
-          "expectedWins": 17.1,
+          "expectedWins": 17.0,
           "actualWins": 16,
-          "delta": -1.1
+          "delta": -1.0
         },
         {
           "club": "West Coast",
@@ -324,6 +325,14 @@
           "roundsMissed": 22,
           "pvs": 3.2,
           "unavailablePvs": 70.4,
+          "status": "unavailable"
+        },
+        {
+          "player": "Jason Winderlich",
+          "club": "Essendon",
+          "roundsMissed": 21,
+          "pvs": 3.1,
+          "unavailablePvs": 65.5,
           "status": "unavailable"
         },
         {
@@ -359,6 +368,14 @@
           "status": "unavailable"
         },
         {
+          "player": "Robbie Gray",
+          "club": "Port Adelaide",
+          "roundsMissed": 21,
+          "pvs": 3.0,
+          "unavailablePvs": 63.3,
+          "status": "unavailable"
+        },
+        {
           "player": "Nick OBrien",
           "club": "Essendon",
           "roundsMissed": 21,
@@ -380,22 +397,6 @@
           "roundsMissed": 22,
           "pvs": 2.9,
           "unavailablePvs": 62.7,
-          "status": "unavailable"
-        },
-        {
-          "player": "Andrew Krakouer",
-          "club": "Collingwood",
-          "roundsMissed": 22,
-          "pvs": 2.8,
-          "unavailablePvs": 62.4,
-          "status": "unavailable"
-        },
-        {
-          "player": "Nathan Vardy",
-          "club": "Geelong",
-          "roundsMissed": 22,
-          "pvs": 2.8,
-          "unavailablePvs": 61.6,
           "status": "unavailable"
         }
       ],
@@ -439,11 +440,11 @@
       "regression": {
         "model": "linear",
         "rSquared": 0.42,
-        "marginRSquared": 0.58,
+        "marginRSquared": 0.57,
         "coefficients": {
-          "intercept": 26.47,
+          "intercept": 26.43,
           "unavailablePvs": -0.0144,
-          "marginPer100Pvs": -9.39
+          "marginPer100Pvs": -9.42
         },
         "interpretation": "Each +100 unavailable PVS correlates with ~1.4 fewer wins (season 2012). PVS combines rolling performance (disposals, goals, score involvements) with draft-potential prior and smooth age weighting."
       },
@@ -612,67 +613,67 @@
         "Gold Coast": [
           {
             "round": 1,
-            "value": 61.1,
+            "value": 59.7,
             "top5": 14.9,
             "wins": 0
           },
           {
             "round": 2,
-            "value": 60.7,
+            "value": 59.4,
             "top5": 14.9,
             "wins": 0
           },
           {
             "round": 3,
-            "value": 60.8,
+            "value": 59.5,
             "top5": 15.0,
             "wins": 0
           },
           {
             "round": 4,
-            "value": 60.6,
+            "value": 59.3,
             "top5": 14.9,
             "wins": 0
           },
           {
             "round": 5,
-            "value": 61.6,
+            "value": 60.2,
             "top5": 15.5,
             "wins": 0
           },
           {
             "round": 6,
-            "value": 62.2,
+            "value": 60.8,
             "top5": 15.6,
             "wins": 0
           },
           {
             "round": 7,
-            "value": 61.5,
+            "value": 60.2,
             "top5": 15.0,
             "wins": 0
           },
           {
             "round": 8,
-            "value": 61.7,
+            "value": 60.3,
             "top5": 15.0,
             "wins": 0
           },
           {
             "round": 9,
-            "value": 61.9,
+            "value": 60.5,
             "top5": 15.0,
             "wins": 0
           },
           {
             "round": 10,
-            "value": 61.5,
+            "value": 60.1,
             "top5": 15.1,
             "wins": 0
           },
           {
             "round": 11,
-            "value": 61.5,
+            "value": 60.2,
             "top5": 14.9,
             "wins": 0
           },
@@ -684,7 +685,7 @@
           },
           {
             "round": 13,
-            "value": 126.1,
+            "value": 124.8,
             "top5": 16.2,
             "wins": 0
           },
@@ -696,19 +697,19 @@
           },
           {
             "round": 15,
-            "value": 61.0,
+            "value": 59.7,
             "top5": 15.1,
             "wins": 0
           },
           {
             "round": 16,
-            "value": 60.7,
+            "value": 59.3,
             "top5": 14.9,
             "wins": 1
           },
           {
             "round": 17,
-            "value": 60.7,
+            "value": 59.4,
             "top5": 15.0,
             "wins": 0
           },
@@ -2224,7 +2225,7 @@
           },
           {
             "round": 13,
-            "value": 104.4,
+            "value": 103.4,
             "top5": 16.2,
             "wins": 0
           },
@@ -2242,49 +2243,49 @@
           },
           {
             "round": 16,
-            "value": 39.2,
+            "value": 38.2,
             "top5": 15.2,
             "wins": 0
           },
           {
             "round": 17,
-            "value": 39.4,
+            "value": 38.4,
             "top5": 15.1,
             "wins": 1
           },
           {
             "round": 18,
-            "value": 38.9,
+            "value": 38.0,
             "top5": 15.1,
             "wins": 0
           },
           {
             "round": 19,
-            "value": 38.3,
+            "value": 37.4,
             "top5": 14.5,
             "wins": 0
           },
           {
             "round": 20,
-            "value": 38.4,
-            "top5": 14.6,
+            "value": 37.4,
+            "top5": 14.4,
             "wins": 0
           },
           {
             "round": 21,
-            "value": 39.1,
-            "top5": 15.1,
+            "value": 38.2,
+            "top5": 15.0,
             "wins": 0
           },
           {
             "round": 22,
-            "value": 38.7,
-            "top5": 14.7,
+            "value": 37.8,
+            "top5": 14.6,
             "wins": 0
           },
           {
             "round": 23,
-            "value": 38.8,
+            "value": 37.8,
             "top5": 14.6,
             "wins": 0
           }
@@ -2994,6 +2995,7 @@
     "2013": {
       "leagueOverview": {
         "avgUnavailableValue": 39.0,
+        "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 8,
         "clubsBelowExpectation": 9,
         "topUnavailableClub": "Greater Western Sydney",
@@ -3295,6 +3297,14 @@
           "status": "unavailable"
         },
         {
+          "player": "George Burbury",
+          "club": "Geelong",
+          "roundsMissed": 21,
+          "pvs": 2.9,
+          "unavailablePvs": 61.3,
+          "status": "unavailable"
+        },
+        {
           "player": "Shane Biggs",
           "club": "Sydney",
           "roundsMissed": 22,
@@ -3308,6 +3318,14 @@
           "roundsMissed": 22,
           "pvs": 2.7,
           "unavailablePvs": 60.5,
+          "status": "unavailable"
+        },
+        {
+          "player": "Sam Grimley",
+          "club": "Hawthorn",
+          "roundsMissed": 20,
+          "pvs": 3.0,
+          "unavailablePvs": 60.0,
           "status": "unavailable"
         },
         {
@@ -3327,43 +3345,27 @@
           "status": "unavailable"
         },
         {
+          "player": "Darren Minchington",
+          "club": "St Kilda",
+          "roundsMissed": 21,
+          "pvs": 2.8,
+          "unavailablePvs": 58.8,
+          "status": "unavailable"
+        },
+        {
+          "player": "Kyle Martin",
+          "club": "Collingwood",
+          "roundsMissed": 19,
+          "pvs": 3.1,
+          "unavailablePvs": 58.4,
+          "status": "unavailable"
+        },
+        {
           "player": "Cameron Shenton",
           "club": "St Kilda",
           "roundsMissed": 22,
           "pvs": 2.7,
           "unavailablePvs": 58.3,
-          "status": "unavailable"
-        },
-        {
-          "player": "Matt McDonough",
-          "club": "Richmond",
-          "roundsMissed": 22,
-          "pvs": 2.6,
-          "unavailablePvs": 58.1,
-          "status": "unavailable"
-        },
-        {
-          "player": "Leigh Osborne",
-          "club": "Gold Coast",
-          "roundsMissed": 22,
-          "pvs": 2.6,
-          "unavailablePvs": 57.2,
-          "status": "unavailable"
-        },
-        {
-          "player": "Simon Tunbridge",
-          "club": "West Coast",
-          "roundsMissed": 21,
-          "pvs": 2.7,
-          "unavailablePvs": 57.1,
-          "status": "unavailable"
-        },
-        {
-          "player": "Kyle Hartigan",
-          "club": "Adelaide",
-          "roundsMissed": 20,
-          "pvs": 2.8,
-          "unavailablePvs": 56.7,
           "status": "unavailable"
         }
       ],
@@ -5962,6 +5964,7 @@
     "2014": {
       "leagueOverview": {
         "avgUnavailableValue": 41.3,
+        "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 7,
         "clubsBelowExpectation": 8,
         "topUnavailableClub": "Greater Western Sydney",
@@ -6311,6 +6314,14 @@
           "status": "unavailable"
         },
         {
+          "player": "Lewis Johnston",
+          "club": "Adelaide",
+          "roundsMissed": 21,
+          "pvs": 2.9,
+          "unavailablePvs": 60.3,
+          "status": "unavailable"
+        },
+        {
           "player": "Dylan van Unen",
           "club": "Essendon",
           "roundsMissed": 22,
@@ -6324,14 +6335,6 @@
           "roundsMissed": 22,
           "pvs": 2.7,
           "unavailablePvs": 58.5,
-          "status": "unavailable"
-        },
-        {
-          "player": "Tom Clurey",
-          "club": "Port Adelaide",
-          "roundsMissed": 22,
-          "pvs": 2.6,
-          "unavailablePvs": 57.4,
           "status": "unavailable"
         }
       ],
@@ -8929,7 +8932,8 @@
     },
     "2015": {
       "leagueOverview": {
-        "avgUnavailableValue": 45.6,
+        "avgUnavailableValue": 45.5,
+        "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 6,
         "clubsBelowExpectation": 9,
         "topUnavailableClub": "Essendon",
@@ -9206,11 +9210,11 @@
         },
         {
           "club": "West Coast",
-          "unavailableValue": 900.5,
+          "unavailableValue": 897.3,
           "unavailableTop5": 371.0,
-          "expectedWins": 13.4,
+          "expectedWins": 13.5,
           "actualWins": 16,
-          "delta": 2.6
+          "delta": 2.5
         },
         {
           "club": "Western Bulldogs",
@@ -9223,19 +9227,27 @@
       ],
       "topUnavailablePlayers": [
         {
+          "player": "Matt Thomas",
+          "club": "Richmond",
+          "roundsMissed": 21,
+          "pvs": 3.5,
+          "unavailablePvs": 74.1,
+          "status": "unavailable"
+        },
+        {
+          "player": "Gary Ablett",
+          "club": "Gold Coast",
+          "roundsMissed": 17,
+          "pvs": 4.3,
+          "unavailablePvs": 72.9,
+          "status": "unavailable"
+        },
+        {
           "player": "Ricky Petterd",
           "club": "Richmond",
           "roundsMissed": 22,
           "pvs": 3.2,
           "unavailablePvs": 70.6,
-          "status": "unavailable"
-        },
-        {
-          "player": "Matt Thomas",
-          "club": "Richmond",
-          "roundsMissed": 20,
-          "pvs": 3.5,
-          "unavailablePvs": 70.5,
           "status": "unavailable"
         },
         {
@@ -9271,35 +9283,27 @@
           "status": "unavailable"
         },
         {
+          "player": "Daniel Wells",
+          "club": "North Melbourne",
+          "roundsMissed": 21,
+          "pvs": 3.1,
+          "unavailablePvs": 66.0,
+          "status": "unavailable"
+        },
+        {
+          "player": "Reece Conca",
+          "club": "Richmond",
+          "roundsMissed": 21,
+          "pvs": 3.1,
+          "unavailablePvs": 64.8,
+          "status": "unavailable"
+        },
+        {
           "player": "Daniel Menzel",
           "club": "Geelong",
           "roundsMissed": 21,
           "pvs": 3.1,
           "unavailablePvs": 64.1,
-          "status": "unavailable"
-        },
-        {
-          "player": "Tony Armstrong",
-          "club": "Collingwood",
-          "roundsMissed": 22,
-          "pvs": 2.9,
-          "unavailablePvs": 63.1,
-          "status": "unavailable"
-        },
-        {
-          "player": "Jason Winderlich",
-          "club": "Essendon",
-          "roundsMissed": 22,
-          "pvs": 2.9,
-          "unavailablePvs": 63.1,
-          "status": "unavailable"
-        },
-        {
-          "player": "David Myers",
-          "club": "Essendon",
-          "roundsMissed": 21,
-          "pvs": 3.0,
-          "unavailablePvs": 62.7,
           "status": "unavailable"
         }
       ],
@@ -9347,7 +9351,7 @@
         "coefficients": {
           "intercept": 29.28,
           "unavailablePvs": -0.0176,
-          "marginPer100Pvs": -9.13
+          "marginPer100Pvs": -9.14
         },
         "interpretation": "Each +100 unavailable PVS correlates with ~1.8 fewer wins (season 2015). PVS combines rolling performance (disposals, goals, score involvements) with draft-potential prior and smooth age weighting."
       },
@@ -11202,133 +11206,133 @@
           },
           {
             "round": 2,
-            "value": 37.8,
+            "value": 37.6,
             "top5": 17.0,
             "wins": 1
           },
           {
             "round": 3,
-            "value": 36.1,
+            "value": 35.9,
             "top5": 16.1,
             "wins": 0
           },
           {
             "round": 4,
-            "value": 36.0,
+            "value": 35.8,
             "top5": 16.0,
             "wins": 1
           },
           {
             "round": 5,
-            "value": 36.8,
+            "value": 36.7,
             "top5": 16.8,
             "wins": 1
           },
           {
             "round": 6,
-            "value": 36.9,
+            "value": 36.8,
             "top5": 16.8,
             "wins": 1
           },
           {
             "round": 7,
-            "value": 36.3,
+            "value": 36.1,
             "top5": 16.8,
             "wins": 1
           },
           {
             "round": 8,
-            "value": 36.0,
+            "value": 35.9,
             "top5": 16.3,
             "wins": 1
           },
           {
             "round": 9,
-            "value": 37.8,
+            "value": 37.6,
             "top5": 16.9,
             "wins": 1
           },
           {
             "round": 10,
-            "value": 36.3,
+            "value": 36.2,
             "top5": 16.3,
             "wins": 0
           },
           {
             "round": 11,
-            "value": 35.2,
+            "value": 35.0,
             "top5": 15.3,
             "wins": 1
           },
           {
             "round": 12,
-            "value": 34.9,
+            "value": 34.8,
             "top5": 15.0,
             "wins": 1
           },
           {
             "round": 13,
-            "value": 109.9,
+            "value": 109.8,
             "top5": 20.3,
             "wins": 0
           },
           {
             "round": 14,
-            "value": 35.2,
+            "value": 35.0,
             "top5": 15.3,
             "wins": 1
           },
           {
             "round": 15,
-            "value": 34.8,
+            "value": 34.7,
             "top5": 14.9,
             "wins": 1
           },
           {
             "round": 16,
-            "value": 34.8,
+            "value": 34.7,
             "top5": 14.9,
             "wins": 1
           },
           {
             "round": 17,
-            "value": 34.4,
+            "value": 34.2,
             "top5": 14.9,
             "wins": 1
           },
           {
             "round": 18,
-            "value": 34.4,
+            "value": 34.2,
             "top5": 14.9,
             "wins": 0
           },
           {
             "round": 19,
-            "value": 35.4,
+            "value": 35.3,
             "top5": 15.6,
             "wins": 0
           },
           {
             "round": 20,
-            "value": 35.6,
+            "value": 35.4,
             "top5": 16.2,
             "wins": 1
           },
           {
             "round": 21,
-            "value": 36.3,
+            "value": 36.2,
             "top5": 16.5,
             "wins": 1
           },
           {
             "round": 22,
-            "value": 37.5,
+            "value": 37.4,
             "top5": 16.9,
             "wins": 0
           },
           {
             "round": 23,
-            "value": 35.2,
+            "value": 35.1,
             "top5": 15.2,
             "wins": 1
           }
@@ -11898,6 +11902,7 @@
     "2016": {
       "leagueOverview": {
         "avgUnavailableValue": 46.4,
+        "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 8,
         "clubsBelowExpectation": 8,
         "topUnavailableClub": "Richmond",
@@ -12086,8 +12091,8 @@
         },
         {
           "club": "Fremantle",
-          "unavailableValue": 1201.3,
-          "unavailableTop5": 439.2,
+          "unavailableValue": 1198.9,
+          "unavailableTop5": 438.8,
           "expectedWins": 8.7,
           "actualWins": 4,
           "delta": -4.7
@@ -12191,6 +12196,22 @@
       ],
       "topUnavailablePlayers": [
         {
+          "player": "Nat Fyfe",
+          "club": "Fremantle",
+          "roundsMissed": 18,
+          "pvs": 4.8,
+          "unavailablePvs": 85.8,
+          "status": "unavailable"
+        },
+        {
+          "player": "Dayne Beams",
+          "club": "Brisbane Lions",
+          "roundsMissed": 21,
+          "pvs": 4.1,
+          "unavailablePvs": 85.2,
+          "status": "unavailable"
+        },
+        {
           "player": "Jack Fitzpatrick",
           "club": "Hawthorn",
           "roundsMissed": 22,
@@ -12207,19 +12228,35 @@
           "status": "unavailable"
         },
         {
-          "player": "Scott Selwood",
-          "club": "Geelong",
-          "roundsMissed": 19,
-          "pvs": 3.9,
-          "unavailablePvs": 74.0,
+          "player": "Robert Murphy",
+          "club": "Western Bulldogs",
+          "roundsMissed": 20,
+          "pvs": 4.0,
+          "unavailablePvs": 79.8,
           "status": "unavailable"
         },
         {
-          "player": "Dayne Beams",
-          "club": "Brisbane Lions",
-          "roundsMissed": 18,
-          "pvs": 4.1,
-          "unavailablePvs": 73.0,
+          "player": "Scott Selwood",
+          "club": "Geelong",
+          "roundsMissed": 20,
+          "pvs": 3.9,
+          "unavailablePvs": 77.9,
+          "status": "unavailable"
+        },
+        {
+          "player": "Jack Grimes",
+          "club": "Melbourne",
+          "roundsMissed": 21,
+          "pvs": 3.7,
+          "unavailablePvs": 77.2,
+          "status": "unavailable"
+        },
+        {
+          "player": "John Butcher",
+          "club": "Port Adelaide",
+          "roundsMissed": 20,
+          "pvs": 3.8,
+          "unavailablePvs": 75.3,
           "status": "unavailable"
         },
         {
@@ -12236,38 +12273,6 @@
           "roundsMissed": 22,
           "pvs": 3.3,
           "unavailablePvs": 72.8,
-          "status": "unavailable"
-        },
-        {
-          "player": "Nathan Vardy",
-          "club": "Geelong",
-          "roundsMissed": 22,
-          "pvs": 3.3,
-          "unavailablePvs": 71.8,
-          "status": "unavailable"
-        },
-        {
-          "player": "Nat Fyfe",
-          "club": "Fremantle",
-          "roundsMissed": 15,
-          "pvs": 4.8,
-          "unavailablePvs": 71.5,
-          "status": "unavailable"
-        },
-        {
-          "player": "George Horlin-Smith",
-          "club": "Geelong",
-          "roundsMissed": 22,
-          "pvs": 3.2,
-          "unavailablePvs": 69.6,
-          "status": "unavailable"
-        },
-        {
-          "player": "Mitch Clark",
-          "club": "Geelong",
-          "roundsMissed": 22,
-          "pvs": 3.1,
-          "unavailablePvs": 69.1,
           "status": "unavailable"
         }
       ],
@@ -12313,7 +12318,7 @@
         "rSquared": 0.48,
         "marginRSquared": 0.5,
         "coefficients": {
-          "intercept": 29.65,
+          "intercept": 29.64,
           "unavailablePvs": -0.0175,
           "marginPer100Pvs": -8.73
         },
@@ -13184,14 +13189,14 @@
         "Fremantle": [
           {
             "round": 1,
-            "value": 43.5,
-            "top5": 16.5,
+            "value": 43.4,
+            "top5": 16.4,
             "wins": 0
           },
           {
             "round": 2,
-            "value": 45.7,
-            "top5": 16.8,
+            "value": 45.6,
+            "top5": 16.6,
             "wins": 0
           },
           {
@@ -13202,37 +13207,37 @@
           },
           {
             "round": 4,
-            "value": 46.8,
-            "top5": 17.8,
+            "value": 46.7,
+            "top5": 17.7,
             "wins": 0
           },
           {
             "round": 5,
-            "value": 47.7,
+            "value": 47.6,
             "top5": 18.0,
             "wins": 0
           },
           {
             "round": 6,
-            "value": 49.3,
+            "value": 49.2,
             "top5": 18.6,
             "wins": 0
           },
           {
             "round": 7,
-            "value": 48.7,
+            "value": 48.6,
             "top5": 18.3,
             "wins": 0
           },
           {
             "round": 8,
-            "value": 51.6,
+            "value": 51.4,
             "top5": 20.5,
             "wins": 0
           },
           {
             "round": 9,
-            "value": 51.7,
+            "value": 51.6,
             "top5": 20.3,
             "wins": 0
           },
@@ -13244,49 +13249,49 @@
           },
           {
             "round": 11,
-            "value": 48.3,
+            "value": 48.2,
             "top5": 18.4,
             "wins": 1
           },
           {
             "round": 12,
-            "value": 49.3,
+            "value": 49.2,
             "top5": 19.5,
             "wins": 1
           },
           {
             "round": 13,
-            "value": 47.5,
+            "value": 47.4,
             "top5": 18.4,
             "wins": 1
           },
           {
             "round": 14,
-            "value": 47.8,
+            "value": 47.7,
             "top5": 18.4,
             "wins": 0
           },
           {
             "round": 15,
-            "value": 126.6,
+            "value": 126.4,
             "top5": 22.7,
             "wins": 0
           },
           {
             "round": 16,
-            "value": 49.1,
+            "value": 49.0,
             "top5": 19.3,
             "wins": 0
           },
           {
             "round": 17,
-            "value": 46.6,
+            "value": 46.5,
             "top5": 18.3,
             "wins": 0
           },
           {
             "round": 18,
-            "value": 50.7,
+            "value": 50.6,
             "top5": 21.0,
             "wins": 0
           },
@@ -13298,19 +13303,19 @@
           },
           {
             "round": 20,
-            "value": 50.9,
+            "value": 50.7,
             "top5": 19.6,
             "wins": 0
           },
           {
             "round": 21,
-            "value": 52.1,
+            "value": 52.0,
             "top5": 19.6,
             "wins": 0
           },
           {
             "round": 22,
-            "value": 52.0,
+            "value": 51.9,
             "top5": 20.5,
             "wins": 0
           },
@@ -14866,6 +14871,7 @@
     "2017": {
       "leagueOverview": {
         "avgUnavailableValue": 49.9,
+        "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 8,
         "clubsBelowExpectation": 7,
         "topUnavailableClub": "Gold Coast",
@@ -15086,11 +15092,11 @@
         },
         {
           "club": "Hawthorn",
-          "unavailableValue": 1220.3,
-          "unavailableTop5": 471.9,
-          "expectedWins": 10.0,
+          "unavailableValue": 1219.2,
+          "unavailableTop5": 471.5,
+          "expectedWins": 10.1,
           "actualWins": 10,
-          "delta": -0.0
+          "delta": -0.1
         },
         {
           "club": "Melbourne",
@@ -15175,6 +15181,14 @@
           "status": "unavailable"
         },
         {
+          "player": "David Armitage",
+          "club": "St Kilda",
+          "roundsMissed": 21,
+          "pvs": 4.2,
+          "unavailablePvs": 87.8,
+          "status": "unavailable"
+        },
+        {
           "player": "Scott Thompson",
           "club": "Adelaide",
           "roundsMissed": 22,
@@ -15191,11 +15205,19 @@
           "status": "unavailable"
         },
         {
-          "player": "David Armitage",
-          "club": "St Kilda",
+          "player": "Lincoln McCarthy",
+          "club": "Geelong",
           "roundsMissed": 20,
           "pvs": 4.2,
-          "unavailablePvs": 83.6,
+          "unavailablePvs": 84.0,
+          "status": "unavailable"
+        },
+        {
+          "player": "Stewart Crameri",
+          "club": "Western Bulldogs",
+          "roundsMissed": 21,
+          "pvs": 4.0,
+          "unavailablePvs": 83.7,
           "status": "unavailable"
         },
         {
@@ -15215,27 +15237,11 @@
           "status": "unavailable"
         },
         {
-          "player": "Harley Bennell",
-          "club": "Fremantle",
-          "roundsMissed": 21,
-          "pvs": 3.9,
-          "unavailablePvs": 81.6,
-          "status": "unavailable"
-        },
-        {
-          "player": "Brett Deledio",
+          "player": "Ryan Griffen",
           "club": "Greater Western Sydney",
-          "roundsMissed": 19,
-          "pvs": 4.2,
-          "unavailablePvs": 80.5,
-          "status": "unavailable"
-        },
-        {
-          "player": "Heath Hocking",
-          "club": "Essendon",
-          "roundsMissed": 21,
-          "pvs": 3.8,
-          "unavailablePvs": 78.8,
+          "roundsMissed": 20,
+          "pvs": 4.1,
+          "unavailablePvs": 82.4,
           "status": "unavailable"
         }
       ],
@@ -16018,14 +16024,14 @@
           },
           {
             "round": 2,
-            "value": 44.8,
-            "top5": 18.6,
+            "value": 44.6,
+            "top5": 18.4,
             "wins": 0
           },
           {
             "round": 3,
-            "value": 45.1,
-            "top5": 18.9,
+            "value": 44.9,
+            "top5": 18.7,
             "wins": 0
           },
           {
@@ -16066,13 +16072,13 @@
           },
           {
             "round": 10,
-            "value": 50.3,
+            "value": 50.1,
             "top5": 20.2,
             "wins": 1
           },
           {
             "round": 11,
-            "value": 50.3,
+            "value": 50.1,
             "top5": 20.2,
             "wins": 0
           },
@@ -16084,7 +16090,7 @@
           },
           {
             "round": 13,
-            "value": 135.4,
+            "value": 135.2,
             "top5": 25.2,
             "wins": 0
           },
@@ -17834,6 +17840,7 @@
     "2018": {
       "leagueOverview": {
         "avgUnavailableValue": 52.4,
+        "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 10,
         "clubsBelowExpectation": 7,
         "topUnavailableClub": "St Kilda",
@@ -18118,7 +18125,7 @@
         },
         {
           "club": "Western Bulldogs",
-          "unavailableValue": 1325.7,
+          "unavailableValue": 1326.8,
           "unavailableTop5": 506.6,
           "expectedWins": 10.1,
           "actualWins": 8,
@@ -18151,11 +18158,27 @@
           "status": "unavailable"
         },
         {
+          "player": "Brodie Smith",
+          "club": "Adelaide",
+          "roundsMissed": 21,
+          "pvs": 4.8,
+          "unavailablePvs": 100.1,
+          "status": "unavailable"
+        },
+        {
           "player": "Tom Bell",
           "club": "Brisbane Lions",
           "roundsMissed": 22,
           "pvs": 4.5,
           "unavailablePvs": 99.9,
+          "status": "unavailable"
+        },
+        {
+          "player": "Lincoln McCarthy",
+          "club": "Geelong",
+          "roundsMissed": 21,
+          "pvs": 4.7,
+          "unavailablePvs": 98.0,
           "status": "unavailable"
         },
         {
@@ -18167,43 +18190,27 @@
           "status": "unavailable"
         },
         {
-          "player": "Brodie Smith",
-          "club": "Adelaide",
-          "roundsMissed": 19,
+          "player": "Koby Stevens",
+          "club": "St Kilda",
+          "roundsMissed": 21,
+          "pvs": 4.6,
+          "unavailablePvs": 97.1,
+          "status": "unavailable"
+        },
+        {
+          "player": "Tomas Bugg",
+          "club": "Melbourne",
+          "roundsMissed": 20,
           "pvs": 4.8,
-          "unavailablePvs": 90.5,
+          "unavailablePvs": 96.9,
           "status": "unavailable"
         },
         {
-          "player": "Ryan Bastinac",
-          "club": "Brisbane Lions",
-          "roundsMissed": 21,
-          "pvs": 4.3,
-          "unavailablePvs": 90.5,
-          "status": "unavailable"
-        },
-        {
-          "player": "Lincoln McCarthy",
-          "club": "Geelong",
-          "roundsMissed": 19,
-          "pvs": 4.7,
-          "unavailablePvs": 88.7,
-          "status": "unavailable"
-        },
-        {
-          "player": "Alex Fasolo",
+          "player": "Jarryd Blair",
           "club": "Collingwood",
-          "roundsMissed": 22,
-          "pvs": 4.0,
-          "unavailablePvs": 87.1,
-          "status": "unavailable"
-        },
-        {
-          "player": "Matthew Leuenberger",
-          "club": "Essendon",
           "roundsMissed": 21,
-          "pvs": 4.0,
-          "unavailablePvs": 83.7,
+          "pvs": 4.4,
+          "unavailablePvs": 92.5,
           "status": "unavailable"
         }
       ],
@@ -18249,7 +18256,7 @@
         "rSquared": 0.1,
         "marginRSquared": 0.07,
         "coefficients": {
-          "intercept": 19.25,
+          "intercept": 19.26,
           "unavailablePvs": -0.0069,
           "marginPer100Pvs": -2.7
         },
@@ -19144,7 +19151,7 @@
           },
           {
             "round": 5,
-            "value": 53.8,
+            "value": 54.0,
             "top5": 21.7,
             "wins": 0
           },
@@ -19186,7 +19193,7 @@
           },
           {
             "round": 12,
-            "value": 137.4,
+            "value": 137.5,
             "top5": 26.1,
             "wins": 0
           },
@@ -19210,43 +19217,43 @@
           },
           {
             "round": 16,
-            "value": 57.4,
+            "value": 57.5,
             "top5": 23.4,
             "wins": 0
           },
           {
             "round": 17,
-            "value": 56.9,
+            "value": 57.0,
             "top5": 23.0,
             "wins": 0
           },
           {
             "round": 18,
-            "value": 55.2,
+            "value": 55.3,
             "top5": 22.7,
             "wins": 0
           },
           {
             "round": 19,
-            "value": 56.5,
+            "value": 56.6,
             "top5": 23.4,
             "wins": 0
           },
           {
             "round": 20,
-            "value": 54.4,
+            "value": 54.5,
             "top5": 22.0,
             "wins": 1
           },
           {
             "round": 21,
-            "value": 54.0,
+            "value": 54.1,
             "top5": 22.0,
             "wins": 1
           },
           {
             "round": 22,
-            "value": 52.8,
+            "value": 53.0,
             "top5": 21.6,
             "wins": 1
           },
@@ -20802,6 +20809,7 @@
     "2019": {
       "leagueOverview": {
         "avgUnavailableValue": 53.1,
+        "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 8,
         "clubsBelowExpectation": 8,
         "topUnavailableClub": "St Kilda",
@@ -21111,11 +21119,51 @@
           "status": "unavailable"
         },
         {
+          "player": "Jack Watts",
+          "club": "Port Adelaide",
+          "roundsMissed": 21,
+          "pvs": 5.1,
+          "unavailablePvs": 106.5,
+          "status": "unavailable"
+        },
+        {
+          "player": "Dom Tyson",
+          "club": "North Melbourne",
+          "roundsMissed": 20,
+          "pvs": 5.1,
+          "unavailablePvs": 101.7,
+          "status": "unavailable"
+        },
+        {
+          "player": "Scott Selwood",
+          "club": "Geelong",
+          "roundsMissed": 21,
+          "pvs": 4.8,
+          "unavailablePvs": 101.0,
+          "status": "unavailable"
+        },
+        {
+          "player": "Dan Hannebery",
+          "club": "St Kilda",
+          "roundsMissed": 18,
+          "pvs": 5.6,
+          "unavailablePvs": 101.0,
+          "status": "unavailable"
+        },
+        {
           "player": "Jacob Townsend",
           "club": "Richmond",
           "roundsMissed": 22,
           "pvs": 4.6,
           "unavailablePvs": 100.3,
+          "status": "unavailable"
+        },
+        {
+          "player": "David Armitage",
+          "club": "St Kilda",
+          "roundsMissed": 21,
+          "pvs": 4.7,
+          "unavailablePvs": 99.3,
           "status": "unavailable"
         },
         {
@@ -21127,51 +21175,11 @@
           "status": "unavailable"
         },
         {
-          "player": "Aaron Young",
-          "club": "Gold Coast",
-          "roundsMissed": 21,
-          "pvs": 4.6,
-          "unavailablePvs": 95.9,
-          "status": "unavailable"
-        },
-        {
-          "player": "Heath Grundy",
-          "club": "Sydney",
-          "roundsMissed": 22,
-          "pvs": 4.2,
-          "unavailablePvs": 91.5,
-          "status": "unavailable"
-        },
-        {
-          "player": "Jack Watts",
-          "club": "Port Adelaide",
-          "roundsMissed": 18,
-          "pvs": 5.1,
-          "unavailablePvs": 91.3,
-          "status": "unavailable"
-        },
-        {
-          "player": "Hayden Ballantyne",
-          "club": "Fremantle",
+          "player": "Joe Daniher",
+          "club": "Essendon",
           "roundsMissed": 19,
-          "pvs": 4.7,
-          "unavailablePvs": 88.7,
-          "status": "unavailable"
-        },
-        {
-          "player": "Scott Selwood",
-          "club": "Geelong",
-          "roundsMissed": 18,
-          "pvs": 4.8,
-          "unavailablePvs": 86.6,
-          "status": "unavailable"
-        },
-        {
-          "player": "Dom Tyson",
-          "club": "North Melbourne",
-          "roundsMissed": 17,
-          "pvs": 5.1,
-          "unavailablePvs": 86.4,
+          "pvs": 5.2,
+          "unavailablePvs": 97.9,
           "status": "unavailable"
         }
       ],
@@ -23770,6 +23778,7 @@
     "2020": {
       "leagueOverview": {
         "avgUnavailableValue": 54.8,
+        "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 9,
         "clubsBelowExpectation": 8,
         "topUnavailableClub": "Collingwood",
@@ -24033,6 +24042,14 @@
       ],
       "topUnavailablePlayers": [
         {
+          "player": "Ben Cunnington",
+          "club": "North Melbourne",
+          "roundsMissed": 15,
+          "pvs": 5.8,
+          "unavailablePvs": 87.2,
+          "status": "unavailable"
+        },
+        {
           "player": "Luke Dunstan",
           "club": "St Kilda",
           "roundsMissed": 17,
@@ -24046,6 +24063,22 @@
           "roundsMissed": 17,
           "pvs": 4.9,
           "unavailablePvs": 83.9,
+          "status": "unavailable"
+        },
+        {
+          "player": "Dyson Heppell",
+          "club": "Essendon",
+          "roundsMissed": 15,
+          "pvs": 5.5,
+          "unavailablePvs": 82.0,
+          "status": "unavailable"
+        },
+        {
+          "player": "Ben Reid",
+          "club": "Collingwood",
+          "roundsMissed": 16,
+          "pvs": 5.0,
+          "unavailablePvs": 80.7,
           "status": "unavailable"
         },
         {
@@ -24065,6 +24098,14 @@
           "status": "unavailable"
         },
         {
+          "player": "Dion Prestia",
+          "club": "Richmond",
+          "roundsMissed": 13,
+          "pvs": 5.9,
+          "unavailablePvs": 76.4,
+          "status": "unavailable"
+        },
+        {
           "player": "Taylor Duryea",
           "club": "Western Bulldogs",
           "roundsMissed": 16,
@@ -24078,38 +24119,6 @@
           "roundsMissed": 17,
           "pvs": 4.5,
           "unavailablePvs": 75.7,
-          "status": "unavailable"
-        },
-        {
-          "player": "Taylor Garner",
-          "club": "North Melbourne",
-          "roundsMissed": 16,
-          "pvs": 4.6,
-          "unavailablePvs": 73.4,
-          "status": "unavailable"
-        },
-        {
-          "player": "Tory Dickson",
-          "club": "Western Bulldogs",
-          "roundsMissed": 17,
-          "pvs": 4.2,
-          "unavailablePvs": 71.9,
-          "status": "unavailable"
-        },
-        {
-          "player": "Dyson Heppell",
-          "club": "Essendon",
-          "roundsMissed": 13,
-          "pvs": 5.5,
-          "unavailablePvs": 71.1,
-          "status": "unavailable"
-        },
-        {
-          "player": "Ben Reid",
-          "club": "Collingwood",
-          "roundsMissed": 14,
-          "pvs": 5.0,
-          "unavailablePvs": 70.6,
           "status": "unavailable"
         }
       ],
@@ -26168,6 +26177,7 @@
     "2021": {
       "leagueOverview": {
         "avgUnavailableValue": 54.3,
+        "totalVflOnlyPvs": 2370.8,
         "clubsAboveExpectation": 7,
         "clubsBelowExpectation": 8,
         "topUnavailableClub": "St Kilda",
@@ -26364,11 +26374,11 @@
         },
         {
           "club": "Geelong",
-          "unavailableValue": 1149.9,
+          "unavailableValue": 1145.3,
           "unavailableTop5": 592.1,
-          "expectedWins": 11.6,
+          "expectedWins": 11.7,
           "actualWins": 16,
-          "delta": 4.4
+          "delta": 4.3
         },
         {
           "club": "Gold Coast",
@@ -26422,9 +26432,9 @@
           "club": "Richmond",
           "unavailableValue": 1406.5,
           "unavailableTop5": 571.8,
-          "expectedWins": 9.6,
+          "expectedWins": 9.5,
           "actualWins": 9,
-          "delta": -0.6
+          "delta": -0.5
         },
         {
           "club": "St Kilda",
@@ -26471,9 +26481,9 @@
         {
           "player": "Jacob Townsend",
           "club": "Gold Coast",
-          "roundsMissed": 20,
+          "roundsMissed": 21,
           "pvs": 5.3,
-          "unavailablePvs": 106.0,
+          "unavailablePvs": 111.3,
           "status": "unavailable"
         },
         {
@@ -26493,6 +26503,14 @@
           "status": "unavailable"
         },
         {
+          "player": "Taylor Garner",
+          "club": "North Melbourne",
+          "roundsMissed": 19,
+          "pvs": 5.2,
+          "unavailablePvs": 98.7,
+          "status": "unavailable"
+        },
+        {
           "player": "Josh Jenkins",
           "club": "Geelong",
           "roundsMissed": 22,
@@ -26503,41 +26521,33 @@
         {
           "player": "Tom Rockliff",
           "club": "Port Adelaide",
-          "roundsMissed": 18,
+          "roundsMissed": 21,
           "pvs": 4.7,
-          "unavailablePvs": 83.8,
+          "unavailablePvs": 97.8,
           "status": "unavailable"
         },
         {
-          "player": "Lin Jong",
-          "club": "Western Bulldogs",
-          "roundsMissed": 22,
-          "pvs": 3.8,
-          "unavailablePvs": 83.5,
+          "player": "Stephen Coniglio",
+          "club": "Greater Western Sydney",
+          "roundsMissed": 18,
+          "pvs": 5.3,
+          "unavailablePvs": 95.8,
           "status": "unavailable"
         },
         {
-          "player": "Taylor Garner",
+          "player": "Jarrod Witts",
+          "club": "Gold Coast",
+          "roundsMissed": 20,
+          "pvs": 4.6,
+          "unavailablePvs": 92.0,
+          "status": "unavailable"
+        },
+        {
+          "player": "Aidan Corr",
           "club": "North Melbourne",
-          "roundsMissed": 16,
-          "pvs": 5.2,
-          "unavailablePvs": 83.1,
-          "status": "unavailable"
-        },
-        {
-          "player": "Patrick Ambrose",
-          "club": "Essendon",
-          "roundsMissed": 22,
-          "pvs": 3.8,
-          "unavailablePvs": 82.7,
-          "status": "unavailable"
-        },
-        {
-          "player": "Dean Kent",
-          "club": "St Kilda",
-          "roundsMissed": 16,
-          "pvs": 5.2,
-          "unavailablePvs": 82.7,
+          "roundsMissed": 21,
+          "pvs": 4.4,
+          "unavailablePvs": 91.6,
           "status": "unavailable"
         }
       ],
@@ -26583,7 +26593,7 @@
         "rSquared": 0.15,
         "marginRSquared": 0.14,
         "coefficients": {
-          "intercept": 20.93,
+          "intercept": 20.96,
           "unavailablePvs": -0.0081,
           "marginPer100Pvs": -3.08
         },
@@ -28312,121 +28322,121 @@
           },
           {
             "round": 4,
-            "value": 49.9,
+            "value": 49.7,
             "top5": 28.7,
             "wins": 0
           },
           {
             "round": 5,
-            "value": 44.2,
+            "value": 43.9,
             "top5": 23.8,
             "wins": 1
           },
           {
             "round": 6,
-            "value": 43.0,
+            "value": 42.7,
             "top5": 23.2,
             "wins": 1
           },
           {
             "round": 7,
-            "value": 43.8,
+            "value": 43.6,
             "top5": 23.9,
             "wins": 0
           },
           {
             "round": 8,
-            "value": 42.8,
+            "value": 42.6,
             "top5": 23.7,
             "wins": 1
           },
           {
             "round": 9,
-            "value": 46.3,
+            "value": 46.0,
             "top5": 25.5,
             "wins": 1
           },
           {
             "round": 10,
-            "value": 42.3,
+            "value": 42.0,
             "top5": 23.1,
             "wins": 1
           },
           {
             "round": 11,
-            "value": 48.7,
+            "value": 48.5,
             "top5": 28.0,
             "wins": 1
           },
           {
             "round": 12,
-            "value": 152.0,
+            "value": 151.7,
             "top5": 32.2,
             "wins": 0
           },
           {
             "round": 13,
-            "value": 42.0,
+            "value": 41.7,
             "top5": 22.9,
             "wins": 1
           },
           {
             "round": 14,
-            "value": 40.7,
+            "value": 40.5,
             "top5": 21.6,
             "wins": 1
           },
           {
             "round": 15,
-            "value": 42.1,
+            "value": 41.9,
             "top5": 23.0,
             "wins": 0
           },
           {
             "round": 16,
-            "value": 42.9,
+            "value": 42.7,
             "top5": 23.3,
             "wins": 1
           },
           {
             "round": 17,
-            "value": 48.8,
+            "value": 48.6,
             "top5": 28.6,
             "wins": 1
           },
           {
             "round": 18,
-            "value": 48.1,
+            "value": 47.8,
             "top5": 27.9,
             "wins": 1
           },
           {
             "round": 19,
-            "value": 46.0,
+            "value": 45.7,
             "top5": 26.6,
             "wins": 1
           },
           {
             "round": 20,
-            "value": 45.9,
+            "value": 45.7,
             "top5": 25.8,
             "wins": 1
           },
           {
             "round": 21,
-            "value": 49.3,
+            "value": 49.1,
             "top5": 28.4,
             "wins": 0
           },
           {
             "round": 22,
-            "value": 45.1,
+            "value": 44.9,
             "top5": 26.0,
             "wins": 1
           },
           {
             "round": 23,
-            "value": 43.4,
+            "value": 43.1,
             "top5": 23.7,
             "wins": 0
           }
@@ -29136,6 +29146,7 @@
     "2022": {
       "leagueOverview": {
         "avgUnavailableValue": 55.4,
+        "totalVflOnlyPvs": 5459.7,
         "clubsAboveExpectation": 10,
         "clubsBelowExpectation": 7,
         "topUnavailableClub": "West Coast",
@@ -29447,9 +29458,41 @@
         {
           "player": "Dan Hannebery",
           "club": "St Kilda",
+          "roundsMissed": 20,
+          "pvs": 5.2,
+          "unavailablePvs": 103.5,
+          "status": "unavailable"
+        },
+        {
+          "player": "Rory Sloane",
+          "club": "Adelaide",
           "roundsMissed": 19,
           "pvs": 5.2,
-          "unavailablePvs": 98.3,
+          "unavailablePvs": 98.9,
+          "status": "unavailable"
+        },
+        {
+          "player": "Nathan Wilson",
+          "club": "Fremantle",
+          "roundsMissed": 21,
+          "pvs": 4.7,
+          "unavailablePvs": 97.9,
+          "status": "unavailable"
+        },
+        {
+          "player": "Jared Polec",
+          "club": "North Melbourne",
+          "roundsMissed": 21,
+          "pvs": 4.6,
+          "unavailablePvs": 97.3,
+          "status": "unavailable"
+        },
+        {
+          "player": "Mitch Brown",
+          "club": "Melbourne",
+          "roundsMissed": 20,
+          "pvs": 4.8,
+          "unavailablePvs": 95.5,
           "status": "unavailable"
         },
         {
@@ -29461,51 +29504,19 @@
           "status": "unavailable"
         },
         {
-          "player": "Dean Kent",
-          "club": "St Kilda",
-          "roundsMissed": 21,
-          "pvs": 4.5,
-          "unavailablePvs": 93.8,
-          "status": "unavailable"
-        },
-        {
-          "player": "Tom Campbell",
-          "club": "St Kilda",
-          "roundsMissed": 21,
-          "pvs": 4.2,
-          "unavailablePvs": 88.1,
-          "status": "unavailable"
-        },
-        {
-          "player": "Toby McLean",
-          "club": "Western Bulldogs",
-          "roundsMissed": 22,
-          "pvs": 4.0,
-          "unavailablePvs": 87.9,
-          "status": "unavailable"
-        },
-        {
-          "player": "Orazio Fantasia",
-          "club": "Port Adelaide",
-          "roundsMissed": 22,
-          "pvs": 3.9,
-          "unavailablePvs": 86.6,
-          "status": "unavailable"
-        },
-        {
-          "player": "Angus Dewar",
-          "club": "West Coast",
-          "roundsMissed": 22,
-          "pvs": 3.9,
-          "unavailablePvs": 85.6,
-          "status": "unavailable"
-        },
-        {
-          "player": "Jonathon Ceglar",
-          "club": "Geelong",
+          "player": "Alex Sexton",
+          "club": "Gold Coast",
           "roundsMissed": 19,
-          "pvs": 4.4,
-          "unavailablePvs": 84.5,
+          "pvs": 5.0,
+          "unavailablePvs": 94.7,
+          "status": "unavailable"
+        },
+        {
+          "player": "Shaun Higgins",
+          "club": "Geelong",
+          "roundsMissed": 18,
+          "pvs": 5.2,
+          "unavailablePvs": 94.3,
           "status": "unavailable"
         }
       ],
@@ -32104,6 +32115,7 @@
     "2023": {
       "leagueOverview": {
         "avgUnavailableValue": 51.2,
+        "totalVflOnlyPvs": 5427.1,
         "clubsAboveExpectation": 7,
         "clubsBelowExpectation": 10,
         "topUnavailableClub": "North Melbourne",
@@ -32411,6 +32423,22 @@
           "status": "unavailable"
         },
         {
+          "player": "Tom Lynch",
+          "club": "Richmond",
+          "roundsMissed": 20,
+          "pvs": 5.9,
+          "unavailablePvs": 117.2,
+          "status": "unavailable"
+        },
+        {
+          "player": "Jack Billings",
+          "club": "St Kilda",
+          "roundsMissed": 21,
+          "pvs": 5.0,
+          "unavailablePvs": 105.9,
+          "status": "unavailable"
+        },
+        {
           "player": "Matt Crouch",
           "club": "Adelaide",
           "roundsMissed": 17,
@@ -32419,67 +32447,51 @@
           "status": "unavailable"
         },
         {
-          "player": "Tom Lynch",
-          "club": "Richmond",
-          "roundsMissed": 17,
-          "pvs": 5.9,
-          "unavailablePvs": 99.6,
-          "status": "unavailable"
-        },
-        {
-          "player": "Lachie Plowman",
-          "club": "Carlton",
-          "roundsMissed": 23,
-          "pvs": 4.0,
-          "unavailablePvs": 91.3,
-          "status": "unavailable"
-        },
-        {
-          "player": "Josh Schache",
-          "club": "Melbourne",
-          "roundsMissed": 22,
-          "pvs": 4.1,
-          "unavailablePvs": 90.9,
-          "status": "unavailable"
-        },
-        {
-          "player": "Jack Billings",
-          "club": "St Kilda",
+          "player": "Cameron Guthrie",
+          "club": "Geelong",
           "roundsMissed": 18,
-          "pvs": 5.0,
-          "unavailablePvs": 90.8,
+          "pvs": 5.5,
+          "unavailablePvs": 99.8,
           "status": "unavailable"
         },
         {
           "player": "Matt Taberner",
           "club": "Fremantle",
-          "roundsMissed": 17,
+          "roundsMissed": 20,
           "pvs": 5.0,
-          "unavailablePvs": 84.7,
-          "status": "unavailable"
-        },
-        {
-          "player": "Tom Clurey",
-          "club": "Port Adelaide",
-          "roundsMissed": 23,
-          "pvs": 3.6,
-          "unavailablePvs": 83.4,
-          "status": "unavailable"
-        },
-        {
-          "player": "Cameron Guthrie",
-          "club": "Geelong",
-          "roundsMissed": 15,
-          "pvs": 5.5,
-          "unavailablePvs": 83.2,
+          "unavailablePvs": 99.6,
           "status": "unavailable"
         },
         {
           "player": "Zak Jones",
           "club": "St Kilda",
-          "roundsMissed": 17,
+          "roundsMissed": 20,
           "pvs": 4.8,
-          "unavailablePvs": 81.9,
+          "unavailablePvs": 96.3,
+          "status": "unavailable"
+        },
+        {
+          "player": "Tom McDonald",
+          "club": "Melbourne",
+          "roundsMissed": 18,
+          "pvs": 5.3,
+          "unavailablePvs": 96.1,
+          "status": "unavailable"
+        },
+        {
+          "player": "Aaron Hall",
+          "club": "North Melbourne",
+          "roundsMissed": 18,
+          "pvs": 5.3,
+          "unavailablePvs": 95.7,
+          "status": "unavailable"
+        },
+        {
+          "player": "Liam Ryan",
+          "club": "West Coast",
+          "roundsMissed": 21,
+          "pvs": 4.4,
+          "unavailablePvs": 93.4,
           "status": "unavailable"
         }
       ],
@@ -35186,6 +35198,7 @@
     "2024": {
       "leagueOverview": {
         "avgUnavailableValue": 55.4,
+        "totalVflOnlyPvs": 5071.0,
         "clubsAboveExpectation": 8,
         "clubsBelowExpectation": 7,
         "topUnavailableClub": "Richmond",
@@ -35347,7 +35360,7 @@
         {
           "club": "Adelaide",
           "unavailableValue": 1547.6,
-          "unavailableTop5": 578.4,
+          "unavailableTop5": 578.5,
           "expectedWins": 9.0,
           "actualWins": 8,
           "delta": -1.0
@@ -35507,67 +35520,67 @@
           "status": "unavailable"
         },
         {
-          "player": "Luke Parker",
-          "club": "Sydney",
-          "roundsMissed": 18,
-          "pvs": 5.7,
-          "unavailablePvs": 103.0,
-          "status": "unavailable"
-        },
-        {
-          "player": "Callum Mills",
-          "club": "Sydney",
-          "roundsMissed": 19,
-          "pvs": 5.2,
-          "unavailablePvs": 99.5,
-          "status": "unavailable"
-        },
-        {
           "player": "Tom Lynch",
           "club": "Richmond",
-          "roundsMissed": 18,
+          "roundsMissed": 21,
           "pvs": 5.5,
-          "unavailablePvs": 99.2,
-          "status": "unavailable"
-        },
-        {
-          "player": "Charlie Spargo",
-          "club": "Melbourne",
-          "roundsMissed": 24,
-          "pvs": 4.1,
-          "unavailablePvs": 98.7,
+          "unavailablePvs": 115.8,
           "status": "unavailable"
         },
         {
           "player": "Sam Powell-Pepper",
           "club": "Port Adelaide",
-          "roundsMissed": 19,
+          "roundsMissed": 22,
           "pvs": 5.2,
-          "unavailablePvs": 98.5,
-          "status": "unavailable"
-        },
-        {
-          "player": "Daniel McStay",
-          "club": "Collingwood",
-          "roundsMissed": 19,
-          "pvs": 5.2,
-          "unavailablePvs": 98.2,
+          "unavailablePvs": 114.0,
           "status": "unavailable"
         },
         {
           "player": "Will Setterfield",
           "club": "Essendon",
-          "roundsMissed": 18,
+          "roundsMissed": 21,
           "pvs": 5.4,
-          "unavailablePvs": 97.3,
+          "unavailablePvs": 113.6,
           "status": "unavailable"
         },
         {
-          "player": "Lachie Weller",
-          "club": "Gold Coast",
-          "roundsMissed": 19,
+          "player": "Lachie Hunter",
+          "club": "Melbourne",
+          "roundsMissed": 23,
+          "pvs": 4.7,
+          "unavailablePvs": 107.7,
+          "status": "unavailable"
+        },
+        {
+          "player": "Jarryd Lyons",
+          "club": "Brisbane Lions",
+          "roundsMissed": 22,
+          "pvs": 4.9,
+          "unavailablePvs": 107.4,
+          "status": "unavailable"
+        },
+        {
+          "player": "Cameron Guthrie",
+          "club": "Geelong",
+          "roundsMissed": 21,
           "pvs": 5.0,
-          "unavailablePvs": 95.4,
+          "unavailablePvs": 105.8,
+          "status": "unavailable"
+        },
+        {
+          "player": "Jack Martin",
+          "club": "Carlton",
+          "roundsMissed": 22,
+          "pvs": 4.8,
+          "unavailablePvs": 104.7,
+          "status": "unavailable"
+        },
+        {
+          "player": "Daniel McStay",
+          "club": "Collingwood",
+          "roundsMissed": 20,
+          "pvs": 5.2,
+          "unavailablePvs": 103.4,
           "status": "unavailable"
         }
       ],
@@ -38382,6 +38395,7 @@
   },
   "leagueOverview": {
     "avgUnavailableValue": 55.4,
+    "totalVflOnlyPvs": 5071.0,
     "clubsAboveExpectation": 8,
     "clubsBelowExpectation": 7,
     "topUnavailableClub": "Richmond",
@@ -38543,7 +38557,7 @@
     {
       "club": "Adelaide",
       "unavailableValue": 1547.6,
-      "unavailableTop5": 578.4,
+      "unavailableTop5": 578.5,
       "expectedWins": 9.0,
       "actualWins": 8,
       "delta": -1.0
@@ -38703,67 +38717,67 @@
       "status": "unavailable"
     },
     {
-      "player": "Luke Parker",
-      "club": "Sydney",
-      "roundsMissed": 18,
-      "pvs": 5.7,
-      "unavailablePvs": 103.0,
-      "status": "unavailable"
-    },
-    {
-      "player": "Callum Mills",
-      "club": "Sydney",
-      "roundsMissed": 19,
-      "pvs": 5.2,
-      "unavailablePvs": 99.5,
-      "status": "unavailable"
-    },
-    {
       "player": "Tom Lynch",
       "club": "Richmond",
-      "roundsMissed": 18,
+      "roundsMissed": 21,
       "pvs": 5.5,
-      "unavailablePvs": 99.2,
-      "status": "unavailable"
-    },
-    {
-      "player": "Charlie Spargo",
-      "club": "Melbourne",
-      "roundsMissed": 24,
-      "pvs": 4.1,
-      "unavailablePvs": 98.7,
+      "unavailablePvs": 115.8,
       "status": "unavailable"
     },
     {
       "player": "Sam Powell-Pepper",
       "club": "Port Adelaide",
-      "roundsMissed": 19,
+      "roundsMissed": 22,
       "pvs": 5.2,
-      "unavailablePvs": 98.5,
-      "status": "unavailable"
-    },
-    {
-      "player": "Daniel McStay",
-      "club": "Collingwood",
-      "roundsMissed": 19,
-      "pvs": 5.2,
-      "unavailablePvs": 98.2,
+      "unavailablePvs": 114.0,
       "status": "unavailable"
     },
     {
       "player": "Will Setterfield",
       "club": "Essendon",
-      "roundsMissed": 18,
+      "roundsMissed": 21,
       "pvs": 5.4,
-      "unavailablePvs": 97.3,
+      "unavailablePvs": 113.6,
       "status": "unavailable"
     },
     {
-      "player": "Lachie Weller",
-      "club": "Gold Coast",
-      "roundsMissed": 19,
+      "player": "Lachie Hunter",
+      "club": "Melbourne",
+      "roundsMissed": 23,
+      "pvs": 4.7,
+      "unavailablePvs": 107.7,
+      "status": "unavailable"
+    },
+    {
+      "player": "Jarryd Lyons",
+      "club": "Brisbane Lions",
+      "roundsMissed": 22,
+      "pvs": 4.9,
+      "unavailablePvs": 107.4,
+      "status": "unavailable"
+    },
+    {
+      "player": "Cameron Guthrie",
+      "club": "Geelong",
+      "roundsMissed": 21,
       "pvs": 5.0,
-      "unavailablePvs": 95.4,
+      "unavailablePvs": 105.8,
+      "status": "unavailable"
+    },
+    {
+      "player": "Jack Martin",
+      "club": "Carlton",
+      "roundsMissed": 22,
+      "pvs": 4.8,
+      "unavailablePvs": 104.7,
+      "status": "unavailable"
+    },
+    {
+      "player": "Daniel McStay",
+      "club": "Collingwood",
+      "roundsMissed": 20,
+      "pvs": 5.2,
+      "unavailablePvs": 103.4,
       "status": "unavailable"
     }
   ],

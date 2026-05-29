@@ -18,6 +18,10 @@ def main() -> None:
     run_p.add_argument("--export-season", type=int, default=None)
     run_p.add_argument("--skip-squiggle", action="store_true")
     run_p.add_argument("--skip-fryzigg", action="store_true")
+    run_p.add_argument("--skip-draft", action="store_true")
+    run_p.add_argument("--skip-vfl", action="store_true")
+    run_p.add_argument("--vfl-from-season", type=int, default=2018)
+    run_p.add_argument("--refresh-vfl-cache", action="store_true")
 
     args = parser.parse_args()
     if args.command == "run":
@@ -27,6 +31,10 @@ def main() -> None:
             export_season=args.export_season,
             skip_squiggle=args.skip_squiggle,
             skip_fryzigg=args.skip_fryzigg,
+            skip_draft=args.skip_draft,
+            skip_vfl=args.skip_vfl,
+            vfl_from_season=args.vfl_from_season,
+            refresh_vfl_cache=args.refresh_vfl_cache,
         )
 
 

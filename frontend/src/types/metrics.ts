@@ -53,6 +53,7 @@ export interface MockMetrics {
   }
   leagueOverview: {
     avgUnavailableValue: number
+    totalVflOnlyPvs?: number
     clubsAboveExpectation: number
     clubsBelowExpectation: number
     topUnavailableClub: string

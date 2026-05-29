@@ -65,7 +65,7 @@ pip install -e data-pipeline
 python -m data_pipeline run --from-season 2012 --to-season 2024
 ```
 
-Sources: [Squiggle API](https://api.squiggle.com.au), [Fryzigg](http://www.fryziggafl.net/) (fitzRoy ecosystem). Availability is inferred from AFL selection — not official injury lists.
+Sources: [Squiggle](https://api.squiggle.com.au), [Fryzigg](http://www.fryziggafl.net/), [Draftguru](https://www.draftguru.com.au) (national draft), [VFL stats](https://vfl.aflmstats.com) (reserves participation 2021+). Availability is inferred from games played — not official injury lists.
 
 ## Status
 
@@ -73,4 +73,5 @@ Sources: [Squiggle API](https://api.squiggle.com.au), [Fryzigg](http://www.fryzi
 - ✅ Phase 1 ETL + real metrics JSON (2012–2024 participation)
 - ✅ GitHub Actions deploy + weekly data refresh
 - ✅ Phase 2: PVS model, PVS-weighted unavailability, archetype continuity, filters
-- ⏳ VFL data, draft CSV enrichment, ladder-adjusted residuals
+- ✅ National draft (Draftguru) + VFL reserves (2021–2024)
+- ⏳ VFL 2012–2020 (not on aflmstats), ladder-adjusted residuals

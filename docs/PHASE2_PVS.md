@@ -53,3 +53,13 @@ Week-to-week returning players grouped by Fryzigg position → archetype (key de
 
 - [Squiggle](https://api.squiggle.com.au) — results
 - [Fryzigg](http://www.fryziggafl.net/) — player stats & positions (fitzRoy ecosystem)
+- [Draftguru](https://www.draftguru.com.au) — national draft picks (2012+)
+- [VFL AFLM Stats](https://vfl.aflmstats.com) — VFL participation (2021–2024 on site; earlier seasons unavailable)
+
+### VFL availability
+
+Players on an AFL club squad who did not play AFL but appear in a VFL box score for the affiliated reserves side are marked `vfl_only`. VFL franchise → AFL club mapping is in `shared/data/vfl_to_afl_club.json`.
+
+### National draft
+
+Real draft pick numbers replace the rookie/veteran heuristic when a player is matched to Fryzigg `player_id` via normalized name. Unmatched picks still use defaults.

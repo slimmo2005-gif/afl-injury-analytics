@@ -22,7 +22,7 @@ jobs:
         run: pip install -e data-pipeline
 
       - name: Run ETL (2012–current)
-        run: python -m data_pipeline run --from-season 2012 --to-season 2024
+        run: python -m data_pipeline run --from-season 2012 --to-season 2024 --vfl-from-season 2021
 
       - name: Export parquet snapshot
         run: |
