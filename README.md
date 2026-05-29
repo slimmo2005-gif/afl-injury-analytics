@@ -2,7 +2,7 @@
 
 Wireframe MVP for an **injury-adjusted team performance** analytics app. Measures how much player value is unavailable each week and correlates it with team results.
 
-**Live demo (after setup):** `https://<your-username>.github.io/<repo-name>/`
+**Live demo:** https://slimmo2005-gif.github.io/afl-injury-analytics/
 
 ## Quick start (local)
 
@@ -14,23 +14,16 @@ npm run dev
 
 Open http://localhost:5173
 
-## Deploy to GitHub Pages (~5 min)
+## Deploy to GitHub Pages
 
-1. Create a new repo on GitHub (e.g. `afl-injury-analytics`).
-2. Push this project:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial wireframe MVP"
-   git branch -M main
-   git remote add origin https://github.com/<you>/<repo>.git
-   git push -u origin main
-   ```
-3. In the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-4. Push to `main` — the **Deploy to GitHub Pages** workflow runs automatically.
-5. Your URL appears under **Settings → Pages** (usually within 2–3 minutes).
+1. Push to `main` — the **Deploy to GitHub Pages** workflow builds and pushes to the `gh-pages` branch.
+2. In the repo: **Settings → Pages → Build and deployment**
+3. Set **Source** to **Deploy from a branch**
+4. **Branch:** `gh-pages` · **Folder:** `/ (root)` · Save
+5. Open https://slimmo2005-gif.github.io/afl-injury-analytics/ (allow 1–2 minutes)
 
-> The build sets `VITE_BASE_PATH=/<repo-name>/` so assets load correctly on project pages.
+> Do **not** use `main` as the Pages branch — that serves this README instead of the app.  
+> The build sets `VITE_BASE_PATH=/afl-injury-analytics/` so assets load on project Pages.
 
 ## Project structure
 

@@ -5,17 +5,16 @@ on:
     branches: [main, master]
   workflow_dispatch:
 
+# Push built site to gh-pages branch (reliable for project Pages URLs)
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,31 +29,26 @@ jobs:
         run: |
           if [ ! -f frontend/public/data/metrics.json ]; then
             pip install -e data-pipeline
-            python -m data_pipeline run --from-season 2012 --to-season 2024
+            python -m data_pipeline run --from-season 2012 --to-season 2024 --vfl-from-season 2021
           fi
 
       - name: Install dependencies
         working-directory: frontend
         run: npm ci
 
-      - name: Build
+      - name: Build for GitHub Pages
         working-directory: frontend
         env:
-          # Replace with your repo name: https://<user>.github.io/<repo>/
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
         run: npm run build
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: frontend/dist
+      - name: SPA fallback for client-side routes
+        working-directory: frontend/dist
+        run: cp index.html 404.html
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/dist
+          force_orphan: true
