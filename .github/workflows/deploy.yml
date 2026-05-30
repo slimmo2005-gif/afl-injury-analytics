@@ -3,9 +3,14 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main, master]
+    paths-ignore:
+      - 'index.html'
+      - '404.html'
+      - 'assets/**'
+      - 'data/**'
+      - '.nojekyll'
   workflow_dispatch:
 
-# Push built site to gh-pages branch (reliable for project Pages URLs)
 permissions:
   contents: write
 
@@ -46,9 +51,26 @@ jobs:
         working-directory: frontend/dist
         run: cp index.html 404.html
 
-      - name: Deploy to gh-pages branch
+      - name: Publish built site to repo root (Pages serves main branch)
+        run: |
+          cp frontend/dist/index.html ./index.html
+          cp frontend/dist/404.html ./404.html
+          rm -rf ./assets ./data
+          cp -r frontend/dist/assets ./assets
+          cp -r frontend/dist/data ./data
+          touch .nojekyll
+
+      - name: Deploy to gh-pages branch (optional mirror)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/dist
           force_orphan: true
+
+      - name: Commit root site files to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html 404.html assets data .nojekyll
+          git diff --staged --quiet || git commit -m "chore: publish site to repo root [skip ci]"
+          git push

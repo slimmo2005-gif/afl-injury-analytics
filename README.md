@@ -16,14 +16,11 @@ Open http://localhost:5173
 
 ## Deploy to GitHub Pages
 
-1. Push to `main` — the **Deploy to GitHub Pages** workflow builds and pushes to the `gh-pages` branch.
-2. In the repo: **Settings → Pages → Build and deployment**
-3. Set **Source** to **Deploy from a branch**
-4. **Branch:** `gh-pages` · **Folder:** `/ (root)` · Save
-5. Open https://slimmo2005-gif.github.io/afl-injury-analytics/ (allow 1–2 minutes)
+Push to `main` — the workflow builds the app and publishes `index.html` + `assets/` to the **repo root** (works when Pages source is `main` / root).
 
-> Do **not** use `main` as the Pages branch — that serves this README instead of the app.  
-> The build sets `VITE_BASE_PATH=/afl-injury-analytics/` so assets load on project Pages.
+Optional: you can also point Pages at the `gh-pages` branch instead.
+
+**Live URL:** https://slimmo2005-gif.github.io/afl-injury-analytics/
 
 ## Project structure
 
