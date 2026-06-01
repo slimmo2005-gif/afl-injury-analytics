@@ -2,7 +2,7 @@
   "meta": {
     "season": 2024,
     "round": 24,
-    "generatedAt": "2026-05-29T02:36:15.314355+00:00",
+    "generatedAt": "2026-06-01T11:51:28.672079+00:00",
     "note": "Phase 2 \u2014 PVS + national draft + VFL (2024)",
     "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
     "defaultSeason": 2024,
@@ -9154,7 +9154,7 @@
         },
         {
           "club": "Hawthorn",
-          "unavailableValue": 809.0,
+          "unavailableValue": 809.1,
           "unavailableTop5": 380.8,
           "expectedWins": 15.0,
           "actualWins": 16,
