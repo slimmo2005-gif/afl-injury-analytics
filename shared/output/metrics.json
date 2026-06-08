@@ -2,7 +2,7 @@
   "meta": {
     "season": 2024,
     "round": 24,
-    "generatedAt": "2026-06-01T11:51:28.672079+00:00",
+    "generatedAt": "2026-06-08T11:12:20.738833+00:00",
     "note": "Phase 2 \u2014 PVS + national draft + VFL (2024)",
     "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
     "defaultSeason": 2024,
@@ -352,16 +352,16 @@
           "status": "unavailable"
         },
         {
-          "player": "Ben Warren",
-          "club": "North Melbourne",
+          "player": "Angus Graham",
+          "club": "Richmond",
           "roundsMissed": 22,
           "pvs": 2.9,
           "unavailablePvs": 63.4,
           "status": "unavailable"
         },
         {
-          "player": "Angus Graham",
-          "club": "Richmond",
+          "player": "Ben Warren",
+          "club": "North Melbourne",
           "roundsMissed": 22,
           "pvs": 2.9,
           "unavailablePvs": 63.4,
@@ -8932,7 +8932,7 @@
     },
     "2015": {
       "leagueOverview": {
-        "avgUnavailableValue": 45.5,
+        "avgUnavailableValue": 45.6,
         "totalVflOnlyPvs": 0.0,
         "clubsAboveExpectation": 6,
         "clubsBelowExpectation": 9,
@@ -9210,11 +9210,11 @@
         },
         {
           "club": "West Coast",
-          "unavailableValue": 897.3,
+          "unavailableValue": 900.5,
           "unavailableTop5": 371.0,
-          "expectedWins": 13.5,
+          "expectedWins": 13.4,
           "actualWins": 16,
-          "delta": 2.5
+          "delta": 2.6
         },
         {
           "club": "Western Bulldogs",
@@ -9351,7 +9351,7 @@
         "coefficients": {
           "intercept": 29.28,
           "unavailablePvs": -0.0176,
-          "marginPer100Pvs": -9.14
+          "marginPer100Pvs": -9.13
         },
         "interpretation": "Each +100 unavailable PVS correlates with ~1.8 fewer wins (season 2015). PVS combines rolling performance (disposals, goals, score involvements) with draft-potential prior and smooth age weighting."
       },
@@ -11206,133 +11206,133 @@
           },
           {
             "round": 2,
-            "value": 37.6,
+            "value": 37.8,
             "top5": 17.0,
             "wins": 1
           },
           {
             "round": 3,
-            "value": 35.9,
+            "value": 36.1,
             "top5": 16.1,
             "wins": 0
           },
           {
             "round": 4,
-            "value": 35.8,
+            "value": 36.0,
             "top5": 16.0,
             "wins": 1
           },
           {
             "round": 5,
-            "value": 36.7,
-            "top5": 16.8,
-            "wins": 1
-          },
-          {
-            "round": 6,
             "value": 36.8,
             "top5": 16.8,
             "wins": 1
           },
           {
+            "round": 6,
+            "value": 36.9,
+            "top5": 16.8,
+            "wins": 1
+          },
+          {
             "round": 7,
-            "value": 36.1,
+            "value": 36.3,
             "top5": 16.8,
             "wins": 1
           },
           {
             "round": 8,
-            "value": 35.9,
+            "value": 36.0,
             "top5": 16.3,
             "wins": 1
           },
           {
             "round": 9,
-            "value": 37.6,
+            "value": 37.8,
             "top5": 16.9,
             "wins": 1
           },
           {
             "round": 10,
-            "value": 36.2,
+            "value": 36.3,
             "top5": 16.3,
             "wins": 0
           },
           {
             "round": 11,
-            "value": 35.0,
+            "value": 35.2,
             "top5": 15.3,
             "wins": 1
           },
           {
             "round": 12,
-            "value": 34.8,
+            "value": 34.9,
             "top5": 15.0,
             "wins": 1
           },
           {
             "round": 13,
-            "value": 109.8,
+            "value": 109.9,
             "top5": 20.3,
             "wins": 0
           },
           {
             "round": 14,
-            "value": 35.0,
+            "value": 35.2,
             "top5": 15.3,
             "wins": 1
           },
           {
             "round": 15,
-            "value": 34.7,
+            "value": 34.8,
             "top5": 14.9,
             "wins": 1
           },
           {
             "round": 16,
-            "value": 34.7,
+            "value": 34.8,
             "top5": 14.9,
             "wins": 1
           },
           {
             "round": 17,
-            "value": 34.2,
+            "value": 34.4,
             "top5": 14.9,
             "wins": 1
           },
           {
             "round": 18,
-            "value": 34.2,
+            "value": 34.4,
             "top5": 14.9,
             "wins": 0
           },
           {
             "round": 19,
-            "value": 35.3,
+            "value": 35.4,
             "top5": 15.6,
             "wins": 0
           },
           {
             "round": 20,
-            "value": 35.4,
+            "value": 35.6,
             "top5": 16.2,
             "wins": 1
           },
           {
             "round": 21,
-            "value": 36.2,
+            "value": 36.3,
             "top5": 16.5,
             "wins": 1
           },
           {
             "round": 22,
-            "value": 37.4,
+            "value": 37.5,
             "top5": 16.9,
             "wins": 0
           },
           {
             "round": 23,
-            "value": 35.1,
+            "value": 35.2,
             "top5": 15.2,
             "wins": 1
           }
@@ -35360,7 +35360,7 @@
         {
           "club": "Adelaide",
           "unavailableValue": 1547.6,
-          "unavailableTop5": 578.5,
+          "unavailableTop5": 578.4,
           "expectedWins": 9.0,
           "actualWins": 8,
           "delta": -1.0
@@ -35432,7 +35432,7 @@
         {
           "club": "Hawthorn",
           "unavailableValue": 1060.4,
-          "unavailableTop5": 532.2,
+          "unavailableTop5": 532.3,
           "expectedWins": 16.0,
           "actualWins": 14,
           "delta": -2.0
@@ -38557,7 +38557,7 @@
     {
       "club": "Adelaide",
       "unavailableValue": 1547.6,
-      "unavailableTop5": 578.5,
+      "unavailableTop5": 578.4,
       "expectedWins": 9.0,
       "actualWins": 8,
       "delta": -1.0
@@ -38629,7 +38629,7 @@
     {
       "club": "Hawthorn",
       "unavailableValue": 1060.4,
-      "unavailableTop5": 532.2,
+      "unavailableTop5": 532.3,
       "expectedWins": 16.0,
       "actualWins": 14,
       "delta": -2.0
