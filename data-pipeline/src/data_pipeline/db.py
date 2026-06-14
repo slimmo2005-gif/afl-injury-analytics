@@ -30,6 +30,19 @@ CREATE TABLE IF NOT EXISTS player_games (
     disposals INTEGER,
     goals INTEGER,
     score_involvements DOUBLE,
+    tackles DOUBLE DEFAULT 0,
+    contested_marks DOUBLE DEFAULT 0,
+    intercept_marks DOUBLE DEFAULT 0,
+    marks_inside_fifty DOUBLE DEFAULT 0,
+    intercepts DOUBLE DEFAULT 0,
+    clearances DOUBLE DEFAULT 0,
+    hitouts DOUBLE DEFAULT 0,
+    hitouts_to_advantage DOUBLE DEFAULT 0,
+    clangers DOUBLE DEFAULT 0,
+    metres_gained DOUBLE DEFAULT 0,
+    metres_per100 DOUBLE DEFAULT 0,
+    disposal_efficiency_pct DOUBLE DEFAULT 0,
+    effective_disposals DOUBLE DEFAULT 0,
     player_position VARCHAR,
     source VARCHAR DEFAULT 'fryzigg',
     PRIMARY KEY (player_id, season, round, match_id)
@@ -105,6 +118,7 @@ CREATE TABLE IF NOT EXISTS team_round_value (
     unavailable_pvs_28plus DOUBLE NOT NULL,
     unavailable_pvs_intermittent DOUBLE NOT NULL,
     unavailable_pvs_vfl_only DOUBLE NOT NULL DEFAULT 0,
+    unavailable_pvs_games_missed DOUBLE NOT NULL DEFAULT 0,
     won BOOLEAN,
     PRIMARY KEY (team, season, round)
 );
@@ -137,16 +151,34 @@ CREATE TABLE IF NOT EXISTS vfl_games (
     round INTEGER NOT NULL,
     game_slug VARCHAR,
     player_id VARCHAR,
-    PRIMARY KEY (player_name_norm, afl_club, season, round, game_slug)
+    competition VARCHAR NOT NULL DEFAULT 'vfl',
+    game_date DATE,
+    PRIMARY KEY (player_name_norm, afl_club, season, round, game_slug, competition)
 );
 """
 
 MIGRATIONS = [
     "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS score_involvements DOUBLE",
     "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS player_position VARCHAR",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS tackles DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS contested_marks DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS intercept_marks DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS marks_inside_fifty DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS intercepts DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS clearances DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS hitouts DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS hitouts_to_advantage DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS clangers DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS metres_gained DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS metres_per100 DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS disposal_efficiency_pct DOUBLE DEFAULT 0",
+    "ALTER TABLE player_games ADD COLUMN IF NOT EXISTS effective_disposals DOUBLE DEFAULT 0",
     "ALTER TABLE team_round_summary ADD COLUMN IF NOT EXISTS unavailable_pvs_total DOUBLE DEFAULT 0",
     "ALTER TABLE team_round_summary ADD COLUMN IF NOT EXISTS unavailable_pvs_top5 DOUBLE DEFAULT 0",
     "ALTER TABLE team_round_value ADD COLUMN IF NOT EXISTS unavailable_pvs_vfl_only DOUBLE DEFAULT 0",
+    "ALTER TABLE team_round_value ADD COLUMN IF NOT EXISTS unavailable_pvs_games_missed DOUBLE DEFAULT 0",
+    "ALTER TABLE vfl_games ADD COLUMN IF NOT EXISTS competition VARCHAR DEFAULT 'vfl'",
+    "ALTER TABLE vfl_games ADD COLUMN IF NOT EXISTS game_date DATE",
 ]
 
 

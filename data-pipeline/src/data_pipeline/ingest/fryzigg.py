@@ -79,7 +79,42 @@ def load_player_games(
         raw["score_involvements"] = None
     raw["player_position"] = raw.get("player_position", pd.Series(dtype=str))
 
-    out = raw[cols + ["disposals", "goals", "score_involvements", "player_position"]].drop_duplicates(
+    stat_cols = [
+        "disposals",
+        "goals",
+        "score_involvements",
+        "tackles",
+        "contested_marks",
+        "intercept_marks",
+        "marks_inside_fifty",
+        "intercepts",
+        "clearances",
+        "hitouts",
+        "hitouts_to_advantage",
+        "clangers",
+        "metres_gained",
+    ]
+    for col in stat_cols:
+        if col in raw.columns:
+            raw[col] = pd.to_numeric(raw[col], errors="coerce").fillna(0)
+        else:
+            raw[col] = 0.0
+
+    if "disposal_efficiency_percentage" in raw.columns:
+        raw["disposal_efficiency_pct"] = pd.to_numeric(
+            raw["disposal_efficiency_percentage"], errors="coerce"
+        ).fillna(72.0)
+    else:
+        raw["disposal_efficiency_pct"] = 72.0
+
+    raw["metres_per100"] = raw["metres_gained"] / 100.0
+    raw["effective_disposals"] = raw["disposals"] * raw["disposal_efficiency_pct"] / 100.0
+
+    out = raw[
+        cols
+        + stat_cols
+        + ["metres_per100", "disposal_efficiency_pct", "effective_disposals", "player_position"]
+    ].drop_duplicates(
         subset=["player_id", "team", "season", "round", "match_id"]
     )
     out["match_date"] = out["match_date"].dt.date

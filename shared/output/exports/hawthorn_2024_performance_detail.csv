@@ -1,0 +1,375 @@
+player_id,player_name,stat,weight,raw_season_avg,weighted_contribution
+12854,Lloyd Meek,Disposals / game,0.22,14.0526,3.0916
+12854,Lloyd Meek,Goals / game,0.18,0.3684,0.0663
+12854,Lloyd Meek,Score involvements / game,0.11,5.0526,0.5558
+12854,Lloyd Meek,Metres gained / 100 per game,0.06,1.6216,0.0973
+12854,Lloyd Meek,Tackles / game,0.07,3.4737,0.2432
+12854,Lloyd Meek,Contested marks / game,0.09,0.6316,0.0568
+12854,Lloyd Meek,Intercepts / game,0.09,2.2105,0.1989
+12854,Lloyd Meek,Clearances / game,0.11,3.2632,0.3589
+12854,Lloyd Meek,Hit-outs / game,0.03,35.6842,1.0705
+12854,Lloyd Meek,Hit-outs to advantage / game,0.05,10.6316,0.5316
+12854,Lloyd Meek,Clangers / game (penalty),-0.06,3.3684,-0.2021
+13022,Jai Serong,Disposals / game,0.22,8.5,1.87
+13022,Jai Serong,Goals / game,0.18,0.0,0.0
+13022,Jai Serong,Score involvements / game,0.11,1.0,0.11
+13022,Jai Serong,Metres gained / 100 per game,0.06,1.12,0.0672
+13022,Jai Serong,Tackles / game,0.07,2.25,0.1575
+13022,Jai Serong,Contested marks / game,0.09,0.0,0.0
+13022,Jai Serong,Intercepts / game,0.09,3.5,0.315
+13022,Jai Serong,Clearances / game,0.11,0.0,0.0
+13022,Jai Serong,Hit-outs / game,0.03,0.0,0.0
+13022,Jai Serong,Hit-outs to advantage / game,0.05,0.0,0.0
+13022,Jai Serong,Clangers / game (penalty),-0.06,1.0,-0.06
+12753,Changkuoth Jiath,Disposals / game,0.22,11.9091,2.62
+12753,Changkuoth Jiath,Goals / game,0.18,0.2727,0.0491
+12753,Changkuoth Jiath,Score involvements / game,0.11,2.9091,0.32
+12753,Changkuoth Jiath,Metres gained / 100 per game,0.06,2.4045,0.1443
+12753,Changkuoth Jiath,Tackles / game,0.07,2.0,0.14
+12753,Changkuoth Jiath,Contested marks / game,0.09,0.0909,0.0082
+12753,Changkuoth Jiath,Intercepts / game,0.09,3.5455,0.3191
+12753,Changkuoth Jiath,Clearances / game,0.11,0.5455,0.06
+12753,Changkuoth Jiath,Hit-outs / game,0.03,0.0,0.0
+12753,Changkuoth Jiath,Hit-outs to advantage / game,0.05,0.0,0.0
+12753,Changkuoth Jiath,Clangers / game (penalty),-0.06,1.7273,-0.1036
+11854,Jack Gunston,Disposals / game,0.22,9.5625,2.1038
+11854,Jack Gunston,Goals / game,0.18,1.75,0.315
+11854,Jack Gunston,Score involvements / game,0.11,5.4375,0.5981
+11854,Jack Gunston,Metres gained / 100 per game,0.06,1.78,0.1068
+11854,Jack Gunston,Tackles / game,0.07,1.25,0.0875
+11854,Jack Gunston,Contested marks / game,0.09,0.4375,0.0394
+11854,Jack Gunston,Intercepts / game,0.09,0.25,0.0225
+11854,Jack Gunston,Clearances / game,0.11,0.125,0.0138
+11854,Jack Gunston,Hit-outs / game,0.03,0.0,0.0
+11854,Jack Gunston,Hit-outs to advantage / game,0.05,0.0,0.0
+11854,Jack Gunston,Clangers / game (penalty),-0.06,1.625,-0.0975
+13059,Josh Weddle,Disposals / game,0.22,14.1739,3.1183
+13059,Josh Weddle,Goals / game,0.18,0.4348,0.0783
+13059,Josh Weddle,Score involvements / game,0.11,3.2609,0.3587
+13059,Josh Weddle,Metres gained / 100 per game,0.06,2.7243,0.1635
+13059,Josh Weddle,Tackles / game,0.07,1.7391,0.1217
+13059,Josh Weddle,Contested marks / game,0.09,0.6957,0.0626
+13059,Josh Weddle,Intercepts / game,0.09,4.7391,0.4265
+13059,Josh Weddle,Clearances / game,0.11,0.3913,0.043
+13059,Josh Weddle,Hit-outs / game,0.03,0.913,0.0274
+13059,Josh Weddle,Hit-outs to advantage / game,0.05,0.2174,0.0109
+13059,Josh Weddle,Clangers / game (penalty),-0.06,1.913,-0.1148
+12585,Harry Morrison,Disposals / game,0.22,13.8,3.036
+12585,Harry Morrison,Goals / game,0.18,0.2,0.036
+12585,Harry Morrison,Score involvements / game,0.11,3.2,0.352
+12585,Harry Morrison,Metres gained / 100 per game,0.06,2.279,0.1367
+12585,Harry Morrison,Tackles / game,0.07,1.6,0.112
+12585,Harry Morrison,Contested marks / game,0.09,0.1,0.009
+12585,Harry Morrison,Intercepts / game,0.09,3.3,0.297
+12585,Harry Morrison,Clearances / game,0.11,1.2,0.132
+12585,Harry Morrison,Hit-outs / game,0.03,0.0,0.0
+12585,Harry Morrison,Hit-outs to advantage / game,0.05,0.0,0.0
+12585,Harry Morrison,Clangers / game (penalty),-0.06,2.1,-0.126
+13146,Ethan Phillips,Disposals / game,0.22,10.0,2.2
+13146,Ethan Phillips,Goals / game,0.18,0.0,0.0
+13146,Ethan Phillips,Score involvements / game,0.11,1.0,0.11
+13146,Ethan Phillips,Metres gained / 100 per game,0.06,0.44,0.0264
+13146,Ethan Phillips,Tackles / game,0.07,1.0,0.07
+13146,Ethan Phillips,Contested marks / game,0.09,0.0,0.0
+13146,Ethan Phillips,Intercepts / game,0.09,8.0,0.72
+13146,Ethan Phillips,Clearances / game,0.11,0.0,0.0
+13146,Ethan Phillips,Hit-outs / game,0.03,0.0,0.0
+13146,Ethan Phillips,Hit-outs to advantage / game,0.05,0.0,0.0
+13146,Ethan Phillips,Clangers / game (penalty),-0.06,0.0,-0.0
+12928,Jack Ginnivan,Disposals / game,0.22,16.9524,3.7295
+12928,Jack Ginnivan,Goals / game,0.18,1.1905,0.2143
+12928,Jack Ginnivan,Score involvements / game,0.11,5.8571,0.6443
+12928,Jack Ginnivan,Metres gained / 100 per game,0.06,2.9086,0.1745
+12928,Jack Ginnivan,Tackles / game,0.07,2.619,0.1833
+12928,Jack Ginnivan,Contested marks / game,0.09,0.0476,0.0043
+12928,Jack Ginnivan,Intercepts / game,0.09,1.5238,0.1371
+12928,Jack Ginnivan,Clearances / game,0.11,1.2857,0.1414
+12928,Jack Ginnivan,Hit-outs / game,0.03,0.0,0.0
+12928,Jack Ginnivan,Hit-outs to advantage / game,0.05,0.0,0.0
+12928,Jack Ginnivan,Clangers / game (penalty),-0.06,3.1905,-0.1914
+12953,Connor Macdonald,Disposals / game,0.22,17.5217,3.8548
+12953,Connor Macdonald,Goals / game,0.18,1.1304,0.2035
+12953,Connor Macdonald,Score involvements / game,0.11,6.2609,0.6887
+12953,Connor Macdonald,Metres gained / 100 per game,0.06,2.7496,0.165
+12953,Connor Macdonald,Tackles / game,0.07,2.8261,0.1978
+12953,Connor Macdonald,Contested marks / game,0.09,0.1304,0.0117
+12953,Connor Macdonald,Intercepts / game,0.09,1.3913,0.1252
+12953,Connor Macdonald,Clearances / game,0.11,1.1304,0.1243
+12953,Connor Macdonald,Hit-outs / game,0.03,0.0,0.0
+12953,Connor Macdonald,Hit-outs to advantage / game,0.05,0.0,0.0
+12953,Connor Macdonald,Clangers / game (penalty),-0.06,2.8261,-0.1696
+13060,Max Ramsden,Disposals / game,0.22,5.6667,1.2467
+13060,Max Ramsden,Goals / game,0.18,0.3333,0.06
+13060,Max Ramsden,Score involvements / game,0.11,1.3333,0.1467
+13060,Max Ramsden,Metres gained / 100 per game,0.06,0.5433,0.0326
+13060,Max Ramsden,Tackles / game,0.07,2.0,0.14
+13060,Max Ramsden,Contested marks / game,0.09,0.3333,0.03
+13060,Max Ramsden,Intercepts / game,0.09,1.0,0.09
+13060,Max Ramsden,Clearances / game,0.11,0.6667,0.0733
+13060,Max Ramsden,Hit-outs / game,0.03,3.6667,0.11
+13060,Max Ramsden,Hit-outs to advantage / game,0.05,0.6667,0.0333
+13060,Max Ramsden,Clangers / game (penalty),-0.06,1.6667,-0.1
+12678,Conor Nash,Disposals / game,0.22,19.0435,4.1896
+12678,Conor Nash,Goals / game,0.18,0.0435,0.0078
+12678,Conor Nash,Score involvements / game,0.11,4.3478,0.4783
+12678,Conor Nash,Metres gained / 100 per game,0.06,2.3304,0.1398
+12678,Conor Nash,Tackles / game,0.07,5.3043,0.3713
+12678,Conor Nash,Contested marks / game,0.09,0.087,0.0078
+12678,Conor Nash,Intercepts / game,0.09,1.8696,0.1683
+12678,Conor Nash,Clearances / game,0.11,5.0,0.55
+12678,Conor Nash,Hit-outs / game,0.03,1.3478,0.0404
+12678,Conor Nash,Hit-outs to advantage / game,0.05,0.2609,0.013
+12678,Conor Nash,Clangers / game (penalty),-0.06,3.7391,-0.2243
+12710,Dylan Moore,Disposals / game,0.22,19.7391,4.3426
+12710,Dylan Moore,Goals / game,0.18,1.5217,0.2739
+12710,Dylan Moore,Score involvements / game,0.11,7.3478,0.8083
+12710,Dylan Moore,Metres gained / 100 per game,0.06,2.9309,0.1759
+12710,Dylan Moore,Tackles / game,0.07,3.8696,0.2709
+12710,Dylan Moore,Contested marks / game,0.09,0.2609,0.0235
+12710,Dylan Moore,Intercepts / game,0.09,1.7826,0.1604
+12710,Dylan Moore,Clearances / game,0.11,1.913,0.2104
+12710,Dylan Moore,Hit-outs / game,0.03,0.0,0.0
+12710,Dylan Moore,Hit-outs to advantage / game,0.05,0.0,0.0
+12710,Dylan Moore,Clangers / game (penalty),-0.06,2.4348,-0.1461
+12907,Ned Reeves,Disposals / game,0.22,8.25,1.815
+12907,Ned Reeves,Goals / game,0.18,0.25,0.045
+12907,Ned Reeves,Score involvements / game,0.11,3.0,0.33
+12907,Ned Reeves,Metres gained / 100 per game,0.06,0.405,0.0243
+12907,Ned Reeves,Tackles / game,0.07,2.25,0.1575
+12907,Ned Reeves,Contested marks / game,0.09,0.75,0.0675
+12907,Ned Reeves,Intercepts / game,0.09,1.5,0.135
+12907,Ned Reeves,Clearances / game,0.11,2.5,0.275
+12907,Ned Reeves,Hit-outs / game,0.03,22.75,0.6825
+12907,Ned Reeves,Hit-outs to advantage / game,0.05,5.5,0.275
+12907,Ned Reeves,Clangers / game (penalty),-0.06,3.5,-0.21
+12999,Massimo D'Ambrosio,Disposals / game,0.22,20.7727,4.57
+12999,Massimo D'Ambrosio,Goals / game,0.18,0.3182,0.0573
+12999,Massimo D'Ambrosio,Score involvements / game,0.11,4.5,0.495
+12999,Massimo D'Ambrosio,Metres gained / 100 per game,0.06,3.3682,0.2021
+12999,Massimo D'Ambrosio,Tackles / game,0.07,1.9091,0.1336
+12999,Massimo D'Ambrosio,Contested marks / game,0.09,0.0909,0.0082
+12999,Massimo D'Ambrosio,Intercepts / game,0.09,4.4545,0.4009
+12999,Massimo D'Ambrosio,Clearances / game,0.11,1.3182,0.145
+12999,Massimo D'Ambrosio,Hit-outs / game,0.03,0.0,0.0
+12999,Massimo D'Ambrosio,Hit-outs to advantage / game,0.05,0.0,0.0
+12999,Massimo D'Ambrosio,Clangers / game (penalty),-0.06,1.8182,-0.1091
+12245,Jarman Impey,Disposals / game,0.22,19.0435,4.1896
+12245,Jarman Impey,Goals / game,0.18,0.087,0.0157
+12245,Jarman Impey,Score involvements / game,0.11,3.1739,0.3491
+12245,Jarman Impey,Metres gained / 100 per game,0.06,3.4387,0.2063
+12245,Jarman Impey,Tackles / game,0.07,2.3913,0.1674
+12245,Jarman Impey,Contested marks / game,0.09,0.2609,0.0235
+12245,Jarman Impey,Intercepts / game,0.09,5.5217,0.497
+12245,Jarman Impey,Clearances / game,0.11,0.8696,0.0957
+12245,Jarman Impey,Hit-outs / game,0.03,0.0,0.0
+12245,Jarman Impey,Hit-outs to advantage / game,0.05,0.0,0.0
+12245,Jarman Impey,Clangers / game (penalty),-0.06,2.2609,-0.1357
+12954,Josh Ward,Disposals / game,0.22,14.3,3.146
+12954,Josh Ward,Goals / game,0.18,0.1,0.018
+12954,Josh Ward,Score involvements / game,0.11,4.6,0.506
+12954,Josh Ward,Metres gained / 100 per game,0.06,2.412,0.1447
+12954,Josh Ward,Tackles / game,0.07,1.8,0.126
+12954,Josh Ward,Contested marks / game,0.09,0.0,0.0
+12954,Josh Ward,Intercepts / game,0.09,1.2,0.108
+12954,Josh Ward,Clearances / game,0.11,1.3,0.143
+12954,Josh Ward,Hit-outs / game,0.03,0.0,0.0
+12954,Josh Ward,Hit-outs to advantage / game,0.05,0.0,0.0
+12954,Josh Ward,Clangers / game (penalty),-0.06,1.9,-0.114
+12365,Karl Amon,Disposals / game,0.22,22.1304,4.8687
+12365,Karl Amon,Goals / game,0.18,0.1739,0.0313
+12365,Karl Amon,Score involvements / game,0.11,4.3043,0.4735
+12365,Karl Amon,Metres gained / 100 per game,0.06,5.3809,0.3229
+12365,Karl Amon,Tackles / game,0.07,1.8696,0.1309
+12365,Karl Amon,Contested marks / game,0.09,0.0435,0.0039
+12365,Karl Amon,Intercepts / game,0.09,3.2174,0.2896
+12365,Karl Amon,Clearances / game,0.11,1.087,0.1196
+12365,Karl Amon,Hit-outs / game,0.03,0.0,0.0
+12365,Karl Amon,Hit-outs to advantage / game,0.05,0.0,0.0
+12365,Karl Amon,Clangers / game (penalty),-0.06,1.913,-0.1148
+12491,Mabior Chol,Disposals / game,0.22,9.5714,2.1057
+12491,Mabior Chol,Goals / game,0.18,1.7143,0.3086
+12491,Mabior Chol,Score involvements / game,0.11,5.1905,0.571
+12491,Mabior Chol,Metres gained / 100 per game,0.06,1.971,0.1183
+12491,Mabior Chol,Tackles / game,0.07,2.8095,0.1967
+12491,Mabior Chol,Contested marks / game,0.09,0.9048,0.0814
+12491,Mabior Chol,Intercepts / game,0.09,0.8095,0.0729
+12491,Mabior Chol,Clearances / game,0.11,0.6667,0.0733
+12491,Mabior Chol,Hit-outs / game,0.03,1.8095,0.0543
+12491,Mabior Chol,Hit-outs to advantage / game,0.05,0.4762,0.0238
+12491,Mabior Chol,Clangers / game (penalty),-0.06,3.1905,-0.1914
+13055,Seamus Mitchell,Disposals / game,0.22,8.6,1.892
+13055,Seamus Mitchell,Goals / game,0.18,0.0,0.0
+13055,Seamus Mitchell,Score involvements / game,0.11,0.8,0.088
+13055,Seamus Mitchell,Metres gained / 100 per game,0.06,1.171,0.0703
+13055,Seamus Mitchell,Tackles / game,0.07,1.8,0.126
+13055,Seamus Mitchell,Contested marks / game,0.09,0.5,0.045
+13055,Seamus Mitchell,Intercepts / game,0.09,2.8,0.252
+13055,Seamus Mitchell,Clearances / game,0.11,0.2,0.022
+13055,Seamus Mitchell,Hit-outs / game,0.03,0.0,0.0
+13055,Seamus Mitchell,Hit-outs to advantage / game,0.05,0.0,0.0
+13055,Seamus Mitchell,Clangers / game (penalty),-0.06,2.4,-0.144
+12342,James Sicily,Disposals / game,0.22,21.55,4.741
+12342,James Sicily,Goals / game,0.18,0.4,0.072
+12342,James Sicily,Score involvements / game,0.11,4.2,0.462
+12342,James Sicily,Metres gained / 100 per game,0.06,4.6945,0.2817
+12342,James Sicily,Tackles / game,0.07,1.25,0.0875
+12342,James Sicily,Contested marks / game,0.09,0.85,0.0765
+12342,James Sicily,Intercepts / game,0.09,7.15,0.6435
+12342,James Sicily,Clearances / game,0.11,0.35,0.0385
+12342,James Sicily,Hit-outs / game,0.03,0.0,0.0
+12342,James Sicily,Hit-outs to advantage / game,0.05,0.0,0.0
+12342,James Sicily,Clangers / game (penalty),-0.06,3.05,-0.183
+13103,Nick Watson,Disposals / game,0.22,10.9375,2.4062
+13103,Nick Watson,Goals / game,0.18,1.125,0.2025
+13103,Nick Watson,Score involvements / game,0.11,5.5625,0.6119
+13103,Nick Watson,Metres gained / 100 per game,0.06,1.9194,0.1152
+13103,Nick Watson,Tackles / game,0.07,2.5,0.175
+13103,Nick Watson,Contested marks / game,0.09,0.1875,0.0169
+13103,Nick Watson,Intercepts / game,0.09,1.0,0.09
+13103,Nick Watson,Clearances / game,0.11,0.75,0.0825
+13103,Nick Watson,Hit-outs / game,0.03,0.0,0.0
+13103,Nick Watson,Hit-outs to advantage / game,0.05,0.0,0.0
+13103,Nick Watson,Clangers / game (penalty),-0.06,1.3125,-0.0788
+12477,Blake Hardwick,Disposals / game,0.22,14.6522,3.2235
+12477,Blake Hardwick,Goals / game,0.18,0.5652,0.1017
+12477,Blake Hardwick,Score involvements / game,0.11,2.9565,0.3252
+12477,Blake Hardwick,Metres gained / 100 per game,0.06,2.3017,0.1381
+12477,Blake Hardwick,Tackles / game,0.07,2.5217,0.1765
+12477,Blake Hardwick,Contested marks / game,0.09,0.4348,0.0391
+12477,Blake Hardwick,Intercepts / game,0.09,4.0435,0.3639
+12477,Blake Hardwick,Clearances / game,0.11,0.3043,0.0335
+12477,Blake Hardwick,Hit-outs / game,0.03,0.0,0.0
+12477,Blake Hardwick,Hit-outs to advantage / game,0.05,0.0,0.0
+12477,Blake Hardwick,Clangers / game (penalty),-0.06,1.913,-0.1148
+12643,Mitch Lewis,Disposals / game,0.22,8.0,1.76
+12643,Mitch Lewis,Goals / game,0.18,1.25,0.225
+12643,Mitch Lewis,Score involvements / game,0.11,3.25,0.3575
+12643,Mitch Lewis,Metres gained / 100 per game,0.06,1.27,0.0762
+12643,Mitch Lewis,Tackles / game,0.07,0.75,0.0525
+12643,Mitch Lewis,Contested marks / game,0.09,1.75,0.1575
+12643,Mitch Lewis,Intercepts / game,0.09,0.25,0.0225
+12643,Mitch Lewis,Clearances / game,0.11,0.25,0.0275
+12643,Mitch Lewis,Hit-outs / game,0.03,0.25,0.0075
+12643,Mitch Lewis,Hit-outs to advantage / game,0.05,0.0,0.0
+12643,Mitch Lewis,Clangers / game (penalty),-0.06,2.0,-0.12
+13039,Cam Mackenzie,Disposals / game,0.22,15.0,3.3
+13039,Cam Mackenzie,Goals / game,0.18,0.45,0.081
+13039,Cam Mackenzie,Score involvements / game,0.11,3.3,0.363
+13039,Cam Mackenzie,Metres gained / 100 per game,0.06,2.4305,0.1458
+13039,Cam Mackenzie,Tackles / game,0.07,2.5,0.175
+13039,Cam Mackenzie,Contested marks / game,0.09,0.0,0.0
+13039,Cam Mackenzie,Intercepts / game,0.09,1.45,0.1305
+13039,Cam Mackenzie,Clearances / game,0.11,2.3,0.253
+13039,Cam Mackenzie,Hit-outs / game,0.03,0.0,0.0
+13039,Cam Mackenzie,Hit-outs to advantage / game,0.05,0.0,0.0
+13039,Cam Mackenzie,Clangers / game (penalty),-0.06,1.85,-0.111
+11960,Luke Breust,Disposals / game,0.22,7.8235,1.7212
+11960,Luke Breust,Goals / game,0.18,1.1765,0.2118
+11960,Luke Breust,Score involvements / game,0.11,3.6471,0.4012
+11960,Luke Breust,Metres gained / 100 per game,0.06,1.33,0.0798
+11960,Luke Breust,Tackles / game,0.07,1.2941,0.0906
+11960,Luke Breust,Contested marks / game,0.09,0.1765,0.0159
+11960,Luke Breust,Intercepts / game,0.09,0.3529,0.0318
+11960,Luke Breust,Clearances / game,0.11,0.2941,0.0324
+11960,Luke Breust,Hit-outs / game,0.03,0.0,0.0
+11960,Luke Breust,Hit-outs to advantage / game,0.05,0.0,0.0
+11960,Luke Breust,Clangers / game (penalty),-0.06,1.5294,-0.0918
+12626,James Worpel,Disposals / game,0.22,22.0435,4.8496
+12626,James Worpel,Goals / game,0.18,0.2609,0.047
+12626,James Worpel,Score involvements / game,0.11,5.3478,0.5883
+12626,James Worpel,Metres gained / 100 per game,0.06,3.5596,0.2136
+12626,James Worpel,Tackles / game,0.07,4.3043,0.3013
+12626,James Worpel,Contested marks / game,0.09,0.0,0.0
+12626,James Worpel,Intercepts / game,0.09,2.1739,0.1957
+12626,James Worpel,Clearances / game,0.11,5.2609,0.5787
+12626,James Worpel,Hit-outs / game,0.03,0.0,0.0
+12626,James Worpel,Hit-outs to advantage / game,0.05,0.0,0.0
+12626,James Worpel,Clangers / game (penalty),-0.06,3.6087,-0.2165
+12913,Jai Newcombe,Disposals / game,0.22,24.0435,5.2896
+12913,Jai Newcombe,Goals / game,0.18,0.4348,0.0783
+12913,Jai Newcombe,Score involvements / game,0.11,6.3478,0.6983
+12913,Jai Newcombe,Metres gained / 100 per game,0.06,3.3057,0.1983
+12913,Jai Newcombe,Tackles / game,0.07,4.3913,0.3074
+12913,Jai Newcombe,Contested marks / game,0.09,0.3478,0.0313
+12913,Jai Newcombe,Intercepts / game,0.09,2.5217,0.227
+12913,Jai Newcombe,Clearances / game,0.11,6.0,0.66
+12913,Jai Newcombe,Hit-outs / game,0.03,0.0,0.0
+12913,Jai Newcombe,Hit-outs to advantage / game,0.05,0.0,0.0
+12913,Jai Newcombe,Clangers / game (penalty),-0.06,3.6522,-0.2191
+12989,Sam Butler,Disposals / game,0.22,5.0,1.1
+12989,Sam Butler,Goals / game,0.18,0.0,0.0
+12989,Sam Butler,Score involvements / game,0.11,1.5,0.165
+12989,Sam Butler,Metres gained / 100 per game,0.06,1.005,0.0603
+12989,Sam Butler,Tackles / game,0.07,1.5,0.105
+12989,Sam Butler,Contested marks / game,0.09,0.0,0.0
+12989,Sam Butler,Intercepts / game,0.09,0.0,0.0
+12989,Sam Butler,Clearances / game,0.11,0.0,0.0
+12989,Sam Butler,Hit-outs / game,0.03,0.0,0.0
+12989,Sam Butler,Hit-outs to advantage / game,0.05,0.0,0.0
+12989,Sam Butler,Clangers / game (penalty),-0.06,0.5,-0.03
+12794,Will Day,Disposals / game,0.22,19.3125,4.2488
+12794,Will Day,Goals / game,0.18,0.1875,0.0338
+12794,Will Day,Score involvements / game,0.11,4.4375,0.4881
+12794,Will Day,Metres gained / 100 per game,0.06,2.9044,0.1743
+12794,Will Day,Tackles / game,0.07,4.625,0.3238
+12794,Will Day,Contested marks / game,0.09,0.125,0.0112
+12794,Will Day,Intercepts / game,0.09,2.8125,0.2531
+12794,Will Day,Clearances / game,0.11,3.5625,0.3919
+12794,Will Day,Hit-outs / game,0.03,0.0,0.0
+12794,Will Day,Hit-outs to advantage / game,0.05,0.0,0.0
+12794,Will Day,Clangers / game (penalty),-0.06,1.9375,-0.1162
+13137,Calsher Dear,Disposals / game,0.22,6.9333,1.5253
+13137,Calsher Dear,Goals / game,0.18,1.4,0.252
+13137,Calsher Dear,Score involvements / game,0.11,3.4,0.374
+13137,Calsher Dear,Metres gained / 100 per game,0.06,0.9553,0.0573
+13137,Calsher Dear,Tackles / game,0.07,2.2667,0.1587
+13137,Calsher Dear,Contested marks / game,0.09,0.9333,0.084
+13137,Calsher Dear,Intercepts / game,0.09,0.6,0.054
+13137,Calsher Dear,Clearances / game,0.11,0.1333,0.0147
+13137,Calsher Dear,Hit-outs / game,0.03,0.0667,0.002
+13137,Calsher Dear,Hit-outs to advantage / game,0.05,0.0,0.0
+13137,Calsher Dear,Clangers / game (penalty),-0.06,1.7333,-0.104
+12124,Sam Frost,Disposals / game,0.22,9.1304,2.0087
+12124,Sam Frost,Goals / game,0.18,0.0,0.0
+12124,Sam Frost,Score involvements / game,0.11,1.4783,0.1626
+12124,Sam Frost,Metres gained / 100 per game,0.06,1.0452,0.0627
+12124,Sam Frost,Tackles / game,0.07,1.6087,0.1126
+12124,Sam Frost,Contested marks / game,0.09,0.4348,0.0391
+12124,Sam Frost,Intercepts / game,0.09,4.9565,0.4461
+12124,Sam Frost,Clearances / game,0.11,0.2174,0.0239
+12124,Sam Frost,Hit-outs / game,0.03,0.087,0.0026
+12124,Sam Frost,Hit-outs to advantage / game,0.05,0.0,0.0
+12124,Sam Frost,Clangers / game (penalty),-0.06,1.5652,-0.0939
+12571,Jack Scrimshaw,Disposals / game,0.22,17.5455,3.86
+12571,Jack Scrimshaw,Goals / game,0.18,0.0,0.0
+12571,Jack Scrimshaw,Score involvements / game,0.11,3.4545,0.38
+12571,Jack Scrimshaw,Metres gained / 100 per game,0.06,2.7209,0.1633
+12571,Jack Scrimshaw,Tackles / game,0.07,1.5455,0.1082
+12571,Jack Scrimshaw,Contested marks / game,0.09,1.0,0.09
+12571,Jack Scrimshaw,Intercepts / game,0.09,7.4545,0.6709
+12571,Jack Scrimshaw,Clearances / game,0.11,0.2273,0.025
+12571,Jack Scrimshaw,Hit-outs / game,0.03,0.0,0.0
+12571,Jack Scrimshaw,Hit-outs to advantage / game,0.05,0.0,0.0
+12571,Jack Scrimshaw,Clangers / game (penalty),-0.06,2.3636,-0.1418
+13092,Henry Hustwaite,Disposals / game,0.22,6.5,1.43
+13092,Henry Hustwaite,Goals / game,0.18,0.0,0.0
+13092,Henry Hustwaite,Score involvements / game,0.11,1.0,0.11
+13092,Henry Hustwaite,Metres gained / 100 per game,0.06,0.5675,0.034
+13092,Henry Hustwaite,Tackles / game,0.07,2.0,0.14
+13092,Henry Hustwaite,Contested marks / game,0.09,0.0,0.0
+13092,Henry Hustwaite,Intercepts / game,0.09,1.0,0.09
+13092,Henry Hustwaite,Clearances / game,0.11,1.25,0.1375
+13092,Henry Hustwaite,Hit-outs / game,0.03,0.0,0.0
+13092,Henry Hustwaite,Hit-outs to advantage / game,0.05,0.0,0.0
+13092,Henry Hustwaite,Clangers / game (penalty),-0.06,1.75,-0.105
+12846,Finn Maginness,Disposals / game,0.22,13.0909,2.88
+12846,Finn Maginness,Goals / game,0.18,0.3636,0.0655
+12846,Finn Maginness,Score involvements / game,0.11,2.8182,0.31
+12846,Finn Maginness,Metres gained / 100 per game,0.06,1.8336,0.11
+12846,Finn Maginness,Tackles / game,0.07,1.8182,0.1273
+12846,Finn Maginness,Contested marks / game,0.09,0.2727,0.0245
+12846,Finn Maginness,Intercepts / game,0.09,1.2727,0.1145
+12846,Finn Maginness,Clearances / game,0.11,0.8182,0.09
+12846,Finn Maginness,Hit-outs / game,0.03,0.0,0.0
+12846,Finn Maginness,Hit-outs to advantage / game,0.05,0.0,0.0
+12846,Finn Maginness,Clangers / game (penalty),-0.06,1.6364,-0.0982

@@ -8,6 +8,7 @@ const nav = [
   { to: '/player', label: 'Player' },
   { to: '/trends', label: 'Trends' },
   { to: '/model', label: 'Model' },
+  { to: '/roles', label: 'Role impact' },
 ]
 
 export default function Layout() {

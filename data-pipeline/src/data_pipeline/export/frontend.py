@@ -11,6 +11,7 @@ import numpy as np
 
 from ..config import DEFAULT_SEASON, FRONTEND_DATA, SHARED_OUTPUT
 from ..transform.continuity import continuity_for_season
+from .core22_impact import build_core22_impact_bundle
 
 
 def _linear_regression(x: np.ndarray, y: np.ndarray) -> tuple[float, float, float]:
@@ -225,8 +226,8 @@ def build_season_bundle(
             "interpretation": (
                 f"Each +100 unavailable PVS correlates with ~{abs(slope * 100):.1f} "
                 f"{'fewer' if slope < 0 else 'more'} wins (season {season}). "
-                f"PVS combines rolling performance (disposals, goals, score involvements) "
-                f"with draft-potential prior and smooth age weighting."
+                f"PVS combines weighted season performance (normalised 0–7, leader = 7) "
+                f"with an optional draft-potential top-up for players not yet impacting games."
             ),
         },
         "clubs": clubs,
@@ -273,6 +274,7 @@ def build_metrics_bundle(
             "seasons": [int(s) for s in season_bundles.keys()],
         },
         "seasons": season_bundles,
+        "core22Impact": build_core22_impact_bundle(con),
         **primary,
     }
 

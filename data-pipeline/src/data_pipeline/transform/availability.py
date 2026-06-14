@@ -25,13 +25,30 @@ def build_availability(con: duckdb.DuckDBPyConnection) -> None:
     con.execute(
         """
         INSERT INTO availability
-        WITH rounds AS (
-            SELECT DISTINCT season, round FROM player_games
+        WITH home_away_rounds AS (
+            -- Home-and-away weeks only (exclude Opening Round 0 and finals blocks).
+            SELECT season, round
+            FROM matches
+            WHERE round > 0
+            GROUP BY season, round
+            HAVING COUNT(*) > 4
+        ),
+        team_rounds AS (
+            SELECT m.season, m.round, m.home_team AS team
+            FROM matches m
+            INNER JOIN home_away_rounds r
+                ON m.season = r.season AND m.round = r.round
+            UNION
+            SELECT m.season, m.round, m.away_team AS team
+            FROM matches m
+            INNER JOIN home_away_rounds r
+                ON m.season = r.season AND m.round = r.round
         ),
         squad_rounds AS (
-            SELECT s.player_id, s.player_name, s.team, s.season, r.round
+            SELECT s.player_id, s.player_name, s.team, s.season, tr.round
             FROM squad_players s
-            JOIN rounds r ON s.season = r.season
+            INNER JOIN team_rounds tr
+                ON s.team = tr.team AND s.season = tr.season
         ),
         played AS (
             SELECT DISTINCT player_id, team, season, round

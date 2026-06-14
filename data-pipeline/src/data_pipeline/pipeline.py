@@ -11,21 +11,34 @@ from .export.frontend import write_metrics
 from .ingest.draftguru import fetch_all_drafts, link_draft_to_players, save_draft_cache
 from .ingest.fryzigg import load_player_games
 from .ingest.squiggle import fetch_all_seasons
-from .ingest.vfl import fetch_vfl_games
+from .ingest.state_league import (
+    STATE_LEAGUE_FROM_SEASON,
+    fetch_state_league_games,
+    prepare_state_league_games,
+)
 from .transform.availability import build_availability
 from .transform.continuity import build_archetype_continuity
 from .transform.integrate_draft_vfl import (
     apply_vfl_to_availability,
     link_vfl_player_ids,
     load_draft_picks,
-    load_vfl_games,
+    load_state_league_games,
 )
 from .transform.pvs import build_player_profiles, build_player_value
 from .transform.unavailability import build_team_round_value, enrich_availability_status
 from .validate import run_checks
 
-VFL_CACHE = ROOT / "shared" / "data" / "vfl_games.parquet"
-VFL_FROM_SEASON = 2018  # full 2012+ available; 2018+ balances coverage vs runtime
+VFL_CACHE = ROOT / "shared" / "data" / "state_league_games.parquet"
+VFL_FROM_SEASON = STATE_LEAGUE_FROM_SEASON
+
+
+def _apply_vfl_layer(con: duckdb.DuckDBPyConnection) -> None:
+    """Re-apply state-league flags whenever availability is rebuilt (even if skip_vfl)."""
+    count = con.execute("SELECT COUNT(*) FROM vfl_games").fetchone()[0]
+    if not count:
+        return
+    link_vfl_player_ids(con)
+    apply_vfl_to_availability(con)
 
 
 def _load_df(con: duckdb.DuckDBPyConnection, table: str, df: pd.DataFrame) -> None:
@@ -66,6 +79,30 @@ def run_pipeline(
 
     print("[pipeline] building availability …")
     build_availability(con)
+
+    if not skip_vfl:
+        state_df: pd.DataFrame
+        if VFL_CACHE.exists() and not refresh_vfl_cache:
+            print(f"[pipeline] loading state-league cache {VFL_CACHE}")
+            state_df = pd.read_parquet(VFL_CACHE)
+        else:
+            print(
+                f"[pipeline] scraping state-league participation "
+                f"(VFL/SANFL/WAFL) {vfl_from_season}-{to_season}"
+            )
+            state_df = fetch_state_league_games(
+                from_season=vfl_from_season,
+                to_season=to_season,
+            )
+            if not state_df.empty:
+                VFL_CACHE.parent.mkdir(parents=True, exist_ok=True)
+                state_df.to_parquet(VFL_CACHE, index=False)
+        if not state_df.empty:
+            prepared = prepare_state_league_games(state_df, con)
+            load_state_league_games(con, prepared)
+            print(f"[pipeline] state-league player-rows: {len(prepared)}")
+
+    _apply_vfl_layer(con)
     enrich_availability_status(con)
 
     if not skip_draft:
@@ -81,24 +118,6 @@ def run_pipeline(
     print("[pipeline] building player profiles and PVS …")
     build_player_profiles(con)
     build_player_value(con)
-
-    if not skip_vfl:
-        vfl_df: pd.DataFrame
-        if VFL_CACHE.exists() and not refresh_vfl_cache:
-            print(f"[pipeline] loading VFL cache {VFL_CACHE}")
-            vfl_df = pd.read_parquet(VFL_CACHE)
-        else:
-            print(f"[pipeline] scraping VFL participation {vfl_from_season}-{to_season}")
-            vfl_df = fetch_vfl_games(from_season=vfl_from_season, to_season=to_season)
-            if not vfl_df.empty:
-                VFL_CACHE.parent.mkdir(parents=True, exist_ok=True)
-                vfl_df.to_parquet(VFL_CACHE, index=False)
-        if not vfl_df.empty:
-            load_vfl_games(con, vfl_df)
-            link_vfl_player_ids(con)
-            apply_vfl_to_availability(con)
-            print(f"[pipeline] VFL player-rows: {len(vfl_df)}")
-            enrich_availability_status(con)
 
     print("[pipeline] building PVS-weighted unavailability …")
     build_team_round_value(con)

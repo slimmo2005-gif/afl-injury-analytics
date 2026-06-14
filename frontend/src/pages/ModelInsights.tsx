@@ -36,9 +36,10 @@ export default function ModelInsights() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
           <h3 className="text-sm font-medium text-slate-300 mb-3">PVS formula</h3>
           <p className="text-sm text-slate-400 leading-relaxed">
-            PVS = w(age) × performance + (1 − w(age)) × potential. Performance uses rolling z-scored
-            disposals, goals, and score involvements. Potential follows an exponential draft-pick curve
-            (pick 1 ≈ 9.5, pick 50 ≈ 2). At age 18, w ≈ 30%; at 25+, w = 100%.
+            PVS = max(performance, w(age) × performance + (1 − w(age)) × potential). Performance
+            is a weighted sum of season per-game stats (disposals, goals, tackles, etc.)
+            normalised so the league leader scores 7. Potential tops up young high picks
+            only when it raises the score above performance alone.
           </p>
           <p className="text-sm text-slate-500 mt-4 italic">{regression.interpretation}</p>
         </div>

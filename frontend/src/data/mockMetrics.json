@@ -64,5 +64,45 @@
       "continuityScore": 2.1
     },
     "interpretation": "Each +10 PVS unavailable correlates with ~1.8 fewer expected wins (sample)."
+  },
+  "core22Impact": {
+    "fromSeason": 2018,
+    "toSeason": 2024,
+    "starPvsThreshold": 4,
+    "interpretation": "Sample wireframe — run ETL for live core-22 role impact data.",
+    "methods": [
+      {
+        "id": "priorRound",
+        "label": "Prior round 22 (last week's team)",
+        "teamRounds": 2320,
+        "avgMissedPvs": 8.21,
+        "avgPlayersMissed": 2.65,
+        "winRate": 0.495,
+        "correlations": [
+          { "role": "Outside Mid", "roleId": "outside_mid", "corrWin": -0.098, "corrMargin": -0.103, "avgMissPvs": 0.64, "pctRounds": 16.3 },
+          { "role": "Inside Mid", "roleId": "inside_mid", "corrWin": -0.044, "corrMargin": -0.041, "avgMissPvs": 1.34, "pctRounds": 26.9 },
+          { "role": "Key Defender", "roleId": "key_defender", "corrWin": -0.022, "corrMargin": -0.04, "avgMissPvs": 0.89, "pctRounds": 25.2 },
+          { "role": "Key Forward", "roleId": "key_forward", "corrWin": -0.014, "corrMargin": -0.015, "avgMissPvs": 0.72, "pctRounds": 21.8 }
+        ],
+        "marginalImpact": [],
+        "starMiss": [
+          { "role": "Outside Mid", "roleId": "outside_mid", "rounds": 184, "winWhenMiss": 0.342, "winOtherwise": 0.512, "deltaPp": -17.0 },
+          { "role": "Key Defender", "roleId": "key_defender", "rounds": 141, "winWhenMiss": 0.418, "winOtherwise": 0.494, "deltaPp": -7.5 },
+          { "role": "Key Forward", "roleId": "key_forward", "rounds": 85, "winWhenMiss": 0.471, "winOtherwise": 0.498, "deltaPp": -2.7 }
+        ],
+        "coefficients": [
+          { "role": "Outside Mid", "roleId": "outside_mid", "coef": -0.0329 },
+          { "role": "Key Forward", "roleId": "key_forward", "coef": -0.0064 },
+          { "role": "Key Defender", "roleId": "key_defender", "coef": -0.0076 }
+        ],
+        "archetypeModelR2": 0.017,
+        "keyVsOther": { "keyRolesCoef": -0.0074, "otherRolesCoef": -0.008, "r2": 0.005 },
+        "yearly": [
+          { "season": 2022, "total": -0.096, "keyRoles": -0.042, "keyForward": -0.106, "keyDefender": 0.038, "mid": -0.098 },
+          { "season": 2023, "total": -0.197, "keyRoles": -0.057, "keyForward": 0.012, "keyDefender": -0.088, "mid": -0.194 },
+          { "season": 2024, "total": -0.105, "keyRoles": -0.037, "keyForward": -0.026, "keyDefender": -0.025, "mid": -0.099 }
+        ]
+      }
+    ]
   }
 }

@@ -9,7 +9,7 @@ Injury-adjusted AFL team performance: quantify unavailable player value per roun
 - **Explainable** — transparent PVS and linear/ridge models first
 - **Static frontend** — GitHub Pages consumes pre-built JSON/Parquet
 - **Reproducible ETL** — Python modules, DuckDB, weekly GitHub Actions
-- **Graceful gaps** — partial VFL data, schema drift logging
+- **Graceful gaps** — partial state-league data (VFL/SANFL/WAFL), schema drift logging
 
 ## System diagram
 
@@ -47,10 +47,12 @@ flowchart LR
 | Observation | Status |
 |-------------|--------|
 | Selected AFL | Available (AFL) |
-| VFL only | Partial (VFL) |
+| VFL / state league only | Partial (VFL) |
 | No AFL or VFL | Unavailable |
 
 No official injury lists in v1.
+
+Availability rows are built from **each club’s fixture list** (Squiggle `matches`), not the league-wide round list from Fryzigg. That avoids false “misses” on Opening Round (round 0), bye weeks, and finals. Home-and-away scope excludes rounds with ≤4 league games (finals blocks). Fryzigg participation is joined only for scheduled team rounds.
 
 ## Player Value Score (Phase 2)
 

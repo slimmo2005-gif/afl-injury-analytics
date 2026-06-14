@@ -80,7 +80,10 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
                 SUM(CASE WHEN age_est < 22 THEN pvs ELSE 0 END) AS unavailable_pvs_u22,
                 SUM(CASE WHEN age_est >= 28 THEN pvs ELSE 0 END) AS unavailable_pvs_28plus,
                 SUM(CASE WHEN status = 'intermittent' THEN pvs ELSE 0 END) AS unavailable_pvs_intermittent,
-                SUM(CASE WHEN status = 'vfl_only' THEN pvs ELSE 0 END) AS unavailable_pvs_vfl_only
+                SUM(CASE WHEN status = 'vfl_only' THEN pvs ELSE 0 END) AS unavailable_pvs_vfl_only,
+                SUM(
+                    CASE WHEN status IN ('unavailable', 'intermittent') THEN pvs ELSE 0 END
+                ) AS unavailable_pvs_games_missed
             FROM ranked
             GROUP BY 1, 2, 3
         )
@@ -95,6 +98,7 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
             COALESCE(a.unavailable_pvs_28plus, 0) AS unavailable_pvs_28plus,
             COALESCE(a.unavailable_pvs_intermittent, 0) AS unavailable_pvs_intermittent,
             COALESCE(a.unavailable_pvs_vfl_only, 0) AS unavailable_pvs_vfl_only,
+            COALESCE(a.unavailable_pvs_games_missed, 0) AS unavailable_pvs_games_missed,
             tr.won
         FROM team_round_summary tr
         LEFT JOIN agg a

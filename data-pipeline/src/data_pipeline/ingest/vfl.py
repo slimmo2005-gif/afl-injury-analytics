@@ -100,13 +100,15 @@ def fetch_game_players(season: int, round_num: int, slug: str) -> pd.DataFrame:
                 continue
             rows.append(
                 {
+                    "competition": "vfl",
                     "season": season,
-                    "round": round_num,
-                    "vfl_team": vfl_team,
+                    "state_round": round_num,
+                    "state_team": vfl_team,
                     "afl_club": afl_club,
                     "player_name": player,
                     "player_name_norm": player.lower(),
                     "game_slug": slug,
+                    "game_date": None,
                 }
             )
 
@@ -140,5 +142,5 @@ def fetch_vfl_games(
     if not all_rows:
         return pd.DataFrame()
     return pd.concat(all_rows, ignore_index=True).drop_duplicates(
-        subset=["season", "round", "player_name_norm", "vfl_team", "game_slug"]
+        subset=["competition", "season", "game_slug", "player_name_norm", "state_team"]
     )
