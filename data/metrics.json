@@ -2,7 +2,7 @@
   "meta": {
     "season": 2024,
     "round": 24,
-    "generatedAt": "2026-06-14T05:15:46.465647+00:00",
+    "generatedAt": "2026-06-14T05:25:39.914891+00:00",
     "note": "Phase 2 \u2014 PVS + national draft + VFL (2024)",
     "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
     "defaultSeason": 2024,
@@ -37791,175 +37791,175 @@
         {
           "season": 2012,
           "ladderRank": 2,
-          "pvsLostRank": 17,
-          "rankDelta": -15,
+          "pvsLostRank": 8,
+          "rankDelta": -6,
           "wins": 17,
           "percentage": 132.5,
-          "pvsLost": 17.0
+          "pvsLost": 806.9
         },
         {
           "season": 2013,
           "ladderRank": 11,
-          "pvsLostRank": 7,
-          "rankDelta": 4,
+          "pvsLostRank": 10,
+          "rankDelta": 1,
           "wins": 10,
           "percentage": 108.1,
-          "pvsLost": 10.0
+          "pvsLost": 966.5
         },
         {
           "season": 2014,
           "ladderRank": 10,
-          "pvsLostRank": 8,
-          "rankDelta": 2,
+          "pvsLostRank": 11,
+          "rankDelta": -1,
           "wins": 11,
           "percentage": 114.1,
-          "pvsLost": 11.0
+          "pvsLost": 882.8
         },
         {
           "season": 2015,
           "ladderRank": 7,
-          "pvsLostRank": 11,
-          "rankDelta": -4,
+          "pvsLostRank": 2,
+          "rankDelta": 5,
           "wins": 13,
           "percentage": 115.7,
-          "pvsLost": 13.0
+          "pvsLost": 652.9
         },
         {
           "season": 2016,
           "ladderRank": 5,
-          "pvsLostRank": 13,
-          "rankDelta": -8,
+          "pvsLostRank": 1,
+          "rankDelta": 4,
           "wins": 16,
           "percentage": 138.3,
-          "pvsLost": 16.0
+          "pvsLost": 596.4
         },
         {
           "season": 2017,
           "ladderRank": 1,
-          "pvsLostRank": 16,
-          "rankDelta": -15,
+          "pvsLostRank": 1,
+          "rankDelta": 0,
           "wins": 15,
           "percentage": 136.0,
-          "pvsLost": 15.0
+          "pvsLost": 641.7
         },
         {
           "season": 2018,
           "ladderRank": 12,
-          "pvsLostRank": 7,
-          "rankDelta": 5,
+          "pvsLostRank": 8,
+          "rankDelta": 4,
           "wins": 12,
           "percentage": 104.1,
-          "pvsLost": 12.0
+          "pvsLost": 891.9
         },
         {
           "season": 2019,
           "ladderRank": 11,
-          "pvsLostRank": 7,
-          "rankDelta": 4,
+          "pvsLostRank": 11,
+          "rankDelta": 0,
           "wins": 10,
           "percentage": 100.9,
-          "pvsLost": 10.0
+          "pvsLost": 980.2
         },
         {
           "season": 2020,
           "ladderRank": 18,
-          "pvsLostRank": 1,
-          "rankDelta": 17,
+          "pvsLostRank": 11,
+          "rankDelta": 7,
           "wins": 3,
           "percentage": 64.4,
-          "pvsLost": 3.0
+          "pvsLost": 754.8
         },
         {
           "season": 2021,
           "ladderRank": 15,
-          "pvsLostRank": 3,
-          "rankDelta": 12,
+          "pvsLostRank": 6,
+          "rankDelta": 9,
           "wins": 7,
           "percentage": 82.0,
-          "pvsLost": 7.0
+          "pvsLost": 765.6
         },
         {
           "season": 2022,
           "ladderRank": 14,
-          "pvsLostRank": 5,
-          "rankDelta": 9,
+          "pvsLostRank": 16,
+          "rankDelta": -2,
           "wins": 8,
           "percentage": 86.7,
-          "pvsLost": 8.0
+          "pvsLost": 963.1
         },
         {
           "season": 2023,
           "ladderRank": 10,
-          "pvsLostRank": 8,
-          "rankDelta": 2,
+          "pvsLostRank": 12,
+          "rankDelta": -2,
           "wins": 11,
           "percentage": 116.8,
-          "pvsLost": 11.0
+          "pvsLost": 955.9
         },
         {
           "season": 2024,
           "ladderRank": 15,
-          "pvsLostRank": 4,
-          "rankDelta": 11,
+          "pvsLostRank": 17,
+          "rankDelta": -2,
           "wins": 8,
           "percentage": 99.1,
-          "pvsLost": 8.0
+          "pvsLost": 765.9
         }
       ],
       "Brisbane Lions": [
         {
           "season": 2012,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 13,
+          "rankDelta": 0,
           "wins": 10,
           "percentage": 91.0,
-          "pvsLost": 10.0
+          "pvsLost": 957.9
         },
         {
           "season": 2013,
           "ladderRank": 12,
-          "pvsLostRank": 8,
-          "rankDelta": 4,
+          "pvsLostRank": 9,
+          "rankDelta": 3,
           "wins": 10,
           "percentage": 89.6,
-          "pvsLost": 10.0
+          "pvsLost": 946.3
         },
         {
           "season": 2014,
           "ladderRank": 15,
-          "pvsLostRank": 4,
-          "rankDelta": 11,
+          "pvsLostRank": 16,
+          "rankDelta": -1,
           "wins": 7,
           "percentage": 69.3,
-          "pvsLost": 7.0
+          "pvsLost": 1121.0
         },
         {
           "season": 2015,
           "ladderRank": 17,
-          "pvsLostRank": 1,
-          "rankDelta": 16,
+          "pvsLostRank": 12,
+          "rankDelta": 5,
           "wins": 4,
           "percentage": 67.5,
-          "pvsLost": 4.0
+          "pvsLost": 1036.9
         },
         {
           "season": 2016,
           "ladderRank": 17,
-          "pvsLostRank": 1,
-          "rankDelta": 16,
+          "pvsLostRank": 13,
+          "rankDelta": 4,
           "wins": 3,
           "percentage": 61.6,
-          "pvsLost": 3.0
+          "pvsLost": 1128.8
         },
         {
           "season": 2017,
           "ladderRank": 18,
-          "pvsLostRank": 1,
-          "rankDelta": 17,
+          "pvsLostRank": 11,
+          "rankDelta": 7,
           "wins": 5,
           "percentage": 74.3,
-          "pvsLost": 5.0
+          "pvsLost": 996.6
         },
         {
           "season": 2018,
@@ -37968,290 +37968,290 @@
           "rankDelta": 11,
           "wins": 5,
           "percentage": 89.1,
-          "pvsLost": 5.0
+          "pvsLost": 767.8
         },
         {
           "season": 2019,
           "ladderRank": 2,
-          "pvsLostRank": 16,
-          "rankDelta": -14,
+          "pvsLostRank": 3,
+          "rankDelta": -1,
           "wins": 16,
           "percentage": 118.3,
-          "pvsLost": 16.0
+          "pvsLost": 797.6
         },
         {
           "season": 2020,
           "ladderRank": 2,
-          "pvsLostRank": 17,
-          "rankDelta": -15,
+          "pvsLostRank": 6,
+          "rankDelta": -4,
           "wins": 14,
           "percentage": 124.9,
-          "pvsLost": 14.0
+          "pvsLost": 576.9
         },
         {
           "season": 2021,
           "ladderRank": 4,
-          "pvsLostRank": 13,
-          "rankDelta": -9,
+          "pvsLostRank": 1,
+          "rankDelta": 3,
           "wins": 15,
           "percentage": 133.3,
-          "pvsLost": 15.0
+          "pvsLost": 436.3
         },
         {
           "season": 2022,
           "ladderRank": 5,
-          "pvsLostRank": 13,
-          "rankDelta": -8,
+          "pvsLostRank": 3,
+          "rankDelta": 2,
           "wins": 15,
           "percentage": 119.3,
-          "pvsLost": 15.0
+          "pvsLost": 643.4
         },
         {
           "season": 2023,
           "ladderRank": 2,
-          "pvsLostRank": 16,
-          "rankDelta": -14,
+          "pvsLostRank": 2,
+          "rankDelta": 0,
           "wins": 17,
           "percentage": 123.1,
-          "pvsLost": 17.0
+          "pvsLost": 684.7
         },
         {
           "season": 2024,
           "ladderRank": 5,
-          "pvsLostRank": 12,
-          "rankDelta": -7,
+          "pvsLostRank": 3,
+          "rankDelta": 2,
           "wins": 14,
           "percentage": 123.1,
-          "pvsLost": 14.0
+          "pvsLost": 474.4
         }
       ],
       "Carlton": [
         {
           "season": 2012,
           "ladderRank": 10,
-          "pvsLostRank": 8,
-          "rankDelta": 2,
+          "pvsLostRank": 16,
+          "rankDelta": -6,
           "wins": 11,
           "percentage": 108.0,
-          "pvsLost": 11.0
+          "pvsLost": 1121.0
         },
         {
           "season": 2013,
           "ladderRank": 9,
-          "pvsLostRank": 10,
-          "rankDelta": -1,
+          "pvsLostRank": 6,
+          "rankDelta": 3,
           "wins": 11,
           "percentage": 106.7,
-          "pvsLost": 11.0
+          "pvsLost": 919.4
         },
         {
           "season": 2014,
           "ladderRank": 13,
-          "pvsLostRank": 5,
-          "rankDelta": 8,
+          "pvsLostRank": 14,
+          "rankDelta": -1,
           "wins": 7,
           "percentage": 89.7,
-          "pvsLost": 7.0
+          "pvsLost": 985.9
         },
         {
           "season": 2015,
           "ladderRank": 18,
-          "pvsLostRank": 2,
-          "rankDelta": 16,
+          "pvsLostRank": 14,
+          "rankDelta": 4,
           "wins": 4,
           "percentage": 64.8,
-          "pvsLost": 4.0
+          "pvsLost": 1092.0
         },
         {
           "season": 2016,
           "ladderRank": 14,
-          "pvsLostRank": 5,
-          "rankDelta": 9,
+          "pvsLostRank": 8,
+          "rankDelta": 6,
           "wins": 7,
           "percentage": 79.3,
-          "pvsLost": 7.0
+          "pvsLost": 856.9
         },
         {
           "season": 2017,
           "ladderRank": 16,
-          "pvsLostRank": 2,
-          "rankDelta": 14,
+          "pvsLostRank": 10,
+          "rankDelta": 6,
           "wins": 6,
           "percentage": 78.2,
-          "pvsLost": 6.0
+          "pvsLost": 979.0
         },
         {
           "season": 2018,
           "ladderRank": 18,
-          "pvsLostRank": 1,
-          "rankDelta": 17,
+          "pvsLostRank": 10,
+          "rankDelta": 8,
           "wins": 2,
           "percentage": 59.3,
-          "pvsLost": 2.0
+          "pvsLost": 963.3
         },
         {
           "season": 2019,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 6,
+          "rankDelta": 10,
           "wins": 7,
           "percentage": 84.5,
-          "pvsLost": 7.0
+          "pvsLost": 812.1
         },
         {
           "season": 2020,
           "ladderRank": 11,
-          "pvsLostRank": 7,
-          "rankDelta": 4,
+          "pvsLostRank": 3,
+          "rankDelta": 8,
           "wins": 7,
           "percentage": 94.3,
-          "pvsLost": 7.0
+          "pvsLost": 501.6
         },
         {
           "season": 2021,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 15,
+          "rankDelta": -2,
           "wins": 8,
           "percentage": 88.5,
-          "pvsLost": 8.0
+          "pvsLost": 958.7
         },
         {
           "season": 2022,
           "ladderRank": 9,
-          "pvsLostRank": 10,
-          "rankDelta": -1,
+          "pvsLostRank": 14,
+          "rankDelta": -5,
           "wins": 12,
           "percentage": 108.3,
-          "pvsLost": 12.0
+          "pvsLost": 945.9
         },
         {
           "season": 2023,
           "ladderRank": 5,
-          "pvsLostRank": 12,
-          "rankDelta": -7,
+          "pvsLostRank": 15,
+          "rankDelta": -10,
           "wins": 13,
           "percentage": 113.3,
-          "pvsLost": 13.0
+          "pvsLost": 993.9
         },
         {
           "season": 2024,
           "ladderRank": 9,
-          "pvsLostRank": 9,
-          "rankDelta": 0,
+          "pvsLostRank": 13,
+          "rankDelta": -4,
           "wins": 12,
           "percentage": 110.6,
-          "pvsLost": 12.0
+          "pvsLost": 635.2
         }
       ],
       "Collingwood": [
         {
           "season": 2012,
           "ladderRank": 4,
-          "pvsLostRank": 15,
-          "rankDelta": -11,
+          "pvsLostRank": 12,
+          "rankDelta": -8,
           "wins": 16,
           "percentage": 116.5,
-          "pvsLost": 16.0
+          "pvsLost": 879.6
         },
         {
           "season": 2013,
           "ladderRank": 6,
-          "pvsLostRank": 12,
-          "rankDelta": -6,
+          "pvsLostRank": 17,
+          "rankDelta": -11,
           "wins": 14,
           "percentage": 115.0,
-          "pvsLost": 14.0
+          "pvsLost": 1308.7
         },
         {
           "season": 2014,
           "ladderRank": 11,
-          "pvsLostRank": 9,
-          "rankDelta": 2,
+          "pvsLostRank": 7,
+          "rankDelta": 4,
           "wins": 11,
           "percentage": 94.1,
-          "pvsLost": 11.0
+          "pvsLost": 823.4
         },
         {
           "season": 2015,
           "ladderRank": 12,
-          "pvsLostRank": 7,
-          "rankDelta": 5,
+          "pvsLostRank": 9,
+          "rankDelta": 3,
           "wins": 10,
           "percentage": 106.2,
-          "pvsLost": 10.0
+          "pvsLost": 1001.0
         },
         {
           "season": 2016,
           "ladderRank": 12,
-          "pvsLostRank": 7,
-          "rankDelta": 5,
+          "pvsLostRank": 11,
+          "rankDelta": 1,
           "wins": 9,
           "percentage": 95.6,
-          "pvsLost": 9.0
+          "pvsLost": 1087.1
         },
         {
           "season": 2017,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 15,
+          "rankDelta": -2,
           "wins": 9,
           "percentage": 99.0,
-          "pvsLost": 9.0
+          "pvsLost": 1049.8
         },
         {
           "season": 2018,
           "ladderRank": 3,
-          "pvsLostRank": 15,
-          "rankDelta": -12,
+          "pvsLostRank": 12,
+          "rankDelta": -9,
           "wins": 15,
           "percentage": 120.4,
-          "pvsLost": 15.0
+          "pvsLost": 984.2
         },
         {
           "season": 2019,
           "ladderRank": 4,
-          "pvsLostRank": 14,
-          "rankDelta": -10,
+          "pvsLostRank": 13,
+          "rankDelta": -9,
           "wins": 15,
           "percentage": 117.7,
-          "pvsLost": 15.0
+          "pvsLost": 1008.1
         },
         {
           "season": 2020,
           "ladderRank": 8,
-          "pvsLostRank": 10,
-          "rankDelta": -2,
+          "pvsLostRank": 17,
+          "rankDelta": -9,
           "wins": 9,
           "percentage": 109.5,
-          "pvsLost": 9.0
+          "pvsLost": 863.5
         },
         {
           "season": 2021,
           "ladderRank": 17,
-          "pvsLostRank": 2,
-          "rankDelta": 15,
+          "pvsLostRank": 10,
+          "rankDelta": 7,
           "wins": 6,
           "percentage": 85.6,
-          "pvsLost": 6.0
+          "pvsLost": 898.6
         },
         {
           "season": 2022,
           "ladderRank": 4,
-          "pvsLostRank": 15,
-          "rankDelta": -11,
+          "pvsLostRank": 5,
+          "rankDelta": -1,
           "wins": 16,
           "percentage": 104.3,
-          "pvsLost": 16.0
+          "pvsLost": 698.9
         },
         {
           "season": 2023,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 3,
+          "rankDelta": -2,
           "wins": 18,
           "percentage": 127.0,
-          "pvsLost": 18.0
+          "pvsLost": 692.3
         },
         {
           "season": 2024,
@@ -38260,126 +38260,126 @@
           "rankDelta": 0,
           "wins": 12,
           "percentage": 104.4,
-          "pvsLost": 12.0
+          "pvsLost": 580.1
         }
       ],
       "Essendon": [
         {
           "season": 2012,
           "ladderRank": 11,
-          "pvsLostRank": 9,
-          "rankDelta": 2,
+          "pvsLostRank": 15,
+          "rankDelta": -4,
           "wins": 11,
           "percentage": 100.0,
-          "pvsLost": 11.0
+          "pvsLost": 1024.0
         },
         {
           "season": 2013,
           "ladderRank": 7,
-          "pvsLostRank": 13,
-          "rankDelta": -6,
+          "pvsLostRank": 8,
+          "rankDelta": -1,
           "wins": 14,
           "percentage": 107.2,
-          "pvsLost": 14.0
+          "pvsLost": 936.1
         },
         {
           "season": 2014,
           "ladderRank": 7,
-          "pvsLostRank": 11,
-          "rankDelta": -4,
+          "pvsLostRank": 5,
+          "rankDelta": 2,
           "wins": 12,
           "percentage": 106.3,
-          "pvsLost": 12.0
+          "pvsLost": 755.3
         },
         {
           "season": 2015,
           "ladderRank": 15,
-          "pvsLostRank": 4,
-          "rankDelta": 11,
+          "pvsLostRank": 18,
+          "rankDelta": -3,
           "wins": 6,
           "percentage": 74.0,
-          "pvsLost": 6.0
+          "pvsLost": 1254.0
         },
         {
           "season": 2016,
           "ladderRank": 18,
-          "pvsLostRank": 2,
-          "rankDelta": 16,
+          "pvsLostRank": 12,
+          "rankDelta": 6,
           "wins": 3,
           "percentage": 61.0,
-          "pvsLost": 3.0
+          "pvsLost": 1097.9
         },
         {
           "season": 2017,
           "ladderRank": 7,
-          "pvsLostRank": 10,
-          "rankDelta": -3,
+          "pvsLostRank": 13,
+          "rankDelta": -6,
           "wins": 12,
           "percentage": 106.5,
-          "pvsLost": 12.0
+          "pvsLost": 1018.5
         },
         {
           "season": 2018,
           "ladderRank": 11,
-          "pvsLostRank": 8,
-          "rankDelta": 3,
+          "pvsLostRank": 16,
+          "rankDelta": -5,
           "wins": 12,
           "percentage": 105.1,
-          "pvsLost": 12.0
+          "pvsLost": 1098.0
         },
         {
           "season": 2019,
           "ladderRank": 8,
-          "pvsLostRank": 11,
-          "rankDelta": -3,
+          "pvsLostRank": 15,
+          "rankDelta": -7,
           "wins": 12,
           "percentage": 95.4,
-          "pvsLost": 12.0
+          "pvsLost": 1029.7
         },
         {
           "season": 2020,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 15,
+          "rankDelta": -2,
           "wins": 6,
           "percentage": 79.2,
-          "pvsLost": 6.0
+          "pvsLost": 766.8
         },
         {
           "season": 2021,
           "ladderRank": 7,
-          "pvsLostRank": 11,
-          "rankDelta": -4,
+          "pvsLostRank": 12,
+          "rankDelta": -5,
           "wins": 11,
           "percentage": 109.1,
-          "pvsLost": 11.0
+          "pvsLost": 907.8
         },
         {
           "season": 2022,
           "ladderRank": 15,
-          "pvsLostRank": 4,
-          "rankDelta": 11,
+          "pvsLostRank": 12,
+          "rankDelta": 3,
           "wins": 7,
           "percentage": 83.2,
-          "pvsLost": 7.0
+          "pvsLost": 868.9
         },
         {
           "season": 2023,
           "ladderRank": 11,
-          "pvsLostRank": 9,
-          "rankDelta": 2,
+          "pvsLostRank": 8,
+          "rankDelta": 3,
           "wins": 11,
           "percentage": 89.7,
-          "pvsLost": 11.0
+          "pvsLost": 824.0
         },
         {
           "season": 2024,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 14,
+          "rankDelta": -1,
           "wins": 11,
           "percentage": 93.5,
-          "pvsLost": 11.0
+          "pvsLost": 663.5
         }
       ],
       "Fremantle": [
@@ -38390,70 +38390,70 @@
           "rankDelta": -4,
           "wins": 14,
           "percentage": 115.7,
-          "pvsLost": 14.0
+          "pvsLost": 871.9
         },
         {
           "season": 2013,
           "ladderRank": 3,
-          "pvsLostRank": 16,
-          "rankDelta": -13,
+          "pvsLostRank": 14,
+          "rankDelta": -11,
           "wins": 16,
           "percentage": 134.1,
-          "pvsLost": 16.0
+          "pvsLost": 1107.4
         },
         {
           "season": 2014,
           "ladderRank": 4,
-          "pvsLostRank": 15,
-          "rankDelta": -11,
+          "pvsLostRank": 3,
+          "rankDelta": 1,
           "wins": 16,
           "percentage": 130.4,
-          "pvsLost": 16.0
+          "pvsLost": 719.2
         },
         {
           "season": 2015,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 11,
+          "rankDelta": -10,
           "wins": 17,
           "percentage": 118.7,
-          "pvsLost": 17.0
+          "pvsLost": 1029.0
         },
         {
           "season": 2016,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 14,
+          "rankDelta": 2,
           "wins": 4,
           "percentage": 74.3,
-          "pvsLost": 4.0
+          "pvsLost": 1161.1
         },
         {
           "season": 2017,
           "ladderRank": 14,
-          "pvsLostRank": 5,
-          "rankDelta": 9,
+          "pvsLostRank": 9,
+          "rankDelta": 5,
           "wins": 8,
           "percentage": 74.4,
-          "pvsLost": 8.0
+          "pvsLost": 966.8
         },
         {
           "season": 2018,
           "ladderRank": 14,
-          "pvsLostRank": 5,
-          "rankDelta": 9,
+          "pvsLostRank": 13,
+          "rankDelta": 1,
           "wins": 8,
           "percentage": 76.2,
-          "pvsLost": 8.0
+          "pvsLost": 1021.5
         },
         {
           "season": 2019,
           "ladderRank": 13,
-          "pvsLostRank": 5,
-          "rankDelta": 8,
+          "pvsLostRank": 10,
+          "rankDelta": 3,
           "wins": 9,
           "percentage": 91.9,
-          "pvsLost": 9.0
+          "pvsLost": 951.3
         },
         {
           "season": 2020,
@@ -38462,849 +38462,849 @@
           "rankDelta": 4,
           "wins": 7,
           "percentage": 93.7,
-          "pvsLost": 7.0
+          "pvsLost": 606.0
         },
         {
           "season": 2021,
           "ladderRank": 11,
-          "pvsLostRank": 8,
-          "rankDelta": 3,
+          "pvsLostRank": 13,
+          "rankDelta": -2,
           "wins": 10,
           "percentage": 86.5,
-          "pvsLost": 10.0
+          "pvsLost": 923.4
         },
         {
           "season": 2022,
           "ladderRank": 6,
-          "pvsLostRank": 14,
-          "rankDelta": -8,
+          "pvsLostRank": 6,
+          "rankDelta": 0,
           "wins": 15,
           "percentage": 117.0,
-          "pvsLost": 15.0
+          "pvsLost": 751.7
         },
         {
           "season": 2023,
           "ladderRank": 13,
-          "pvsLostRank": 5,
-          "rankDelta": 8,
+          "pvsLostRank": 11,
+          "rankDelta": 2,
           "wins": 10,
           "percentage": 96.7,
-          "pvsLost": 10.0
+          "pvsLost": 903.5
         },
         {
           "season": 2024,
           "ladderRank": 8,
-          "pvsLostRank": 11,
-          "rankDelta": -3,
+          "pvsLostRank": 5,
+          "rankDelta": 3,
           "wins": 12,
           "percentage": 111.9,
-          "pvsLost": 12.0
+          "pvsLost": 506.0
         }
       ],
       "Geelong": [
         {
           "season": 2012,
           "ladderRank": 6,
-          "pvsLostRank": 13,
-          "rankDelta": -7,
+          "pvsLostRank": 10,
+          "rankDelta": -4,
           "wins": 15,
           "percentage": 117.1,
-          "pvsLost": 15.0
+          "pvsLost": 846.7
         },
         {
           "season": 2013,
           "ladderRank": 2,
-          "pvsLostRank": 17,
-          "rankDelta": -15,
+          "pvsLostRank": 7,
+          "rankDelta": -5,
           "wins": 18,
           "percentage": 135.6,
-          "pvsLost": 18.0
+          "pvsLost": 928.5
         },
         {
           "season": 2014,
           "ladderRank": 3,
-          "pvsLostRank": 16,
-          "rankDelta": -13,
+          "pvsLostRank": 6,
+          "rankDelta": -3,
           "wins": 17,
           "percentage": 113.8,
-          "pvsLost": 17.0
+          "pvsLost": 763.4
         },
         {
           "season": 2015,
           "ladderRank": 10,
-          "pvsLostRank": 8,
-          "rankDelta": 2,
+          "pvsLostRank": 6,
+          "rankDelta": 4,
           "wins": 11,
           "percentage": 101.1,
-          "pvsLost": 11.0
+          "pvsLost": 826.7
         },
         {
           "season": 2016,
           "ladderRank": 2,
-          "pvsLostRank": 16,
-          "rankDelta": -14,
+          "pvsLostRank": 6,
+          "rankDelta": -4,
           "wins": 17,
           "percentage": 143.8,
-          "pvsLost": 17.0
+          "pvsLost": 824.2
         },
         {
           "season": 2017,
           "ladderRank": 3,
-          "pvsLostRank": 17,
-          "rankDelta": -14,
+          "pvsLostRank": 7,
+          "rankDelta": -4,
           "wins": 15,
           "percentage": 117.4,
-          "pvsLost": 15.0
+          "pvsLost": 927.3
         },
         {
           "season": 2018,
           "ladderRank": 7,
-          "pvsLostRank": 11,
-          "rankDelta": -4,
+          "pvsLostRank": 17,
+          "rankDelta": -10,
           "wins": 13,
           "percentage": 131.6,
-          "pvsLost": 13.0
+          "pvsLost": 1132.3
         },
         {
           "season": 2019,
           "ladderRank": 1,
-          "pvsLostRank": 17,
-          "rankDelta": -16,
+          "pvsLostRank": 8,
+          "rankDelta": -7,
           "wins": 16,
           "percentage": 135.7,
-          "pvsLost": 16.0
+          "pvsLost": 904.5
         },
         {
           "season": 2020,
           "ladderRank": 3,
-          "pvsLostRank": 14,
-          "rankDelta": -11,
+          "pvsLostRank": 9,
+          "rankDelta": -6,
           "wins": 12,
           "percentage": 136.8,
-          "pvsLost": 12.0
+          "pvsLost": 655.4
         },
         {
           "season": 2021,
           "ladderRank": 3,
-          "pvsLostRank": 16,
-          "rankDelta": -13,
+          "pvsLostRank": 4,
+          "rankDelta": -1,
           "wins": 16,
           "percentage": 126.7,
-          "pvsLost": 16.0
+          "pvsLost": 740.1
         },
         {
           "season": 2022,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 4,
+          "rankDelta": -3,
           "wins": 18,
           "percentage": 144.2,
-          "pvsLost": 18.0
+          "pvsLost": 691.7
         },
         {
           "season": 2023,
           "ladderRank": 12,
-          "pvsLostRank": 6,
-          "rankDelta": 6,
+          "pvsLostRank": 13,
+          "rankDelta": -1,
           "wins": 10,
           "percentage": 112.6,
-          "pvsLost": 10.0
+          "pvsLost": 965.6
         },
         {
           "season": 2024,
           "ladderRank": 3,
-          "pvsLostRank": 16,
-          "rankDelta": -13,
+          "pvsLostRank": 7,
+          "rankDelta": -4,
           "wins": 15,
           "percentage": 112.2,
-          "pvsLost": 15.0
+          "pvsLost": 531.5
         }
       ],
       "Gold Coast": [
         {
           "season": 2012,
           "ladderRank": 17,
-          "pvsLostRank": 2,
-          "rankDelta": 15,
+          "pvsLostRank": 17,
+          "rankDelta": 0,
           "wins": 3,
           "percentage": 60.8,
-          "pvsLost": 3.0
+          "pvsLost": 1212.2
         },
         {
           "season": 2013,
           "ladderRank": 14,
-          "pvsLostRank": 4,
-          "rankDelta": 10,
+          "pvsLostRank": 16,
+          "rankDelta": -2,
           "wins": 8,
           "percentage": 91.7,
-          "pvsLost": 8.0
+          "pvsLost": 1184.9
         },
         {
           "season": 2014,
           "ladderRank": 12,
-          "pvsLostRank": 7,
-          "rankDelta": 5,
+          "pvsLostRank": 4,
+          "rankDelta": 8,
           "wins": 10,
           "percentage": 93.7,
-          "pvsLost": 10.0
+          "pvsLost": 749.5
         },
         {
           "season": 2015,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 17,
+          "rankDelta": -1,
           "wins": 4,
           "percentage": 72.9,
-          "pvsLost": 4.0
+          "pvsLost": 1217.7
         },
         {
           "season": 2016,
           "ladderRank": 15,
-          "pvsLostRank": 4,
-          "rankDelta": 11,
+          "pvsLostRank": 18,
+          "rankDelta": -3,
           "wins": 6,
           "percentage": 78.2,
-          "pvsLost": 6.0
+          "pvsLost": 1318.4
         },
         {
           "season": 2017,
           "ladderRank": 17,
-          "pvsLostRank": 3,
-          "rankDelta": 14,
+          "pvsLostRank": 18,
+          "rankDelta": -1,
           "wins": 6,
           "percentage": 76.0,
-          "pvsLost": 6.0
+          "pvsLost": 1451.5
         },
         {
           "season": 2018,
           "ladderRank": 17,
-          "pvsLostRank": 2,
-          "rankDelta": 15,
+          "pvsLostRank": 15,
+          "rankDelta": 2,
           "wins": 4,
           "percentage": 59.9,
-          "pvsLost": 4.0
+          "pvsLost": 1085.4
         },
         {
           "season": 2019,
           "ladderRank": 18,
-          "pvsLostRank": 1,
-          "rankDelta": 17,
+          "pvsLostRank": 14,
+          "rankDelta": 4,
           "wins": 3,
           "percentage": 60.5,
-          "pvsLost": 3.0
+          "pvsLost": 1025.9
         },
         {
           "season": 2020,
           "ladderRank": 14,
-          "pvsLostRank": 3,
-          "rankDelta": 11,
+          "pvsLostRank": 2,
+          "rankDelta": 12,
           "wins": 5,
           "percentage": 90.6,
-          "pvsLost": 5.0
+          "pvsLost": 497.7
         },
         {
           "season": 2021,
           "ladderRank": 16,
-          "pvsLostRank": 4,
-          "rankDelta": 12,
+          "pvsLostRank": 16,
+          "rankDelta": 0,
           "wins": 7,
           "percentage": 76.8,
-          "pvsLost": 7.0
+          "pvsLost": 1008.6
         },
         {
           "season": 2022,
           "ladderRank": 12,
-          "pvsLostRank": 7,
-          "rankDelta": 5,
+          "pvsLostRank": 13,
+          "rankDelta": -1,
           "wins": 10,
           "percentage": 102.8,
-          "pvsLost": 10.0
+          "pvsLost": 887.6
         },
         {
           "season": 2023,
           "ladderRank": 15,
-          "pvsLostRank": 4,
-          "rankDelta": 11,
+          "pvsLostRank": 16,
+          "rankDelta": -1,
           "wins": 9,
           "percentage": 91.7,
-          "pvsLost": 9.0
+          "pvsLost": 1073.0
         },
         {
           "season": 2024,
           "ladderRank": 14,
-          "pvsLostRank": 5,
-          "rankDelta": 9,
+          "pvsLostRank": 15,
+          "rankDelta": -1,
           "wins": 10,
           "percentage": 97.0,
-          "pvsLost": 10.0
+          "pvsLost": 676.7
         }
       ],
       "Greater Western Sydney": [
         {
           "season": 2012,
           "ladderRank": 18,
-          "pvsLostRank": 1,
-          "rankDelta": 17,
+          "pvsLostRank": 18,
+          "rankDelta": 0,
           "wins": 2,
           "percentage": 46.2,
-          "pvsLost": 2.0
+          "pvsLost": 1235.5
         },
         {
           "season": 2013,
           "ladderRank": 18,
-          "pvsLostRank": 1,
-          "rankDelta": 17,
+          "pvsLostRank": 18,
+          "rankDelta": 0,
           "wins": 1,
           "percentage": 51.0,
-          "pvsLost": 1.0
+          "pvsLost": 1342.5
         },
         {
           "season": 2014,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 18,
+          "rankDelta": -2,
           "wins": 6,
           "percentage": 76.7,
-          "pvsLost": 6.0
+          "pvsLost": 1409.6
         },
         {
           "season": 2015,
           "ladderRank": 11,
-          "pvsLostRank": 9,
-          "rankDelta": 2,
+          "pvsLostRank": 16,
+          "rankDelta": -5,
           "wins": 11,
           "percentage": 99.0,
-          "pvsLost": 11.0
+          "pvsLost": 1140.6
         },
         {
           "season": 2016,
           "ladderRank": 4,
-          "pvsLostRank": 14,
-          "rankDelta": -10,
+          "pvsLostRank": 7,
+          "rankDelta": -3,
           "wins": 16,
           "percentage": 143.1,
-          "pvsLost": 16.0
+          "pvsLost": 833.9
         },
         {
           "season": 2017,
           "ladderRank": 6,
-          "pvsLostRank": 13,
-          "rankDelta": -7,
+          "pvsLostRank": 16,
+          "rankDelta": -10,
           "wins": 14,
           "percentage": 114.8,
-          "pvsLost": 14.0
+          "pvsLost": 1069.4
         },
         {
           "season": 2018,
           "ladderRank": 8,
-          "pvsLostRank": 12,
-          "rankDelta": -4,
+          "pvsLostRank": 9,
+          "rankDelta": -1,
           "wins": 13,
           "percentage": 114.3,
-          "pvsLost": 13.0
+          "pvsLost": 894.1
         },
         {
           "season": 2019,
           "ladderRank": 6,
-          "pvsLostRank": 13,
-          "rankDelta": -7,
+          "pvsLostRank": 9,
+          "rankDelta": -3,
           "wins": 13,
           "percentage": 115.4,
-          "pvsLost": 13.0
+          "pvsLost": 931.9
         },
         {
           "season": 2020,
           "ladderRank": 10,
-          "pvsLostRank": 9,
-          "rankDelta": 1,
+          "pvsLostRank": 14,
+          "rankDelta": -4,
           "wins": 8,
           "percentage": 95.6,
-          "pvsLost": 8.0
+          "pvsLost": 762.1
         },
         {
           "season": 2021,
           "ladderRank": 8,
-          "pvsLostRank": 12,
-          "rankDelta": -4,
+          "pvsLostRank": 9,
+          "rankDelta": -1,
           "wins": 11,
           "percentage": 99.7,
-          "pvsLost": 11.0
+          "pvsLost": 892.4
         },
         {
           "season": 2022,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 15,
+          "rankDelta": 1,
           "wins": 6,
           "percentage": 84.6,
-          "pvsLost": 6.0
+          "pvsLost": 960.4
         },
         {
           "season": 2023,
           "ladderRank": 7,
-          "pvsLostRank": 13,
-          "rankDelta": -6,
+          "pvsLostRank": 9,
+          "rankDelta": -2,
           "wins": 13,
           "percentage": 107.1,
-          "pvsLost": 13.0
+          "pvsLost": 829.3
         },
         {
           "season": 2024,
           "ladderRank": 7,
-          "pvsLostRank": 13,
-          "rankDelta": -6,
+          "pvsLostRank": 4,
+          "rankDelta": 3,
           "wins": 14,
           "percentage": 107.7,
-          "pvsLost": 14.0
+          "pvsLost": 500.5
         }
       ],
       "Hawthorn": [
         {
           "season": 2012,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 4,
+          "rankDelta": -3,
           "wins": 17,
           "percentage": 154.6,
-          "pvsLost": 17.0
+          "pvsLost": 734.6
         },
         {
           "season": 2013,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 3,
+          "rankDelta": -2,
           "wins": 19,
           "percentage": 135.7,
-          "pvsLost": 19.0
+          "pvsLost": 799.7
         },
         {
           "season": 2014,
           "ladderRank": 2,
-          "pvsLostRank": 17,
-          "rankDelta": -15,
+          "pvsLostRank": 12,
+          "rankDelta": -10,
           "wins": 17,
           "percentage": 140.8,
-          "pvsLost": 17.0
+          "pvsLost": 922.5
         },
         {
           "season": 2015,
           "ladderRank": 2,
-          "pvsLostRank": 15,
-          "rankDelta": -13,
+          "pvsLostRank": 5,
+          "rankDelta": -3,
           "wins": 16,
           "percentage": 158.4,
-          "pvsLost": 16.0
+          "pvsLost": 785.7
         },
         {
           "season": 2016,
           "ladderRank": 3,
-          "pvsLostRank": 17,
-          "rankDelta": -14,
+          "pvsLostRank": 9,
+          "rankDelta": -6,
           "wins": 17,
           "percentage": 118.6,
-          "pvsLost": 17.0
+          "pvsLost": 858.3
         },
         {
           "season": 2017,
           "ladderRank": 12,
-          "pvsLostRank": 7,
-          "rankDelta": 5,
+          "pvsLostRank": 14,
+          "rankDelta": -2,
           "wins": 10,
           "percentage": 90.7,
-          "pvsLost": 10.0
+          "pvsLost": 1021.9
         },
         {
           "season": 2018,
           "ladderRank": 4,
-          "pvsLostRank": 16,
-          "rankDelta": -12,
+          "pvsLostRank": 7,
+          "rankDelta": -3,
           "wins": 15,
           "percentage": 120.1,
-          "pvsLost": 15.0
+          "pvsLost": 859.8
         },
         {
           "season": 2019,
           "ladderRank": 9,
-          "pvsLostRank": 9,
-          "rankDelta": 0,
+          "pvsLostRank": 7,
+          "rankDelta": 2,
           "wins": 11,
           "percentage": 108.7,
-          "pvsLost": 11.0
+          "pvsLost": 883.1
         },
         {
           "season": 2020,
           "ladderRank": 15,
-          "pvsLostRank": 4,
-          "rankDelta": 11,
+          "pvsLostRank": 18,
+          "rankDelta": -3,
           "wins": 5,
           "percentage": 84.1,
-          "pvsLost": 5.0
+          "pvsLost": 891.0
         },
         {
           "season": 2021,
           "ladderRank": 14,
-          "pvsLostRank": 5,
-          "rankDelta": 9,
+          "pvsLostRank": 11,
+          "rankDelta": 3,
           "wins": 7,
           "percentage": 85.2,
-          "pvsLost": 7.0
+          "pvsLost": 906.7
         },
         {
           "season": 2022,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 10,
+          "rankDelta": 3,
           "wins": 8,
           "percentage": 89.8,
-          "pvsLost": 8.0
+          "pvsLost": 835.2
         },
         {
           "season": 2023,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 14,
+          "rankDelta": 2,
           "wins": 7,
           "percentage": 80.2,
-          "pvsLost": 7.0
+          "pvsLost": 974.4
         },
         {
           "season": 2024,
           "ladderRank": 6,
-          "pvsLostRank": 14,
-          "rankDelta": -8,
+          "pvsLostRank": 2,
+          "rankDelta": 4,
           "wins": 14,
           "percentage": 118.5,
-          "pvsLost": 14.0
+          "pvsLost": 430.1
         }
       ],
       "Melbourne": [
         {
           "season": 2012,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 9,
+          "rankDelta": 7,
           "wins": 4,
           "percentage": 67.5,
-          "pvsLost": 4.0
+          "pvsLost": 842.2
         },
         {
           "season": 2013,
           "ladderRank": 17,
-          "pvsLostRank": 2,
-          "rankDelta": 15,
+          "pvsLostRank": 11,
+          "rankDelta": 6,
           "wins": 2,
           "percentage": 54.1,
-          "pvsLost": 2.0
+          "pvsLost": 1043.1
         },
         {
           "season": 2014,
           "ladderRank": 17,
-          "pvsLostRank": 1,
-          "rankDelta": 16,
+          "pvsLostRank": 10,
+          "rankDelta": 7,
           "wins": 4,
           "percentage": 68.4,
-          "pvsLost": 4.0
+          "pvsLost": 881.0
         },
         {
           "season": 2015,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 13,
+          "rankDelta": 0,
           "wins": 7,
           "percentage": 77.0,
-          "pvsLost": 7.0
+          "pvsLost": 1082.4
         },
         {
           "season": 2016,
           "ladderRank": 11,
-          "pvsLostRank": 8,
-          "rankDelta": 3,
+          "pvsLostRank": 15,
+          "rankDelta": -4,
           "wins": 10,
           "percentage": 97.6,
-          "pvsLost": 10.0
+          "pvsLost": 1198.2
         },
         {
           "season": 2017,
           "ladderRank": 9,
-          "pvsLostRank": 11,
-          "rankDelta": -2,
+          "pvsLostRank": 12,
+          "rankDelta": -3,
           "wins": 12,
           "percentage": 105.2,
-          "pvsLost": 12.0
+          "pvsLost": 1002.2
         },
         {
           "season": 2018,
           "ladderRank": 5,
-          "pvsLostRank": 13,
-          "rankDelta": -8,
+          "pvsLostRank": 14,
+          "rankDelta": -9,
           "wins": 14,
           "percentage": 131.4,
-          "pvsLost": 14.0
+          "pvsLost": 1050.1
         },
         {
           "season": 2019,
           "ladderRank": 17,
-          "pvsLostRank": 2,
-          "rankDelta": 15,
+          "pvsLostRank": 12,
+          "rankDelta": 5,
           "wins": 5,
           "percentage": 78.6,
-          "pvsLost": 5.0
+          "pvsLost": 997.4
         },
         {
           "season": 2020,
           "ladderRank": 9,
-          "pvsLostRank": 11,
-          "rankDelta": -2,
+          "pvsLostRank": 10,
+          "rankDelta": -1,
           "wins": 9,
           "percentage": 107.8,
-          "pvsLost": 9.0
+          "pvsLost": 658.7
         },
         {
           "season": 2021,
           "ladderRank": 1,
-          "pvsLostRank": 17,
-          "rankDelta": -16,
+          "pvsLostRank": 2,
+          "rankDelta": -1,
           "wins": 17,
           "percentage": 130.8,
-          "pvsLost": 17.0
+          "pvsLost": 555.9
         },
         {
           "season": 2022,
           "ladderRank": 2,
-          "pvsLostRank": 16,
-          "rankDelta": -14,
+          "pvsLostRank": 1,
+          "rankDelta": 1,
           "wins": 16,
           "percentage": 130.5,
-          "pvsLost": 16.0
+          "pvsLost": 532.4
         },
         {
           "season": 2023,
           "ladderRank": 4,
-          "pvsLostRank": 15,
-          "rankDelta": -11,
+          "pvsLostRank": 4,
+          "rankDelta": 0,
           "wins": 16,
           "percentage": 125.2,
-          "pvsLost": 16.0
+          "pvsLost": 698.8
         },
         {
           "season": 2024,
           "ladderRank": 11,
-          "pvsLostRank": 7,
-          "rankDelta": 4,
+          "pvsLostRank": 9,
+          "rankDelta": 2,
           "wins": 11,
           "percentage": 99.7,
-          "pvsLost": 11.0
+          "pvsLost": 544.6
         }
       ],
       "North Melbourne": [
         {
           "season": 2012,
           "ladderRank": 8,
-          "pvsLostRank": 12,
-          "rankDelta": -4,
+          "pvsLostRank": 6,
+          "rankDelta": 2,
           "wins": 14,
           "percentage": 112.5,
-          "pvsLost": 14.0
+          "pvsLost": 773.3
         },
         {
           "season": 2013,
           "ladderRank": 10,
-          "pvsLostRank": 9,
-          "rankDelta": 1,
+          "pvsLostRank": 2,
+          "rankDelta": 8,
           "wins": 10,
           "percentage": 119.5,
-          "pvsLost": 10.0
+          "pvsLost": 740.8
         },
         {
           "season": 2014,
           "ladderRank": 6,
-          "pvsLostRank": 13,
-          "rankDelta": -7,
+          "pvsLostRank": 8,
+          "rankDelta": -2,
           "wins": 14,
           "percentage": 117.0,
-          "pvsLost": 14.0
+          "pvsLost": 864.3
         },
         {
           "season": 2015,
           "ladderRank": 8,
-          "pvsLostRank": 12,
-          "rankDelta": -4,
+          "pvsLostRank": 4,
+          "rankDelta": 4,
           "wins": 13,
           "percentage": 106.5,
-          "pvsLost": 13.0
+          "pvsLost": 744.3
         },
         {
           "season": 2016,
           "ladderRank": 8,
-          "pvsLostRank": 10,
-          "rankDelta": -2,
+          "pvsLostRank": 3,
+          "rankDelta": 5,
           "wins": 12,
           "percentage": 105.2,
-          "pvsLost": 12.0
+          "pvsLost": 782.4
         },
         {
           "season": 2017,
           "ladderRank": 15,
-          "pvsLostRank": 4,
-          "rankDelta": 11,
+          "pvsLostRank": 6,
+          "rankDelta": 9,
           "wins": 6,
           "percentage": 87.6,
-          "pvsLost": 6.0
+          "pvsLost": 878.0
         },
         {
           "season": 2018,
           "ladderRank": 9,
-          "pvsLostRank": 9,
-          "rankDelta": 0,
+          "pvsLostRank": 1,
+          "rankDelta": 8,
           "wins": 12,
           "percentage": 108.9,
-          "pvsLost": 12.0
+          "pvsLost": 572.2
         },
         {
           "season": 2019,
           "ladderRank": 12,
-          "pvsLostRank": 8,
-          "rankDelta": 4,
+          "pvsLostRank": 4,
+          "rankDelta": 8,
           "wins": 10,
           "percentage": 99.5,
-          "pvsLost": 10.0
+          "pvsLost": 801.7
         },
         {
           "season": 2020,
           "ladderRank": 17,
-          "pvsLostRank": 2,
-          "rankDelta": 15,
+          "pvsLostRank": 13,
+          "rankDelta": 4,
           "wins": 3,
           "percentage": 71.2,
-          "pvsLost": 3.0
+          "pvsLost": 760.0
         },
         {
           "season": 2021,
           "ladderRank": 18,
-          "pvsLostRank": 1,
-          "rankDelta": 17,
+          "pvsLostRank": 8,
+          "rankDelta": 10,
           "wins": 4,
           "percentage": 70.3,
-          "pvsLost": 4.0
+          "pvsLost": 847.1
         },
         {
           "season": 2022,
           "ladderRank": 18,
-          "pvsLostRank": 1,
-          "rankDelta": 17,
+          "pvsLostRank": 11,
+          "rankDelta": 7,
           "wins": 2,
           "percentage": 55.8,
-          "pvsLost": 2.0
+          "pvsLost": 864.1
         },
         {
           "season": 2023,
           "ladderRank": 17,
-          "pvsLostRank": 1,
-          "rankDelta": 16,
+          "pvsLostRank": 18,
+          "rankDelta": -1,
           "wins": 3,
           "percentage": 71.5,
-          "pvsLost": 3.0
+          "pvsLost": 1360.7
         },
         {
           "season": 2024,
           "ladderRank": 17,
-          "pvsLostRank": 2,
-          "rankDelta": 15,
+          "pvsLostRank": 12,
+          "rankDelta": 5,
           "wins": 3,
           "percentage": 63.5,
-          "pvsLost": 3.0
+          "pvsLost": 623.3
         }
       ],
       "Port Adelaide": [
         {
           "season": 2012,
           "ladderRank": 14,
-          "pvsLostRank": 4,
-          "rankDelta": 10,
+          "pvsLostRank": 3,
+          "rankDelta": 11,
           "wins": 5,
           "percentage": 78.9,
-          "pvsLost": 5.0
+          "pvsLost": 721.0
         },
         {
           "season": 2013,
           "ladderRank": 8,
-          "pvsLostRank": 11,
-          "rankDelta": -3,
+          "pvsLostRank": 4,
+          "rankDelta": 4,
           "wins": 12,
           "percentage": 102.4,
-          "pvsLost": 12.0
+          "pvsLost": 826.8
         },
         {
           "season": 2014,
           "ladderRank": 5,
-          "pvsLostRank": 14,
-          "rankDelta": -9,
+          "pvsLostRank": 2,
+          "rankDelta": 3,
           "wins": 14,
           "percentage": 129.9,
-          "pvsLost": 14.0
+          "pvsLost": 663.2
         },
         {
           "season": 2015,
           "ladderRank": 9,
-          "pvsLostRank": 10,
-          "rankDelta": -1,
+          "pvsLostRank": 8,
+          "rankDelta": 1,
           "wins": 12,
           "percentage": 106.8,
-          "pvsLost": 12.0
+          "pvsLost": 895.0
         },
         {
           "season": 2016,
           "ladderRank": 10,
-          "pvsLostRank": 9,
-          "rankDelta": 1,
+          "pvsLostRank": 10,
+          "rankDelta": 0,
           "wins": 10,
           "percentage": 106.0,
-          "pvsLost": 10.0
+          "pvsLost": 972.9
         },
         {
           "season": 2017,
           "ladderRank": 4,
-          "pvsLostRank": 14,
-          "rankDelta": -10,
+          "pvsLostRank": 4,
+          "rankDelta": 0,
           "wins": 14,
           "percentage": 129.7,
-          "pvsLost": 14.0
+          "pvsLost": 816.2
         },
         {
           "season": 2018,
           "ladderRank": 10,
-          "pvsLostRank": 10,
-          "rankDelta": 0,
+          "pvsLostRank": 3,
+          "rankDelta": 7,
           "wins": 12,
           "percentage": 107.6,
-          "pvsLost": 12.0
+          "pvsLost": 755.5
         },
         {
           "season": 2019,
           "ladderRank": 10,
-          "pvsLostRank": 10,
-          "rankDelta": 0,
+          "pvsLostRank": 18,
+          "rankDelta": -8,
           "wins": 11,
           "percentage": 105.4,
-          "pvsLost": 11.0
+          "pvsLost": 1183.5
         },
         {
           "season": 2020,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 1,
+          "rankDelta": 0,
           "wins": 14,
           "percentage": 136.4,
-          "pvsLost": 14.0
+          "pvsLost": 441.3
         },
         {
           "season": 2021,
           "ladderRank": 2,
-          "pvsLostRank": 18,
-          "rankDelta": -16,
+          "pvsLostRank": 3,
+          "rankDelta": -1,
           "wins": 17,
           "percentage": 126.3,
-          "pvsLost": 17.0
+          "pvsLost": 703.0
         },
         {
           "season": 2022,
@@ -39313,25 +39313,25 @@
           "rankDelta": 3,
           "wins": 10,
           "percentage": 110.3,
-          "pvsLost": 10.0
+          "pvsLost": 762.0
         },
         {
           "season": 2023,
           "ladderRank": 3,
-          "pvsLostRank": 17,
-          "rankDelta": -14,
+          "pvsLostRank": 7,
+          "rankDelta": -4,
           "wins": 17,
           "percentage": 112.7,
-          "pvsLost": 17.0
+          "pvsLost": 820.7
         },
         {
           "season": 2024,
           "ladderRank": 2,
-          "pvsLostRank": 17,
-          "rankDelta": -15,
+          "pvsLostRank": 8,
+          "rankDelta": -6,
           "wins": 16,
           "percentage": 114.8,
-          "pvsLost": 16.0
+          "pvsLost": 535.2
         }
       ],
       "Richmond": [
@@ -39342,591 +39342,591 @@
           "rankDelta": 5,
           "wins": 10,
           "percentage": 111.6,
-          "pvsLost": 10.0
+          "pvsLost": 792.2
         },
         {
           "season": 2013,
           "ladderRank": 5,
-          "pvsLostRank": 14,
-          "rankDelta": -9,
+          "pvsLostRank": 5,
+          "rankDelta": 0,
           "wins": 15,
           "percentage": 122.8,
-          "pvsLost": 15.0
+          "pvsLost": 862.3
         },
         {
           "season": 2014,
           "ladderRank": 8,
-          "pvsLostRank": 12,
-          "rankDelta": -4,
+          "pvsLostRank": 13,
+          "rankDelta": -5,
           "wins": 12,
           "percentage": 105.8,
-          "pvsLost": 12.0
+          "pvsLost": 934.5
         },
         {
           "season": 2015,
           "ladderRank": 5,
-          "pvsLostRank": 14,
-          "rankDelta": -9,
+          "pvsLostRank": 7,
+          "rankDelta": -2,
           "wins": 15,
           "percentage": 123.1,
-          "pvsLost": 15.0
+          "pvsLost": 868.3
         },
         {
           "season": 2016,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 16,
+          "rankDelta": -3,
           "wins": 8,
           "percentage": 79.5,
-          "pvsLost": 8.0
+          "pvsLost": 1241.0
         },
         {
           "season": 2017,
           "ladderRank": 2,
-          "pvsLostRank": 18,
-          "rankDelta": -16,
+          "pvsLostRank": 8,
+          "rankDelta": -6,
           "wins": 15,
           "percentage": 118.3,
-          "pvsLost": 15.0
+          "pvsLost": 964.9
         },
         {
           "season": 2018,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 5,
+          "rankDelta": -4,
           "wins": 18,
           "percentage": 136.1,
-          "pvsLost": 18.0
+          "pvsLost": 791.9
         },
         {
           "season": 2019,
           "ladderRank": 3,
-          "pvsLostRank": 18,
-          "rankDelta": -15,
+          "pvsLostRank": 16,
+          "rankDelta": -13,
           "wins": 16,
           "percentage": 113.7,
-          "pvsLost": 16.0
+          "pvsLost": 1037.8
         },
         {
           "season": 2020,
           "ladderRank": 4,
-          "pvsLostRank": 15,
-          "rankDelta": -11,
+          "pvsLostRank": 7,
+          "rankDelta": -3,
           "wins": 12,
           "percentage": 129.9,
-          "pvsLost": 12.0
+          "pvsLost": 605.9
         },
         {
           "season": 2021,
           "ladderRank": 12,
-          "pvsLostRank": 7,
-          "rankDelta": 5,
+          "pvsLostRank": 14,
+          "rankDelta": -2,
           "wins": 9,
           "percentage": 97.9,
-          "pvsLost": 9.0
+          "pvsLost": 945.0
         },
         {
           "season": 2022,
           "ladderRank": 7,
-          "pvsLostRank": 12,
-          "rankDelta": -5,
+          "pvsLostRank": 9,
+          "rankDelta": -2,
           "wins": 13,
           "percentage": 121.6,
-          "pvsLost": 13.0
+          "pvsLost": 795.6
         },
         {
           "season": 2023,
           "ladderRank": 14,
-          "pvsLostRank": 7,
-          "rankDelta": 7,
+          "pvsLostRank": 10,
+          "rankDelta": 4,
           "wins": 10,
           "percentage": 93.6,
-          "pvsLost": 10.0
+          "pvsLost": 887.4
         },
         {
           "season": 2024,
           "ladderRank": 18,
-          "pvsLostRank": 1,
-          "rankDelta": 17,
+          "pvsLostRank": 18,
+          "rankDelta": 0,
           "wins": 2,
           "percentage": 63.8,
-          "pvsLost": 2.0
+          "pvsLost": 872.0
         }
       ],
       "St Kilda": [
         {
           "season": 2012,
           "ladderRank": 9,
-          "pvsLostRank": 10,
-          "rankDelta": -1,
+          "pvsLostRank": 5,
+          "rankDelta": 4,
           "wins": 12,
           "percentage": 123.3,
-          "pvsLost": 12.0
+          "pvsLost": 749.3
         },
         {
           "season": 2013,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 15,
+          "rankDelta": 1,
           "wins": 5,
           "percentage": 82.6,
-          "pvsLost": 5.0
+          "pvsLost": 1114.6
         },
         {
           "season": 2014,
           "ladderRank": 18,
-          "pvsLostRank": 2,
-          "rankDelta": 16,
+          "pvsLostRank": 17,
+          "rankDelta": 1,
           "wins": 4,
           "percentage": 60.8,
-          "pvsLost": 4.0
+          "pvsLost": 1163.2
         },
         {
           "season": 2015,
           "ladderRank": 14,
-          "pvsLostRank": 5,
-          "rankDelta": 9,
+          "pvsLostRank": 10,
+          "rankDelta": 4,
           "wins": 6,
           "percentage": 78.4,
-          "pvsLost": 6.0
+          "pvsLost": 1001.9
         },
         {
           "season": 2016,
           "ladderRank": 9,
-          "pvsLostRank": 11,
-          "rankDelta": -2,
+          "pvsLostRank": 4,
+          "rankDelta": 5,
           "wins": 12,
           "percentage": 95.7,
-          "pvsLost": 12.0
+          "pvsLost": 789.5
         },
         {
           "season": 2017,
           "ladderRank": 11,
-          "pvsLostRank": 8,
-          "rankDelta": 3,
+          "pvsLostRank": 5,
+          "rankDelta": 6,
           "wins": 11,
           "percentage": 96.9,
-          "pvsLost": 11.0
+          "pvsLost": 826.1
         },
         {
           "season": 2018,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 18,
+          "rankDelta": -2,
           "wins": 4,
           "percentage": 75.6,
-          "pvsLost": 4.0
+          "pvsLost": 1260.6
         },
         {
           "season": 2019,
           "ladderRank": 14,
-          "pvsLostRank": 6,
-          "rankDelta": 8,
+          "pvsLostRank": 17,
+          "rankDelta": -3,
           "wins": 9,
           "percentage": 83.9,
-          "pvsLost": 9.0
+          "pvsLost": 1157.9
         },
         {
           "season": 2020,
           "ladderRank": 6,
-          "pvsLostRank": 12,
-          "rankDelta": -6,
+          "pvsLostRank": 4,
+          "rankDelta": 2,
           "wins": 10,
           "percentage": 116.2,
-          "pvsLost": 10.0
+          "pvsLost": 559.3
         },
         {
           "season": 2021,
           "ladderRank": 10,
-          "pvsLostRank": 9,
-          "rankDelta": 1,
+          "pvsLostRank": 18,
+          "rankDelta": -8,
           "wins": 10,
           "percentage": 91.5,
-          "pvsLost": 10.0
+          "pvsLost": 1020.4
         },
         {
           "season": 2022,
           "ladderRank": 10,
-          "pvsLostRank": 9,
-          "rankDelta": 1,
+          "pvsLostRank": 7,
+          "rankDelta": 3,
           "wins": 11,
           "percentage": 99.3,
-          "pvsLost": 11.0
+          "pvsLost": 759.5
         },
         {
           "season": 2023,
           "ladderRank": 6,
-          "pvsLostRank": 14,
-          "rankDelta": -8,
+          "pvsLostRank": 1,
+          "rankDelta": 5,
           "wins": 13,
           "percentage": 107.8,
-          "pvsLost": 13.0
+          "pvsLost": 612.6
         },
         {
           "season": 2024,
           "ladderRank": 12,
-          "pvsLostRank": 8,
-          "rankDelta": 4,
+          "pvsLostRank": 16,
+          "rankDelta": -4,
           "wins": 11,
           "percentage": 99.4,
-          "pvsLost": 11.0
+          "pvsLost": 678.6
         }
       ],
       "Sydney": [
         {
           "season": 2012,
           "ladderRank": 3,
-          "pvsLostRank": 16,
-          "rankDelta": -13,
+          "pvsLostRank": 1,
+          "rankDelta": 2,
           "wins": 16,
           "percentage": 140.6,
-          "pvsLost": 16.0
+          "pvsLost": 493.2
         },
         {
           "season": 2013,
           "ladderRank": 4,
-          "pvsLostRank": 15,
-          "rankDelta": -11,
+          "pvsLostRank": 1,
+          "rankDelta": 3,
           "wins": 15,
           "percentage": 132.5,
-          "pvsLost": 15.0
+          "pvsLost": 708.5
         },
         {
           "season": 2014,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 1,
+          "rankDelta": 0,
           "wins": 17,
           "percentage": 142.9,
-          "pvsLost": 17.0
+          "pvsLost": 643.7
         },
         {
           "season": 2015,
           "ladderRank": 4,
-          "pvsLostRank": 16,
-          "rankDelta": -12,
+          "pvsLostRank": 1,
+          "rankDelta": 3,
           "wins": 16,
           "percentage": 127.1,
-          "pvsLost": 16.0
+          "pvsLost": 637.0
         },
         {
           "season": 2016,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 2,
+          "rankDelta": -1,
           "wins": 17,
           "percentage": 151.2,
-          "pvsLost": 17.0
+          "pvsLost": 760.4
         },
         {
           "season": 2017,
           "ladderRank": 5,
-          "pvsLostRank": 15,
-          "rankDelta": -10,
+          "pvsLostRank": 2,
+          "rankDelta": 3,
           "wins": 14,
           "percentage": 126.8,
-          "pvsLost": 14.0
+          "pvsLost": 782.8
         },
         {
           "season": 2018,
           "ladderRank": 6,
-          "pvsLostRank": 14,
-          "rankDelta": -8,
+          "pvsLostRank": 6,
+          "rankDelta": 0,
           "wins": 14,
           "percentage": 109.5,
-          "pvsLost": 14.0
+          "pvsLost": 806.7
         },
         {
           "season": 2019,
           "ladderRank": 15,
-          "pvsLostRank": 4,
-          "rankDelta": 11,
+          "pvsLostRank": 1,
+          "rankDelta": 14,
           "wins": 8,
           "percentage": 97.7,
-          "pvsLost": 8.0
+          "pvsLost": 746.1
         },
         {
           "season": 2020,
           "ladderRank": 16,
-          "pvsLostRank": 5,
-          "rankDelta": 11,
+          "pvsLostRank": 12,
+          "rankDelta": 4,
           "wins": 5,
           "percentage": 82.6,
-          "pvsLost": 5.0
+          "pvsLost": 755.9
         },
         {
           "season": 2021,
           "ladderRank": 6,
-          "pvsLostRank": 14,
-          "rankDelta": -8,
+          "pvsLostRank": 5,
+          "rankDelta": 1,
           "wins": 15,
           "percentage": 119.9,
-          "pvsLost": 15.0
+          "pvsLost": 754.7
         },
         {
           "season": 2022,
           "ladderRank": 3,
-          "pvsLostRank": 17,
-          "rankDelta": -14,
+          "pvsLostRank": 2,
+          "rankDelta": 1,
           "wins": 16,
           "percentage": 127.9,
-          "pvsLost": 16.0
+          "pvsLost": 599.1
         },
         {
           "season": 2023,
           "ladderRank": 8,
-          "pvsLostRank": 10,
-          "rankDelta": -2,
+          "pvsLostRank": 5,
+          "rankDelta": 3,
           "wins": 12,
           "percentage": 110.0,
-          "pvsLost": 12.0
+          "pvsLost": 755.0
         },
         {
           "season": 2024,
           "ladderRank": 1,
-          "pvsLostRank": 18,
-          "rankDelta": -17,
+          "pvsLostRank": 1,
+          "rankDelta": 0,
           "wins": 16,
           "percentage": 126.5,
-          "pvsLost": 16.0
+          "pvsLost": 359.4
         }
       ],
       "West Coast": [
         {
           "season": 2012,
           "ladderRank": 5,
-          "pvsLostRank": 14,
-          "rankDelta": -9,
+          "pvsLostRank": 2,
+          "rankDelta": 3,
           "wins": 15,
           "percentage": 124.2,
-          "pvsLost": 15.0
+          "pvsLost": 623.6
         },
         {
           "season": 2013,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 13,
+          "rankDelta": 0,
           "wins": 9,
           "percentage": 95.3,
-          "pvsLost": 9.0
+          "pvsLost": 1057.5
         },
         {
           "season": 2014,
           "ladderRank": 9,
-          "pvsLostRank": 10,
-          "rankDelta": -1,
+          "pvsLostRank": 9,
+          "rankDelta": 0,
           "wins": 11,
           "percentage": 116.9,
-          "pvsLost": 11.0
+          "pvsLost": 866.3
         },
         {
           "season": 2015,
           "ladderRank": 3,
-          "pvsLostRank": 17,
-          "rankDelta": -14,
+          "pvsLostRank": 3,
+          "rankDelta": 0,
           "wins": 16,
           "percentage": 148.2,
-          "pvsLost": 16.0
+          "pvsLost": 730.9
         },
         {
           "season": 2016,
           "ladderRank": 6,
-          "pvsLostRank": 15,
-          "rankDelta": -9,
+          "pvsLostRank": 5,
+          "rankDelta": 1,
           "wins": 16,
           "percentage": 130.0,
-          "pvsLost": 16.0
+          "pvsLost": 799.3
         },
         {
           "season": 2017,
           "ladderRank": 8,
-          "pvsLostRank": 12,
-          "rankDelta": -4,
+          "pvsLostRank": 3,
+          "rankDelta": 5,
           "wins": 12,
           "percentage": 105.7,
-          "pvsLost": 12.0
+          "pvsLost": 791.6
         },
         {
           "season": 2018,
           "ladderRank": 2,
-          "pvsLostRank": 17,
-          "rankDelta": -15,
+          "pvsLostRank": 2,
+          "rankDelta": 0,
           "wins": 16,
           "percentage": 121.4,
-          "pvsLost": 16.0
+          "pvsLost": 631.8
         },
         {
           "season": 2019,
           "ladderRank": 5,
-          "pvsLostRank": 15,
-          "rankDelta": -10,
+          "pvsLostRank": 2,
+          "rankDelta": 3,
           "wins": 15,
           "percentage": 112.5,
-          "pvsLost": 15.0
+          "pvsLost": 772.1
         },
         {
           "season": 2020,
           "ladderRank": 5,
-          "pvsLostRank": 16,
-          "rankDelta": -11,
+          "pvsLostRank": 5,
+          "rankDelta": 0,
           "wins": 12,
           "percentage": 117.0,
-          "pvsLost": 12.0
+          "pvsLost": 562.0
         },
         {
           "season": 2021,
           "ladderRank": 9,
-          "pvsLostRank": 10,
-          "rankDelta": -1,
+          "pvsLostRank": 7,
+          "rankDelta": 2,
           "wins": 10,
           "percentage": 93.2,
-          "pvsLost": 10.0
+          "pvsLost": 815.3
         },
         {
           "season": 2022,
           "ladderRank": 17,
-          "pvsLostRank": 2,
-          "rankDelta": 15,
+          "pvsLostRank": 18,
+          "rankDelta": -1,
           "wins": 2,
           "percentage": 59.8,
-          "pvsLost": 2.0
+          "pvsLost": 1319.0
         },
         {
           "season": 2023,
           "ladderRank": 18,
-          "pvsLostRank": 2,
-          "rankDelta": 16,
+          "pvsLostRank": 17,
+          "rankDelta": 1,
           "wins": 3,
           "percentage": 53.0,
-          "pvsLost": 3.0
+          "pvsLost": 1129.9
         },
         {
           "season": 2024,
           "ladderRank": 16,
-          "pvsLostRank": 3,
-          "rankDelta": 13,
+          "pvsLostRank": 11,
+          "rankDelta": 5,
           "wins": 5,
           "percentage": 68.1,
-          "pvsLost": 5.0
+          "pvsLost": 610.8
         }
       ],
       "Western Bulldogs": [
         {
           "season": 2012,
           "ladderRank": 15,
-          "pvsLostRank": 5,
-          "rankDelta": 10,
+          "pvsLostRank": 14,
+          "rankDelta": 1,
           "wins": 5,
           "percentage": 67.0,
-          "pvsLost": 5.0
+          "pvsLost": 984.3
         },
         {
           "season": 2013,
           "ladderRank": 15,
-          "pvsLostRank": 5,
-          "rankDelta": 10,
+          "pvsLostRank": 12,
+          "rankDelta": 3,
           "wins": 8,
           "percentage": 85.1,
-          "pvsLost": 8.0
+          "pvsLost": 1057.0
         },
         {
           "season": 2014,
           "ladderRank": 14,
-          "pvsLostRank": 6,
-          "rankDelta": 8,
+          "pvsLostRank": 15,
+          "rankDelta": -1,
           "wins": 7,
           "percentage": 81.9,
-          "pvsLost": 7.0
+          "pvsLost": 1030.0
         },
         {
           "season": 2015,
           "ladderRank": 6,
-          "pvsLostRank": 13,
-          "rankDelta": -7,
+          "pvsLostRank": 15,
+          "rankDelta": -9,
           "wins": 14,
           "percentage": 115.1,
-          "pvsLost": 14.0
+          "pvsLost": 1133.7
         },
         {
           "season": 2016,
           "ladderRank": 7,
-          "pvsLostRank": 12,
-          "rankDelta": -5,
+          "pvsLostRank": 17,
+          "rankDelta": -10,
           "wins": 15,
           "percentage": 115.4,
-          "pvsLost": 15.0
+          "pvsLost": 1308.6
         },
         {
           "season": 2017,
           "ladderRank": 10,
-          "pvsLostRank": 9,
-          "rankDelta": 1,
+          "pvsLostRank": 17,
+          "rankDelta": -7,
           "wins": 11,
           "percentage": 97.1,
-          "pvsLost": 11.0
+          "pvsLost": 1071.0
         },
         {
           "season": 2018,
           "ladderRank": 13,
-          "pvsLostRank": 6,
-          "rankDelta": 7,
+          "pvsLostRank": 11,
+          "rankDelta": 2,
           "wins": 8,
           "percentage": 77.3,
-          "pvsLost": 8.0
+          "pvsLost": 964.3
         },
         {
           "season": 2019,
           "ladderRank": 7,
-          "pvsLostRank": 12,
-          "rankDelta": -5,
+          "pvsLostRank": 5,
+          "rankDelta": 2,
           "wins": 12,
           "percentage": 107.2,
-          "pvsLost": 12.0
+          "pvsLost": 803.9
         },
         {
           "season": 2020,
           "ladderRank": 7,
-          "pvsLostRank": 13,
-          "rankDelta": -6,
+          "pvsLostRank": 16,
+          "rankDelta": -9,
           "wins": 10,
           "percentage": 106.7,
-          "pvsLost": 10.0
+          "pvsLost": 796.5
         },
         {
           "season": 2021,
           "ladderRank": 5,
-          "pvsLostRank": 15,
-          "rankDelta": -10,
+          "pvsLostRank": 17,
+          "rankDelta": -12,
           "wins": 15,
           "percentage": 132.8,
-          "pvsLost": 15.0
+          "pvsLost": 1019.3
         },
         {
           "season": 2022,
           "ladderRank": 8,
-          "pvsLostRank": 11,
-          "rankDelta": -3,
+          "pvsLostRank": 17,
+          "rankDelta": -9,
           "wins": 12,
           "percentage": 108.9,
-          "pvsLost": 12.0
+          "pvsLost": 1004.9
         },
         {
           "season": 2023,
           "ladderRank": 9,
-          "pvsLostRank": 11,
-          "rankDelta": -2,
+          "pvsLostRank": 6,
+          "rankDelta": 3,
           "wins": 12,
           "percentage": 108.7,
-          "pvsLost": 12.0
+          "pvsLost": 802.9
         },
         {
           "season": 2024,
           "ladderRank": 4,
-          "pvsLostRank": 15,
-          "rankDelta": -11,
+          "pvsLostRank": 6,
+          "rankDelta": -2,
           "wins": 14,
           "percentage": 125.1,
-          "pvsLost": 14.0
+          "pvsLost": 527.3
         }
       ]
     },
