@@ -91,11 +91,19 @@ def build_availability(con: duckdb.DuckDBPyConnection) -> None:
             GROUP BY 1, 2, 3
         ),
         match_results AS (
-            SELECT season, round, home_team AS team, winner_team
-            FROM matches
-            UNION ALL
-            SELECT season, round, away_team AS team, winner_team
-            FROM matches
+            SELECT
+                season,
+                round,
+                team,
+                MAX(CASE WHEN winner_team = team THEN 1 ELSE 0 END) = 1 AS won
+            FROM (
+                SELECT season, round, home_team AS team, winner_team
+                FROM matches
+                UNION ALL
+                SELECT season, round, away_team AS team, winner_team
+                FROM matches
+            ) mr
+            GROUP BY 1, 2, 3
         )
         SELECT
             a.team,
@@ -107,7 +115,7 @@ def build_availability(con: duckdb.DuckDBPyConnection) -> None:
             a.players_unavailable::DOUBLE / NULLIF(a.squad_size, 0) AS unavailable_rate,
             0.0 AS unavailable_pvs_total,
             0.0 AS unavailable_pvs_top5,
-            mr.winner_team = a.team AS won
+            mr.won
         FROM avail a
         LEFT JOIN match_results mr
             ON a.team = mr.team

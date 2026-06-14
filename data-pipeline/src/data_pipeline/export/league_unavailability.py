@@ -23,16 +23,26 @@ SELECT
     ROUND(v.potential_score, 3) AS potential_score,
     ROUND(v.age_perf_weight, 3) AS age_performance_weight,
     ROUND(v.pvs, 3) AS player_value_score,
+    ROUND(COALESCE(v.injury_weight_pvs, v.pvs), 3) AS injury_weight_pvs,
     COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
     COUNT(*) FILTER (WHERE a.afl_played) AS rounds_played,
     COUNT(*) FILTER (WHERE a.status = 'unavailable') AS rounds_unavailable,
     COUNT(*) FILTER (WHERE a.status = 'vfl_only') AS rounds_vfl_only,
     COUNT(*) FILTER (WHERE a.status = 'intermittent') AS rounds_intermittent,
     ROUND(
-        SUM(CASE WHEN a.status IN ('unavailable', 'intermittent') THEN v.pvs ELSE 0 END),
+        SUM(
+            CASE
+                WHEN a.status IN ('unavailable', 'intermittent')
+                THEN COALESCE(v.injury_weight_pvs, v.pvs)
+                ELSE 0
+            END
+        ),
         2
     ) AS pvs_games_missed,
-    ROUND(SUM(CASE WHEN NOT a.afl_played THEN v.pvs ELSE 0 END), 2) AS pvs_rounds_lost
+    ROUND(
+        SUM(CASE WHEN NOT a.afl_played THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END),
+        2
+    ) AS pvs_rounds_lost
 FROM player_value v
 JOIN player_profiles p
     ON v.player_id = p.player_id AND v.team = p.team AND v.season = p.season
@@ -48,16 +58,22 @@ WITH player_absences AS (
     SELECT
         a.team,
         COUNT(*) FILTER (WHERE NOT a.afl_played) AS player_rounds_lost,
-        ROUND(SUM(CASE WHEN NOT a.afl_played THEN v.pvs ELSE 0 END), 1) AS total_pvs_lost,
-        ROUND(AVG(CASE WHEN NOT a.afl_played THEN v.pvs END), 3) AS avg_pvs_per_lost_round,
+        ROUND(SUM(CASE WHEN NOT a.afl_played THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1) AS total_pvs_lost,
+        ROUND(AVG(CASE WHEN NOT a.afl_played THEN COALESCE(v.injury_weight_pvs, v.pvs) END), 3) AS avg_pvs_per_lost_round,
         COUNT(*) FILTER (WHERE a.status = 'vfl_only') AS vfl_only_rounds,
-        ROUND(SUM(CASE WHEN a.status = 'vfl_only' THEN v.pvs ELSE 0 END), 1) AS pvs_lost_vfl_only,
+        ROUND(SUM(CASE WHEN a.status = 'vfl_only' THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1) AS pvs_lost_vfl_only,
         COUNT(*) FILTER (WHERE a.status = 'intermittent') AS intermittent_rounds,
-        ROUND(SUM(CASE WHEN a.status = 'intermittent' THEN v.pvs ELSE 0 END), 1) AS pvs_lost_intermittent,
+        ROUND(SUM(CASE WHEN a.status = 'intermittent' THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1) AS pvs_lost_intermittent,
         COUNT(*) FILTER (WHERE a.status = 'unavailable') AS unavailable_rounds,
-        ROUND(SUM(CASE WHEN a.status = 'unavailable' THEN v.pvs ELSE 0 END), 1) AS pvs_lost_unavailable,
+        ROUND(SUM(CASE WHEN a.status = 'unavailable' THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1) AS pvs_lost_unavailable,
         ROUND(
-            SUM(CASE WHEN a.status IN ('unavailable', 'intermittent') THEN v.pvs ELSE 0 END),
+            SUM(
+                CASE
+                    WHEN a.status IN ('unavailable', 'intermittent')
+                    THEN COALESCE(v.injury_weight_pvs, v.pvs)
+                    ELSE 0
+                END
+            ),
             1
         ) AS pvs_lost_games_missed,
         COUNT(DISTINCT a.player_id) FILTER (WHERE NOT a.afl_played) AS players_with_absences
@@ -107,6 +123,7 @@ def export_league_unavailability(season: int, out_dir: Path | None = None) -> Pa
                 "total_pvs_lost",
                 "team_round_pvs_sum",
                 "pvs_games_missed (player tab)",
+                "injury_weight_pvs",
                 "pvs_rounds_lost (player tab)",
                 "rounds_vfl_only",
             ],
@@ -115,6 +132,7 @@ def export_league_unavailability(season: int, out_dir: Path | None = None) -> Pa
                 "Sum of PVS for every round a player did not play AFL (includes VFL-only weeks).",
                 "Season sum of per-round games-missed PVS (unavailable + intermittent only; excludes VFL-only).",
                 "Player-season PVS on rounds with no AFL and status unavailable or intermittent.",
+                "Established-value PVS used for injury counting when games played < 14 (see PHASE2_PVS.md).",
                 "Player-season PVS on all rounds without AFL (includes VFL-only reserves weeks).",
                 "Missed AFL but played state league for the affiliated side.",
             ],

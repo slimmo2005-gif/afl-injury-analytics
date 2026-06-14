@@ -111,19 +111,29 @@ def build_league_players_df(con: duckdb.DuckDBPyConnection, season: int) -> pd.D
             ROUND(v.potential_score, 3) AS potential_score,
             ROUND(v.age_perf_weight, 3) AS age_performance_weight,
             ROUND(v.pvs, 3) AS player_value_score,
+            ROUND(COALESCE(v.injury_weight_pvs, v.pvs), 3) AS injury_weight_pvs,
+            ROUND(COALESCE(v.established_pvs, v.pvs), 3) AS established_pvs,
             COUNT(*) FILTER (WHERE a.afl_played) AS rounds_played,
             COUNT(*) FILTER (WHERE NOT a.afl_played AND a.status != 'intermittent') AS rounds_missed,
             COUNT(*) FILTER (WHERE a.status = 'vfl_only') AS rounds_vfl_only,
             COUNT(*) FILTER (WHERE a.status = 'unavailable') AS rounds_unavailable,
-            ROUND(SUM(CASE WHEN a.status IN ('unavailable', 'intermittent') THEN v.pvs ELSE 0 END), 1)
-                AS pvs_games_missed
+            ROUND(
+                SUM(
+                    CASE
+                        WHEN a.status IN ('unavailable', 'intermittent')
+                        THEN COALESCE(v.injury_weight_pvs, v.pvs)
+                        ELSE 0
+                    END
+                ),
+                1
+            ) AS pvs_games_missed
         FROM player_value v
         JOIN player_profiles p
             ON v.player_id = p.player_id AND v.team = p.team AND v.season = p.season
         LEFT JOIN availability a
             ON v.player_id = a.player_id AND v.team = a.team AND v.season = a.season
         WHERE v.season = ?
-        GROUP BY 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
+        GROUP BY 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
         ORDER BY player_value_score DESC
         """,
         [season],
@@ -210,6 +220,8 @@ def build_league_players_df(con: duckdb.DuckDBPyConnection, season: int) -> pd.D
         "rounds_vfl_only",
         "rounds_unavailable",
         "player_value_score",
+        "injury_weight_pvs",
+        "established_pvs",
         "performance_score",
         "potential_score",
         "age_performance_weight",

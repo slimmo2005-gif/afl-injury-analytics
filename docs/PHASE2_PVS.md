@@ -58,13 +58,27 @@ Linear ramp from 18 → 25 (only applies when potential top-up is used):
 
 ### Unavailability metrics
 
-Per team-round (players on squad who did not play AFL):
+Per team-round (players on squad who did not play AFL), sums use **injury_weight_pvs** (not season PVS) when games played &lt; 14 — see below.
 
 - `unavailable_pvs_total` — all non-AFL PVS in a round (includes VFL-only)
 - `unavailable_pvs_games_missed` — non-AFL PVS excluding VFL-only (unavailable + intermittent)
 - `unavailable_pvs_top5` / `top10`
 - `unavailable_pvs_u22` / `unavailable_pvs_28plus`
 - Intermittent status: missed round but played 2+ of prior 4
+
+### Injury weight PVS (`injury_weight_pvs`)
+
+Season **PVS** reflects per-game output in fixtures actually played. Injured players often have few games and/or rusty return performances, which **understates** the value lost when they are absent.
+
+For **unavailability counting only** (not player rankings), each player also has:
+
+```
+established_pvs = PVS from most recent prior season with 10+ games (if any)
+injury_weight_pvs = PVS                         if games >= 14
+                  = max(PVS, established_pvs)   if games < 14
+```
+
+Player rankings, core-22 selection, and club PVS averages still use season **PVS**. Only injury totals, PVS-lost ranks, and games-missed columns use **injury_weight_pvs**.
 
 ### Continuity
 

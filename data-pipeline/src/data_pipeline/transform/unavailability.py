@@ -60,6 +60,7 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
                 a.player_id,
                 a.status,
                 v.pvs,
+                COALESCE(v.injury_weight_pvs, v.pvs) AS injury_pvs,
                 p.age_est,
                 p.archetype
             FROM availability a
@@ -78,7 +79,7 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
                 *,
                 ROW_NUMBER() OVER (
                     PARTITION BY team, season, round
-                    ORDER BY pvs DESC
+                    ORDER BY injury_pvs DESC
                 ) AS pvs_rank
             FROM unavail
         ),
@@ -87,15 +88,15 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
                 team,
                 season,
                 round,
-                SUM(pvs) AS unavailable_pvs_total,
-                SUM(CASE WHEN pvs_rank <= 5 THEN pvs ELSE 0 END) AS unavailable_pvs_top5,
-                SUM(CASE WHEN pvs_rank <= 10 THEN pvs ELSE 0 END) AS unavailable_pvs_top10,
-                SUM(CASE WHEN age_est < 22 THEN pvs ELSE 0 END) AS unavailable_pvs_u22,
-                SUM(CASE WHEN age_est >= 28 THEN pvs ELSE 0 END) AS unavailable_pvs_28plus,
-                SUM(CASE WHEN status = 'intermittent' THEN pvs ELSE 0 END) AS unavailable_pvs_intermittent,
-                SUM(CASE WHEN status = 'vfl_only' THEN pvs ELSE 0 END) AS unavailable_pvs_vfl_only,
+                SUM(injury_pvs) AS unavailable_pvs_total,
+                SUM(CASE WHEN pvs_rank <= 5 THEN injury_pvs ELSE 0 END) AS unavailable_pvs_top5,
+                SUM(CASE WHEN pvs_rank <= 10 THEN injury_pvs ELSE 0 END) AS unavailable_pvs_top10,
+                SUM(CASE WHEN age_est < 22 THEN injury_pvs ELSE 0 END) AS unavailable_pvs_u22,
+                SUM(CASE WHEN age_est >= 28 THEN injury_pvs ELSE 0 END) AS unavailable_pvs_28plus,
+                SUM(CASE WHEN status = 'intermittent' THEN injury_pvs ELSE 0 END) AS unavailable_pvs_intermittent,
+                SUM(CASE WHEN status = 'vfl_only' THEN injury_pvs ELSE 0 END) AS unavailable_pvs_vfl_only,
                 SUM(
-                    CASE WHEN status IN ('unavailable', 'intermittent') THEN pvs ELSE 0 END
+                    CASE WHEN status IN ('unavailable', 'intermittent') THEN injury_pvs ELSE 0 END
                 ) AS unavailable_pvs_games_missed
             FROM ranked
             GROUP BY 1, 2, 3

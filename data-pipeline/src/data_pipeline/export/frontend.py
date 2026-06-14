@@ -117,8 +117,8 @@ def build_season_bundle(
             a.team AS club,
             MAX(a.status) AS status,
             COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
-            MAX(v.pvs) AS pvs,
-            SUM(CASE WHEN NOT a.afl_played THEN v.pvs ELSE 0 END) AS unavailable_pvs
+            MAX(COALESCE(v.injury_weight_pvs, v.pvs)) AS pvs,
+            SUM(CASE WHEN NOT a.afl_played THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END) AS unavailable_pvs
         FROM availability a
         JOIN player_value v
             ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season

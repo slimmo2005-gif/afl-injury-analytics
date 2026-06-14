@@ -65,7 +65,7 @@ def build_ladder_pvs_ranks_bundle(con: duckdb.DuckDBPyConnection) -> dict:
                         CASE
                             WHEN NOT a.afl_played
                                  AND a.status IN ('unavailable', 'intermittent')
-                            THEN v.pvs
+                            THEN COALESCE(v.injury_weight_pvs, v.pvs)
                             ELSE 0
                         END
                     ),
@@ -126,7 +126,8 @@ def build_ladder_pvs_ranks_bundle(con: duckdb.DuckDBPyConnection) -> dict:
         "byClub": by_club,
         "interpretation": (
             "Ladder rank from home-and-away wins and percentage. PVS-lost rank sorts clubs "
-            "by season games-missed PVS (rank 1 = fewest lost). Rank delta = ladder rank − "
+            "by season games-missed PVS (rank 1 = fewest lost). Injury weights use "
+            "injury_weight_pvs for players with fewer than 14 games played. Rank delta = ladder rank − "
             "PVS-lost rank: negative means the club finished higher on the ladder than its "
             "injury toll would suggest; positive means they finished lower."
         ),

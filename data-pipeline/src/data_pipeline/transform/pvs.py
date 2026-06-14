@@ -24,6 +24,10 @@ PERF_TOP_SCORE = 7.0
 # from young high picks who have not yet performed.
 POTENTIAL_BLEND_FACTOR = 0.75
 
+# Injury weighting: season PVS can understate absent stars (limited or rusty return games).
+FULL_SEASON_GAMES = 14
+MIN_ESTABLISHED_GAMES = 10
+
 # (player_games column, season-avg alias, weight)
 # effective_disposals = disposals × DE% / 100 (quality-adjusted ball use)
 PERFORMANCE_METRICS: list[tuple[str, str, float]] = [
@@ -70,6 +74,56 @@ def compute_pvs(performance_score: float, potential_score: float, age_perf_weigh
         (1 - age_perf_weight) * potential_score * POTENTIAL_BLEND_FACTOR
     )
     return round(max(performance_score, blended), 3)
+
+
+def compute_injury_weight_pvs(
+    games: int,
+    current_pvs: float,
+    established_pvs: float | None,
+) -> float:
+    """PVS used when counting games missed — not depressed by partial-season samples.
+
+    Season PVS reflects per-game output in fixtures actually played. Injured players often
+    have few games and/or sub-par return performances, which understates the value lost
+    when they are absent. When games fall below a full home-and-away sample, use the
+    higher of this season's PVS and the player's most recent established season (10+ games).
+    """
+    if established_pvs is None or games >= FULL_SEASON_GAMES:
+        return current_pvs
+    return round(max(current_pvs, established_pvs), 3)
+
+
+def lookup_established_pvs(
+    history: pd.DataFrame,
+    player_id: str,
+    season: int,
+) -> float | None:
+    """Most recent prior season with enough games to trust the rating."""
+    prior = history[
+        (history["player_id"] == player_id)
+        & (history["season"] < season)
+        & (history["games"] >= MIN_ESTABLISHED_GAMES)
+    ]
+    if prior.empty:
+        return None
+    return float(prior.sort_values("season", ascending=False).iloc[0]["pvs"])
+
+
+def attach_injury_weight_pvs(pv: pd.DataFrame) -> pd.DataFrame:
+    """Add established_pvs and injury_weight_pvs columns to a player_value frame."""
+    history = pv[["player_id", "season", "games", "pvs"]].copy()
+    established: list[float | None] = []
+    injury: list[float] = []
+    for row in pv.itertuples(index=False):
+        est = lookup_established_pvs(history, row.player_id, int(row.season))
+        established.append(est)
+        injury.append(
+            compute_injury_weight_pvs(int(row.games), float(row.pvs), est)
+        )
+    out = pv.copy()
+    out["established_pvs"] = established
+    out["injury_weight_pvs"] = injury
+    return out
 
 
 def compute_raw_composite(row: pd.Series) -> float:
@@ -121,7 +175,9 @@ def _build_player_value_sql() -> str:
             )) AS performance_score,
             0.0 AS potential_score,
             0.0 AS pvs,
-            0.0 AS age_perf_weight
+            0.0 AS age_perf_weight,
+            CAST(NULL AS DOUBLE) AS established_pvs,
+            CAST(NULL AS DOUBLE) AS injury_weight_pvs
         FROM composite c
     """
 
@@ -264,6 +320,7 @@ def build_player_value(con: duckdb.DuckDBPyConnection) -> None:
         lambda row: compute_pvs(row["performance_score"], row["potential_score"], row["age_perf_weight"]),
         axis=1,
     )
+    pv = attach_injury_weight_pvs(pv)
 
     con.execute("DELETE FROM player_value")
     con.register("_pv", pv)
@@ -271,7 +328,8 @@ def build_player_value(con: duckdb.DuckDBPyConnection) -> None:
         """
         INSERT INTO player_value
         SELECT player_id, team, season, games, performance_score,
-               potential_score, pvs, age_perf_weight
+               potential_score, pvs, age_perf_weight,
+               established_pvs, injury_weight_pvs
         FROM _pv
         """
     )

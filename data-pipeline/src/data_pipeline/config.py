@@ -8,7 +8,7 @@ SHARED_OUTPUT = ROOT / "shared" / "output"
 FRONTEND_DATA = ROOT / "frontend" / "public" / "data"
 
 MIN_SEASON = 2012
-DEFAULT_SEASON = 2024
+DEFAULT_SEASON = 2025
 SQUIGGLE_BASE = "https://api.squiggle.com.au"
 FRYZIGG_RDS_URL = "http://www.fryziggafl.net/static/fryziggafl.rds"
 FRYZIGG_RDS_FILE = RAW_DIR / "fryziggafl.rds"
@@ -17,5 +17,6 @@ TEAM_ALIASES: dict[str, str] = {
     "Brisbane": "Brisbane Lions",
     "Footscray": "Western Bulldogs",
     "GWS": "Greater Western Sydney",
+    "GWS GIANTS": "Greater Western Sydney",
     "Greater Western Sydney Giants": "Greater Western Sydney",
 }

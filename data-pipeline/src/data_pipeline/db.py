@@ -78,6 +78,8 @@ CREATE TABLE IF NOT EXISTS player_value (
     potential_score DOUBLE NOT NULL,
     pvs DOUBLE NOT NULL,
     age_perf_weight DOUBLE NOT NULL,
+    established_pvs DOUBLE,
+    injury_weight_pvs DOUBLE,
     PRIMARY KEY (player_id, team, season)
 );
 
@@ -177,6 +179,8 @@ MIGRATIONS = [
     "ALTER TABLE team_round_summary ADD COLUMN IF NOT EXISTS unavailable_pvs_top5 DOUBLE DEFAULT 0",
     "ALTER TABLE team_round_value ADD COLUMN IF NOT EXISTS unavailable_pvs_vfl_only DOUBLE DEFAULT 0",
     "ALTER TABLE team_round_value ADD COLUMN IF NOT EXISTS unavailable_pvs_games_missed DOUBLE DEFAULT 0",
+    "ALTER TABLE player_value ADD COLUMN IF NOT EXISTS established_pvs DOUBLE",
+    "ALTER TABLE player_value ADD COLUMN IF NOT EXISTS injury_weight_pvs DOUBLE",
     "ALTER TABLE vfl_games ADD COLUMN IF NOT EXISTS competition VARCHAR DEFAULT 'vfl'",
     "ALTER TABLE vfl_games ADD COLUMN IF NOT EXISTS game_date DATE",
 ]

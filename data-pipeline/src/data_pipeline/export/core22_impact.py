@@ -20,7 +20,7 @@ ARCHETYPES = [
 ]
 
 FROM_SEASON = 2018
-TO_SEASON = 2024
+TO_SEASON = 2025
 CORE_SIZE = 22
 ROLLING_WINDOW = 4
 ROLLING_MIN = 2
@@ -76,7 +76,8 @@ def _load_base(con: duckdb.DuckDBPyConnection) -> tuple[pd.DataFrame, pd.DataFra
 
     meta = con.execute(
         f"""
-        SELECT v.player_id, v.team, v.season, v.pvs, p.archetype
+        SELECT v.player_id, v.team, v.season, v.pvs,
+               COALESCE(v.injury_weight_pvs, v.pvs) AS injury_pvs, p.archetype
         FROM player_value v
         JOIN player_profiles p
             ON v.player_id = p.player_id AND v.team = p.team AND v.season = p.season
@@ -115,7 +116,7 @@ def _missed_from_expected(
     merged = exp.merge(act, on=["player_id", "team", "season", "round"], how="left")
     merged["did_play"] = merged["did_play"].fillna(0).astype(int)
     missed = merged[merged["did_play"] == 0].copy()
-    missed["missed_pvs"] = missed["pvs"].fillna(0)
+    missed["missed_pvs"] = missed["injury_pvs"].fillna(missed["pvs"]).fillna(0)
 
     by_arch = (
         missed.groupby(["team", "season", "round", "archetype"], as_index=False)
