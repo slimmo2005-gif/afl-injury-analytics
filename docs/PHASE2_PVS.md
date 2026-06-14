@@ -97,15 +97,25 @@ Ambiguous profiles → utility (except mid slots fall back to Fryzigg mode).
 - [Squiggle](https://api.squiggle.com.au) — results
 - [Fryzigg](http://www.fryziggafl.net/) — player stats & positions (fitzRoy ecosystem)
 - [Draftguru](https://www.draftguru.com.au) — national draft picks (2012+)
-- [VFL AFLM Stats](https://vfl.aflmstats.com) — VFL participation (2021–2024 on site; earlier seasons unavailable)
-- [SANFL](https://sanfl.com.au) — AFL API fixtures (`competitionId=14`) + Hostplus stats PDFs (top scorers / disposal getters; partial box scores)
-- [WAFL Sportix API](https://wafl.com.au) — full WAFL match stats via public Sportix API
+- [VFL AFLM Stats](https://vfl.aflmstats.com) — VFL participation (**2021–2025** on site; earlier seasons unavailable)
+- [SANFL](https://sanfl.com.au) — AFL API fixtures (`competitionId=14`) + Hostplus stats PDFs (top scorers / disposal getters; **2024 PDFs on site**; 2022–2023 fixtures exist but stats PDFs not published)
+- [WAFL Sportix API](https://wafl.com.au) — full WAFL match stats (**2018–2025**)
 
 ### State-league availability (`vfl_only`)
 
 Players on an AFL club squad who did not play AFL but appear in a state-league box score are marked `vfl_only` (label kept for backward compatibility).
 
-**Loading rule:** for 2024+, always load VFL + SANFL + WAFL together (`load_state_league_games`). Partial SANFL-only reloads are rejected so VFL/WAFL rows are not wiped from the database.
+**Loading rule:** for 2024+, always load VFL + SANFL + WAFL together (`load_state_league_history.py` or main pipeline). Partial SANFL-only reloads are rejected so VFL/WAFL rows are not wiped from the database.
+
+**Season coverage (as of ingest):**
+
+| Competition | Seasons loaded |
+|-------------|----------------|
+| VFL | 2021–2025 |
+| WAFL | 2018–2025 (loader defaults from 2021) |
+| SANFL | 2024 partial (stats PDFs); 2022–2023 fixtures only — no player PDFs on SANFL site yet |
+
+Run `python scripts/load_state_league_history.py --from-season 2021 --to-season 2025` after a fresh scrape (`--refresh`) or from cache.
 
 | Competition | Victorian / other | SA / WA |
 |-------------|-------------------|---------|

@@ -7,7 +7,14 @@ import pandas as pd
 
 # Seasons that must include VFL + SANFL + WAFL before replacing DB rows.
 FULL_STATE_LEAGUE_FROM_SEASON = 2024
+# Earlier seasons may lack SANFL API data (pre-2022) or VFL site data (pre-2021).
 MIN_COMPETITION_ROWS: dict[str, int] = {"vfl": 500, "sanfl": 50, "wafl": 50}
+MIN_COMPETITION_ROWS_BY_SEASON: dict[int, dict[str, int]] = {
+    2021: {"vfl": 50, "wafl": 50},  # SANFL API has no 2021 fixtures
+    2022: {"vfl": 100, "wafl": 50},  # SANFL stats PDFs not on site for 2022
+    2023: {"vfl": 100, "wafl": 50},
+    2025: {"vfl": 100, "wafl": 50},
+}
 
 
 class IncompleteStateLeagueError(ValueError):
@@ -23,17 +30,21 @@ def validate_state_league_completeness(
         raise IncompleteStateLeagueError("State-league frame is empty")
     seasons = seasons or sorted(int(s) for s in df["season"].unique())
     for season in seasons:
-        if season < FULL_STATE_LEAGUE_FROM_SEASON:
-            continue
+        if season in MIN_COMPETITION_ROWS_BY_SEASON:
+            min_rows = MIN_COMPETITION_ROWS_BY_SEASON[season]
+        elif season >= FULL_STATE_LEAGUE_FROM_SEASON:
+            min_rows = MIN_COMPETITION_ROWS
+        else:
+            min_rows = {"vfl": 50, "wafl": 50}
         sub = df[df["season"] == season]
-        for comp, min_rows in MIN_COMPETITION_ROWS.items():
+        for comp, min_n in min_rows.items():
             n = int((sub["competition"] == comp).sum())
-            if n < min_rows:
+            if n < min_n:
                 raise IncompleteStateLeagueError(
                     f"Refusing state-league load for {season}: "
-                    f"{comp} has {n} rows (need >={min_rows}). "
+                    f"{comp} has {n} rows (need >={min_n}). "
                     "Reload from the full state-league cache (VFL+SANFL+WAFL) "
-                    "via apply_state_league_2024.py or the main pipeline."
+                    "via load_state_league_history.py or the main pipeline."
                 )
 
 

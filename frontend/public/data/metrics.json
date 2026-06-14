@@ -2,7 +2,7 @@
   "meta": {
     "season": 2025,
     "round": 24,
-    "generatedAt": "2026-06-14T07:11:02.392576+00:00",
+    "generatedAt": "2026-06-14T09:41:34.511566+00:00",
     "note": "Phase 2 \u2014 PVS + national draft + VFL (2025)",
     "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
     "defaultSeason": 2025,
@@ -5995,7 +5995,7 @@
         {
           "club": "Richmond",
           "unavailableValue": 980.9,
-          "unavailableTop5": 456.8,
+          "unavailableTop5": 456.7,
           "expectedWins": 10.9,
           "actualWins": 12,
           "delta": 1.1
@@ -25185,7 +25185,7 @@
     "2021": {
       "leagueOverview": {
         "avgUnavailableValue": 41.6,
-        "totalVflOnlyPvs": 0.0,
+        "totalVflOnlyPvs": 2181.0,
         "clubsAboveExpectation": 7,
         "clubsBelowExpectation": 8,
         "topUnavailableClub": "Western Bulldogs",
@@ -28045,7 +28045,7 @@
     "2022": {
       "leagueOverview": {
         "avgUnavailableValue": 43.0,
-        "totalVflOnlyPvs": 0.0,
+        "totalVflOnlyPvs": 4672.5,
         "clubsAboveExpectation": 7,
         "clubsBelowExpectation": 7,
         "topUnavailableClub": "West Coast",
@@ -30905,7 +30905,7 @@
     "2023": {
       "leagueOverview": {
         "avgUnavailableValue": 41.1,
-        "totalVflOnlyPvs": 0.0,
+        "totalVflOnlyPvs": 4733.1,
         "clubsAboveExpectation": 7,
         "clubsBelowExpectation": 7,
         "topUnavailableClub": "North Melbourne",
@@ -36799,7 +36799,7 @@
     "2025": {
       "leagueOverview": {
         "avgUnavailableValue": 41.6,
-        "totalVflOnlyPvs": 0.0,
+        "totalVflOnlyPvs": 4456.8,
         "clubsAboveExpectation": 12,
         "clubsBelowExpectation": 6,
         "topUnavailableClub": "Essendon",
@@ -40829,8 +40829,8 @@
         {
           "season": 2021,
           "ladderRank": 15,
-          "pvsLostRank": 3,
-          "rankDelta": 12,
+          "pvsLostRank": 6,
+          "rankDelta": 9,
           "wins": 7,
           "percentage": 82.0,
           "pvsLost": 785.1
@@ -40838,8 +40838,8 @@
         {
           "season": 2022,
           "ladderRank": 14,
-          "pvsLostRank": 15,
-          "rankDelta": -1,
+          "pvsLostRank": 17,
+          "rankDelta": -3,
           "wins": 8,
           "percentage": 86.7,
           "pvsLost": 1043.3
@@ -40847,8 +40847,8 @@
         {
           "season": 2023,
           "ladderRank": 10,
-          "pvsLostRank": 15,
-          "rankDelta": -5,
+          "pvsLostRank": 18,
+          "rankDelta": -8,
           "wins": 11,
           "percentage": 116.8,
           "pvsLost": 1072.7
@@ -40865,8 +40865,8 @@
         {
           "season": 2025,
           "ladderRank": 1,
-          "pvsLostRank": 12,
-          "rankDelta": -11,
+          "pvsLostRank": 16,
+          "rankDelta": -15,
           "wins": 18,
           "percentage": 139.3,
           "pvsLost": 1036.4
@@ -40961,25 +40961,25 @@
           "rankDelta": 3,
           "wins": 15,
           "percentage": 133.3,
-          "pvsLost": 480.7
+          "pvsLost": 416.9
         },
         {
           "season": 2022,
           "ladderRank": 5,
-          "pvsLostRank": 2,
-          "rankDelta": 3,
+          "pvsLostRank": 1,
+          "rankDelta": 4,
           "wins": 15,
           "percentage": 119.3,
-          "pvsLost": 692.2
+          "pvsLost": 353.0
         },
         {
           "season": 2023,
           "ladderRank": 2,
-          "pvsLostRank": 4,
-          "rankDelta": -2,
+          "pvsLostRank": 1,
+          "rankDelta": 1,
           "wins": 17,
           "percentage": 123.1,
-          "pvsLost": 782.8
+          "pvsLost": 414.5
         },
         {
           "season": 2024,
@@ -40993,11 +40993,11 @@
         {
           "season": 2025,
           "ladderRank": 4,
-          "pvsLostRank": 4,
-          "rankDelta": 0,
+          "pvsLostRank": 3,
+          "rankDelta": 1,
           "wins": 16,
           "percentage": 114.2,
-          "pvsLost": 771.0
+          "pvsLost": 494.3
         }
       ],
       "Carlton": [
@@ -41085,29 +41085,29 @@
         {
           "season": 2021,
           "ladderRank": 13,
-          "pvsLostRank": 15,
-          "rankDelta": -2,
+          "pvsLostRank": 16,
+          "rankDelta": -3,
           "wins": 8,
           "percentage": 88.5,
-          "pvsLost": 1012.5
+          "pvsLost": 907.8
         },
         {
           "season": 2022,
           "ladderRank": 9,
-          "pvsLostRank": 16,
-          "rankDelta": -7,
+          "pvsLostRank": 13,
+          "rankDelta": -4,
           "wins": 12,
           "percentage": 108.3,
-          "pvsLost": 1113.2
+          "pvsLost": 788.3
         },
         {
           "season": 2023,
           "ladderRank": 5,
-          "pvsLostRank": 14,
-          "rankDelta": -9,
+          "pvsLostRank": 13,
+          "rankDelta": -8,
           "wins": 13,
           "percentage": 113.3,
-          "pvsLost": 1034.1
+          "pvsLost": 724.9
         },
         {
           "season": 2024,
@@ -41121,11 +41121,11 @@
         {
           "season": 2025,
           "ladderRank": 11,
-          "pvsLostRank": 16,
-          "rankDelta": -5,
+          "pvsLostRank": 15,
+          "rankDelta": -4,
           "wins": 9,
           "percentage": 96.7,
-          "pvsLost": 1146.6
+          "pvsLost": 836.1
         }
       ],
       "Collingwood": [
@@ -41217,16 +41217,16 @@
           "rankDelta": 10,
           "wins": 6,
           "percentage": 85.6,
-          "pvsLost": 931.4
+          "pvsLost": 803.2
         },
         {
           "season": 2022,
           "ladderRank": 4,
-          "pvsLostRank": 4,
-          "rankDelta": 0,
+          "pvsLostRank": 5,
+          "rankDelta": -1,
           "wins": 16,
           "percentage": 104.3,
-          "pvsLost": 787.6
+          "pvsLost": 526.7
         },
         {
           "season": 2023,
@@ -41235,7 +41235,7 @@
           "rankDelta": -1,
           "wins": 18,
           "percentage": 127.0,
-          "pvsLost": 736.0
+          "pvsLost": 447.9
         },
         {
           "season": 2024,
@@ -41249,11 +41249,11 @@
         {
           "season": 2025,
           "ladderRank": 3,
-          "pvsLostRank": 2,
-          "rankDelta": 1,
+          "pvsLostRank": 5,
+          "rankDelta": -2,
           "wins": 16,
           "percentage": 127.3,
-          "pvsLost": 720.4
+          "pvsLost": 547.2
         }
       ],
       "Essendon": [
@@ -41345,25 +41345,25 @@
           "rankDelta": -7,
           "wins": 11,
           "percentage": 109.1,
-          "pvsLost": 1006.1
+          "pvsLost": 896.3
         },
         {
           "season": 2022,
           "ladderRank": 15,
-          "pvsLostRank": 12,
-          "rankDelta": 3,
+          "pvsLostRank": 11,
+          "rankDelta": 4,
           "wins": 7,
           "percentage": 83.2,
-          "pvsLost": 1009.2
+          "pvsLost": 767.9
         },
         {
           "season": 2023,
           "ladderRank": 11,
-          "pvsLostRank": 6,
-          "rankDelta": 5,
+          "pvsLostRank": 11,
+          "rankDelta": 0,
           "wins": 11,
           "percentage": 89.7,
-          "pvsLost": 860.0
+          "pvsLost": 682.3
         },
         {
           "season": 2024,
@@ -41381,7 +41381,7 @@
           "rankDelta": -3,
           "wins": 6,
           "percentage": 69.5,
-          "pvsLost": 1463.8
+          "pvsLost": 1225.6
         }
       ],
       "Fremantle": [
@@ -41469,11 +41469,11 @@
         {
           "season": 2021,
           "ladderRank": 11,
-          "pvsLostRank": 13,
-          "rankDelta": -2,
+          "pvsLostRank": 9,
+          "rankDelta": 2,
           "wins": 10,
           "percentage": 86.5,
-          "pvsLost": 1005.8
+          "pvsLost": 825.9
         },
         {
           "season": 2022,
@@ -41482,16 +41482,16 @@
           "rankDelta": -2,
           "wins": 15,
           "percentage": 117.0,
-          "pvsLost": 861.8
+          "pvsLost": 623.1
         },
         {
           "season": 2023,
           "ladderRank": 13,
-          "pvsLostRank": 11,
-          "rankDelta": 2,
+          "pvsLostRank": 12,
+          "rankDelta": 1,
           "wins": 10,
           "percentage": 96.7,
-          "pvsLost": 983.6
+          "pvsLost": 704.6
         },
         {
           "season": 2024,
@@ -41505,11 +41505,11 @@
         {
           "season": 2025,
           "ladderRank": 5,
-          "pvsLostRank": 5,
-          "rankDelta": 0,
+          "pvsLostRank": 7,
+          "rankDelta": -2,
           "wins": 16,
           "percentage": 109.0,
-          "pvsLost": 791.6
+          "pvsLost": 583.4
         }
       ],
       "Geelong": [
@@ -41601,25 +41601,25 @@
           "rankDelta": -1,
           "wins": 16,
           "percentage": 126.7,
-          "pvsLost": 788.0
+          "pvsLost": 696.0
         },
         {
           "season": 2022,
           "ladderRank": 1,
-          "pvsLostRank": 5,
-          "rankDelta": -4,
+          "pvsLostRank": 7,
+          "rankDelta": -6,
           "wins": 18,
           "percentage": 144.2,
-          "pvsLost": 787.8
+          "pvsLost": 568.5
         },
         {
           "season": 2023,
           "ladderRank": 12,
-          "pvsLostRank": 13,
-          "rankDelta": -1,
+          "pvsLostRank": 14,
+          "rankDelta": -2,
           "wins": 10,
           "percentage": 112.6,
-          "pvsLost": 1016.4
+          "pvsLost": 773.0
         },
         {
           "season": 2024,
@@ -41637,7 +41637,7 @@
           "rankDelta": 1,
           "wins": 17,
           "percentage": 141.5,
-          "pvsLost": 599.3
+          "pvsLost": 405.4
         }
       ],
       "Gold Coast": [
@@ -41725,29 +41725,29 @@
         {
           "season": 2021,
           "ladderRank": 16,
-          "pvsLostRank": 16,
-          "rankDelta": 0,
+          "pvsLostRank": 13,
+          "rankDelta": 3,
           "wins": 7,
           "percentage": 76.8,
-          "pvsLost": 1059.0
+          "pvsLost": 852.5
         },
         {
           "season": 2022,
           "ladderRank": 12,
-          "pvsLostRank": 14,
-          "rankDelta": -2,
+          "pvsLostRank": 6,
+          "rankDelta": 6,
           "wins": 10,
           "percentage": 102.8,
-          "pvsLost": 1030.0
+          "pvsLost": 558.9
         },
         {
           "season": 2023,
           "ladderRank": 15,
-          "pvsLostRank": 16,
-          "rankDelta": -1,
+          "pvsLostRank": 10,
+          "rankDelta": 5,
           "wins": 9,
           "percentage": 91.7,
-          "pvsLost": 1153.9
+          "pvsLost": 642.2
         },
         {
           "season": 2024,
@@ -41761,11 +41761,11 @@
         {
           "season": 2025,
           "ladderRank": 6,
-          "pvsLostRank": 8,
-          "rankDelta": -2,
+          "pvsLostRank": 4,
+          "rankDelta": 2,
           "wins": 15,
           "percentage": 124.9,
-          "pvsLost": 869.9
+          "pvsLost": 512.4
         }
       ],
       "Greater Western Sydney": [
@@ -41853,29 +41853,29 @@
         {
           "season": 2021,
           "ladderRank": 8,
-          "pvsLostRank": 9,
-          "rankDelta": -1,
+          "pvsLostRank": 12,
+          "rankDelta": -4,
           "wins": 11,
           "percentage": 99.7,
-          "pvsLost": 938.2
+          "pvsLost": 845.7
         },
         {
           "season": 2022,
           "ladderRank": 16,
-          "pvsLostRank": 13,
-          "rankDelta": 3,
+          "pvsLostRank": 12,
+          "rankDelta": 4,
           "wins": 6,
           "percentage": 84.6,
-          "pvsLost": 1014.3
+          "pvsLost": 775.2
         },
         {
           "season": 2023,
           "ladderRank": 7,
-          "pvsLostRank": 7,
-          "rankDelta": 0,
+          "pvsLostRank": 9,
+          "rankDelta": -2,
           "wins": 13,
           "percentage": 107.1,
-          "pvsLost": 869.0
+          "pvsLost": 630.1
         },
         {
           "season": 2024,
@@ -41889,11 +41889,11 @@
         {
           "season": 2025,
           "ladderRank": 7,
-          "pvsLostRank": 9,
-          "rankDelta": -2,
+          "pvsLostRank": 11,
+          "rankDelta": -4,
           "wins": 15,
           "percentage": 112.8,
-          "pvsLost": 876.2
+          "pvsLost": 644.1
         }
       ],
       "Hawthorn": [
@@ -41981,11 +41981,11 @@
         {
           "season": 2021,
           "ladderRank": 14,
-          "pvsLostRank": 10,
-          "rankDelta": 4,
+          "pvsLostRank": 11,
+          "rankDelta": 3,
           "wins": 7,
           "percentage": 85.2,
-          "pvsLost": 962.2
+          "pvsLost": 839.4
         },
         {
           "season": 2022,
@@ -41994,16 +41994,16 @@
           "rankDelta": 3,
           "wins": 8,
           "percentage": 89.8,
-          "pvsLost": 966.7
+          "pvsLost": 672.9
         },
         {
           "season": 2023,
           "ladderRank": 16,
-          "pvsLostRank": 12,
-          "rankDelta": 4,
+          "pvsLostRank": 5,
+          "rankDelta": 11,
           "wins": 7,
           "percentage": 80.2,
-          "pvsLost": 993.0
+          "pvsLost": 561.1
         },
         {
           "season": 2024,
@@ -42017,11 +42017,11 @@
         {
           "season": 2025,
           "ladderRank": 9,
-          "pvsLostRank": 7,
-          "rankDelta": 2,
+          "pvsLostRank": 6,
+          "rankDelta": 3,
           "wins": 14,
           "percentage": 120.7,
-          "pvsLost": 825.6
+          "pvsLost": 561.7
         }
       ],
       "Melbourne": [
@@ -42113,25 +42113,25 @@
           "rankDelta": -1,
           "wins": 17,
           "percentage": 130.8,
-          "pvsLost": 668.3
+          "pvsLost": 548.4
         },
         {
           "season": 2022,
           "ladderRank": 2,
-          "pvsLostRank": 1,
-          "rankDelta": 1,
+          "pvsLostRank": 2,
+          "rankDelta": 0,
           "wins": 16,
           "percentage": 130.5,
-          "pvsLost": 634.0
+          "pvsLost": 408.9
         },
         {
           "season": 2023,
           "ladderRank": 4,
-          "pvsLostRank": 5,
-          "rankDelta": -1,
+          "pvsLostRank": 4,
+          "rankDelta": 0,
           "wins": 16,
           "percentage": 125.2,
-          "pvsLost": 783.2
+          "pvsLost": 531.7
         },
         {
           "season": 2024,
@@ -42145,11 +42145,11 @@
         {
           "season": 2025,
           "ladderRank": 14,
-          "pvsLostRank": 3,
-          "rankDelta": 11,
+          "pvsLostRank": 2,
+          "rankDelta": 12,
           "wins": 7,
           "percentage": 93.3,
-          "pvsLost": 763.5
+          "pvsLost": 472.1
         }
       ],
       "North Melbourne": [
@@ -42237,29 +42237,29 @@
         {
           "season": 2021,
           "ladderRank": 18,
-          "pvsLostRank": 11,
-          "rankDelta": 7,
+          "pvsLostRank": 15,
+          "rankDelta": 3,
           "wins": 4,
           "percentage": 70.3,
-          "pvsLost": 977.8
+          "pvsLost": 898.4
         },
         {
           "season": 2022,
           "ladderRank": 18,
-          "pvsLostRank": 11,
-          "rankDelta": 7,
+          "pvsLostRank": 14,
+          "rankDelta": 4,
           "wins": 2,
           "percentage": 55.8,
-          "pvsLost": 986.4
+          "pvsLost": 788.8
         },
         {
           "season": 2023,
           "ladderRank": 17,
-          "pvsLostRank": 18,
-          "rankDelta": -1,
+          "pvsLostRank": 16,
+          "rankDelta": 1,
           "wins": 3,
           "percentage": 71.5,
-          "pvsLost": 1401.2
+          "pvsLost": 911.0
         },
         {
           "season": 2024,
@@ -42273,11 +42273,11 @@
         {
           "season": 2025,
           "ladderRank": 16,
-          "pvsLostRank": 15,
-          "rankDelta": 1,
+          "pvsLostRank": 13,
+          "rankDelta": 3,
           "wins": 5,
           "percentage": 76.3,
-          "pvsLost": 1081.4
+          "pvsLost": 722.6
         }
       ],
       "Port Adelaide": [
@@ -42365,8 +42365,8 @@
         {
           "season": 2021,
           "ladderRank": 2,
-          "pvsLostRank": 5,
-          "rankDelta": -3,
+          "pvsLostRank": 10,
+          "rankDelta": -8,
           "wins": 17,
           "percentage": 126.3,
           "pvsLost": 830.2
@@ -42374,8 +42374,8 @@
         {
           "season": 2022,
           "ladderRank": 11,
-          "pvsLostRank": 7,
-          "rankDelta": 4,
+          "pvsLostRank": 16,
+          "rankDelta": -5,
           "wins": 10,
           "percentage": 110.3,
           "pvsLost": 861.1
@@ -42383,8 +42383,8 @@
         {
           "season": 2023,
           "ladderRank": 3,
-          "pvsLostRank": 9,
-          "rankDelta": -6,
+          "pvsLostRank": 15,
+          "rankDelta": -12,
           "wins": 17,
           "percentage": 112.7,
           "pvsLost": 910.6
@@ -42493,29 +42493,29 @@
         {
           "season": 2021,
           "ladderRank": 12,
-          "pvsLostRank": 12,
-          "rankDelta": 0,
+          "pvsLostRank": 8,
+          "rankDelta": 4,
           "wins": 9,
           "percentage": 97.9,
-          "pvsLost": 994.6
+          "pvsLost": 820.0
         },
         {
           "season": 2022,
           "ladderRank": 7,
-          "pvsLostRank": 9,
-          "rankDelta": -2,
+          "pvsLostRank": 4,
+          "rankDelta": 3,
           "wins": 13,
           "percentage": 121.6,
-          "pvsLost": 917.8
+          "pvsLost": 515.4
         },
         {
           "season": 2023,
           "ladderRank": 14,
-          "pvsLostRank": 10,
-          "rankDelta": 4,
+          "pvsLostRank": 8,
+          "rankDelta": 6,
           "wins": 10,
           "percentage": 93.6,
-          "pvsLost": 919.6
+          "pvsLost": 613.2
         },
         {
           "season": 2024,
@@ -42533,7 +42533,7 @@
           "rankDelta": 3,
           "wins": 5,
           "percentage": 66.0,
-          "pvsLost": 1066.4
+          "pvsLost": 797.7
         }
       ],
       "St Kilda": [
@@ -42625,25 +42625,25 @@
           "rankDelta": -7,
           "wins": 10,
           "percentage": 91.5,
-          "pvsLost": 1080.8
+          "pvsLost": 971.1
         },
         {
           "season": 2022,
           "ladderRank": 10,
-          "pvsLostRank": 6,
-          "rankDelta": 4,
+          "pvsLostRank": 9,
+          "rankDelta": 1,
           "wins": 11,
           "percentage": 99.3,
-          "pvsLost": 844.7
+          "pvsLost": 633.2
         },
         {
           "season": 2023,
           "ladderRank": 6,
-          "pvsLostRank": 1,
-          "rankDelta": 5,
+          "pvsLostRank": 3,
+          "rankDelta": 3,
           "wins": 13,
           "percentage": 107.8,
-          "pvsLost": 660.6
+          "pvsLost": 482.9
         },
         {
           "season": 2024,
@@ -42661,7 +42661,7 @@
           "rankDelta": 2,
           "wins": 9,
           "percentage": 88.5,
-          "pvsLost": 954.9
+          "pvsLost": 630.8
         }
       ],
       "Sydney": [
@@ -42749,11 +42749,11 @@
         {
           "season": 2021,
           "ladderRank": 6,
-          "pvsLostRank": 8,
-          "rankDelta": -2,
+          "pvsLostRank": 5,
+          "rankDelta": 1,
           "wins": 15,
           "percentage": 119.9,
-          "pvsLost": 933.7
+          "pvsLost": 769.7
         },
         {
           "season": 2022,
@@ -42762,16 +42762,16 @@
           "rankDelta": 0,
           "wins": 16,
           "percentage": 127.9,
-          "pvsLost": 775.6
+          "pvsLost": 432.8
         },
         {
           "season": 2023,
           "ladderRank": 8,
-          "pvsLostRank": 3,
-          "rankDelta": 5,
+          "pvsLostRank": 7,
+          "rankDelta": 1,
           "wins": 12,
           "percentage": 110.0,
-          "pvsLost": 775.0
+          "pvsLost": 577.7
         },
         {
           "season": 2024,
@@ -42785,11 +42785,11 @@
         {
           "season": 2025,
           "ladderRank": 10,
-          "pvsLostRank": 6,
-          "rankDelta": 4,
+          "pvsLostRank": 8,
+          "rankDelta": 2,
           "wins": 12,
           "percentage": 98.0,
-          "pvsLost": 815.5
+          "pvsLost": 588.5
         }
       ],
       "West Coast": [
@@ -42877,11 +42877,11 @@
         {
           "season": 2021,
           "ladderRank": 9,
-          "pvsLostRank": 6,
-          "rankDelta": 3,
+          "pvsLostRank": 3,
+          "rankDelta": 6,
           "wins": 10,
           "percentage": 93.2,
-          "pvsLost": 841.6
+          "pvsLost": 600.3
         },
         {
           "season": 2022,
@@ -42890,7 +42890,7 @@
           "rankDelta": -1,
           "wins": 2,
           "percentage": 59.8,
-          "pvsLost": 1474.5
+          "pvsLost": 1226.4
         },
         {
           "season": 2023,
@@ -42899,7 +42899,7 @@
           "rankDelta": 1,
           "wins": 3,
           "percentage": 53.0,
-          "pvsLost": 1155.1
+          "pvsLost": 1029.0
         },
         {
           "season": 2024,
@@ -42913,11 +42913,11 @@
         {
           "season": 2025,
           "ladderRank": 18,
-          "pvsLostRank": 13,
-          "rankDelta": 5,
+          "pvsLostRank": 12,
+          "rankDelta": 6,
           "wins": 1,
           "percentage": 60.1,
-          "pvsLost": 1045.1
+          "pvsLost": 650.5
         }
       ],
       "Western Bulldogs": [
@@ -43009,25 +43009,25 @@
           "rankDelta": -13,
           "wins": 15,
           "percentage": 132.8,
-          "pvsLost": 1174.9
+          "pvsLost": 983.1
         },
         {
           "season": 2022,
           "ladderRank": 8,
-          "pvsLostRank": 17,
-          "rankDelta": -9,
+          "pvsLostRank": 15,
+          "rankDelta": -7,
           "wins": 12,
           "percentage": 108.9,
-          "pvsLost": 1227.3
+          "pvsLost": 810.5
         },
         {
           "season": 2023,
           "ladderRank": 9,
-          "pvsLostRank": 8,
-          "rankDelta": 1,
+          "pvsLostRank": 6,
+          "rankDelta": 3,
           "wins": 12,
           "percentage": 108.7,
-          "pvsLost": 906.3
+          "pvsLost": 570.6
         },
         {
           "season": 2024,
@@ -43041,11 +43041,11 @@
         {
           "season": 2025,
           "ladderRank": 8,
-          "pvsLostRank": 11,
-          "rankDelta": -3,
+          "pvsLostRank": 9,
+          "rankDelta": -1,
           "wins": 14,
           "percentage": 137.0,
-          "pvsLost": 968.2
+          "pvsLost": 630.1
         }
       ]
     },
@@ -43053,7 +43053,7 @@
   },
   "leagueOverview": {
     "avgUnavailableValue": 41.6,
-    "totalVflOnlyPvs": 0.0,
+    "totalVflOnlyPvs": 4456.8,
     "clubsAboveExpectation": 12,
     "clubsBelowExpectation": 6,
     "topUnavailableClub": "Essendon",

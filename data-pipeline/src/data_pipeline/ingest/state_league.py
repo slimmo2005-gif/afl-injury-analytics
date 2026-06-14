@@ -12,7 +12,7 @@ from .state_league_rounds import build_afl_round_calendar, map_game_dates_to_afl
 from .vfl import fetch_vfl_games
 from .wafl_sportix import fetch_wafl_games
 
-STATE_LEAGUE_FROM_SEASON = 2018
+STATE_LEAGUE_FROM_SEASON = 2021  # vfl.aflmstats.com; WAFL/SANFL may reach earlier via their APIs
 
 
 def fetch_state_league_games(
