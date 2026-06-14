@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
 
 import duckdb
@@ -16,6 +17,97 @@ from ..transform.archetypes import ARCHETYPE_LABELS, resolve_archetype
 from ..transform.pvs import PERFORMANCE_METRICS, compute_raw_composite, scale_performance_score
 
 EXTRA_STAT_COLS = ("marks_inside_fifty", "intercept_marks")
+
+
+def build_league_injury_summary(con: duckdb.DuckDBPyConnection, season: int) -> pd.DataFrame:
+    """League-wide injury metrics and ranks for a season."""
+    return con.execute(
+        """
+        WITH ha AS (
+            SELECT season, round FROM matches WHERE round > 0 AND season = ?
+            GROUP BY 1, 2 HAVING COUNT(*) > 4
+        ),
+        ladder AS (
+            SELECT team, season,
+                SUM(won) AS wins,
+                RANK() OVER (ORDER BY SUM(won) DESC, 100.0*SUM(pf)/NULLIF(SUM(pa),0) DESC) AS ladder_rank
+            FROM (
+                SELECT m.season, m.home_team AS team,
+                       CASE WHEN m.winner_team = m.home_team THEN 1 ELSE 0 END AS won,
+                       m.home_score AS pf, m.away_score AS pa
+                FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
+                UNION ALL
+                SELECT m.season, m.away_team,
+                       CASE WHEN m.winner_team = m.away_team THEN 1 ELSE 0 END,
+                       m.away_score, m.home_score
+                FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
+            ) x
+            WHERE season = ?
+            GROUP BY 1, 2
+        ),
+        metrics AS (
+            SELECT
+                a.team,
+                COUNT(*) FILTER (WHERE NOT a.afl_played) AS player_rounds_lost,
+                COUNT(DISTINCT a.player_id) FILTER (WHERE NOT a.afl_played) AS players_with_absences,
+                ROUND(SUM(CASE WHEN NOT a.afl_played THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1) AS pvs_all_absences,
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN a.status IN ('unavailable', 'intermittent')
+                            THEN COALESCE(v.injury_weight_pvs, v.pvs)
+                            ELSE 0
+                        END
+                    ),
+                    1
+                ) AS pvs_games_missed,
+                ROUND(SUM(CASE WHEN a.status = 'vfl_only' THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1) AS pvs_vfl_only,
+                COUNT(*) FILTER (WHERE a.status IN ('unavailable', 'intermittent')) AS games_missed_slots
+            FROM availability a
+            JOIN player_value v
+                ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
+            WHERE a.season = ?
+            GROUP BY 1
+        ),
+        top5 AS (
+            SELECT team, ROUND(SUM(unavailable_pvs_top5), 1) AS pvs_top5_round_sum
+            FROM team_round_value WHERE season = ? GROUP BY 1
+        )
+        SELECT
+            m.team,
+            l.wins,
+            l.ladder_rank,
+            l.ladder_rank - RANK() OVER (ORDER BY m.pvs_games_missed ASC) AS rank_delta,
+            m.player_rounds_lost,
+            m.players_with_absences,
+            m.games_missed_slots,
+            m.pvs_games_missed,
+            m.pvs_all_absences,
+            m.pvs_vfl_only,
+            t.pvs_top5_round_sum,
+            RANK() OVER (ORDER BY m.pvs_games_missed ASC) AS rank_games_missed_pvs,
+            RANK() OVER (ORDER BY m.pvs_all_absences ASC) AS rank_all_absence_pvs,
+            RANK() OVER (ORDER BY t.pvs_top5_round_sum ASC) AS rank_top5_sum,
+            RANK() OVER (ORDER BY m.player_rounds_lost ASC) AS rank_slots_lost
+        FROM metrics m
+        JOIN ladder l ON m.team = l.team
+        LEFT JOIN top5 t ON m.team = t.team
+        ORDER BY m.pvs_games_missed DESC
+        """,
+        [season, season, season, season],
+    ).df()
+
+
+def _sheet_name(team: str, used: set[str]) -> str:
+    base = re.sub(r"[^\w\s]", "", team)[:25].strip() or "Team"
+    name = base
+    n = 2
+    while name in used:
+        suffix = f"_{n}"
+        name = base[: 31 - len(suffix)] + suffix
+        n += 1
+    used.add(name)
+    return name
 
 
 def _season_stats_from_rds(season: int) -> pd.DataFrame:
@@ -291,6 +383,7 @@ def build_notes_df() -> pd.DataFrame:
                 "intercepts_pg",
                 "contested_marks_pg",
                 "archetype",
+                "injury_weight_pvs",
                 "pvs_weights",
             ],
             "description": [
@@ -299,6 +392,7 @@ def build_notes_df() -> pd.DataFrame:
                 "Average intercept possessions per game. In PVS at weight 0.06 (trimmed vs intercept marks).",
                 "Average contested marks per game. In PVS at weight 0.08; used for key forward/defender rules.",
                 "Stored archetype from pipeline. stat_archetype recomputed from season rates for comparison.",
+                "PVS used for games-missed totals when games played < 14: max(season PVS, last established season).",
                 "See pvs_weights tab. MI50 and intercept marks lift key forwards/defenders toward other roles.",
             ],
         }
@@ -328,12 +422,59 @@ def export_league_players(season: int, out_dir: Path | None = None) -> Path:
     return path
 
 
+def export_league_by_club(season: int, out_dir: Path | None = None) -> Path:
+    """Full-season workbook: team summary + all players + one tab per club."""
+    out_dir = out_dir or ROOT / "shared" / "output" / "exports"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / f"league_{season}_by_club.xlsx"
+
+    db_connect().close()
+    con = duckdb.connect(str(DB_PATH), read_only=True)
+    players = build_league_players_df(con, season)
+    team_summary = build_league_injury_summary(con, season)
+    con.close()
+
+    summary = build_archetype_summary(players)
+    notes, weights = build_notes_df()
+    teams = sorted(players["team"].dropna().unique())
+
+    used_names: set[str] = {
+        "Team summary",
+        "All players",
+        "By archetype",
+        "Notes",
+        "PVS weights",
+    }
+    with pd.ExcelWriter(path, engine="openpyxl") as writer:
+        team_summary.to_excel(writer, sheet_name="Team summary", index=False)
+        players.to_excel(writer, sheet_name="All players", index=False)
+        summary.to_excel(writer, sheet_name="By archetype", index=False)
+        notes.to_excel(writer, sheet_name="Notes", index=False)
+        weights.to_excel(writer, sheet_name="PVS weights", index=False)
+        for team in teams:
+            club = players[players["team"] == team].sort_values(
+                "player_value_score", ascending=False
+            )
+            sheet = _sheet_name(team, used_names)
+            club.to_excel(writer, sheet_name=sheet, index=False)
+
+    return path
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Export all AFL players for a season")
     parser.add_argument("--season", type=int, default=2024)
     parser.add_argument("--out", type=Path, default=None)
+    parser.add_argument(
+        "--by-club",
+        action="store_true",
+        help="Write league_{season}_by_club.xlsx with one sheet per team",
+    )
     args = parser.parse_args()
-    print(export_league_players(args.season, args.out))
+    if args.by_club:
+        print(export_league_by_club(args.season, args.out))
+    else:
+        print(export_league_players(args.season, args.out))
 
 
 if __name__ == "__main__":

@@ -10,85 +10,12 @@ import pandas as pd
 
 from ..config import DB_PATH, ROOT
 from ..db import connect as db_connect
-from ..export.league_players import build_league_players_df, build_notes_df
+from ..export.league_players import build_league_injury_summary, build_league_players_df, build_notes_df
 from ..transform.archetypes import ARCHETYPE_LABELS
 
 
 def _league_injury_comparison(con: duckdb.DuckDBPyConnection, season: int) -> pd.DataFrame:
-    return con.execute(
-        """
-        WITH ha AS (
-            SELECT season, round FROM matches WHERE round > 0 AND season = ?
-            GROUP BY 1, 2 HAVING COUNT(*) > 4
-        ),
-        ladder AS (
-            SELECT team, season,
-                SUM(won) AS wins,
-                RANK() OVER (ORDER BY SUM(won) DESC, 100.0*SUM(pf)/NULLIF(SUM(pa),0) DESC) AS ladder_rank
-            FROM (
-                SELECT m.season, m.home_team AS team,
-                       CASE WHEN m.winner_team = m.home_team THEN 1 ELSE 0 END AS won,
-                       m.home_score AS pf, m.away_score AS pa
-                FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
-                UNION ALL
-                SELECT m.season, m.away_team,
-                       CASE WHEN m.winner_team = m.away_team THEN 1 ELSE 0 END,
-                       m.away_score, m.home_score
-                FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
-            ) x
-            WHERE season = ?
-            GROUP BY 1, 2
-        ),
-        metrics AS (
-            SELECT
-                a.team,
-                COUNT(*) FILTER (WHERE NOT a.afl_played) AS player_rounds_lost,
-                COUNT(DISTINCT a.player_id) FILTER (WHERE NOT a.afl_played) AS players_with_absences,
-                ROUND(SUM(CASE WHEN NOT a.afl_played THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1) AS pvs_all_absences,
-                ROUND(
-                    SUM(
-                        CASE
-                            WHEN a.status IN ('unavailable', 'intermittent')
-                            THEN COALESCE(v.injury_weight_pvs, v.pvs)
-                            ELSE 0
-                        END
-                    ),
-                    1
-                ) AS pvs_games_missed,
-                ROUND(SUM(CASE WHEN a.status = 'vfl_only' THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1) AS pvs_vfl_only,
-                COUNT(*) FILTER (WHERE a.status IN ('unavailable', 'intermittent')) AS games_missed_slots
-            FROM availability a
-            JOIN player_value v
-                ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
-            WHERE a.season = ?
-            GROUP BY 1
-        ),
-        top5 AS (
-            SELECT team, ROUND(SUM(unavailable_pvs_top5), 1) AS pvs_top5_round_sum
-            FROM team_round_value WHERE season = ? GROUP BY 1
-        )
-        SELECT
-            m.team,
-            l.wins,
-            l.ladder_rank,
-            m.player_rounds_lost,
-            m.players_with_absences,
-            m.games_missed_slots,
-            m.pvs_games_missed,
-            m.pvs_all_absences,
-            m.pvs_vfl_only,
-            t.pvs_top5_round_sum,
-            RANK() OVER (ORDER BY m.pvs_games_missed ASC) AS rank_games_missed_pvs,
-            RANK() OVER (ORDER BY m.pvs_all_absences ASC) AS rank_all_absence_pvs,
-            RANK() OVER (ORDER BY t.pvs_top5_round_sum ASC) AS rank_top5_sum,
-            RANK() OVER (ORDER BY m.player_rounds_lost ASC) AS rank_slots_lost
-        FROM metrics m
-        JOIN ladder l ON m.team = l.team
-        LEFT JOIN top5 t ON m.team = t.team
-        ORDER BY m.pvs_games_missed DESC
-        """,
-        [season, season, season, season],
-    ).df()
+    return build_league_injury_summary(con, season)
 
 
 def _club_round_pvs(con: duckdb.DuckDBPyConnection, team: str, season: int) -> pd.DataFrame:
