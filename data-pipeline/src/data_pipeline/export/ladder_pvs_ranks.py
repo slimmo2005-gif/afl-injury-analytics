@@ -58,11 +58,25 @@ def build_ladder_pvs_ranks_bundle(con: duckdb.DuckDBPyConnection) -> dict:
         ),
         pvs_lost AS (
             SELECT
-                team,
-                season,
-                ROUND(SUM(unavailable_pvs_games_missed), 1) AS pvs_lost
-            FROM team_round_value
-            GROUP BY team, season
+                a.team,
+                a.season,
+                ROUND(
+                    SUM(
+                        CASE
+                            WHEN NOT a.afl_played
+                                 AND a.status IN ('unavailable', 'intermittent')
+                            THEN v.pvs
+                            ELSE 0
+                        END
+                    ),
+                    1
+                ) AS pvs_lost
+            FROM availability a
+            JOIN player_value v
+                ON a.player_id = v.player_id
+                AND a.team = v.team
+                AND a.season = v.season
+            GROUP BY a.team, a.season
         ),
         pvs_ranked AS (
             SELECT

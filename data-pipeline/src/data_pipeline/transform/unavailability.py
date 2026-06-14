@@ -38,7 +38,20 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
     con.execute("DELETE FROM team_round_value")
     con.execute(
         """
-        INSERT INTO team_round_value
+        INSERT INTO team_round_value (
+            team,
+            season,
+            round,
+            unavailable_pvs_total,
+            unavailable_pvs_top5,
+            unavailable_pvs_top10,
+            unavailable_pvs_u22,
+            unavailable_pvs_28plus,
+            unavailable_pvs_intermittent,
+            unavailable_pvs_vfl_only,
+            unavailable_pvs_games_missed,
+            won
+        )
         WITH unavail AS (
             SELECT
                 a.team,
