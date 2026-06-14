@@ -97,6 +97,23 @@ export interface Core22Impact {
   interpretation: string
 }
 
+export interface LadderPvsSeasonRank {
+  season: number
+  ladderRank: number
+  pvsLostRank: number
+  rankDelta: number
+  wins: number
+  percentage: number
+  pvsLost: number
+}
+
+export interface LadderPvsRanks {
+  windowYears: number
+  clubs: string[]
+  byClub: Record<string, LadderPvsSeasonRank[]>
+  interpretation: string
+}
+
 export interface SeasonBundle {
   leagueOverview: MockMetrics['leagueOverview']
   clubUnavailableByRound: RoundMetric[]
@@ -142,4 +159,5 @@ export interface MockMetrics {
   clubs?: string[]
   defaultClub?: string
   core22Impact?: Core22Impact
+  ladderPvsRanks?: LadderPvsRanks
 }

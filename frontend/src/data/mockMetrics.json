@@ -104,5 +104,19 @@
         ]
       }
     ]
+  },
+  "ladderPvsRanks": {
+    "windowYears": 5,
+    "clubs": ["Collingwood", "Hawthorn"],
+    "byClub": {
+      "Hawthorn": [
+        { "season": 2020, "ladderRank": 12, "pvsLostRank": 8, "rankDelta": 4, "wins": 8, "percentage": 92.1, "pvsLost": 210.5 },
+        { "season": 2021, "ladderRank": 9, "pvsLostRank": 11, "rankDelta": -2, "wins": 10, "percentage": 98.4, "pvsLost": 245.0 },
+        { "season": 2022, "ladderRank": 13, "pvsLostRank": 6, "rankDelta": 7, "wins": 7, "percentage": 88.2, "pvsLost": 198.3 },
+        { "season": 2023, "ladderRank": 7, "pvsLostRank": 14, "rankDelta": -7, "wins": 11, "percentage": 101.5, "pvsLost": 268.1 },
+        { "season": 2024, "ladderRank": 5, "pvsLostRank": 9, "rankDelta": -4, "wins": 15, "percentage": 119.0, "pvsLost": 232.4 }
+      ]
+    },
+    "interpretation": "Sample wireframe — run ETL for live ladder vs PVS-lost ranks."
   }
 }

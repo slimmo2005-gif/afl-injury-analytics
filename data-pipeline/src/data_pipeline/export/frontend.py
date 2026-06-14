@@ -12,6 +12,7 @@ import numpy as np
 from ..config import DEFAULT_SEASON, FRONTEND_DATA, SHARED_OUTPUT
 from ..transform.continuity import continuity_for_season
 from .core22_impact import build_core22_impact_bundle
+from .ladder_pvs_ranks import build_ladder_pvs_ranks_bundle
 
 
 def _linear_regression(x: np.ndarray, y: np.ndarray) -> tuple[float, float, float]:
@@ -275,6 +276,7 @@ def build_metrics_bundle(
         },
         "seasons": season_bundles,
         "core22Impact": build_core22_impact_bundle(con),
+        "ladderPvsRanks": build_ladder_pvs_ranks_bundle(con),
         **primary,
     }
 
