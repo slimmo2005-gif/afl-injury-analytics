@@ -15,6 +15,7 @@ from ..db import connect as db_connect
 from ..ingest.fryzigg import normalize_team
 from ..transform.archetypes import ARCHETYPE_LABELS, resolve_archetype
 from ..transform.pvs import PERFORMANCE_METRICS, compute_raw_composite, scale_performance_score
+from ..export.official_ladder import official_ladder_by_team
 from ..transform.unavailability import GAMES_MISSED_STATUS_SQL
 
 EXTRA_STAT_COLS = ("marks_inside_fifty", "intercept_marks")
@@ -22,37 +23,9 @@ EXTRA_STAT_COLS = ("marks_inside_fifty", "intercept_marks")
 
 def build_league_injury_summary(con: duckdb.DuckDBPyConnection, season: int) -> pd.DataFrame:
     """League-wide injury metrics and ranks for a season."""
-    return con.execute(
+    df = con.execute(
         """
-        WITH ha AS (
-            SELECT season, round FROM matches
-            WHERE round > 0 AND round <= 24 AND season = ?
-            GROUP BY 1, 2 HAVING COUNT(*) > 4
-        ),
-        ladder AS (
-            SELECT team, season,
-                SUM(won) AS wins,
-                RANK() OVER (
-                    ORDER BY SUM(won) * 4 + SUM(drew) * 2 DESC,
-                             100.0 * SUM(pf) / NULLIF(SUM(pa), 0) DESC
-                ) AS ladder_rank
-            FROM (
-                SELECT m.season, m.home_team AS team,
-                       CASE WHEN m.winner_team = m.home_team THEN 1 ELSE 0 END AS won,
-                       CASE WHEN m.home_score = m.away_score THEN 1 ELSE 0 END AS drew,
-                       m.home_score AS pf, m.away_score AS pa
-                FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
-                UNION ALL
-                SELECT m.season, m.away_team,
-                       CASE WHEN m.winner_team = m.away_team THEN 1 ELSE 0 END,
-                       CASE WHEN m.home_score = m.away_score THEN 1 ELSE 0 END,
-                       m.away_score, m.home_score
-                FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
-            ) x
-            WHERE season = ?
-            GROUP BY 1, 2
-        ),
-        metrics AS (
+        WITH metrics AS (
             SELECT
                 a.team,
                 COUNT(*) FILTER (WHERE NOT a.afl_played) AS player_rounds_lost,
@@ -82,9 +55,6 @@ def build_league_injury_summary(con: duckdb.DuckDBPyConnection, season: int) -> 
         )
         SELECT
             m.team,
-            l.wins,
-            l.ladder_rank,
-            l.ladder_rank - RANK() OVER (ORDER BY m.pvs_games_missed ASC) AS rank_delta,
             m.player_rounds_lost,
             m.players_with_absences,
             m.games_missed_slots,
@@ -97,12 +67,78 @@ def build_league_injury_summary(con: duckdb.DuckDBPyConnection, season: int) -> 
             RANK() OVER (ORDER BY t.pvs_top5_round_sum ASC) AS rank_top5_sum,
             RANK() OVER (ORDER BY m.player_rounds_lost ASC) AS rank_slots_lost
         FROM metrics m
-        JOIN ladder l ON m.team = l.team
         LEFT JOIN top5 t ON m.team = t.team
         ORDER BY m.pvs_games_missed DESC
         """,
-        [season, season, season, season],
+        [season, season],
     ).df()
+
+    official = None
+    try:
+        official = official_ladder_by_team(season)
+    except Exception:
+        official = None
+
+    if official:
+        df["wins"] = df["team"].map(lambda t: official.get(t, {}).get("wins"))
+        df["ladder_rank"] = df["team"].map(lambda t: official.get(t, {}).get("ladder_rank"))
+    else:
+        ladder = con.execute(
+            """
+            WITH ha AS (
+                SELECT season, round FROM matches
+                WHERE round > 0 AND round <= 24 AND season = ?
+                GROUP BY 1, 2 HAVING COUNT(*) > 4
+            ),
+            ladder AS (
+                SELECT team, season,
+                    SUM(won) AS wins,
+                    RANK() OVER (
+                        ORDER BY SUM(won) * 4 + SUM(drew) * 2 DESC,
+                                 100.0 * SUM(pf) / NULLIF(SUM(pa), 0) DESC
+                    ) AS ladder_rank
+                FROM (
+                    SELECT m.season, m.home_team AS team,
+                           CASE WHEN m.winner_team = m.home_team THEN 1 ELSE 0 END AS won,
+                           CASE WHEN m.home_score = m.away_score THEN 1 ELSE 0 END AS drew,
+                           m.home_score AS pf, m.away_score AS pa
+                    FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
+                    UNION ALL
+                    SELECT m.season, m.away_team,
+                           CASE WHEN m.winner_team = m.away_team THEN 1 ELSE 0 END,
+                           CASE WHEN m.home_score = m.away_score THEN 1 ELSE 0 END,
+                           m.away_score, m.home_score
+                    FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
+                ) x
+                WHERE season = ?
+                GROUP BY 1, 2
+            )
+            SELECT team, wins, ladder_rank FROM ladder
+            """,
+            [season, season],
+        ).df()
+        df = df.merge(ladder, on="team", how="left")
+
+    df["rank_delta"] = df["ladder_rank"] - df["rank_games_missed_pvs"]
+    return df[
+        [
+            "team",
+            "wins",
+            "ladder_rank",
+            "rank_delta",
+            "player_rounds_lost",
+            "players_with_absences",
+            "games_missed_slots",
+            "pvs_games_missed",
+            "pvs_all_absences",
+            "pvs_vfl_only",
+            "pvs_top5_round_sum",
+            "rank_games_missed_pvs",
+            "rank_all_absence_pvs",
+            "rank_top5_sum",
+            "rank_slots_lost",
+        ]
+    ]
 
 
 def _sheet_name(team: str, used: set[str]) -> str:

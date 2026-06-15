@@ -53,5 +53,14 @@
     "reason": "Knee injury then retired — post-retirement rounds are not unavailability.",
     "key_injuries": ["Knee", "Retirement"],
     "exclude_rounds_after": 15
+  },
+  {
+    "player_id": "13235",
+    "player_name": "Nicholas Madden",
+    "team": "Greater Western Sydney",
+    "season": 2025,
+    "reason": "On list all season; played 3 AFL games (R13–15) then VFL reserves — not injury.",
+    "vfl_only_rounds": [17, 18, 19, 20, 21, 22, 23, 24],
+    "key_injuries": ["VFL / not selected"]
   }
 ]
