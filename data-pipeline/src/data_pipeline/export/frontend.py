@@ -162,10 +162,10 @@ def build_season_bundle(
         JOIN player_value v
             ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
         WHERE a.season = ?
-        GROUP BY a.player_id, a.player_name, a.team
-        HAVING rounds_missed > 0
-        ORDER BY unavailable_pvs DESC
-        LIMIT 10
+            GROUP BY a.player_id, a.player_name, a.team
+            HAVING injury_rounds_missed > 0
+            ORDER BY unavailable_pvs DESC
+            LIMIT 10
         """,
         [season],
     ).df()
@@ -215,8 +215,7 @@ def build_season_bundle(
         {
             "player": row["player"],
             "club": row["club"],
-            "roundsMissed": int(row["rounds_missed"]),
-            "injuryRoundsMissed": int(row["injury_rounds_missed"]),
+            "roundsMissed": int(row["injury_rounds_missed"]),
             "pvs": round(float(row["pvs"]), 1),
             "unavailablePvs": round(float(row["unavailable_pvs"]), 1),
             "status": _player_status(row, float(row["unavailable_pvs"])),
@@ -251,7 +250,7 @@ def build_season_bundle(
                 ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
             WHERE a.season = ?
             GROUP BY a.player_id, a.player_name, a.team
-            HAVING rounds_missed > 0
+            HAVING injury_rounds_missed > 0
         ),
         injury_labels AS (
             SELECT
@@ -277,7 +276,7 @@ def build_season_bundle(
                 p.unavailable_pvs,
                 i.injury_types,
                 ROW_NUMBER() OVER (
-                    PARTITION BY p.club ORDER BY p.unavailable_pvs DESC, p.rounds_missed DESC
+                    PARTITION BY p.club ORDER BY p.unavailable_pvs DESC, p.injury_rounds_missed DESC
                 ) AS rn
             FROM player_agg p
             LEFT JOIN injury_labels i
@@ -304,8 +303,7 @@ def build_season_bundle(
         entry = {
             "player": row["player"],
             "club": row["club"],
-            "roundsMissed": int(row["rounds_missed"]),
-            "injuryRoundsMissed": int(row["injury_rounds_missed"]),
+            "roundsMissed": int(row["injury_rounds_missed"]),
             "pvs": round(float(row["pvs"]), 1),
             "unavailablePvs": round(float(row["unavailable_pvs"]), 1),
             "status": status,

@@ -17,9 +17,8 @@ export interface RoundMetric {
 export interface UnavailablePlayer {
   player: string
   club: string
+  /** Injury-counted rounds missed (excludes VFL-only / non-injury omission). */
   roundsMissed: number
-  /** Weeks with no AFL game (includes VFL reserves and omission). */
-  injuryRoundsMissed?: number
   pvs: number
   unavailablePvs?: number
   status: 'unavailable' | 'vfl_only' | 'intermittent'

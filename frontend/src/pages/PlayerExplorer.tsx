@@ -15,7 +15,7 @@ export default function PlayerExplorer() {
     <>
       <PageHeader
         title="Player explorer"
-        subtitle="Player Value Score (PVS), availability status, and participation history."
+        subtitle="Player Value Score (PVS) and injury-counted absences."
       />
       <div className="rounded-xl border border-slate-800 overflow-hidden">
         <table className="w-full text-sm">
@@ -24,7 +24,7 @@ export default function PlayerExplorer() {
               <th className="px-4 py-3 font-medium">Player</th>
               <th className="px-4 py-3 font-medium">Club</th>
               <th className="px-4 py-3 font-medium">PVS</th>
-              <th className="px-4 py-3 font-medium">Rounds missed</th>
+              <th className="px-4 py-3 font-medium">Injury rounds</th>
               <th className="px-4 py-3 font-medium">Status</th>
             </tr>
           </thead>
@@ -46,7 +46,8 @@ export default function PlayerExplorer() {
         </table>
       </div>
       <p className="text-xs text-slate-600 mt-4">
-        Status: AFL played, VFL-only (reserves), intermittent, or unavailable. Draft picks from Draftguru.
+        Status: injury-counted absence, VFL-only (excluded from injury totals), intermittent, or
+        unavailable. Draft picks from Draftguru.
       </p>
     </>
   )
