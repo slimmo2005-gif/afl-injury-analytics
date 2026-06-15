@@ -105,6 +105,19 @@ def run_pipeline(
     _apply_vfl_layer(con)
     enrich_availability_status(con)
 
+    print("[pipeline] ingesting AFL injury list …")
+    try:
+        from .ingest.injury_sources import ingest_live_injury_lists
+
+        ingest_live_injury_lists(con)
+    except Exception as exc:
+        print(f"[pipeline] injury list skipped: {exc}")
+
+    from .transform.absences import enrich_absence_reasons
+
+    print("[pipeline] enriching absence reasons …")
+    enrich_absence_reasons(con)
+
     if not skip_draft:
         print(f"[pipeline] ingesting national draft {from_season}-{to_season}")
         draft_raw = fetch_all_drafts(from_season=from_season, to_season=to_season)

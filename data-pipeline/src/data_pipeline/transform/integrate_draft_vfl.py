@@ -13,7 +13,8 @@ MIN_COMPETITION_ROWS_BY_SEASON: dict[int, dict[str, int]] = {
     2021: {"vfl": 50, "wafl": 50},  # SANFL API has no 2021 fixtures
     2022: {"vfl": 100, "wafl": 50},  # SANFL stats PDFs not on site for 2022
     2023: {"vfl": 100, "wafl": 50},
-    2025: {"vfl": 100, "wafl": 50},
+    2025: {"vfl": 100, "wafl": 50},  # SANFL PDFs sparse until late season
+    2026: {"vfl": 100, "sanfl": 25, "wafl": 50},  # club reports until Hostplus PDFs publish
 }
 
 

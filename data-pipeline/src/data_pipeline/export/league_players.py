@@ -54,7 +54,7 @@ def build_league_injury_summary(con: duckdb.DuckDBPyConnection, season: int) -> 
                 ROUND(
                     SUM(
                         CASE
-                            WHEN a.status IN ('unavailable', 'intermittent')
+                            WHEN a.status IN ('unavailable', 'intermittent', 'injured', 'unclear')
                             THEN COALESCE(v.injury_weight_pvs, v.pvs)
                             ELSE 0
                         END
@@ -62,7 +62,7 @@ def build_league_injury_summary(con: duckdb.DuckDBPyConnection, season: int) -> 
                     1
                 ) AS pvs_games_missed,
                 ROUND(SUM(CASE WHEN a.status = 'vfl_only' THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1) AS pvs_vfl_only,
-                COUNT(*) FILTER (WHERE a.status IN ('unavailable', 'intermittent')) AS games_missed_slots
+                COUNT(*) FILTER (WHERE a.status IN ('unavailable', 'intermittent', 'injured', 'unclear')) AS games_missed_slots
             FROM availability a
             JOIN player_value v
                 ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season

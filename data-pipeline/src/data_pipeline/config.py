@@ -18,5 +18,19 @@ TEAM_ALIASES: dict[str, str] = {
     "Footscray": "Western Bulldogs",
     "GWS": "Greater Western Sydney",
     "GWS GIANTS": "Greater Western Sydney",
+    "GWS Giants": "Greater Western Sydney",
     "Greater Western Sydney Giants": "Greater Western Sydney",
+    "Gold Coast Suns": "Gold Coast",
+    "West Coast Eagles": "West Coast",
 }
+
+# BigFooty forum threads with full-club injury tables (slug after /threads/).
+BIGFOOTY_FORUM_THREADS: dict[int, str] = {
+    2024: "injury-list-afl-2024-updated-every-few-days.1377977",
+    2025: "afl-injury-lists-2025-updated-regularly-all-links-to-news-welcome.1393192",
+    2026: "afl-injury-lists-2026-updated-a-couple-of-times-a-week.1406206",
+}
+
+BIGFOOTY_INJURIES_CATEGORY = "https://www.bigfooty.com/category/afl-injuries/"
+WAYBACK_INJURY_URL = "https://www.afl.com.au/matches/injury-list"
+WAYBACK_CDX_CACHE = RAW_DIR / "wayback_injury_cdx.json"

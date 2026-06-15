@@ -157,6 +157,36 @@ CREATE TABLE IF NOT EXISTS vfl_games (
     game_date DATE,
     PRIMARY KEY (player_name_norm, afl_club, season, round, game_slug, competition)
 );
+
+CREATE TABLE IF NOT EXISTS injury_list_entries (
+    list_date DATE NOT NULL,
+    team VARCHAR NOT NULL,
+    player_name VARCHAR NOT NULL,
+    player_name_norm VARCHAR NOT NULL,
+    injury_type VARCHAR NOT NULL,
+    injury_category VARCHAR,
+    estimated_return VARCHAR,
+    is_injury BOOLEAN NOT NULL DEFAULT TRUE,
+    player_id VARCHAR,
+    source VARCHAR DEFAULT 'afl_injury_list',
+    PRIMARY KEY (list_date, team, player_name_norm)
+);
+
+CREATE TABLE IF NOT EXISTS absence_episodes (
+    player_id VARCHAR NOT NULL,
+    player_name VARCHAR NOT NULL,
+    team VARCHAR NOT NULL,
+    season INTEGER NOT NULL,
+    start_round INTEGER NOT NULL,
+    end_round INTEGER NOT NULL,
+    weeks INTEGER NOT NULL,
+    absence_reason VARCHAR NOT NULL,
+    injury_type VARCHAR,
+    injury_category VARCHAR,
+    source VARCHAR,
+    confidence VARCHAR DEFAULT 'inferred',
+    PRIMARY KEY (player_id, team, season, start_round)
+);
 """
 
 MIGRATIONS = [
@@ -183,6 +213,9 @@ MIGRATIONS = [
     "ALTER TABLE player_value ADD COLUMN IF NOT EXISTS injury_weight_pvs DOUBLE",
     "ALTER TABLE vfl_games ADD COLUMN IF NOT EXISTS competition VARCHAR DEFAULT 'vfl'",
     "ALTER TABLE vfl_games ADD COLUMN IF NOT EXISTS game_date DATE",
+    "ALTER TABLE availability ADD COLUMN IF NOT EXISTS absence_reason VARCHAR",
+    "ALTER TABLE availability ADD COLUMN IF NOT EXISTS injury_type VARCHAR",
+    "ALTER TABLE availability ADD COLUMN IF NOT EXISTS injury_category VARCHAR",
 ]
 
 

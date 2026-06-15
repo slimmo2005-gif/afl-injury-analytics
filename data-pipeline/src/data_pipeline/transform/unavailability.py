@@ -96,7 +96,8 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
                 SUM(CASE WHEN status = 'intermittent' THEN injury_pvs ELSE 0 END) AS unavailable_pvs_intermittent,
                 SUM(CASE WHEN status = 'vfl_only' THEN injury_pvs ELSE 0 END) AS unavailable_pvs_vfl_only,
                 SUM(
-                    CASE WHEN status IN ('unavailable', 'intermittent') THEN injury_pvs ELSE 0 END
+                    CASE WHEN status IN ('unavailable', 'intermittent', 'injured', 'unclear')
+                    THEN injury_pvs ELSE 0 END
                 ) AS unavailable_pvs_games_missed
             FROM ranked
             GROUP BY 1, 2, 3

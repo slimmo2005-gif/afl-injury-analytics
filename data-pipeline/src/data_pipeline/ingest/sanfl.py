@@ -155,6 +155,32 @@ def fetch_sanfl_games(
     pause: float = 0.2,
 ) -> pd.DataFrame:
     to_season = to_season or datetime.now().year
+
+    try:
+        from .sanfl_match_centre import fetch_sanfl_match_centre_games
+
+        mc_df = fetch_sanfl_match_centre_games(
+            from_season=from_season,
+            to_season=to_season,
+            pause=pause,
+        )
+    except (requests.RequestException, OSError, ValueError) as exc:
+        print(f"[sanfl] warning: match centre failed: {exc}")
+        mc_df = pd.DataFrame()
+
+    if not mc_df.empty:
+        print(f"[sanfl] match centre: {len(mc_df)} player-game rows")
+        return mc_df.drop(columns=["source"], errors="ignore").drop_duplicates(
+            subset=[
+                "competition",
+                "season",
+                "game_slug",
+                "player_name_norm",
+                "state_team",
+            ]
+        )
+
+    # Fallback: Hostplus PDFs (+ optional club reports) when match centre is unavailable.
     club_map = load_sanfl_club_map()
     affiliate_map = load_sanfl_affiliate_map()
     parse_teams = set(AFL_CLUBS) | set(affiliate_map.keys())
@@ -185,7 +211,6 @@ def fetch_sanfl_games(
                 if state_team in AFL_CLUBS:
                     afl_club = club_map.get(state_team, state_team)
                 elif state_team in affiliate_map:
-                    # Affiliate side (e.g. Glenelg): link to AFL club via surname in link_vfl_player_ids
                     afl_club = None
                 else:
                     continue
@@ -205,9 +230,50 @@ def fetch_sanfl_games(
                         }
                     )
 
-    if not rows:
+    df = pd.DataFrame(rows) if rows else pd.DataFrame()
+
+    try:
+        from .sanfl_club_reports import fetch_sanfl_club_report_games
+
+        club_df = fetch_sanfl_club_report_games(
+            from_season=from_season,
+            to_season=to_season,
+            pause=pause,
+        )
+    except (requests.RequestException, OSError, ValueError) as exc:
+        print(f"[sanfl] warning: club report scrape failed: {exc}")
+        club_df = pd.DataFrame()
+
+    if not club_df.empty:
+        print(f"[sanfl] club reports: {len(club_df)} player-game rows")
+        if df.empty:
+            df = club_df
+        else:
+            pdf_keys = set(
+                zip(
+                    df["season"],
+                    df["state_round"],
+                    df["state_team"],
+                    df["player_name_norm"],
+                )
+            )
+            extra = club_df[
+                ~club_df.apply(
+                    lambda r: (
+                        r["season"],
+                        r["state_round"],
+                        r["state_team"],
+                        r["player_name_norm"],
+                    )
+                    in pdf_keys,
+                    axis=1,
+                )
+            ]
+            if not extra.empty:
+                df = pd.concat([df, extra.drop(columns=["source"], errors="ignore")], ignore_index=True)
+
+    if df.empty:
         return pd.DataFrame()
-    df = pd.DataFrame(rows)
     return df.drop_duplicates(
         subset=[
             "competition",
