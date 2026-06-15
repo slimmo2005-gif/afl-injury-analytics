@@ -21,6 +21,15 @@ SANFLSTATS_API = "https://api3.sanflstats.com"
 LEAGUE_CODE = "sanfl"
 USER_AGENT = "afl-injury-analytics/0.3"
 PARSE_TEAMS = AFL_CLUBS | {"Glenelg"}  # Glenelg linked via affiliate map
+# api3.sanflstats.com uses longer labels in older seasons (2021–2022).
+SQUAD_NAME_ALIASES: dict[str, str] = {
+    "Adelaide SANFL": "Adelaide",
+    "Port Adelaide Magpies": "Port Adelaide",
+}
+
+
+def _canonical_squad(name: str) -> str:
+    return SQUAD_NAME_ALIASES.get(name, name)
 
 
 def _headers() -> dict[str, str]:
@@ -52,16 +61,16 @@ def fetch_match_detail(match_id: str) -> dict:
 
 
 def _is_target_match(match: dict) -> bool:
-    home = match.get("homeSquadName", "")
-    away = match.get("awaySquadName", "")
+    home = _canonical_squad(match.get("homeSquadName", ""))
+    away = _canonical_squad(match.get("awaySquadName", ""))
     return home in PARSE_TEAMS or away in PARSE_TEAMS
 
 
 def _squad_name(detail: dict, team_code: str) -> str | None:
     if team_code == detail.get("homeTeamCode"):
-        return detail.get("homeSquadName")
+        return _canonical_squad(detail.get("homeSquadName", ""))
     if team_code == detail.get("awayTeamCode"):
-        return detail.get("awaySquadName")
+        return _canonical_squad(detail.get("awaySquadName", ""))
     return None
 
 
@@ -121,8 +130,8 @@ def fetch_sanfl_match_centre_games(
                 continue
 
             state_round = int(detail.get("roundNumber") or match.get("roundNumber") or 0)
-            home = detail.get("homeSquadName", "")
-            away = detail.get("awaySquadName", "")
+            home = _canonical_squad(detail.get("homeSquadName", ""))
+            away = _canonical_squad(detail.get("awaySquadName", ""))
             game_date = _game_date(detail)
             game_slug = slug_index.get((state_round, home, away), f"sanfl-mc-{match_id}")
 
