@@ -71,5 +71,14 @@
     "reason": "Two concussion spells (R13–15, R19); other missed weeks were VFL or omitted from AFL side.",
     "vfl_only_rounds": [4, 5, 6, 10, 11, 12, 17, 18, 20, 21, 23, 24],
     "key_injuries": ["Concussion"]
+  },
+  {
+    "player_id": "12585",
+    "player_name": "Harry Morrison",
+    "team": "Hawthorn",
+    "season": 2024,
+    "reason": "Omitted from AFL and VFL — sat out four weekends without football (not injury).",
+    "vfl_only_rounds": [4, 5, 9, 10, 11, 12, 13, 14, 19, 20, 21],
+    "key_injuries": ["Not selected"]
   }
 ]
