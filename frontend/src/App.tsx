@@ -7,6 +7,7 @@ import AdminAnalytics from './pages/AdminAnalytics'
 import AdminInsights from './pages/AdminInsights'
 import ClubDetail from './pages/ClubDetail'
 import LeagueOverview from './pages/LeagueOverview'
+import Methodology from './pages/Methodology'
 import ModelInsights from './pages/ModelInsights'
 import PlayerExplorer from './pages/PlayerExplorer'
 import RoleImpact from './pages/RoleImpact'
@@ -20,6 +21,7 @@ export default function App() {
         <Routes>
           <Route element={<ClubLayout />}>
             <Route index element={<ClubDetail />} />
+            <Route path="methodology" element={<Methodology />} />
           </Route>
           <Route path="admin" element={<AdminLayout />}>
             <Route index element={<LeagueOverview />} />

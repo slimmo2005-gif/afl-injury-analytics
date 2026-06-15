@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useMemo, useState } from 'react'
 import {
   Bar,
@@ -14,6 +15,8 @@ import {
   YAxis,
 } from 'recharts'
 import FilterBar from '../components/FilterBar'
+import ClubPageFooter from '../components/ClubPageFooter'
+import LeagueSeasonSummary from '../components/LeagueSeasonSummary'
 import StatCard from '../components/StatCard'
 import { CHART_MAX_SEASON, LADDER_SIZE, MIN_SEASON } from '../constants'
 import { useFilters } from '../context/FilterContext'
@@ -92,6 +95,14 @@ function HowToReadPanel() {
             injury rank. Negative means the club outperformed its injury profile. Positive means it
             underperformed.
           </p>
+          <p>
+            For the full methodology — data sources, PVS formula, availability rules, and
+            limitations — see the{' '}
+            <Link to="/methodology" className="text-afl-gold hover:text-yellow-300 transition-colors">
+              detailed methodology page
+            </Link>
+            .
+          </p>
         </div>
       )}
     </div>
@@ -149,33 +160,46 @@ export default function ClubDetail() {
     <>
       <FilterBar />
 
-      {storyData && headline && (
-        <section className="mb-8 rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-950 p-6 sm:p-8">
-          <p className="text-[10px] uppercase tracking-widest text-slate-500 mb-3">
-            {filters.club} · {filters.season}
-          </p>
-          <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight ${deltaAccent}`}>
-            {headline}
-          </h2>
-          {subheadline && (
-            <p className="text-base text-slate-400 mt-3">{subheadline}</p>
+      <div className="grid lg:grid-cols-3 gap-6 mb-8">
+        <div className="lg:col-span-2">
+          {storyData && headline && (
+            <section className="h-full rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900/80 to-slate-950 p-6 sm:p-8">
+              <p className="text-[10px] uppercase tracking-widest text-slate-500 mb-3">
+                {filters.club} · {filters.season}
+              </p>
+              <h2
+                className={`text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight ${deltaAccent}`}
+              >
+                {headline}
+              </h2>
+              {subheadline && (
+                <p className="text-base text-slate-400 mt-3">{subheadline}</p>
+              )}
+              {summary && (
+                <p className="text-sm text-slate-400 mt-4 max-w-3xl leading-relaxed">{summary}</p>
+              )}
+            </section>
           )}
-          {summary && (
-            <p className="text-sm text-slate-400 mt-4 max-w-3xl leading-relaxed">{summary}</p>
-          )}
-        </section>
-      )}
 
-      {!storyData && (
-        <section className="mb-8 rounded-xl border border-slate-800 bg-slate-900/40 p-6">
-          <h2 className="text-xl font-semibold text-slate-200">
-            {filters.club} — {filters.season}
-          </h2>
-          <p className="text-sm text-slate-500 mt-2">
-            Ladder vs injury rank data is not available for this club/season yet.
-          </p>
-        </section>
-      )}
+          {!storyData && (
+            <section className="h-full rounded-xl border border-slate-800 bg-slate-900/40 p-6">
+              <h2 className="text-xl font-semibold text-slate-200">
+                {filters.club} — {filters.season}
+              </h2>
+              <p className="text-sm text-slate-500 mt-2">
+                Ladder vs injury rank data is not available for this club/season yet.
+              </p>
+            </section>
+          )}
+        </div>
+
+        <div className="lg:col-span-1">
+          <LeagueSeasonSummary
+            season={filters.season}
+            byClub={bundle.ladderPvsRanks?.byClub}
+          />
+        </div>
+      </div>
 
       <HowToReadPanel />
 
@@ -350,6 +374,8 @@ export default function ClubDetail() {
           </ResponsiveContainer>
         </div>
       </details>
+
+      <ClubPageFooter />
     </>
   )
 }
