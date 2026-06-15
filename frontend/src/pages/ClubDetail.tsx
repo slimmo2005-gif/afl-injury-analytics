@@ -27,6 +27,7 @@ import {
   generateHeadline,
   generateSubheadline,
   getMetricCardContent,
+  maxPositiveRankDelta,
   type StoryAccent,
 } from '../utils/clubSeasonStory'
 import { formatRankDelta, RANK_DELTA_DOMAIN } from '../utils/formatRankDelta'
@@ -70,7 +71,16 @@ function HowToReadPanel() {
             <strong className="text-slate-300 font-medium">PVS</strong> stands for Player Value Score.
             It gives more weight to important players than fringe players. A club losing a best-22
             midfielder for 10 weeks hurts more than losing a depth player for 2 weeks. PVS lost
-            estimates how much player value each club was missing during the season.
+            estimates how much player value each club was missing during the season. For players
+            under 25, PVS also blends in <strong className="text-slate-300 font-medium">draft
+            potential</strong> (earlier picks score higher) with on-field performance — so young
+            high picks can rate strongly even before a full season of stats.
+          </p>
+          <p>
+            <strong className="text-slate-300 font-medium">Unavailability</strong> is mostly injury,
+            but also includes other reasons a player missed AFL selection — suspensions, personal
+            issues, and similar absences. Weeks where a player missed AFL but played SANFL/VFL
+            reserves are tracked separately and are not counted in the injury-impact rank.
           </p>
           <p>
             <strong className="text-slate-300 font-medium">Injury-impact rank</strong> compares clubs
@@ -104,6 +114,10 @@ export default function ClubDetail() {
   const fullHistory = bundle.ladderPvsRanks?.byClub?.[filters.club] ?? []
   const chartHistory = useMemo(() => reliableChartHistory(fullHistory), [fullHistory])
   const currentRank = fullHistory.find((r) => r.season === filters.season)
+  const worstPositiveDelta = useMemo(
+    () => maxPositiveRankDelta(bundle.ladderPvsRanks?.byClub),
+    [bundle.ladderPvsRanks?.byClub],
+  )
 
   const storyData = useMemo(() => {
     if (!currentRank) return null
@@ -116,8 +130,10 @@ export default function ClubDetail() {
     )
   }, [currentRank, filters.club, filters.season, totalUnavailable, top5])
 
-  const headline = storyData ? generateHeadline(storyData) : null
-  const subheadline = storyData ? generateSubheadline(storyData, fullHistory) : null
+  const headline = storyData ? generateHeadline(storyData, worstPositiveDelta) : null
+  const subheadline = storyData
+    ? generateSubheadline(storyData, fullHistory, worstPositiveDelta)
+    : null
   const summary = storyData ? generateClubSeasonSummary(storyData) : null
   const metricCards = storyData ? getMetricCardContent(storyData) : []
 
