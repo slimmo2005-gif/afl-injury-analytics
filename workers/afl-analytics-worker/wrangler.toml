@@ -1,0 +1,12 @@
+name = "afl-injury-analytics"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+
+# Create DB: npx wrangler d1 create afl-visits
+# Put the generated database_id below:
+[[d1_databases]]
+binding = "DB"
+database_name = "afl-visits"
+database_id = "REPLACE_WITH_YOUR_D1_ID"
+
+# Production: npx wrangler secret put ADMIN_PASSWORD

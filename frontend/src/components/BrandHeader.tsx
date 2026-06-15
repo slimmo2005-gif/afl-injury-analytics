@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { UKRAINE_TRACKER_URL } from '../constants'
 
 const logoSrc = `${import.meta.env.BASE_URL}brand/slim-analytics-logo.png`
 
@@ -36,16 +35,6 @@ export default function BrandHeader({ variant = 'club' }: BrandHeaderProps) {
         <p className="text-xs text-slate-400 mt-0.5">
           {isClub ? 'Club injury & performance view' : 'Admin analytics workspace'}
         </p>
-        <a
-          href={UKRAINE_TRACKER_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 mt-2 text-xs text-slate-400 hover:text-cyan-300 transition-colors"
-        >
-          <span aria-hidden>🗺️</span>
-          Ukraine War Territory Tracker
-          <span aria-hidden className="text-[10px]">↗</span>
-        </a>
       </div>
     </div>
   )

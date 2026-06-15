@@ -1,0 +1,29 @@
+AFL Injury Analytics — visitor & feedback worker
+================================================
+
+Mirrors the Ukraine tracker worker pattern for GitHub Pages static sites.
+
+1. Create D1 database:
+   cd workers/afl-analytics-worker
+   npx wrangler d1 create afl-visits
+
+2. Put database_id in wrangler.toml
+
+3. Apply schema:
+   npx wrangler d1 execute afl-visits --remote --file=schema.sql
+
+4. Set admin password:
+   npx wrangler secret put ADMIN_PASSWORD
+
+5. Deploy:
+   npx wrangler deploy
+
+6. Add the worker URL to GitHub repo secret AFL_ANALYTICS_API_URL (no trailing slash).
+   The deploy workflow passes it as VITE_ANALYTICS_API_URL at build time.
+
+7. Redeploy the site (push to main or workflow_dispatch).
+
+Local dev (optional):
+   npx wrangler dev
+
+CORS allows *.github.io and localhost origins.

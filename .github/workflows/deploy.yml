@@ -45,6 +45,7 @@ jobs:
         working-directory: frontend
         env:
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_ANALYTICS_API_URL: ${{ secrets.AFL_ANALYTICS_API_URL }}
         run: npm run build
 
       - name: SPA fallback for client-side routes

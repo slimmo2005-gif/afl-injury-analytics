@@ -2,13 +2,14 @@ interface StatCardProps {
   label: string
   value: string | number
   hint?: string
-  accent?: 'gold' | 'green' | 'red' | 'neutral'
+  accent?: 'gold' | 'green' | 'red' | 'orange' | 'neutral'
 }
 
 const accentMap = {
   gold: 'border-afl-gold/40 text-afl-gold',
   green: 'border-emerald-500/40 text-emerald-400',
   red: 'border-afl-red/40 text-red-400',
+  orange: 'border-orange-500/40 text-orange-400',
   neutral: 'border-slate-600 text-slate-200',
 }
 

@@ -4,11 +4,13 @@ import BrandHeader from './BrandHeader'
 
 const nav = [
   { to: '/admin', label: 'League', end: true },
+  { to: '/admin/insights', label: 'Injury insights' },
   { to: '/admin/season', label: 'Season' },
   { to: '/admin/player', label: 'Player' },
   { to: '/admin/trends', label: 'Trends' },
   { to: '/admin/model', label: 'Model' },
   { to: '/admin/roles', label: 'Role impact' },
+  { to: '/admin/analytics', label: 'Analytics' },
 ]
 
 export default function AdminLayout() {

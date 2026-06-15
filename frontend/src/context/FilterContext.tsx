@@ -14,13 +14,23 @@ const FilterContext = createContext<{
 } | null>(null)
 
 export function FilterProvider({ children }: { children: ReactNode }) {
-  const { data } = useMetricsContext()
-  const defaultSeason = data.meta.defaultSeason ?? data.meta.season ?? DEFAULT_SEASON
+  const { data, loading } = useMetricsContext()
   const defaultClub =
     data.defaultClub ?? data.clubRankings[0]?.club ?? 'Collingwood'
 
-  const [season, setSeason] = useState(defaultSeason)
+  // Always start at 2025 — mock wireframe data uses 2024 and would otherwise win on first paint.
+  const [season, setSeason] = useState(DEFAULT_SEASON)
   const [club, setClub] = useState(defaultClub)
+  const [seasonInitialized, setSeasonInitialized] = useState(false)
+
+  useEffect(() => {
+    if (!loading && !seasonInitialized) {
+      const resolved =
+        data.meta.defaultSeason ?? data.meta.season ?? DEFAULT_SEASON
+      setSeason(resolved >= MIN_SEASON ? resolved : DEFAULT_SEASON)
+      setSeasonInitialized(true)
+    }
+  }, [loading, data.meta.defaultSeason, data.meta.season, seasonInitialized])
 
   useEffect(() => {
     const key = String(season)

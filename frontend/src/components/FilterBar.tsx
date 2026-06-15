@@ -1,7 +1,7 @@
 import { useFilters, useSeasonOptions } from '../context/FilterContext'
 import { useMetricsContext } from '../context/MetricsContext'
 
-export default function FilterBar() {
+export default function FilterBar({ seasonOnly = false }: { seasonOnly?: boolean }) {
   const { data } = useMetricsContext()
   const { filters, setSeason, setClub } = useFilters()
   const seasons = useSeasonOptions()
@@ -13,20 +13,22 @@ export default function FilterBar() {
 
   return (
     <div className="flex flex-wrap gap-3 mb-6 p-3 rounded-lg bg-slate-900/50 border border-slate-800">
-      <label className="flex flex-col gap-1 text-xs text-slate-500">
-        Club
-        <select
-          value={filters.club}
-          onChange={(e) => setClub(e.target.value)}
-          className="bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-slate-200 min-w-[140px]"
-        >
-          {clubs.map((c) => (
-            <option key={c} value={c}>
-              {c}
-            </option>
-          ))}
-        </select>
-      </label>
+      {!seasonOnly && (
+        <label className="flex flex-col gap-1 text-xs text-slate-500">
+          Club
+          <select
+            value={filters.club}
+            onChange={(e) => setClub(e.target.value)}
+            className="bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-slate-200 min-w-[140px]"
+          >
+            {clubs.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
       <label className="flex flex-col gap-1 text-xs text-slate-500">
         Season
         <select
