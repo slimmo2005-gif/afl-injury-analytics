@@ -15,15 +15,17 @@ import {
 import FilterBar from '../components/FilterBar'
 import PageHeader from '../components/PageHeader'
 import StatCard from '../components/StatCard'
+import { LADDER_SIZE } from '../constants'
 import { useFilters } from '../context/FilterContext'
 import { useSeasonData } from '../hooks/useSeasonData'
 import { useMetricsContext } from '../context/MetricsContext'
 import type { LadderPvsSeasonRank } from '../types/metrics'
+import { formatRankDelta, RANK_DELTA_DOMAIN } from '../utils/formatRankDelta'
 
-const tooltipStyle = {
-  background: '#1e293b',
-  border: '1px solid #334155',
-  borderRadius: 8,
+const LADDER_TICKS = Array.from({ length: LADDER_SIZE }, (_, i) => i + 1)
+
+function rankDeltaTooltip(value: number) {
+  return [`${formatRankDelta(value)} (ladder − PVS-lost)`, 'Rank delta']
 }
 
 function rankWindow(history: LadderPvsSeasonRank[], endSeason: number, years: number) {
@@ -31,6 +33,12 @@ function rankWindow(history: LadderPvsSeasonRank[], endSeason: number, years: nu
   return history
     .filter((r) => r.season >= start && r.season <= endSeason)
     .sort((a, b) => a.season - b.season)
+}
+
+const tooltipStyle = {
+  background: '#1e293b',
+  border: '1px solid #334155',
+  borderRadius: 8,
 }
 
 export default function ClubDetail() {
@@ -74,7 +82,7 @@ export default function ClubDetail() {
         {currentRank && (
           <StatCard
             label="Rank delta"
-            value={currentRank.rankDelta > 0 ? `+${currentRank.rankDelta}` : `${currentRank.rankDelta}`}
+            value={formatRankDelta(currentRank.rankDelta)}
             hint={`Ladder ${currentRank.ladderRank} vs PVS-lost ${currentRank.pvsLostRank}`}
           />
         )}
@@ -94,8 +102,9 @@ export default function ClubDetail() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                 <XAxis dataKey="season" tick={{ fill: '#94a3b8' }} />
                 <YAxis
-                  domain={[18, 1]}
+                  domain={[LADDER_SIZE, 1]}
                   reversed
+                  ticks={LADDER_TICKS}
                   tick={{ fill: '#94a3b8' }}
                   allowDecimals={false}
                   label={{
@@ -109,6 +118,10 @@ export default function ClubDetail() {
                 <Tooltip
                   contentStyle={tooltipStyle}
                   labelFormatter={(label) => `Season ${label}`}
+                  formatter={(value: number, name: string) => [
+                    `Rank ${value}`,
+                    name,
+                  ]}
                 />
                 <Legend />
                 <Line
@@ -134,16 +147,22 @@ export default function ClubDetail() {
             Rank delta (ladder − PVS-lost)
           </h4>
           <p className="text-xs text-slate-500 mb-3">
-            Negative = finished higher on the ladder than injury toll suggests. Positive = finished
-            lower.
+            Negative = outperformed injury toll (finished higher on ladder than PVS suggests).
+            Positive = underperformed. Scale is symmetric ±17.
           </p>
           <div className="h-40">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={rankHistory} margin={{ left: 8, right: 16 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                 <XAxis dataKey="season" tick={{ fill: '#94a3b8' }} />
-                <YAxis tick={{ fill: '#94a3b8' }} allowDecimals={false} />
-                <Tooltip contentStyle={tooltipStyle} />
+                <YAxis
+                  domain={RANK_DELTA_DOMAIN}
+                  ticks={[-15, -10, -5, 0, 5, 10, 15]}
+                  tick={{ fill: '#94a3b8' }}
+                  allowDecimals={false}
+                  tickFormatter={formatRankDelta}
+                />
+                <Tooltip contentStyle={tooltipStyle} formatter={rankDeltaTooltip} />
                 <Bar dataKey="rankDelta" name="Rank delta" radius={[4, 4, 0, 0]}>
                   {rankHistory.map((row) => (
                     <Cell
