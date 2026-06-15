@@ -147,6 +147,9 @@ def build_season_bundle(
             BOOL_OR(a.status = 'intermittent' AND NOT a.afl_played) AS has_intermittent_missed,
             BOOL_OR(COALESCE(a.vfl_played, FALSE)) AS any_vfl,
             COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
+            COUNT(*) FILTER (
+                WHERE NOT a.afl_played AND a.status IN {GAMES_MISSED_STATUS_SQL}
+            ) AS injury_rounds_missed,
             MAX(COALESCE(v.injury_weight_pvs, v.pvs)) AS pvs,
             SUM(
                 CASE
@@ -213,6 +216,7 @@ def build_season_bundle(
             "player": row["player"],
             "club": row["club"],
             "roundsMissed": int(row["rounds_missed"]),
+            "injuryRoundsMissed": int(row["injury_rounds_missed"]),
             "pvs": round(float(row["pvs"]), 1),
             "unavailablePvs": round(float(row["unavailable_pvs"]), 1),
             "status": _player_status(row, float(row["unavailable_pvs"])),
@@ -229,9 +233,12 @@ def build_season_bundle(
                 a.team AS club,
                 MAX(a.status) AS status,
                 BOOL_OR(COALESCE(a.vfl_played, FALSE)) AS any_vfl,
-                BOOL_OR(a.status = 'intermittent' AND NOT a.afl_played) AS has_intermittent_missed,
-                COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
-                MAX(COALESCE(v.injury_weight_pvs, v.pvs)) AS pvs,
+            BOOL_OR(a.status = 'intermittent' AND NOT a.afl_played) AS has_intermittent_missed,
+            COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
+            COUNT(*) FILTER (
+                WHERE NOT a.afl_played AND a.status IN {GAMES_MISSED_STATUS_SQL}
+            ) AS injury_rounds_missed,
+            MAX(COALESCE(v.injury_weight_pvs, v.pvs)) AS pvs,
                 SUM(
                     CASE
                         WHEN NOT a.afl_played AND a.status IN {GAMES_MISSED_STATUS_SQL}
@@ -265,6 +272,7 @@ def build_season_bundle(
                 p.status,
                 p.any_vfl,
                 p.rounds_missed,
+                p.injury_rounds_missed,
                 p.pvs,
                 p.unavailable_pvs,
                 i.injury_types,
@@ -297,6 +305,7 @@ def build_season_bundle(
             "player": row["player"],
             "club": row["club"],
             "roundsMissed": int(row["rounds_missed"]),
+            "injuryRoundsMissed": int(row["injury_rounds_missed"]),
             "pvs": round(float(row["pvs"]), 1),
             "unavailablePvs": round(float(row["unavailable_pvs"]), 1),
             "status": status,

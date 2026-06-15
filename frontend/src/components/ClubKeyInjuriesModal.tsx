@@ -13,6 +13,20 @@ function formatKeyInjuries(player: UnavailablePlayer): string {
   return 'Not recorded — inferred from non-selection only'
 }
 
+/** Human-readable split between injury-counted weeks and total weeks without an AFL game. */
+export function formatAbsenceWeeks(player: UnavailablePlayer): string {
+  const total = player.roundsMissed
+  const injury = player.injuryRoundsMissed ?? total
+  const injuryLabel = `${injury} injury round${injury === 1 ? '' : 's'}`
+
+  if (total === injury) {
+    return injuryLabel
+  }
+
+  const other = total - injury
+  return `${injuryLabel} · ${total} weeks out (${other} VFL / not selected)`
+}
+
 export default function ClubKeyInjuriesModal({ club, season, players, onClose }: Props) {
   return (
     <div
@@ -54,8 +68,8 @@ export default function ClubKeyInjuriesModal({ club, season, players, onClose }:
                     <span className="text-slate-500 mr-2">{index + 1}.</span>
                     {player.player}
                   </p>
-                  <p className="text-xs text-slate-500 shrink-0 tabular-nums">
-                    {player.roundsMissed} round{player.roundsMissed === 1 ? '' : 's'} missed
+                  <p className="text-xs text-slate-500 shrink-0 tabular-nums text-right max-w-[11rem]">
+                    {formatAbsenceWeeks(player)}
                   </p>
                 </div>
                 <p className="text-xs text-slate-500 mt-1">
@@ -76,8 +90,11 @@ export default function ClubKeyInjuriesModal({ club, season, players, onClose }:
         )}
 
         <div className="px-5 py-3 border-t border-slate-800 text-[10px] text-slate-600 leading-relaxed">
-          Top five by PVS lost (injury-counted absences). Injury labels come from official AFL
-          injury lists where we have them; other absences may be suspension or personal.
+          Ranked by injury PVS (value lost on injury-counted absences only).{' '}
+          <strong className="font-medium text-slate-500">Injury rounds</strong> are weeks we
+          count as hurt or in protocol;{' '}
+          <strong className="font-medium text-slate-500">weeks out</strong> includes playing VFL
+          or being omitted from the AFL side without an injury flag.
         </div>
       </div>
     </div>

@@ -62,5 +62,14 @@
     "reason": "On list all season; played 3 AFL games (R13–15) then VFL reserves — not injury.",
     "vfl_only_rounds": [17, 18, 19, 20, 21, 22, 23, 24],
     "key_injuries": ["VFL / not selected"]
+  },
+  {
+    "player_id": "13062",
+    "player_name": "Jhye Clark",
+    "team": "Geelong",
+    "season": 2025,
+    "reason": "Two concussion spells (R13–15, R19); other missed weeks were VFL or omitted from AFL side.",
+    "vfl_only_rounds": [4, 5, 6, 10, 11, 12, 17, 18, 20, 21, 23, 24],
+    "key_injuries": ["Concussion"]
   }
 ]
