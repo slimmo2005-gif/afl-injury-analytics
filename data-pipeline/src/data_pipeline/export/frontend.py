@@ -13,6 +13,29 @@ from ..config import DEFAULT_SEASON, FRONTEND_DATA, SHARED_OUTPUT
 from ..transform.continuity import continuity_for_season
 from .core22_impact import build_core22_impact_bundle
 from .ladder_pvs_ranks import build_ladder_pvs_ranks_bundle
+from ..transform.availability_adjustments import adjustment_key_injuries_index
+
+
+def _finalize_player_injury_labels(
+    entry: dict,
+    *,
+    player_id: str | None,
+    team: str,
+    season: int,
+    manual_labels: dict[tuple[str, str, int], list[str]],
+    episode_labels: list[str],
+) -> None:
+    """Merge episode, manual, and default labels for key-injuries display."""
+    key: tuple[str, str, int] | None = None
+    if player_id:
+        key = (str(player_id), str(team), int(season))
+    labels = list(manual_labels.get(key, [])) if key else []
+    if not labels:
+        labels = list(episode_labels)
+    if not labels and entry.get("status") == "vfl_only":
+        labels = ["VFL / not selected"]
+    if labels:
+        entry["keyInjuries"] = labels
 
 
 def _linear_regression(x: np.ndarray, y: np.ndarray) -> tuple[float, float, float]:
@@ -228,6 +251,7 @@ def build_season_bundle(
         ),
         ranked AS (
             SELECT
+                p.player_id,
                 p.player,
                 p.club,
                 p.status,
@@ -249,18 +273,19 @@ def build_season_bundle(
         [season, season],
     ).df()
 
+    manual_labels = adjustment_key_injuries_index()
     top_by_club: dict[str, list] = {}
     for _, row in club_top_players.iterrows():
         status = "intermittent" if row["status"] == "intermittent" else (
             "vfl_only" if row["any_vfl"] else "unavailable"
         )
         raw_injuries = row["injury_types"]
-        key_injuries: list[str] = []
+        episode_labels: list[str] = []
         if raw_injuries is not None:
             try:
-                key_injuries = [str(x) for x in list(raw_injuries) if x]
+                episode_labels = [str(x) for x in list(raw_injuries) if x]
             except TypeError:
-                key_injuries = []
+                episode_labels = []
         entry = {
             "player": row["player"],
             "club": row["club"],
@@ -269,8 +294,14 @@ def build_season_bundle(
             "unavailablePvs": round(float(row["unavailable_pvs"]), 1),
             "status": status,
         }
-        if key_injuries:
-            entry["keyInjuries"] = key_injuries
+        _finalize_player_injury_labels(
+            entry,
+            player_id=str(row["player_id"]),
+            team=str(row["club"]),
+            season=season,
+            manual_labels=manual_labels,
+            episode_labels=episode_labels,
+        )
         top_by_club.setdefault(str(row["club"]), []).append(entry)
 
     return {

@@ -1,0 +1,57 @@
+[
+  {
+    "player_id": "13249",
+    "player_name": "Roan Steele",
+    "team": "Collingwood",
+    "season": 2025,
+    "reason": "Mid-season AFL list addition from West Perth (WAFL). Not on Collingwood's list before round 17 AFL debut.",
+    "exclude_rounds_before": 17
+  },
+  {
+    "player_id": "12333",
+    "player_name": "Jordan De Goey",
+    "team": "Collingwood",
+    "season": 2023,
+    "key_injuries": ["Suspension", "Hamstring"]
+  },
+  {
+    "player_id": "12032",
+    "player_name": "Dylan Shiel",
+    "team": "Essendon",
+    "season": 2024,
+    "reason": "Returned via VFL after off-season knee/foot surgery; omitted to reserves not injury for most absences.",
+    "vfl_only_rounds": [12, 15, 16],
+    "key_injuries": ["Oblique strain", "VFL / not selected"]
+  },
+  {
+    "player_id": "12032",
+    "player_name": "Dylan Shiel",
+    "team": "Essendon",
+    "season": 2025,
+    "reason": "Playing VFL while working back to AFL — reserves weeks are not injury.",
+    "key_injuries": ["VFL / not selected"]
+  },
+  {
+    "player_id": "12358",
+    "player_name": "Kyle Langford",
+    "team": "Essendon",
+    "season": 2022,
+    "key_injuries": ["Hamstring"]
+  },
+  {
+    "player_id": "12493",
+    "player_name": "Will Snelling",
+    "team": "Essendon",
+    "season": 2022,
+    "key_injuries": ["Calf"]
+  },
+  {
+    "player_id": "12033",
+    "player_name": "Devon Smith",
+    "team": "Essendon",
+    "season": 2022,
+    "reason": "Knee injury then retired — post-retirement rounds are not unavailability.",
+    "key_injuries": ["Knee", "Retirement"],
+    "exclude_rounds_after": 15
+  }
+]

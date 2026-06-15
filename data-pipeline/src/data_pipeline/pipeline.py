@@ -17,6 +17,7 @@ from .ingest.state_league import (
     prepare_state_league_games,
 )
 from .transform.availability import build_availability
+from .transform.availability_adjustments import apply_availability_adjustments
 from .transform.continuity import build_archetype_continuity
 from .transform.integrate_draft_vfl import (
     apply_vfl_to_availability,
@@ -103,6 +104,7 @@ def run_pipeline(
             print(f"[pipeline] state-league player-rows: {len(prepared)}")
 
     _apply_vfl_layer(con)
+    apply_availability_adjustments(con)
     enrich_availability_status(con)
 
     print("[pipeline] ingesting AFL injury list …")

@@ -49,6 +49,15 @@ def build_availability(con: duckdb.DuckDBPyConnection) -> None:
             FROM squad_players s
             INNER JOIN team_rounds tr
                 ON s.team = tr.team AND s.season = tr.season
+            INNER JOIN (
+                SELECT player_id, team, season, MIN(round) AS debut_round
+                FROM player_games
+                GROUP BY 1, 2, 3
+            ) debut
+                ON s.player_id = debut.player_id
+                AND s.team = debut.team
+                AND s.season = debut.season
+            WHERE tr.round >= debut.debut_round
         ),
         played AS (
             SELECT DISTINCT player_id, team, season, round
@@ -65,7 +74,10 @@ def build_availability(con: duckdb.DuckDBPyConnection) -> None:
                 ELSE 'unavailable'
             END AS status,
             p.player_id IS NOT NULL AS afl_played,
-            CAST(NULL AS BOOLEAN) AS vfl_played
+            CAST(NULL AS BOOLEAN) AS vfl_played,
+            CAST(NULL AS VARCHAR) AS absence_reason,
+            CAST(NULL AS VARCHAR) AS injury_type,
+            CAST(NULL AS VARCHAR) AS injury_category
         FROM squad_rounds sr
         LEFT JOIN played p
             ON sr.player_id = p.player_id
