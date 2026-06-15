@@ -21,6 +21,8 @@ export interface UnavailablePlayer {
   pvs: number
   unavailablePvs?: number
   status: 'unavailable' | 'vfl_only' | 'intermittent'
+  /** Injury types from official lists / episodes where recorded. */
+  keyInjuries?: string[]
 }
 
 export interface ContinuityMetric {
@@ -119,6 +121,7 @@ export interface SeasonBundle {
   clubUnavailableByRound: RoundMetric[]
   clubRankings: ClubRanking[]
   topUnavailablePlayers: UnavailablePlayer[]
+  topUnavailableByClub?: Record<string, UnavailablePlayer[]>
   continuity: ContinuityMetric[]
   regression: MockMetrics['regression']
   clubs?: string[]

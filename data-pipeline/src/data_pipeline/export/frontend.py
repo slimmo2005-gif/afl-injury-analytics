@@ -190,6 +190,89 @@ def build_season_bundle(
         for _, row in top_players.iterrows()
     ]
 
+    club_top_players = con.execute(
+        """
+        WITH player_agg AS (
+            SELECT
+                a.player_id,
+                a.player_name AS player,
+                a.team AS club,
+                MAX(a.status) AS status,
+                BOOL_OR(COALESCE(a.vfl_played, FALSE)) AS any_vfl,
+                COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
+                MAX(COALESCE(v.injury_weight_pvs, v.pvs)) AS pvs,
+                SUM(
+                    CASE
+                        WHEN NOT a.afl_played AND a.status IN ('unavailable', 'intermittent')
+                        THEN COALESCE(v.injury_weight_pvs, v.pvs)
+                        ELSE 0
+                    END
+                ) AS unavailable_pvs
+            FROM availability a
+            JOIN player_value v
+                ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
+            WHERE a.season = ?
+            GROUP BY a.player_id, a.player_name, a.team
+            HAVING rounds_missed > 0
+        ),
+        injury_labels AS (
+            SELECT
+                e.player_id,
+                e.team,
+                list(DISTINCT e.injury_type ORDER BY e.injury_type) AS injury_types
+            FROM absence_episodes e
+            WHERE e.season = ?
+              AND e.injury_type IS NOT NULL
+              AND TRIM(e.injury_type) != ''
+            GROUP BY e.player_id, e.team
+        ),
+        ranked AS (
+            SELECT
+                p.player,
+                p.club,
+                p.status,
+                p.any_vfl,
+                p.rounds_missed,
+                p.pvs,
+                p.unavailable_pvs,
+                i.injury_types,
+                ROW_NUMBER() OVER (
+                    PARTITION BY p.club ORDER BY p.unavailable_pvs DESC, p.rounds_missed DESC
+                ) AS rn
+            FROM player_agg p
+            LEFT JOIN injury_labels i
+                ON p.player_id = i.player_id AND p.club = i.team
+        )
+        SELECT * FROM ranked WHERE rn <= 5
+        ORDER BY club, rn
+        """,
+        [season, season],
+    ).df()
+
+    top_by_club: dict[str, list] = {}
+    for _, row in club_top_players.iterrows():
+        status = "intermittent" if row["status"] == "intermittent" else (
+            "vfl_only" if row["any_vfl"] else "unavailable"
+        )
+        raw_injuries = row["injury_types"]
+        key_injuries: list[str] = []
+        if raw_injuries is not None:
+            try:
+                key_injuries = [str(x) for x in list(raw_injuries) if x]
+            except TypeError:
+                key_injuries = []
+        entry = {
+            "player": row["player"],
+            "club": row["club"],
+            "roundsMissed": int(row["rounds_missed"]),
+            "pvs": round(float(row["pvs"]), 1),
+            "unavailablePvs": round(float(row["unavailable_pvs"]), 1),
+            "status": status,
+        }
+        if key_injuries:
+            entry["keyInjuries"] = key_injuries
+        top_by_club.setdefault(str(row["club"]), []).append(entry)
+
     return {
         "leagueOverview": {
             "avgUnavailableValue": round(avg_unavail, 1),
@@ -220,6 +303,7 @@ def build_season_bundle(
             for _, row in club_season.sort_values("club").iterrows()
         ],
         "topUnavailablePlayers": player_rows,
+        "topUnavailableByClub": top_by_club,
         "continuity": continuity or [{"archetype": "League avg", "changes": 0, "score": 0.0}],
         "regression": {
             "model": "linear",

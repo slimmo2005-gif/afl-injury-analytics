@@ -15,6 +15,7 @@ import {
   YAxis,
 } from 'recharts'
 import FilterBar from '../components/FilterBar'
+import ClubKeyInjuriesModal from '../components/ClubKeyInjuriesModal'
 import ClubPageFooter from '../components/ClubPageFooter'
 import LeagueSeasonSummary from '../components/LeagueSeasonSummary'
 import StatCard from '../components/StatCard'
@@ -31,8 +32,10 @@ import {
   generateSubheadline,
   getMetricCardContent,
   maxPositiveRankDelta,
+  rankDeltaPerformanceLabel,
   type StoryAccent,
 } from '../utils/clubSeasonStory'
+import { getClubTopUnavailablePlayers } from '../utils/clubUnavailablePlayers'
 import { formatRankDelta, RANK_DELTA_DOMAIN } from '../utils/formatRankDelta'
 
 const LADDER_TICKS = Array.from({ length: LADDER_SIZE }, (_, i) => i + 1)
@@ -113,6 +116,9 @@ export default function ClubDetail() {
   const data = useSeasonData()
   const { filters } = useFilters()
   const { data: bundle } = useMetricsContext()
+  const [injuriesModalSeason, setInjuriesModalSeason] = useState<number | null>(null)
+
+  const openInjuriesModal = (season: number) => setInjuriesModalSeason(season)
 
   const seasonKey = String(filters.season)
   const rounds =
@@ -147,6 +153,11 @@ export default function ClubDetail() {
     : null
   const summary = storyData ? generateClubSeasonSummary(storyData) : null
   const metricCards = storyData ? getMetricCardContent(storyData) : []
+
+  const injuriesModalPlayers = useMemo(() => {
+    if (injuriesModalSeason == null) return []
+    return getClubTopUnavailablePlayers(bundle, filters.club, injuriesModalSeason)
+  }, [bundle, filters.club, injuriesModalSeason])
 
   const deltaAccent = storyData
     ? storyData.rankDelta <= -5
@@ -219,16 +230,34 @@ export default function ClubDetail() {
 
       {chartHistory.length > 0 && (
         <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 mb-8">
-          <h3 className="text-lg font-medium text-slate-200 mb-1">
-            Did ladder position follow injury luck?
-          </h3>
+          <div className="flex flex-wrap items-start justify-between gap-3 mb-1">
+            <h3 className="text-lg font-medium text-slate-200">
+              Did ladder position follow injury luck?
+            </h3>
+            <button
+              type="button"
+              onClick={() => openInjuriesModal(filters.season)}
+              className="text-xs text-afl-gold hover:text-yellow-300 border border-slate-700 hover:border-slate-600 rounded-lg px-3 py-1.5 transition-colors"
+            >
+              Key injuries — {filters.season}
+            </button>
+          </div>
           <p className="text-xs text-slate-500 mb-4">
             Lower numbers are better. If the lines move together, injuries may explain part of the
-            season. Shows {MIN_SEASON}–{CHART_MAX_SEASON} (reliable data window).
+            season. Shows {MIN_SEASON}–{CHART_MAX_SEASON} (reliable data window). Click a season on
+            the chart to see key unavailability for that year.
           </p>
           <div className="h-72 mb-6">
             <ResponsiveContainer width="100%" height="100%">
-              <ComposedChart data={chartHistory} margin={{ left: 8, right: 16 }}>
+              <ComposedChart
+                data={chartHistory}
+                margin={{ left: 8, right: 16 }}
+                onClick={(state) => {
+                  const label = state?.activeLabel
+                  if (label != null) openInjuriesModal(Number(label))
+                }}
+                className="cursor-pointer"
+              >
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                 <XAxis dataKey="season" tick={{ fill: '#94a3b8' }} />
                 <YAxis
@@ -263,8 +292,10 @@ export default function ClubDetail() {
                           )}
                         </p>
                         <p className="text-slate-500">
-                          Ladder #{row.ladderRank} · Injury #{row.pvsLostRank}
+                          Ladder #{row.ladderRank} · Injury #{row.pvsLostRank} ·{' '}
+                          {rankDeltaPerformanceLabel(row.rankDelta)}
                         </p>
+                        <p className="text-slate-600 mt-2">Click to view key injuries</p>
                       </div>
                     )
                   }}
@@ -293,7 +324,15 @@ export default function ClubDetail() {
           <h4 className="text-xs font-medium text-slate-400 mb-2">Rank delta by season</h4>
           <div className="h-40">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartHistory} margin={{ left: 8, right: 16 }}>
+              <BarChart
+                data={chartHistory}
+                margin={{ left: 8, right: 16 }}
+                onClick={(state) => {
+                  const label = state?.activeLabel
+                  if (label != null) openInjuriesModal(Number(label))
+                }}
+                className="cursor-pointer"
+              >
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                 <XAxis dataKey="season" tick={{ fill: '#94a3b8' }} />
                 <YAxis
@@ -305,10 +344,19 @@ export default function ClubDetail() {
                 />
                 <Tooltip
                   contentStyle={tooltipStyle}
-                  formatter={(value: number) => [
-                    `${formatRankDelta(value)} (ladder − injury rank)`,
-                    'Delta',
-                  ]}
+                  content={({ active, payload, label }) => {
+                    if (!active || !payload?.length) return null
+                    const value = payload[0]?.value as number
+                    return (
+                      <div style={tooltipStyle} className="p-3 text-xs">
+                        <p className="text-slate-300 font-medium mb-1">Season {label}</p>
+                        <p className="text-slate-400">
+                          {formatRankDelta(value)} · {rankDeltaPerformanceLabel(value)}
+                        </p>
+                        <p className="text-slate-600 mt-1">Click to view key injuries</p>
+                      </div>
+                    )
+                  }}
                 />
                 <Bar dataKey="rankDelta" name="Rank delta" radius={[4, 4, 0, 0]}>
                   {chartHistory.map((row) => (
@@ -376,6 +424,15 @@ export default function ClubDetail() {
       </details>
 
       <ClubPageFooter />
+
+      {injuriesModalSeason != null && (
+        <ClubKeyInjuriesModal
+          club={filters.club}
+          season={injuriesModalSeason}
+          players={injuriesModalPlayers}
+          onClose={() => setInjuriesModalSeason(null)}
+        />
+      )}
     </>
   )
 }

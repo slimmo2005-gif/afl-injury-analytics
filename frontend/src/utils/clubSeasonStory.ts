@@ -119,16 +119,24 @@ export function formatInjuryRank(pvsLostRank: number): string {
 /** Short label for the ladder-vs-injuries metric card. */
 export function getDeltaLabel(rankDelta: number): string {
   const abs = Math.abs(rankDelta)
-  if (abs <= SIGNIFICANT_DELTA) return 'Broadly matched'
-  if (rankDelta > 0) return `+${rankDelta} places`
-  return `${rankDelta} places`
+  if (abs <= SIGNIFICANT_DELTA) return 'Matched expectation'
+  if (rankDelta > 0) return 'Underperformed'
+  return 'Outperformed'
 }
 
 export function getDeltaSubtitle(rankDelta: number): string {
   const abs = Math.abs(rankDelta)
-  if (abs <= SIGNIFICANT_DELTA) return 'Ladder finish broadly matched injury profile'
-  if (rankDelta > 0) return 'Finished lower than injury profile suggested'
-  return 'Finished higher than injury profile suggested'
+  if (abs <= SIGNIFICANT_DELTA) return 'Ladder finish matched injury profile'
+  if (rankDelta > 0) return `Finished ${abs} place${abs === 1 ? '' : 's'} lower than injury profile suggested`
+  return `Finished ${abs} place${abs === 1 ? '' : 's'} higher than injury profile suggested`
+}
+
+/** One-word outcome label for ladder vs injury rank delta. */
+export function rankDeltaPerformanceLabel(rankDelta: number): string {
+  const abs = Math.abs(rankDelta)
+  if (abs <= SIGNIFICANT_DELTA) return 'Matched expectation'
+  if (rankDelta > 0) return 'Underperformed'
+  return 'Outperformed'
 }
 
 export function getDeltaAccent(rankDelta: number): StoryAccent {
@@ -366,13 +374,14 @@ export function chartTooltipNarrative(
   rankDelta: number,
 ): string {
   const absDelta = Math.abs(rankDelta)
+  const outcome = rankDeltaPerformanceLabel(rankDelta)
   if (absDelta <= SIGNIFICANT_DELTA) {
-    return `${club} finished ${ladderPhrase(ladderRank)} with injury-impact rank ${pvsLostRank} — broadly matched.`
+    return `${club} finished ${ladderPhrase(ladderRank)} with injury-impact rank ${pvsLostRank} — ${outcome}.`
   }
   if (rankDelta > 0) {
-    return `${club} finished ${ladderPhrase(ladderRank)} and ranked ${pvsLostRank} for injury impact, finishing ${rankDelta} places lower than expected.`
+    return `${club} finished ${ladderPhrase(ladderRank)} with injury-impact rank ${pvsLostRank} — ${outcome} (${rankDelta} places).`
   }
-  return `${club} finished ${ladderPhrase(ladderRank)} and ranked ${pvsLostRank} for injury impact, finishing ${absDelta} places higher than expected.`
+  return `${club} finished ${ladderPhrase(ladderRank)} with injury-impact rank ${pvsLostRank} — ${outcome} (${absDelta} places).`
 }
 
 /** Build story data from ladder rank row + club ranking totals. */
