@@ -1,4 +1,4 @@
-import { LADDER_SIZE } from '../constants'
+import { LADDER_SIZE, MIN_SEASON } from '../constants'
 import type { LadderPvsSeasonRank } from '../types/metrics'
 
 /** Inputs for narrative helpers on a single club/season. */
@@ -109,6 +109,13 @@ export function getDeltaInterpretation(rankDelta: number): string {
   }
 }
 
+/** Display label for injury-impact rank (1 = healthiest). */
+export function formatInjuryRank(pvsLostRank: number): string {
+  if (pvsLostRank === 1) return 'Healthiest (#1)'
+  if (pvsLostRank === LADDER_SIZE) return 'Hardest hit (#18)'
+  return `#${pvsLostRank}`
+}
+
 /** Short label for the ladder-vs-injuries metric card. */
 export function getDeltaLabel(rankDelta: number): string {
   const abs = Math.abs(rankDelta)
@@ -180,14 +187,16 @@ export function generateHeadline(data: ClubSeasonStoryData): string {
 
 /**
  * Optional second line when this season is a club high/low for unavailability PVS.
+ * Only compares seasons from MIN_SEASON onward (reliable data window).
  */
 export function generateSubheadline(
   data: ClubSeasonStoryData,
   clubHistory: LadderPvsSeasonRank[],
 ): string | null {
-  if (clubHistory.length < 2) return null
+  const reliable = clubHistory.filter((h) => h.season >= MIN_SEASON)
+  if (reliable.length < 2) return null
 
-  const pvsValues = clubHistory.map((h) => h.pvsLost)
+  const pvsValues = reliable.map((h) => h.pvsLost)
   const maxPvs = Math.max(...pvsValues)
   const minPvs = Math.min(...pvsValues)
 
@@ -264,7 +273,7 @@ export function getMetricCardContent(data: ClubSeasonStoryData): MetricCardConte
     },
     {
       title: 'Injury rank',
-      mainValue: `#${data.pvsLostRank}`,
+      mainValue: formatInjuryRank(data.pvsLostRank),
       subtitle: '1 = healthiest · 18 = hardest hit',
       accent:
         data.pvsLostRank >= HARDEST_HIT_THRESHOLD

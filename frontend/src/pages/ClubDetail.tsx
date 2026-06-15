@@ -15,7 +15,7 @@ import {
 } from 'recharts'
 import FilterBar from '../components/FilterBar'
 import StatCard from '../components/StatCard'
-import { LADDER_SIZE } from '../constants'
+import { CHART_MAX_SEASON, LADDER_SIZE, MIN_SEASON } from '../constants'
 import { useFilters } from '../context/FilterContext'
 import { useSeasonData } from '../hooks/useSeasonData'
 import { useMetricsContext } from '../context/MetricsContext'
@@ -25,7 +25,6 @@ import {
   chartTooltipNarrative,
   generateClubSeasonSummary,
   generateHeadline,
-  generateShareHeadlines,
   generateSubheadline,
   getMetricCardContent,
   type StoryAccent,
@@ -34,10 +33,10 @@ import { formatRankDelta, RANK_DELTA_DOMAIN } from '../utils/formatRankDelta'
 
 const LADDER_TICKS = Array.from({ length: LADDER_SIZE }, (_, i) => i + 1)
 
-function rankWindow(history: LadderPvsSeasonRank[], endSeason: number, years: number) {
-  const start = endSeason - years + 1
+/** Fixed multi-season chart — always 2021 through latest season, independent of filter. */
+function reliableChartHistory(history: LadderPvsSeasonRank[]): LadderPvsSeasonRank[] {
   return history
-    .filter((r) => r.season >= start && r.season <= endSeason)
+    .filter((r) => r.season >= MIN_SEASON && r.season <= CHART_MAX_SEASON)
     .sort((a, b) => a.season - b.season)
 }
 
@@ -75,8 +74,8 @@ function HowToReadPanel() {
           </p>
           <p>
             <strong className="text-slate-300 font-medium">Injury-impact rank</strong> compares clubs
-            by unavailability. Rank 1 means the healthiest list (fewest PVS lost). Rank 18 means the
-            hardest hit.
+            by unavailability. Rank 1 means the <em>healthiest</em> list (fewest PVS lost). Rank 18
+            means the hardest hit. Lower rank number = better injury luck.
           </p>
           <p>
             <strong className="text-slate-300 font-medium">Rank delta</strong> compares ladder rank to
@@ -102,11 +101,9 @@ export default function ClubDetail() {
   const totalUnavailable = rounds.reduce((s, r) => s + r.value, 0)
   const top5 = clubRanking?.unavailableTop5 ?? 0
 
-  const ladderPvs = bundle.ladderPvsRanks
-  const windowYears = ladderPvs?.windowYears ?? 5
-  const fullHistory = ladderPvs?.byClub?.[filters.club] ?? []
-  const rankHistory = rankWindow(fullHistory, filters.season, windowYears)
-  const currentRank = rankHistory.find((r) => r.season === filters.season)
+  const fullHistory = bundle.ladderPvsRanks?.byClub?.[filters.club] ?? []
+  const chartHistory = useMemo(() => reliableChartHistory(fullHistory), [fullHistory])
+  const currentRank = fullHistory.find((r) => r.season === filters.season)
 
   const storyData = useMemo(() => {
     if (!currentRank) return null
@@ -122,7 +119,6 @@ export default function ClubDetail() {
   const headline = storyData ? generateHeadline(storyData) : null
   const subheadline = storyData ? generateSubheadline(storyData, fullHistory) : null
   const summary = storyData ? generateClubSeasonSummary(storyData) : null
-  const shareHeadlines = storyData ? generateShareHeadlines(storyData) : []
   const metricCards = storyData ? getMetricCardContent(storyData) : []
 
   const deltaAccent = storyData
@@ -181,18 +177,18 @@ export default function ClubDetail() {
         </div>
       )}
 
-      {rankHistory.length > 0 && (
+      {chartHistory.length > 0 && (
         <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 mb-8">
           <h3 className="text-lg font-medium text-slate-200 mb-1">
             Did ladder position follow injury luck?
           </h3>
           <p className="text-xs text-slate-500 mb-4">
             Lower numbers are better. If the lines move together, injuries may explain part of the
-            season. Last {windowYears} seasons ending {filters.season}.
+            season. Shows {MIN_SEASON}–{CHART_MAX_SEASON} (reliable data window).
           </p>
           <div className="h-72 mb-6">
             <ResponsiveContainer width="100%" height="100%">
-              <ComposedChart data={rankHistory} margin={{ left: 8, right: 16 }}>
+              <ComposedChart data={chartHistory} margin={{ left: 8, right: 16 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                 <XAxis dataKey="season" tick={{ fill: '#94a3b8' }} />
                 <YAxis
@@ -257,7 +253,7 @@ export default function ClubDetail() {
           <h4 className="text-xs font-medium text-slate-400 mb-2">Rank delta by season</h4>
           <div className="h-40">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={rankHistory} margin={{ left: 8, right: 16 }}>
+              <BarChart data={chartHistory} margin={{ left: 8, right: 16 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                 <XAxis dataKey="season" tick={{ fill: '#94a3b8' }} />
                 <YAxis
@@ -275,7 +271,7 @@ export default function ClubDetail() {
                   ]}
                 />
                 <Bar dataKey="rankDelta" name="Rank delta" radius={[4, 4, 0, 0]}>
-                  {rankHistory.map((row) => (
+                  {chartHistory.map((row) => (
                     <Cell
                       key={row.season}
                       fill={
@@ -294,25 +290,9 @@ export default function ClubDetail() {
         </div>
       )}
 
-      {shareHeadlines.length > 0 && (
-        <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 mb-8">
-          <h3 className="text-sm font-medium text-slate-300 mb-3">Share this insight</h3>
-          <ul className="space-y-2">
-            {shareHeadlines.map((h, i) => (
-              <li
-                key={i}
-                className="text-sm text-slate-400 pl-3 border-l-2 border-afl-gold/40 py-1"
-              >
-                {h}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
       <details className="rounded-xl border border-slate-800 bg-slate-900/40 p-4">
         <summary className="text-sm font-medium text-slate-400 cursor-pointer hover:text-slate-300">
-          Unavailable PVS & wins by round (detail)
+          Unavailable PVS & wins by round — {filters.season} (detail)
         </summary>
         <div className="h-72 mt-4">
           <ResponsiveContainer width="100%" height="100%">
