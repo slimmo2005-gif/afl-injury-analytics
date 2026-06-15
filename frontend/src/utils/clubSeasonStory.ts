@@ -101,7 +101,7 @@ export function getDeltaInterpretation(rankDelta: number): string {
     case 'outperformed':
       return 'Outperformed injury profile'
     case 'matched':
-      return 'Matched injury profile'
+      return 'Matched expectation'
     case 'underperformed':
       return 'Underperformed injury profile'
     case 'major_underperformer':
@@ -148,24 +148,36 @@ export function getDeltaAccent(rankDelta: number): StoryAccent {
 /**
  * Hero headline — strong language when |rankDelta| > 4; calls out extreme mismatches.
  * @param worstPositiveDeltaInDataset max rank_delta in 2021–2025 (or current window) for context
+ * @param worstNegativeDeltaInDataset min (most negative) rank_delta in the window
  */
 export function generateHeadline(
   data: ClubSeasonStoryData,
   worstPositiveDeltaInDataset?: number,
+  worstNegativeDeltaInDataset?: number,
 ): string {
   const { club, ladderRank, pvsLostRank, rankDelta } = data
   const absDelta = Math.abs(rankDelta)
   const label = clubLabel(club)
   const hardestInLeague = pvsLostRank === LADDER_SIZE
   const healthiestInLeague = pvsLostRank === 1
-  const isDatasetWorst =
+  const isDatasetWorstUnder =
     worstPositiveDeltaInDataset != null &&
     rankDelta > 0 &&
     rankDelta >= worstPositiveDeltaInDataset
+  const isDatasetBestOver =
+    worstNegativeDeltaInDataset != null &&
+    rankDelta < 0 &&
+    rankDelta <= worstNegativeDeltaInDataset
 
   if (isSignificantOverperform(rankDelta)) {
     if (pvsLostRank >= HARDEST_HIT_THRESHOLD) {
       return `${club} overcame one of the league's heaviest injury tolls to finish ${ladderPhrase(ladderRank)}.`
+    }
+    if (isDatasetBestOver) {
+      return `${club} finished ${ladderPhrase(ladderRank)} despite ranking #${pvsLostRank} for injury impact — the largest overperformance vs unavailability in our 2021–2025 data.`
+    }
+    if (absDelta >= 10) {
+      return `${club} finished ${ladderPhrase(ladderRank)} despite ranking #${pvsLostRank} for injury impact — a massive overachiever.`
     }
     return `${club} finished ${absDelta} places above where their injury profile suggested.`
   }
@@ -173,7 +185,7 @@ export function generateHeadline(
   if (isSignificantUnderperform(rankDelta)) {
     // Healthiest (or near-healthiest) list but a poor ladder finish — call it out plainly.
     if (healthiestInLeague && rankDelta >= 10) {
-      if (isDatasetWorst) {
+      if (isDatasetWorstUnder) {
         return `${club} finished ${ladderPhrase(ladderRank)} despite the AFL's best injury luck — the largest underperformance vs unavailability in our 2021–2025 data.`
       }
       return `${club} finished ${ladderPhrase(ladderRank)} despite the league's best injury luck — a massive outlier season.`
@@ -182,7 +194,7 @@ export function generateHeadline(
       return `${club} crashed to ${ladderPhrase(ladderRank)} despite top-tier injury luck (rank #${pvsLostRank} for unavailability).`
     }
     if (pvsLostRank <= HEALTHIEST_THRESHOLD) {
-      if (isDatasetWorst) {
+      if (isDatasetWorstUnder) {
         return `${club}'s healthy list did not translate — they finished ${absDelta} places below expectation, the worst gap in our 2021–2025 data.`
       }
       return `${club} had one of the league's healthiest lists but still finished ${ladderPhrase(ladderRank)} — ${absDelta} places below where unavailability suggested.`
@@ -210,7 +222,7 @@ export function generateHeadline(
     return `${club} battled one of the league's worst injury tolls, finishing ${ladderPhrase(ladderRank)}.`
   }
 
-  return `${club}'s ladder finish (${ladderPhrase(ladderRank)}) broadly matched its injury profile.`
+  return `${club}'s ladder finish (${ladderPhrase(ladderRank)}) matched expectation for its injury profile.`
 }
 
 /**
@@ -221,6 +233,7 @@ export function generateSubheadline(
   data: ClubSeasonStoryData,
   clubHistory: LadderPvsSeasonRank[],
   worstPositiveDeltaInDataset?: number,
+  worstNegativeDeltaInDataset?: number,
 ): string | null {
   if (
     worstPositiveDeltaInDataset != null &&
@@ -228,6 +241,15 @@ export function generateSubheadline(
     data.rankDelta >= worstPositiveDeltaInDataset
   ) {
     return `This is the largest gap between injury luck and ladder finish in our 2021–2025 dataset (+${data.rankDelta} rank delta).`
+  }
+
+  if (
+    worstNegativeDeltaInDataset != null &&
+    data.rankDelta < 0 &&
+    data.rankDelta <= worstNegativeDeltaInDataset &&
+    data.pvsLostRank < HARDEST_HIT_THRESHOLD
+  ) {
+    return `This is the largest overperformance vs unavailability in our 2021–2025 dataset (${data.rankDelta} rank delta).`
   }
 
   const reliable = clubHistory.filter((h) => h.season >= MIN_SEASON)
@@ -264,7 +286,7 @@ export function generateClubSeasonSummary(data: ClubSeasonStoryData): string {
 
   let para1: string
   if (absDelta <= SIGNIFICANT_DELTA) {
-    para1 = `${club}'s ${season} season saw a ${ladderPhrase(ladderRank)} finish with an injury-impact rank of ${pvsLostRank} (${injuryDesc}) — broadly in line with each other.`
+    para1 = `${club}'s ${season} season saw a ${ladderPhrase(ladderRank)} finish with an injury-impact rank of ${pvsLostRank} (${injuryDesc}) — matched expectation.`
   } else if (isSignificantOverperform(rankDelta)) {
     para1 = `${club}'s ${season} season stands out: they finished ${absDelta} places higher on the ladder than their injury toll suggested, ending ${ladderPhrase(ladderRank)} despite ranking ${pvsLostRank} for injury impact (${injuryDesc}).`
   } else if (isSignificantUnderperform(rankDelta)) {
@@ -345,7 +367,7 @@ export function generateShareHeadlines(data: ClubSeasonStoryData): string[] {
       `${club} had the AFL's lightest injury toll in ${season} — they finished ${ladderPhrase(ladderRank)}`,
     )
   } else if (absDelta <= SIGNIFICANT_DELTA) {
-    headlines.push(`${club}'s ${season} ladder finish broadly matched its injury profile`)
+    headlines.push(`${club}'s ${season} ladder finish matched expectation for its injury profile`)
   } else if (isSignificantOverperform(rankDelta)) {
     headlines.push(
       `${club} ${season}: finished ${absDelta} places above where injuries suggested`,
@@ -420,6 +442,23 @@ export function maxPositiveRankDelta(
     }
   }
   return max
+}
+
+/** Min (most negative) rank delta across club-seasons in the reliable window (2021+). */
+export function minNegativeRankDelta(
+  byClub: Record<string, LadderPvsSeasonRank[]> | undefined,
+  maxSeason: number = CHART_MAX_SEASON,
+): number {
+  if (!byClub) return 0
+  let min = 0
+  for (const history of Object.values(byClub)) {
+    for (const row of history) {
+      if (row.season >= MIN_SEASON && row.season <= maxSeason && row.rankDelta < min) {
+        min = row.rankDelta
+      }
+    }
+  }
+  return min
 }
 
 /** Simple linear regression R² for model-fit scatter (x = injury rank, y = ladder rank). */

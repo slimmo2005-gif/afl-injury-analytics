@@ -32,6 +32,7 @@ import {
   generateSubheadline,
   getMetricCardContent,
   maxPositiveRankDelta,
+  minNegativeRankDelta,
   rankDeltaPerformanceLabel,
   type StoryAccent,
 } from '../utils/clubSeasonStory'
@@ -135,6 +136,10 @@ export default function ClubDetail() {
     () => maxPositiveRankDelta(bundle.ladderPvsRanks?.byClub),
     [bundle.ladderPvsRanks?.byClub],
   )
+  const worstNegativeDelta = useMemo(
+    () => minNegativeRankDelta(bundle.ladderPvsRanks?.byClub),
+    [bundle.ladderPvsRanks?.byClub],
+  )
 
   const storyData = useMemo(() => {
     if (!currentRank) return null
@@ -147,9 +152,11 @@ export default function ClubDetail() {
     )
   }, [currentRank, filters.club, filters.season, totalUnavailable, top5])
 
-  const headline = storyData ? generateHeadline(storyData, worstPositiveDelta) : null
+  const headline = storyData
+    ? generateHeadline(storyData, worstPositiveDelta, worstNegativeDelta)
+    : null
   const subheadline = storyData
-    ? generateSubheadline(storyData, fullHistory, worstPositiveDelta)
+    ? generateSubheadline(storyData, fullHistory, worstPositiveDelta, worstNegativeDelta)
     : null
   const summary = storyData ? generateClubSeasonSummary(storyData) : null
   const metricCards = storyData ? getMetricCardContent(storyData) : []
