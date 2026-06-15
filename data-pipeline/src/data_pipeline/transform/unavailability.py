@@ -4,6 +4,12 @@ from __future__ import annotations
 
 import duckdb
 
+# Rounds that count toward injury-impact PVS (excludes VFL-only reserves weeks).
+GAMES_MISSED_STATUSES = ("unavailable", "intermittent", "injured", "unclear")
+GAMES_MISSED_STATUS_SQL = (
+    "('unavailable', 'intermittent', 'injured', 'unclear')"
+)
+
 
 def enrich_availability_status(con: duckdb.DuckDBPyConnection) -> None:
     """Classify intermittent absences (played recently but not this round)."""
@@ -37,7 +43,7 @@ def enrich_availability_status(con: duckdb.DuckDBPyConnection) -> None:
 def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
     con.execute("DELETE FROM team_round_value")
     con.execute(
-        """
+        f"""
         INSERT INTO team_round_value (
             team,
             season,
@@ -94,7 +100,7 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
                     ORDER BY injury_pvs DESC
                 ) AS pvs_rank
             FROM unavail
-            WHERE status IN ('unavailable', 'intermittent')
+            WHERE status IN {GAMES_MISSED_STATUS_SQL}
         ),
         injury_top5 AS (
             SELECT team, season, round, SUM(injury_pvs) AS unavailable_pvs_top5
@@ -114,7 +120,7 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
                 SUM(CASE WHEN status = 'intermittent' THEN injury_pvs ELSE 0 END) AS unavailable_pvs_intermittent,
                 SUM(CASE WHEN status = 'vfl_only' THEN injury_pvs ELSE 0 END) AS unavailable_pvs_vfl_only,
                 SUM(
-                    CASE WHEN status IN ('unavailable', 'intermittent', 'injured', 'unclear')
+                    CASE WHEN status IN {GAMES_MISSED_STATUS_SQL}
                     THEN injury_pvs ELSE 0 END
                 ) AS unavailable_pvs_games_missed
             FROM ranked

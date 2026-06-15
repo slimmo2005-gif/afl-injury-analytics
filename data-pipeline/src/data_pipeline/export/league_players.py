@@ -15,6 +15,7 @@ from ..db import connect as db_connect
 from ..ingest.fryzigg import normalize_team
 from ..transform.archetypes import ARCHETYPE_LABELS, resolve_archetype
 from ..transform.pvs import PERFORMANCE_METRICS, compute_raw_composite, scale_performance_score
+from ..transform.unavailability import GAMES_MISSED_STATUS_SQL
 
 EXTRA_STAT_COLS = ("marks_inside_fifty", "intercept_marks")
 
@@ -24,21 +25,27 @@ def build_league_injury_summary(con: duckdb.DuckDBPyConnection, season: int) -> 
     return con.execute(
         """
         WITH ha AS (
-            SELECT season, round FROM matches WHERE round > 0 AND season = ?
+            SELECT season, round FROM matches
+            WHERE round > 0 AND round <= 24 AND season = ?
             GROUP BY 1, 2 HAVING COUNT(*) > 4
         ),
         ladder AS (
             SELECT team, season,
                 SUM(won) AS wins,
-                RANK() OVER (ORDER BY SUM(won) DESC, 100.0*SUM(pf)/NULLIF(SUM(pa),0) DESC) AS ladder_rank
+                RANK() OVER (
+                    ORDER BY SUM(won) * 4 + SUM(drew) * 2 DESC,
+                             100.0 * SUM(pf) / NULLIF(SUM(pa), 0) DESC
+                ) AS ladder_rank
             FROM (
                 SELECT m.season, m.home_team AS team,
                        CASE WHEN m.winner_team = m.home_team THEN 1 ELSE 0 END AS won,
+                       CASE WHEN m.home_score = m.away_score THEN 1 ELSE 0 END AS drew,
                        m.home_score AS pf, m.away_score AS pa
                 FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
                 UNION ALL
                 SELECT m.season, m.away_team,
                        CASE WHEN m.winner_team = m.away_team THEN 1 ELSE 0 END,
+                       CASE WHEN m.home_score = m.away_score THEN 1 ELSE 0 END,
                        m.away_score, m.home_score
                 FROM matches m INNER JOIN ha ON m.season = ha.season AND m.round = ha.round
             ) x
@@ -190,7 +197,7 @@ def _season_stats_from_rds(season: int) -> pd.DataFrame:
 
 def build_league_players_df(con: duckdb.DuckDBPyConnection, season: int) -> pd.DataFrame:
     ratings = con.execute(
-        """
+        f"""
         SELECT
             v.player_id,
             p.player_name,
@@ -212,7 +219,7 @@ def build_league_players_df(con: duckdb.DuckDBPyConnection, season: int) -> pd.D
             ROUND(
                 SUM(
                     CASE
-                        WHEN a.status IN ('unavailable', 'intermittent')
+                        WHEN a.status IN {GAMES_MISSED_STATUS_SQL}
                         THEN COALESCE(v.injury_weight_pvs, v.pvs)
                         ELSE 0
                     END

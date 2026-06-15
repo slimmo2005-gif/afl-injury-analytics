@@ -12,6 +12,7 @@ from ..config import DB_PATH, ROOT
 from ..db import connect as db_connect
 from ..export.league_players import build_league_injury_summary, build_league_players_df, build_notes_df
 from ..transform.archetypes import ARCHETYPE_LABELS
+from ..transform.unavailability import GAMES_MISSED_STATUS_SQL
 
 
 def _league_injury_comparison(con: duckdb.DuckDBPyConnection, season: int) -> pd.DataFrame:
@@ -41,7 +42,7 @@ def _club_round_pvs(con: duckdb.DuckDBPyConnection, team: str, season: int) -> p
 
 def _club_top_missed(con: duckdb.DuckDBPyConnection, team: str, season: int) -> pd.DataFrame:
     return con.execute(
-        """
+        f"""
         SELECT
             p.player_name,
             p.archetype,
@@ -56,7 +57,7 @@ def _club_top_missed(con: duckdb.DuckDBPyConnection, team: str, season: int) -> 
             ROUND(
                 SUM(
                     CASE
-                        WHEN a.status IN ('unavailable', 'intermittent')
+                        WHEN a.status IN {GAMES_MISSED_STATUS_SQL}
                         THEN COALESCE(v.injury_weight_pvs, v.pvs)
                         ELSE 0
                     END
@@ -78,12 +79,12 @@ def _club_top_missed(con: duckdb.DuckDBPyConnection, team: str, season: int) -> 
 
 def _club_archetype_injury(con: duckdb.DuckDBPyConnection, team: str, season: int) -> pd.DataFrame:
     return con.execute(
-        """
+        f"""
         SELECT
             p.archetype,
             COUNT(DISTINCT a.player_id) AS players,
             COUNT(*) FILTER (WHERE NOT a.afl_played) AS missed_slots,
-            ROUND(SUM(CASE WHEN a.status IN ('unavailable', 'intermittent') THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1)
+            ROUND(SUM(CASE WHEN a.status IN {GAMES_MISSED_STATUS_SQL} THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END), 1)
                 AS pvs_games_missed
         FROM availability a
         JOIN player_value v ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
@@ -129,7 +130,8 @@ def _context_notes(team: str, season: int, league: pd.DataFrame) -> pd.DataFrame
                 int(r["rank_top5_sum"]),
                 int(r["rank_slots_lost"]),
                 (
-                    "PVS-lost rank uses games-missed PVS (unavailable + intermittent only, excludes VFL-only). "
+                    "PVS-lost rank uses games-missed PVS (unavailable, intermittent, injured, and "
+                    "unclear; excludes VFL-only). "
                     "Injury weights use injury_weight_pvs when a player played <14 games: max(season PVS, "
                     "last established season with 10+ games). A club can look 'injury cursed' if many squad "
                     "players miss weeks, but rank moves on PVS weight — missing stars hurts more than missing "

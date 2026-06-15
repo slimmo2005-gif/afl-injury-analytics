@@ -11,6 +11,7 @@ import numpy as np
 
 from ..config import DEFAULT_SEASON, FRONTEND_DATA, SHARED_OUTPUT
 from ..transform.continuity import continuity_for_season
+from ..transform.unavailability import GAMES_MISSED_STATUS_SQL
 from .core22_impact import build_core22_impact_bundle
 from .ladder_pvs_ranks import build_ladder_pvs_ranks_bundle
 from ..transform.availability_adjustments import adjustment_key_injuries_index
@@ -50,10 +51,14 @@ def _linear_regression(x: np.ndarray, y: np.ndarray) -> tuple[float, float, floa
     return intercept, slope, r2
 
 
-def _player_status(row) -> str:
-    if row["status"] == "intermittent":
-        return "intermittent"
-    if row.get("vfl_played"):
+def _player_status(row, injury_pvs: float | None = None) -> str:
+    """Display status for a missed player; avoid VFL label when injury PVS dominates."""
+    pvs = injury_pvs if injury_pvs is not None else float(row.get("unavailable_pvs") or 0)
+    if pvs > 0:
+        if row.get("status") == "intermittent" or row.get("has_intermittent_missed"):
+            return "intermittent"
+        return "unavailable"
+    if row.get("vfl_played") or row.get("any_vfl"):
         return "vfl_only"
     return "unavailable"
 
@@ -134,16 +139,18 @@ def build_season_bundle(
         ]
 
     top_players = con.execute(
-        """
+        f"""
         SELECT
             a.player_name AS player,
             a.team AS club,
             MAX(a.status) AS status,
+            BOOL_OR(a.status = 'intermittent' AND NOT a.afl_played) AS has_intermittent_missed,
+            BOOL_OR(COALESCE(a.vfl_played, FALSE)) AS any_vfl,
             COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
             MAX(COALESCE(v.injury_weight_pvs, v.pvs)) AS pvs,
             SUM(
                 CASE
-                    WHEN NOT a.afl_played AND a.status IN ('unavailable', 'intermittent')
+                    WHEN NOT a.afl_played AND a.status IN {GAMES_MISSED_STATUS_SQL}
                     THEN COALESCE(v.injury_weight_pvs, v.pvs)
                     ELSE 0
                 END
@@ -208,13 +215,13 @@ def build_season_bundle(
             "roundsMissed": int(row["rounds_missed"]),
             "pvs": round(float(row["pvs"]), 1),
             "unavailablePvs": round(float(row["unavailable_pvs"]), 1),
-            "status": _player_status(row),
+            "status": _player_status(row, float(row["unavailable_pvs"])),
         }
         for _, row in top_players.iterrows()
     ]
 
     club_top_players = con.execute(
-        """
+        f"""
         WITH player_agg AS (
             SELECT
                 a.player_id,
@@ -222,11 +229,12 @@ def build_season_bundle(
                 a.team AS club,
                 MAX(a.status) AS status,
                 BOOL_OR(COALESCE(a.vfl_played, FALSE)) AS any_vfl,
+                BOOL_OR(a.status = 'intermittent' AND NOT a.afl_played) AS has_intermittent_missed,
                 COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
                 MAX(COALESCE(v.injury_weight_pvs, v.pvs)) AS pvs,
                 SUM(
                     CASE
-                        WHEN NOT a.afl_played AND a.status IN ('unavailable', 'intermittent')
+                        WHEN NOT a.afl_played AND a.status IN {GAMES_MISSED_STATUS_SQL}
                         THEN COALESCE(v.injury_weight_pvs, v.pvs)
                         ELSE 0
                     END
@@ -276,9 +284,8 @@ def build_season_bundle(
     manual_labels = adjustment_key_injuries_index()
     top_by_club: dict[str, list] = {}
     for _, row in club_top_players.iterrows():
-        status = "intermittent" if row["status"] == "intermittent" else (
-            "vfl_only" if row["any_vfl"] else "unavailable"
-        )
+        injury_pvs = float(row["unavailable_pvs"])
+        status = _player_status(row, injury_pvs)
         raw_injuries = row["injury_types"]
         episode_labels: list[str] = []
         if raw_injuries is not None:

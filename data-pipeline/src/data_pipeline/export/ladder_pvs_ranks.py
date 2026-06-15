@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-import duckdb
+from ..transform.unavailability import GAMES_MISSED_STATUS_SQL
 
 WINDOW_YEARS = 5
 
@@ -10,23 +10,25 @@ WINDOW_YEARS = 5
 def build_ladder_pvs_ranks_bundle(con: duckdb.DuckDBPyConnection) -> dict:
     """Per-club season ranks: ladder position vs PVS games-missed rank."""
     rows = con.execute(
-        """
+        f"""
         WITH ha_rounds AS (
             SELECT season, round
             FROM matches
-            WHERE round > 0
+            WHERE round > 0 AND round <= 24
             GROUP BY season, round
             HAVING COUNT(*) > 4
         ),
         team_results AS (
             SELECT m.season, m.home_team AS team,
                    CASE WHEN m.winner_team = m.home_team THEN 1 ELSE 0 END AS won,
+                   CASE WHEN m.home_score = m.away_score THEN 1 ELSE 0 END AS drew,
                    m.home_score AS pf, m.away_score AS pa
             FROM matches m
             INNER JOIN ha_rounds r ON m.season = r.season AND m.round = r.round
             UNION ALL
             SELECT m.season, m.away_team,
                    CASE WHEN m.winner_team = m.away_team THEN 1 ELSE 0 END,
+                   CASE WHEN m.home_score = m.away_score THEN 1 ELSE 0 END,
                    m.away_score, m.home_score
             FROM matches m
             INNER JOIN ha_rounds r ON m.season = r.season AND m.round = r.round
@@ -36,6 +38,8 @@ def build_ladder_pvs_ranks_bundle(con: duckdb.DuckDBPyConnection) -> dict:
                 team,
                 season,
                 SUM(won) AS wins,
+                SUM(drew) AS draws,
+                SUM(won) * 4 + SUM(drew) * 2 AS premiership_points,
                 SUM(pf) AS points_for,
                 SUM(pa) AS points_against,
                 CASE WHEN SUM(pa) > 0 THEN 100.0 * SUM(pf) / SUM(pa) ELSE 0 END AS percentage
@@ -47,12 +51,14 @@ def build_ladder_pvs_ranks_bundle(con: duckdb.DuckDBPyConnection) -> dict:
                 team,
                 season,
                 wins,
+                draws,
+                premiership_points,
                 points_for,
                 points_against,
                 percentage,
                 RANK() OVER (
                     PARTITION BY season
-                    ORDER BY wins DESC, percentage DESC, points_for DESC
+                    ORDER BY premiership_points DESC, percentage DESC, points_for DESC
                 ) AS ladder_rank
             FROM ladder
         ),
@@ -64,7 +70,7 @@ def build_ladder_pvs_ranks_bundle(con: duckdb.DuckDBPyConnection) -> dict:
                     SUM(
                         CASE
                             WHEN NOT a.afl_played
-                                 AND a.status IN ('unavailable', 'intermittent')
+                                 AND a.status IN {GAMES_MISSED_STATUS_SQL}
                             THEN COALESCE(v.injury_weight_pvs, v.pvs)
                             ELSE 0
                         END
@@ -125,7 +131,8 @@ def build_ladder_pvs_ranks_bundle(con: duckdb.DuckDBPyConnection) -> dict:
         "clubs": sorted(clubs),
         "byClub": by_club,
         "interpretation": (
-            "Ladder rank from home-and-away wins and percentage. PVS-lost rank sorts clubs "
+            "Ladder rank from home-and-away premiership points (4 per win, 2 per draw), "
+            "then percentage. PVS-lost rank sorts clubs "
             "by season games-missed PVS (rank 1 = fewest lost). Injury weights use "
             "injury_weight_pvs for players with fewer than 14 games played. Rank delta = ladder rank − "
             "PVS-lost rank: negative means the club finished higher on the ladder than its "
