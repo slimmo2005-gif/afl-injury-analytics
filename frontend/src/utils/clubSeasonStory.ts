@@ -31,18 +31,64 @@ export interface MetricCardContent {
   accent: StoryAccent
 }
 
+/** Only claim clear over/underperformance above this many ladder places. */
+export const SIGNIFICANT_DELTA = 4
+
 const HARDEST_HIT_THRESHOLD = LADDER_SIZE - 2 // pvsLostRank >= 16
 const HEALTHIEST_THRESHOLD = 3 // pvsLostRank <= 3
+
+const CLUB_SHORT: Record<string, string> = {
+  'Brisbane Lions': 'Lions',
+  'Gold Coast': 'Suns',
+  'Greater Western Sydney': 'Giants',
+  'North Melbourne': 'Kangaroos',
+  'Port Adelaide': 'Power',
+  'St Kilda': 'Saints',
+  'West Coast': 'Eagles',
+  'Western Bulldogs': 'Bulldogs',
+  Geelong: 'Cats',
+  Essendon: 'Bombers',
+  Collingwood: 'Magpies',
+  Hawthorn: 'Hawks',
+  Melbourne: 'Demons',
+  Richmond: 'Tigers',
+  Sydney: 'Swans',
+  Adelaide: 'Crows',
+  Carlton: 'Blues',
+  Fremantle: 'Dockers',
+}
+
+function clubLabel(club: string): string {
+  return CLUB_SHORT[club] ?? club
+}
+
+function ordinal(n: number): string {
+  const s = ['th', 'st', 'nd', 'rd']
+  const v = n % 100
+  return s[(v - 20) % 10] || s[v] || s[0]
+}
+
+function ladderPhrase(rank: number): string {
+  return `${rank}${ordinal(rank)}`
+}
+
+function isSignificantOverperform(rankDelta: number): boolean {
+  return rankDelta <= -(SIGNIFICANT_DELTA + 1)
+}
+
+function isSignificantUnderperform(rankDelta: number): boolean {
+  return rankDelta >= SIGNIFICANT_DELTA + 1
+}
 
 /**
  * Classify rank delta for tables and styling.
  * Negative delta = outperformed injury profile; positive = underperformed.
  */
 export function getDeltaCategory(rankDelta: number): DeltaCategory {
-  if (rankDelta <= -4) return 'massive_outperformer'
-  if (rankDelta <= -2) return 'outperformed'
-  if (rankDelta >= 4) return 'major_underperformer'
-  if (rankDelta >= 2) return 'underperformed'
+  if (rankDelta <= -5) return 'massive_outperformer'
+  if (rankDelta <= -3) return 'outperformed'
+  if (rankDelta >= 5) return 'major_underperformer'
+  if (rankDelta >= 3) return 'underperformed'
   return 'matched'
 }
 
@@ -65,63 +111,71 @@ export function getDeltaInterpretation(rankDelta: number): string {
 
 /** Short label for the ladder-vs-injuries metric card. */
 export function getDeltaLabel(rankDelta: number): string {
+  const abs = Math.abs(rankDelta)
+  if (abs <= SIGNIFICANT_DELTA) return 'Broadly matched'
   if (rankDelta > 0) return `+${rankDelta} places`
-  if (rankDelta < 0) return `${rankDelta} places`
-  return 'Matched'
+  return `${rankDelta} places`
 }
 
 export function getDeltaSubtitle(rankDelta: number): string {
+  const abs = Math.abs(rankDelta)
+  if (abs <= SIGNIFICANT_DELTA) return 'Ladder finish broadly matched injury profile'
   if (rankDelta > 0) return 'Finished lower than injury profile suggested'
-  if (rankDelta < 0) return 'Finished higher than injury profile suggested'
-  return 'Finished exactly as injury profile suggested'
+  return 'Finished higher than injury profile suggested'
 }
 
 export function getDeltaAccent(rankDelta: number): StoryAccent {
-  if (rankDelta <= -2) return 'positive'
-  if (rankDelta >= 2) return 'warning'
+  if (isSignificantOverperform(rankDelta)) return 'positive'
+  if (isSignificantUnderperform(rankDelta)) return 'warning'
   return 'neutral'
 }
 
-function injuryTollQualifier(pvsLostRank: number): string | null {
-  if (pvsLostRank >= HARDEST_HIT_THRESHOLD) {
-    return 'one of the AFL\'s worst injury tolls'
-  }
-  if (pvsLostRank <= HEALTHIEST_THRESHOLD) {
-    return 'one of the AFL\'s healthiest lists'
-  }
-  return null
-}
-
 /**
- * Hero headline answering “Did injuries explain this club’s season?”
- * Uses rank delta; appends injury-toll context when extreme.
+ * Hero headline — only uses strong over/under language when |rankDelta| > 4.
+ * Otherwise describes injury toll and ladder finish in neutral terms.
  */
 export function generateHeadline(data: ClubSeasonStoryData): string {
-  const { club, rankDelta, pvsLostRank } = data
+  const { club, ladderRank, pvsLostRank, rankDelta } = data
   const absDelta = Math.abs(rankDelta)
-  let base: string
+  const label = clubLabel(club)
+  const hardestInLeague = pvsLostRank === LADDER_SIZE
+  const healthiestInLeague = pvsLostRank === 1
 
-  if (absDelta <= 1) {
-    base = `${club} finished almost exactly where its injury profile suggested.`
-  } else if (rankDelta >= 2) {
-    base = `${club} finished ${rankDelta} places lower than its injury profile suggested.`
-  } else {
-    base = `${club} finished ${absDelta} places higher than its injury profile suggested.`
+  if (isSignificantOverperform(rankDelta)) {
+    if (pvsLostRank >= HARDEST_HIT_THRESHOLD) {
+      return `${club} overcame one of the league's heaviest injury tolls to finish ${ladderPhrase(ladderRank)}.`
+    }
+    return `${club} finished ${absDelta} places above where their injury profile suggested.`
   }
 
-  const qualifier = injuryTollQualifier(pvsLostRank)
-  if (!qualifier) return base
+  if (isSignificantUnderperform(rankDelta)) {
+    if (pvsLostRank <= HEALTHIEST_THRESHOLD) {
+      return `${club}'s relatively healthy list did not translate — they finished ${absDelta} places below expectation.`
+    }
+    if (pvsLostRank >= HARDEST_HIT_THRESHOLD) {
+      return `${club}'s heavy injury toll aligns with a ${ladderPhrase(ladderRank)} finish.`
+    }
+    return `${club} finished ${absDelta} places lower than their injury profile suggested.`
+  }
 
-  if (rankDelta <= -2) {
-    return `${club} overcame ${qualifier}.`
+  // Moderate delta (±4 or less): lead with injury facts, not over/under claims.
+  if (healthiestInLeague) {
+    return `The ${label} had the least injury impact of any team, finishing ${ladderPhrase(ladderRank)}.`
   }
-  if (absDelta <= 1) {
-    return `${club} stayed near expectation despite ${qualifier === 'one of the AFL\'s healthiest lists' ? 'a healthy list' : 'a moderate injury toll'}.`
+  if (hardestInLeague) {
+    if (ladderRank >= 15) {
+      return `${club}'s injury toll was the heaviest in the league, keeping them near the bottom at ${ladderPhrase(ladderRank)}.`
+    }
+    return `${club}'s injury toll was the heaviest in the league, finishing ${ladderPhrase(ladderRank)}.`
   }
-  if (qualifier === 'one of the AFL\'s worst injury tolls' && rankDelta >= 2) {
-    return `${club} finished ${rankDelta} places lower — consistent with ${qualifier}.`
+  if (pvsLostRank <= HEALTHIEST_THRESHOLD) {
+    return `${club} had one of the league's healthiest lists, finishing ${ladderPhrase(ladderRank)}.`
   }
-  return `${base} They had ${qualifier}.`
+  if (pvsLostRank >= HARDEST_HIT_THRESHOLD) {
+    return `${club} battled one of the league's worst injury tolls, finishing ${ladderPhrase(ladderRank)}.`
+  }
+
+  return `${club}'s ladder finish (${ladderPhrase(ladderRank)}) broadly matched its injury profile.`
 }
 
 /**
@@ -138,51 +192,48 @@ export function generateSubheadline(
   const minPvs = Math.min(...pvsValues)
 
   if (data.seasonUnavailablePvs >= maxPvs - 0.05) {
-    return `This was ${data.club}'s worst unavailability season in the dataset.`
+    return `This was ${data.club}'s heaviest injury-impact season in the dataset.`
   }
   if (data.seasonUnavailablePvs <= minPvs + 0.05) {
-    return `This was ${data.club}'s healthiest season in the dataset.`
+    return `This was ${data.club}'s lightest injury-impact season in the dataset.`
   }
   return null
 }
 
 /** 2–3 sentence conversational summary; avoids claiming injuries caused outcomes. */
 export function generateClubSeasonSummary(data: ClubSeasonStoryData): string {
-  const {
-    club,
-    season,
-    ladderRank,
-    pvsLostRank,
-    rankDelta,
-    seasonUnavailablePvs,
-    wins,
-  } = data
+  const { club, season, ladderRank, pvsLostRank, rankDelta, seasonUnavailablePvs, wins } =
+    data
   const absDelta = Math.abs(rankDelta)
   const injuryDesc =
-    pvsLostRank >= HARDEST_HIT_THRESHOLD
-      ? 'one of the hardest-hit lists in the league'
-      : pvsLostRank <= HEALTHIEST_THRESHOLD
-        ? 'a relatively healthy list by PVS lost'
-        : 'a mid-range injury profile'
+    pvsLostRank === LADDER_SIZE
+      ? 'the heaviest injury toll in the league'
+      : pvsLostRank === 1
+        ? 'the lightest injury toll in the league'
+        : pvsLostRank >= HARDEST_HIT_THRESHOLD
+          ? 'one of the harder-hit lists in the league'
+          : pvsLostRank <= HEALTHIEST_THRESHOLD
+            ? 'one of the healthier lists by PVS lost'
+            : 'a mid-range injury profile'
 
   let para1: string
-  if (absDelta <= 1) {
-    para1 = `${club}'s ${season} ladder position closely tracked its injury-impact profile. The club finished ${ladderRank}${ordinal(ladderRank)} with an injury-impact rank of ${pvsLostRank} (${injuryDesc}).`
-  } else if (rankDelta <= -2) {
-    para1 = `${club}'s ${season} season stands out because they finished ${absDelta} places higher on the ladder than their injury toll suggested. They ended ${ladderRank}${ordinal(ladderRank)} despite ranking ${pvsLostRank} for injury impact — ${injuryDesc}.`
+  if (absDelta <= SIGNIFICANT_DELTA) {
+    para1 = `${club}'s ${season} season saw a ${ladderPhrase(ladderRank)} finish with an injury-impact rank of ${pvsLostRank} (${injuryDesc}) — broadly in line with each other.`
+  } else if (isSignificantOverperform(rankDelta)) {
+    para1 = `${club}'s ${season} season stands out: they finished ${absDelta} places higher on the ladder than their injury toll suggested, ending ${ladderPhrase(ladderRank)} despite ranking ${pvsLostRank} for injury impact (${injuryDesc}).`
   } else {
-    para1 = `${club}'s ${season} finish (${ladderRank}${ordinal(ladderRank)} on the ladder) was ${absDelta} places lower than their injury-impact rank of ${pvsLostRank} suggested — ${injuryDesc}.`
+    para1 = `${club}'s ${season} finish (${ladderPhrase(ladderRank)}) landed ${absDelta} places lower than their injury-impact rank of ${pvsLostRank} suggested — ${injuryDesc}.`
   }
 
   let para2: string
-  if (rankDelta <= -2) {
+  if (isSignificantOverperform(rankDelta)) {
     para2 =
-      'That pattern may indicate strong depth, good coaching, or that available players outperformed their baseline value — not that injuries were irrelevant.'
-  } else if (rankDelta >= 2) {
+      'That gap may indicate strong depth or available players outperforming their baseline — not that injuries were irrelevant.'
+  } else if (isSignificantUnderperform(rankDelta)) {
     para2 =
-      'That gap is consistent with injuries weighing on results, though form, fixture, and list quality also shape where a club lands.'
+      'That pattern is consistent with injuries weighing on results, though form, fixture, and list quality also matter.'
   } else {
-    para2 = `With ${wins} wins and ${seasonUnavailablePvs.toFixed(0)} total PVS lost, their season story aligns with what the injury model would expect.`
+    para2 = `With ${wins} wins and ${seasonUnavailablePvs.toFixed(0)} PVS lost to injury-listed absences, the season story fits a moderate injury–ladder relationship.`
   }
 
   return `${para1} ${para2}`
@@ -199,7 +250,7 @@ export function getMetricCardContent(data: ClubSeasonStoryData): MetricCardConte
     {
       title: 'Injury impact',
       mainValue: pvs,
-      subtitle: 'Total PVS lost',
+      subtitle: 'Total PVS lost (injury absences only)',
       accent: 'neutral',
     },
     {
@@ -233,30 +284,32 @@ export function getMetricCardContent(data: ClubSeasonStoryData): MetricCardConte
 
 /** Three share-friendly headlines for Reddit/X. */
 export function generateShareHeadlines(data: ClubSeasonStoryData): string[] {
-  const { club, season, rankDelta, pvsLostRank } = data
+  const { club, season, rankDelta, pvsLostRank, ladderRank } = data
   const absDelta = Math.abs(rankDelta)
 
   const headlines: string[] = []
 
-  if (absDelta <= 1) {
+  if (pvsLostRank === 1) {
     headlines.push(
-      `${club}'s ${season} ladder finish almost perfectly matched its injury profile`,
+      `${club} had the AFL's lightest injury toll in ${season} — they finished ${ladderPhrase(ladderRank)}`,
     )
-  } else if (rankDelta <= -2) {
+  } else if (absDelta <= SIGNIFICANT_DELTA) {
+    headlines.push(`${club}'s ${season} ladder finish broadly matched its injury profile`)
+  } else if (isSignificantOverperform(rankDelta)) {
     headlines.push(
       `${club} ${season}: finished ${absDelta} places above where injuries suggested`,
     )
   } else {
     headlines.push(
-      `${club} ${season}: injuries may explain finishing ${absDelta} places below expectation`,
+      `${club} ${season}: finished ${absDelta} places below where injuries suggested`,
     )
   }
 
-  headlines.push('The AFL Injury Luck Ladder: who overachieved despite injuries?')
+  headlines.push('The AFL Injury Luck Ladder: who outperformed despite injuries?')
   headlines.push(`Which clubs were actually hurt most by injuries in ${season}?`)
 
-  if (pvsLostRank >= HARDEST_HIT_THRESHOLD) {
-    headlines[2] = `${club} had one of the AFL's worst injury tolls in ${season} — did it show on the ladder?`
+  if (pvsLostRank === LADDER_SIZE) {
+    headlines[2] = `${club} carried the heaviest injury toll in ${season} — did it show on the ladder?`
   }
 
   return headlines.slice(0, 3)
@@ -270,19 +323,13 @@ export function chartTooltipNarrative(
   rankDelta: number,
 ): string {
   const absDelta = Math.abs(rankDelta)
-  if (absDelta <= 1) {
-    return `${club} finished ${ladderRank}${ordinal(ladderRank)} and ranked ${pvsLostRank} for injury impact — closely matched.`
+  if (absDelta <= SIGNIFICANT_DELTA) {
+    return `${club} finished ${ladderPhrase(ladderRank)} with injury-impact rank ${pvsLostRank} — broadly matched.`
   }
   if (rankDelta > 0) {
-    return `${club} finished ${ladderRank}${ordinal(ladderRank)} and ranked ${pvsLostRank} for injury impact, meaning they finished ${rankDelta} places lower than expected from their injury profile.`
+    return `${club} finished ${ladderPhrase(ladderRank)} and ranked ${pvsLostRank} for injury impact, finishing ${rankDelta} places lower than expected.`
   }
-  return `${club} finished ${ladderRank}${ordinal(ladderRank)} and ranked ${pvsLostRank} for injury impact, meaning they finished ${absDelta} places higher than expected from their injury profile.`
-}
-
-function ordinal(n: number): string {
-  const s = ['th', 'st', 'nd', 'rd']
-  const v = n % 100
-  return s[(v - 20) % 10] || s[v] || s[0]
+  return `${club} finished ${ladderPhrase(ladderRank)} and ranked ${pvsLostRank} for injury impact, finishing ${absDelta} places higher than expected.`
 }
 
 /** Build story data from ladder rank row + club ranking totals. */
@@ -300,7 +347,8 @@ export function buildClubSeasonStoryData(
     ladderRank: rank.ladderRank,
     pvsLostRank: rank.pvsLostRank,
     rankDelta: rank.rankDelta,
-    seasonUnavailablePvs: seasonUnavailablePvs || rank.pvsLost,
+    // Prefer ladder bundle PVS (injury absences only) over round-chart totals.
+    seasonUnavailablePvs: rank.pvsLost || seasonUnavailablePvs,
     top5UnavailablePvs,
   }
 }

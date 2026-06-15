@@ -45,7 +45,7 @@ def build_season_bundle(
         SELECT
             tr.team AS club,
             tr.season,
-            SUM(COALESCE(v.unavailable_pvs_total, 0)) AS unavailable_value,
+            SUM(COALESCE(v.unavailable_pvs_games_missed, 0)) AS unavailable_value,
             SUM(COALESCE(v.unavailable_pvs_top5, 0)) AS unavailable_top5,
             SUM(tr.players_unavailable) AS unavailable_slots,
             SUM(CASE WHEN tr.won THEN 1 ELSE 0 END) AS actual_wins,
@@ -83,7 +83,7 @@ def build_season_bundle(
             """
             SELECT
                 tr.round,
-                COALESCE(v.unavailable_pvs_total, 0) AS value,
+                COALESCE(v.unavailable_pvs_games_missed, 0) AS value,
                 COALESCE(v.unavailable_pvs_top5, 0) AS top5,
                 CASE WHEN tr.won THEN 1 ELSE 0 END AS wins
             FROM team_round_summary tr
@@ -118,7 +118,13 @@ def build_season_bundle(
             MAX(a.status) AS status,
             COUNT(*) FILTER (WHERE NOT a.afl_played) AS rounds_missed,
             MAX(COALESCE(v.injury_weight_pvs, v.pvs)) AS pvs,
-            SUM(CASE WHEN NOT a.afl_played THEN COALESCE(v.injury_weight_pvs, v.pvs) ELSE 0 END) AS unavailable_pvs
+            SUM(
+                CASE
+                    WHEN NOT a.afl_played AND a.status IN ('unavailable', 'intermittent')
+                    THEN COALESCE(v.injury_weight_pvs, v.pvs)
+                    ELSE 0
+                END
+            ) AS unavailable_pvs
         FROM availability a
         JOIN player_value v
             ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season

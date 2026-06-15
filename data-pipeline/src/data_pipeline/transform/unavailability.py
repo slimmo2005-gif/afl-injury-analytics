@@ -83,13 +83,31 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
                 ) AS pvs_rank
             FROM unavail
         ),
+        ranked_injury AS (
+            SELECT
+                team,
+                season,
+                round,
+                injury_pvs,
+                ROW_NUMBER() OVER (
+                    PARTITION BY team, season, round
+                    ORDER BY injury_pvs DESC
+                ) AS pvs_rank
+            FROM unavail
+            WHERE status IN ('unavailable', 'intermittent')
+        ),
+        injury_top5 AS (
+            SELECT team, season, round, SUM(injury_pvs) AS unavailable_pvs_top5
+            FROM ranked_injury
+            WHERE pvs_rank <= 5
+            GROUP BY 1, 2, 3
+        ),
         agg AS (
             SELECT
                 team,
                 season,
                 round,
                 SUM(injury_pvs) AS unavailable_pvs_total,
-                SUM(CASE WHEN pvs_rank <= 5 THEN injury_pvs ELSE 0 END) AS unavailable_pvs_top5,
                 SUM(CASE WHEN pvs_rank <= 10 THEN injury_pvs ELSE 0 END) AS unavailable_pvs_top10,
                 SUM(CASE WHEN age_est < 22 THEN injury_pvs ELSE 0 END) AS unavailable_pvs_u22,
                 SUM(CASE WHEN age_est >= 28 THEN injury_pvs ELSE 0 END) AS unavailable_pvs_28plus,
@@ -107,7 +125,7 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
             tr.season,
             tr.round,
             COALESCE(a.unavailable_pvs_total, 0) AS unavailable_pvs_total,
-            COALESCE(a.unavailable_pvs_top5, 0) AS unavailable_pvs_top5,
+            COALESCE(t5.unavailable_pvs_top5, 0) AS unavailable_pvs_top5,
             COALESCE(a.unavailable_pvs_top10, 0) AS unavailable_pvs_top10,
             COALESCE(a.unavailable_pvs_u22, 0) AS unavailable_pvs_u22,
             COALESCE(a.unavailable_pvs_28plus, 0) AS unavailable_pvs_28plus,
@@ -120,6 +138,10 @@ def build_team_round_value(con: duckdb.DuckDBPyConnection) -> None:
             ON tr.team = a.team
             AND tr.season = a.season
             AND tr.round = a.round
+        LEFT JOIN injury_top5 t5
+            ON tr.team = t5.team
+            AND tr.season = t5.season
+            AND tr.round = t5.round
         """
     )
 

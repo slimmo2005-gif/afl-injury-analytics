@@ -126,12 +126,12 @@ export default function ClubDetail() {
   const metricCards = storyData ? getMetricCardContent(storyData) : []
 
   const deltaAccent = storyData
-    ? storyData.rankDelta <= -2
+    ? storyData.rankDelta <= -5
       ? 'text-emerald-400'
-      : storyData.rankDelta >= 2
+      : storyData.rankDelta >= 5
         ? 'text-orange-400'
-        : 'text-slate-200'
-    : 'text-slate-200'
+        : 'text-slate-100'
+    : 'text-slate-100'
 
   return (
     <>
