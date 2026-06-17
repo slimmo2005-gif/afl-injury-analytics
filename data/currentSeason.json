@@ -3,19 +3,19 @@
     "season": 2026,
     "round": 14,
     "ladderRound": 14,
-    "generatedAt": "2026-06-17T12:23:18.944793+00:00",
+    "generatedAt": "2026-06-17T12:34:37.468777+00:00",
     "note": "2026 season to date \u2014 in progress",
     "dataSource": "Squiggle + AFL.com API + VFL + injury lists",
     "isPartialSeason": true,
     "historicalWindow": "2021\u20132025"
   },
   "leagueOverview": {
-    "avgUnavailableValue": 18.4,
-    "totalVflOnlyPvs": 914.5,
-    "clubsAboveExpectation": 5,
-    "clubsBelowExpectation": 8,
+    "avgUnavailableValue": 17.9,
+    "totalVflOnlyPvs": 1162.2,
+    "clubsAboveExpectation": 8,
+    "clubsBelowExpectation": 9,
     "topUnavailableClub": "Richmond",
-    "correlationUnavailableToWins": -0.47
+    "correlationUnavailableToWins": -0.45
   },
   "clubUnavailableByRound": [
     {
@@ -93,119 +93,159 @@
   ],
   "clubRankings": [
     {
+      "club": "Adelaide",
+      "unavailableValue": 198.5,
+      "unavailableTop5": 173.5,
+      "expectedWins": 7.0,
+      "actualWins": 8,
+      "delta": 1.0
+    },
+    {
       "club": "Brisbane Lions",
       "unavailableValue": 282.6,
       "unavailableTop5": 222.0,
-      "expectedWins": 5.0,
+      "expectedWins": 5.5,
       "actualWins": 8,
-      "delta": 3.0
+      "delta": 2.5
     },
     {
       "club": "Carlton",
       "unavailableValue": 211.8,
       "unavailableTop5": 152.1,
-      "expectedWins": 6.2,
+      "expectedWins": 6.7,
       "actualWins": 5,
-      "delta": -1.2
+      "delta": -1.7
     },
     {
       "club": "Collingwood",
       "unavailableValue": 152.7,
       "unavailableTop5": 137.8,
-      "expectedWins": 7.2,
+      "expectedWins": 7.8,
       "actualWins": 5,
-      "delta": -3.2
+      "delta": -3.8
     },
     {
       "club": "Essendon",
       "unavailableValue": 368.8,
       "unavailableTop5": 225.7,
-      "expectedWins": 3.6,
+      "expectedWins": 3.9,
       "actualWins": 1,
-      "delta": -2.6
+      "delta": -2.9
     },
     {
       "club": "Fremantle",
       "unavailableValue": 172.4,
       "unavailableTop5": 152.9,
-      "expectedWins": 6.9,
+      "expectedWins": 7.4,
       "actualWins": 12,
-      "delta": 5.1
+      "delta": 4.6
+    },
+    {
+      "club": "Geelong",
+      "unavailableValue": 173.9,
+      "unavailableTop5": 160.4,
+      "expectedWins": 7.4,
+      "actualWins": 9,
+      "delta": 1.6
+    },
+    {
+      "club": "Gold Coast",
+      "unavailableValue": 206.0,
+      "unavailableTop5": 167.4,
+      "expectedWins": 6.8,
+      "actualWins": 7,
+      "delta": -0.8
     },
     {
       "club": "Greater Western Sydney",
       "unavailableValue": 199.2,
       "unavailableTop5": 149.4,
-      "expectedWins": 6.4,
+      "expectedWins": 6.9,
       "actualWins": 6,
-      "delta": -1.4
+      "delta": -1.9
     },
     {
       "club": "Hawthorn",
       "unavailableValue": 188.6,
       "unavailableTop5": 149.3,
-      "expectedWins": 6.6,
+      "expectedWins": 7.1,
       "actualWins": 8,
-      "delta": 1.4
+      "delta": 0.9
     },
     {
       "club": "Melbourne",
       "unavailableValue": 231.5,
       "unavailableTop5": 194.0,
-      "expectedWins": 5.9,
+      "expectedWins": 6.4,
       "actualWins": 9,
-      "delta": 3.1
+      "delta": 2.6
     },
     {
       "club": "North Melbourne",
       "unavailableValue": 142.1,
       "unavailableTop5": 126.1,
-      "expectedWins": 7.4,
+      "expectedWins": 8.0,
       "actualWins": 6,
-      "delta": -1.4
+      "delta": -2.0
     },
     {
       "club": "Port Adelaide",
       "unavailableValue": 191.1,
       "unavailableTop5": 171.3,
-      "expectedWins": 6.6,
+      "expectedWins": 7.1,
       "actualWins": 4,
-      "delta": -2.6
+      "delta": -3.1
     },
     {
       "club": "Richmond",
       "unavailableValue": 426.6,
       "unavailableTop5": 243.5,
-      "expectedWins": 2.6,
+      "expectedWins": 2.9,
       "actualWins": 2,
-      "delta": -0.6
+      "delta": -0.9
     },
     {
       "club": "St Kilda",
       "unavailableValue": 234.3,
       "unavailableTop5": 179.7,
-      "expectedWins": 5.8,
+      "expectedWins": 6.3,
       "actualWins": 6,
-      "delta": 0.2
+      "delta": -0.3
+    },
+    {
+      "club": "Sydney",
+      "unavailableValue": 243.2,
+      "unavailableTop5": 203.8,
+      "expectedWins": 6.2,
+      "actualWins": 12,
+      "delta": 4.8
     },
     {
       "club": "West Coast",
       "unavailableValue": 227.2,
       "unavailableTop5": 185.7,
-      "expectedWins": 6.0,
+      "expectedWins": 6.4,
       "actualWins": 4,
-      "delta": -2.0
+      "delta": -2.4
     },
     {
       "club": "Western Bulldogs",
       "unavailableValue": 293.6,
       "unavailableTop5": 211.7,
-      "expectedWins": 4.8,
+      "expectedWins": 5.3,
       "actualWins": 8,
-      "delta": 2.2
+      "delta": 1.7
     }
   ],
   "topUnavailablePlayers": [
+    {
+      "player": "Errol Gulden",
+      "club": "Sydney",
+      "roundsMissed": 12,
+      "pvs": 5.8,
+      "unavailablePvs": 69.3,
+      "status": "unavailable"
+    },
     {
       "player": "Tom Liberatore",
       "club": "Western Bulldogs",
@@ -277,17 +317,66 @@
       "pvs": 3.6,
       "unavailablePvs": 36.4,
       "status": "intermittent"
-    },
-    {
-      "player": "Jack Graham",
-      "club": "West Coast",
-      "roundsMissed": 9,
-      "pvs": 3.9,
-      "unavailablePvs": 35.3,
-      "status": "intermittent"
     }
   ],
   "topUnavailableByClub": {
+    "Adelaide": [
+      {
+        "player": "Callum Ah Chee",
+        "club": "Adelaide",
+        "roundsMissed": 8,
+        "pvs": 2.4,
+        "unavailablePvs": 19.1,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Hamstring",
+          "Thumb"
+        ]
+      },
+      {
+        "player": "Jordan Dawson",
+        "club": "Adelaide",
+        "roundsMissed": 3,
+        "pvs": 6.1,
+        "unavailablePvs": 18.4,
+        "status": "intermittent"
+      },
+      {
+        "player": "Taylor Walker",
+        "club": "Adelaide",
+        "roundsMissed": 5,
+        "pvs": 3.5,
+        "unavailablePvs": 17.4,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Hamstring",
+          "Suspension"
+        ]
+      },
+      {
+        "player": "Mitchell Hinge",
+        "club": "Adelaide",
+        "roundsMissed": 6,
+        "pvs": 2.7,
+        "unavailablePvs": 16.4,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Ankle",
+          "Hamstring"
+        ]
+      },
+      {
+        "player": "Isaac Cumming",
+        "club": "Adelaide",
+        "roundsMissed": 4,
+        "pvs": 3.7,
+        "unavailablePvs": 14.8,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Hamstring"
+        ]
+      }
+    ],
     "Brisbane Lions": [
       {
         "player": "Dayne Zorko",
@@ -295,7 +384,7 @@
         "roundsMissed": 7,
         "pvs": 5.7,
         "unavailablePvs": 39.6,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Soreness"
         ]
@@ -328,7 +417,7 @@
         "roundsMissed": 5,
         "pvs": 4.0,
         "unavailablePvs": 19.8,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Calf"
         ]
@@ -339,7 +428,7 @@
         "roundsMissed": 7,
         "pvs": 2.7,
         "unavailablePvs": 18.9,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Foot"
         ]
@@ -408,7 +497,7 @@
         "roundsMissed": 4,
         "pvs": 4.0,
         "unavailablePvs": 15.8,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
         ]
@@ -419,7 +508,7 @@
         "roundsMissed": 7,
         "pvs": 1.5,
         "unavailablePvs": 10.6,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Calf"
         ]
@@ -448,7 +537,7 @@
         "roundsMissed": 12,
         "pvs": 3.5,
         "unavailablePvs": 42.4,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Back"
         ]
@@ -492,7 +581,7 @@
         "roundsMissed": 7,
         "pvs": 3.0,
         "unavailablePvs": 20.7,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Back"
         ]
@@ -505,7 +594,7 @@
         "roundsMissed": 7,
         "pvs": 4.7,
         "unavailablePvs": 32.6,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Concussion",
           "Hamstring"
@@ -553,6 +642,103 @@
         ]
       }
     ],
+    "Geelong": [
+      {
+        "player": "Gryan Miers",
+        "club": "Geelong",
+        "roundsMissed": 4,
+        "pvs": 4.7,
+        "unavailablePvs": 18.8,
+        "status": "unavailable"
+      },
+      {
+        "player": "James Worpel",
+        "club": "Geelong",
+        "roundsMissed": 4,
+        "pvs": 4.0,
+        "unavailablePvs": 15.9,
+        "status": "unavailable"
+      },
+      {
+        "player": "Rhys Stanley",
+        "club": "Geelong",
+        "roundsMissed": 3,
+        "pvs": 4.4,
+        "unavailablePvs": 13.2,
+        "status": "unavailable"
+      },
+      {
+        "player": "Jack Bowes",
+        "club": "Geelong",
+        "roundsMissed": 3,
+        "pvs": 4.3,
+        "unavailablePvs": 12.9,
+        "status": "unavailable"
+      },
+      {
+        "player": "Jhye Clark",
+        "club": "Geelong",
+        "roundsMissed": 6,
+        "pvs": 2.1,
+        "unavailablePvs": 12.5,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Concussion"
+        ]
+      }
+    ],
+    "Gold Coast": [
+      {
+        "player": "Jy Farrar",
+        "club": "Gold Coast",
+        "roundsMissed": 11,
+        "pvs": 1.9,
+        "unavailablePvs": 21.2,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Ankle"
+        ]
+      },
+      {
+        "player": "Sam Clohesy",
+        "club": "Gold Coast",
+        "roundsMissed": 5,
+        "pvs": 4.0,
+        "unavailablePvs": 19.8,
+        "status": "unavailable"
+      },
+      {
+        "player": "Alex Davies",
+        "club": "Gold Coast",
+        "roundsMissed": 6,
+        "pvs": 3.2,
+        "unavailablePvs": 19.4,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Foot"
+        ]
+      },
+      {
+        "player": "Jake Rogers",
+        "club": "Gold Coast",
+        "roundsMissed": 6,
+        "pvs": 2.5,
+        "unavailablePvs": 15.0,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Concussion",
+          "Hamstring"
+        ]
+      },
+      {
+        "player": "Christian Petracca",
+        "club": "Gold Coast",
+        "roundsMissed": 2,
+        "pvs": 6.0,
+        "unavailablePvs": 11.9,
+        "status": "intermittent"
+      }
+    ],
     "Greater Western Sydney": [
       {
         "player": "Nicholas Madden",
@@ -560,7 +746,7 @@
         "roundsMissed": 6,
         "pvs": 3.4,
         "unavailablePvs": 20.2,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Knee"
         ]
@@ -579,7 +765,7 @@
         "roundsMissed": 5,
         "pvs": 3.1,
         "unavailablePvs": 15.7,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Ankle"
         ]
@@ -601,7 +787,7 @@
         "roundsMissed": 5,
         "pvs": 2.8,
         "unavailablePvs": 14.0,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Quad"
         ]
@@ -614,7 +800,7 @@
         "roundsMissed": 7,
         "pvs": 4.0,
         "unavailablePvs": 28.0,
-        "status": "unavailable"
+        "status": "intermittent"
       },
       {
         "player": "Jack Gunston",
@@ -638,7 +824,7 @@
         "roundsMissed": 5,
         "pvs": 3.0,
         "unavailablePvs": 15.0,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
         ]
@@ -659,7 +845,7 @@
         "roundsMissed": 9,
         "pvs": 4.4,
         "unavailablePvs": 39.8,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Ankle"
         ]
@@ -670,7 +856,7 @@
         "roundsMissed": 9,
         "pvs": 3.8,
         "unavailablePvs": 34.2,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Hip/groin"
         ]
@@ -689,7 +875,7 @@
         "roundsMissed": 7,
         "pvs": 3.0,
         "unavailablePvs": 21.3,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Knee (ACL)"
         ]
@@ -724,7 +910,7 @@
         "roundsMissed": 5,
         "pvs": 3.8,
         "unavailablePvs": 18.8,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Groin"
         ]
@@ -764,7 +950,7 @@
         "roundsMissed": 11,
         "pvs": 4.3,
         "unavailablePvs": 46.8,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
         ]
@@ -805,7 +991,7 @@
         "roundsMissed": 5,
         "pvs": 3.3,
         "unavailablePvs": 16.3,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Toe"
         ]
@@ -818,7 +1004,7 @@
         "roundsMissed": 11,
         "pvs": 4.3,
         "unavailablePvs": 47.8,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
         ]
@@ -852,7 +1038,7 @@
         "roundsMissed": 6,
         "pvs": 4.6,
         "unavailablePvs": 27.5,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Achilles"
         ]
@@ -863,7 +1049,7 @@
         "roundsMissed": 6,
         "pvs": 4.5,
         "unavailablePvs": 26.9,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Collarbone"
         ]
@@ -876,7 +1062,7 @@
         "roundsMissed": 7,
         "pvs": 3.6,
         "unavailablePvs": 25.4,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Knee"
         ]
@@ -887,7 +1073,7 @@
         "roundsMissed": 4,
         "pvs": 5.8,
         "unavailablePvs": 23.2,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Calf"
         ]
@@ -898,7 +1084,7 @@
         "roundsMissed": 6,
         "pvs": 3.2,
         "unavailablePvs": 19.3,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Knee"
         ]
@@ -917,9 +1103,60 @@
         "roundsMissed": 5,
         "pvs": 3.1,
         "unavailablePvs": 15.5,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Hip cork"
+        ]
+      }
+    ],
+    "Sydney": [
+      {
+        "player": "Errol Gulden",
+        "club": "Sydney",
+        "roundsMissed": 12,
+        "pvs": 5.8,
+        "unavailablePvs": 69.3,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Shoulder"
+        ]
+      },
+      {
+        "player": "Dane Rampe",
+        "club": "Sydney",
+        "roundsMissed": 6,
+        "pvs": 3.8,
+        "unavailablePvs": 22.8,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Calf"
+        ]
+      },
+      {
+        "player": "Tom McCartin",
+        "club": "Sydney",
+        "roundsMissed": 3,
+        "pvs": 4.9,
+        "unavailablePvs": 14.8,
+        "status": "intermittent"
+      },
+      {
+        "player": "Isaac Heeney",
+        "club": "Sydney",
+        "roundsMissed": 2,
+        "pvs": 6.5,
+        "unavailablePvs": 13.1,
+        "status": "intermittent"
+      },
+      {
+        "player": "Matt Roberts",
+        "club": "Sydney",
+        "roundsMissed": 3,
+        "pvs": 4.1,
+        "unavailablePvs": 12.4,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Groin"
         ]
       }
     ],
@@ -930,7 +1167,7 @@
         "roundsMissed": 10,
         "pvs": 3.6,
         "unavailablePvs": 36.4,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Knee (ACL)"
         ]
@@ -941,7 +1178,7 @@
         "roundsMissed": 9,
         "pvs": 3.9,
         "unavailablePvs": 35.3,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Shoulder"
         ]
@@ -952,7 +1189,7 @@
         "roundsMissed": 11,
         "pvs": 1.5,
         "unavailablePvs": 16.3,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Foot"
         ]
@@ -987,9 +1224,9 @@
         "roundsMissed": 10,
         "pvs": 4.8,
         "unavailablePvs": 48.3,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
-          "Hamstring"
+          "Concussion"
         ]
       },
       {
@@ -998,9 +1235,9 @@
         "roundsMissed": 8,
         "pvs": 3.3,
         "unavailablePvs": 26.2,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
-          "Knee"
+          "Knee (ACL)"
         ]
       },
       {
@@ -1009,7 +1246,7 @@
         "roundsMissed": 5,
         "pvs": 4.8,
         "unavailablePvs": 23.9,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Knee (MCL)"
         ]
@@ -1020,7 +1257,7 @@
         "roundsMissed": 4,
         "pvs": 4.7,
         "unavailablePvs": 18.7,
-        "status": "unavailable",
+        "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
         ]
@@ -1042,12 +1279,12 @@
     {
       "archetype": "Outside Mid",
       "changes": 1,
-      "score": 0.82
+      "score": 0.81
     },
     {
       "archetype": "Pressure Forward",
       "changes": 1,
-      "score": 0.8
+      "score": 0.78
     },
     {
       "archetype": "Key Forward",
@@ -1057,47 +1294,51 @@
     {
       "archetype": "Key Defender",
       "changes": 1,
-      "score": 0.77
+      "score": 0.76
     },
     {
       "archetype": "Ruck",
-      "changes": 0,
-      "score": 0.75
-    },
-    {
-      "archetype": "Rebound Defender",
       "changes": 1,
-      "score": 0.72
+      "score": 0.74
     },
     {
       "archetype": "Utility",
       "changes": 2,
       "score": 0.71
+    },
+    {
+      "archetype": "Rebound Defender",
+      "changes": 1,
+      "score": 0.7
     }
   ],
   "regression": {
     "model": "linear",
-    "rSquared": 0.22,
+    "rSquared": 0.2,
     "marginRSquared": 0.0,
     "coefficients": {
-      "intercept": 9.74,
-      "unavailablePvs": -0.0167,
+      "intercept": 10.47,
+      "unavailablePvs": -0.0177,
       "marginPer100Pvs": 0.0
     },
-    "interpretation": "Each +100 unavailable PVS correlates with ~1.7 fewer wins (season 2026). PVS combines weighted season performance (normalised 0\u20137, leader = 7) with an optional draft-potential top-up for players not yet impacting games."
+    "interpretation": "Each +100 unavailable PVS correlates with ~1.8 fewer wins (season 2026). PVS combines weighted season performance (normalised 0\u20137, leader = 7) with an optional draft-potential top-up for players not yet impacting games."
   },
   "clubs": [
     "Richmond",
     "Essendon",
     "Western Bulldogs",
     "Brisbane Lions",
+    "Sydney",
     "St Kilda",
     "Melbourne",
     "West Coast",
     "Carlton",
+    "Gold Coast",
     "Greater Western Sydney",
+    "Adelaide",
     "Port Adelaide",
     "Hawthorn",
+    "Geelong",
     "Fremantle",
     "Collingwood",
     "North Melbourne"
@@ -1430,6 +1671,86 @@
         "wins": 1
       }
     ],
+    "Sydney": [
+      {
+        "round": 1,
+        "value": 0.0,
+        "top5": 0.0,
+        "wins": 1
+      },
+      {
+        "round": 2,
+        "value": 12.3,
+        "top5": 12.3,
+        "wins": 0
+      },
+      {
+        "round": 4,
+        "value": 8.6,
+        "top5": 8.6,
+        "wins": 1
+      },
+      {
+        "round": 5,
+        "value": 9.7,
+        "top5": 9.7,
+        "wins": 1
+      },
+      {
+        "round": 6,
+        "value": 12.5,
+        "top5": 12.5,
+        "wins": 1
+      },
+      {
+        "round": 7,
+        "value": 15.2,
+        "top5": 15.2,
+        "wins": 1
+      },
+      {
+        "round": 8,
+        "value": 14.1,
+        "top5": 14.1,
+        "wins": 1
+      },
+      {
+        "round": 9,
+        "value": 22.3,
+        "top5": 22.3,
+        "wins": 1
+      },
+      {
+        "round": 10,
+        "value": 20.6,
+        "top5": 20.6,
+        "wins": 1
+      },
+      {
+        "round": 11,
+        "value": 17.4,
+        "top5": 17.4,
+        "wins": 0
+      },
+      {
+        "round": 12,
+        "value": 36.4,
+        "top5": 24.6,
+        "wins": 1
+      },
+      {
+        "round": 13,
+        "value": 35.2,
+        "top5": 21.6,
+        "wins": 1
+      },
+      {
+        "round": 14,
+        "value": 38.8,
+        "top5": 24.8,
+        "wins": 1
+      }
+    ],
     "St Kilda": [
       {
         "round": 1,
@@ -1756,6 +2077,80 @@
         "wins": 1
       }
     ],
+    "Gold Coast": [
+      {
+        "round": 1,
+        "value": 3.2,
+        "top5": 3.2,
+        "wins": 1
+      },
+      {
+        "round": 2,
+        "value": 4.7,
+        "top5": 4.7,
+        "wins": 1
+      },
+      {
+        "round": 4,
+        "value": 13.9,
+        "top5": 13.9,
+        "wins": 0
+      },
+      {
+        "round": 5,
+        "value": 16.4,
+        "top5": 16.4,
+        "wins": 0
+      },
+      {
+        "round": 6,
+        "value": 17.3,
+        "top5": 17.3,
+        "wins": 1
+      },
+      {
+        "round": 7,
+        "value": 19.0,
+        "top5": 17.1,
+        "wins": 0
+      },
+      {
+        "round": 8,
+        "value": 17.9,
+        "top5": 16.0,
+        "wins": 1
+      },
+      {
+        "round": 9,
+        "value": 21.9,
+        "top5": 17.4,
+        "wins": 1
+      },
+      {
+        "round": 10,
+        "value": 23.5,
+        "top5": 15.1,
+        "wins": 1
+      },
+      {
+        "round": 11,
+        "value": 14.2,
+        "top5": 14.2,
+        "wins": 0
+      },
+      {
+        "round": 13,
+        "value": 26.1,
+        "top5": 15.2,
+        "wins": 0
+      },
+      {
+        "round": 14,
+        "value": 28.0,
+        "top5": 16.9,
+        "wins": 0
+      }
+    ],
     "Greater Western Sydney": [
       {
         "round": 1,
@@ -1828,6 +2223,86 @@
         "value": 30.9,
         "top5": 16.8,
         "wins": 0
+      }
+    ],
+    "Adelaide": [
+      {
+        "round": 1,
+        "value": 0.0,
+        "top5": 0.0,
+        "wins": 1
+      },
+      {
+        "round": 2,
+        "value": 5.1,
+        "top5": 5.1,
+        "wins": 0
+      },
+      {
+        "round": 3,
+        "value": 20.3,
+        "top5": 20.3,
+        "wins": 0
+      },
+      {
+        "round": 4,
+        "value": 20.9,
+        "top5": 18.5,
+        "wins": 0
+      },
+      {
+        "round": 5,
+        "value": 19.6,
+        "top5": 13.6,
+        "wins": 1
+      },
+      {
+        "round": 6,
+        "value": 17.9,
+        "top5": 17.9,
+        "wins": 1
+      },
+      {
+        "round": 7,
+        "value": 15.3,
+        "top5": 15.3,
+        "wins": 0
+      },
+      {
+        "round": 8,
+        "value": 17.7,
+        "top5": 17.7,
+        "wins": 1
+      },
+      {
+        "round": 9,
+        "value": 11.3,
+        "top5": 11.3,
+        "wins": 1
+      },
+      {
+        "round": 10,
+        "value": 27.5,
+        "top5": 16.1,
+        "wins": 1
+      },
+      {
+        "round": 11,
+        "value": 5.9,
+        "top5": 5.9,
+        "wins": 0
+      },
+      {
+        "round": 13,
+        "value": 14.9,
+        "top5": 14.9,
+        "wins": 1
+      },
+      {
+        "round": 14,
+        "value": 22.0,
+        "top5": 16.9,
+        "wins": 1
       }
     ],
     "Port Adelaide": [
@@ -1982,6 +2457,86 @@
         "value": 38.1,
         "top5": 20.4,
         "wins": 0
+      }
+    ],
+    "Geelong": [
+      {
+        "round": 1,
+        "value": 4.0,
+        "top5": 4.0,
+        "wins": 1
+      },
+      {
+        "round": 3,
+        "value": 8.4,
+        "top5": 8.4,
+        "wins": 1
+      },
+      {
+        "round": 4,
+        "value": 11.2,
+        "top5": 11.2,
+        "wins": 0
+      },
+      {
+        "round": 5,
+        "value": 17.4,
+        "top5": 15.3,
+        "wins": 1
+      },
+      {
+        "round": 6,
+        "value": 13.4,
+        "top5": 13.4,
+        "wins": 1
+      },
+      {
+        "round": 7,
+        "value": 8.6,
+        "top5": 8.6,
+        "wins": 0
+      },
+      {
+        "round": 8,
+        "value": 12.7,
+        "top5": 12.7,
+        "wins": 1
+      },
+      {
+        "round": 9,
+        "value": 15.2,
+        "top5": 15.2,
+        "wins": 1
+      },
+      {
+        "round": 10,
+        "value": 3.0,
+        "top5": 3.0,
+        "wins": 1
+      },
+      {
+        "round": 11,
+        "value": 13.5,
+        "top5": 13.5,
+        "wins": 1
+      },
+      {
+        "round": 12,
+        "value": 14.3,
+        "top5": 14.3,
+        "wins": 0
+      },
+      {
+        "round": 13,
+        "value": 22.6,
+        "top5": 18.2,
+        "wins": 0
+      },
+      {
+        "round": 14,
+        "value": 29.7,
+        "top5": 22.7,
+        "wins": 1
       }
     ],
     "Fremantle": [
@@ -2236,28 +2791,28 @@
         "club": "Sydney",
         "season": 2026,
         "ladderRank": 2,
-        "pvsLostRank": 18,
-        "rankDelta": -16,
+        "pvsLostRank": 14,
+        "rankDelta": -12,
         "wins": 12,
         "percentage": 143.7,
-        "pvsLost": 0.0
+        "pvsLost": 243.2
       },
       {
         "club": "Geelong",
         "season": 2026,
         "ladderRank": 3,
-        "pvsLostRank": 18,
-        "rankDelta": -15,
+        "pvsLostRank": 4,
+        "rankDelta": -1,
         "wins": 9,
         "percentage": 123.1,
-        "pvsLost": 0.0
+        "pvsLost": 173.9
       },
       {
         "club": "Melbourne",
         "season": 2026,
         "ladderRank": 4,
-        "pvsLostRank": 9,
-        "rankDelta": -5,
+        "pvsLostRank": 12,
+        "rankDelta": -8,
         "wins": 9,
         "percentage": 105.7,
         "pvsLost": 231.5
@@ -2266,8 +2821,8 @@
         "club": "Hawthorn",
         "season": 2026,
         "ladderRank": 5,
-        "pvsLostRank": 4,
-        "rankDelta": 1,
+        "pvsLostRank": 5,
+        "rankDelta": 0,
         "wins": 8,
         "percentage": 113.2,
         "pvsLost": 188.6
@@ -2276,18 +2831,18 @@
         "club": "Adelaide",
         "season": 2026,
         "ladderRank": 6,
-        "pvsLostRank": 18,
-        "rankDelta": -12,
+        "pvsLostRank": 7,
+        "rankDelta": -1,
         "wins": 8,
         "percentage": 112.4,
-        "pvsLost": 0.0
+        "pvsLost": 198.5
       },
       {
         "club": "Brisbane Lions",
         "season": 2026,
         "ladderRank": 7,
-        "pvsLostRank": 11,
-        "rankDelta": -4,
+        "pvsLostRank": 15,
+        "rankDelta": -8,
         "wins": 8,
         "percentage": 108.4,
         "pvsLost": 282.6
@@ -2296,8 +2851,8 @@
         "club": "Western Bulldogs",
         "season": 2026,
         "ladderRank": 8,
-        "pvsLostRank": 12,
-        "rankDelta": -4,
+        "pvsLostRank": 16,
+        "rankDelta": -8,
         "wins": 8,
         "percentage": 90.7,
         "pvsLost": 293.6
@@ -2306,18 +2861,18 @@
         "club": "Gold Coast",
         "season": 2026,
         "ladderRank": 9,
-        "pvsLostRank": 18,
-        "rankDelta": -9,
+        "pvsLostRank": 9,
+        "rankDelta": 0,
         "wins": 7,
         "percentage": 107.2,
-        "pvsLost": 0.0
+        "pvsLost": 206.0
       },
       {
         "club": "St Kilda",
         "season": 2026,
         "ladderRank": 10,
-        "pvsLostRank": 10,
-        "rankDelta": 0,
+        "pvsLostRank": 13,
+        "rankDelta": -3,
         "wins": 6,
         "percentage": 102.4,
         "pvsLost": 234.3
@@ -2326,8 +2881,8 @@
         "club": "Greater Western Sydney",
         "season": 2026,
         "ladderRank": 11,
-        "pvsLostRank": 6,
-        "rankDelta": 5,
+        "pvsLostRank": 8,
+        "rankDelta": 3,
         "wins": 6,
         "percentage": 102.3,
         "pvsLost": 199.2
@@ -2356,8 +2911,8 @@
         "club": "Carlton",
         "season": 2026,
         "ladderRank": 14,
-        "pvsLostRank": 7,
-        "rankDelta": 7,
+        "pvsLostRank": 10,
+        "rankDelta": 4,
         "wins": 5,
         "percentage": 88.7,
         "pvsLost": 211.8
@@ -2366,8 +2921,8 @@
         "club": "Port Adelaide",
         "season": 2026,
         "ladderRank": 15,
-        "pvsLostRank": 5,
-        "rankDelta": 10,
+        "pvsLostRank": 6,
+        "rankDelta": 9,
         "wins": 4,
         "percentage": 101.0,
         "pvsLost": 191.1
@@ -2376,8 +2931,8 @@
         "club": "West Coast",
         "season": 2026,
         "ladderRank": 16,
-        "pvsLostRank": 8,
-        "rankDelta": 8,
+        "pvsLostRank": 11,
+        "rankDelta": 5,
         "wins": 4,
         "percentage": 72.7,
         "pvsLost": 227.2
@@ -2386,8 +2941,8 @@
         "club": "Richmond",
         "season": 2026,
         "ladderRank": 17,
-        "pvsLostRank": 14,
-        "rankDelta": 3,
+        "pvsLostRank": 18,
+        "rankDelta": -1,
         "wins": 2,
         "percentage": 61.1,
         "pvsLost": 426.6
@@ -2396,8 +2951,8 @@
         "club": "Essendon",
         "season": 2026,
         "ladderRank": 18,
-        "pvsLostRank": 13,
-        "rankDelta": 5,
+        "pvsLostRank": 17,
+        "rankDelta": 1,
         "wins": 1,
         "percentage": 70.4,
         "pvsLost": 368.8
@@ -2408,19 +2963,19 @@
         {
           "season": 2026,
           "ladderRank": 6,
-          "pvsLostRank": 18,
-          "rankDelta": -12,
+          "pvsLostRank": 7,
+          "rankDelta": -1,
           "wins": 8,
           "percentage": 112.4,
-          "pvsLost": 0.0
+          "pvsLost": 198.5
         }
       ],
       "Brisbane Lions": [
         {
           "season": 2026,
           "ladderRank": 7,
-          "pvsLostRank": 11,
-          "rankDelta": -4,
+          "pvsLostRank": 15,
+          "rankDelta": -8,
           "wins": 8,
           "percentage": 108.4,
           "pvsLost": 282.6
@@ -2430,8 +2985,8 @@
         {
           "season": 2026,
           "ladderRank": 14,
-          "pvsLostRank": 7,
-          "rankDelta": 7,
+          "pvsLostRank": 10,
+          "rankDelta": 4,
           "wins": 5,
           "percentage": 88.7,
           "pvsLost": 211.8
@@ -2452,8 +3007,8 @@
         {
           "season": 2026,
           "ladderRank": 18,
-          "pvsLostRank": 13,
-          "rankDelta": 5,
+          "pvsLostRank": 17,
+          "rankDelta": 1,
           "wins": 1,
           "percentage": 70.4,
           "pvsLost": 368.8
@@ -2474,30 +3029,30 @@
         {
           "season": 2026,
           "ladderRank": 3,
-          "pvsLostRank": 18,
-          "rankDelta": -15,
+          "pvsLostRank": 4,
+          "rankDelta": -1,
           "wins": 9,
           "percentage": 123.1,
-          "pvsLost": 0.0
+          "pvsLost": 173.9
         }
       ],
       "Gold Coast": [
         {
           "season": 2026,
           "ladderRank": 9,
-          "pvsLostRank": 18,
-          "rankDelta": -9,
+          "pvsLostRank": 9,
+          "rankDelta": 0,
           "wins": 7,
           "percentage": 107.2,
-          "pvsLost": 0.0
+          "pvsLost": 206.0
         }
       ],
       "Greater Western Sydney": [
         {
           "season": 2026,
           "ladderRank": 11,
-          "pvsLostRank": 6,
-          "rankDelta": 5,
+          "pvsLostRank": 8,
+          "rankDelta": 3,
           "wins": 6,
           "percentage": 102.3,
           "pvsLost": 199.2
@@ -2507,8 +3062,8 @@
         {
           "season": 2026,
           "ladderRank": 5,
-          "pvsLostRank": 4,
-          "rankDelta": 1,
+          "pvsLostRank": 5,
+          "rankDelta": 0,
           "wins": 8,
           "percentage": 113.2,
           "pvsLost": 188.6
@@ -2518,8 +3073,8 @@
         {
           "season": 2026,
           "ladderRank": 4,
-          "pvsLostRank": 9,
-          "rankDelta": -5,
+          "pvsLostRank": 12,
+          "rankDelta": -8,
           "wins": 9,
           "percentage": 105.7,
           "pvsLost": 231.5
@@ -2540,8 +3095,8 @@
         {
           "season": 2026,
           "ladderRank": 15,
-          "pvsLostRank": 5,
-          "rankDelta": 10,
+          "pvsLostRank": 6,
+          "rankDelta": 9,
           "wins": 4,
           "percentage": 101.0,
           "pvsLost": 191.1
@@ -2551,8 +3106,8 @@
         {
           "season": 2026,
           "ladderRank": 17,
-          "pvsLostRank": 14,
-          "rankDelta": 3,
+          "pvsLostRank": 18,
+          "rankDelta": -1,
           "wins": 2,
           "percentage": 61.1,
           "pvsLost": 426.6
@@ -2562,8 +3117,8 @@
         {
           "season": 2026,
           "ladderRank": 10,
-          "pvsLostRank": 10,
-          "rankDelta": 0,
+          "pvsLostRank": 13,
+          "rankDelta": -3,
           "wins": 6,
           "percentage": 102.4,
           "pvsLost": 234.3
@@ -2573,19 +3128,19 @@
         {
           "season": 2026,
           "ladderRank": 2,
-          "pvsLostRank": 18,
-          "rankDelta": -16,
+          "pvsLostRank": 14,
+          "rankDelta": -12,
           "wins": 12,
           "percentage": 143.7,
-          "pvsLost": 0.0
+          "pvsLost": 243.2
         }
       ],
       "West Coast": [
         {
           "season": 2026,
           "ladderRank": 16,
-          "pvsLostRank": 8,
-          "rankDelta": 8,
+          "pvsLostRank": 11,
+          "rankDelta": 5,
           "wins": 4,
           "percentage": 72.7,
           "pvsLost": 227.2
@@ -2595,8 +3150,8 @@
         {
           "season": 2026,
           "ladderRank": 8,
-          "pvsLostRank": 12,
-          "rankDelta": -4,
+          "pvsLostRank": 16,
+          "rankDelta": -8,
           "wins": 8,
           "percentage": 90.7,
           "pvsLost": 293.6
