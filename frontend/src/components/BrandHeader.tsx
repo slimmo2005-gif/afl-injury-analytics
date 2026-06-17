@@ -11,14 +11,14 @@ export default function BrandHeader({ variant = 'club' }: BrandHeaderProps) {
 
   return (
     <div className={`flex flex-wrap items-center gap-4 ${isClub ? 'gap-6' : 'gap-4'}`}>
-      <Link to="/" className="shrink-0 group" title="Slim Analytics — AFL club view">
+      <Link to="/" className="shrink-0 group" title="Slim Analytics — The Injury Luck Ladder">
         <img
           src={logoSrc}
           alt="Slim Analytics"
           className={
             isClub
-              ? 'h-16 sm:h-20 w-auto object-contain drop-shadow-lg transition-opacity group-hover:opacity-90'
-              : 'h-10 w-auto object-contain'
+              ? 'h-[6.8rem] sm:h-[8.5rem] w-auto object-contain drop-shadow-lg transition-opacity group-hover:opacity-90'
+              : 'h-[4.25rem] w-auto object-contain'
           }
         />
       </Link>
@@ -26,14 +26,14 @@ export default function BrandHeader({ variant = 'club' }: BrandHeaderProps) {
         <h1
           className={
             isClub
-              ? 'text-xl sm:text-2xl font-semibold text-afl-gold tracking-tight'
-              : 'text-lg font-semibold text-afl-gold tracking-tight'
+              ? 'text-[2.125rem] sm:text-[2.55rem] font-semibold text-afl-gold tracking-tight leading-tight'
+              : 'text-[1.9rem] font-semibold text-afl-gold tracking-tight leading-tight'
           }
         >
-          AFL Unavailability Analytics
+          The Injury Luck Ladder
         </h1>
-        <p className="text-xs text-slate-400 mt-0.5">
-          {isClub ? 'Club injury & performance view' : 'Admin analytics workspace'}
+        <p className="text-[1.275rem] text-slate-400 mt-1">
+          {isClub ? 'Slim Analytics · club injury & performance' : 'Slim Analytics · admin workspace'}
         </p>
       </div>
     </div>

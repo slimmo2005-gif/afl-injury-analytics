@@ -25,10 +25,10 @@ export default function Layout() {
           <div className="flex items-center gap-3">
             <span className="text-2xl" aria-hidden>🏉</span>
             <div>
-              <h1 className="text-lg font-semibold text-afl-gold tracking-tight">
-                AFL Unavailability Analytics
+              <h1 className="text-[1.9rem] font-semibold text-afl-gold tracking-tight">
+                The Injury Luck Ladder
               </h1>
-              <p className="text-xs text-slate-400">
+              <p className="text-[1.275rem] text-slate-400">
                 {loading ? 'Loading metrics…' : data.meta.note ?? 'Injury-adjusted team performance'}
               </p>
             </div>
