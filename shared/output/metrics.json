@@ -2,7 +2,7 @@
   "meta": {
     "season": 2025,
     "round": 24,
-    "generatedAt": "2026-06-17T12:00:31.143106+00:00",
+    "generatedAt": "2026-06-17T12:34:25.699371+00:00",
     "note": "Phase 2 \u2014 PVS + national draft + VFL (2025)",
     "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
     "defaultSeason": 2025,
@@ -186,7 +186,7 @@
         },
         {
           "club": "Carlton",
-          "unavailableValue": 648.6,
+          "unavailableValue": 648.5,
           "unavailableTop5": 360.2,
           "expectedWins": 9.4,
           "actualWins": 11,
@@ -3804,7 +3804,7 @@
         },
         {
           "club": "Carlton",
-          "unavailableValue": 749.7,
+          "unavailableValue": 749.8,
           "unavailableTop5": 393.4,
           "expectedWins": 9.9,
           "actualWins": 11,
@@ -32371,7 +32371,7 @@
         },
         {
           "club": "Fremantle",
-          "unavailableValue": 657.3,
+          "unavailableValue": 657.4,
           "unavailableTop5": 367.8,
           "expectedWins": 10.2,
           "actualWins": 10,
@@ -40546,8 +40546,7 @@
             "unavailablePvs": 48.8,
             "status": "unavailable",
             "keyInjuries": [
-              "Calf",
-              "Rested"
+              "Calf"
             ]
           },
           {
@@ -40873,7 +40872,7 @@
             "roundsMissed": 19,
             "pvs": 3.1,
             "unavailablePvs": 59.4,
-            "status": "unavailable",
+            "status": "intermittent",
             "keyInjuries": [
               "Concussion",
               "Head"
@@ -40995,7 +40994,6 @@
             "status": "unavailable",
             "keyInjuries": [
               "Corked quad",
-              "Jaw",
               "Lung"
             ]
           },
@@ -44789,7 +44787,6 @@
             "unavailablePvs": 51.4,
             "status": "unavailable",
             "keyInjuries": [
-              "Hamstring",
               "Knee"
             ]
           }
@@ -48550,7 +48547,7 @@
             "unavailablePvs": 21.4,
             "status": "unavailable",
             "keyInjuries": [
-              "Suspension"
+              "Concussion"
             ]
           }
         ],
@@ -52164,16 +52161,16 @@
         "id": "seasonTop22",
         "label": "Season top-22 PVS (5+ games)",
         "teamRounds": 3116,
-        "avgMissedPvs": 18.77,
+        "avgMissedPvs": 18.78,
         "avgPlayersMissed": 4.78,
         "winRate": 0.496,
         "correlations": [
           {
             "role": "Total core missed",
             "roleId": "total",
-            "corrWin": -0.192,
-            "corrMargin": -0.242,
-            "avgMissPvs": 18.77,
+            "corrWin": -0.191,
+            "corrMargin": -0.241,
+            "avgMissPvs": 18.78,
             "pctRounds": 100.0
           },
           {
@@ -52195,9 +52192,9 @@
           {
             "role": "Key FWD + DEF",
             "roleId": "key_roles",
-            "corrWin": -0.085,
-            "corrMargin": -0.094,
-            "avgMissPvs": 3.77,
+            "corrWin": -0.084,
+            "corrMargin": -0.093,
+            "avgMissPvs": 3.78,
             "pctRounds": 65.9
           },
           {
@@ -52227,26 +52224,26 @@
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "corrWin": -0.044,
-            "corrMargin": -0.034,
+            "corrWin": -0.042,
+            "corrMargin": -0.033,
             "avgMissPvs": 1.67,
-            "pctRounds": 37.9
+            "pctRounds": 38.0
           },
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "corrWin": -0.03,
-            "corrMargin": -0.04,
-            "avgMissPvs": 2.25,
-            "pctRounds": 47.1
+            "corrWin": -0.029,
+            "corrMargin": -0.038,
+            "avgMissPvs": 2.24,
+            "pctRounds": 47.0
           },
           {
             "role": "Ruck",
             "roleId": "ruck",
-            "corrWin": -0.024,
+            "corrWin": -0.026,
             "corrMargin": -0.037,
-            "avgMissPvs": 2.35,
-            "pctRounds": 49.2
+            "avgMissPvs": 2.36,
+            "pctRounds": 49.4
           },
           {
             "role": "Rebound Defender",
@@ -52279,8 +52276,8 @@
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "winPctPer100": -0.92,
-            "marginPer100": -57.28
+            "winPctPer100": -0.88,
+            "marginPer100": -54.67
           },
           {
             "role": "Inside Mid",
@@ -52291,14 +52288,14 @@
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "winPctPer100": -0.52,
-            "marginPer100": -55.34
+            "winPctPer100": -0.5,
+            "marginPer100": -52.08
           },
           {
             "role": "Ruck",
             "roleId": "ruck",
-            "winPctPer100": -0.45,
-            "marginPer100": -52.87
+            "winPctPer100": -0.47,
+            "marginPer100": -53.45
           },
           {
             "role": "Rebound Defender",
@@ -52343,26 +52340,26 @@
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "rounds": 710,
-            "winWhenMiss": 0.47,
+            "rounds": 709,
+            "winWhenMiss": 0.471,
             "winOtherwise": 0.511,
-            "deltaPp": -4.1
+            "deltaPp": -4.0
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "rounds": 514,
+            "rounds": 518,
             "winWhenMiss": 0.481,
-            "winOtherwise": 0.513,
-            "deltaPp": -3.3
+            "winOtherwise": 0.512,
+            "deltaPp": -3.1
           },
           {
             "role": "Ruck",
             "roleId": "ruck",
             "rounds": 833,
             "winWhenMiss": 0.502,
-            "winOtherwise": 0.509,
-            "deltaPp": -0.7
+            "winOtherwise": 0.51,
+            "deltaPp": -0.8
           },
           {
             "role": "Rebound Defender",
@@ -52382,44 +52379,44 @@
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "coef": -0.02968
+            "coef": -0.0297
           },
           {
             "role": "Rebound Defender",
             "roleId": "rebound_defender",
-            "coef": -0.00645
+            "coef": -0.0064
           },
           {
             "role": "Key Defender",
             "roleId": "key_defender",
-            "coef": -0.01922
+            "coef": -0.01923
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "coef": -0.0151
+            "coef": -0.01479
           },
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "coef": -0.01076
+            "coef": -0.0106
           },
           {
             "role": "Ruck",
             "roleId": "ruck",
-            "coef": -0.00746
+            "coef": -0.00765
           },
           {
             "role": "Utility",
             "roleId": "utility",
-            "coef": -0.01999
+            "coef": -0.01993
           }
         ],
-        "archetypeModelR2": 0.048,
+        "archetypeModelR2": 0.0478,
         "keyVsOther": {
-          "keyRolesCoef": -0.01582,
+          "keyRolesCoef": -0.0157,
           "otherRolesCoef": -0.01397,
-          "r2": 0.037
+          "r2": 0.0368
         },
         "yearly": [
           {
@@ -52456,9 +52453,9 @@
           },
           {
             "season": 2022,
-            "total": -0.198,
-            "keyRoles": -0.088,
-            "keyForward": -0.025,
+            "total": -0.194,
+            "keyRoles": -0.079,
+            "keyForward": -0.014,
             "keyDefender": -0.105,
             "mid": -0.148
           },
@@ -52531,7 +52528,7 @@
           "rankDelta": 5,
           "wins": 10,
           "percentage": 108.1,
-          "pvsLost": 647.9
+          "pvsLost": 647.8
         },
         {
           "season": 2014,
@@ -52640,6 +52637,15 @@
           "wins": 18,
           "percentage": 139.3,
           "pvsLost": 303.8
+        },
+        {
+          "season": 2026,
+          "ladderRank": 6,
+          "pvsLostRank": 12,
+          "rankDelta": -6,
+          "wins": 8,
+          "percentage": 112.4,
+          "pvsLost": 1437.2
         }
       ],
       "Brisbane Lions": [
@@ -52772,8 +52778,8 @@
         {
           "season": 2026,
           "ladderRank": 7,
-          "pvsLostRank": 7,
-          "rankDelta": 0,
+          "pvsLostRank": 8,
+          "rankDelta": -1,
           "wins": 8,
           "percentage": 109.6,
           "pvsLost": 1386.9
@@ -52796,7 +52802,7 @@
           "rankDelta": -2,
           "wins": 11,
           "percentage": 106.7,
-          "pvsLost": 749.8
+          "pvsLost": 749.7
         },
         {
           "season": 2014,
@@ -52909,8 +52915,8 @@
         {
           "season": 2026,
           "ladderRank": 13,
-          "pvsLostRank": 13,
-          "rankDelta": 0,
+          "pvsLostRank": 17,
+          "rankDelta": -4,
           "wins": 5,
           "percentage": 93.2,
           "pvsLost": 1583.7
@@ -53046,8 +53052,8 @@
         {
           "season": 2026,
           "ladderRank": 14,
-          "pvsLostRank": 1,
-          "rankDelta": 13,
+          "pvsLostRank": 2,
+          "rankDelta": 12,
           "wins": 4,
           "percentage": 97.9,
           "pvsLost": 1309.3
@@ -53183,8 +53189,8 @@
         {
           "season": 2026,
           "ladderRank": 18,
-          "pvsLostRank": 12,
-          "rankDelta": 6,
+          "pvsLostRank": 16,
+          "rankDelta": 2,
           "wins": 1,
           "percentage": 70.4,
           "pvsLost": 1565.5
@@ -53320,8 +53326,8 @@
         {
           "season": 2026,
           "ladderRank": 1,
-          "pvsLostRank": 6,
-          "rankDelta": -5,
+          "pvsLostRank": 7,
+          "rankDelta": -6,
           "wins": 12,
           "percentage": 147.9,
           "pvsLost": 1345.4
@@ -53453,6 +53459,15 @@
           "wins": 17,
           "percentage": 141.5,
           "pvsLost": 271.8
+        },
+        {
+          "season": 2026,
+          "ladderRank": 3,
+          "pvsLostRank": 1,
+          "rankDelta": 2,
+          "wins": 9,
+          "percentage": 131.5,
+          "pvsLost": 1230.2
         }
       ],
       "Gold Coast": [
@@ -53581,6 +53596,15 @@
           "wins": 15,
           "percentage": 124.9,
           "pvsLost": 345.0
+        },
+        {
+          "season": 2026,
+          "ladderRank": 9,
+          "pvsLostRank": 10,
+          "rankDelta": -1,
+          "wins": 6,
+          "percentage": 102.5,
+          "pvsLost": 1406.7
         }
       ],
       "Greater Western Sydney": [
@@ -53713,8 +53737,8 @@
         {
           "season": 2026,
           "ladderRank": 12,
-          "pvsLostRank": 10,
-          "rankDelta": 2,
+          "pvsLostRank": 14,
+          "rankDelta": -2,
           "wins": 5,
           "percentage": 100.0,
           "pvsLost": 1459.6
@@ -53850,8 +53874,8 @@
         {
           "season": 2026,
           "ladderRank": 4,
-          "pvsLostRank": 11,
-          "rankDelta": -7,
+          "pvsLostRank": 15,
+          "rankDelta": -11,
           "wins": 8,
           "percentage": 117.7,
           "pvsLost": 1542.1
@@ -53987,8 +54011,8 @@
         {
           "season": 2026,
           "ladderRank": 5,
-          "pvsLostRank": 3,
-          "rankDelta": 2,
+          "pvsLostRank": 4,
+          "rankDelta": 1,
           "wins": 9,
           "percentage": 105.7,
           "pvsLost": 1325.7
@@ -54124,8 +54148,8 @@
         {
           "season": 2026,
           "ladderRank": 10,
-          "pvsLostRank": 2,
-          "rankDelta": 8,
+          "pvsLostRank": 3,
+          "rankDelta": 7,
           "wins": 6,
           "percentage": 88.5,
           "pvsLost": 1309.3
@@ -54261,8 +54285,8 @@
         {
           "season": 2026,
           "ladderRank": 15,
-          "pvsLostRank": 8,
-          "rankDelta": 7,
+          "pvsLostRank": 9,
+          "rankDelta": 6,
           "wins": 4,
           "percentage": 101.0,
           "pvsLost": 1395.8
@@ -54398,8 +54422,8 @@
         {
           "season": 2026,
           "ladderRank": 17,
-          "pvsLostRank": 14,
-          "rankDelta": 3,
+          "pvsLostRank": 18,
+          "rankDelta": -1,
           "wins": 2,
           "percentage": 61.1,
           "pvsLost": 1690.9
@@ -54535,8 +54559,8 @@
         {
           "season": 2026,
           "ladderRank": 11,
-          "pvsLostRank": 4,
-          "rankDelta": 7,
+          "pvsLostRank": 5,
+          "rankDelta": 6,
           "wins": 6,
           "percentage": 103.6,
           "pvsLost": 1336.1
@@ -54668,6 +54692,15 @@
           "wins": 12,
           "percentage": 97.0,
           "pvsLost": 393.6
+        },
+        {
+          "season": 2026,
+          "ladderRank": 2,
+          "pvsLostRank": 13,
+          "rankDelta": -11,
+          "wins": 11,
+          "percentage": 140.5,
+          "pvsLost": 1437.6
         }
       ],
       "West Coast": [
@@ -54800,8 +54833,8 @@
         {
           "season": 2026,
           "ladderRank": 16,
-          "pvsLostRank": 5,
-          "rankDelta": 11,
+          "pvsLostRank": 6,
+          "rankDelta": 10,
           "wins": 4,
           "percentage": 72.7,
           "pvsLost": 1343.3
@@ -54937,8 +54970,8 @@
         {
           "season": 2026,
           "ladderRank": 8,
-          "pvsLostRank": 9,
-          "rankDelta": -1,
+          "pvsLostRank": 11,
+          "rankDelta": -3,
           "wins": 7,
           "percentage": 89.5,
           "pvsLost": 1435.9
@@ -55925,7 +55958,7 @@
         "unavailablePvs": 21.4,
         "status": "unavailable",
         "keyInjuries": [
-          "Suspension"
+          "Concussion"
         ]
       }
     ],
