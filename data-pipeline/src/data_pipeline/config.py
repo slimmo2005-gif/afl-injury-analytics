@@ -9,6 +9,8 @@ FRONTEND_DATA = ROOT / "frontend" / "public" / "data"
 
 MIN_SEASON = 2012
 DEFAULT_SEASON = 2025
+CURRENT_SEASON = 2026
+HISTORICAL_MAX_SEASON = 2025
 SQUIGGLE_BASE = "https://api.squiggle.com.au"
 FRYZIGG_RDS_URL = "http://www.fryziggafl.net/static/fryziggafl.rds"
 FRYZIGG_RDS_FILE = RAW_DIR / "fryziggafl.rds"

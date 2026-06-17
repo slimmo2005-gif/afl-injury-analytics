@@ -117,6 +117,27 @@ export interface LadderPvsRanks {
   interpretation: string
 }
 
+export interface CurrentLadderPvsSnapshot {
+  ladderRound: number
+  clubs: Array<LadderPvsSeasonRank & { club: string }>
+  byClub: Record<string, LadderPvsSeasonRank[]>
+  interpretation: string
+}
+
+export interface CurrentSeasonBundle extends SeasonBundle {
+  meta: {
+    season: number
+    round: number
+    ladderRound: number
+    generatedAt: string
+    note: string
+    dataSource?: string
+    isPartialSeason: boolean
+    historicalWindow?: string
+  }
+  currentLadderPvs: CurrentLadderPvsSnapshot
+}
+
 export interface SeasonBundle {
   leagueOverview: MockMetrics['leagueOverview']
   clubUnavailableByRound: RoundMetric[]

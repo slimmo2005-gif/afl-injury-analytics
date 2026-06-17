@@ -9,7 +9,7 @@ from pathlib import Path
 import duckdb
 import numpy as np
 
-from ..config import DEFAULT_SEASON, FRONTEND_DATA, SHARED_OUTPUT
+from ..config import DEFAULT_SEASON, FRONTEND_DATA, HISTORICAL_MAX_SEASON, SHARED_OUTPUT
 from ..transform.continuity import continuity_for_season
 from ..transform.unavailability import GAMES_MISSED_STATUS_SQL
 from .core22_impact import build_core22_impact_bundle
@@ -376,11 +376,14 @@ def build_metrics_bundle(
     con: duckdb.DuckDBPyConnection,
     season: int = DEFAULT_SEASON,
     export_all_seasons: bool = True,
+    historical_max_season: int | None = HISTORICAL_MAX_SEASON,
 ) -> dict:
     seasons_df = con.execute(
         "SELECT DISTINCT season FROM team_round_value ORDER BY season"
     ).df()
     seasons = [int(s) for s in seasons_df["season"].tolist()]
+    if historical_max_season is not None:
+        seasons = [s for s in seasons if s <= historical_max_season]
     if not seasons:
         seasons = [season]
 

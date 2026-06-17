@@ -6,7 +6,6 @@ import time
 
 import pandas as pd
 import requests
-
 from ..config import RAW_DIR
 from .fryzigg import normalize_team
 
@@ -87,6 +86,8 @@ def _parse_player_rows(
     payload: dict,
     match: dict,
     team_lookup: dict[str, str],
+    *,
+    all_participants: bool = False,
 ) -> list[dict]:
     season_name = match.get("compSeason", {}).get("name", "")
     season = int(season_name[:4]) if season_name[:4].isdigit() else None
@@ -101,7 +102,7 @@ def _parse_player_rows(
         )
         for entry in payload.get(team_key, []):
             ps = entry.get("playerStats", {})
-            stats = ps.get("stats", {})
+            stats = ps.get("stats", {}) or {}
             player = ps.get("player", {})
             pname = player.get("playerName", {})
             player_name = f"{pname.get('givenName', '')} {pname.get('surname', '')}".strip()
@@ -110,7 +111,12 @@ def _parse_player_rows(
             shots = stats.get("shotsAtGoal") or 0
             goals = stats.get("goals") or 0
             behinds = stats.get("behinds") or 0
-            if shots <= 0 and goals <= 0 and behinds <= 0:
+            disposals = stats.get("disposals")
+            tog = stats.get("timeOnGroundPercentage") or stats.get("timeOnGround") or 0
+            if not all_participants:
+                if shots <= 0 and goals <= 0 and behinds <= 0:
+                    continue
+            elif disposals is None and tog <= 0:
                 continue
             rows.append(
                 {
@@ -130,6 +136,24 @@ def _parse_player_rows(
     return rows
 
 
+def fetch_match_player_stats(
+    match: dict,
+    token: str,
+    team_lookup: dict[str, str],
+) -> list[dict]:
+    provider_id = match.get("providerId")
+    if not provider_id:
+        return []
+    resp = requests.get(
+        f"{CFS_API}/playerStats/match/{provider_id}",
+        headers={**_HEADERS, "x-media-mis-token": token},
+        timeout=30,
+    )
+    if resp.status_code != 200:
+        return []
+    return _parse_player_rows(resp.json(), match, team_lookup, all_participants=True)
+
+
 def fetch_match_goal_kicking(
     match: dict,
     token: str,
@@ -146,6 +170,120 @@ def fetch_match_goal_kicking(
     if resp.status_code != 200:
         return []
     return _parse_player_rows(resp.json(), match, team_lookup)
+
+
+def _provider_match_id(provider_id: str) -> int:
+    """Stable numeric match_id for DuckDB (AFL provider ids are strings)."""
+    return int(provider_id.split("_")[-1]) if provider_id.split("_")[-1].isdigit() else abs(hash(provider_id)) % (10**12)
+
+
+def _num(stats: dict, key: str) -> float:
+    val = stats.get(key)
+    if val is None:
+        return 0.0
+    if isinstance(val, dict):
+        val = val.get("total") or val.get("value") or 0
+    try:
+        return float(val)
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def load_afl_com_player_games(season: int, *, cache: bool = True) -> pd.DataFrame:
+    """Full player-match stats from AFL.com API (for seasons beyond Fryzigg RDS)."""
+    cache_path = RAW_DIR / f"afl_com_player_games_{season}.parquet"
+    if cache and cache_path.exists():
+        cached = pd.read_parquet(cache_path)
+        if not cached.empty:
+            return cached
+
+    matches = fetch_season_matches(season)
+    if not matches:
+        return pd.DataFrame()
+
+    token = get_afl_token()
+    team_lookup = _team_lookup()
+    stat_rows: list[dict] = []
+    for match in matches:
+        provider_id = match.get("providerId")
+        if not provider_id:
+            continue
+        resp = requests.get(
+            f"{CFS_API}/playerStats/match/{provider_id}",
+            headers={**_HEADERS, "x-media-mis-token": token},
+            timeout=30,
+        )
+        if resp.status_code != 200:
+            time.sleep(_REQUEST_PAUSE_SEC)
+            continue
+        payload = resp.json()
+        season_name = match.get("compSeason", {}).get("name", "")
+        match_season = int(season_name[:4]) if season_name[:4].isdigit() else season
+        round_no = match.get("round", {}).get("roundNumber")
+        match_date = match.get("utcStartTime", "")[:10] or None
+
+        for side, team_key in (("home", "homeTeamPlayerStats"), ("away", "awayTeamPlayerStats")):
+            default_team = normalize_team(
+                match.get(side, {}).get("team", {}).get("club", {}).get("name")
+                or match.get(side, {}).get("team", {}).get("name", "")
+            )
+            for entry in payload.get(team_key, []):
+                ps = entry.get("playerStats", {})
+                stats = ps.get("stats", {}) or {}
+                player = ps.get("player", {})
+                pname = player.get("playerName", {})
+                player_name = f"{pname.get('givenName', '')} {pname.get('surname', '')}".strip()
+                team_id = str(ps.get("teamId", ""))
+                team = team_lookup.get(team_id, default_team)
+                disposals = _num(stats, "disposals")
+                tog = _num(stats, "timeOnGroundPercentage")
+                if disposals <= 0 and tog <= 0:
+                    continue
+                de = _num(stats, "disposalEfficiency") or 72.0
+                metres = _num(stats, "metresGained")
+                goals = _num(stats, "goals")
+                goal_assists = _num(stats, "goalAssists")
+                stat_rows.append(
+                    {
+                        "player_id": str(player.get("playerId", player_name)),
+                        "player_name": player_name,
+                        "team": team,
+                        "season": match_season,
+                        "round": int(round_no) if round_no is not None else None,
+                        "match_id": _provider_match_id(str(provider_id)),
+                        "match_date": match_date,
+                        "disposals": int(disposals),
+                        "goals": int(goals),
+                        "score_involvements": goals + goal_assists * 0.5,
+                        "tackles": _num(stats, "tackles"),
+                        "contested_marks": _num(stats, "contestedMarks"),
+                        "intercept_marks": _num(stats, "interceptMarks"),
+                        "marks_inside_fifty": _num(stats, "marksInside50"),
+                        "intercepts": _num(stats, "intercepts"),
+                        "clearances": _num(stats, "clearances"),
+                        "hitouts": _num(stats, "hitouts"),
+                        "hitouts_to_advantage": _num(stats, "hitoutsToAdvantage"),
+                        "clangers": _num(stats, "clangers"),
+                        "metres_gained": metres,
+                        "metres_per100": metres / 100.0,
+                        "disposal_efficiency_pct": de,
+                        "effective_disposals": disposals * de / 100.0,
+                        "player_position": "",
+                    }
+                )
+        time.sleep(_REQUEST_PAUSE_SEC)
+
+    df = pd.DataFrame(stat_rows)
+    if df.empty:
+        return df
+    df = df[df["round"].notna()].copy()
+    df["round"] = df["round"].astype(int)
+    df["match_date"] = pd.to_datetime(df["match_date"], errors="coerce").dt.date
+    df = df.drop_duplicates(subset=["player_id", "team", "season", "round", "match_id"])
+    if cache:
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        df.to_parquet(cache_path, index=False)
+    return df
 
 
 def load_goal_kicking_player_games(

@@ -6,6 +6,7 @@ import { MetricsProvider } from './context/MetricsContext'
 import AdminAnalytics from './pages/AdminAnalytics'
 import AdminInsights from './pages/AdminInsights'
 import ClubDetail from './pages/ClubDetail'
+import CurrentSeason from './pages/CurrentSeason'
 import LeagueOverview from './pages/LeagueOverview'
 import Methodology from './pages/Methodology'
 import ModelInsights from './pages/ModelInsights'
@@ -21,6 +22,7 @@ export default function App() {
         <Routes>
           <Route element={<ClubLayout />}>
             <Route index element={<ClubDetail />} />
+            <Route path="current" element={<CurrentSeason />} />
             <Route path="methodology" element={<Methodology />} />
           </Route>
           <Route path="admin" element={<AdminLayout />}>

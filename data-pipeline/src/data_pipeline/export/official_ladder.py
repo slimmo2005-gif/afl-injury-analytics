@@ -16,6 +16,7 @@ FINAL_HA_ROUND: dict[int, int] = {
     2023: 23,
     2024: 24,
     2025: 24,
+    2026: 24,
 }
 
 OFFICIAL_LADDER_FROM = 2021
@@ -31,6 +32,46 @@ def fetch_standings(season: int, round_: int, *, timeout: int = 30) -> list[dict
     if not rows:
         raise ValueError(f"No standings for {season} round {round_}")
     return rows
+
+
+def latest_completed_round(con, season: int) -> int | None:
+    """Highest home-and-away round with concluded AFL matches in the DB."""
+    row = con.execute(
+        """
+        SELECT MAX(round)
+        FROM matches
+        WHERE season = ?
+          AND round > 0
+          AND COALESCE(complete, 0) = 100
+        """,
+        [season],
+    ).fetchone()
+    return int(row[0]) if row and row[0] is not None else None
+
+
+def current_ladder_by_team(
+    season: int,
+    round_: int | None = None,
+    *,
+    con=None,
+) -> tuple[int, dict[str, dict[str, int | float]]]:
+    """Official ladder through ``round_`` (or latest completed round in DB)."""
+    if round_ is None:
+        if con is None:
+            raise ValueError("round_ or con required for current_ladder_by_team")
+        round_ = latest_completed_round(con, season)
+        if round_ is None:
+            raise ValueError(f"No completed matches for season {season}")
+    rows = fetch_standings(season, round_)
+    return round_, {
+        normalize_team(row["name"]): {
+            "ladder_rank": int(row["rank"]),
+            "wins": int(row["wins"]),
+            "draws": int(row.get("draws", 0)),
+            "percentage": round(float(row["percentage"]), 1),
+        }
+        for row in rows
+    }
 
 
 def official_ladder_by_team(season: int) -> dict[str, dict[str, int | float]] | None:
