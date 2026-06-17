@@ -2,7 +2,7 @@
   "meta": {
     "season": 2025,
     "round": 24,
-    "generatedAt": "2026-06-17T13:01:04.819740+00:00",
+    "generatedAt": "2026-06-17T13:17:40.336475+00:00",
     "note": "Phase 2 \u2014 PVS + national draft + VFL (2025)",
     "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
     "defaultSeason": 2025,
@@ -186,7 +186,7 @@
         },
         {
           "club": "Carlton",
-          "unavailableValue": 648.5,
+          "unavailableValue": 648.6,
           "unavailableTop5": 360.2,
           "expectedWins": 9.4,
           "actualWins": 11,
@@ -25566,7 +25566,7 @@
         },
         {
           "club": "Collingwood",
-          "unavailableValue": 881.1,
+          "unavailableValue": 881.2,
           "unavailableTop5": 489.0,
           "expectedWins": 10.7,
           "actualWins": 15,
@@ -25599,7 +25599,7 @@
         {
           "club": "Gold Coast",
           "unavailableValue": 882.4,
-          "unavailableTop5": 446.1,
+          "unavailableTop5": 446.0,
           "expectedWins": 10.7,
           "actualWins": 3,
           "delta": -7.7
@@ -39765,7 +39765,7 @@
       "clubRankings": [
         {
           "club": "Adelaide",
-          "unavailableValue": 417.4,
+          "unavailableValue": 417.3,
           "unavailableTop5": 316.9,
           "expectedWins": 14.6,
           "actualWins": 11,
@@ -40820,7 +40820,7 @@
             "roundsMissed": 19,
             "pvs": 3.1,
             "unavailablePvs": 59.4,
-            "status": "unavailable",
+            "status": "intermittent",
             "keyInjuries": [
               "Concussion",
               "Head"
@@ -52092,16 +52092,16 @@
         "id": "seasonTop22",
         "label": "Season top-22 PVS (5+ games)",
         "teamRounds": 3116,
-        "avgMissedPvs": 18.77,
+        "avgMissedPvs": 18.78,
         "avgPlayersMissed": 4.78,
         "winRate": 0.496,
         "correlations": [
           {
             "role": "Total core missed",
             "roleId": "total",
-            "corrWin": -0.192,
+            "corrWin": -0.191,
             "corrMargin": -0.241,
-            "avgMissPvs": 18.77,
+            "avgMissPvs": 18.78,
             "pctRounds": 100.0
           },
           {
@@ -52124,23 +52124,23 @@
             "role": "Key FWD + DEF",
             "roleId": "key_roles",
             "corrWin": -0.084,
-            "corrMargin": -0.092,
+            "corrMargin": -0.093,
             "avgMissPvs": 3.78,
-            "pctRounds": 66.0
+            "pctRounds": 65.9
           },
           {
             "role": "Key Defender",
             "roleId": "key_defender",
-            "corrWin": -0.076,
-            "corrMargin": -0.096,
-            "avgMissPvs": 2.11,
-            "pctRounds": 46.1
+            "corrWin": -0.077,
+            "corrMargin": -0.097,
+            "avgMissPvs": 2.1,
+            "pctRounds": 45.9
           },
           {
             "role": "Utility",
             "roleId": "utility",
             "corrWin": -0.073,
-            "corrMargin": -0.088,
+            "corrMargin": -0.087,
             "avgMissPvs": 3.39,
             "pctRounds": 63.6
           },
@@ -52155,10 +52155,10 @@
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "corrWin": -0.044,
-            "corrMargin": -0.034,
+            "corrWin": -0.042,
+            "corrMargin": -0.033,
             "avgMissPvs": 1.67,
-            "pctRounds": 37.9
+            "pctRounds": 38.0
           },
           {
             "role": "Pressure Forward",
@@ -52195,20 +52195,20 @@
           {
             "role": "Key Defender",
             "roleId": "key_defender",
-            "winPctPer100": -1.43,
-            "marginPer100": -142.65
+            "winPctPer100": -1.46,
+            "marginPer100": -145.36
           },
           {
             "role": "Utility",
             "roleId": "utility",
             "winPctPer100": -1.09,
-            "marginPer100": -103.59
+            "marginPer100": -103.07
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "winPctPer100": -0.92,
-            "marginPer100": -57.28
+            "winPctPer100": -0.88,
+            "marginPer100": -54.67
           },
           {
             "role": "Inside Mid",
@@ -52247,10 +52247,10 @@
           {
             "role": "Key Defender",
             "roleId": "key_defender",
-            "rounds": 613,
+            "rounds": 611,
             "winWhenMiss": 0.457,
-            "winOtherwise": 0.533,
-            "deltaPp": -7.7
+            "winOtherwise": 0.534,
+            "deltaPp": -7.8
           },
           {
             "role": "Inside Mid",
@@ -52279,10 +52279,10 @@
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "rounds": 514,
+            "rounds": 518,
             "winWhenMiss": 0.481,
-            "winOtherwise": 0.513,
-            "deltaPp": -3.3
+            "winOtherwise": 0.512,
+            "deltaPp": -3.1
           },
           {
             "role": "Ruck",
@@ -52305,47 +52305,47 @@
           {
             "role": "Inside Mid",
             "roleId": "inside_mid",
-            "coef": -0.01036
+            "coef": -0.01038
           },
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "coef": -0.02973
+            "coef": -0.0297
           },
           {
             "role": "Rebound Defender",
             "roleId": "rebound_defender",
-            "coef": -0.00644
+            "coef": -0.0064
           },
           {
             "role": "Key Defender",
             "roleId": "key_defender",
-            "coef": -0.01901
+            "coef": -0.01923
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "coef": -0.01515
+            "coef": -0.01479
           },
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "coef": -0.01054
+            "coef": -0.0106
           },
           {
             "role": "Ruck",
             "roleId": "ruck",
-            "coef": -0.00766
+            "coef": -0.00765
           },
           {
             "role": "Utility",
             "roleId": "utility",
-            "coef": -0.02
+            "coef": -0.01993
           }
         ],
         "archetypeModelR2": 0.0478,
         "keyVsOther": {
-          "keyRolesCoef": -0.01571,
+          "keyRolesCoef": -0.0157,
           "otherRolesCoef": -0.01397,
           "r2": 0.0368
         },
@@ -52384,10 +52384,10 @@
           },
           {
             "season": 2022,
-            "total": -0.195,
-            "keyRoles": -0.08,
-            "keyForward": -0.025,
-            "keyDefender": -0.09,
+            "total": -0.194,
+            "keyRoles": -0.079,
+            "keyForward": -0.014,
+            "keyDefender": -0.105,
             "mid": -0.148
           },
           {
@@ -52568,6 +52568,15 @@
           "wins": 18,
           "percentage": 139.3,
           "pvsLost": 428.8
+        },
+        {
+          "season": 2026,
+          "ladderRank": 6,
+          "pvsLostRank": 12,
+          "rankDelta": -6,
+          "wins": 8,
+          "percentage": 112.4,
+          "pvsLost": 1592.8
         }
       ],
       "Brisbane Lions": [
@@ -52700,11 +52709,11 @@
         {
           "season": 2026,
           "ladderRank": 7,
-          "pvsLostRank": 7,
-          "rankDelta": 0,
+          "pvsLostRank": 9,
+          "rankDelta": -2,
           "wins": 8,
           "percentage": 109.6,
-          "pvsLost": 1511.9
+          "pvsLost": 1473.6
         }
       ],
       "Carlton": [
@@ -52837,11 +52846,11 @@
         {
           "season": 2026,
           "ladderRank": 13,
-          "pvsLostRank": 13,
-          "rankDelta": 0,
+          "pvsLostRank": 17,
+          "rankDelta": -4,
           "wins": 5,
           "percentage": 93.2,
-          "pvsLost": 1729.8
+          "pvsLost": 1685.7
         }
       ],
       "Collingwood": [
@@ -52974,11 +52983,11 @@
         {
           "season": 2026,
           "ladderRank": 14,
-          "pvsLostRank": 1,
-          "rankDelta": 13,
+          "pvsLostRank": 2,
+          "rankDelta": 12,
           "wins": 4,
           "percentage": 97.9,
-          "pvsLost": 1396.5
+          "pvsLost": 1347.8
         }
       ],
       "Essendon": [
@@ -53111,11 +53120,11 @@
         {
           "season": 2026,
           "ladderRank": 18,
-          "pvsLostRank": 12,
-          "rankDelta": 6,
+          "pvsLostRank": 16,
+          "rankDelta": 2,
           "wins": 1,
           "percentage": 70.4,
-          "pvsLost": 1715.8
+          "pvsLost": 1675.4
         }
       ],
       "Fremantle": [
@@ -53248,11 +53257,11 @@
         {
           "season": 2026,
           "ladderRank": 1,
-          "pvsLostRank": 4,
-          "rankDelta": -3,
+          "pvsLostRank": 5,
+          "rankDelta": -4,
           "wins": 12,
           "percentage": 147.9,
-          "pvsLost": 1483.4
+          "pvsLost": 1436.1
         }
       ],
       "Geelong": [
@@ -53381,6 +53390,15 @@
           "wins": 17,
           "percentage": 141.5,
           "pvsLost": 296.8
+        },
+        {
+          "season": 2026,
+          "ladderRank": 3,
+          "pvsLostRank": 1,
+          "rankDelta": 2,
+          "wins": 9,
+          "percentage": 131.5,
+          "pvsLost": 1295.1
         }
       ],
       "Gold Coast": [
@@ -53509,6 +53527,15 @@
           "wins": 15,
           "percentage": 124.9,
           "pvsLost": 419.2
+        },
+        {
+          "season": 2026,
+          "ladderRank": 9,
+          "pvsLostRank": 11,
+          "rankDelta": -2,
+          "wins": 6,
+          "percentage": 102.5,
+          "pvsLost": 1530.3
         }
       ],
       "Greater Western Sydney": [
@@ -53641,11 +53668,11 @@
         {
           "season": 2026,
           "ladderRank": 12,
-          "pvsLostRank": 10,
-          "rankDelta": 2,
+          "pvsLostRank": 14,
+          "rankDelta": -2,
           "wins": 5,
           "percentage": 100.0,
-          "pvsLost": 1657.2
+          "pvsLost": 1622.4
         }
       ],
       "Hawthorn": [
@@ -53778,11 +53805,11 @@
         {
           "season": 2026,
           "ladderRank": 4,
-          "pvsLostRank": 9,
-          "rankDelta": -5,
+          "pvsLostRank": 13,
+          "rankDelta": -9,
           "wins": 8,
           "percentage": 117.7,
-          "pvsLost": 1652.3
+          "pvsLost": 1611.1
         }
       ],
       "Melbourne": [
@@ -53915,11 +53942,11 @@
         {
           "season": 2026,
           "ladderRank": 5,
-          "pvsLostRank": 2,
-          "rankDelta": 3,
+          "pvsLostRank": 3,
+          "rankDelta": 2,
           "wins": 9,
           "percentage": 105.7,
-          "pvsLost": 1411.4
+          "pvsLost": 1377.1
         }
       ],
       "North Melbourne": [
@@ -54052,11 +54079,11 @@
         {
           "season": 2026,
           "ladderRank": 10,
-          "pvsLostRank": 6,
-          "rankDelta": 4,
+          "pvsLostRank": 8,
+          "rankDelta": 2,
           "wins": 6,
           "percentage": 88.5,
-          "pvsLost": 1499.2
+          "pvsLost": 1467.3
         }
       ],
       "Port Adelaide": [
@@ -54121,7 +54148,7 @@
           "rankDelta": 7,
           "wins": 12,
           "percentage": 107.6,
-          "pvsLost": 589.2
+          "pvsLost": 589.3
         },
         {
           "season": 2019,
@@ -54189,11 +54216,11 @@
         {
           "season": 2026,
           "ladderRank": 15,
-          "pvsLostRank": 5,
-          "rankDelta": 10,
+          "pvsLostRank": 7,
+          "rankDelta": 8,
           "wins": 4,
           "percentage": 101.0,
-          "pvsLost": 1493.6
+          "pvsLost": 1466.5
         }
       ],
       "Richmond": [
@@ -54326,11 +54353,11 @@
         {
           "season": 2026,
           "ladderRank": 17,
-          "pvsLostRank": 14,
-          "rankDelta": 3,
+          "pvsLostRank": 18,
+          "rankDelta": -1,
           "wins": 2,
           "percentage": 61.1,
-          "pvsLost": 1783.1
+          "pvsLost": 1731.0
         }
       ],
       "St Kilda": [
@@ -54463,11 +54490,11 @@
         {
           "season": 2026,
           "ladderRank": 11,
-          "pvsLostRank": 3,
-          "rankDelta": 8,
+          "pvsLostRank": 4,
+          "rankDelta": 7,
           "wins": 6,
           "percentage": 103.6,
-          "pvsLost": 1464.2
+          "pvsLost": 1420.0
         }
       ],
       "Sydney": [
@@ -54596,6 +54623,15 @@
           "wins": 12,
           "percentage": 97.0,
           "pvsLost": 548.9
+        },
+        {
+          "season": 2026,
+          "ladderRank": 2,
+          "pvsLostRank": 6,
+          "rankDelta": -4,
+          "wins": 11,
+          "percentage": 140.5,
+          "pvsLost": 1453.5
         }
       ],
       "West Coast": [
@@ -54728,11 +54764,11 @@
         {
           "season": 2026,
           "ladderRank": 16,
-          "pvsLostRank": 8,
-          "rankDelta": 8,
+          "pvsLostRank": 10,
+          "rankDelta": 6,
           "wins": 4,
           "percentage": 72.7,
-          "pvsLost": 1541.2
+          "pvsLost": 1516.1
         }
       ],
       "Western Bulldogs": [
@@ -54865,11 +54901,11 @@
         {
           "season": 2026,
           "ladderRank": 8,
-          "pvsLostRank": 11,
-          "rankDelta": -3,
+          "pvsLostRank": 15,
+          "rankDelta": -7,
           "wins": 7,
           "percentage": 89.5,
-          "pvsLost": 1669.4
+          "pvsLost": 1634.9
         }
       ]
     },
