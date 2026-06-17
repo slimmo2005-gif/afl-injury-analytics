@@ -242,10 +242,29 @@ def build_season_bundle(
         for _, row in top_players.iterrows()
     ]
 
-    club_top_params = list(base_params) + [season]
+    club_top_params = [season - 1, season] + list(base_params) + [season]
     club_top_players = con.execute(
         f"""
-        WITH player_agg AS (
+        WITH best23 AS (
+            SELECT player_id, team
+            FROM (
+                SELECT
+                    v.player_id,
+                    v.team,
+                    ROW_NUMBER() OVER (
+                        PARTITION BY v.team
+                        ORDER BY COALESCE(pv_prev.pvs, v.injury_weight_pvs, v.pvs) DESC
+                    ) AS rn
+                FROM player_value v
+                LEFT JOIN player_value pv_prev
+                    ON v.player_id = pv_prev.player_id
+                    AND v.team = pv_prev.team
+                    AND pv_prev.season = ?
+                WHERE v.season = ?
+            ) ranked
+            WHERE rn <= 23
+        ),
+        player_agg AS (
             SELECT
                 a.player_id,
                 a.player_name AS player,
@@ -268,6 +287,8 @@ def build_season_bundle(
             FROM availability a
             JOIN player_value v
                 ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
+            INNER JOIN best23 b
+                ON a.player_id = b.player_id AND a.team = b.team
             WHERE a.season = ?{round_filter_a}
             GROUP BY a.player_id, a.player_name, a.team
             HAVING injury_rounds_missed > 0

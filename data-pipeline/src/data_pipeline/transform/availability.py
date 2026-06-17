@@ -10,14 +10,53 @@ def build_availability(con: duckdb.DuckDBPyConnection) -> None:
     con.execute(
         """
         INSERT INTO squad_players
+        WITH from_games AS (
+            SELECT
+                player_id,
+                MAX(player_name) AS player_name,
+                team,
+                season,
+                COUNT(DISTINCT round) AS games_played
+            FROM player_games
+            GROUP BY 1, 3, 4
+        ),
+        carry_forward AS (
+            SELECT
+                pg.player_id,
+                MAX(pg.player_name) AS player_name,
+                pg.team,
+                pg.season + 1 AS season,
+                0 AS games_played
+            FROM player_games pg
+            WHERE EXISTS (
+                SELECT 1 FROM matches m WHERE m.season = pg.season + 1
+            )
+            GROUP BY pg.player_id, pg.team, pg.season
+            HAVING COUNT(DISTINCT pg.round) >= 5
+        ),
+        combined AS (
+            SELECT player_id, player_name, team, season, games_played FROM from_games
+            UNION ALL
+            SELECT cf.player_id, cf.player_name, cf.team, cf.season, cf.games_played
+            FROM carry_forward cf
+            WHERE NOT EXISTS (
+                SELECT 1 FROM from_games g
+                WHERE LOWER(g.player_name) = LOWER(cf.player_name)
+                  AND g.team = cf.team
+                  AND g.season = cf.season
+            )
+        )
         SELECT
-            player_id,
+            COALESCE(
+                MAX(CASE WHEN games_played > 0 THEN player_id END),
+                MAX(player_id)
+            ) AS player_id,
             MAX(player_name) AS player_name,
             team,
             season,
-            COUNT(DISTINCT round) AS games_played
-        FROM player_games
-        GROUP BY 1, 3, 4
+            MAX(games_played) AS games_played
+        FROM combined
+        GROUP BY LOWER(player_name), team, season
         """
     )
 
@@ -44,20 +83,41 @@ def build_availability(con: duckdb.DuckDBPyConnection) -> None:
             INNER JOIN home_away_rounds r
                 ON m.season = r.season AND m.round = r.round
         ),
+        carried_forward AS (
+            SELECT DISTINCT s.player_id, s.team, s.season
+            FROM squad_players s
+            WHERE EXISTS (
+                SELECT 1
+                FROM player_games pg
+                WHERE LOWER(pg.player_name) = LOWER(s.player_name)
+                  AND pg.team = s.team
+                  AND pg.season = s.season - 1
+                GROUP BY pg.player_id
+                HAVING COUNT(DISTINCT pg.round) >= 5
+            )
+        ),
+        debut AS (
+            SELECT player_id, team, season, MIN(round) AS debut_round
+            FROM player_games
+            GROUP BY 1, 2, 3
+        ),
         squad_rounds AS (
             SELECT s.player_id, s.player_name, s.team, s.season, tr.round
             FROM squad_players s
             INNER JOIN team_rounds tr
                 ON s.team = tr.team AND s.season = tr.season
-            INNER JOIN (
-                SELECT player_id, team, season, MIN(round) AS debut_round
-                FROM player_games
-                GROUP BY 1, 2, 3
-            ) debut
-                ON s.player_id = debut.player_id
-                AND s.team = debut.team
-                AND s.season = debut.season
-            WHERE tr.round >= debut.debut_round
+            LEFT JOIN debut d
+                ON s.player_id = d.player_id
+                AND s.team = d.team
+                AND s.season = d.season
+            LEFT JOIN carried_forward cf
+                ON s.player_id = cf.player_id
+                AND s.team = cf.team
+                AND s.season = cf.season
+            WHERE tr.round >= CASE
+                WHEN cf.player_id IS NOT NULL THEN 1
+                ELSE COALESCE(d.debut_round, 1)
+            END
         ),
         played AS (
             SELECT DISTINCT player_id, team, season, round

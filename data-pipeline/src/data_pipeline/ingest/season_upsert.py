@@ -6,7 +6,7 @@ import duckdb
 import pandas as pd
 
 from ..config import FRYZIGG_RDS_FILE
-from .afl_com import latest_fryzigg_season, load_afl_com_player_games
+from .afl_com import latest_fryzigg_season, load_afl_com_player_games, _provider_match_id
 from .fryzigg import load_player_games
 from .squiggle import fetch_games
 
@@ -34,6 +34,60 @@ def upsert_matches(con: duckdb.DuckDBPyConnection, season: int) -> int:
     return len(df)
 
 
+def _coerce_match_ids(df: pd.DataFrame) -> pd.DataFrame:
+    if df.empty or "match_id" not in df.columns:
+        return df
+    out = df.copy()
+
+    def _to_int(value):
+        if value is None or (isinstance(value, float) and pd.isna(value)):
+            return None
+        try:
+            return int(value)
+        except (TypeError, ValueError):
+            return _provider_match_id(str(value))
+
+    out["match_id"] = out["match_id"].map(_to_int)
+    return out.dropna(subset=["match_id"])
+
+
+def remap_to_canonical_player_ids(
+    df: pd.DataFrame,
+    con: duckdb.DuckDBPyConnection,
+    season: int,
+) -> pd.DataFrame:
+    """Map AFL.com player ids onto existing Fryzigg ids when names match."""
+    if df.empty:
+        return df
+    mapping = con.execute(
+        """
+        SELECT LOWER(player_name) AS pn, team, player_id AS canonical_id
+        FROM (
+            SELECT
+                player_name,
+                team,
+                player_id,
+                ROW_NUMBER() OVER (
+                    PARTITION BY LOWER(player_name), team
+                    ORDER BY COUNT(*) DESC
+                ) AS rn
+            FROM player_games
+            WHERE season < ?
+            GROUP BY player_name, team, player_id
+        )
+        WHERE rn = 1
+        """,
+        [season],
+    ).df()
+    if mapping.empty:
+        return df
+    out = df.copy()
+    out["_pn"] = out["player_name"].str.lower()
+    merged = out.merge(mapping, left_on=["_pn", "team"], right_on=["pn", "team"], how="left")
+    out["player_id"] = merged["canonical_id"].fillna(out["player_id"]).astype(str)
+    return out.drop(columns=["_pn"], errors="ignore")
+
+
 def upsert_player_games(con: duckdb.DuckDBPyConnection, season: int, *, refresh: bool = False) -> int:
     fryzigg_max = latest_fryzigg_season(FRYZIGG_RDS_FILE)
     if fryzigg_max is not None and season <= fryzigg_max:
@@ -44,6 +98,8 @@ def upsert_player_games(con: duckdb.DuckDBPyConnection, season: int, *, refresh:
         source = "afl.com"
     if df.empty:
         raise RuntimeError(f"No player_games for {season} ({source})")
+    df = remap_to_canonical_player_ids(df, con, season)
+    df = _coerce_match_ids(df)
     delete_season(con, "player_games", season)
     _register_and_insert(con, "player_games", df)
     print(f"[upsert] player_games {season}: {len(df)} rows ({source})")
