@@ -182,11 +182,25 @@ def _num(stats: dict, key: str) -> float:
     if val is None:
         return 0.0
     if isinstance(val, dict):
-        val = val.get("total") or val.get("value") or 0
+        for subkey in ("totalClearances", "total", "value"):
+            if subkey in val:
+                try:
+                    return float(val[subkey])
+                except (TypeError, ValueError):
+                    pass
+        return 0.0
     try:
         return float(val)
     except (TypeError, ValueError):
         return 0.0
+
+
+def _stat_num(stats: dict, key: str) -> float:
+    """Read a stat from top-level stats or Champion Data extendedStats."""
+    ext = stats.get("extendedStats")
+    if isinstance(ext, dict) and key in ext:
+        return _num(ext, key)
+    return _num(stats, key)
 
 
 def load_afl_com_player_games(season: int, *, cache: bool = True) -> pd.DataFrame:
@@ -257,12 +271,13 @@ def load_afl_com_player_games(season: int, *, cache: bool = True) -> pd.DataFram
                         "score_involvements": goals + goal_assists * 0.5,
                         "tackles": _num(stats, "tackles"),
                         "contested_marks": _num(stats, "contestedMarks"),
-                        "intercept_marks": _num(stats, "interceptMarks"),
+                        "intercept_marks": _stat_num(stats, "interceptMarks"),
                         "marks_inside_fifty": _num(stats, "marksInside50"),
                         "intercepts": _num(stats, "intercepts"),
                         "clearances": _num(stats, "clearances"),
+                        "spoils": _stat_num(stats, "spoils"),
                         "hitouts": _num(stats, "hitouts"),
-                        "hitouts_to_advantage": _num(stats, "hitoutsToAdvantage"),
+                        "hitouts_to_advantage": _stat_num(stats, "hitoutsToAdvantage"),
                         "clangers": _num(stats, "clangers"),
                         "metres_gained": metres,
                         "metres_per100": metres / 100.0,
