@@ -67,9 +67,18 @@ def build_season_bundle(
     con: duckdb.DuckDBPyConnection,
     season: int,
     default_club: str = "Collingwood",
+    max_round: int | None = None,
 ) -> dict:
+    round_filter_tr = " AND tr.round <= ?" if max_round is not None else ""
+    round_filter_a = " AND a.round <= ?" if max_round is not None else ""
+    round_filter_m = " AND round <= ?" if max_round is not None else ""
+    round_filter_v = " AND round <= ?" if max_round is not None else ""
+    base_params: list = [season]
+    if max_round is not None:
+        base_params.append(max_round)
+
     club_season = con.execute(
-        """
+        f"""
         SELECT
             tr.team AS club,
             tr.season,
@@ -81,11 +90,11 @@ def build_season_bundle(
         FROM team_round_summary tr
         LEFT JOIN team_round_value v
             ON tr.team = v.team AND tr.season = v.season AND tr.round = v.round
-        WHERE tr.season = ?
+        WHERE tr.season = ?{round_filter_tr}
         GROUP BY tr.team, tr.season
         ORDER BY unavailable_value DESC
         """,
-        [season],
+        base_params,
     ).df()
 
     if club_season.empty:
@@ -107,8 +116,11 @@ def build_season_bundle(
         default_club = str(club_season.iloc[0]["club"])
 
     def _club_round_df(club: str):
+        params = [season, club]
+        if max_round is not None:
+            params.append(max_round)
         df = con.execute(
-            """
+            f"""
             SELECT
                 tr.round,
                 COALESCE(v.unavailable_pvs_games_missed, 0) AS value,
@@ -117,10 +129,10 @@ def build_season_bundle(
             FROM team_round_summary tr
             LEFT JOIN team_round_value v
                 ON tr.team = v.team AND tr.season = v.season AND tr.round = v.round
-            WHERE tr.season = ? AND tr.team = ?
+            WHERE tr.season = ? AND tr.team = ?{round_filter_tr}
             ORDER BY tr.round
             """,
-            [season, club],
+            params,
         ).df()
         return df
 
@@ -138,6 +150,7 @@ def build_season_bundle(
             for r, v, t5, w in zip(cdf["round"], cdf["value"], cdf["top5"], cdf["wins"])
         ]
 
+    top_params = list(base_params)
     top_players = con.execute(
         f"""
         SELECT
@@ -161,47 +174,53 @@ def build_season_bundle(
         FROM availability a
         JOIN player_value v
             ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
-        WHERE a.season = ?
+        WHERE a.season = ?{round_filter_a}
             GROUP BY a.player_id, a.player_name, a.team
             HAVING injury_rounds_missed > 0
             ORDER BY unavailable_pvs DESC
             LIMIT 10
         """,
-        [season],
+        top_params,
     ).df()
 
+    vfl_params: list = [season]
+    if max_round is not None:
+        vfl_params.append(max_round)
     vfl_summary = con.execute(
-        """
+        f"""
         SELECT COALESCE(SUM(unavailable_pvs_vfl_only), 0)
-        FROM team_round_value WHERE season = ?
+        FROM team_round_value WHERE season = ?{round_filter_v}
         """,
-        [season],
+        vfl_params,
     ).fetchone()[0]
 
     continuity = continuity_for_season(con, season)
 
     # Margin regression (club-season): unavailable PVS vs avg margin
+    margin_params = [season, season, season]
+    if max_round is not None:
+        margin_params.extend([max_round, max_round, max_round])
     margins = con.execute(
-        """
+        f"""
         WITH team_margin AS (
             SELECT season, home_team AS team, home_score - away_score AS margin, round
-            FROM matches WHERE season = ?
+            FROM matches WHERE season = ?{round_filter_m}
             UNION ALL
             SELECT season, away_team, away_score - home_score, round
-            FROM matches WHERE season = ?
+            FROM matches WHERE season = ?{round_filter_m}
         ),
         club_margin AS (
             SELECT team, AVG(margin) AS avg_margin FROM team_margin GROUP BY team
         ),
         club_unavail AS (
             SELECT team, SUM(unavailable_pvs_total) AS unavail
-            FROM team_round_value WHERE season = ? GROUP BY team
+            FROM team_round_value WHERE season = ?{round_filter_v} GROUP BY team
         )
         SELECT c.team, c.avg_margin, u.unavail
         FROM club_margin c
         JOIN club_unavail u ON c.team = u.team
         """,
-        [season, season, season],
+        margin_params,
     ).df()
 
     margin_r2 = 0.0
@@ -223,6 +242,7 @@ def build_season_bundle(
         for _, row in top_players.iterrows()
     ]
 
+    club_top_params = list(base_params) + [season]
     club_top_players = con.execute(
         f"""
         WITH player_agg AS (
@@ -248,7 +268,7 @@ def build_season_bundle(
             FROM availability a
             JOIN player_value v
                 ON a.player_id = v.player_id AND a.team = v.team AND a.season = v.season
-            WHERE a.season = ?
+            WHERE a.season = ?{round_filter_a}
             GROUP BY a.player_id, a.player_name, a.team
             HAVING injury_rounds_missed > 0
         ),
@@ -285,7 +305,7 @@ def build_season_bundle(
         SELECT * FROM ranked WHERE rn <= 5
         ORDER BY club, rn
         """,
-        [season, season],
+        club_top_params,
     ).df()
 
     manual_labels = adjustment_key_injuries_index()

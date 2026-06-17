@@ -40,9 +40,10 @@ def _current_ladder_pvs_snapshot(
             AND a.team = v.team
             AND a.season = v.season
         WHERE a.season = ?
+          AND a.round <= ?
         GROUP BY a.team
         """,
-        [season],
+        [season, ladder_round],
     ).fetchall()
     pvs_by_team = {team: float(pvs) for team, pvs in pvs_rows}
     teams_pvs = sorted(pvs_by_team.items(), key=lambda x: (x[1], x[0]))
@@ -83,7 +84,7 @@ def build_current_season_bundle(
     season: int = CURRENT_SEASON,
 ) -> dict:
     ladder_round, official = current_ladder_by_team(season, con=con)
-    season_data = build_season_bundle(con, season)
+    season_data = build_season_bundle(con, season, max_round=ladder_round)
 
     # Override club rankings wins with official ladder through current round.
     for row in season_data["clubRankings"]:

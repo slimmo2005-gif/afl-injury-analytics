@@ -148,7 +148,10 @@ def load_vfl_games(con: duckdb.DuckDBPyConnection, vfl_df: pd.DataFrame) -> None
                           AND LOWER(regexp_extract(pg.player_name, ' ([^ ]+)$', 1)) = LOWER(v.player_name)
                         LIMIT 1
                     ),
-                    v.vfl_team
+                    CASE
+                        WHEN v.vfl_team IN ('Peel Thunder', 'Peel') THEN NULL
+                        ELSE v.vfl_team
+                    END
                 ) AS afl_club,
                 v.vfl_team,
                 v.season,
@@ -244,6 +247,12 @@ def apply_vfl_to_availability(con: duckdb.DuckDBPyConnection) -> None:
                   v.competition = 'sanfl'
                   AND a.team = v.afl_club
                   AND LOWER(regexp_extract(a.player_name, ' ([^ ]+)$', 1)) = LOWER(v.player_name)
+              )
+              OR (
+                  v.competition = 'wafl'
+                  AND v.vfl_team ILIKE '%peel%'
+                  AND a.team IN ('Fremantle', 'West Coast')
+                  AND LOWER(a.player_name) = v.player_name_norm
               )
           )
         """
