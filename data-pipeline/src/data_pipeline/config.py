@@ -16,13 +16,17 @@ FRYZIGG_RDS_URL = "http://www.fryziggafl.net/static/fryziggafl.rds"
 FRYZIGG_RDS_FILE = RAW_DIR / "fryziggafl.rds"
 
 TEAM_ALIASES: dict[str, str] = {
+    "Adelaide Crows": "Adelaide",
     "Brisbane": "Brisbane Lions",
     "Footscray": "Western Bulldogs",
+    "Geelong Cats": "Geelong",
+    "Gold Coast Suns": "Gold Coast",
+    "Gold Coast SUNS": "Gold Coast",
     "GWS": "Greater Western Sydney",
     "GWS GIANTS": "Greater Western Sydney",
     "GWS Giants": "Greater Western Sydney",
     "Greater Western Sydney Giants": "Greater Western Sydney",
-    "Gold Coast Suns": "Gold Coast",
+    "Sydney Swans": "Sydney",
     "West Coast Eagles": "West Coast",
 }
 

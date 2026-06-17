@@ -9,7 +9,6 @@ from pathlib import Path
 import duckdb
 
 from ..config import CURRENT_SEASON, FRONTEND_DATA, SHARED_OUTPUT
-from ..transform.unavailability import GAMES_MISSED_STATUS_SQL
 from .frontend import build_season_bundle
 from .official_ladder import current_ladder_by_team, latest_completed_round
 
@@ -21,31 +20,19 @@ def _current_ladder_pvs_snapshot(
     official: dict[str, dict[str, int | float]],
 ) -> dict:
     pvs_rows = con.execute(
-        f"""
-        SELECT a.team,
-               ROUND(
-                   SUM(
-                       CASE
-                           WHEN NOT a.afl_played
-                                AND a.status IN {GAMES_MISSED_STATUS_SQL}
-                           THEN COALESCE(v.injury_weight_pvs, v.pvs)
-                           ELSE 0
-                       END
-                   ),
-                   1
-               ) AS pvs_lost
-        FROM availability a
-        JOIN player_value v
-            ON a.player_id = v.player_id
-            AND a.team = v.team
-            AND a.season = v.season
-        WHERE a.season = ?
-          AND a.round <= ?
-        GROUP BY a.team
+        """
+        SELECT team,
+               ROUND(SUM(COALESCE(unavailable_pvs_games_missed, 0)), 1) AS pvs_lost
+        FROM team_round_value
+        WHERE season = ?
+          AND round <= ?
+        GROUP BY team
         """,
         [season, ladder_round],
     ).fetchall()
     pvs_by_team = {team: float(pvs) for team, pvs in pvs_rows}
+    for team in official:
+        pvs_by_team.setdefault(team, 0.0)
     teams_pvs = sorted(pvs_by_team.items(), key=lambda x: (x[1], x[0]))
     pvs_rank = {team: rank for rank, (team, _) in enumerate(teams_pvs, start=1)}
 
@@ -53,7 +40,7 @@ def _current_ladder_pvs_snapshot(
     by_club: dict[str, list[dict]] = {}
     for team, ladder in sorted(official.items()):
         pvs_lost = pvs_by_team.get(team, 0.0)
-        pvs_lost_rank = pvs_rank.get(team, 18)
+        pvs_lost_rank = pvs_rank[team]
         ladder_rank = int(ladder["ladder_rank"])
         entry = {
             "season": season,
