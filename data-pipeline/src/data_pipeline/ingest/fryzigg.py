@@ -7,6 +7,7 @@ from pathlib import Path
 import pandas as pd
 import pyreadr
 import requests
+import numpy as np
 
 from ..config import FRYZIGG_RDS_FILE, FRYZIGG_RDS_URL, MIN_SEASON, TEAM_ALIASES
 
@@ -102,6 +103,8 @@ def load_player_games(
 
     if "spoils" not in raw.columns:
         raw["spoils"] = 0.0
+    raw["one_percenters"] = 0.0
+    raw["time_on_ground_pct"] = np.nan
 
     if "disposal_efficiency_percentage" in raw.columns:
         raw["disposal_efficiency_pct"] = pd.to_numeric(
@@ -116,7 +119,7 @@ def load_player_games(
     out = raw[
         cols
         + stat_cols
-        + ["spoils", "metres_per100", "disposal_efficiency_pct", "effective_disposals", "player_position"]
+        + ["spoils", "one_percenters", "time_on_ground_pct", "metres_per100", "disposal_efficiency_pct", "effective_disposals", "player_position"]
     ].drop_duplicates(
         subset=["player_id", "team", "season", "round", "match_id"]
     )

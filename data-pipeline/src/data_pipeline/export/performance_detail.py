@@ -12,8 +12,11 @@ from ..config import DB_PATH, ROOT
 from ..transform.archetypes import resolve_archetype
 from ..transform.pvs import (
     PERF_TOP_SCORE,
+    KEY_DEFENDER_METRICS,
     PERFORMANCE_METRICS,
     compute_raw_composite,
+    metrics_for_archetype,
+    qualifying_games_cte,
     scale_performance_score,
 )
 
@@ -29,19 +32,30 @@ STAT_LABELS = {
     "hitouts_to_advantage": "Hit-outs to advantage / game",
     "clangers": "Clangers / game (penalty)",
     "metres_per100": "Metres gained / 100 per game",
+    "one_percenters": "One-percenters / game",
+    "intercept_marks": "Intercept marks / game",
+    "marks_inside_fifty": "Marks inside 50 / game",
     "effective_disposals": "Effective disposals / game (disp × DE% / 100)",
     "disposal_efficiency_pct": "Disposal efficiency % (reference)",
 }
 
 
 def _load_season_avgs(season: int, team: str | None, con: duckdb.DuckDBPyConnection) -> pd.DataFrame:
+    from ..transform.pvs import ALL_PVS_STAT_COLS, KEY_DEFENDER_METRICS, PERFORMANCE_METRICS
+
+    alias_by_col: dict[str, str] = {}
+    for col, alias, _ in KEY_DEFENDER_METRICS:
+        alias_by_col[col] = alias
+    for col, alias, _ in PERFORMANCE_METRICS:
+        alias_by_col.setdefault(col, alias)
     base_avgs = ",\n                ".join(
-        f"AVG(COALESCE(pg.{col}, 0)) AS {avg_alias}"
-        for col, avg_alias, _ in PERFORMANCE_METRICS
+        f"AVG(COALESCE(pg.{col}, 0)) AS {alias_by_col[col]}"
+        for col in ALL_PVS_STAT_COLS
     )
     team_clause = f"AND pg.team = '{team.replace(chr(39), chr(39) + chr(39))}'" if team else ""
     return con.execute(
         f"""
+        WITH {qualifying_games_cte()}
         SELECT
             pg.player_id,
             MAX(pg.player_name) AS player_name,
@@ -50,8 +64,8 @@ def _load_season_avgs(season: int, team: str | None, con: duckdb.DuckDBPyConnect
             COUNT(*) AS games,
             MODE(pg.player_position) AS fryzigg_mode_position,
             {base_avgs}
-        FROM player_games pg
-        WHERE pg.season = {int(season)} {team_clause.replace('pg.team', 'pg.team')}
+        FROM qualifying_games pg
+        WHERE pg.season = {int(season)} {team_clause}
         GROUP BY pg.player_id, pg.team, pg.season
         """
     ).df()
@@ -68,7 +82,15 @@ def build_performance_detail(
         return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
     league = _load_season_avgs(season, None, con)
-    league["raw_composite"] = league.apply(compute_raw_composite, axis=1)
+    archetypes = con.execute(
+        "SELECT player_id, team, season, archetype FROM player_profiles WHERE season = ?",
+        [season],
+    ).df()
+    league = league.merge(archetypes, on=["player_id", "team", "season"], how="left")
+    league["raw_composite"] = league.apply(
+        lambda r: compute_raw_composite(r, str(r.get("archetype") or "")),
+        axis=1,
+    )
     league_max = float(league["raw_composite"].max())
 
     scores = con.execute(
@@ -99,10 +121,13 @@ def build_performance_detail(
     summary_rows = []
 
     for _, row in club.iterrows():
-        raw_composite = compute_raw_composite(row)
+        db_row = scores[(scores["player_id"] == row["player_id"]) & (scores["team"] == row["team"])]
+        arch = str(db_row["archetype"].iloc[0]) if len(db_row) else ""
+        player_metrics = metrics_for_archetype(arch)
+        raw_composite = compute_raw_composite(row, arch)
         calc_perf = scale_performance_score(raw_composite, league_max)
 
-        for col, avg_alias, weight in PERFORMANCE_METRICS:
+        for col, avg_alias, weight in player_metrics:
             avg = float(row[avg_alias])
             detail_rows.append(
                 {

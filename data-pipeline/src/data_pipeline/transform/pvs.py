@@ -28,8 +28,12 @@ POTENTIAL_BLEND_FACTOR = 0.75
 FULL_SEASON_GAMES = 14
 MIN_ESTABLISHED_GAMES = 10
 
-# (player_games column, season-avg alias, weight)
-# effective_disposals = disposals × DE% / 100 (quality-adjusted ball use)
+# Exclude sub-35% TOG games from PVS season averages; disposal proxy when TOG missing.
+MIN_TOG_PCT = 35
+MIN_DISPOSALS_FLOOR = 6
+DISPOSAL_MEDIAN_RATIO = 0.30
+
+# Default weights for non-key-defender archetypes.
 PERFORMANCE_METRICS: list[tuple[str, str, float]] = [
     ("effective_disposals", "effective_disposals_pg", 0.22),
     ("goals", "goals_pg", 0.18),
@@ -46,12 +50,82 @@ PERFORMANCE_METRICS: list[tuple[str, str, float]] = [
     ("clangers", "clangers_pg", -0.06),
 ]
 
+# Key defender profile — one-percent work, less F50/disposal emphasis.
+KEY_DEFENDER_METRICS: list[tuple[str, str, float]] = [
+    ("effective_disposals", "effective_disposals_pg", 0.15),
+    ("goals", "goals_pg", 0.18),
+    ("score_involvements", "score_inv_pg", 0.11),
+    ("metres_per100", "metres_per100_pg", 0.06),
+    ("tackles", "tackles_pg", 0.07),
+    ("contested_marks", "contested_marks_pg", 0.08),
+    ("marks_inside_fifty", "marks_inside_fifty_pg", 0.18),
+    ("intercept_marks", "intercept_marks_pg", 0.10),
+    ("intercepts", "intercepts_pg", 0.06),
+    ("one_percenters", "one_percenters_pg", 0.10),
+    ("clearances", "clearances_pg", 0.11),
+    ("hitouts", "hitouts_pg", 0.03),
+    ("hitouts_to_advantage", "hota_pg", 0.05),
+    ("clangers", "clangers_pg", -0.06),
+]
 
-def raw_composite_expr(prefix: str = "") -> str:
+ALL_PVS_STAT_COLS: tuple[str, ...] = tuple(
+    sorted(
+        {col for col, _, _ in PERFORMANCE_METRICS}
+        | {col for col, _, _ in KEY_DEFENDER_METRICS}
+    )
+)
+
+
+def metrics_for_archetype(archetype: str) -> list[tuple[str, str, float]]:
+    if archetype == "key_defender":
+        return KEY_DEFENDER_METRICS
+    return PERFORMANCE_METRICS
+
+
+def raw_composite_expr(
+    prefix: str = "",
+    metrics: list[tuple[str, str, float]] | None = None,
+) -> str:
     """SQL expression for weighted sum of season per-game averages."""
     p = f"{prefix}." if prefix else ""
-    terms = [f"{weight:+.4f} * {p}{alias}" for _, alias, weight in PERFORMANCE_METRICS]
+    metric_list = metrics or PERFORMANCE_METRICS
+    terms = [f"{weight:+.4f} * {p}{alias}" for _, alias, weight in metric_list]
     return " ".join(terms)
+
+
+def qualifying_games_cte() -> str:
+    """Games that count toward PVS season per-game averages."""
+    return f"""
+        player_disp_medians AS (
+            SELECT
+                player_id,
+                team,
+                season,
+                MEDIAN(disposals) AS median_disposals
+            FROM player_games
+            GROUP BY 1, 2, 3
+        ),
+        qualifying_games AS (
+            SELECT pg.*
+            FROM player_games pg
+            INNER JOIN player_disp_medians med
+                ON pg.player_id = med.player_id
+                AND pg.team = med.team
+                AND pg.season = med.season
+            WHERE
+                (
+                    COALESCE(pg.time_on_ground_pct, 0) > 0
+                    AND pg.time_on_ground_pct >= {MIN_TOG_PCT}
+                )
+                OR (
+                    COALESCE(pg.time_on_ground_pct, 0) <= 0
+                    AND pg.disposals >= GREATEST(
+                        {MIN_DISPOSALS_FLOOR},
+                        med.median_disposals * {DISPOSAL_MEDIAN_RATIO}
+                    )
+                )
+        )
+    """
 
 
 def age_performance_weight(age: float) -> float:
@@ -126,9 +200,10 @@ def attach_injury_weight_pvs(pv: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
-def compute_raw_composite(row: pd.Series) -> float:
+def compute_raw_composite(row: pd.Series, archetype: str = "") -> float:
+    metrics = metrics_for_archetype(archetype)
     total = 0.0
-    for _col, alias, weight in PERFORMANCE_METRICS:
+    for _col, alias, weight in metrics:
         total += weight * float(row.get(alias) or 0)
     return total
 
@@ -140,29 +215,45 @@ def scale_performance_score(raw_composite: float, league_max: float) -> float:
 
 
 def _build_player_value_sql() -> str:
+    alias_by_col: dict[str, str] = {}
+    for col, alias, _ in KEY_DEFENDER_METRICS:
+        alias_by_col[col] = alias
+    for col, alias, _ in PERFORMANCE_METRICS:
+        alias_by_col.setdefault(col, alias)
+
     base_avgs = ",\n                ".join(
-        f"AVG(COALESCE(pg.{col}, 0)) AS {avg_alias}"
-        for col, avg_alias, _ in PERFORMANCE_METRICS
+        f"AVG(COALESCE(pg.{col}, 0)) AS {alias_by_col[col]}"
+        for col in ALL_PVS_STAT_COLS
     )
-    composite = raw_composite_expr("b")
+    default_composite = raw_composite_expr("b", PERFORMANCE_METRICS)
+    key_def_composite = raw_composite_expr("b", KEY_DEFENDER_METRICS)
 
     return f"""
         INSERT INTO player_value
-        WITH base AS (
+        WITH {qualifying_games_cte()},
+        base AS (
             SELECT
                 pg.player_id,
                 pg.team,
                 pg.season,
                 COUNT(*) AS games,
                 {base_avgs}
-            FROM player_games pg
+            FROM qualifying_games pg
             GROUP BY 1, 2, 3
         ),
         composite AS (
             SELECT
                 b.*,
-                ({composite}) AS raw_composite
+                p.archetype,
+                CASE
+                    WHEN p.archetype = 'key_defender' THEN ({key_def_composite})
+                    ELSE ({default_composite})
+                END AS raw_composite
             FROM base b
+            JOIN player_profiles p
+                ON b.player_id = p.player_id
+                AND b.team = p.team
+                AND b.season = p.season
         )
         SELECT
             c.player_id,
@@ -226,7 +317,8 @@ def build_player_profiles(con: duckdb.DuckDBPyConnection) -> None:
     games["age_est"] = (games["season"] - games["debut_season"] + 18).clip(17, 40)
 
     season_stats = con.execute(
-        """
+        f"""
+        WITH {qualifying_games_cte()}
         SELECT
             player_id,
             team,
@@ -240,7 +332,7 @@ def build_player_profiles(con: duckdb.DuckDBPyConnection) -> None:
             AVG(COALESCE(tackles, 0)) AS tackles_pg,
             AVG(COALESCE(contested_marks, 0)) AS contested_marks_pg,
             AVG(COALESCE(metres_per100, 0)) AS metres_per100_pg
-        FROM player_games
+        FROM qualifying_games
         GROUP BY 1, 2, 3
         """
     ).df()

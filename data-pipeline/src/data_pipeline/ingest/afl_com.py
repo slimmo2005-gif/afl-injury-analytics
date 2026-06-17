@@ -250,7 +250,7 @@ def load_afl_com_player_games(season: int, *, cache: bool = True) -> pd.DataFram
                 team_id = str(ps.get("teamId", ""))
                 team = team_lookup.get(team_id, default_team)
                 disposals = _num(stats, "disposals")
-                tog = _num(stats, "timeOnGroundPercentage")
+                tog = _num(ps, "timeOnGroundPercentage") or _num(stats, "timeOnGroundPercentage")
                 if disposals <= 0 and tog <= 0:
                     continue
                 de = _num(stats, "disposalEfficiency") or 72.0
@@ -275,7 +275,9 @@ def load_afl_com_player_games(season: int, *, cache: bool = True) -> pd.DataFram
                         "marks_inside_fifty": _num(stats, "marksInside50"),
                         "intercepts": _num(stats, "intercepts"),
                         "clearances": _num(stats, "clearances"),
+                        "one_percenters": _num(stats, "onePercenters"),
                         "spoils": _stat_num(stats, "spoils"),
+                        "time_on_ground_pct": tog if tog > 0 else None,
                         "hitouts": _num(stats, "hitouts"),
                         "hitouts_to_advantage": _stat_num(stats, "hitoutsToAdvantage"),
                         "clangers": _num(stats, "clangers"),
