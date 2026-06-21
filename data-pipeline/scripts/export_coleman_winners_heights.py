@@ -116,7 +116,13 @@ def enrich_heights(rows: list[dict]) -> list[dict]:
                 "under_183cm": height_cm < 183 if height_cm is not None else None,
                 "under_170cm": height_cm <= 170 if height_cm is not None else None,
                 "coleman_medal_era": season >= 1955,
-                "award_name": "Coleman Medal" if season >= 1955 else "Leading goalkicker",
+                "award_name": (
+                    "Coleman Medal"
+                    if season >= 1955
+                    else "Leading Goalkicker Medal"
+                ),
+                "award_presented_live": season >= 1981 and season >= 1955,
+                "award_retrospective": season >= 1955 and season < 1981,
                 "season_incomplete": season == 2026,
             }
         )
@@ -175,7 +181,8 @@ def main() -> None:
         notes = pd.DataFrame(
             [
                 {"field": "source", "value": "AFL Tables leading goalkicker (home & away goals)"},
-                {"field": "coleman_medal_era", "value": "Named Coleman Medal from 1955; earlier rows are league leading goalkicker"},
+                {"field": "coleman_medal_era", "value": "Coleman Medal (1955+): first presented 1981; 1955–1980 recognised retrospectively in 2001"},
+                {"field": "leading_goalkicker_medal", "value": "Leading Goalkicker Medal for 1897–1954 league leaders"},
                 {"field": "under_183cm", "value": "Strictly under 6 foot (183 cm)"},
                 {"field": "under_170cm", "value": "170 cm or shorter (Nick Watson benchmark)"},
                 {"field": "2026", "value": "Season in progress at time of export; leader may change"},

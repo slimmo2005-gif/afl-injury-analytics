@@ -7,7 +7,13 @@ export interface ColemanWinner {
   photo_url: string | null
   notes: string | null
   nickname: string | null
+  /** Coleman Medallist (1955+; first presented 1981, 1955–1980 retrospective) */
   coleman_medal: boolean
+  /** Leading Goalkicker Medallist (1897–1954) */
+  leading_goalkicker_medal: boolean
+  award: 'Coleman Medal' | 'Leading Goalkicker Medal'
+  coleman_retrospective: boolean
+  coleman_presented_live: boolean
   season_incomplete: boolean
   tied_winner: boolean
 }
@@ -19,7 +25,17 @@ export interface ColemanChallenger {
   current_goals: number
   coleman_position: number
   photo_url: string | null
+  nickname: string | null
   notes: string | null
+}
+
+export interface AwardHistory {
+  colemanFirstPresented: number
+  colemanRetrospectiveFrom: number
+  leadingGoalkickerMedalThrough: number
+  retrospectiveRecognitionYear: number
+  medalsPresentedYear: number
+  summary: string
 }
 
 export interface ColemanHeightsBundle {
@@ -27,6 +43,7 @@ export interface ColemanHeightsBundle {
     generatedAt: string
     source: string
     description: string
+    awardHistory: AwardHistory
   }
   challenger: ColemanChallenger
   winners: ColemanWinner[]
@@ -41,7 +58,8 @@ export interface HeightBand {
 }
 
 export interface ColemanStats {
-  totalMedallists: number
+  totalColemanMedallists: number
+  totalLeadingGoalkickerMedallists: number
   withHeight: number
   shortest: ColemanWinner | null
   tallest: ColemanWinner | null
@@ -51,6 +69,7 @@ export interface ColemanStats {
   over195: number
   mostCommonBand: string
   shortestColemanMedallist: ColemanWinner | null
+  shortestLeadingGoalkickerMedallist: ColemanWinner | null
   royPark: ColemanWinner | null
   harryMcKay: ColemanWinner | null
 }

@@ -26,7 +26,7 @@ export default function HeightDistributionChart({ bands }: HeightDistributionCha
   return (
     <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 sm:p-6">
       <h3 className="text-sm font-medium text-slate-300 mb-1">Height distribution</h3>
-      <p className="text-xs text-slate-500 mb-4">Coleman Medallists with recorded height (1955–2025)</p>
+      <p className="text-xs text-slate-500 mb-4">Coleman Medallists with recorded height (1955–2025, including retrospective winners)</p>
       <div className="h-72 sm:h-80">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} layout="vertical" margin={{ left: 8, right: 48, top: 8, bottom: 8 }}>
