@@ -31,6 +31,12 @@ export default function ClubLayout() {
               {loading ? 'Loading…' : badge.text}
             </span>
             <Link
+              to="/coleman-heights"
+              className="text-xs font-medium text-afl-gold/90 hover:text-afl-gold border border-afl-gold/30 bg-afl-gold/10 rounded-lg px-3 py-1.5"
+            >
+              Coleman heights story →
+            </Link>
+            <Link
               to="/current"
               className="text-xs font-medium text-emerald-300 hover:text-emerald-200 border border-emerald-500/30 bg-emerald-500/10 rounded-lg px-3 py-1.5"
             >

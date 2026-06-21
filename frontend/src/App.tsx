@@ -1,11 +1,13 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import AdminLayout from './components/AdminLayout'
 import ClubLayout from './components/ClubLayout'
+import StoryLayout from './components/StoryLayout'
 import { FilterProvider } from './context/FilterContext'
 import { MetricsProvider } from './context/MetricsContext'
 import AdminAnalytics from './pages/AdminAnalytics'
 import AdminInsights from './pages/AdminInsights'
 import ClubDetail from './pages/ClubDetail'
+import ColemanHeights from './pages/ColemanHeights'
 import CurrentSeason from './pages/CurrentSeason'
 import LeagueOverview from './pages/LeagueOverview'
 import Methodology from './pages/Methodology'
@@ -24,6 +26,9 @@ export default function App() {
             <Route index element={<ClubDetail />} />
             <Route path="current" element={<CurrentSeason />} />
             <Route path="methodology" element={<Methodology />} />
+          </Route>
+          <Route element={<StoryLayout />}>
+            <Route path="coleman-heights" element={<ColemanHeights />} />
           </Route>
           <Route path="admin" element={<AdminLayout />}>
             <Route index element={<LeagueOverview />} />

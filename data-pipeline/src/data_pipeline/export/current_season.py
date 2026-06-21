@@ -10,6 +10,7 @@ import duckdb
 
 from ..config import CURRENT_SEASON, FRONTEND_DATA, SHARED_OUTPUT
 from .frontend import build_season_bundle
+from .draft_class import build_draft_class_bundle
 from .official_ladder import current_ladder_by_team, latest_completed_round
 
 
@@ -80,6 +81,7 @@ def build_current_season_bundle(
             row["actualWins"] = int(official[club]["wins"])
 
     snapshot = _current_ladder_pvs_snapshot(con, season, ladder_round, official)
+    draft_class = build_draft_class_bundle(con, draft_year=season - 1, season=season)
 
     return {
         "meta": {
@@ -94,6 +96,7 @@ def build_current_season_bundle(
         },
         **season_data,
         "currentLadderPvs": snapshot,
+        "draftClass": draft_class,
     }
 
 

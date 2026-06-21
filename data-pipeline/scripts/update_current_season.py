@@ -18,6 +18,7 @@ from data_pipeline.config import CURRENT_SEASON, ROOT
 from data_pipeline.db import connect
 from data_pipeline.export.current_season import write_current_season
 from data_pipeline.export.frontend import write_metrics
+from data_pipeline.ingest.draftguru import refresh_draft_picks
 from data_pipeline.ingest.bigfooty_forum import fetch_bigfooty_forum
 from data_pipeline.ingest.injury_sources import ingest_live_injury_lists, load_injury_dataframe
 from data_pipeline.ingest.season_upsert import upsert_matches, upsert_player_games
@@ -96,6 +97,8 @@ def update_current_season(
     print(f"[current] matches {season}: {n_matches} rows")
 
     upsert_player_games(con, season, refresh=refresh_player_cache)
+
+    refresh_draft_picks(con, to_season=season - 1)
 
     _refresh_state_league(con, season, refresh=refresh_vfl)
 

@@ -3,7 +3,7 @@
     "season": 2026,
     "round": 14,
     "ladderRound": 14,
-    "generatedAt": "2026-06-17T13:45:00.982187+00:00",
+    "generatedAt": "2026-06-21T09:43:02.395078+00:00",
     "note": "2026 season to date \u2014 in progress",
     "dataSource": "Squiggle + AFL.com API + VFL + injury lists",
     "isPartialSeason": true,
@@ -279,6 +279,14 @@
       "status": "unavailable"
     },
     {
+      "player": "Daniel Annable",
+      "club": "Brisbane Lions",
+      "roundsMissed": 12,
+      "pvs": 4.2,
+      "unavailablePvs": 50.9,
+      "status": "unavailable"
+    },
+    {
       "player": "Sam Darcy",
       "club": "Western Bulldogs",
       "roundsMissed": 8,
@@ -309,14 +317,6 @@
       "pvs": 5.8,
       "unavailablePvs": 40.6,
       "status": "intermittent"
-    },
-    {
-      "player": "Josh Gibcus",
-      "club": "Richmond",
-      "roundsMissed": 12,
-      "pvs": 3.3,
-      "unavailablePvs": 39.8,
-      "status": "unavailable"
     }
   ],
   "topUnavailableByClub": {
@@ -338,8 +338,8 @@
         "player": "Daniel Curtin",
         "club": "Adelaide",
         "roundsMissed": 6,
-        "pvs": 3.6,
-        "unavailablePvs": 21.4,
+        "pvs": 4.0,
+        "unavailablePvs": 23.8,
         "status": "unavailable",
         "keyInjuries": [
           "Dislocated knee cap"
@@ -375,6 +375,17 @@
     ],
     "Brisbane Lions": [
       {
+        "player": "Daniel Annable",
+        "club": "Brisbane Lions",
+        "roundsMissed": 12,
+        "pvs": 4.2,
+        "unavailablePvs": 50.9,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Shoulder"
+        ]
+      },
+      {
         "player": "Dayne Zorko",
         "club": "Brisbane Lions",
         "roundsMissed": 7,
@@ -394,17 +405,6 @@
         "status": "unavailable",
         "keyInjuries": [
           "Knee"
-        ]
-      },
-      {
-        "player": "Daniel Annable",
-        "club": "Brisbane Lions",
-        "roundsMissed": 12,
-        "pvs": 2.7,
-        "unavailablePvs": 32.9,
-        "status": "unavailable",
-        "keyInjuries": [
-          "Shoulder"
         ]
       },
       {
@@ -708,11 +708,11 @@
         "status": "unavailable"
       },
       {
-        "player": "Jarrod Witts",
+        "player": "Zeke Uwland",
         "club": "Gold Coast",
         "roundsMissed": 3,
-        "pvs": 4.9,
-        "unavailablePvs": 14.7,
+        "pvs": 5.3,
+        "unavailablePvs": 16.0,
         "status": "intermittent"
       }
     ],
@@ -888,8 +888,8 @@
         "player": "Finn O'Sullivan",
         "club": "North Melbourne",
         "roundsMissed": 4,
-        "pvs": 4.9,
-        "unavailablePvs": 19.8,
+        "pvs": 5.9,
+        "unavailablePvs": 23.5,
         "status": "intermittent",
         "keyInjuries": [
           "Concussion"
@@ -1002,8 +1002,8 @@
         "player": "Sam Lalor",
         "club": "Richmond",
         "roundsMissed": 6,
-        "pvs": 4.5,
-        "unavailablePvs": 27.0,
+        "pvs": 6.0,
+        "unavailablePvs": 35.9,
         "status": "intermittent",
         "keyInjuries": [
           "Achilles"
@@ -1064,6 +1064,14 @@
         "status": "unavailable"
       },
       {
+        "player": "Alix Tauru",
+        "club": "St Kilda",
+        "roundsMissed": 6,
+        "pvs": 3.2,
+        "unavailablePvs": 19.0,
+        "status": "unavailable"
+      },
+      {
         "player": "Jack Higgins",
         "club": "St Kilda",
         "roundsMissed": 6,
@@ -1072,17 +1080,6 @@
         "status": "intermittent",
         "keyInjuries": [
           "Concussion"
-        ]
-      },
-      {
-        "player": "Ryan Byrnes",
-        "club": "St Kilda",
-        "roundsMissed": 5,
-        "pvs": 3.5,
-        "unavailablePvs": 17.5,
-        "status": "unavailable",
-        "keyInjuries": [
-          "Foot"
         ]
       }
     ],
@@ -1158,17 +1155,6 @@
         ]
       },
       {
-        "player": "Bailey J. Williams",
-        "club": "West Coast",
-        "roundsMissed": 4,
-        "pvs": 4.6,
-        "unavailablePvs": 18.4,
-        "status": "unavailable",
-        "keyInjuries": [
-          "Groin"
-        ]
-      },
-      {
         "player": "Elijah Hewett",
         "club": "West Coast",
         "roundsMissed": 4,
@@ -1182,6 +1168,14 @@
         "roundsMissed": 3,
         "pvs": 4.2,
         "unavailablePvs": 12.6,
+        "status": "unavailable"
+      },
+      {
+        "player": "Tom Cole",
+        "club": "West Coast",
+        "roundsMissed": 3,
+        "pvs": 3.7,
+        "unavailablePvs": 11.2,
         "status": "unavailable"
       }
     ],
@@ -3132,5 +3126,347 @@
       ]
     },
     "interpretation": "Through round 14 of 2026. Ladder from Squiggle; PVS-lost rank uses season-to-date injury-counted games-missed PVS."
+  },
+  "draftClass": {
+    "draftYear": 2025,
+    "season": 2026,
+    "firstRoundMaxPick": 25,
+    "totalPicks": 25,
+    "debuted": 17,
+    "players": [
+      {
+        "pick": 1,
+        "player": "Willem Duursma",
+        "club": "West Coast",
+        "games": 13,
+        "performanceScore": 4.19,
+        "pvs": 6.14,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 2,
+        "player": "Zeke Uwland",
+        "club": "Gold Coast",
+        "games": 10,
+        "performanceScore": 2.65,
+        "pvs": 5.35,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 3,
+        "player": "Harry Dean",
+        "club": "Carlton",
+        "games": 11,
+        "performanceScore": 2.61,
+        "pvs": 5.02,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 4,
+        "player": "Cooper Duff-Tytler",
+        "club": "West Coast",
+        "games": 11,
+        "performanceScore": 2.37,
+        "pvs": 4.66,
+        "archetype": "ruck",
+        "archetypeLabel": "Ruck",
+        "hasDebuted": true
+      },
+      {
+        "pick": 5,
+        "player": "Dylan Patterson",
+        "club": "Gold Coast",
+        "games": 0,
+        "performanceScore": null,
+        "pvs": null,
+        "archetype": "",
+        "archetypeLabel": "\u2014",
+        "hasDebuted": false
+      },
+      {
+        "pick": 6,
+        "player": "Daniel Annable",
+        "club": "Brisbane Lions",
+        "games": 1,
+        "performanceScore": 2.74,
+        "pvs": 4.24,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 7,
+        "player": "Sam Cumming",
+        "club": "Richmond",
+        "games": 7,
+        "performanceScore": 3.35,
+        "pvs": 4.19,
+        "archetype": "pressure_forward",
+        "archetypeLabel": "Pressure Forward",
+        "hasDebuted": true
+      },
+      {
+        "pick": 8,
+        "player": "Sam Grlj",
+        "club": "Richmond",
+        "games": 12,
+        "performanceScore": 3.26,
+        "pvs": 3.94,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 9,
+        "player": "Sullivan Robey",
+        "club": "Essendon",
+        "games": 10,
+        "performanceScore": 3.26,
+        "pvs": 3.74,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 10,
+        "player": "Jacob Farrow",
+        "club": "Essendon",
+        "games": 12,
+        "performanceScore": 4.14,
+        "pvs": 4.14,
+        "archetype": "rebound_defender",
+        "archetypeLabel": "Rebound Defender",
+        "hasDebuted": true
+      },
+      {
+        "pick": 11,
+        "player": "Xavier Taylor",
+        "club": "Melbourne",
+        "games": 2,
+        "performanceScore": 1.58,
+        "pvs": 2.87,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 12,
+        "player": "Latrelle Pickett",
+        "club": "Melbourne",
+        "games": 12,
+        "performanceScore": 1.79,
+        "pvs": 2.77,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 13,
+        "player": "Dyson Sharp",
+        "club": "Essendon",
+        "games": 6,
+        "performanceScore": 2.8,
+        "pvs": 2.91,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 14,
+        "player": "Harry Kyle",
+        "club": "Sydney",
+        "games": 3,
+        "performanceScore": 2.99,
+        "pvs": 2.99,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 15,
+        "player": "Oskar Taylor",
+        "club": "Greater Western Sydney",
+        "games": 0,
+        "performanceScore": null,
+        "pvs": null,
+        "archetype": "",
+        "archetypeLabel": "\u2014",
+        "hasDebuted": false
+      },
+      {
+        "pick": 16,
+        "player": "Lachy Dovaston",
+        "club": "North Melbourne",
+        "games": 6,
+        "performanceScore": 1.97,
+        "pvs": 2.26,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 17,
+        "player": "Jai Murray",
+        "club": "Gold Coast",
+        "games": 2,
+        "performanceScore": 2.65,
+        "pvs": 2.65,
+        "archetype": "rebound_defender",
+        "archetypeLabel": "Rebound Defender",
+        "hasDebuted": true
+      },
+      {
+        "pick": 18,
+        "player": "Beau Addinsall",
+        "club": "Gold Coast",
+        "games": 0,
+        "performanceScore": null,
+        "pvs": null,
+        "archetype": "",
+        "archetypeLabel": "\u2014",
+        "hasDebuted": false
+      },
+      {
+        "pick": 19,
+        "player": "Josh Lindsay",
+        "club": "West Coast",
+        "games": 12,
+        "performanceScore": 4.31,
+        "pvs": 4.31,
+        "archetype": "rebound_defender",
+        "archetypeLabel": "Rebound Defender",
+        "hasDebuted": true
+      },
+      {
+        "pick": 20,
+        "player": "Cameron Nairn",
+        "club": "Hawthorn",
+        "games": 3,
+        "performanceScore": 2.49,
+        "pvs": 2.49,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 21,
+        "player": "Lachlan Carmichael",
+        "club": "Western Bulldogs",
+        "games": 0,
+        "performanceScore": null,
+        "pvs": null,
+        "archetype": "",
+        "archetypeLabel": "\u2014",
+        "hasDebuted": false
+      },
+      {
+        "pick": 22,
+        "player": "Mitchell Marsh",
+        "club": "Adelaide",
+        "games": 0,
+        "performanceScore": null,
+        "pvs": null,
+        "archetype": "",
+        "archetypeLabel": "\u2014",
+        "hasDebuted": false
+      },
+      {
+        "pick": 23,
+        "player": "Aidan Schubert",
+        "club": "Hawthorn",
+        "games": 0,
+        "performanceScore": null,
+        "pvs": null,
+        "archetype": "",
+        "archetypeLabel": "\u2014",
+        "hasDebuted": false
+      },
+      {
+        "pick": 24,
+        "player": "Harley Barker",
+        "club": "Geelong",
+        "games": 0,
+        "performanceScore": null,
+        "pvs": null,
+        "archetype": "",
+        "archetypeLabel": "\u2014",
+        "hasDebuted": false
+      },
+      {
+        "pick": 25,
+        "player": "Adam Sweid",
+        "club": "Fremantle",
+        "games": 0,
+        "performanceScore": null,
+        "pvs": null,
+        "archetype": "",
+        "archetypeLabel": "\u2014",
+        "hasDebuted": false
+      }
+    ],
+    "interpretation": "2025 national draft first round (picks 1\u201325) in 2026 through the latest completed round. Performance score is stats-only (0\u20137); PVS shown for reference includes draft-potential top-up for young players. 17 of 25 have played AFL.",
+    "topPerformance": [
+      {
+        "pick": 19,
+        "player": "Josh Lindsay",
+        "club": "West Coast",
+        "games": 12,
+        "performanceScore": 4.31,
+        "pvs": 4.31,
+        "archetype": "rebound_defender",
+        "archetypeLabel": "Rebound Defender",
+        "hasDebuted": true
+      },
+      {
+        "pick": 1,
+        "player": "Willem Duursma",
+        "club": "West Coast",
+        "games": 13,
+        "performanceScore": 4.19,
+        "pvs": 6.14,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      },
+      {
+        "pick": 10,
+        "player": "Jacob Farrow",
+        "club": "Essendon",
+        "games": 12,
+        "performanceScore": 4.14,
+        "pvs": 4.14,
+        "archetype": "rebound_defender",
+        "archetypeLabel": "Rebound Defender",
+        "hasDebuted": true
+      },
+      {
+        "pick": 7,
+        "player": "Sam Cumming",
+        "club": "Richmond",
+        "games": 7,
+        "performanceScore": 3.35,
+        "pvs": 4.19,
+        "archetype": "pressure_forward",
+        "archetypeLabel": "Pressure Forward",
+        "hasDebuted": true
+      },
+      {
+        "pick": 8,
+        "player": "Sam Grlj",
+        "club": "Richmond",
+        "games": 12,
+        "performanceScore": 3.26,
+        "pvs": 3.94,
+        "archetype": "utility",
+        "archetypeLabel": "Utility",
+        "hasDebuted": true
+      }
+    ]
   }
 }

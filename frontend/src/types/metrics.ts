@@ -124,6 +124,29 @@ export interface CurrentLadderPvsSnapshot {
   interpretation: string
 }
 
+export interface DraftClassPlayer {
+  pick: number
+  player: string
+  club: string
+  games: number
+  performanceScore: number | null
+  pvs: number | null
+  archetype: string
+  archetypeLabel: string
+  hasDebuted: boolean
+}
+
+export interface DraftClassSnapshot {
+  draftYear: number
+  season: number
+  firstRoundMaxPick: number
+  totalPicks: number
+  debuted: number
+  players: DraftClassPlayer[]
+  interpretation: string
+  topPerformance: DraftClassPlayer[]
+}
+
 export interface CurrentSeasonBundle extends SeasonBundle {
   meta: {
     season: number
@@ -136,6 +159,7 @@ export interface CurrentSeasonBundle extends SeasonBundle {
     historicalWindow?: string
   }
   currentLadderPvs: CurrentLadderPvsSnapshot
+  draftClass: DraftClassSnapshot
 }
 
 export interface SeasonBundle {

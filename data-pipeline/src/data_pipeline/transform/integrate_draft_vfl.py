@@ -78,7 +78,13 @@ def load_draft_picks(con: duckdb.DuckDBPyConnection, draft_df: pd.DataFrame) -> 
     con.execute("DELETE FROM draft_picks")
     if draft_df.empty:
         return
-    con.register("_draft", draft_df)
+    out = draft_df.drop_duplicates(subset=["draft_year", "draft_pick"], keep="first").copy()
+    linked = out[out["player_id"].notna()].drop_duplicates(
+        subset=["player_id", "draft_year"], keep="first"
+    )
+    unlinked = out[out["player_id"].isna()]
+    out = pd.concat([linked, unlinked], ignore_index=True)
+    con.register("_draft", out)
     con.execute(
         """
         INSERT INTO draft_picks

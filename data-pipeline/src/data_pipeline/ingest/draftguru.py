@@ -107,6 +107,38 @@ def link_draft_to_players(draft_df: pd.DataFrame, con) -> pd.DataFrame:
     )
     merged = merged.sort_values(["season_ok", "debut_season"], ascending=[False, True])
     merged = merged.drop_duplicates(subset=["draft_year", "draft_pick", "player_name"], keep="first")
+
+    # Surname + club match for unlinked picks (AFL.com name variants).
+    if merged["player_id"].isna().any():
+        unlinked = merged[merged["player_id"].isna()]
+        players_with_team = con.execute(
+            """
+            SELECT DISTINCT player_id, player_name, LOWER(player_name) AS player_name_norm,
+                   team,
+                   MIN(season) OVER (PARTITION BY player_id) AS debut_season
+            FROM player_games
+            """
+        ).df()
+        for idx, row in unlinked.iterrows():
+            parts = str(row["player_name"]).split()
+            if not parts:
+                continue
+            surname = parts[-1].lower()
+            first = parts[0].lower()
+            club = normalize_team(str(row.get("drafted_club", "")))
+            cands = players_with_team[
+                players_with_team["player_name_norm"].str.endswith(surname)
+                & players_with_team["debut_season"].between(row["draft_year"], row["draft_year"] + 2)
+            ]
+            if club:
+                cands = cands[cands["team"] == club]
+            if len(cands) == 1:
+                merged.at[idx, "player_id"] = cands.iloc[0]["player_id"]
+            elif len(cands) > 1:
+                tight = cands[cands["player_name_norm"].str.startswith(first)]
+                if len(tight) == 1:
+                    merged.at[idx, "player_id"] = tight.iloc[0]["player_id"]
+
     merged["player_name_norm"] = merged["player_name"].str.lower()
     return merged[
         [
@@ -117,7 +149,7 @@ def link_draft_to_players(draft_df: pd.DataFrame, con) -> pd.DataFrame:
             "draft_pick",
             "drafted_club",
         ]
-    ]
+    ].drop_duplicates(subset=["draft_year", "draft_pick"], keep="first")
 
 
 def save_draft_cache(df: pd.DataFrame, path: Path = DRAFT_CACHE) -> Path:
@@ -126,3 +158,24 @@ def save_draft_cache(df: pd.DataFrame, path: Path = DRAFT_CACHE) -> Path:
     out["player_id"] = out["player_id"].astype(str).where(out["player_id"].notna(), None)
     out.to_csv(path, index=False)
     return path
+
+
+def refresh_draft_picks(
+    con,
+    *,
+    from_season: int = MIN_SEASON,
+    to_season: int | None = None,
+) -> int:
+    """Fetch national draft through to_season, link player IDs, load DB + CSV cache."""
+    from ..transform.integrate_draft_vfl import load_draft_picks
+
+    to_season = to_season or pd.Timestamp.now().year
+    draft_raw = fetch_all_drafts(from_season=from_season, to_season=to_season)
+    if draft_raw.empty:
+        return 0
+    draft_linked = link_draft_to_players(draft_raw, con)
+    load_draft_picks(con, draft_linked)
+    save_draft_cache(draft_linked)
+    matched = int(draft_linked["player_id"].notna().sum())
+    print(f"[draft] {from_season}-{to_season}: {len(draft_linked)} picks ({matched} linked)")
+    return len(draft_linked)

@@ -56,10 +56,11 @@ jobs:
         run: |
           cp frontend/dist/index.html ./index.html
           cp frontend/dist/404.html ./404.html
-          rm -rf ./assets ./data ./brand
+          rm -rf ./assets ./data ./brand ./coleman
           cp -r frontend/dist/assets ./assets
           cp -r frontend/dist/data ./data
           cp -r frontend/dist/brand ./brand
+          cp -r frontend/dist/coleman ./coleman
           touch .nojekyll
 
       - name: Deploy to gh-pages branch (optional mirror)
@@ -73,6 +74,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html 404.html assets data brand .nojekyll
+          git add index.html 404.html assets data brand coleman .nojekyll
           git diff --staged --quiet || git commit -m "chore: publish site to repo root [skip ci]"
           git push
