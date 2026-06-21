@@ -1,8 +1,16 @@
 {
   "meta": {
-    "generatedAt": "2026-06-21T10:17:19.204638+00:00",
+    "generatedAt": "2026-06-21T10:38:15.635651+00:00",
     "source": "AFL Tables via coleman_winners_heights.csv",
-    "description": "VFL/AFL leading goalkickers and Coleman Medallists with recorded heights"
+    "description": "Heights of Coleman Medallists and Leading Goalkicker Medallists",
+    "awardHistory": {
+      "colemanFirstPresented": 1981,
+      "colemanRetrospectiveFrom": 1955,
+      "leadingGoalkickerMedalThrough": 1954,
+      "retrospectiveRecognitionYear": 2001,
+      "medalsPresentedYear": 2004,
+      "summary": "The Coleman Medal was first presented in 1981. In 2001 the AFL retrospectively recognised leading goalkickers from 1955\u20131980 as Coleman Medallists. League leaders from 1897\u20131954 were recognised as Leading Goalkicker Medallists."
+    }
   },
   "challenger": {
     "player": "Nick Watson",
@@ -10,7 +18,8 @@
     "height_cm": 170,
     "current_goals": 36,
     "coleman_position": 3,
-    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/NickWatson2.jpg",
+    "photo_url": "coleman/nick-watson.png",
+    "nickname": "The Wizard",
     "notes": "2026 season in progress. Goals and ladder position updated manually."
   },
   "winners": [
@@ -23,9 +32,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": true,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2025,
@@ -36,9 +49,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Jeremy_Cameron_2019.1.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2024,
@@ -49,9 +66,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2023,
@@ -62,9 +83,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Charlie_Curnow_2019.1.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2022,
@@ -75,9 +100,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Charlie_Curnow_2019.1.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2021,
@@ -86,11 +115,15 @@
       "height_cm": 204,
       "goals": 58,
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Harry_McKay_2019.1.jpg",
-      "notes": "Tallest recorded Coleman Medallist (204 cm).",
+      "notes": "Tallest recorded Coleman Medallist (204 cm, 2021).",
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2020,
@@ -101,9 +134,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Tom_Hawkins_2019.1.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2019,
@@ -114,9 +151,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Jeremy_Cameron_2019.1.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2018,
@@ -127,9 +168,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2017,
@@ -140,9 +185,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lance_Franklin_2019.1.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2016,
@@ -153,9 +202,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2015,
@@ -166,9 +219,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2014,
@@ -179,9 +236,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lance_Franklin_2019.1.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2013,
@@ -192,9 +253,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2012,
@@ -205,9 +270,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2011,
@@ -218,9 +287,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lance_Franklin_2019.1.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2010,
@@ -231,9 +304,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2009,
@@ -244,9 +321,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2008,
@@ -257,9 +338,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lance_Franklin_2019.1.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2007,
@@ -270,9 +355,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2006,
@@ -283,9 +372,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2005,
@@ -296,9 +389,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2004,
@@ -309,9 +406,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2003,
@@ -322,9 +423,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2002,
@@ -335,9 +440,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2001,
@@ -348,9 +457,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 2000,
@@ -361,9 +474,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1999,
@@ -374,9 +491,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1998,
@@ -387,9 +508,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Tony_Lockett.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1997,
@@ -400,9 +525,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1996,
@@ -413,9 +542,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Tony_Lockett.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1995,
@@ -426,9 +559,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1994,
@@ -439,9 +576,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1993,
@@ -452,9 +593,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1992,
@@ -465,9 +610,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Jason_Dunstall.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1991,
@@ -478,9 +627,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Tony_Lockett.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1990,
@@ -491,9 +644,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1989,
@@ -504,9 +661,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Jason_Dunstall.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1988,
@@ -517,9 +678,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Jason_Dunstall.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1987,
@@ -530,9 +695,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Tony_Lockett.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1986,
@@ -543,9 +712,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1985,
@@ -556,9 +729,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1984,
@@ -569,9 +746,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1983,
@@ -582,9 +763,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1982,
@@ -593,11 +778,15 @@
       "height_cm": 182,
       "goals": 94,
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Malcolm_Blight_2014.jpg",
-      "notes": "Last Coleman Medallist under 183 cm (1982).",
+      "notes": "Last Coleman Medallist under 183 cm at time of winning (1982).",
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1981,
@@ -608,9 +797,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": false,
+      "coleman_presented_live": true
     },
     {
       "year": 1980,
@@ -621,9 +814,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1979,
@@ -634,9 +831,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1978,
@@ -647,9 +848,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1977,
@@ -660,9 +865,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Peter_Hudson_%28cropped%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1976,
@@ -673,9 +882,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1975,
@@ -684,11 +897,15 @@
       "height_cm": 178,
       "goals": 67,
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Leigh_Matthews_2014.jpg",
-      "notes": null,
+      "notes": "Shortest recorded Coleman Medallist (178 cm, 1975).",
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1974,
@@ -699,9 +916,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1973,
@@ -712,9 +933,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1972,
@@ -725,9 +950,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1971,
@@ -738,9 +967,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Peter_Hudson_%28cropped%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1970,
@@ -751,9 +984,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Peter_Hudson_%28cropped%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1969,
@@ -764,9 +1001,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1968,
@@ -777,9 +1018,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Peter_Hudson_%28cropped%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1967,
@@ -790,9 +1035,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1966,
@@ -803,9 +1052,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1965,
@@ -816,9 +1069,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1964,
@@ -829,9 +1086,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1963,
@@ -842,9 +1103,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1962,
@@ -855,9 +1120,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1961,
@@ -868,9 +1137,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1960,
@@ -881,9 +1154,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1959,
@@ -894,9 +1171,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1958,
@@ -907,9 +1188,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1957,
@@ -920,9 +1205,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1956,
@@ -933,9 +1222,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1955,
@@ -946,9 +1239,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": true,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Coleman Medal",
+      "coleman_medal": true,
+      "leading_goalkicker_medal": false,
+      "coleman_retrospective": true,
+      "coleman_presented_live": false
     },
     {
       "year": 1954,
@@ -959,9 +1256,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1953,
@@ -972,9 +1273,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/John_Coleman_%28Australian_footballer%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1952,
@@ -985,9 +1290,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/John_Coleman_%28Australian_footballer%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1951,
@@ -998,9 +1307,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/John_Coleman_%28Australian_footballer%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1950,
@@ -1011,9 +1324,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/John_Coleman_%28Australian_footballer%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1949,
@@ -1024,9 +1341,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/John_Coleman_%28Australian_footballer%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1948,
@@ -1037,9 +1358,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1947,
@@ -1050,9 +1375,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1946,
@@ -1063,9 +1392,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1945,
@@ -1076,9 +1409,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1944,
@@ -1089,9 +1426,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1943,
@@ -1102,9 +1443,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1942,
@@ -1115,9 +1460,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1941,
@@ -1128,9 +1477,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1940,
@@ -1141,9 +1494,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1939,
@@ -1154,9 +1511,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1938,
@@ -1167,9 +1528,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1937,
@@ -1180,9 +1545,13 @@
       "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Dick_Harris_%28footballer%29.jpg",
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1936,
@@ -1193,9 +1562,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1935,
@@ -1206,9 +1579,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1934,
@@ -1219,9 +1596,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1933,
@@ -1232,9 +1613,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1932,
@@ -1245,9 +1630,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1931,
@@ -1258,9 +1647,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1930,
@@ -1271,9 +1664,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1929,
@@ -1284,9 +1681,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1928,
@@ -1297,9 +1698,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1927,
@@ -1310,9 +1715,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1926,
@@ -1323,9 +1732,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1925,
@@ -1336,9 +1749,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1924,
@@ -1349,9 +1766,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1923,
@@ -1362,9 +1783,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1922,
@@ -1375,9 +1800,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1921,
@@ -1388,9 +1817,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1920,
@@ -1401,9 +1834,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1919,
@@ -1414,9 +1851,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1918,
@@ -1427,9 +1868,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1917,
@@ -1440,9 +1885,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1916,
@@ -1453,9 +1902,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1915,
@@ -1466,9 +1919,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1914,
@@ -1479,9 +1936,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1913,
@@ -1489,12 +1950,16 @@
       "club": "University",
       "height_cm": 165,
       "goals": 53,
-      "photo_url": "coleman/roy-park.svg",
-      "notes": "Led VFL goalkicking for winless University in 1913. Retrospective Coleman equivalent.",
+      "photo_url": "coleman/roy-park.png",
+      "notes": "Leading Goalkicker Medallist (1897\u20131954 era). Led VFL goalkicking for winless University in 1913.",
       "nickname": "Little Doc",
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1912,
@@ -1505,9 +1970,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1911,
@@ -1518,9 +1987,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1910,
@@ -1531,9 +2004,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1909,
@@ -1544,9 +2021,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1908,
@@ -1557,9 +2038,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1907,
@@ -1570,9 +2055,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1906,
@@ -1583,9 +2072,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1905,
@@ -1596,9 +2089,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1904,
@@ -1609,9 +2106,13 @@
       "photo_url": null,
       "notes": "No reliable height recorded in historical sources.",
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1903,
@@ -1622,9 +2123,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1902,
@@ -1635,9 +2140,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1901,
@@ -1648,9 +2157,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1900,
@@ -1661,9 +2174,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1899,
@@ -1674,9 +2191,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1898,
@@ -1687,9 +2208,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     },
     {
       "year": 1897,
@@ -1700,9 +2225,13 @@
       "photo_url": null,
       "notes": null,
       "nickname": null,
-      "coleman_medal": false,
       "season_incomplete": false,
-      "tied_winner": false
+      "tied_winner": false,
+      "award": "Leading Goalkicker Medal",
+      "coleman_medal": false,
+      "leading_goalkicker_medal": true,
+      "coleman_retrospective": false,
+      "coleman_presented_live": false
     }
   ]
 }
