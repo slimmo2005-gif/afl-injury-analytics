@@ -20,6 +20,8 @@ interface PlayerPhotoProps {
   photoUrl?: string | null
   className?: string
   accent?: 'gold' | 'brown' | 'emerald'
+  /** contain = show full portrait (vintage cards); cover = crop to fill */
+  fit?: 'cover' | 'contain'
 }
 
 const accentRing = {
@@ -31,11 +33,14 @@ const accentRing = {
 export default function PlayerPhoto({
   name,
   photoUrl,
-  className = 'w-full h-56 object-cover object-top',
+  className = 'w-full h-56',
   accent = 'gold',
+  fit = 'cover',
 }: PlayerPhotoProps) {
   const [failed, setFailed] = useState(false)
   const src = resolvePhotoUrl(photoUrl)
+  const isContain = fit === 'contain'
+  const imgFit = isContain ? 'object-contain object-center' : 'object-cover object-top'
 
   if (!src || failed) {
     return (
@@ -48,11 +53,25 @@ export default function PlayerPhoto({
     )
   }
 
+  if (isContain) {
+    return (
+      <div className={`rounded-xl bg-slate-950/80 overflow-hidden ${className}`}>
+        <img
+          src={src}
+          alt={name}
+          className={`w-full h-full ${imgFit} p-1 sm:p-2`}
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      </div>
+    )
+  }
+
   return (
     <img
       src={src}
       alt={name}
-      className={`rounded-xl object-cover object-top bg-slate-800 ${className}`}
+      className={`rounded-xl bg-slate-800 ${imgFit} ${className}`}
       loading="lazy"
       onError={() => setFailed(true)}
     />

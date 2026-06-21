@@ -17,18 +17,21 @@ COLEMAN_RETROSPECTIVE_FROM = 1955
 PHOTOS: dict[str, str] = {
     "Roy Park": "coleman/roy-park.png",
     "Nick Watson": "coleman/nick-watson.png",
-    "Harry McKay": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Harry_McKay_2019.1.jpg",
+    "Dick Harris": "coleman/dick-harris.png",
+    "Charlie Pannam": "coleman/charlie-pannam.png",
+    "George Moloney": "coleman/george-moloney.png",
+    "Charlie Baker": "coleman/charlie-baker.png",
+    "Harry McKay": "coleman/harry-mckay.png",
+    "Lance Franklin": "coleman/lance-franklin.png",
     "Malcolm Blight": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Malcolm_Blight_2014.jpg",
     "Leigh Matthews": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Leigh_Matthews_2014.jpg",
     "Jeremy Cameron": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Jeremy_Cameron_2019.1.jpg",
     "Charlie Curnow": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Charlie_Curnow_2019.1.jpg",
     "Tom Hawkins": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Tom_Hawkins_2019.1.jpg",
-    "Lance Franklin": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lance_Franklin_2019.1.jpg",
     "Tony Lockett": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Tony_Lockett.jpg",
     "Jason Dunstall": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Jason_Dunstall.jpg",
     "Peter Hudson": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Peter_Hudson_%28cropped%29.jpg",
     "John Coleman": "https://upload.wikimedia.org/wikipedia/commons/5/5a/John_Coleman_%28Australian_footballer%29.jpg",
-    "Dick Harris": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Dick_Harris_%28footballer%29.jpg",
 }
 
 NICKNAMES: dict[str, str] = {

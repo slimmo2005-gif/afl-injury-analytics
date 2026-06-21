@@ -9,12 +9,14 @@ interface PlayerGalleryProps {
 }
 
 function GalleryCard({ player }: { player: ColemanWinner & { height_cm: number } }) {
+  const localPhoto = player.photo_url?.startsWith('coleman/')
   return (
     <article className="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden transition hover:border-slate-700 hover:-translate-y-0.5">
       <PlayerPhoto
         name={player.player}
         photoUrl={player.photo_url}
-        className="w-full h-40 object-cover object-top"
+        fit={localPhoto ? 'contain' : 'cover'}
+        className="w-full h-44"
       />
       <div className="p-3">
         <h4 className="font-semibold text-slate-100">{player.player}</h4>

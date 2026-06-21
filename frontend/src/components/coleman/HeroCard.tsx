@@ -9,6 +9,7 @@ interface HeroCardProps {
   heightLabel: string
   photoUrl?: string | null
   accent: 'gold' | 'brown' | 'emerald'
+  photoFit?: 'cover' | 'contain'
   children?: ReactNode
   footer?: ReactNode
   highlight?: ReactNode
@@ -22,6 +23,7 @@ export default function HeroCard({
   heightLabel,
   photoUrl,
   accent,
+  photoFit = 'cover',
   children,
   footer,
   highlight,
@@ -42,7 +44,8 @@ export default function HeroCard({
         name={name}
         photoUrl={photoUrl}
         accent={accent}
-        className="w-full h-52 sm:h-64 object-cover object-top mb-4"
+        fit={photoFit}
+        className="w-full h-52 sm:h-64 mb-4"
       />
       <h3 className="text-2xl sm:text-3xl font-semibold text-slate-100">{name}</h3>
       <p className="text-slate-400 mt-1">

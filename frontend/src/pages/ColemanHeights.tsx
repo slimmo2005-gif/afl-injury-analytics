@@ -143,6 +143,7 @@ export default function ColemanHeights() {
           heightLabel={formatHeight(roy?.height_cm ?? null)}
           photoUrl={roy?.photo_url ?? 'coleman/roy-park.png'}
           accent="brown"
+          photoFit="contain"
           footer="Leading Goalkicker Medallist (1897–1954 era) — not a Coleman Medal. Still the shortest recorded league leading goalkicker with a known height."
         >
           <div>
