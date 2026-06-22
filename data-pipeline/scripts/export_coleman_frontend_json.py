@@ -14,6 +14,14 @@ OUT_PATH = ROOT / "frontend" / "public" / "data" / "colemanWinnersHeights.json"
 COLEMAN_FIRST_PRESENTED = 1981
 COLEMAN_RETROSPECTIVE_FROM = 1955
 
+# Verified AFL.com heights where AFL Tables differs (completed Coleman Medallists only).
+AFLCOM_HEIGHT_CM: dict[str, int] = {
+    "Harry McKay": 200,
+    "Charlie Curnow": 194,
+    "Jesse Hogan": 196,
+    "Tom Hawkins": 197,
+}
+
 PHOTOS: dict[str, str] = {
     "Roy Park": "coleman/roy-park.png",
     "Nick Watson": "coleman/nick-watson.png",
@@ -46,7 +54,7 @@ NOTES: dict[str, str] = {
     "Vin Coutie": "No reliable height recorded in historical sources.",
     "Malcolm Blight": "Last Coleman Medallist under 183 cm at time of winning (1982).",
     "Leigh Matthews": "Shortest recorded Coleman Medallist (178 cm, 1975).",
-    "Harry McKay": "Tallest recorded Coleman Medallist (204 cm, 2021).",
+    "Harry McKay": "Tallest recorded Coleman Medallist (200 cm, 2021).",
 }
 
 CHALLENGER = {
@@ -74,7 +82,9 @@ AWARD_HISTORY = {
 }
 
 
-def _height(val) -> int | None:
+def _height(val, player: str) -> int | None:
+    if player in AFLCOM_HEIGHT_CM:
+        return AFLCOM_HEIGHT_CM[player]
     if pd.isna(val):
         return None
     return int(float(val))
@@ -96,7 +106,7 @@ def main() -> None:
     winners = []
     for _, row in df.iterrows():
         player = str(row["player"])
-        height = _height(row.get("height_cm"))
+        height = _height(row.get("height_cm"), player)
         year = int(row["season"])
         winners.append(
             {
@@ -117,7 +127,7 @@ def main() -> None:
     payload = {
         "meta": {
             "generatedAt": datetime.now(tz=UTC).isoformat(),
-            "source": "AFL Tables via coleman_winners_heights.csv",
+            "source": "AFL Tables via coleman_winners_heights.csv; modern heights from AFL.com where verified",
             "description": "Heights of Coleman Medallists and Leading Goalkicker Medallists",
             "awardHistory": AWARD_HISTORY,
         },

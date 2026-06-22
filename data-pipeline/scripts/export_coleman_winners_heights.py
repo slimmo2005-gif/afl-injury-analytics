@@ -22,6 +22,14 @@ SESSION.headers.update(
     {"User-Agent": "Mozilla/5.0 (compatible; afl-analytics-research/1.0)"}
 )
 
+# Verified AFL.com heights where AFL Tables differs (completed Coleman Medallists only).
+AFLCOM_HEIGHT_CM: dict[str, int] = {
+    "Harry McKay": 200,
+    "Charlie Curnow": 194,
+    "Jesse Hogan": 196,
+    "Tom Hawkins": 197,
+}
+
 
 def fetch(url: str, retries: int = 3) -> str:
     last_err: Exception | None = None
@@ -47,6 +55,19 @@ def cm_to_ft_in(cm: int | None) -> str | None:
     total_in = round(cm / 2.54)
     feet, inches = divmod(total_in, 12)
     return f"{feet}'{inches}\""
+
+
+def apply_aflcom_overrides(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    for player, cm in AFLCOM_HEIGHT_CM.items():
+        mask = df["player"] == player
+        if not mask.any():
+            continue
+        df.loc[mask, "height_cm"] = cm
+        df.loc[mask, "height_ft_in"] = cm_to_ft_in(cm)
+        df.loc[mask, "under_183cm"] = cm < 183
+        df.loc[mask, "under_170cm"] = cm <= 170
+    return df
 
 
 def parse_leading_goalkickers(html: str) -> list[dict]:
@@ -150,6 +171,7 @@ def main() -> None:
     print("Fetching player heights...")
     enriched = enrich_heights(rows)
     df = mark_tied_winners(pd.DataFrame(enriched))
+    df = apply_aflcom_overrides(df)
     df = df.sort_values(["season", "player"], ascending=[False, True]).reset_index(drop=True)
 
     missing = df["height_cm"].isna().sum()
@@ -180,7 +202,7 @@ def main() -> None:
         df.to_excel(writer, sheet_name="Winners", index=False)
         notes = pd.DataFrame(
             [
-                {"field": "source", "value": "AFL Tables leading goalkicker (home & away goals)"},
+                {"field": "source", "value": "AFL Tables leading goalkicker; modern heights corrected from AFL.com where verified"},
                 {"field": "coleman_medal_era", "value": "Coleman Medal (1955+): first presented 1981; 1955–1980 recognised retrospectively in 2001"},
                 {"field": "leading_goalkicker_medal", "value": "Leading Goalkicker Medal for 1897–1954 league leaders"},
                 {"field": "under_183cm", "value": "Strictly under 6 foot (183 cm)"},
