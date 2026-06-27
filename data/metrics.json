@@ -2,7 +2,7 @@
   "meta": {
     "season": 2025,
     "round": 24,
-    "generatedAt": "2026-06-17T13:44:48.815051+00:00",
+    "generatedAt": "2026-06-27T05:32:01.977699+00:00",
     "note": "Phase 2 \u2014 PVS + national draft + VFL (2025)",
     "dataSource": "Squiggle + Fryzigg + Draftguru + VFL",
     "defaultSeason": 2025,
@@ -7430,7 +7430,7 @@
         },
         {
           "club": "Collingwood",
-          "unavailableValue": 762.3,
+          "unavailableValue": 762.4,
           "unavailableTop5": 446.7,
           "expectedWins": 12.5,
           "actualWins": 11,
@@ -7646,7 +7646,7 @@
             "club": "Adelaide",
             "roundsMissed": 14,
             "pvs": 4.1,
-            "unavailablePvs": 57.1,
+            "unavailablePvs": 57.0,
             "status": "unavailable"
           },
           {
@@ -18288,7 +18288,7 @@
         },
         {
           "club": "Fremantle",
-          "unavailableValue": 770.8,
+          "unavailableValue": 770.9,
           "unavailableTop5": 440.5,
           "expectedWins": 11.6,
           "actualWins": 8,
@@ -21906,7 +21906,7 @@
         },
         {
           "club": "Fremantle",
-          "unavailableValue": 932.9,
+          "unavailableValue": 933.2,
           "unavailableTop5": 483.6,
           "expectedWins": 9.3,
           "actualWins": 8,
@@ -22403,7 +22403,7 @@
             "unavailablePvs": 68.2,
             "status": "unavailable",
             "keyInjuries": [
-              "Knee"
+              "Illness"
             ]
           },
           {
@@ -23590,7 +23590,7 @@
           },
           {
             "round": 12,
-            "value": 50.6,
+            "value": 50.7,
             "top5": 24.4,
             "wins": 1
           },
@@ -23602,13 +23602,13 @@
           },
           {
             "round": 15,
-            "value": 47.7,
+            "value": 47.8,
             "top5": 22.6,
             "wins": 0
           },
           {
             "round": 16,
-            "value": 47.9,
+            "value": 48.0,
             "top5": 24.5,
             "wins": 0
           },
@@ -23626,7 +23626,7 @@
           },
           {
             "round": 19,
-            "value": 49.1,
+            "value": 49.2,
             "top5": 24.8,
             "wins": 0
           },
@@ -32835,7 +32835,7 @@
             "club": "Fremantle",
             "roundsMissed": 10,
             "pvs": 3.2,
-            "unavailablePvs": 31.6,
+            "unavailablePvs": 31.5,
             "status": "unavailable",
             "keyInjuries": [
               "Hamstring"
@@ -40449,7 +40449,7 @@
             "unavailablePvs": 27.0,
             "status": "intermittent",
             "keyInjuries": [
-              "Managed"
+              "Soreness"
             ]
           },
           {
@@ -40877,7 +40877,7 @@
             "unavailablePvs": 57.8,
             "status": "intermittent",
             "keyInjuries": [
-              "Ankle/Hamstring",
+              "Ankle",
               "Hamstring"
             ]
           },
@@ -43580,7 +43580,7 @@
     "2024": {
       "leagueOverview": {
         "avgUnavailableValue": 25.4,
-        "totalVflOnlyPvs": 4061.3,
+        "totalVflOnlyPvs": 4072.3,
         "clubsAboveExpectation": 10,
         "clubsBelowExpectation": 5,
         "topUnavailableClub": "Richmond",
@@ -43723,11 +43723,11 @@
       "clubRankings": [
         {
           "club": "Adelaide",
-          "unavailableValue": 587.9,
-          "unavailableTop5": 443.8,
-          "expectedWins": 10.8,
+          "unavailableValue": 589.2,
+          "unavailableTop5": 444.3,
+          "expectedWins": 10.7,
           "actualWins": 8,
-          "delta": -2.8
+          "delta": -2.7
         },
         {
           "club": "Brisbane Lions",
@@ -43789,9 +43789,9 @@
           "club": "Greater Western Sydney",
           "unavailableValue": 486.9,
           "unavailableTop5": 398.8,
-          "expectedWins": 13.1,
+          "expectedWins": 13.2,
           "actualWins": 14,
-          "delta": 0.9
+          "delta": 0.8
         },
         {
           "club": "Hawthorn",
@@ -44766,7 +44766,7 @@
             "unavailablePvs": 33.1,
             "status": "unavailable",
             "keyInjuries": [
-              "Concussion/face fracture"
+              "Calf"
             ]
           }
         ],
@@ -44792,6 +44792,7 @@
             "status": "unavailable",
             "keyInjuries": [
               "Arm",
+              "Broken arm",
               "Suspension"
             ]
           },
@@ -44984,9 +44985,9 @@
         "rSquared": 0.44,
         "marginRSquared": 0.22,
         "coefficients": {
-          "intercept": 24.65,
+          "intercept": 24.66,
           "unavailablePvs": -0.0236,
-          "marginPer100Pvs": -5.82
+          "marginPer100Pvs": -5.77
         },
         "interpretation": "Each +100 unavailable PVS correlates with ~2.4 fewer wins (season 2024). PVS combines weighted season performance (normalised 0\u20137, leader = 7) with an optional draft-potential top-up for players not yet impacting games."
       },
@@ -45891,8 +45892,8 @@
           },
           {
             "round": 10,
-            "value": 35.2,
-            "top5": 18.9,
+            "value": 36.6,
+            "top5": 19.4,
             "wins": 0
           },
           {
@@ -47488,12 +47489,12 @@
     },
     "2025": {
       "leagueOverview": {
-        "avgUnavailableValue": 24.3,
-        "totalVflOnlyPvs": 4208.4,
+        "avgUnavailableValue": 24.4,
+        "totalVflOnlyPvs": 4254.4,
         "clubsAboveExpectation": 12,
         "clubsBelowExpectation": 6,
         "topUnavailableClub": "Essendon",
-        "correlationUnavailableToWins": -0.44
+        "correlationUnavailableToWins": -0.45
       },
       "clubUnavailableByRound": [
         {
@@ -47632,19 +47633,19 @@
       "clubRankings": [
         {
           "club": "Adelaide",
-          "unavailableValue": 418.2,
-          "unavailableTop5": 327.3,
-          "expectedWins": 13.2,
+          "unavailableValue": 420.8,
+          "unavailableTop5": 328.9,
+          "expectedWins": 13.3,
           "actualWins": 18,
-          "delta": 4.8
+          "delta": 4.7
         },
         {
           "club": "Brisbane Lions",
-          "unavailableValue": 415.1,
-          "unavailableTop5": 339.9,
-          "expectedWins": 13.3,
+          "unavailableValue": 414.3,
+          "unavailableTop5": 339.7,
+          "expectedWins": 13.4,
           "actualWins": 16,
-          "delta": 2.7
+          "delta": 2.6
         },
         {
           "club": "Carlton",
@@ -47658,17 +47659,17 @@
           "club": "Collingwood",
           "unavailableValue": 535.3,
           "unavailableTop5": 395.7,
-          "expectedWins": 11.5,
+          "expectedWins": 11.6,
           "actualWins": 16,
-          "delta": 4.5
+          "delta": 4.4
         },
         {
           "club": "Essendon",
           "unavailableValue": 1015.8,
           "unavailableTop5": 525.7,
-          "expectedWins": 4.7,
+          "expectedWins": 4.6,
           "actualWins": 6,
-          "delta": 1.3
+          "delta": 1.4
         },
         {
           "club": "Fremantle",
@@ -47682,17 +47683,17 @@
           "club": "Geelong",
           "unavailableValue": 311.5,
           "unavailableTop5": 285.9,
-          "expectedWins": 14.7,
+          "expectedWins": 14.9,
           "actualWins": 17,
-          "delta": 2.3
+          "delta": 2.1
         },
         {
           "club": "Gold Coast",
-          "unavailableValue": 442.5,
-          "unavailableTop5": 341.3,
-          "expectedWins": 12.9,
+          "unavailableValue": 450.6,
+          "unavailableTop5": 343.1,
+          "expectedWins": 12.8,
           "actualWins": 15,
-          "delta": 2.1
+          "delta": 2.2
         },
         {
           "club": "Greater Western Sydney",
@@ -47712,51 +47713,51 @@
         },
         {
           "club": "Melbourne",
-          "unavailableValue": 422.5,
-          "unavailableTop5": 323.9,
-          "expectedWins": 13.1,
+          "unavailableValue": 426.7,
+          "unavailableTop5": 326.7,
+          "expectedWins": 13.2,
           "actualWins": 7,
-          "delta": -6.1
+          "delta": -6.2
         },
         {
           "club": "North Melbourne",
-          "unavailableValue": 583.3,
-          "unavailableTop5": 411.9,
+          "unavailableValue": 585.6,
+          "unavailableTop5": 414.2,
           "expectedWins": 10.9,
           "actualWins": 5,
           "delta": -5.9
         },
         {
           "club": "Port Adelaide",
-          "unavailableValue": 535.7,
+          "unavailableValue": 536.2,
           "unavailableTop5": 397.7,
-          "expectedWins": 11.5,
+          "expectedWins": 11.6,
           "actualWins": 9,
-          "delta": -2.5
+          "delta": -2.6
         },
         {
           "club": "Richmond",
-          "unavailableValue": 643.8,
-          "unavailableTop5": 411.9,
-          "expectedWins": 10.0,
+          "unavailableValue": 674.6,
+          "unavailableTop5": 441.2,
+          "expectedWins": 9.6,
           "actualWins": 5,
-          "delta": -5.0
+          "delta": -4.6
         },
         {
           "club": "St Kilda",
-          "unavailableValue": 554.2,
-          "unavailableTop5": 386.1,
-          "expectedWins": 11.3,
+          "unavailableValue": 560.1,
+          "unavailableTop5": 390.4,
+          "expectedWins": 11.2,
           "actualWins": 9,
-          "delta": -2.3
+          "delta": -2.2
         },
         {
           "club": "Sydney",
           "unavailableValue": 565.3,
           "unavailableTop5": 417.9,
-          "expectedWins": 11.1,
+          "expectedWins": 11.2,
           "actualWins": 12,
-          "delta": 0.9
+          "delta": 0.8
         },
         {
           "club": "West Coast",
@@ -47768,11 +47769,11 @@
         },
         {
           "club": "Western Bulldogs",
-          "unavailableValue": 591.2,
-          "unavailableTop5": 473.5,
-          "expectedWins": 10.7,
+          "unavailableValue": 592.3,
+          "unavailableTop5": 474.0,
+          "expectedWins": 10.8,
           "actualWins": 14,
-          "delta": 3.3
+          "delta": 3.2
         }
       ],
       "topUnavailablePlayers": [
@@ -47841,20 +47842,20 @@
           "status": "intermittent"
         },
         {
+          "player": "Sam Lalor",
+          "club": "Richmond",
+          "roundsMissed": 12,
+          "pvs": 5.9,
+          "unavailablePvs": 71.3,
+          "status": "intermittent"
+        },
+        {
           "player": "Errol Gulden",
           "club": "Sydney",
           "roundsMissed": 12,
           "pvs": 5.8,
           "unavailablePvs": 69.1,
           "status": "unavailable"
-        },
-        {
-          "player": "Jeremy McGovern",
-          "club": "West Coast",
-          "roundsMissed": 17,
-          "pvs": 4.1,
-          "unavailablePvs": 69.0,
-          "status": "intermittent"
         }
       ],
       "topUnavailableByClub": {
@@ -47899,12 +47900,15 @@
             "status": "unavailable"
           },
           {
-            "player": "Chayce Jones",
+            "player": "Rory Laird",
             "club": "Adelaide",
-            "roundsMissed": 5,
-            "pvs": 3.3,
-            "unavailablePvs": 16.5,
-            "status": "unavailable"
+            "roundsMissed": 3,
+            "pvs": 5.4,
+            "unavailablePvs": 16.3,
+            "status": "intermittent",
+            "keyInjuries": [
+              "Calf"
+            ]
           }
         ],
         "Brisbane Lions": [
@@ -48036,8 +48040,7 @@
             "unavailablePvs": 55.3,
             "status": "unavailable",
             "keyInjuries": [
-              "Achilles",
-              "Managed"
+              "Achilles"
             ]
           },
           {
@@ -48334,7 +48337,6 @@
             "unavailablePvs": 42.2,
             "status": "intermittent",
             "keyInjuries": [
-              "Calf",
               "Hip"
             ]
           },
@@ -48517,6 +48519,7 @@
             "unavailablePvs": 58.9,
             "status": "unavailable",
             "keyInjuries": [
+              "Back",
               "Knee"
             ]
           },
@@ -48562,6 +48565,17 @@
         ],
         "Richmond": [
           {
+            "player": "Sam Lalor",
+            "club": "Richmond",
+            "roundsMissed": 12,
+            "pvs": 5.9,
+            "unavailablePvs": 71.3,
+            "status": "intermittent",
+            "keyInjuries": [
+              "Hamstring"
+            ]
+          },
+          {
             "player": "Kane McAuliffe",
             "club": "Richmond",
             "roundsMissed": 13,
@@ -48600,17 +48614,6 @@
             "status": "intermittent",
             "keyInjuries": [
               "Patella"
-            ]
-          },
-          {
-            "player": "Sam Lalor",
-            "club": "Richmond",
-            "roundsMissed": 12,
-            "pvs": 3.5,
-            "unavailablePvs": 42.0,
-            "status": "intermittent",
-            "keyInjuries": [
-              "Hamstring"
             ]
           }
         ],
@@ -48709,8 +48712,7 @@
             "status": "unavailable",
             "keyInjuries": [
               "Adductor",
-              "Hamstring",
-              "Suspension"
+              "Hamstring"
             ]
           },
           {
@@ -48885,14 +48887,14 @@
       ],
       "regression": {
         "model": "linear",
-        "rSquared": 0.19,
+        "rSquared": 0.2,
         "marginRSquared": 0.15,
         "coefficients": {
-          "intercept": 19.15,
-          "unavailablePvs": -0.0142,
-          "marginPer100Pvs": -5.6
+          "intercept": 19.39,
+          "unavailablePvs": -0.0146,
+          "marginPer100Pvs": -5.45
         },
-        "interpretation": "Each +100 unavailable PVS correlates with ~1.4 fewer wins (season 2025). PVS combines weighted season performance (normalised 0\u20137, leader = 7) with an optional draft-potential top-up for players not yet impacting games."
+        "interpretation": "Each +100 unavailable PVS correlates with ~1.5 fewer wins (season 2025). PVS combines weighted season performance (normalised 0\u20137, leader = 7) with an optional draft-potential top-up for players not yet impacting games."
       },
       "clubs": [
         "Essendon",
@@ -49217,8 +49219,8 @@
           },
           {
             "round": 5,
-            "value": 23.1,
-            "top5": 17.9,
+            "value": 25.6,
+            "top5": 20.4,
             "wins": 0
           },
           {
@@ -49259,26 +49261,26 @@
           },
           {
             "round": 12,
-            "value": 36.3,
-            "top5": 18.4,
+            "value": 38.8,
+            "top5": 20.8,
             "wins": 0
           },
           {
             "round": 13,
-            "value": 20.0,
-            "top5": 17.7,
+            "value": 22.4,
+            "top5": 20.1,
             "wins": 0
           },
           {
             "round": 15,
-            "value": 24.1,
-            "top5": 17.2,
+            "value": 26.6,
+            "top5": 19.6,
             "wins": 0
           },
           {
             "round": 16,
-            "value": 39.1,
-            "top5": 19.3,
+            "value": 41.5,
+            "top5": 21.8,
             "wins": 0
           },
           {
@@ -49289,44 +49291,44 @@
           },
           {
             "round": 18,
-            "value": 36.2,
-            "top5": 17.9,
+            "value": 38.7,
+            "top5": 20.3,
             "wins": 1
           },
           {
             "round": 19,
-            "value": 38.8,
-            "top5": 17.9,
+            "value": 41.2,
+            "top5": 20.3,
             "wins": 1
           },
           {
             "round": 20,
-            "value": 36.6,
-            "top5": 20.1,
+            "value": 39.1,
+            "top5": 22.6,
             "wins": 0
           },
           {
             "round": 21,
-            "value": 36.5,
-            "top5": 20.2,
+            "value": 38.9,
+            "top5": 22.6,
             "wins": 0
           },
           {
             "round": 22,
-            "value": 39.6,
-            "top5": 17.7,
+            "value": 42.5,
+            "top5": 20.1,
             "wins": 0
           },
           {
             "round": 23,
-            "value": 25.9,
-            "top5": 17.4,
+            "value": 28.9,
+            "top5": 19.8,
             "wins": 0
           },
           {
             "round": 24,
-            "value": 42.4,
-            "top5": 18.3,
+            "value": 45.4,
+            "top5": 20.7,
             "wins": 0
           }
         ],
@@ -49387,7 +49389,7 @@
           },
           {
             "round": 10,
-            "value": 39.0,
+            "value": 39.3,
             "top5": 23.9,
             "wins": 1
           },
@@ -49417,7 +49419,7 @@
           },
           {
             "round": 16,
-            "value": 36.0,
+            "value": 36.3,
             "top5": 21.4,
             "wins": 1
           },
@@ -49429,14 +49431,14 @@
           },
           {
             "round": 18,
-            "value": 22.2,
-            "top5": 19.6,
+            "value": 22.5,
+            "top5": 19.8,
             "wins": 0
           },
           {
             "round": 19,
-            "value": 16.1,
-            "top5": 16.1,
+            "value": 16.4,
+            "top5": 16.4,
             "wins": 0
           },
           {
@@ -49631,8 +49633,8 @@
           },
           {
             "round": 4,
-            "value": 20.1,
-            "top5": 20.1,
+            "value": 22.3,
+            "top5": 22.3,
             "wins": 0
           },
           {
@@ -50051,8 +50053,8 @@
           },
           {
             "round": 6,
-            "value": 26.3,
-            "top5": 17.5,
+            "value": 27.5,
+            "top5": 18.5,
             "wins": 0
           },
           {
@@ -50069,8 +50071,8 @@
           },
           {
             "round": 9,
-            "value": 18.6,
-            "top5": 16.6,
+            "value": 19.8,
+            "top5": 17.8,
             "wins": 0
           },
           {
@@ -50111,8 +50113,8 @@
           },
           {
             "round": 17,
-            "value": 36.5,
-            "top5": 18.2,
+            "value": 37.7,
+            "top5": 18.6,
             "wins": 0
           },
           {
@@ -50135,14 +50137,14 @@
           },
           {
             "round": 21,
-            "value": 23.9,
-            "top5": 17.1,
+            "value": 25.1,
+            "top5": 18.1,
             "wins": 1
           },
           {
             "round": 22,
-            "value": 37.6,
-            "top5": 17.5,
+            "value": 38.8,
+            "top5": 18.2,
             "wins": 1
           },
           {
@@ -50215,7 +50217,7 @@
           },
           {
             "round": 10,
-            "value": 36.0,
+            "value": 36.3,
             "top5": 21.4,
             "wins": 0
           },
@@ -50239,7 +50241,7 @@
           },
           {
             "round": 15,
-            "value": 41.1,
+            "value": 41.4,
             "top5": 20.9,
             "wins": 0
           },
@@ -50793,14 +50795,14 @@
           },
           {
             "round": 17,
-            "value": 18.3,
-            "top5": 16.7,
+            "value": 19.9,
+            "top5": 17.5,
             "wins": 1
           },
           {
             "round": 18,
-            "value": 17.0,
-            "top5": 15.4,
+            "value": 18.6,
+            "top5": 16.2,
             "wins": 1
           },
           {
@@ -50823,20 +50825,20 @@
           },
           {
             "round": 22,
-            "value": 43.6,
+            "value": 45.2,
             "top5": 22.0,
             "wins": 1
           },
           {
             "round": 23,
-            "value": 42.0,
+            "value": 43.6,
             "top5": 21.6,
             "wins": 0
           },
           {
             "round": 24,
-            "value": 33.5,
-            "top5": 19.4,
+            "value": 35.1,
+            "top5": 19.6,
             "wins": 1
           }
         ],
@@ -50849,20 +50851,20 @@
           },
           {
             "round": 2,
-            "value": 29.9,
-            "top5": 19.2,
+            "value": 30.5,
+            "top5": 19.8,
             "wins": 0
           },
           {
             "round": 3,
-            "value": 25.4,
+            "value": 25.7,
             "top5": 17.9,
             "wins": 0
           },
           {
             "round": 4,
-            "value": 11.9,
-            "top5": 11.9,
+            "value": 12.2,
+            "top5": 12.2,
             "wins": 0
           },
           {
@@ -50873,26 +50875,26 @@
           },
           {
             "round": 6,
-            "value": 28.4,
+            "value": 28.6,
             "top5": 16.9,
             "wins": 1
           },
           {
             "round": 7,
-            "value": 22.6,
+            "value": 22.9,
             "top5": 15.4,
             "wins": 1
           },
           {
             "round": 8,
-            "value": 9.3,
-            "top5": 9.3,
+            "value": 9.2,
+            "top5": 9.2,
             "wins": 1
           },
           {
             "round": 9,
-            "value": 15.3,
-            "top5": 15.3,
+            "value": 15.2,
+            "top5": 15.2,
             "wins": 0
           },
           {
@@ -50903,8 +50905,8 @@
           },
           {
             "round": 11,
-            "value": 15.1,
-            "top5": 15.1,
+            "value": 15.4,
+            "top5": 15.4,
             "wins": 1
           },
           {
@@ -50915,20 +50917,20 @@
           },
           {
             "round": 13,
-            "value": 26.2,
+            "value": 26.4,
             "top5": 15.7,
             "wins": 0
           },
           {
             "round": 14,
-            "value": 11.4,
-            "top5": 11.4,
+            "value": 11.6,
+            "top5": 11.6,
             "wins": 0
           },
           {
             "round": 16,
-            "value": 14.3,
-            "top5": 14.3,
+            "value": 14.2,
+            "top5": 14.2,
             "wins": 0
           },
           {
@@ -50945,7 +50947,7 @@
           },
           {
             "round": 19,
-            "value": 27.2,
+            "value": 27.1,
             "top5": 15.6,
             "wins": 0
           },
@@ -50957,26 +50959,26 @@
           },
           {
             "round": 21,
-            "value": 12.1,
-            "top5": 12.1,
+            "value": 12.4,
+            "top5": 12.4,
             "wins": 1
           },
           {
             "round": 22,
-            "value": 31.5,
-            "top5": 15.7,
+            "value": 32.0,
+            "top5": 16.0,
             "wins": 0
           },
           {
             "round": 23,
-            "value": 14.8,
-            "top5": 14.8,
+            "value": 15.4,
+            "top5": 15.4,
             "wins": 0
           },
           {
             "round": 24,
-            "value": 30.0,
-            "top5": 16.3,
+            "value": 30.5,
+            "top5": 16.6,
             "wins": 0
           }
         ],
@@ -51037,8 +51039,8 @@
           },
           {
             "round": 10,
-            "value": 37.6,
-            "top5": 21.4,
+            "value": 40.2,
+            "top5": 23.0,
             "wins": 0
           },
           {
@@ -51201,13 +51203,13 @@
           },
           {
             "round": 14,
-            "value": 30.5,
+            "value": 30.4,
             "top5": 18.9,
             "wins": 0
           },
           {
             "round": 15,
-            "value": 18.6,
+            "value": 18.4,
             "top5": 17.1,
             "wins": 1
           },
@@ -51219,8 +51221,8 @@
           },
           {
             "round": 18,
-            "value": 12.9,
-            "top5": 12.9,
+            "value": 12.8,
+            "top5": 12.8,
             "wins": 1
           },
           {
@@ -51243,13 +51245,13 @@
           },
           {
             "round": 22,
-            "value": 40.4,
+            "value": 40.2,
             "top5": 21.9,
             "wins": 0
           },
           {
             "round": 23,
-            "value": 23.3,
+            "value": 23.1,
             "top5": 19.2,
             "wins": 1
           },
@@ -51412,7 +51414,7 @@
         "id": "priorRound",
         "label": "Prior round 22 (last week's team)",
         "teamRounds": 2680,
-        "avgMissedPvs": 8.72,
+        "avgMissedPvs": 8.73,
         "avgPlayersMissed": 2.62,
         "winRate": 0.49,
         "correlations": [
@@ -51427,7 +51429,7 @@
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "corrWin": -0.068,
+            "corrWin": -0.069,
             "corrMargin": -0.081,
             "avgMissPvs": 0.68,
             "pctRounds": 16.2
@@ -51437,7 +51439,7 @@
             "roleId": "total",
             "corrWin": -0.062,
             "corrMargin": -0.077,
-            "avgMissPvs": 8.72,
+            "avgMissPvs": 8.73,
             "pctRounds": 100.0
           },
           {
@@ -51445,7 +51447,7 @@
             "roleId": "inside_mid",
             "corrWin": -0.057,
             "corrMargin": -0.051,
-            "avgMissPvs": 1.38,
+            "avgMissPvs": 1.39,
             "pctRounds": 26.2
           },
           {
@@ -51453,14 +51455,14 @@
             "roleId": "utility",
             "corrWin": -0.05,
             "corrMargin": -0.056,
-            "avgMissPvs": 2.2,
+            "avgMissPvs": 2.21,
             "pctRounds": 55.3
           },
           {
             "role": "Key FWD + DEF",
             "roleId": "key_roles",
-            "corrWin": -0.019,
-            "corrMargin": -0.026,
+            "corrWin": -0.02,
+            "corrMargin": -0.027,
             "avgMissPvs": 1.69,
             "pctRounds": 45.0
           },
@@ -51475,8 +51477,8 @@
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "corrWin": -0.013,
-            "corrMargin": -0.004,
+            "corrWin": -0.014,
+            "corrMargin": -0.005,
             "avgMissPvs": 0.88,
             "pctRounds": 24.4
           },
@@ -51492,16 +51494,16 @@
             "role": "Ruck",
             "roleId": "ruck",
             "corrWin": 0.027,
-            "corrMargin": 0.016,
+            "corrMargin": 0.017,
             "avgMissPvs": 0.96,
             "pctRounds": 25.3
           },
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "corrWin": 0.031,
-            "corrMargin": 0.032,
-            "avgMissPvs": 1.27,
+            "corrWin": 0.032,
+            "corrMargin": 0.033,
+            "avgMissPvs": 1.28,
             "pctRounds": 34.0
           }
         ],
@@ -51509,20 +51511,20 @@
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "winPctPer100": -2.07,
-            "marginPer100": -195.18
+            "winPctPer100": -2.08,
+            "marginPer100": -196.74
           },
           {
             "role": "Inside Mid",
             "roleId": "inside_mid",
             "winPctPer100": -1.12,
-            "marginPer100": -80.38
+            "marginPer100": -80.48
           },
           {
             "role": "Utility",
             "roleId": "utility",
-            "winPctPer100": -0.99,
-            "marginPer100": -89.12
+            "winPctPer100": -1.0,
+            "marginPer100": -89.06
           },
           {
             "role": "Key Defender",
@@ -51533,8 +51535,8 @@
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "winPctPer100": -0.4,
-            "marginPer100": -9.64
+            "winPctPer100": -0.42,
+            "marginPer100": -11.35
           },
           {
             "role": "Rebound Defender",
@@ -51543,26 +51545,26 @@
             "marginPer100": 20.88
           },
           {
-            "role": "Pressure Forward",
-            "roleId": "pressure_forward",
-            "winPctPer100": 0.77,
-            "marginPer100": 63.09
-          },
-          {
             "role": "Ruck",
             "roleId": "ruck",
             "winPctPer100": 0.77,
-            "marginPer100": 37.48
+            "marginPer100": 37.57
+          },
+          {
+            "role": "Pressure Forward",
+            "roleId": "pressure_forward",
+            "winPctPer100": 0.79,
+            "marginPer100": 64.56
           }
         ],
         "starMiss": [
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "rounds": 249,
-            "winWhenMiss": 0.402,
+            "rounds": 250,
+            "winWhenMiss": 0.4,
             "winOtherwise": 0.503,
-            "deltaPp": -10.2
+            "deltaPp": -10.3
           },
           {
             "role": "Key Defender",
@@ -51575,10 +51577,10 @@
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "rounds": 152,
-            "winWhenMiss": 0.434,
+            "rounds": 154,
+            "winWhenMiss": 0.435,
             "winOtherwise": 0.494,
-            "deltaPp": -6.0
+            "deltaPp": -5.9
           },
           {
             "role": "Inside Mid",
@@ -51615,42 +51617,42 @@
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "rounds": 271,
-            "winWhenMiss": 0.517,
+            "rounds": 273,
+            "winWhenMiss": 0.52,
             "winOtherwise": 0.477,
-            "deltaPp": 4.0
+            "deltaPp": 4.4
           }
         ],
         "coefficients": [
           {
             "role": "Inside Mid",
             "roleId": "inside_mid",
-            "coef": -0.01191
+            "coef": -0.01192
           },
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "coef": -0.02201
+            "coef": -0.02211
           },
           {
             "role": "Rebound Defender",
             "roleId": "rebound_defender",
-            "coef": 0.0052
+            "coef": 0.00518
           },
           {
             "role": "Key Defender",
             "roleId": "key_defender",
-            "coef": -0.00633
+            "coef": -0.00632
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "coef": -0.00521
+            "coef": -0.00538
           },
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "coef": 0.003
+            "coef": 0.00319
           },
           {
             "role": "Ruck",
@@ -51660,13 +51662,13 @@
           {
             "role": "Utility",
             "roleId": "utility",
-            "coef": -0.01189
+            "coef": -0.01199
           }
         ],
-        "archetypeModelR2": 0.0132,
+        "archetypeModelR2": 0.0134,
         "keyVsOther": {
-          "keyRolesCoef": -0.00628,
-          "otherRolesCoef": -0.00666,
+          "keyRolesCoef": -0.00636,
+          "otherRolesCoef": -0.00667,
           "r2": 0.0038
         },
         "yearly": [
@@ -51720,7 +51722,7 @@
           },
           {
             "season": 2024,
-            "total": -0.092,
+            "total": -0.093,
             "keyRoles": -0.03,
             "keyForward": -0.032,
             "keyDefender": -0.007,
@@ -51728,11 +51730,11 @@
           },
           {
             "season": 2025,
-            "total": -0.044,
-            "keyRoles": -0.051,
-            "keyForward": -0.095,
+            "total": -0.045,
+            "keyRoles": -0.054,
+            "keyForward": -0.096,
             "keyDefender": 0.03,
-            "mid": -0.091
+            "mid": -0.093
           }
         ]
       },
@@ -51740,22 +51742,22 @@
         "id": "rollingTop22",
         "label": "Rolling top-22 PVS (\u22652 of last 4 rounds)",
         "teamRounds": 2778,
-        "avgMissedPvs": 12.54,
+        "avgMissedPvs": 12.55,
         "avgPlayersMissed": 3.46,
         "winRate": 0.494,
         "correlations": [
           {
             "role": "Total core missed",
             "roleId": "total",
-            "corrWin": -0.114,
-            "corrMargin": -0.143,
-            "avgMissPvs": 12.54,
+            "corrWin": -0.116,
+            "corrMargin": -0.144,
+            "avgMissPvs": 12.55,
             "pctRounds": 100.0
           },
           {
             "role": "Inside + outside mid",
             "roleId": "mid",
-            "corrWin": -0.109,
+            "corrWin": -0.11,
             "corrMargin": -0.129,
             "avgMissPvs": 3.25,
             "pctRounds": 52.4
@@ -51763,18 +51765,18 @@
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "corrWin": -0.101,
-            "corrMargin": -0.113,
+            "corrWin": -0.102,
+            "corrMargin": -0.114,
             "avgMissPvs": 1.05,
             "pctRounds": 23.4
           },
           {
             "role": "Utility",
             "roleId": "utility",
-            "corrWin": -0.072,
-            "corrMargin": -0.076,
-            "avgMissPvs": 2.81,
-            "pctRounds": 60.0
+            "corrWin": -0.074,
+            "corrMargin": -0.077,
+            "avgMissPvs": 2.82,
+            "pctRounds": 60.2
           },
           {
             "role": "Inside Mid",
@@ -51788,25 +51790,25 @@
             "role": "Key FWD + DEF",
             "roleId": "key_roles",
             "corrWin": -0.05,
-            "corrMargin": -0.051,
+            "corrMargin": -0.052,
             "avgMissPvs": 2.23,
             "pctRounds": 51.5
           },
           {
             "role": "Key Defender",
             "roleId": "key_defender",
-            "corrWin": -0.043,
-            "corrMargin": -0.046,
-            "avgMissPvs": 0.92,
-            "pctRounds": 27.3
+            "corrWin": -0.041,
+            "corrMargin": -0.045,
+            "avgMissPvs": 0.91,
+            "pctRounds": 27.2
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "corrWin": -0.03,
-            "corrMargin": -0.029,
+            "corrWin": -0.032,
+            "corrMargin": -0.031,
             "avgMissPvs": 1.32,
-            "pctRounds": 33.4
+            "pctRounds": 33.5
           },
           {
             "role": "Rebound Defender",
@@ -51828,41 +51830,41 @@
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
             "corrWin": 0.03,
-            "corrMargin": 0.019,
+            "corrMargin": 0.02,
             "avgMissPvs": 1.9,
-            "pctRounds": 44.8
+            "pctRounds": 44.9
           }
         ],
         "marginalImpact": [
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "winPctPer100": -2.48,
-            "marginPer100": -219.9
-          },
-          {
-            "role": "Key Defender",
-            "roleId": "key_defender",
-            "winPctPer100": -1.3,
-            "marginPer100": -111.91
+            "winPctPer100": -2.49,
+            "marginPer100": -220.88
           },
           {
             "role": "Utility",
             "roleId": "utility",
-            "winPctPer100": -1.22,
-            "marginPer100": -102.85
+            "winPctPer100": -1.25,
+            "marginPer100": -104.76
+          },
+          {
+            "role": "Key Defender",
+            "roleId": "key_defender",
+            "winPctPer100": -1.23,
+            "marginPer100": -109.24
           },
           {
             "role": "Inside Mid",
             "roleId": "inside_mid",
             "winPctPer100": -1.03,
-            "marginPer100": -101.96
+            "marginPer100": -101.95
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "winPctPer100": -0.73,
-            "marginPer100": -56.9
+            "winPctPer100": -0.79,
+            "marginPer100": -60.85
           },
           {
             "role": "Rebound Defender",
@@ -51874,39 +51876,39 @@
             "role": "Ruck",
             "roleId": "ruck",
             "winPctPer100": 0.41,
-            "marginPer100": 3.03
+            "marginPer100": 3.06
           },
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "winPctPer100": 0.6,
-            "marginPer100": 29.83
+            "winPctPer100": 0.61,
+            "marginPer100": 31.28
           }
         ],
         "starMiss": [
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "rounds": 412,
-            "winWhenMiss": 0.388,
+            "rounds": 413,
+            "winWhenMiss": 0.387,
             "winOtherwise": 0.519,
-            "deltaPp": -13.0
+            "deltaPp": -13.1
           },
           {
             "role": "Utility",
             "roleId": "utility",
-            "rounds": 744,
-            "winWhenMiss": 0.458,
-            "winOtherwise": 0.533,
-            "deltaPp": -7.5
+            "rounds": 743,
+            "winWhenMiss": 0.459,
+            "winOtherwise": 0.535,
+            "deltaPp": -7.6
           },
           {
             "role": "Key Defender",
             "roleId": "key_defender",
             "rounds": 129,
             "winWhenMiss": 0.434,
-            "winOtherwise": 0.506,
-            "deltaPp": -7.2
+            "winOtherwise": 0.505,
+            "deltaPp": -7.1
           },
           {
             "role": "Inside Mid",
@@ -51919,10 +51921,10 @@
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "rounds": 295,
-            "winWhenMiss": 0.461,
-            "winOtherwise": 0.501,
-            "deltaPp": -4.0
+            "rounds": 297,
+            "winWhenMiss": 0.458,
+            "winOtherwise": 0.502,
+            "deltaPp": -4.4
           },
           {
             "role": "Rebound Defender",
@@ -51943,37 +51945,37 @@
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "rounds": 458,
-            "winWhenMiss": 0.522,
+            "rounds": 463,
+            "winWhenMiss": 0.523,
             "winOtherwise": 0.48,
-            "deltaPp": 4.2
+            "deltaPp": 4.3
           }
         ],
         "coefficients": [
           {
             "role": "Inside Mid",
             "roleId": "inside_mid",
-            "coef": -0.01168
+            "coef": -0.01178
           },
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "coef": -0.02717
+            "coef": -0.0273
           },
           {
             "role": "Rebound Defender",
             "roleId": "rebound_defender",
-            "coef": -0.00633
+            "coef": -0.00635
           },
           {
             "role": "Key Defender",
             "roleId": "key_defender",
-            "coef": -0.01574
+            "coef": -0.0151
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "coef": -0.00993
+            "coef": -0.0107
           },
           {
             "role": "Pressure Forward",
@@ -51983,19 +51985,19 @@
           {
             "role": "Ruck",
             "roleId": "ruck",
-            "coef": 0.00275
+            "coef": 0.00269
           },
           {
             "role": "Utility",
             "roleId": "utility",
-            "coef": -0.01602
+            "coef": -0.01642
           }
         ],
-        "archetypeModelR2": 0.0268,
+        "archetypeModelR2": 0.0273,
         "keyVsOther": {
-          "keyRolesCoef": -0.01185,
-          "otherRolesCoef": -0.00957,
-          "r2": 0.0132
+          "keyRolesCoef": -0.01205,
+          "otherRolesCoef": -0.00971,
+          "r2": 0.0135
         },
         "yearly": [
           {
@@ -52048,7 +52050,7 @@
           },
           {
             "season": 2024,
-            "total": -0.181,
+            "total": -0.182,
             "keyRoles": -0.128,
             "keyForward": -0.069,
             "keyDefender": -0.122,
@@ -52056,11 +52058,11 @@
           },
           {
             "season": 2025,
-            "total": -0.085,
-            "keyRoles": -0.026,
-            "keyForward": -0.042,
-            "keyDefender": 0.011,
-            "mid": -0.092
+            "total": -0.096,
+            "keyRoles": -0.03,
+            "keyForward": -0.062,
+            "keyDefender": 0.032,
+            "mid": -0.094
           }
         ]
       },
@@ -52068,25 +52070,25 @@
         "id": "seasonTop22",
         "label": "Season top-22 PVS (5+ games)",
         "teamRounds": 3120,
-        "avgMissedPvs": 19.84,
+        "avgMissedPvs": 19.87,
         "avgPlayersMissed": 5.1,
         "winRate": 0.496,
         "correlations": [
           {
             "role": "Total core missed",
             "roleId": "total",
-            "corrWin": -0.177,
-            "corrMargin": -0.232,
-            "avgMissPvs": 19.84,
+            "corrWin": -0.179,
+            "corrMargin": -0.234,
+            "avgMissPvs": 19.87,
             "pctRounds": 100.0
           },
           {
             "role": "Inside + outside mid",
             "roleId": "mid",
-            "corrWin": -0.123,
-            "corrMargin": -0.162,
-            "avgMissPvs": 5.81,
-            "pctRounds": 73.7
+            "corrWin": -0.127,
+            "corrMargin": -0.167,
+            "avgMissPvs": 5.8,
+            "pctRounds": 73.6
           },
           {
             "role": "Outside Mid",
@@ -52099,18 +52101,18 @@
           {
             "role": "Utility",
             "roleId": "utility",
-            "corrWin": -0.085,
-            "corrMargin": -0.09,
-            "avgMissPvs": 3.89,
-            "pctRounds": 68.9
+            "corrWin": -0.084,
+            "corrMargin": -0.089,
+            "avgMissPvs": 3.93,
+            "pctRounds": 69.2
           },
           {
             "role": "Inside Mid",
             "roleId": "inside_mid",
-            "corrWin": -0.074,
-            "corrMargin": -0.101,
-            "avgMissPvs": 4.1,
-            "pctRounds": 60.0
+            "corrWin": -0.078,
+            "corrMargin": -0.106,
+            "avgMissPvs": 4.08,
+            "pctRounds": 59.9
           },
           {
             "role": "Ruck",
@@ -52121,20 +52123,20 @@
             "pctRounds": 54.1
           },
           {
-            "role": "Pressure Forward",
-            "roleId": "pressure_forward",
-            "corrWin": -0.032,
-            "corrMargin": -0.034,
-            "avgMissPvs": 2.77,
-            "pctRounds": 56.3
-          },
-          {
             "role": "Key FWD + DEF",
             "roleId": "key_roles",
-            "corrWin": -0.032,
-            "corrMargin": -0.048,
-            "avgMissPvs": 3.03,
-            "pctRounds": 59.6
+            "corrWin": -0.033,
+            "corrMargin": -0.049,
+            "avgMissPvs": 3.02,
+            "pctRounds": 59.3
+          },
+          {
+            "role": "Pressure Forward",
+            "roleId": "pressure_forward",
+            "corrWin": -0.029,
+            "corrMargin": -0.031,
+            "avgMissPvs": 2.78,
+            "pctRounds": 56.6
           },
           {
             "role": "Key Defender",
@@ -52147,10 +52149,10 @@
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "corrWin": -0.019,
-            "corrMargin": -0.022,
+            "corrWin": -0.021,
+            "corrMargin": -0.024,
             "avgMissPvs": 2.12,
-            "pctRounds": 47.4
+            "pctRounds": 47.2
           },
           {
             "role": "Rebound Defender",
@@ -52165,20 +52167,20 @@
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "winPctPer100": -2.31,
-            "marginPer100": -231.88
+            "winPctPer100": -2.32,
+            "marginPer100": -232.44
           },
           {
             "role": "Utility",
             "roleId": "utility",
-            "winPctPer100": -1.17,
-            "marginPer100": -98.18
+            "winPctPer100": -1.16,
+            "marginPer100": -96.46
           },
           {
             "role": "Inside Mid",
             "roleId": "inside_mid",
-            "winPctPer100": -0.87,
-            "marginPer100": -93.61
+            "winPctPer100": -0.93,
+            "marginPer100": -99.39
           },
           {
             "role": "Key Defender",
@@ -52195,14 +52197,14 @@
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "winPctPer100": -0.53,
-            "marginPer100": -45.19
+            "winPctPer100": -0.47,
+            "marginPer100": -41.01
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "winPctPer100": -0.38,
-            "marginPer100": -34.36
+            "winPctPer100": -0.41,
+            "marginPer100": -36.93
           },
           {
             "role": "Rebound Defender",
@@ -52215,7 +52217,7 @@
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "rounds": 737,
+            "rounds": 738,
             "winWhenMiss": 0.415,
             "winOtherwise": 0.532,
             "deltaPp": -11.7
@@ -52223,26 +52225,34 @@
           {
             "role": "Utility",
             "roleId": "utility",
-            "rounds": 1179,
+            "rounds": 1194,
             "winWhenMiss": 0.466,
-            "winOtherwise": 0.541,
-            "deltaPp": -7.4
+            "winOtherwise": 0.539,
+            "deltaPp": -7.3
           },
           {
             "role": "Inside Mid",
             "roleId": "inside_mid",
             "rounds": 1643,
             "winWhenMiss": 0.472,
-            "winOtherwise": 0.536,
-            "deltaPp": -6.5
+            "winOtherwise": 0.538,
+            "deltaPp": -6.6
           },
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "rounds": 840,
-            "winWhenMiss": 0.467,
-            "winOtherwise": 0.51,
-            "deltaPp": -4.3
+            "rounds": 853,
+            "winWhenMiss": 0.472,
+            "winOtherwise": 0.508,
+            "deltaPp": -3.6
+          },
+          {
+            "role": "Key Forward",
+            "roleId": "key_forward",
+            "rounds": 662,
+            "winWhenMiss": 0.48,
+            "winOtherwise": 0.499,
+            "deltaPp": -1.8
           },
           {
             "role": "Ruck",
@@ -52251,14 +52261,6 @@
             "winWhenMiss": 0.5,
             "winOtherwise": 0.516,
             "deltaPp": -1.6
-          },
-          {
-            "role": "Key Forward",
-            "roleId": "key_forward",
-            "rounds": 658,
-            "winWhenMiss": 0.488,
-            "winOtherwise": 0.5,
-            "deltaPp": -1.2
           },
           {
             "role": "Key Defender",
@@ -52281,49 +52283,49 @@
           {
             "role": "Inside Mid",
             "roleId": "inside_mid",
-            "coef": -0.01115
+            "coef": -0.01161
           },
           {
             "role": "Outside Mid",
             "roleId": "outside_mid",
-            "coef": -0.02501
+            "coef": -0.02519
           },
           {
             "role": "Rebound Defender",
             "roleId": "rebound_defender",
-            "coef": -0.00322
+            "coef": -0.0032
           },
           {
             "role": "Key Defender",
             "roleId": "key_defender",
-            "coef": -0.01509
+            "coef": -0.01533
           },
           {
             "role": "Key Forward",
             "roleId": "key_forward",
-            "coef": -0.0115
+            "coef": -0.01179
           },
           {
             "role": "Pressure Forward",
             "roleId": "pressure_forward",
-            "coef": -0.01172
+            "coef": -0.01135
           },
           {
             "role": "Ruck",
             "roleId": "ruck",
-            "coef": -0.0089
+            "coef": -0.00909
           },
           {
             "role": "Utility",
             "roleId": "utility",
-            "coef": -0.01877
+            "coef": -0.01899
           }
         ],
-        "archetypeModelR2": 0.0406,
+        "archetypeModelR2": 0.0416,
         "keyVsOther": {
-          "keyRolesCoef": -0.0115,
-          "otherRolesCoef": -0.0136,
-          "r2": 0.0314
+          "keyRolesCoef": -0.01177,
+          "otherRolesCoef": -0.01377,
+          "r2": 0.0322
         },
         "yearly": [
           {
@@ -52352,7 +52354,7 @@
           },
           {
             "season": 2021,
-            "total": -0.097,
+            "total": -0.1,
             "keyRoles": 0.033,
             "keyForward": 0.041,
             "keyDefender": 0.004,
@@ -52376,7 +52378,7 @@
           },
           {
             "season": 2024,
-            "total": -0.213,
+            "total": -0.21,
             "keyRoles": 0.01,
             "keyForward": 0.038,
             "keyDefender": -0.045,
@@ -52384,11 +52386,11 @@
           },
           {
             "season": 2025,
-            "total": -0.223,
-            "keyRoles": -0.135,
-            "keyForward": -0.073,
+            "total": -0.236,
+            "keyRoles": -0.143,
+            "keyForward": -0.084,
             "keyDefender": -0.162,
-            "mid": -0.109
+            "mid": -0.144
           }
         ]
       }
@@ -52534,7 +52536,7 @@
           "rankDelta": 3,
           "wins": 8,
           "percentage": 99.1,
-          "pvsLost": 587.9
+          "pvsLost": 589.2
         },
         {
           "season": 2025,
@@ -52543,16 +52545,16 @@
           "rankDelta": -2,
           "wins": 18,
           "percentage": 139.3,
-          "pvsLost": 418.2
+          "pvsLost": 420.8
         },
         {
           "season": 2026,
-          "ladderRank": 6,
+          "ladderRank": 4,
           "pvsLostRank": 15,
-          "rankDelta": -9,
-          "wins": 8,
-          "percentage": 112.4,
-          "pvsLost": 1604.4
+          "rankDelta": -11,
+          "wins": 9,
+          "percentage": 113.2,
+          "pvsLost": 1655.9
         }
       ],
       "Brisbane Lions": [
@@ -52680,16 +52682,16 @@
           "rankDelta": 1,
           "wins": 16,
           "percentage": 114.2,
-          "pvsLost": 415.1
+          "pvsLost": 414.3
         },
         {
           "season": 2026,
-          "ladderRank": 7,
-          "pvsLostRank": 10,
+          "ladderRank": 6,
+          "pvsLostRank": 9,
           "rankDelta": -3,
-          "wins": 8,
-          "percentage": 109.6,
-          "pvsLost": 1469.7
+          "wins": 9,
+          "percentage": 112.4,
+          "pvsLost": 1438.3
         }
       ],
       "Carlton": [
@@ -52821,12 +52823,12 @@
         },
         {
           "season": 2026,
-          "ladderRank": 13,
-          "pvsLostRank": 17,
-          "rankDelta": -4,
-          "wins": 5,
-          "percentage": 93.2,
-          "pvsLost": 1692.9
+          "ladderRank": 11,
+          "pvsLostRank": 16,
+          "rankDelta": -5,
+          "wins": 6,
+          "percentage": 95.7,
+          "pvsLost": 1656.6
         }
       ],
       "Collingwood": [
@@ -52855,7 +52857,7 @@
           "rankDelta": 2,
           "wins": 11,
           "percentage": 94.1,
-          "pvsLost": 762.4
+          "pvsLost": 762.3
         },
         {
           "season": 2015,
@@ -52958,12 +52960,12 @@
         },
         {
           "season": 2026,
-          "ladderRank": 14,
+          "ladderRank": 13,
           "pvsLostRank": 2,
-          "rankDelta": 12,
-          "wins": 4,
-          "percentage": 97.9,
-          "pvsLost": 1353.7
+          "rankDelta": 11,
+          "wins": 5,
+          "percentage": 100.6,
+          "pvsLost": 1317.2
         }
       ],
       "Essendon": [
@@ -53096,11 +53098,11 @@
         {
           "season": 2026,
           "ladderRank": 18,
-          "pvsLostRank": 16,
-          "rankDelta": 2,
+          "pvsLostRank": 17,
+          "rankDelta": 1,
           "wins": 1,
           "percentage": 70.4,
-          "pvsLost": 1653.8
+          "pvsLost": 1720.4
         }
       ],
       "Fremantle": [
@@ -53156,7 +53158,7 @@
           "rankDelta": 8,
           "wins": 8,
           "percentage": 74.4,
-          "pvsLost": 770.8
+          "pvsLost": 770.9
         },
         {
           "season": 2018,
@@ -53165,7 +53167,7 @@
           "rankDelta": 0,
           "wins": 8,
           "percentage": 76.2,
-          "pvsLost": 932.9
+          "pvsLost": 933.2
         },
         {
           "season": 2019,
@@ -53235,9 +53237,9 @@
           "ladderRank": 1,
           "pvsLostRank": 5,
           "rankDelta": -4,
-          "wins": 12,
-          "percentage": 147.9,
-          "pvsLost": 1428.7
+          "wins": 13,
+          "percentage": 144.4,
+          "pvsLost": 1347.9
         }
       ],
       "Geelong": [
@@ -53369,12 +53371,12 @@
         },
         {
           "season": 2026,
-          "ladderRank": 3,
+          "ladderRank": 5,
           "pvsLostRank": 1,
-          "rankDelta": 2,
+          "rankDelta": 4,
           "wins": 9,
-          "percentage": 131.5,
-          "pvsLost": 1285.3
+          "percentage": 127.9,
+          "pvsLost": 1215.9
         }
       ],
       "Gold Coast": [
@@ -53502,16 +53504,16 @@
           "rankDelta": 2,
           "wins": 15,
           "percentage": 124.9,
-          "pvsLost": 442.5
+          "pvsLost": 450.6
         },
         {
           "season": 2026,
-          "ladderRank": 9,
-          "pvsLostRank": 11,
-          "rankDelta": -2,
+          "ladderRank": 10,
+          "pvsLostRank": 14,
+          "rankDelta": -4,
           "wins": 6,
-          "percentage": 102.5,
-          "pvsLost": 1538.5
+          "percentage": 100.9,
+          "pvsLost": 1567.3
         }
       ],
       "Greater Western Sydney": [
@@ -53643,12 +53645,12 @@
         },
         {
           "season": 2026,
-          "ladderRank": 12,
-          "pvsLostRank": 14,
-          "rankDelta": -2,
+          "ladderRank": 14,
+          "pvsLostRank": 11,
+          "rankDelta": 3,
           "wins": 5,
-          "percentage": 100.0,
-          "pvsLost": 1603.3
+          "percentage": 98.1,
+          "pvsLost": 1520.8
         }
       ],
       "Hawthorn": [
@@ -53780,12 +53782,12 @@
         },
         {
           "season": 2026,
-          "ladderRank": 4,
-          "pvsLostRank": 13,
-          "rankDelta": -9,
-          "wins": 8,
-          "percentage": 117.7,
-          "pvsLost": 1601.1
+          "ladderRank": 3,
+          "pvsLostRank": 10,
+          "rankDelta": -7,
+          "wins": 9,
+          "percentage": 117.5,
+          "pvsLost": 1494.8
         }
       ],
       "Melbourne": [
@@ -53913,16 +53915,16 @@
           "rankDelta": 10,
           "wins": 7,
           "percentage": 93.3,
-          "pvsLost": 422.5
+          "pvsLost": 426.7
         },
         {
           "season": 2026,
-          "ladderRank": 5,
+          "ladderRank": 7,
           "pvsLostRank": 3,
-          "rankDelta": 2,
+          "rankDelta": 4,
           "wins": 9,
-          "percentage": 105.7,
-          "pvsLost": 1369.9
+          "percentage": 104.2,
+          "pvsLost": 1329.8
         }
       ],
       "North Melbourne": [
@@ -54050,16 +54052,16 @@
           "rankDelta": 3,
           "wins": 5,
           "percentage": 76.3,
-          "pvsLost": 583.3
+          "pvsLost": 585.6
         },
         {
           "season": 2026,
-          "ladderRank": 10,
+          "ladderRank": 9,
           "pvsLostRank": 7,
-          "rankDelta": 3,
-          "wins": 6,
-          "percentage": 88.5,
-          "pvsLost": 1455.3
+          "rankDelta": 2,
+          "wins": 7,
+          "percentage": 90.7,
+          "pvsLost": 1408.1
         }
       ],
       "Port Adelaide": [
@@ -54187,16 +54189,16 @@
           "rankDelta": 4,
           "wins": 9,
           "percentage": 79.8,
-          "pvsLost": 535.7
+          "pvsLost": 536.3
         },
         {
           "season": 2026,
           "ladderRank": 15,
-          "pvsLostRank": 9,
-          "rankDelta": 6,
+          "pvsLostRank": 8,
+          "rankDelta": 7,
           "wins": 4,
-          "percentage": 101.0,
-          "pvsLost": 1468.2
+          "percentage": 98.6,
+          "pvsLost": 1429.7
         }
       ],
       "Richmond": [
@@ -54324,7 +54326,7 @@
           "rankDelta": 1,
           "wins": 5,
           "percentage": 66.0,
-          "pvsLost": 643.8
+          "pvsLost": 674.6
         },
         {
           "season": 2026,
@@ -54332,8 +54334,8 @@
           "pvsLostRank": 18,
           "rankDelta": -1,
           "wins": 2,
-          "percentage": 61.1,
-          "pvsLost": 1732.8
+          "percentage": 61.3,
+          "pvsLost": 1768.0
         }
       ],
       "St Kilda": [
@@ -54461,16 +54463,16 @@
           "rankDelta": 2,
           "wins": 9,
           "percentage": 88.5,
-          "pvsLost": 554.2
+          "pvsLost": 560.1
         },
         {
           "season": 2026,
-          "ladderRank": 11,
-          "pvsLostRank": 4,
-          "rankDelta": 7,
+          "ladderRank": 12,
+          "pvsLostRank": 6,
+          "rankDelta": 6,
           "wins": 6,
-          "percentage": 103.6,
-          "pvsLost": 1406.6
+          "percentage": 101.6,
+          "pvsLost": 1356.2
         }
       ],
       "Sydney": [
@@ -54603,11 +54605,11 @@
         {
           "season": 2026,
           "ladderRank": 2,
-          "pvsLostRank": 6,
-          "rankDelta": -4,
+          "pvsLostRank": 4,
+          "rankDelta": -2,
           "wins": 11,
-          "percentage": 140.5,
-          "pvsLost": 1440.7
+          "percentage": 132.4,
+          "pvsLost": 1330.2
         }
       ],
       "West Coast": [
@@ -54740,11 +54742,11 @@
         {
           "season": 2026,
           "ladderRank": 16,
-          "pvsLostRank": 8,
-          "rankDelta": 8,
+          "pvsLostRank": 13,
+          "rankDelta": 3,
           "wins": 4,
           "percentage": 72.7,
-          "pvsLost": 1465.8
+          "pvsLost": 1540.9
         }
       ],
       "Western Bulldogs": [
@@ -54872,28 +54874,28 @@
           "rankDelta": -6,
           "wins": 14,
           "percentage": 137.0,
-          "pvsLost": 591.2
+          "pvsLost": 592.3
         },
         {
           "season": 2026,
           "ladderRank": 8,
           "pvsLostRank": 12,
           "rankDelta": -4,
-          "wins": 7,
-          "percentage": 89.5,
-          "pvsLost": 1591.1
+          "wins": 8,
+          "percentage": 91.8,
+          "pvsLost": 1526.6
         }
       ]
     },
     "interpretation": "Ladder rank from official end-of-home-and-away standings (Squiggle / AFL) for 2021\u20132025, otherwise premiership points from match results. PVS-lost rank sorts clubs by season games-missed PVS (rank 1 = fewest lost). Injury weights use injury_weight_pvs for players with fewer than 14 games played. Rank delta = ladder rank \u2212 PVS-lost rank: negative means the club finished higher on the ladder than its injury toll would suggest; positive means they finished lower."
   },
   "leagueOverview": {
-    "avgUnavailableValue": 24.3,
-    "totalVflOnlyPvs": 4208.4,
+    "avgUnavailableValue": 24.4,
+    "totalVflOnlyPvs": 4254.4,
     "clubsAboveExpectation": 12,
     "clubsBelowExpectation": 6,
     "topUnavailableClub": "Essendon",
-    "correlationUnavailableToWins": -0.44
+    "correlationUnavailableToWins": -0.45
   },
   "clubUnavailableByRound": [
     {
@@ -55032,19 +55034,19 @@
   "clubRankings": [
     {
       "club": "Adelaide",
-      "unavailableValue": 418.2,
-      "unavailableTop5": 327.3,
-      "expectedWins": 13.2,
+      "unavailableValue": 420.8,
+      "unavailableTop5": 328.9,
+      "expectedWins": 13.3,
       "actualWins": 18,
-      "delta": 4.8
+      "delta": 4.7
     },
     {
       "club": "Brisbane Lions",
-      "unavailableValue": 415.1,
-      "unavailableTop5": 339.9,
-      "expectedWins": 13.3,
+      "unavailableValue": 414.3,
+      "unavailableTop5": 339.7,
+      "expectedWins": 13.4,
       "actualWins": 16,
-      "delta": 2.7
+      "delta": 2.6
     },
     {
       "club": "Carlton",
@@ -55058,17 +55060,17 @@
       "club": "Collingwood",
       "unavailableValue": 535.3,
       "unavailableTop5": 395.7,
-      "expectedWins": 11.5,
+      "expectedWins": 11.6,
       "actualWins": 16,
-      "delta": 4.5
+      "delta": 4.4
     },
     {
       "club": "Essendon",
       "unavailableValue": 1015.8,
       "unavailableTop5": 525.7,
-      "expectedWins": 4.7,
+      "expectedWins": 4.6,
       "actualWins": 6,
-      "delta": 1.3
+      "delta": 1.4
     },
     {
       "club": "Fremantle",
@@ -55082,17 +55084,17 @@
       "club": "Geelong",
       "unavailableValue": 311.5,
       "unavailableTop5": 285.9,
-      "expectedWins": 14.7,
+      "expectedWins": 14.9,
       "actualWins": 17,
-      "delta": 2.3
+      "delta": 2.1
     },
     {
       "club": "Gold Coast",
-      "unavailableValue": 442.5,
-      "unavailableTop5": 341.3,
-      "expectedWins": 12.9,
+      "unavailableValue": 450.6,
+      "unavailableTop5": 343.1,
+      "expectedWins": 12.8,
       "actualWins": 15,
-      "delta": 2.1
+      "delta": 2.2
     },
     {
       "club": "Greater Western Sydney",
@@ -55112,51 +55114,51 @@
     },
     {
       "club": "Melbourne",
-      "unavailableValue": 422.5,
-      "unavailableTop5": 323.9,
-      "expectedWins": 13.1,
+      "unavailableValue": 426.7,
+      "unavailableTop5": 326.7,
+      "expectedWins": 13.2,
       "actualWins": 7,
-      "delta": -6.1
+      "delta": -6.2
     },
     {
       "club": "North Melbourne",
-      "unavailableValue": 583.3,
-      "unavailableTop5": 411.9,
+      "unavailableValue": 585.6,
+      "unavailableTop5": 414.2,
       "expectedWins": 10.9,
       "actualWins": 5,
       "delta": -5.9
     },
     {
       "club": "Port Adelaide",
-      "unavailableValue": 535.7,
+      "unavailableValue": 536.2,
       "unavailableTop5": 397.7,
-      "expectedWins": 11.5,
+      "expectedWins": 11.6,
       "actualWins": 9,
-      "delta": -2.5
+      "delta": -2.6
     },
     {
       "club": "Richmond",
-      "unavailableValue": 643.8,
-      "unavailableTop5": 411.9,
-      "expectedWins": 10.0,
+      "unavailableValue": 674.6,
+      "unavailableTop5": 441.2,
+      "expectedWins": 9.6,
       "actualWins": 5,
-      "delta": -5.0
+      "delta": -4.6
     },
     {
       "club": "St Kilda",
-      "unavailableValue": 554.2,
-      "unavailableTop5": 386.1,
-      "expectedWins": 11.3,
+      "unavailableValue": 560.1,
+      "unavailableTop5": 390.4,
+      "expectedWins": 11.2,
       "actualWins": 9,
-      "delta": -2.3
+      "delta": -2.2
     },
     {
       "club": "Sydney",
       "unavailableValue": 565.3,
       "unavailableTop5": 417.9,
-      "expectedWins": 11.1,
+      "expectedWins": 11.2,
       "actualWins": 12,
-      "delta": 0.9
+      "delta": 0.8
     },
     {
       "club": "West Coast",
@@ -55168,11 +55170,11 @@
     },
     {
       "club": "Western Bulldogs",
-      "unavailableValue": 591.2,
-      "unavailableTop5": 473.5,
-      "expectedWins": 10.7,
+      "unavailableValue": 592.3,
+      "unavailableTop5": 474.0,
+      "expectedWins": 10.8,
       "actualWins": 14,
-      "delta": 3.3
+      "delta": 3.2
     }
   ],
   "topUnavailablePlayers": [
@@ -55241,20 +55243,20 @@
       "status": "intermittent"
     },
     {
+      "player": "Sam Lalor",
+      "club": "Richmond",
+      "roundsMissed": 12,
+      "pvs": 5.9,
+      "unavailablePvs": 71.3,
+      "status": "intermittent"
+    },
+    {
       "player": "Errol Gulden",
       "club": "Sydney",
       "roundsMissed": 12,
       "pvs": 5.8,
       "unavailablePvs": 69.1,
       "status": "unavailable"
-    },
-    {
-      "player": "Jeremy McGovern",
-      "club": "West Coast",
-      "roundsMissed": 17,
-      "pvs": 4.1,
-      "unavailablePvs": 69.0,
-      "status": "intermittent"
     }
   ],
   "topUnavailableByClub": {
@@ -55299,12 +55301,15 @@
         "status": "unavailable"
       },
       {
-        "player": "Chayce Jones",
+        "player": "Rory Laird",
         "club": "Adelaide",
-        "roundsMissed": 5,
-        "pvs": 3.3,
-        "unavailablePvs": 16.5,
-        "status": "unavailable"
+        "roundsMissed": 3,
+        "pvs": 5.4,
+        "unavailablePvs": 16.3,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Calf"
+        ]
       }
     ],
     "Brisbane Lions": [
@@ -55436,8 +55441,7 @@
         "unavailablePvs": 55.3,
         "status": "unavailable",
         "keyInjuries": [
-          "Achilles",
-          "Managed"
+          "Achilles"
         ]
       },
       {
@@ -55734,7 +55738,6 @@
         "unavailablePvs": 42.2,
         "status": "intermittent",
         "keyInjuries": [
-          "Calf",
           "Hip"
         ]
       },
@@ -55917,6 +55920,7 @@
         "unavailablePvs": 58.9,
         "status": "unavailable",
         "keyInjuries": [
+          "Back",
           "Knee"
         ]
       },
@@ -55962,6 +55966,17 @@
     ],
     "Richmond": [
       {
+        "player": "Sam Lalor",
+        "club": "Richmond",
+        "roundsMissed": 12,
+        "pvs": 5.9,
+        "unavailablePvs": 71.3,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Hamstring"
+        ]
+      },
+      {
         "player": "Kane McAuliffe",
         "club": "Richmond",
         "roundsMissed": 13,
@@ -56000,17 +56015,6 @@
         "status": "intermittent",
         "keyInjuries": [
           "Patella"
-        ]
-      },
-      {
-        "player": "Sam Lalor",
-        "club": "Richmond",
-        "roundsMissed": 12,
-        "pvs": 3.5,
-        "unavailablePvs": 42.0,
-        "status": "intermittent",
-        "keyInjuries": [
-          "Hamstring"
         ]
       }
     ],
@@ -56109,8 +56113,7 @@
         "status": "unavailable",
         "keyInjuries": [
           "Adductor",
-          "Hamstring",
-          "Suspension"
+          "Hamstring"
         ]
       },
       {
@@ -56285,14 +56288,14 @@
   ],
   "regression": {
     "model": "linear",
-    "rSquared": 0.19,
+    "rSquared": 0.2,
     "marginRSquared": 0.15,
     "coefficients": {
-      "intercept": 19.15,
-      "unavailablePvs": -0.0142,
-      "marginPer100Pvs": -5.6
+      "intercept": 19.39,
+      "unavailablePvs": -0.0146,
+      "marginPer100Pvs": -5.45
     },
-    "interpretation": "Each +100 unavailable PVS correlates with ~1.4 fewer wins (season 2025). PVS combines weighted season performance (normalised 0\u20137, leader = 7) with an optional draft-potential top-up for players not yet impacting games."
+    "interpretation": "Each +100 unavailable PVS correlates with ~1.5 fewer wins (season 2025). PVS combines weighted season performance (normalised 0\u20137, leader = 7) with an optional draft-potential top-up for players not yet impacting games."
   },
   "clubs": [
     "Essendon",
@@ -56617,8 +56620,8 @@
       },
       {
         "round": 5,
-        "value": 23.1,
-        "top5": 17.9,
+        "value": 25.6,
+        "top5": 20.4,
         "wins": 0
       },
       {
@@ -56659,26 +56662,26 @@
       },
       {
         "round": 12,
-        "value": 36.3,
-        "top5": 18.4,
+        "value": 38.8,
+        "top5": 20.8,
         "wins": 0
       },
       {
         "round": 13,
-        "value": 20.0,
-        "top5": 17.7,
+        "value": 22.4,
+        "top5": 20.1,
         "wins": 0
       },
       {
         "round": 15,
-        "value": 24.1,
-        "top5": 17.2,
+        "value": 26.6,
+        "top5": 19.6,
         "wins": 0
       },
       {
         "round": 16,
-        "value": 39.1,
-        "top5": 19.3,
+        "value": 41.5,
+        "top5": 21.8,
         "wins": 0
       },
       {
@@ -56689,44 +56692,44 @@
       },
       {
         "round": 18,
-        "value": 36.2,
-        "top5": 17.9,
+        "value": 38.7,
+        "top5": 20.3,
         "wins": 1
       },
       {
         "round": 19,
-        "value": 38.8,
-        "top5": 17.9,
+        "value": 41.2,
+        "top5": 20.3,
         "wins": 1
       },
       {
         "round": 20,
-        "value": 36.6,
-        "top5": 20.1,
+        "value": 39.1,
+        "top5": 22.6,
         "wins": 0
       },
       {
         "round": 21,
-        "value": 36.5,
-        "top5": 20.2,
+        "value": 38.9,
+        "top5": 22.6,
         "wins": 0
       },
       {
         "round": 22,
-        "value": 39.6,
-        "top5": 17.7,
+        "value": 42.5,
+        "top5": 20.1,
         "wins": 0
       },
       {
         "round": 23,
-        "value": 25.9,
-        "top5": 17.4,
+        "value": 28.9,
+        "top5": 19.8,
         "wins": 0
       },
       {
         "round": 24,
-        "value": 42.4,
-        "top5": 18.3,
+        "value": 45.4,
+        "top5": 20.7,
         "wins": 0
       }
     ],
@@ -56787,7 +56790,7 @@
       },
       {
         "round": 10,
-        "value": 39.0,
+        "value": 39.3,
         "top5": 23.9,
         "wins": 1
       },
@@ -56817,7 +56820,7 @@
       },
       {
         "round": 16,
-        "value": 36.0,
+        "value": 36.3,
         "top5": 21.4,
         "wins": 1
       },
@@ -56829,14 +56832,14 @@
       },
       {
         "round": 18,
-        "value": 22.2,
-        "top5": 19.6,
+        "value": 22.5,
+        "top5": 19.8,
         "wins": 0
       },
       {
         "round": 19,
-        "value": 16.1,
-        "top5": 16.1,
+        "value": 16.4,
+        "top5": 16.4,
         "wins": 0
       },
       {
@@ -57031,8 +57034,8 @@
       },
       {
         "round": 4,
-        "value": 20.1,
-        "top5": 20.1,
+        "value": 22.3,
+        "top5": 22.3,
         "wins": 0
       },
       {
@@ -57451,8 +57454,8 @@
       },
       {
         "round": 6,
-        "value": 26.3,
-        "top5": 17.5,
+        "value": 27.5,
+        "top5": 18.5,
         "wins": 0
       },
       {
@@ -57469,8 +57472,8 @@
       },
       {
         "round": 9,
-        "value": 18.6,
-        "top5": 16.6,
+        "value": 19.8,
+        "top5": 17.8,
         "wins": 0
       },
       {
@@ -57511,8 +57514,8 @@
       },
       {
         "round": 17,
-        "value": 36.5,
-        "top5": 18.2,
+        "value": 37.7,
+        "top5": 18.6,
         "wins": 0
       },
       {
@@ -57535,14 +57538,14 @@
       },
       {
         "round": 21,
-        "value": 23.9,
-        "top5": 17.1,
+        "value": 25.1,
+        "top5": 18.1,
         "wins": 1
       },
       {
         "round": 22,
-        "value": 37.6,
-        "top5": 17.5,
+        "value": 38.8,
+        "top5": 18.2,
         "wins": 1
       },
       {
@@ -57615,7 +57618,7 @@
       },
       {
         "round": 10,
-        "value": 36.0,
+        "value": 36.3,
         "top5": 21.4,
         "wins": 0
       },
@@ -57639,7 +57642,7 @@
       },
       {
         "round": 15,
-        "value": 41.1,
+        "value": 41.4,
         "top5": 20.9,
         "wins": 0
       },
@@ -58193,14 +58196,14 @@
       },
       {
         "round": 17,
-        "value": 18.3,
-        "top5": 16.7,
+        "value": 19.9,
+        "top5": 17.5,
         "wins": 1
       },
       {
         "round": 18,
-        "value": 17.0,
-        "top5": 15.4,
+        "value": 18.6,
+        "top5": 16.2,
         "wins": 1
       },
       {
@@ -58223,20 +58226,20 @@
       },
       {
         "round": 22,
-        "value": 43.6,
+        "value": 45.2,
         "top5": 22.0,
         "wins": 1
       },
       {
         "round": 23,
-        "value": 42.0,
+        "value": 43.6,
         "top5": 21.6,
         "wins": 0
       },
       {
         "round": 24,
-        "value": 33.5,
-        "top5": 19.4,
+        "value": 35.1,
+        "top5": 19.6,
         "wins": 1
       }
     ],
@@ -58249,20 +58252,20 @@
       },
       {
         "round": 2,
-        "value": 29.9,
-        "top5": 19.2,
+        "value": 30.5,
+        "top5": 19.8,
         "wins": 0
       },
       {
         "round": 3,
-        "value": 25.4,
+        "value": 25.7,
         "top5": 17.9,
         "wins": 0
       },
       {
         "round": 4,
-        "value": 11.9,
-        "top5": 11.9,
+        "value": 12.2,
+        "top5": 12.2,
         "wins": 0
       },
       {
@@ -58273,26 +58276,26 @@
       },
       {
         "round": 6,
-        "value": 28.4,
+        "value": 28.6,
         "top5": 16.9,
         "wins": 1
       },
       {
         "round": 7,
-        "value": 22.6,
+        "value": 22.9,
         "top5": 15.4,
         "wins": 1
       },
       {
         "round": 8,
-        "value": 9.3,
-        "top5": 9.3,
+        "value": 9.2,
+        "top5": 9.2,
         "wins": 1
       },
       {
         "round": 9,
-        "value": 15.3,
-        "top5": 15.3,
+        "value": 15.2,
+        "top5": 15.2,
         "wins": 0
       },
       {
@@ -58303,8 +58306,8 @@
       },
       {
         "round": 11,
-        "value": 15.1,
-        "top5": 15.1,
+        "value": 15.4,
+        "top5": 15.4,
         "wins": 1
       },
       {
@@ -58315,20 +58318,20 @@
       },
       {
         "round": 13,
-        "value": 26.2,
+        "value": 26.4,
         "top5": 15.7,
         "wins": 0
       },
       {
         "round": 14,
-        "value": 11.4,
-        "top5": 11.4,
+        "value": 11.6,
+        "top5": 11.6,
         "wins": 0
       },
       {
         "round": 16,
-        "value": 14.3,
-        "top5": 14.3,
+        "value": 14.2,
+        "top5": 14.2,
         "wins": 0
       },
       {
@@ -58345,7 +58348,7 @@
       },
       {
         "round": 19,
-        "value": 27.2,
+        "value": 27.1,
         "top5": 15.6,
         "wins": 0
       },
@@ -58357,26 +58360,26 @@
       },
       {
         "round": 21,
-        "value": 12.1,
-        "top5": 12.1,
+        "value": 12.4,
+        "top5": 12.4,
         "wins": 1
       },
       {
         "round": 22,
-        "value": 31.5,
-        "top5": 15.7,
+        "value": 32.0,
+        "top5": 16.0,
         "wins": 0
       },
       {
         "round": 23,
-        "value": 14.8,
-        "top5": 14.8,
+        "value": 15.4,
+        "top5": 15.4,
         "wins": 0
       },
       {
         "round": 24,
-        "value": 30.0,
-        "top5": 16.3,
+        "value": 30.5,
+        "top5": 16.6,
         "wins": 0
       }
     ],
@@ -58437,8 +58440,8 @@
       },
       {
         "round": 10,
-        "value": 37.6,
-        "top5": 21.4,
+        "value": 40.2,
+        "top5": 23.0,
         "wins": 0
       },
       {
@@ -58601,13 +58604,13 @@
       },
       {
         "round": 14,
-        "value": 30.5,
+        "value": 30.4,
         "top5": 18.9,
         "wins": 0
       },
       {
         "round": 15,
-        "value": 18.6,
+        "value": 18.4,
         "top5": 17.1,
         "wins": 1
       },
@@ -58619,8 +58622,8 @@
       },
       {
         "round": 18,
-        "value": 12.9,
-        "top5": 12.9,
+        "value": 12.8,
+        "top5": 12.8,
         "wins": 1
       },
       {
@@ -58643,13 +58646,13 @@
       },
       {
         "round": 22,
-        "value": 40.4,
+        "value": 40.2,
         "top5": 21.9,
         "wins": 0
       },
       {
         "round": 23,
-        "value": 23.3,
+        "value": 23.1,
         "top5": 19.2,
         "wins": 1
       },
