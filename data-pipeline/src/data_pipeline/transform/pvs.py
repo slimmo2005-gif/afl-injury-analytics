@@ -169,12 +169,17 @@ def compute_injury_weight_pvs(
 
 def lookup_established_pvs(
     history: pd.DataFrame,
-    player_id: str,
+    player_ids: set[str],
     season: int,
 ) -> float | None:
-    """Most recent prior season with enough games to trust the rating."""
+    """Most recent prior season with enough games to trust the rating.
+
+    ``player_ids`` may contain more than one id for the same person, e.g. a
+    Fryzigg numeric id and an AFL.com ``CD_I`` id, so that a player's
+    established value carries across a club move / data-source change.
+    """
     prior = history[
-        (history["player_id"] == player_id)
+        history["player_id"].isin(player_ids)
         & (history["season"] < season)
         & (history["games"] >= MIN_ESTABLISHED_GAMES)
     ]
@@ -183,13 +188,64 @@ def lookup_established_pvs(
     return float(prior.sort_values("season", ascending=False).iloc[0]["pvs"])
 
 
-def attach_injury_weight_pvs(pv: pd.DataFrame) -> pd.DataFrame:
+def build_id_aliases(con: duckdb.DuckDBPyConnection) -> dict[str, str]:
+    """Map a current AFL.com player id to its historical id when unambiguous.
+
+    Players who changed clubs for the current season arrive via AFL.com with a
+    ``CD_I`` id, while their entire prior career sits under a Fryzigg numeric
+    id. We bridge the two by normalized name, but only when the name maps to a
+    single historical player who is no longer active under that id this season
+    (guards against shared names such as the two "Max King"s).
+    """
+    try:
+        rows = con.execute(
+            """
+            WITH id_name AS (
+                SELECT player_id,
+                       LOWER(REGEXP_REPLACE(MAX(player_name), '\\s+', ' ', 'g')) AS nm,
+                       MAX(season) AS last_season,
+                       BOOL_OR(season = (SELECT MAX(season) FROM player_games)) AS in_current
+                FROM player_games
+                GROUP BY player_id
+            ),
+            cur AS (
+                SELECT player_id, nm FROM id_name
+                WHERE player_id LIKE 'CD_I%' AND in_current
+            ),
+            hist AS (
+                SELECT player_id, nm FROM id_name
+                WHERE player_id NOT LIKE 'CD_I%' AND NOT in_current
+            ),
+            joined AS (
+                SELECT cur.player_id AS cd_id,
+                       COUNT(*) AS n_hist,
+                       MAX(hist.player_id) AS hist_id
+                FROM cur JOIN hist ON cur.nm = hist.nm
+                GROUP BY cur.player_id
+            )
+            SELECT cd_id, hist_id FROM joined WHERE n_hist = 1
+            """
+        ).fetchall()
+    except duckdb.Error:
+        return {}
+    return {str(cd): str(hist) for cd, hist in rows}
+
+
+def attach_injury_weight_pvs(
+    pv: pd.DataFrame,
+    id_aliases: dict[str, str] | None = None,
+) -> pd.DataFrame:
     """Add established_pvs and injury_weight_pvs columns to a player_value frame."""
+    id_aliases = id_aliases or {}
     history = pv[["player_id", "season", "games", "pvs"]].copy()
     established: list[float | None] = []
     injury: list[float] = []
     for row in pv.itertuples(index=False):
-        est = lookup_established_pvs(history, row.player_id, int(row.season))
+        pid = str(row.player_id)
+        candidate_ids = {pid}
+        if pid in id_aliases:
+            candidate_ids.add(id_aliases[pid])
+        est = lookup_established_pvs(history, candidate_ids, int(row.season))
         established.append(est)
         injury.append(
             compute_injury_weight_pvs(int(row.games), float(row.pvs), est)
@@ -412,7 +468,7 @@ def build_player_value(con: duckdb.DuckDBPyConnection) -> None:
         lambda row: compute_pvs(row["performance_score"], row["potential_score"], row["age_perf_weight"]),
         axis=1,
     )
-    pv = attach_injury_weight_pvs(pv)
+    pv = attach_injury_weight_pvs(pv, build_id_aliases(con))
 
     con.execute("DELETE FROM player_value")
     con.register("_pv", pv)
