@@ -99,27 +99,32 @@ def _load_squad(con: duckdb.DuckDBPyConnection, season: int, team: str) -> list[
     ]
 
 
-def _injured_names(con: duckdb.DuckDBPyConnection) -> dict[str, set[str]]:
-    """Latest injury-list snapshot: team -> set of normalized injured names.
+def _unavailable_lookup(con: duckdb.DuckDBPyConnection) -> dict[str, dict[str, str]]:
+    """Latest AFL injury-list snapshot: team -> {normalized name: reason}.
 
-    Used only to *label* why an optimal player is missing; impact ranking is
-    driven by the announced line-up, so teams absent from the (incomplete)
-    injury snapshot are still handled correctly.
+    ``reason`` is ``"injured"`` or ``"suspended"``. Only these players are
+    treated as genuinely unavailable when assessing selection impact; players
+    who are merely omitted or rested (and therefore not on the official list)
+    are still available and must not be counted as a loss.
     """
     try:
         rows = con.execute(
             """
             WITH latest AS (SELECT MAX(list_date) d FROM injury_list_entries)
-            SELECT team, LOWER(REGEXP_REPLACE(player_name, '\\s+', ' ', 'g'))
+            SELECT team,
+                   LOWER(REGEXP_REPLACE(player_name, '\\s+', ' ', 'g')) AS norm,
+                   CASE WHEN injury_category = 'suspension' THEN 'suspended'
+                        ELSE 'injured' END AS reason
             FROM injury_list_entries
-            WHERE list_date = (SELECT d FROM latest) AND is_injury
+            WHERE list_date = (SELECT d FROM latest)
+              AND (is_injury OR injury_category = 'suspension')
             """
         ).fetchall()
     except duckdb.Error:
         return {}
-    out: dict[str, set[str]] = {}
-    for team, norm in rows:
-        out.setdefault(str(team), set()).add(str(norm).strip())
+    out: dict[str, dict[str, str]] = {}
+    for team, norm, reason in rows:
+        out.setdefault(str(team), {})[str(norm).strip()] = str(reason)
     return out
 
 
@@ -170,9 +175,9 @@ def _team_impact(
     squad: list[SquadPlayer],
     best: list[SquadPlayer],
     named_ids: list[str],
-    injured: set[str] | None = None,
+    unavailable: dict[str, str] | None = None,
 ) -> dict:
-    injured = injured or set()
+    unavailable = unavailable or {}
     squad_by_id = {p.player_id: p for p in squad}
     named_set = set(named_ids)
 
@@ -182,27 +187,30 @@ def _team_impact(
         1,
     )
 
-    missing = [p for p in best if p.player_id not in named_set]
-    missing.sort(key=lambda x: x.injury_pvs, reverse=True)
-    impact_pvs = round(sum(p.injury_pvs for p in missing), 1)
+    def _norm(name: str) -> str:
+        return " ".join(name.lower().split())
 
-    def _is_injured(name: str) -> bool:
-        norm = " ".join(name.lower().split())
-        return norm in injured
-
-    injured_pvs = round(
-        sum(p.injury_pvs for p in missing if _is_injured(p.player_name)), 1
-    )
+    # Only optimal-23 players who are genuinely unavailable (on the AFL injury
+    # list, injured or suspended) and not named count as a loss. Available
+    # depth that the PVS model rates highly but the coach omitted does NOT.
+    out_players: list[tuple[SquadPlayer, str]] = []
+    for p in best:
+        if p.player_id in named_set:
+            continue
+        reason = unavailable.get(_norm(p.player_name))
+        if reason:
+            out_players.append((p, reason))
+    out_players.sort(key=lambda t: t[0].injury_pvs, reverse=True)
+    impact_pvs = round(sum(p.injury_pvs for p, _ in out_players), 1)
 
     by_role: dict[str, float] = {}
-    for p in missing:
+    for p, _ in out_players:
         by_role[p.archetype] = round(by_role.get(p.archetype, 0) + p.injury_pvs, 1)
 
     return {
         "bestTeamPvs": best_total,
         "selectedTeamPvs": named_total,
         "impactPvs": impact_pvs,
-        "injuredImpactPvs": injured_pvs,
         "pvsGap": round(best_total - named_total, 1),
         "selectedCount": len(named_set),
         "missingFromOptimal": [
@@ -211,9 +219,11 @@ def _team_impact(
                 "archetype": p.archetype,
                 "archetypeLabel": ARCHETYPE_LABELS.get(p.archetype, p.archetype),
                 "pvs": round(p.injury_pvs, 1),
-                "injured": _is_injured(p.player_name),
+                "reason": reason,
+                "injured": reason == "injured",
+                "suspended": reason == "suspended",
             }
-            for p in missing[:12]
+            for p, reason in out_players[:12]
         ],
         "impactByRole": [
             {
@@ -246,7 +256,7 @@ def build_weekly_team_impact_bundle(
     rosters = fetch_round_rosters(season, target_round)
     name_lookup = _name_lookup(con, season)
     roster_ids = _resolve_roster_ids(rosters, name_lookup)
-    injured = _injured_names(con)
+    unavailable = _unavailable_lookup(con)
     playing_teams = sorted(rosters.keys())
     teams_announced = bool(playing_teams)
 
@@ -265,7 +275,7 @@ def build_weekly_team_impact_bundle(
         squad = _load_squad(con, season, team)
         best = _pick_best_team(squad)
         named_ids = roster_ids.get(team, [])
-        impact = _team_impact(squad, best, named_ids, injured.get(team, set()))
+        impact = _team_impact(squad, best, named_ids, unavailable.get(team, {}))
         roster = rosters.get(team, {})
         row = {
             "club": team,
@@ -325,8 +335,10 @@ def build_weekly_team_impact_bundle(
         "interpretation": (
             f"Round {target_round} {season}, {status_phrase} from AFL.com team line-ups. "
             "Optimal 23 uses season injury-weighted PVS with minimum counts per role. "
-            "Impact = combined PVS of a club's optimal-23 players who are not named "
-            "this week (injured, rested, omitted or suspended). Bye teams are excluded."
+            "Impact = combined PVS of a club's optimal-23 players who are unavailable "
+            "this week through injury or suspension (per the AFL injury list). Players "
+            "who are merely omitted or rested still count as available. Bye teams are "
+            "excluded."
         ),
         "ladder": ladder_rows,
         "matchups": matchups,

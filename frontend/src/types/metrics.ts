@@ -168,7 +168,9 @@ export interface WeeklyTeamImpactPlayer {
   archetype: string
   archetypeLabel: string
   pvs: number
+  reason?: 'injured' | 'suspended'
   injured?: boolean
+  suspended?: boolean
 }
 
 export interface WeeklyTeamImpactRole {

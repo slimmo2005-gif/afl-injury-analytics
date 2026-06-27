@@ -31,10 +31,10 @@ function ClubImpactCard({ row }: { row: WeeklyTeamImpactClub }) {
         </div>
       </div>
 
-      {row.missingFromOptimal.length > 0 && (
+      {row.missingFromOptimal.length > 0 ? (
         <div className="mt-4">
           <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">
-            Best-23 players not named this week
+            Best-23 players out (injured or suspended)
           </p>
           <ul className="space-y-1.5">
             {row.missingFromOptimal.slice(0, 8).map((p) => (
@@ -44,7 +44,11 @@ function ClubImpactCard({ row }: { row: WeeklyTeamImpactClub }) {
               >
                 <span className="text-slate-200 truncate">
                   {p.player}
-                  {p.injured && (
+                  {p.suspended ? (
+                    <span className="ml-2 rounded bg-amber-500/15 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-300">
+                      suspended
+                    </span>
+                  ) : (
                     <span className="ml-2 rounded bg-rose-500/15 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-rose-300">
                       injured
                     </span>
@@ -56,6 +60,10 @@ function ClubImpactCard({ row }: { row: WeeklyTeamImpactClub }) {
             ))}
           </ul>
         </div>
+      ) : (
+        <p className="mt-4 text-sm text-emerald-300/90">
+          No best-23 players unavailable through injury or suspension.
+        </p>
       )}
     </article>
   )
@@ -128,7 +136,8 @@ export default function WeeklyTeamImpact() {
       <section>
         <h2 className="text-lg font-semibold text-slate-200 mb-3">Selection impact ladder</h2>
         <p className="text-sm text-slate-500 mb-4">
-          Lower impact = selected side is closer to the optimal 23 (healthier selection).
+          Impact = PVS of a club's best-23 players unavailable through injury or suspension.
+          Lower is healthier; available players left out by selection don't count.
         </p>
         <div className="overflow-x-auto rounded-xl border border-slate-800">
           <table className="w-full text-sm">
