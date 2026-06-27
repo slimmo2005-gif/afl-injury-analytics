@@ -1,27 +1,27 @@
 {
   "meta": {
     "season": 2026,
-    "round": 14,
-    "ladderRound": 14,
-    "generatedAt": "2026-06-21T09:43:02.395078+00:00",
+    "round": 16,
+    "ladderRound": 16,
+    "generatedAt": "2026-06-27T02:44:33.429588+00:00",
     "note": "2026 season to date \u2014 in progress",
     "dataSource": "Squiggle + AFL.com API + VFL + injury lists",
     "isPartialSeason": true,
     "historicalWindow": "2021\u20132025"
   },
   "leagueOverview": {
-    "avgUnavailableValue": 22.8,
-    "totalVflOnlyPvs": 1830.7,
-    "clubsAboveExpectation": 8,
-    "clubsBelowExpectation": 9,
+    "avgUnavailableValue": 29.5,
+    "totalVflOnlyPvs": 1872.4,
+    "clubsAboveExpectation": 6,
+    "clubsBelowExpectation": 7,
     "topUnavailableClub": "Richmond",
-    "correlationUnavailableToWins": -0.48
+    "correlationUnavailableToWins": -0.63
   },
   "clubUnavailableByRound": [
     {
       "round": 1,
-      "value": 8.7,
-      "top5": 8.7,
+      "value": 9.0,
+      "top5": 9.0,
       "wins": 0
     },
     {
@@ -32,8 +32,8 @@
     },
     {
       "round": 4,
-      "value": 14.4,
-      "top5": 14.4,
+      "value": 14.9,
+      "top5": 14.9,
       "wins": 0
     },
     {
@@ -44,8 +44,8 @@
     },
     {
       "round": 6,
-      "value": 16.3,
-      "top5": 16.3,
+      "value": 16.6,
+      "top5": 16.6,
       "wins": 1
     },
     {
@@ -56,20 +56,20 @@
     },
     {
       "round": 8,
-      "value": 21.5,
-      "top5": 19.0,
+      "value": 21.9,
+      "top5": 19.4,
       "wins": 0
     },
     {
       "round": 9,
-      "value": 8.8,
-      "top5": 8.8,
+      "value": 8.7,
+      "top5": 8.7,
       "wins": 0
     },
     {
       "round": 10,
-      "value": 24.1,
-      "top5": 21.7,
+      "value": 24.2,
+      "top5": 21.9,
       "wins": 0
     },
     {
@@ -86,158 +86,178 @@
     },
     {
       "round": 13,
-      "value": 25.0,
+      "value": 25.2,
       "top5": 17.6,
+      "wins": 0
+    },
+    {
+      "round": 15,
+      "value": 30.0,
+      "top5": 19.9,
+      "wins": 1
+    },
+    {
+      "round": 16,
+      "value": 123.2,
+      "top5": 29.2,
       "wins": 0
     }
   ],
   "clubRankings": [
     {
       "club": "Adelaide",
-      "unavailableValue": 280.3,
-      "unavailableTop5": 228.1,
-      "expectedWins": 6.6,
-      "actualWins": 8,
-      "delta": 1.4
+      "unavailableValue": 517.7,
+      "unavailableTop5": 309.0,
+      "expectedWins": 5.1,
+      "actualWins": 9,
+      "delta": 3.9
     },
     {
       "club": "Brisbane Lions",
-      "unavailableValue": 351.6,
-      "unavailableTop5": 245.3,
-      "expectedWins": 5.3,
-      "actualWins": 8,
-      "delta": 2.7
+      "unavailableValue": 412.5,
+      "unavailableTop5": 288.0,
+      "expectedWins": 7.1,
+      "actualWins": 9,
+      "delta": 1.9
     },
     {
       "club": "Carlton",
-      "unavailableValue": 280.3,
-      "unavailableTop5": 200.7,
-      "expectedWins": 6.6,
-      "actualWins": 5,
-      "delta": -1.6
+      "unavailableValue": 487.1,
+      "unavailableTop5": 259.1,
+      "expectedWins": 5.7,
+      "actualWins": 6,
+      "delta": 0.3
     },
     {
       "club": "Collingwood",
-      "unavailableValue": 176.6,
-      "unavailableTop5": 159.2,
+      "unavailableValue": 331.5,
+      "unavailableTop5": 209.9,
       "expectedWins": 8.6,
-      "actualWins": 5,
-      "delta": -4.6
+      "actualWins": 6,
+      "delta": -3.6
     },
     {
       "club": "Essendon",
-      "unavailableValue": 449.4,
-      "unavailableTop5": 284.2,
-      "expectedWins": 3.5,
+      "unavailableValue": 593.7,
+      "unavailableTop5": 317.1,
+      "expectedWins": 3.7,
       "actualWins": 1,
-      "delta": -2.5
+      "delta": -2.7
     },
     {
       "club": "Fremantle",
-      "unavailableValue": 234.8,
-      "unavailableTop5": 210.1,
-      "expectedWins": 7.5,
-      "actualWins": 12,
-      "delta": 4.5
+      "unavailableValue": 379.7,
+      "unavailableTop5": 258.5,
+      "expectedWins": 7.7,
+      "actualWins": 13,
+      "delta": 5.3
     },
     {
       "club": "Geelong",
-      "unavailableValue": 204.8,
-      "unavailableTop5": 185.9,
-      "expectedWins": 8.1,
+      "unavailableValue": 241.5,
+      "unavailableTop5": 213.1,
+      "expectedWins": 10.2,
       "actualWins": 9,
-      "delta": 0.9
+      "delta": -1.2
     },
     {
       "club": "Gold Coast",
-      "unavailableValue": 267.8,
-      "unavailableTop5": 215.5,
-      "expectedWins": 6.9,
+      "unavailableValue": 446.2,
+      "unavailableTop5": 275.5,
+      "expectedWins": 6.5,
       "actualWins": 7,
-      "delta": -0.9
+      "delta": -0.5
     },
     {
       "club": "Greater Western Sydney",
-      "unavailableValue": 308.1,
-      "unavailableTop5": 221.0,
-      "expectedWins": 6.1,
+      "unavailableValue": 474.5,
+      "unavailableTop5": 271.4,
+      "expectedWins": 5.9,
       "actualWins": 6,
-      "delta": -1.1
+      "delta": -0.9
     },
     {
       "club": "Hawthorn",
-      "unavailableValue": 252.7,
-      "unavailableTop5": 201.4,
-      "expectedWins": 7.2,
-      "actualWins": 8,
-      "delta": 0.8
+      "unavailableValue": 423.9,
+      "unavailableTop5": 250.0,
+      "expectedWins": 6.9,
+      "actualWins": 10,
+      "delta": 2.1
     },
     {
       "club": "Melbourne",
-      "unavailableValue": 286.7,
-      "unavailableTop5": 245.5,
-      "expectedWins": 6.5,
+      "unavailableValue": 329.7,
+      "unavailableTop5": 268.2,
+      "expectedWins": 8.6,
       "actualWins": 9,
-      "delta": 2.5
+      "delta": 0.4
     },
     {
       "club": "North Melbourne",
-      "unavailableValue": 223.2,
-      "unavailableTop5": 193.4,
-      "expectedWins": 7.7,
-      "actualWins": 6,
-      "delta": -1.7
+      "unavailableValue": 390.8,
+      "unavailableTop5": 251.8,
+      "expectedWins": 7.5,
+      "actualWins": 7,
+      "delta": -0.5
     },
     {
       "club": "Port Adelaide",
-      "unavailableValue": 252.2,
-      "unavailableTop5": 222.6,
-      "expectedWins": 7.2,
+      "unavailableValue": 420.5,
+      "unavailableTop5": 276.0,
+      "expectedWins": 6.9,
       "actualWins": 4,
-      "delta": -3.2
+      "delta": -2.9
     },
     {
       "club": "Richmond",
-      "unavailableValue": 450.8,
-      "unavailableTop5": 267.3,
-      "expectedWins": 3.4,
+      "unavailableValue": 683.3,
+      "unavailableTop5": 332.8,
+      "expectedWins": 2.1,
       "actualWins": 2,
-      "delta": -1.4
+      "delta": -0.1
     },
     {
       "club": "St Kilda",
-      "unavailableValue": 300.8,
-      "unavailableTop5": 224.5,
-      "expectedWins": 6.3,
+      "unavailableValue": 344.1,
+      "unavailableTop5": 247.2,
+      "expectedWins": 8.3,
       "actualWins": 6,
-      "delta": -0.3
+      "delta": -2.3
     },
     {
       "club": "Sydney",
-      "unavailableValue": 278.8,
-      "unavailableTop5": 225.1,
-      "expectedWins": 6.7,
+      "unavailableValue": 305.8,
+      "unavailableTop5": 238.8,
+      "expectedWins": 9.0,
       "actualWins": 12,
-      "delta": 4.3
+      "delta": 2.0
     },
     {
       "club": "West Coast",
-      "unavailableValue": 316.0,
-      "unavailableTop5": 235.7,
-      "expectedWins": 6.0,
+      "unavailableValue": 459.5,
+      "unavailableTop5": 271.8,
+      "expectedWins": 6.2,
       "actualWins": 4,
-      "delta": -2.0
+      "delta": -2.2
     },
     {
       "club": "Western Bulldogs",
-      "unavailableValue": 371.2,
-      "unavailableTop5": 272.0,
-      "expectedWins": 4.9,
-      "actualWins": 8,
-      "delta": 2.1
+      "unavailableValue": 423.8,
+      "unavailableTop5": 298.2,
+      "expectedWins": 6.9,
+      "actualWins": 9,
+      "delta": 1.1
     }
   ],
   "topUnavailablePlayers": [
+    {
+      "player": "Connor Rozee",
+      "club": "Port Adelaide",
+      "roundsMissed": 13,
+      "pvs": 5.7,
+      "unavailablePvs": 73.9,
+      "status": "intermittent"
+    },
     {
       "player": "Errol Gulden",
       "club": "Sydney",
@@ -245,14 +265,6 @@
       "pvs": 5.6,
       "unavailablePvs": 67.2,
       "status": "unavailable"
-    },
-    {
-      "player": "Connor Rozee",
-      "club": "Port Adelaide",
-      "roundsMissed": 11,
-      "pvs": 5.7,
-      "unavailablePvs": 62.5,
-      "status": "intermittent"
     },
     {
       "player": "Tom Liberatore",
@@ -265,68 +277,79 @@
     {
       "player": "Toby Nankervis",
       "club": "Richmond",
-      "roundsMissed": 11,
-      "pvs": 5.0,
-      "unavailablePvs": 55.2,
+      "roundsMissed": 12,
+      "pvs": 4.9,
+      "unavailablePvs": 59.0,
       "status": "intermittent"
     },
     {
       "player": "Will Day",
       "club": "Hawthorn",
-      "roundsMissed": 9,
+      "roundsMissed": 10,
       "pvs": 5.9,
-      "unavailablePvs": 53.4,
+      "unavailablePvs": 58.6,
+      "status": "intermittent"
+    },
+    {
+      "player": "Mark Keane",
+      "club": "Adelaide",
+      "roundsMissed": 12,
+      "pvs": 4.8,
+      "unavailablePvs": 57.3,
       "status": "unavailable"
     },
     {
       "player": "Daniel Annable",
       "club": "Brisbane Lions",
-      "roundsMissed": 12,
-      "pvs": 4.2,
-      "unavailablePvs": 50.9,
+      "roundsMissed": 13,
+      "pvs": 4.3,
+      "unavailablePvs": 55.4,
       "status": "unavailable"
     },
     {
       "player": "Sam Darcy",
       "club": "Western Bulldogs",
-      "roundsMissed": 8,
-      "pvs": 5.7,
-      "unavailablePvs": 45.8,
-      "status": "intermittent"
-    },
-    {
-      "player": "Christian Salem",
-      "club": "Melbourne",
       "roundsMissed": 9,
-      "pvs": 5.1,
-      "unavailablePvs": 45.5,
+      "pvs": 5.7,
+      "unavailablePvs": 51.5,
       "status": "intermittent"
     },
     {
       "player": "Rhyan Mansell",
       "club": "Richmond",
-      "roundsMissed": 12,
+      "roundsMissed": 14,
       "pvs": 3.6,
-      "unavailablePvs": 42.7,
+      "unavailablePvs": 51.0,
       "status": "unavailable"
     },
     {
-      "player": "Dayne Zorko",
-      "club": "Brisbane Lions",
-      "roundsMissed": 7,
-      "pvs": 5.8,
-      "unavailablePvs": 40.6,
+      "player": "Christian Salem",
+      "club": "Melbourne",
+      "roundsMissed": 10,
+      "pvs": 5.1,
+      "unavailablePvs": 50.5,
       "status": "intermittent"
     }
   ],
   "topUnavailableByClub": {
     "Adelaide": [
       {
+        "player": "Mark Keane",
+        "club": "Adelaide",
+        "roundsMissed": 12,
+        "pvs": 4.8,
+        "unavailablePvs": 57.3,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Broken leg"
+        ]
+      },
+      {
         "player": "Mitchell Hinge",
         "club": "Adelaide",
-        "roundsMissed": 9,
+        "roundsMissed": 11,
         "pvs": 3.7,
-        "unavailablePvs": 33.7,
+        "unavailablePvs": 41.2,
         "status": "unavailable",
         "keyInjuries": [
           "Ankle",
@@ -335,51 +358,40 @@
         ]
       },
       {
-        "player": "Daniel Curtin",
+        "player": "Reilly O'Brien",
         "club": "Adelaide",
         "roundsMissed": 6,
+        "pvs": 4.9,
+        "unavailablePvs": 29.1,
+        "status": "unavailable"
+      },
+      {
+        "player": "Daniel Curtin",
+        "club": "Adelaide",
+        "roundsMissed": 7,
         "pvs": 4.0,
-        "unavailablePvs": 23.8,
+        "unavailablePvs": 27.8,
         "status": "unavailable",
         "keyInjuries": [
           "Dislocated knee cap"
         ]
       },
       {
-        "player": "Reilly O'Brien",
-        "club": "Adelaide",
-        "roundsMissed": 4,
-        "pvs": 4.9,
-        "unavailablePvs": 19.4,
-        "status": "unavailable"
-      },
-      {
         "player": "Jordan Dawson",
         "club": "Adelaide",
-        "roundsMissed": 3,
+        "roundsMissed": 4,
         "pvs": 6.1,
-        "unavailablePvs": 18.3,
+        "unavailablePvs": 24.4,
         "status": "intermittent"
-      },
-      {
-        "player": "Darcy Fogarty",
-        "club": "Adelaide",
-        "roundsMissed": 5,
-        "pvs": 3.2,
-        "unavailablePvs": 16.2,
-        "status": "unavailable",
-        "keyInjuries": [
-          "Back"
-        ]
       }
     ],
     "Brisbane Lions": [
       {
         "player": "Daniel Annable",
         "club": "Brisbane Lions",
-        "roundsMissed": 12,
-        "pvs": 4.2,
-        "unavailablePvs": 50.9,
+        "roundsMissed": 13,
+        "pvs": 4.3,
+        "unavailablePvs": 55.4,
         "status": "unavailable",
         "keyInjuries": [
           "Shoulder"
@@ -388,12 +400,24 @@
       {
         "player": "Dayne Zorko",
         "club": "Brisbane Lions",
-        "roundsMissed": 7,
-        "pvs": 5.8,
-        "unavailablePvs": 40.6,
+        "roundsMissed": 8,
+        "pvs": 5.9,
+        "unavailablePvs": 47.4,
         "status": "intermittent",
         "keyInjuries": [
-          "Calf"
+          "Calf",
+          "Quad"
+        ]
+      },
+      {
+        "player": "Hugh McCluggage",
+        "club": "Brisbane Lions",
+        "roundsMissed": 6,
+        "pvs": 6.0,
+        "unavailablePvs": 36.1,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Hamstring"
         ]
       },
       {
@@ -406,14 +430,6 @@
         "keyInjuries": [
           "Knee"
         ]
-      },
-      {
-        "player": "Hugh McCluggage",
-        "club": "Brisbane Lions",
-        "roundsMissed": 5,
-        "pvs": 6.0,
-        "unavailablePvs": 30.1,
-        "status": "unavailable"
       },
       {
         "player": "Jarrod Berry",
@@ -431,9 +447,9 @@
       {
         "player": "Elijah Hollands",
         "club": "Carlton",
-        "roundsMissed": 7,
+        "roundsMissed": 9,
         "pvs": 4.4,
-        "unavailablePvs": 30.6,
+        "unavailablePvs": 39.3,
         "status": "unavailable",
         "keyInjuries": [
           "Personal"
@@ -442,88 +458,94 @@
       {
         "player": "Adam Saad",
         "club": "Carlton",
-        "roundsMissed": 5,
+        "roundsMissed": 7,
         "pvs": 4.2,
-        "unavailablePvs": 21.2,
+        "unavailablePvs": 29.6,
         "status": "unavailable"
       },
       {
         "player": "Cooper Lord",
         "club": "Carlton",
-        "roundsMissed": 5,
-        "pvs": 3.8,
-        "unavailablePvs": 19.0,
-        "status": "unavailable"
-      },
-      {
-        "player": "Blake Acres",
-        "club": "Carlton",
-        "roundsMissed": 4,
-        "pvs": 4.7,
-        "unavailablePvs": 18.8,
+        "roundsMissed": 7,
+        "pvs": 3.9,
+        "unavailablePvs": 27.2,
         "status": "unavailable"
       },
       {
         "player": "Oliver Hollands",
         "club": "Carlton",
-        "roundsMissed": 4,
-        "pvs": 4.1,
-        "unavailablePvs": 16.5,
-        "status": "intermittent"
+        "roundsMissed": 6,
+        "pvs": 4.2,
+        "unavailablePvs": 24.9,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Ankle"
+        ]
+      },
+      {
+        "player": "Blake Acres",
+        "club": "Carlton",
+        "roundsMissed": 5,
+        "pvs": 4.8,
+        "unavailablePvs": 24.2,
+        "status": "unavailable"
       }
     ],
     "Collingwood": [
       {
         "player": "Scott Pendlebury",
         "club": "Collingwood",
-        "roundsMissed": 3,
-        "pvs": 5.4,
-        "unavailablePvs": 16.3,
+        "roundsMissed": 5,
+        "pvs": 5.6,
+        "unavailablePvs": 27.8,
         "status": "intermittent"
       },
       {
         "player": "Harry Perryman",
         "club": "Collingwood",
-        "roundsMissed": 4,
-        "pvs": 3.7,
-        "unavailablePvs": 14.9,
+        "roundsMissed": 5,
+        "pvs": 3.6,
+        "unavailablePvs": 17.9,
         "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
         ]
       },
       {
-        "player": "Edward Allan",
+        "player": "Jamie Elliott",
         "club": "Collingwood",
-        "roundsMissed": 3,
-        "pvs": 3.4,
-        "unavailablePvs": 10.3,
-        "status": "unavailable"
+        "roundsMissed": 4,
+        "pvs": 3.6,
+        "unavailablePvs": 14.6,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Knee"
+        ]
       },
       {
         "player": "Steele Sidebottom",
         "club": "Collingwood",
-        "roundsMissed": 2,
+        "roundsMissed": 3,
         "pvs": 4.7,
-        "unavailablePvs": 9.3,
+        "unavailablePvs": 14.0,
         "status": "intermittent"
       },
       {
-        "player": "Tim Membrey",
+        "player": "Nick Daicos",
         "club": "Collingwood",
-        "roundsMissed": 3,
-        "pvs": 2.9,
-        "unavailablePvs": 8.6,
-        "status": "unavailable"
+        "roundsMissed": 2,
+        "pvs": 7.0,
+        "unavailablePvs": 13.9,
+        "status": "intermittent"
       }
     ],
     "Essendon": [
       {
         "player": "Brayden Fiorini",
         "club": "Essendon",
-        "roundsMissed": 12,
-        "pvs": 3.2,
-        "unavailablePvs": 39.0,
+        "roundsMissed": 13,
+        "pvs": 3.3,
+        "unavailablePvs": 43.2,
         "status": "intermittent",
         "keyInjuries": [
           "Back"
@@ -532,9 +554,9 @@
       {
         "player": "Will Setterfield",
         "club": "Essendon",
-        "roundsMissed": 6,
-        "pvs": 5.6,
-        "unavailablePvs": 33.9,
+        "roundsMissed": 7,
+        "pvs": 5.8,
+        "unavailablePvs": 40.4,
         "status": "unavailable",
         "keyInjuries": [
           "Foot"
@@ -543,9 +565,9 @@
       {
         "player": "Mason Redman",
         "club": "Essendon",
-        "roundsMissed": 6,
+        "roundsMissed": 7,
         "pvs": 5.3,
-        "unavailablePvs": 31.8,
+        "unavailablePvs": 37.1,
         "status": "unavailable",
         "keyInjuries": [
           "Knee"
@@ -554,9 +576,9 @@
       {
         "player": "Jordan Ridley",
         "club": "Essendon",
-        "roundsMissed": 8,
+        "roundsMissed": 9,
         "pvs": 3.7,
-        "unavailablePvs": 29.2,
+        "unavailablePvs": 33.7,
         "status": "unavailable",
         "keyInjuries": [
           "Calf"
@@ -565,9 +587,9 @@
       {
         "player": "Elijah Tsatas",
         "club": "Essendon",
-        "roundsMissed": 5,
-        "pvs": 5.1,
-        "unavailablePvs": 25.5,
+        "roundsMissed": 6,
+        "pvs": 5.2,
+        "unavailablePvs": 31.1,
         "status": "unavailable"
       }
     ],
@@ -575,9 +597,9 @@
       {
         "player": "Hayden Young",
         "club": "Fremantle",
-        "roundsMissed": 7,
+        "roundsMissed": 8,
         "pvs": 5.6,
-        "unavailablePvs": 39.3,
+        "unavailablePvs": 45.0,
         "status": "intermittent",
         "keyInjuries": [
           "Concussion",
@@ -587,9 +609,9 @@
       {
         "player": "Jaeger O'Meara",
         "club": "Fremantle",
-        "roundsMissed": 7,
-        "pvs": 3.9,
-        "unavailablePvs": 27.4,
+        "roundsMissed": 9,
+        "pvs": 4.0,
+        "unavailablePvs": 36.0,
         "status": "unavailable",
         "keyInjuries": [
           "Face"
@@ -598,9 +620,9 @@
       {
         "player": "Sean Darcy",
         "club": "Fremantle",
-        "roundsMissed": 6,
+        "roundsMissed": 8,
         "pvs": 3.5,
-        "unavailablePvs": 21.2,
+        "unavailablePvs": 28.3,
         "status": "unavailable",
         "keyInjuries": [
           "Calf"
@@ -609,17 +631,17 @@
       {
         "player": "Jeremy Sharp",
         "club": "Fremantle",
-        "roundsMissed": 6,
-        "pvs": 3.4,
-        "unavailablePvs": 20.7,
+        "roundsMissed": 8,
+        "pvs": 3.5,
+        "unavailablePvs": 28.2,
         "status": "unavailable"
       },
       {
         "player": "Caleb Serong",
         "club": "Fremantle",
-        "roundsMissed": 3,
+        "roundsMissed": 4,
         "pvs": 5.8,
-        "unavailablePvs": 17.5,
+        "unavailablePvs": 23.3,
         "status": "intermittent",
         "keyInjuries": [
           "Calf"
@@ -630,51 +652,54 @@
       {
         "player": "Rhys Stanley",
         "club": "Geelong",
-        "roundsMissed": 5,
-        "pvs": 4.5,
-        "unavailablePvs": 22.4,
+        "roundsMissed": 6,
+        "pvs": 4.6,
+        "unavailablePvs": 27.5,
         "status": "unavailable"
       },
       {
         "player": "Gryan Miers",
         "club": "Geelong",
-        "roundsMissed": 4,
+        "roundsMissed": 5,
         "pvs": 5.1,
-        "unavailablePvs": 20.3,
+        "unavailablePvs": 25.3,
         "status": "unavailable"
       },
       {
         "player": "James Worpel",
         "club": "Geelong",
-        "roundsMissed": 4,
-        "pvs": 4.2,
-        "unavailablePvs": 17.0,
+        "roundsMissed": 5,
+        "pvs": 4.3,
+        "unavailablePvs": 21.7,
         "status": "unavailable"
+      },
+      {
+        "player": "Brad Close",
+        "club": "Geelong",
+        "roundsMissed": 5,
+        "pvs": 3.2,
+        "unavailablePvs": 16.1,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Ankle"
+        ]
       },
       {
         "player": "Jack Bowes",
         "club": "Geelong",
         "roundsMissed": 4,
-        "pvs": 4.0,
-        "unavailablePvs": 16.1,
+        "pvs": 3.9,
+        "unavailablePvs": 15.4,
         "status": "unavailable"
-      },
-      {
-        "player": "Mark Blicavs",
-        "club": "Geelong",
-        "roundsMissed": 3,
-        "pvs": 4.3,
-        "unavailablePvs": 12.9,
-        "status": "intermittent"
       }
     ],
     "Gold Coast": [
       {
         "player": "Jy Farrar",
         "club": "Gold Coast",
-        "roundsMissed": 11,
+        "roundsMissed": 13,
         "pvs": 3.0,
-        "unavailablePvs": 32.7,
+        "unavailablePvs": 38.7,
         "status": "unavailable",
         "keyInjuries": [
           "Ankle"
@@ -683,17 +708,17 @@
       {
         "player": "Matt Rowell",
         "club": "Gold Coast",
-        "roundsMissed": 4,
+        "roundsMissed": 5,
         "pvs": 6.6,
-        "unavailablePvs": 26.2,
+        "unavailablePvs": 32.8,
         "status": "intermittent"
       },
       {
         "player": "Alex Davies",
         "club": "Gold Coast",
-        "roundsMissed": 6,
-        "pvs": 3.2,
-        "unavailablePvs": 19.3,
+        "roundsMissed": 8,
+        "pvs": 3.3,
+        "unavailablePvs": 26.3,
         "status": "unavailable",
         "keyInjuries": [
           "Foot"
@@ -702,17 +727,17 @@
       {
         "player": "Sam Clohesy",
         "club": "Gold Coast",
-        "roundsMissed": 5,
-        "pvs": 3.7,
-        "unavailablePvs": 18.6,
+        "roundsMissed": 6,
+        "pvs": 3.9,
+        "unavailablePvs": 23.2,
         "status": "unavailable"
       },
       {
         "player": "Zeke Uwland",
         "club": "Gold Coast",
-        "roundsMissed": 3,
+        "roundsMissed": 4,
         "pvs": 5.3,
-        "unavailablePvs": 16.0,
+        "unavailablePvs": 21.4,
         "status": "intermittent"
       }
     ],
@@ -720,10 +745,10 @@
       {
         "player": "Sam Taylor",
         "club": "Greater Western Sydney",
-        "roundsMissed": 10,
+        "roundsMissed": 11,
         "pvs": 3.1,
-        "unavailablePvs": 30.6,
-        "status": "unavailable",
+        "unavailablePvs": 33.6,
+        "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
         ]
@@ -731,52 +756,53 @@
       {
         "player": "Nicholas Madden",
         "club": "Greater Western Sydney",
-        "roundsMissed": 6,
-        "pvs": 3.8,
-        "unavailablePvs": 23.1,
+        "roundsMissed": 8,
+        "pvs": 3.9,
+        "unavailablePvs": 31.5,
         "status": "intermittent",
         "keyInjuries": [
           "Knee"
         ]
       },
       {
+        "player": "Harry Rowston",
+        "club": "Greater Western Sydney",
+        "roundsMissed": 8,
+        "pvs": 3.3,
+        "unavailablePvs": 26.2,
+        "status": "unavailable"
+      },
+      {
         "player": "Jesse Hogan",
         "club": "Greater Western Sydney",
-        "roundsMissed": 5,
+        "roundsMissed": 6,
         "pvs": 4.2,
-        "unavailablePvs": 21.1,
+        "unavailablePvs": 25.3,
         "status": "intermittent",
         "keyInjuries": [
+          "Hip",
           "Quad"
         ]
       },
       {
         "player": "Aaron Cadman",
         "club": "Greater Western Sydney",
-        "roundsMissed": 4,
+        "roundsMissed": 5,
         "pvs": 5.1,
-        "unavailablePvs": 20.2,
-        "status": "unavailable",
+        "unavailablePvs": 25.3,
+        "status": "intermittent",
         "keyInjuries": [
           "Pelvis"
         ]
-      },
-      {
-        "player": "Harry Rowston",
-        "club": "Greater Western Sydney",
-        "roundsMissed": 6,
-        "pvs": 3.2,
-        "unavailablePvs": 19.2,
-        "status": "unavailable"
       }
     ],
     "Hawthorn": [
       {
         "player": "Will Day",
         "club": "Hawthorn",
-        "roundsMissed": 9,
+        "roundsMissed": 10,
         "pvs": 5.9,
-        "unavailablePvs": 53.4,
+        "unavailablePvs": 58.6,
         "status": "unavailable",
         "keyInjuries": [
           "Shoulder"
@@ -785,36 +811,42 @@
       {
         "player": "Jack Scrimshaw",
         "club": "Hawthorn",
-        "roundsMissed": 7,
-        "pvs": 3.7,
-        "unavailablePvs": 26.0,
-        "status": "intermittent"
+        "roundsMissed": 9,
+        "pvs": 3.8,
+        "unavailablePvs": 34.2,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Knee"
+        ]
       },
       {
         "player": "Jack Gunston",
         "club": "Hawthorn",
-        "roundsMissed": 4,
-        "pvs": 4.3,
-        "unavailablePvs": 17.3,
-        "status": "intermittent"
-      },
-      {
-        "player": "Mabior Chol",
-        "club": "Hawthorn",
-        "roundsMissed": 5,
-        "pvs": 3.3,
-        "unavailablePvs": 16.4,
+        "roundsMissed": 6,
+        "pvs": 4.4,
+        "unavailablePvs": 26.5,
         "status": "intermittent",
         "keyInjuries": [
-          "Hamstring"
+          "Foot"
+        ]
+      },
+      {
+        "player": "Conor Nash",
+        "club": "Hawthorn",
+        "roundsMissed": 5,
+        "pvs": 4.5,
+        "unavailablePvs": 22.5,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Ankle"
         ]
       },
       {
         "player": "Harry Morrison",
         "club": "Hawthorn",
-        "roundsMissed": 4,
+        "roundsMissed": 5,
         "pvs": 4.0,
-        "unavailablePvs": 15.8,
+        "unavailablePvs": 19.8,
         "status": "unavailable"
       }
     ],
@@ -822,34 +854,34 @@
       {
         "player": "Christian Salem",
         "club": "Melbourne",
-        "roundsMissed": 9,
+        "roundsMissed": 10,
         "pvs": 5.1,
-        "unavailablePvs": 45.5,
+        "unavailablePvs": 50.5,
         "status": "intermittent",
         "keyInjuries": [
           "Ankle"
         ]
       },
       {
-        "player": "Jake Bowey",
-        "club": "Melbourne",
-        "roundsMissed": 6,
-        "pvs": 5.6,
-        "unavailablePvs": 33.7,
-        "status": "unavailable",
-        "keyInjuries": [
-          "Foot"
-        ]
-      },
-      {
         "player": "Xavier Lindsay",
         "club": "Melbourne",
-        "roundsMissed": 9,
-        "pvs": 3.5,
-        "unavailablePvs": 31.7,
+        "roundsMissed": 10,
+        "pvs": 3.6,
+        "unavailablePvs": 36.0,
         "status": "intermittent",
         "keyInjuries": [
           "Hip/groin"
+        ]
+      },
+      {
+        "player": "Jake Bowey",
+        "club": "Melbourne",
+        "roundsMissed": 6,
+        "pvs": 5.7,
+        "unavailablePvs": 34.4,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Foot"
         ]
       },
       {
@@ -857,7 +889,7 @@
         "club": "Melbourne",
         "roundsMissed": 6,
         "pvs": 4.7,
-        "unavailablePvs": 28.3,
+        "unavailablePvs": 28.4,
         "status": "unavailable"
       },
       {
@@ -876,9 +908,9 @@
       {
         "player": "Tom Powell",
         "club": "North Melbourne",
-        "roundsMissed": 5,
+        "roundsMissed": 7,
         "pvs": 4.9,
-        "unavailablePvs": 24.7,
+        "unavailablePvs": 34.6,
         "status": "intermittent",
         "keyInjuries": [
           "Groin"
@@ -887,9 +919,9 @@
       {
         "player": "Finn O'Sullivan",
         "club": "North Melbourne",
-        "roundsMissed": 4,
+        "roundsMissed": 5,
         "pvs": 5.9,
-        "unavailablePvs": 23.5,
+        "unavailablePvs": 29.3,
         "status": "intermittent",
         "keyInjuries": [
           "Concussion"
@@ -898,9 +930,9 @@
       {
         "player": "Tristan Xerri",
         "club": "North Melbourne",
-        "roundsMissed": 3,
+        "roundsMissed": 4,
         "pvs": 5.8,
-        "unavailablePvs": 17.5,
+        "unavailablePvs": 23.4,
         "status": "intermittent",
         "keyInjuries": [
           "Suspension"
@@ -909,17 +941,17 @@
       {
         "player": "Riley Hardeman",
         "club": "North Melbourne",
-        "roundsMissed": 5,
+        "roundsMissed": 7,
         "pvs": 3.2,
-        "unavailablePvs": 16.1,
+        "unavailablePvs": 22.5,
         "status": "unavailable"
       },
       {
-        "player": "Aidan Corr",
+        "player": "George Wardlaw",
         "club": "North Melbourne",
-        "roundsMissed": 5,
-        "pvs": 2.9,
-        "unavailablePvs": 14.6,
+        "roundsMissed": 4,
+        "pvs": 4.7,
+        "unavailablePvs": 18.9,
         "status": "unavailable"
       }
     ],
@@ -927,9 +959,9 @@
       {
         "player": "Connor Rozee",
         "club": "Port Adelaide",
-        "roundsMissed": 11,
+        "roundsMissed": 13,
         "pvs": 5.7,
-        "unavailablePvs": 62.5,
+        "unavailablePvs": 73.9,
         "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
@@ -938,20 +970,21 @@
       {
         "player": "Jack Lukosius",
         "club": "Port Adelaide",
-        "roundsMissed": 7,
+        "roundsMissed": 8,
         "pvs": 3.9,
-        "unavailablePvs": 27.5,
+        "unavailablePvs": 31.4,
         "status": "unavailable",
         "keyInjuries": [
-          "Groin"
+          "Groin",
+          "Shoulder"
         ]
       },
       {
         "player": "Miles Bergman",
         "club": "Port Adelaide",
-        "roundsMissed": 5,
+        "roundsMissed": 7,
         "pvs": 3.9,
-        "unavailablePvs": 19.5,
+        "unavailablePvs": 27.3,
         "status": "intermittent",
         "keyInjuries": [
           "Toe"
@@ -960,17 +993,17 @@
       {
         "player": "Will Brodie",
         "club": "Port Adelaide",
-        "roundsMissed": 4,
-        "pvs": 4.0,
-        "unavailablePvs": 16.2,
+        "roundsMissed": 6,
+        "pvs": 4.1,
+        "unavailablePvs": 24.9,
         "status": "unavailable"
       },
       {
         "player": "Will Lorenz",
         "club": "Port Adelaide",
-        "roundsMissed": 4,
+        "roundsMissed": 6,
         "pvs": 3.5,
-        "unavailablePvs": 13.9,
+        "unavailablePvs": 21.3,
         "status": "unavailable"
       }
     ],
@@ -978,9 +1011,9 @@
       {
         "player": "Toby Nankervis",
         "club": "Richmond",
-        "roundsMissed": 11,
-        "pvs": 5.0,
-        "unavailablePvs": 55.2,
+        "roundsMissed": 12,
+        "pvs": 4.9,
+        "unavailablePvs": 59.0,
         "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
@@ -989,9 +1022,9 @@
       {
         "player": "Rhyan Mansell",
         "club": "Richmond",
-        "roundsMissed": 12,
+        "roundsMissed": 14,
         "pvs": 3.6,
-        "unavailablePvs": 42.7,
+        "unavailablePvs": 51.0,
         "status": "unavailable",
         "keyInjuries": [
           "Foot",
@@ -1001,9 +1034,9 @@
       {
         "player": "Sam Lalor",
         "club": "Richmond",
-        "roundsMissed": 6,
+        "roundsMissed": 8,
         "pvs": 6.0,
-        "unavailablePvs": 35.9,
+        "unavailablePvs": 48.3,
         "status": "intermittent",
         "keyInjuries": [
           "Achilles"
@@ -1012,23 +1045,23 @@
       {
         "player": "Kane McAuliffe",
         "club": "Richmond",
-        "roundsMissed": 6,
-        "pvs": 4.0,
-        "unavailablePvs": 24.0,
+        "roundsMissed": 8,
+        "pvs": 4.1,
+        "unavailablePvs": 32.8,
         "status": "unavailable",
         "keyInjuries": [
           "Achilles"
         ]
       },
       {
-        "player": "Jasper Alger",
+        "player": "Taj Hotton",
         "club": "Richmond",
-        "roundsMissed": 7,
-        "pvs": 3.3,
-        "unavailablePvs": 23.3,
+        "roundsMissed": 13,
+        "pvs": 2.4,
+        "unavailablePvs": 31.2,
         "status": "unavailable",
         "keyInjuries": [
-          "Knee"
+          "Hip"
         ]
       }
     ],
@@ -1036,9 +1069,9 @@
       {
         "player": "Hunter Clark",
         "club": "St Kilda",
-        "roundsMissed": 9,
+        "roundsMissed": 10,
         "pvs": 3.3,
-        "unavailablePvs": 29.3,
+        "unavailablePvs": 32.6,
         "status": "unavailable",
         "keyInjuries": [
           "Knee"
@@ -1048,8 +1081,8 @@
         "player": "Nasiah Wanganeen-Milera",
         "club": "St Kilda",
         "roundsMissed": 4,
-        "pvs": 6.1,
-        "unavailablePvs": 24.5,
+        "pvs": 6.2,
+        "unavailablePvs": 24.6,
         "status": "intermittent",
         "keyInjuries": [
           "Calf"
@@ -1066,9 +1099,9 @@
       {
         "player": "Alix Tauru",
         "club": "St Kilda",
-        "roundsMissed": 6,
+        "roundsMissed": 7,
         "pvs": 3.2,
-        "unavailablePvs": 19.0,
+        "unavailablePvs": 22.3,
         "status": "unavailable"
       },
       {
@@ -1096,19 +1129,11 @@
         ]
       },
       {
-        "player": "Peter Ladhams",
-        "club": "Sydney",
-        "roundsMissed": 4,
-        "pvs": 5.9,
-        "unavailablePvs": 23.7,
-        "status": "unavailable"
-      },
-      {
         "player": "Dane Rampe",
         "club": "Sydney",
-        "roundsMissed": 6,
-        "pvs": 3.5,
-        "unavailablePvs": 21.1,
+        "roundsMissed": 7,
+        "pvs": 3.6,
+        "unavailablePvs": 25.1,
         "status": "intermittent",
         "keyInjuries": [
           "Calf"
@@ -1117,27 +1142,38 @@
       {
         "player": "Hayden McLean",
         "club": "Sydney",
-        "roundsMissed": 4,
-        "pvs": 3.4,
-        "unavailablePvs": 13.7,
+        "roundsMissed": 5,
+        "pvs": 3.5,
+        "unavailablePvs": 17.5,
         "status": "unavailable"
       },
       {
-        "player": "Isaac Heeney",
+        "player": "Matt Roberts",
         "club": "Sydney",
-        "roundsMissed": 2,
-        "pvs": 6.7,
-        "unavailablePvs": 13.3,
-        "status": "intermittent"
+        "roundsMissed": 4,
+        "pvs": 4.3,
+        "unavailablePvs": 17.4,
+        "status": "intermittent",
+        "keyInjuries": [
+          "Groin"
+        ]
+      },
+      {
+        "player": "Peter Ladhams",
+        "club": "Sydney",
+        "roundsMissed": 4,
+        "pvs": 4.2,
+        "unavailablePvs": 16.8,
+        "status": "unavailable"
       }
     ],
     "West Coast": [
       {
         "player": "Jack Graham",
         "club": "West Coast",
-        "roundsMissed": 9,
+        "roundsMissed": 10,
         "pvs": 4.4,
-        "unavailablePvs": 39.8,
+        "unavailablePvs": 44.2,
         "status": "intermittent",
         "keyInjuries": [
           "Shoulder"
@@ -1146,9 +1182,9 @@
       {
         "player": "Deven Robertson",
         "club": "West Coast",
-        "roundsMissed": 10,
-        "pvs": 3.7,
-        "unavailablePvs": 37.2,
+        "roundsMissed": 11,
+        "pvs": 3.8,
+        "unavailablePvs": 41.8,
         "status": "intermittent",
         "keyInjuries": [
           "Knee (ACL)"
@@ -1157,26 +1193,26 @@
       {
         "player": "Elijah Hewett",
         "club": "West Coast",
-        "roundsMissed": 4,
+        "roundsMissed": 5,
         "pvs": 3.5,
-        "unavailablePvs": 14.0,
+        "unavailablePvs": 17.5,
         "status": "unavailable"
       },
       {
         "player": "Ryan Maric",
         "club": "West Coast",
-        "roundsMissed": 3,
+        "roundsMissed": 4,
         "pvs": 4.2,
-        "unavailablePvs": 12.6,
+        "unavailablePvs": 16.8,
         "status": "unavailable"
       },
       {
-        "player": "Tom Cole",
+        "player": "Elliot Yeo",
         "club": "West Coast",
         "roundsMissed": 3,
-        "pvs": 3.7,
-        "unavailablePvs": 11.2,
-        "status": "unavailable"
+        "pvs": 5.2,
+        "unavailablePvs": 15.5,
+        "status": "intermittent"
       }
     ],
     "Western Bulldogs": [
@@ -1188,18 +1224,29 @@
         "unavailablePvs": 60.2,
         "status": "intermittent",
         "keyInjuries": [
-          "Concussion"
+          "Hamstring"
         ]
       },
       {
         "player": "Sam Darcy",
         "club": "Western Bulldogs",
-        "roundsMissed": 8,
+        "roundsMissed": 9,
         "pvs": 5.7,
-        "unavailablePvs": 45.8,
+        "unavailablePvs": 51.5,
         "status": "intermittent",
         "keyInjuries": [
           "Knee (ACL)"
+        ]
+      },
+      {
+        "player": "Laitham Vandermeer",
+        "club": "Western Bulldogs",
+        "roundsMissed": 11,
+        "pvs": 2.9,
+        "unavailablePvs": 32.3,
+        "status": "unavailable",
+        "keyInjuries": [
+          "Hamstring"
         ]
       },
       {
@@ -1214,22 +1261,11 @@
         ]
       },
       {
-        "player": "Laitham Vandermeer",
-        "club": "Western Bulldogs",
-        "roundsMissed": 10,
-        "pvs": 2.9,
-        "unavailablePvs": 29.4,
-        "status": "unavailable",
-        "keyInjuries": [
-          "Hamstring"
-        ]
-      },
-      {
         "player": "Bailey Williams",
         "club": "Western Bulldogs",
-        "roundsMissed": 4,
-        "pvs": 4.7,
-        "unavailablePvs": 18.9,
+        "roundsMissed": 5,
+        "pvs": 4.8,
+        "unavailablePvs": 24.2,
         "status": "intermittent",
         "keyInjuries": [
           "Hamstring"
@@ -1241,11 +1277,6 @@
     {
       "archetype": "Inside Mid",
       "changes": 1,
-      "score": 0.8
-    },
-    {
-      "archetype": "Outside Mid",
-      "changes": 0,
       "score": 0.78
     },
     {
@@ -1254,825 +1285,374 @@
       "score": 0.78
     },
     {
-      "archetype": "Key Forward",
-      "changes": 1,
-      "score": 0.78
+      "archetype": "Outside Mid",
+      "changes": 0,
+      "score": 0.77
     },
     {
-      "archetype": "Key Defender",
+      "archetype": "Key Forward",
       "changes": 1,
       "score": 0.76
     },
     {
-      "archetype": "Ruck",
+      "archetype": "Key Defender",
       "changes": 1,
-      "score": 0.74
+      "score": 0.75
     },
     {
-      "archetype": "Utility",
-      "changes": 2,
-      "score": 0.71
+      "archetype": "Ruck",
+      "changes": 1,
+      "score": 0.73
     },
     {
       "archetype": "Rebound Defender",
       "changes": 1,
+      "score": 0.71
+    },
+    {
+      "archetype": "Utility",
+      "changes": 2,
       "score": 0.7
     }
   ],
   "regression": {
     "model": "linear",
-    "rSquared": 0.23,
+    "rSquared": 0.39,
     "marginRSquared": 0.0,
     "coefficients": {
-      "intercept": 11.92,
-      "unavailablePvs": -0.0188,
+      "intercept": 14.69,
+      "unavailablePvs": -0.0184,
       "marginPer100Pvs": 0.0
     },
-    "interpretation": "Each +100 unavailable PVS correlates with ~1.9 fewer wins (season 2026). PVS combines weighted season performance (normalised 0\u20137, leader = 7) with an optional draft-potential top-up for players not yet impacting games."
+    "interpretation": "Each +100 unavailable PVS correlates with ~1.8 fewer wins (season 2026). PVS combines weighted season performance (normalised 0\u20137, leader = 7) with an optional draft-potential top-up for players not yet impacting games."
   },
   "clubs": [
     "Richmond",
     "Essendon",
-    "Western Bulldogs",
-    "Brisbane Lions",
-    "West Coast",
-    "Greater Western Sydney",
-    "St Kilda",
-    "Melbourne",
     "Adelaide",
     "Carlton",
-    "Sydney",
+    "Greater Western Sydney",
+    "West Coast",
     "Gold Coast",
     "Hawthorn",
+    "Western Bulldogs",
     "Port Adelaide",
-    "Fremantle",
+    "Brisbane Lions",
     "North Melbourne",
-    "Geelong",
-    "Collingwood"
+    "Fremantle",
+    "St Kilda",
+    "Collingwood",
+    "Melbourne",
+    "Sydney",
+    "Geelong"
   ],
   "defaultClub": "Collingwood",
   "clubSeries": {
     "Richmond": [
       {
         "round": 1,
-        "value": 15.5,
-        "top5": 15.5,
+        "value": 17.9,
+        "top5": 17.9,
         "wins": 0
       },
       {
         "round": 2,
-        "value": 13.8,
-        "top5": 13.8,
+        "value": 16.9,
+        "top5": 14.9,
         "wins": 0
       },
       {
         "round": 3,
-        "value": 22.5,
-        "top5": 19.2,
+        "value": 25.1,
+        "top5": 19.4,
         "wins": 0
       },
       {
         "round": 4,
-        "value": 29.6,
-        "top5": 19.2,
+        "value": 32.4,
+        "top5": 19.5,
         "wins": 0
       },
       {
         "round": 5,
-        "value": 33.5,
-        "top5": 19.9,
+        "value": 36.3,
+        "top5": 20.1,
         "wins": 0
       },
       {
         "round": 6,
-        "value": 37.5,
-        "top5": 21.0,
+        "value": 40.3,
+        "top5": 21.2,
         "wins": 0
       },
       {
         "round": 7,
-        "value": 42.9,
+        "value": 45.6,
         "top5": 24.1,
         "wins": 0
       },
       {
         "round": 8,
-        "value": 43.7,
-        "top5": 23.2,
+        "value": 47.8,
+        "top5": 24.7,
         "wins": 1
       },
       {
         "round": 9,
-        "value": 38.3,
-        "top5": 22.6,
+        "value": 43.0,
+        "top5": 24.4,
         "wins": 0
       },
       {
         "round": 10,
-        "value": 41.9,
-        "top5": 23.0,
+        "value": 46.0,
+        "top5": 24.6,
         "wins": 0
       },
       {
         "round": 11,
-        "value": 46.1,
-        "top5": 23.0,
+        "value": 50.5,
+        "top5": 24.6,
         "wins": 1
       },
       {
         "round": 12,
-        "value": 39.0,
-        "top5": 20.4,
+        "value": 41.5,
+        "top5": 22.1,
         "wins": 0
       },
       {
         "round": 14,
-        "value": 46.6,
-        "top5": 22.2,
+        "value": 51.9,
+        "top5": 24.0,
+        "wins": 0
+      },
+      {
+        "round": 15,
+        "value": 52.5,
+        "top5": 24.2,
+        "wins": 0
+      },
+      {
+        "round": 16,
+        "value": 135.6,
+        "top5": 27.4,
         "wins": 0
       }
     ],
     "Essendon": [
       {
         "round": 1,
-        "value": 15.4,
-        "top5": 15.4,
+        "value": 15.8,
+        "top5": 15.8,
         "wins": 0
       },
       {
         "round": 2,
-        "value": 19.2,
-        "top5": 16.8,
-        "wins": 0
-      },
-      {
-        "round": 3,
-        "value": 17.0,
+        "value": 19.5,
         "top5": 17.0,
         "wins": 0
       },
       {
+        "round": 3,
+        "value": 17.3,
+        "top5": 17.3,
+        "wins": 0
+      },
+      {
         "round": 4,
-        "value": 25.2,
-        "top5": 20.6,
+        "value": 25.5,
+        "top5": 20.9,
         "wins": 0
       },
       {
         "round": 5,
-        "value": 17.2,
-        "top5": 17.2,
+        "value": 17.5,
+        "top5": 17.5,
         "wins": 1
       },
       {
         "round": 6,
-        "value": 18.2,
-        "top5": 15.7,
+        "value": 18.6,
+        "top5": 16.0,
         "wins": 0
       },
       {
         "round": 7,
-        "value": 21.6,
-        "top5": 19.1,
+        "value": 21.9,
+        "top5": 19.3,
         "wins": 0
       },
       {
         "round": 8,
-        "value": 47.6,
+        "value": 48.4,
+        "top5": 25.6,
+        "wins": 0
+      },
+      {
+        "round": 9,
+        "value": 40.7,
+        "top5": 23.7,
+        "wins": 0
+      },
+      {
+        "round": 10,
+        "value": 38.5,
+        "top5": 19.2,
+        "wins": 0
+      },
+      {
+        "round": 11,
+        "value": 41.7,
+        "top5": 22.3,
+        "wins": 0
+      },
+      {
+        "round": 12,
+        "value": 51.5,
         "top5": 25.2,
         "wins": 0
       },
       {
-        "round": 9,
-        "value": 40.1,
-        "top5": 23.4,
-        "wins": 0
-      },
-      {
-        "round": 10,
-        "value": 37.8,
-        "top5": 18.9,
-        "wins": 0
-      },
-      {
-        "round": 11,
-        "value": 40.9,
-        "top5": 21.9,
-        "wins": 0
-      },
-      {
-        "round": 12,
-        "value": 50.8,
-        "top5": 25.1,
-        "wins": 0
-      },
-      {
         "round": 13,
-        "value": 49.7,
-        "top5": 24.0,
+        "value": 50.6,
+        "top5": 24.4,
         "wins": 0
       },
       {
         "round": 14,
-        "value": 48.8,
-        "top5": 23.9,
-        "wins": 0
-      }
-    ],
-    "Western Bulldogs": [
-      {
-        "round": 1,
-        "value": 5.1,
-        "top5": 5.1,
-        "wins": 1
-      },
-      {
-        "round": 2,
-        "value": 19.1,
-        "top5": 14.7,
-        "wins": 1
-      },
-      {
-        "round": 4,
-        "value": 19.2,
-        "top5": 19.2,
-        "wins": 1
-      },
-      {
-        "round": 5,
-        "value": 23.7,
-        "top5": 21.6,
+        "value": 49.6,
+        "top5": 24.2,
         "wins": 0
       },
       {
-        "round": 6,
-        "value": 27.2,
-        "top5": 19.4,
+        "round": 16,
+        "value": 136.5,
+        "top5": 28.7,
         "wins": 0
-      },
-      {
-        "round": 7,
-        "value": 41.1,
-        "top5": 25.0,
-        "wins": 0
-      },
-      {
-        "round": 8,
-        "value": 26.7,
-        "top5": 21.8,
-        "wins": 0
-      },
-      {
-        "round": 9,
-        "value": 36.1,
-        "top5": 25.6,
-        "wins": 1
-      },
-      {
-        "round": 10,
-        "value": 38.2,
-        "top5": 28.1,
-        "wins": 0
-      },
-      {
-        "round": 11,
-        "value": 25.5,
-        "top5": 25.5,
-        "wins": 1
-      },
-      {
-        "round": 12,
-        "value": 19.4,
-        "top5": 19.4,
-        "wins": 1
-      },
-      {
-        "round": 13,
-        "value": 43.5,
-        "top5": 23.3,
-        "wins": 1
-      },
-      {
-        "round": 14,
-        "value": 46.4,
-        "top5": 23.3,
-        "wins": 0
-      }
-    ],
-    "Brisbane Lions": [
-      {
-        "round": 1,
-        "value": 31.5,
-        "top5": 21.6,
-        "wins": 0
-      },
-      {
-        "round": 3,
-        "value": 17.9,
-        "top5": 17.9,
-        "wins": 1
-      },
-      {
-        "round": 4,
-        "value": 23.8,
-        "top5": 18.5,
-        "wins": 1
-      },
-      {
-        "round": 5,
-        "value": 17.0,
-        "top5": 14.5,
-        "wins": 1
-      },
-      {
-        "round": 6,
-        "value": 21.0,
-        "top5": 18.3,
-        "wins": 0
-      },
-      {
-        "round": 7,
-        "value": 30.7,
-        "top5": 19.2,
-        "wins": 1
-      },
-      {
-        "round": 8,
-        "value": 23.9,
-        "top5": 16.2,
-        "wins": 1
-      },
-      {
-        "round": 9,
-        "value": 27.3,
-        "top5": 16.2,
-        "wins": 1
-      },
-      {
-        "round": 10,
-        "value": 26.3,
-        "top5": 19.0,
-        "wins": 0
-      },
-      {
-        "round": 11,
-        "value": 30.2,
-        "top5": 20.0,
-        "wins": 0
-      },
-      {
-        "round": 12,
-        "value": 24.4,
-        "top5": 18.0,
-        "wins": 0
-      },
-      {
-        "round": 13,
-        "value": 39.3,
-        "top5": 23.0,
-        "wins": 1
-      },
-      {
-        "round": 14,
-        "value": 38.6,
-        "top5": 23.0,
-        "wins": 1
-      }
-    ],
-    "West Coast": [
-      {
-        "round": 1,
-        "value": 32.5,
-        "top5": 20.8,
-        "wins": 0
-      },
-      {
-        "round": 2,
-        "value": 35.2,
-        "top5": 20.3,
-        "wins": 1
-      },
-      {
-        "round": 3,
-        "value": 34.5,
-        "top5": 19.6,
-        "wins": 1
-      },
-      {
-        "round": 4,
-        "value": 24.7,
-        "top5": 20.8,
-        "wins": 0
-      },
-      {
-        "round": 5,
-        "value": 23.5,
-        "top5": 19.6,
-        "wins": 0
-      },
-      {
-        "round": 6,
-        "value": 9.5,
-        "top5": 9.5,
-        "wins": 0
-      },
-      {
-        "round": 7,
-        "value": 13.6,
-        "top5": 13.6,
-        "wins": 0
-      },
-      {
-        "round": 8,
-        "value": 11.2,
-        "top5": 11.2,
-        "wins": 0
-      },
-      {
-        "round": 9,
-        "value": 13.4,
-        "top5": 13.4,
-        "wins": 0
-      },
-      {
-        "round": 10,
-        "value": 35.3,
-        "top5": 18.5,
-        "wins": 1
-      },
-      {
-        "round": 11,
-        "value": 19.0,
-        "top5": 15.9,
-        "wins": 0
-      },
-      {
-        "round": 12,
-        "value": 17.2,
-        "top5": 15.9,
-        "wins": 1
-      },
-      {
-        "round": 13,
-        "value": 16.6,
-        "top5": 15.3,
-        "wins": 0
-      },
-      {
-        "round": 14,
-        "value": 29.7,
-        "top5": 21.2,
-        "wins": 0
-      }
-    ],
-    "Greater Western Sydney": [
-      {
-        "round": 1,
-        "value": 19.5,
-        "top5": 19.5,
-        "wins": 0
-      },
-      {
-        "round": 2,
-        "value": 16.3,
-        "top5": 16.3,
-        "wins": 0
-      },
-      {
-        "round": 3,
-        "value": 30.7,
-        "top5": 19.6,
-        "wins": 0
-      },
-      {
-        "round": 5,
-        "value": 14.2,
-        "top5": 14.2,
-        "wins": 1
-      },
-      {
-        "round": 6,
-        "value": 35.4,
-        "top5": 22.7,
-        "wins": 0
-      },
-      {
-        "round": 7,
-        "value": 26.1,
-        "top5": 18.1,
-        "wins": 1
-      },
-      {
-        "round": 8,
-        "value": 23.1,
-        "top5": 16.7,
-        "wins": 0
-      },
-      {
-        "round": 9,
-        "value": 26.5,
-        "top5": 18.0,
-        "wins": 1
-      },
-      {
-        "round": 10,
-        "value": 26.0,
-        "top5": 17.4,
-        "wins": 0
-      },
-      {
-        "round": 11,
-        "value": 35.4,
-        "top5": 21.3,
-        "wins": 1
-      },
-      {
-        "round": 12,
-        "value": 23.0,
-        "top5": 18.4,
-        "wins": 1
-      },
-      {
-        "round": 14,
-        "value": 31.9,
-        "top5": 18.7,
-        "wins": 0
-      }
-    ],
-    "St Kilda": [
-      {
-        "round": 1,
-        "value": 22.9,
-        "top5": 18.2,
-        "wins": 0
-      },
-      {
-        "round": 2,
-        "value": 18.3,
-        "top5": 18.3,
-        "wins": 1
-      },
-      {
-        "round": 3,
-        "value": 15.0,
-        "top5": 15.0,
-        "wins": 0
-      },
-      {
-        "round": 5,
-        "value": 9.4,
-        "top5": 9.4,
-        "wins": 1
-      },
-      {
-        "round": 6,
-        "value": 23.0,
-        "top5": 16.8,
-        "wins": 0
-      },
-      {
-        "round": 7,
-        "value": 19.7,
-        "top5": 17.7,
-        "wins": 1
-      },
-      {
-        "round": 8,
-        "value": 18.8,
-        "top5": 16.8,
-        "wins": 1
-      },
-      {
-        "round": 9,
-        "value": 26.5,
-        "top5": 17.9,
-        "wins": 0
-      },
-      {
-        "round": 10,
-        "value": 25.7,
-        "top5": 19.3,
-        "wins": 1
-      },
-      {
-        "round": 11,
-        "value": 22.8,
-        "top5": 18.5,
-        "wins": 0
-      },
-      {
-        "round": 12,
-        "value": 31.0,
-        "top5": 18.5,
-        "wins": 0
-      },
-      {
-        "round": 13,
-        "value": 33.1,
-        "top5": 18.7,
-        "wins": 0
-      },
-      {
-        "round": 14,
-        "value": 34.4,
-        "top5": 19.3,
-        "wins": 1
-      }
-    ],
-    "Melbourne": [
-      {
-        "round": 1,
-        "value": 10.7,
-        "top5": 10.7,
-        "wins": 1
-      },
-      {
-        "round": 2,
-        "value": 13.8,
-        "top5": 13.8,
-        "wins": 0
-      },
-      {
-        "round": 3,
-        "value": 16.9,
-        "top5": 16.9,
-        "wins": 1
-      },
-      {
-        "round": 4,
-        "value": 19.5,
-        "top5": 19.5,
-        "wins": 1
-      },
-      {
-        "round": 5,
-        "value": 12.7,
-        "top5": 12.7,
-        "wins": 0
-      },
-      {
-        "round": 6,
-        "value": 21.7,
-        "top5": 19.6,
-        "wins": 1
-      },
-      {
-        "round": 7,
-        "value": 22.4,
-        "top5": 20.3,
-        "wins": 1
-      },
-      {
-        "round": 8,
-        "value": 24.3,
-        "top5": 22.0,
-        "wins": 0
-      },
-      {
-        "round": 9,
-        "value": 21.9,
-        "top5": 19.6,
-        "wins": 1
-      },
-      {
-        "round": 10,
-        "value": 22.0,
-        "top5": 18.2,
-        "wins": 1
-      },
-      {
-        "round": 11,
-        "value": 19.9,
-        "top5": 16.6,
-        "wins": 0
-      },
-      {
-        "round": 12,
-        "value": 17.8,
-        "top5": 17.8,
-        "wins": 0
-      },
-      {
-        "round": 13,
-        "value": 28.6,
-        "top5": 18.4,
-        "wins": 1
-      },
-      {
-        "round": 14,
-        "value": 34.3,
-        "top5": 19.2,
-        "wins": 1
       }
     ],
     "Adelaide": [
       {
         "round": 1,
-        "value": 27.3,
-        "top5": 20.9,
+        "value": 32.6,
+        "top5": 22.3,
         "wins": 1
       },
       {
         "round": 2,
-        "value": 24.3,
-        "top5": 19.0,
+        "value": 29.8,
+        "top5": 21.1,
         "wins": 0
       },
       {
         "round": 3,
-        "value": 27.3,
-        "top5": 22.4,
+        "value": 32.8,
+        "top5": 24.3,
         "wins": 0
       },
       {
         "round": 4,
-        "value": 24.6,
-        "top5": 19.6,
+        "value": 30.2,
+        "top5": 21.8,
         "wins": 0
       },
       {
         "round": 5,
-        "value": 28.4,
-        "top5": 18.1,
+        "value": 33.8,
+        "top5": 20.1,
         "wins": 1
       },
       {
         "round": 6,
-        "value": 23.4,
-        "top5": 21.1,
+        "value": 28.6,
+        "top5": 23.1,
         "wins": 1
       },
       {
         "round": 7,
-        "value": 16.8,
-        "top5": 16.8,
+        "value": 21.7,
+        "top5": 19.3,
         "wins": 0
       },
       {
         "round": 8,
-        "value": 15.4,
-        "top5": 15.4,
+        "value": 20.2,
+        "top5": 20.2,
         "wins": 1
       },
       {
         "round": 9,
-        "value": 12.2,
-        "top5": 12.2,
+        "value": 17.1,
+        "top5": 17.1,
         "wins": 1
       },
       {
         "round": 10,
-        "value": 33.5,
-        "top5": 20.5,
+        "value": 38.7,
+        "top5": 22.0,
         "wins": 1
       },
       {
         "round": 11,
-        "value": 6.6,
-        "top5": 6.6,
+        "value": 11.4,
+        "top5": 11.4,
         "wins": 0
       },
       {
         "round": 13,
-        "value": 16.6,
-        "top5": 16.6,
+        "value": 16.9,
+        "top5": 16.9,
         "wins": 1
       },
       {
         "round": 14,
-        "value": 23.9,
-        "top5": 18.9,
+        "value": 24.1,
+        "top5": 19.0,
         "wins": 1
+      },
+      {
+        "round": 15,
+        "value": 39.9,
+        "top5": 21.2,
+        "wins": 1
+      },
+      {
+        "round": 16,
+        "value": 139.8,
+        "top5": 29.2,
+        "wins": 0
       }
     ],
     "Carlton": [
       {
         "round": 1,
-        "value": 31.7,
-        "top5": 21.4,
+        "value": 32.6,
+        "top5": 21.7,
         "wins": 1
       },
       {
         "round": 3,
-        "value": 9.0,
-        "top5": 9.0,
+        "value": 9.1,
+        "top5": 9.1,
         "wins": 0
       },
       {
         "round": 4,
-        "value": 13.4,
-        "top5": 13.4,
+        "value": 16.1,
+        "top5": 16.1,
         "wins": 0
       },
       {
         "round": 5,
-        "value": 23.7,
-        "top5": 16.2,
+        "value": 27.0,
+        "top5": 19.3,
         "wins": 0
       },
       {
         "round": 6,
-        "value": 9.7,
-        "top5": 9.7,
+        "value": 10.2,
+        "top5": 10.2,
         "wins": 0
       },
       {
@@ -2089,113 +1669,223 @@
       },
       {
         "round": 9,
-        "value": 19.4,
-        "top5": 17.7,
+        "value": 19.9,
+        "top5": 18.3,
         "wins": 0
       },
       {
         "round": 10,
-        "value": 15.7,
-        "top5": 15.7,
+        "value": 15.9,
+        "top5": 15.9,
         "wins": 1
       },
       {
         "round": 11,
-        "value": 19.4,
-        "top5": 19.4,
+        "value": 19.7,
+        "top5": 19.7,
         "wins": 1
       },
       {
         "round": 12,
-        "value": 48.2,
-        "top5": 20.6,
+        "value": 49.6,
+        "top5": 20.8,
         "wins": 1
       },
       {
         "round": 13,
-        "value": 49.0,
-        "top5": 20.6,
-        "wins": 1
-      }
-    ],
-    "Sydney": [
-      {
-        "round": 1,
-        "value": 5.5,
-        "top5": 5.5,
+        "value": 50.2,
+        "top5": 20.8,
         "wins": 1
       },
       {
-        "round": 2,
-        "value": 30.8,
-        "top5": 24.8,
+        "round": 15,
+        "value": 49.3,
+        "top5": 20.8,
+        "wins": 1
+      },
+      {
+        "round": 16,
+        "value": 146.2,
+        "top5": 29.4,
+        "wins": 0
+      }
+    ],
+    "Greater Western Sydney": [
+      {
+        "round": 1,
+        "value": 19.7,
+        "top5": 19.7,
         "wins": 0
       },
       {
-        "round": 4,
-        "value": 11.5,
-        "top5": 11.5,
-        "wins": 1
+        "round": 2,
+        "value": 16.4,
+        "top5": 16.4,
+        "wins": 0
+      },
+      {
+        "round": 3,
+        "value": 31.2,
+        "top5": 19.9,
+        "wins": 0
       },
       {
         "round": 5,
-        "value": 9.5,
-        "top5": 9.5,
+        "value": 14.5,
+        "top5": 14.5,
         "wins": 1
       },
       {
         "round": 6,
-        "value": 11.8,
-        "top5": 11.8,
-        "wins": 1
+        "value": 35.7,
+        "top5": 22.8,
+        "wins": 0
       },
       {
         "round": 7,
-        "value": 18.4,
-        "top5": 18.4,
+        "value": 26.3,
+        "top5": 18.2,
         "wins": 1
       },
       {
         "round": 8,
-        "value": 13.1,
-        "top5": 13.1,
-        "wins": 1
-      },
-      {
-        "round": 9,
-        "value": 22.7,
-        "top5": 19.8,
-        "wins": 1
-      },
-      {
-        "round": 10,
-        "value": 28.6,
-        "top5": 22.8,
-        "wins": 1
-      },
-      {
-        "round": 11,
-        "value": 16.9,
+        "value": 23.4,
         "top5": 16.9,
         "wins": 0
       },
       {
-        "round": 12,
-        "value": 36.9,
-        "top5": 24.9,
+        "round": 9,
+        "value": 27.0,
+        "top5": 18.3,
         "wins": 1
       },
       {
-        "round": 13,
-        "value": 35.0,
-        "top5": 21.7,
+        "round": 10,
+        "value": 26.4,
+        "top5": 17.7,
+        "wins": 0
+      },
+      {
+        "round": 11,
+        "value": 36.4,
+        "top5": 21.6,
+        "wins": 1
+      },
+      {
+        "round": 12,
+        "value": 23.6,
+        "top5": 18.6,
         "wins": 1
       },
       {
         "round": 14,
-        "value": 38.2,
-        "top5": 24.5,
+        "value": 32.7,
+        "top5": 18.8,
+        "wins": 0
+      },
+      {
+        "round": 15,
+        "value": 30.2,
+        "top5": 17.1,
+        "wins": 0
+      },
+      {
+        "round": 16,
+        "value": 130.8,
+        "top5": 30.9,
+        "wins": 0
+      }
+    ],
+    "West Coast": [
+      {
+        "round": 1,
+        "value": 32.8,
+        "top5": 21.1,
+        "wins": 0
+      },
+      {
+        "round": 2,
+        "value": 35.5,
+        "top5": 20.5,
         "wins": 1
+      },
+      {
+        "round": 3,
+        "value": 34.8,
+        "top5": 19.8,
+        "wins": 1
+      },
+      {
+        "round": 4,
+        "value": 25.0,
+        "top5": 21.1,
+        "wins": 0
+      },
+      {
+        "round": 5,
+        "value": 23.6,
+        "top5": 19.7,
+        "wins": 0
+      },
+      {
+        "round": 6,
+        "value": 9.6,
+        "top5": 9.6,
+        "wins": 0
+      },
+      {
+        "round": 7,
+        "value": 13.8,
+        "top5": 13.8,
+        "wins": 0
+      },
+      {
+        "round": 8,
+        "value": 11.4,
+        "top5": 11.4,
+        "wins": 0
+      },
+      {
+        "round": 9,
+        "value": 13.6,
+        "top5": 13.6,
+        "wins": 0
+      },
+      {
+        "round": 10,
+        "value": 38.0,
+        "top5": 20.2,
+        "wins": 1
+      },
+      {
+        "round": 11,
+        "value": 19.2,
+        "top5": 16.1,
+        "wins": 0
+      },
+      {
+        "round": 12,
+        "value": 19.7,
+        "top5": 18.3,
+        "wins": 1
+      },
+      {
+        "round": 13,
+        "value": 16.8,
+        "top5": 15.5,
+        "wins": 0
+      },
+      {
+        "round": 14,
+        "value": 32.0,
+        "top5": 23.4,
+        "wins": 0
+      },
+      {
+        "round": 16,
+        "value": 133.7,
+        "top5": 27.8,
+        "wins": 0
       }
     ],
     "Gold Coast": [
@@ -2207,68 +1897,80 @@
       },
       {
         "round": 2,
-        "value": 19.2,
-        "top5": 19.2,
+        "value": 19.3,
+        "top5": 19.3,
         "wins": 1
       },
       {
         "round": 4,
-        "value": 16.2,
-        "top5": 16.2,
+        "value": 16.3,
+        "top5": 16.3,
         "wins": 0
       },
       {
         "round": 5,
-        "value": 18.7,
-        "top5": 18.7,
+        "value": 18.9,
+        "top5": 18.9,
         "wins": 0
       },
       {
         "round": 6,
-        "value": 21.2,
-        "top5": 19.0,
+        "value": 21.6,
+        "top5": 19.4,
         "wins": 1
       },
       {
         "round": 7,
-        "value": 21.7,
-        "top5": 17.1,
+        "value": 22.4,
+        "top5": 17.7,
         "wins": 0
       },
       {
         "round": 8,
-        "value": 26.7,
-        "top5": 21.6,
+        "value": 29.5,
+        "top5": 24.3,
         "wins": 1
       },
       {
         "round": 9,
-        "value": 30.4,
-        "top5": 22.7,
+        "value": 33.4,
+        "top5": 25.2,
         "wins": 1
       },
       {
         "round": 10,
-        "value": 25.4,
-        "top5": 16.7,
+        "value": 25.7,
+        "top5": 16.9,
         "wins": 1
       },
       {
         "round": 11,
-        "value": 17.2,
-        "top5": 17.2,
+        "value": 17.4,
+        "top5": 17.4,
         "wins": 0
       },
       {
         "round": 13,
-        "value": 27.2,
-        "top5": 16.0,
+        "value": 30.3,
+        "top5": 18.9,
         "wins": 0
       },
       {
         "round": 14,
-        "value": 32.8,
-        "top5": 20.0,
+        "value": 33.2,
+        "top5": 20.2,
+        "wins": 0
+      },
+      {
+        "round": 15,
+        "value": 32.6,
+        "top5": 18.6,
+        "wins": 0
+      },
+      {
+        "round": 16,
+        "value": 134.7,
+        "top5": 31.4,
         "wins": 0
       }
     ],
@@ -2293,20 +1995,20 @@
       },
       {
         "round": 5,
-        "value": 21.0,
-        "top5": 19.0,
+        "value": 21.2,
+        "top5": 19.2,
         "wins": 1
       },
       {
         "round": 6,
-        "value": 20.4,
-        "top5": 20.4,
+        "value": 20.6,
+        "top5": 20.6,
         "wins": 1
       },
       {
         "round": 7,
-        "value": 28.5,
-        "top5": 21.5,
+        "value": 28.3,
+        "top5": 21.1,
         "wins": 1
       },
       {
@@ -2317,46 +2019,144 @@
       },
       {
         "round": 9,
-        "value": 13.4,
-        "top5": 13.4,
+        "value": 13.1,
+        "top5": 13.1,
         "wins": 0
       },
       {
         "round": 10,
-        "value": 30.8,
-        "top5": 21.6,
+        "value": 30.6,
+        "top5": 21.8,
         "wins": 0
       },
       {
         "round": 11,
-        "value": 19.9,
-        "top5": 19.9,
+        "value": 20.0,
+        "top5": 20.0,
         "wins": 1
       },
       {
         "round": 12,
-        "value": 35.7,
+        "value": 36.3,
+        "top5": 19.8,
+        "wins": 1
+      },
+      {
+        "round": 13,
+        "value": 38.2,
+        "top5": 21.0,
+        "wins": 0
+      },
+      {
+        "round": 15,
+        "value": 36.4,
+        "top5": 20.3,
+        "wins": 1
+      },
+      {
+        "round": 16,
+        "value": 133.9,
+        "top5": 27.8,
+        "wins": 0
+      }
+    ],
+    "Western Bulldogs": [
+      {
+        "round": 1,
+        "value": 5.4,
+        "top5": 5.4,
+        "wins": 1
+      },
+      {
+        "round": 2,
+        "value": 19.5,
+        "top5": 14.8,
+        "wins": 1
+      },
+      {
+        "round": 4,
+        "value": 19.0,
+        "top5": 19.0,
+        "wins": 1
+      },
+      {
+        "round": 5,
+        "value": 24.1,
+        "top5": 21.8,
+        "wins": 0
+      },
+      {
+        "round": 6,
+        "value": 27.6,
+        "top5": 19.7,
+        "wins": 0
+      },
+      {
+        "round": 7,
+        "value": 41.7,
+        "top5": 25.2,
+        "wins": 0
+      },
+      {
+        "round": 8,
+        "value": 27.2,
+        "top5": 21.9,
+        "wins": 0
+      },
+      {
+        "round": 9,
+        "value": 36.6,
+        "top5": 25.6,
+        "wins": 1
+      },
+      {
+        "round": 10,
+        "value": 38.8,
+        "top5": 28.1,
+        "wins": 0
+      },
+      {
+        "round": 11,
+        "value": 25.6,
+        "top5": 25.6,
+        "wins": 1
+      },
+      {
+        "round": 12,
+        "value": 19.5,
         "top5": 19.5,
         "wins": 1
       },
       {
         "round": 13,
-        "value": 37.6,
-        "top5": 20.6,
+        "value": 43.9,
+        "top5": 23.5,
+        "wins": 1
+      },
+      {
+        "round": 14,
+        "value": 46.8,
+        "top5": 23.5,
         "wins": 0
+      },
+      {
+        "round": 15,
+        "value": 48.2,
+        "top5": 24.5,
+        "wins": 1
       }
     ],
     "Port Adelaide": [
       {
         "round": 1,
-        "value": 23.4,
-        "top5": 20.4,
+        "value": 23.5,
+        "top5": 20.7,
         "wins": 0
       },
       {
         "round": 2,
-        "value": 18.7,
-        "top5": 16.9,
+        "value": 18.9,
+        "top5": 17.0,
         "wins": 1
       },
       {
@@ -2367,32 +2167,32 @@
       },
       {
         "round": 4,
-        "value": 15.8,
-        "top5": 15.8,
+        "value": 16.0,
+        "top5": 16.0,
         "wins": 1
       },
       {
         "round": 5,
-        "value": 27.7,
-        "top5": 19.6,
+        "value": 27.9,
+        "top5": 19.8,
         "wins": 0
       },
       {
         "round": 6,
-        "value": 14.5,
-        "top5": 14.5,
+        "value": 14.6,
+        "top5": 14.6,
         "wins": 0
       },
       {
         "round": 7,
-        "value": 21.5,
-        "top5": 19.7,
+        "value": 21.7,
+        "top5": 19.9,
         "wins": 1
       },
       {
         "round": 8,
-        "value": 15.9,
-        "top5": 15.9,
+        "value": 16.0,
+        "top5": 16.0,
         "wins": 0
       },
       {
@@ -2403,34 +2203,224 @@
       },
       {
         "round": 10,
-        "value": 31.8,
+        "value": 32.0,
         "top5": 20.6,
         "wins": 0
       },
       {
         "round": 11,
-        "value": 21.7,
-        "top5": 19.9,
+        "value": 21.9,
+        "top5": 20.0,
         "wins": 0
       },
       {
         "round": 13,
-        "value": 20.0,
-        "top5": 18.2,
+        "value": 20.3,
+        "top5": 18.4,
         "wins": 1
       },
       {
         "round": 14,
-        "value": 13.8,
-        "top5": 13.8,
+        "value": 14.0,
+        "top5": 14.0,
+        "wins": 0
+      },
+      {
+        "round": 15,
+        "value": 43.1,
+        "top5": 23.4,
+        "wins": 0
+      },
+      {
+        "round": 16,
+        "value": 123.1,
+        "top5": 28.0,
+        "wins": 0
+      }
+    ],
+    "Brisbane Lions": [
+      {
+        "round": 1,
+        "value": 31.8,
+        "top5": 21.8,
+        "wins": 0
+      },
+      {
+        "round": 3,
+        "value": 19.5,
+        "top5": 19.5,
+        "wins": 1
+      },
+      {
+        "round": 4,
+        "value": 25.5,
+        "top5": 20.0,
+        "wins": 1
+      },
+      {
+        "round": 5,
+        "value": 18.6,
+        "top5": 16.1,
+        "wins": 1
+      },
+      {
+        "round": 6,
+        "value": 22.8,
+        "top5": 20.1,
+        "wins": 0
+      },
+      {
+        "round": 7,
+        "value": 32.6,
+        "top5": 20.9,
+        "wins": 1
+      },
+      {
+        "round": 8,
+        "value": 25.6,
+        "top5": 17.8,
+        "wins": 1
+      },
+      {
+        "round": 9,
+        "value": 29.1,
+        "top5": 17.8,
+        "wins": 1
+      },
+      {
+        "round": 10,
+        "value": 28.2,
+        "top5": 20.7,
+        "wins": 0
+      },
+      {
+        "round": 11,
+        "value": 31.9,
+        "top5": 21.5,
+        "wins": 0
+      },
+      {
+        "round": 12,
+        "value": 26.0,
+        "top5": 19.6,
+        "wins": 0
+      },
+      {
+        "round": 13,
+        "value": 41.0,
+        "top5": 24.3,
+        "wins": 1
+      },
+      {
+        "round": 14,
+        "value": 40.4,
+        "top5": 24.3,
+        "wins": 1
+      },
+      {
+        "round": 16,
+        "value": 39.5,
+        "top5": 23.7,
+        "wins": 1
+      }
+    ],
+    "North Melbourne": [
+      {
+        "round": 1,
+        "value": 20.7,
+        "top5": 19.2,
+        "wins": 1
+      },
+      {
+        "round": 2,
+        "value": 7.6,
+        "top5": 7.6,
+        "wins": 0
+      },
+      {
+        "round": 3,
+        "value": 6.2,
+        "top5": 6.2,
+        "wins": 1
+      },
+      {
+        "round": 4,
+        "value": 11.1,
+        "top5": 11.1,
+        "wins": 1
+      },
+      {
+        "round": 5,
+        "value": 17.0,
+        "top5": 17.0,
+        "wins": 0
+      },
+      {
+        "round": 6,
+        "value": 16.5,
+        "top5": 16.5,
+        "wins": 1
+      },
+      {
+        "round": 7,
+        "value": 15.9,
+        "top5": 15.9,
+        "wins": 0
+      },
+      {
+        "round": 8,
+        "value": 18.2,
+        "top5": 16.8,
+        "wins": 0
+      },
+      {
+        "round": 9,
+        "value": 9.9,
+        "top5": 9.9,
+        "wins": 0
+      },
+      {
+        "round": 10,
+        "value": 28.7,
+        "top5": 19.5,
+        "wins": 0
+      },
+      {
+        "round": 11,
+        "value": 19.0,
+        "top5": 19.0,
+        "wins": 1
+      },
+      {
+        "round": 13,
+        "value": 30.6,
+        "top5": 21.5,
+        "wins": 0
+      },
+      {
+        "round": 14,
+        "value": 32.4,
+        "top5": 21.8,
+        "wins": 1
+      },
+      {
+        "round": 15,
+        "value": 30.0,
+        "top5": 19.4,
+        "wins": 1
+      },
+      {
+        "round": 16,
+        "value": 127.0,
+        "top5": 30.5,
         "wins": 0
       }
     ],
     "Fremantle": [
       {
         "round": 1,
-        "value": 15.6,
-        "top5": 15.6,
+        "value": 15.8,
+        "top5": 15.8,
         "wins": 0
       },
       {
@@ -2453,224 +2443,162 @@
       },
       {
         "round": 5,
-        "value": 15.4,
-        "top5": 15.4,
-        "wins": 1
-      },
-      {
-        "round": 6,
-        "value": 7.4,
-        "top5": 7.4,
-        "wins": 1
-      },
-      {
-        "round": 7,
-        "value": 19.4,
-        "top5": 17.2,
-        "wins": 1
-      },
-      {
-        "round": 8,
-        "value": 15.8,
-        "top5": 15.8,
-        "wins": 1
-      },
-      {
-        "round": 9,
-        "value": 16.2,
-        "top5": 16.2,
-        "wins": 1
-      },
-      {
-        "round": 10,
-        "value": 26.1,
-        "top5": 20.4,
-        "wins": 1
-      },
-      {
-        "round": 11,
-        "value": 28.0,
-        "top5": 22.3,
-        "wins": 1
-      },
-      {
-        "round": 12,
-        "value": 28.2,
-        "top5": 22.3,
-        "wins": 1
-      },
-      {
-        "round": 13,
-        "value": 25.1,
-        "top5": 19.9,
-        "wins": 1
-      }
-    ],
-    "North Melbourne": [
-      {
-        "round": 1,
-        "value": 19.5,
-        "top5": 18.1,
-        "wins": 1
-      },
-      {
-        "round": 2,
-        "value": 7.6,
-        "top5": 7.6,
-        "wins": 0
-      },
-      {
-        "round": 3,
-        "value": 6.3,
-        "top5": 6.3,
-        "wins": 1
-      },
-      {
-        "round": 4,
-        "value": 10.7,
-        "top5": 10.7,
-        "wins": 1
-      },
-      {
-        "round": 5,
-        "value": 15.7,
-        "top5": 15.7,
-        "wins": 0
-      },
-      {
-        "round": 6,
         "value": 15.5,
         "top5": 15.5,
         "wins": 1
       },
       {
+        "round": 6,
+        "value": 7.5,
+        "top5": 7.5,
+        "wins": 1
+      },
+      {
         "round": 7,
-        "value": 15.3,
-        "top5": 15.3,
-        "wins": 0
+        "value": 19.6,
+        "top5": 17.3,
+        "wins": 1
       },
       {
         "round": 8,
-        "value": 17.8,
-        "top5": 16.4,
-        "wins": 0
+        "value": 16.0,
+        "top5": 16.0,
+        "wins": 1
       },
       {
         "round": 9,
-        "value": 9.8,
-        "top5": 9.8,
-        "wins": 0
+        "value": 16.4,
+        "top5": 16.4,
+        "wins": 1
       },
       {
         "round": 10,
-        "value": 27.1,
-        "top5": 18.8,
-        "wins": 0
+        "value": 26.3,
+        "top5": 20.7,
+        "wins": 1
       },
       {
         "round": 11,
-        "value": 18.8,
-        "top5": 18.8,
+        "value": 28.2,
+        "top5": 22.5,
+        "wins": 1
+      },
+      {
+        "round": 12,
+        "value": 28.4,
+        "top5": 22.5,
         "wins": 1
       },
       {
         "round": 13,
-        "value": 28.0,
-        "top5": 19.7,
-        "wins": 0
+        "value": 25.3,
+        "top5": 20.0,
+        "wins": 1
       },
       {
-        "round": 14,
-        "value": 31.0,
-        "top5": 20.8,
+        "round": 15,
+        "value": 23.2,
+        "top5": 18.1,
         "wins": 1
+      },
+      {
+        "round": 16,
+        "value": 119.9,
+        "top5": 28.7,
+        "wins": 0
       }
     ],
-    "Geelong": [
+    "St Kilda": [
       {
         "round": 1,
-        "value": 4.2,
-        "top5": 4.2,
-        "wins": 1
-      },
-      {
-        "round": 3,
-        "value": 13.5,
-        "top5": 13.5,
-        "wins": 1
-      },
-      {
-        "round": 4,
-        "value": 11.8,
-        "top5": 11.8,
+        "value": 22.2,
+        "top5": 17.3,
         "wins": 0
       },
       {
-        "round": 5,
-        "value": 25.3,
-        "top5": 20.5,
-        "wins": 1
-      },
-      {
-        "round": 6,
-        "value": 14.4,
-        "top5": 14.4,
-        "wins": 1
-      },
-      {
-        "round": 7,
-        "value": 14.5,
-        "top5": 14.5,
-        "wins": 0
-      },
-      {
-        "round": 8,
-        "value": 15.6,
-        "top5": 15.6,
-        "wins": 1
-      },
-      {
-        "round": 9,
+        "round": 2,
         "value": 18.3,
         "top5": 18.3,
         "wins": 1
       },
       {
+        "round": 3,
+        "value": 15.0,
+        "top5": 15.0,
+        "wins": 0
+      },
+      {
+        "round": 5,
+        "value": 9.5,
+        "top5": 9.5,
+        "wins": 1
+      },
+      {
+        "round": 6,
+        "value": 24.7,
+        "top5": 17.9,
+        "wins": 0
+      },
+      {
+        "round": 7,
+        "value": 20.9,
+        "top5": 18.5,
+        "wins": 1
+      },
+      {
+        "round": 8,
+        "value": 20.1,
+        "top5": 17.5,
+        "wins": 1
+      },
+      {
+        "round": 9,
+        "value": 27.9,
+        "top5": 18.3,
+        "wins": 0
+      },
+      {
         "round": 10,
-        "value": 2.7,
-        "top5": 2.7,
+        "value": 26.6,
+        "top5": 19.5,
         "wins": 1
       },
       {
         "round": 11,
-        "value": 12.7,
-        "top5": 12.7,
-        "wins": 1
+        "value": 24.2,
+        "top5": 18.9,
+        "wins": 0
       },
       {
         "round": 12,
-        "value": 14.7,
-        "top5": 14.7,
+        "value": 31.3,
+        "top5": 18.5,
         "wins": 0
       },
       {
         "round": 13,
-        "value": 25.1,
-        "top5": 20.1,
+        "value": 33.5,
+        "top5": 18.9,
         "wins": 0
       },
       {
         "round": 14,
-        "value": 32.0,
-        "top5": 22.9,
+        "value": 34.8,
+        "top5": 19.6,
         "wins": 1
+      },
+      {
+        "round": 15,
+        "value": 35.1,
+        "top5": 19.6,
+        "wins": 0
       }
     ],
     "Collingwood": [
       {
         "round": 1,
-        "value": 8.7,
-        "top5": 8.7,
+        "value": 9.0,
+        "top5": 9.0,
         "wins": 0
       },
       {
@@ -2681,8 +2609,8 @@
       },
       {
         "round": 4,
-        "value": 14.4,
-        "top5": 14.4,
+        "value": 14.9,
+        "top5": 14.9,
         "wins": 0
       },
       {
@@ -2693,8 +2621,8 @@
       },
       {
         "round": 6,
-        "value": 16.3,
-        "top5": 16.3,
+        "value": 16.6,
+        "top5": 16.6,
         "wins": 1
       },
       {
@@ -2705,20 +2633,20 @@
       },
       {
         "round": 8,
-        "value": 21.5,
-        "top5": 19.0,
+        "value": 21.9,
+        "top5": 19.4,
         "wins": 0
       },
       {
         "round": 9,
-        "value": 8.8,
-        "top5": 8.8,
+        "value": 8.7,
+        "top5": 8.7,
         "wins": 0
       },
       {
         "round": 10,
-        "value": 24.1,
-        "top5": 21.7,
+        "value": 24.2,
+        "top5": 21.9,
         "wins": 0
       },
       {
@@ -2735,174 +2663,450 @@
       },
       {
         "round": 13,
-        "value": 25.0,
+        "value": 25.2,
         "top5": 17.6,
+        "wins": 0
+      },
+      {
+        "round": 15,
+        "value": 30.0,
+        "top5": 19.9,
+        "wins": 1
+      },
+      {
+        "round": 16,
+        "value": 123.2,
+        "top5": 29.2,
+        "wins": 0
+      }
+    ],
+    "Melbourne": [
+      {
+        "round": 1,
+        "value": 11.2,
+        "top5": 11.2,
+        "wins": 1
+      },
+      {
+        "round": 2,
+        "value": 14.3,
+        "top5": 14.3,
+        "wins": 0
+      },
+      {
+        "round": 3,
+        "value": 17.1,
+        "top5": 17.1,
+        "wins": 1
+      },
+      {
+        "round": 4,
+        "value": 19.6,
+        "top5": 19.6,
+        "wins": 1
+      },
+      {
+        "round": 5,
+        "value": 13.1,
+        "top5": 13.1,
+        "wins": 0
+      },
+      {
+        "round": 6,
+        "value": 21.8,
+        "top5": 19.8,
+        "wins": 1
+      },
+      {
+        "round": 7,
+        "value": 22.5,
+        "top5": 20.5,
+        "wins": 1
+      },
+      {
+        "round": 8,
+        "value": 24.6,
+        "top5": 22.2,
+        "wins": 0
+      },
+      {
+        "round": 9,
+        "value": 22.2,
+        "top5": 19.8,
+        "wins": 1
+      },
+      {
+        "round": 10,
+        "value": 22.4,
+        "top5": 18.5,
+        "wins": 1
+      },
+      {
+        "round": 11,
+        "value": 21.2,
+        "top5": 17.3,
+        "wins": 0
+      },
+      {
+        "round": 12,
+        "value": 18.0,
+        "top5": 18.0,
+        "wins": 0
+      },
+      {
+        "round": 13,
+        "value": 30.6,
+        "top5": 18.7,
+        "wins": 1
+      },
+      {
+        "round": 14,
+        "value": 37.4,
+        "top5": 19.5,
+        "wins": 1
+      },
+      {
+        "round": 15,
+        "value": 33.7,
+        "top5": 18.6,
+        "wins": 0
+      }
+    ],
+    "Sydney": [
+      {
+        "round": 1,
+        "value": 5.3,
+        "top5": 5.3,
+        "wins": 1
+      },
+      {
+        "round": 2,
+        "value": 29.2,
+        "top5": 23.3,
+        "wins": 0
+      },
+      {
+        "round": 4,
+        "value": 11.3,
+        "top5": 11.3,
+        "wins": 1
+      },
+      {
+        "round": 5,
+        "value": 9.6,
+        "top5": 9.6,
+        "wins": 1
+      },
+      {
+        "round": 6,
+        "value": 12.0,
+        "top5": 12.0,
+        "wins": 1
+      },
+      {
+        "round": 7,
+        "value": 18.8,
+        "top5": 18.8,
+        "wins": 1
+      },
+      {
+        "round": 8,
+        "value": 13.0,
+        "top5": 13.0,
+        "wins": 1
+      },
+      {
+        "round": 9,
+        "value": 22.7,
+        "top5": 20.0,
+        "wins": 1
+      },
+      {
+        "round": 10,
+        "value": 26.9,
+        "top5": 21.2,
+        "wins": 1
+      },
+      {
+        "round": 11,
+        "value": 17.0,
+        "top5": 17.0,
+        "wins": 0
+      },
+      {
+        "round": 12,
+        "value": 36.0,
+        "top5": 24.2,
+        "wins": 1
+      },
+      {
+        "round": 13,
+        "value": 33.4,
+        "top5": 20.0,
+        "wins": 1
+      },
+      {
+        "round": 14,
+        "value": 36.9,
+        "top5": 22.9,
+        "wins": 1
+      },
+      {
+        "round": 16,
+        "value": 33.7,
+        "top5": 20.2,
+        "wins": 0
+      }
+    ],
+    "Geelong": [
+      {
+        "round": 1,
+        "value": 4.3,
+        "top5": 4.3,
+        "wins": 1
+      },
+      {
+        "round": 3,
+        "value": 13.3,
+        "top5": 13.3,
+        "wins": 1
+      },
+      {
+        "round": 4,
+        "value": 11.9,
+        "top5": 11.9,
+        "wins": 0
+      },
+      {
+        "round": 5,
+        "value": 25.5,
+        "top5": 20.6,
+        "wins": 1
+      },
+      {
+        "round": 6,
+        "value": 14.5,
+        "top5": 14.5,
+        "wins": 1
+      },
+      {
+        "round": 7,
+        "value": 14.6,
+        "top5": 14.6,
+        "wins": 0
+      },
+      {
+        "round": 8,
+        "value": 15.7,
+        "top5": 15.7,
+        "wins": 1
+      },
+      {
+        "round": 9,
+        "value": 18.5,
+        "top5": 18.5,
+        "wins": 1
+      },
+      {
+        "round": 10,
+        "value": 2.7,
+        "top5": 2.7,
+        "wins": 1
+      },
+      {
+        "round": 11,
+        "value": 12.8,
+        "top5": 12.8,
+        "wins": 1
+      },
+      {
+        "round": 12,
+        "value": 14.7,
+        "top5": 14.7,
+        "wins": 0
+      },
+      {
+        "round": 13,
+        "value": 25.6,
+        "top5": 20.5,
+        "wins": 0
+      },
+      {
+        "round": 14,
+        "value": 32.2,
+        "top5": 23.0,
+        "wins": 1
+      },
+      {
+        "round": 15,
+        "value": 35.1,
+        "top5": 25.9,
         "wins": 0
       }
     ]
   },
   "currentLadderPvs": {
-    "ladderRound": 14,
+    "ladderRound": 16,
     "clubs": [
       {
         "club": "Fremantle",
         "season": 2026,
         "ladderRank": 1,
-        "pvsLostRank": 4,
-        "rankDelta": -3,
-        "wins": 12,
-        "percentage": 147.9,
-        "pvsLost": 234.8
+        "pvsLostRank": 6,
+        "rankDelta": -5,
+        "wins": 13,
+        "percentage": 144.4,
+        "pvsLost": 379.7
       },
       {
         "club": "Sydney",
         "season": 2026,
         "ladderRank": 2,
-        "pvsLostRank": 8,
-        "rankDelta": -6,
-        "wins": 12,
-        "percentage": 143.7,
-        "pvsLost": 278.8
-      },
-      {
-        "club": "Geelong",
-        "season": 2026,
-        "ladderRank": 3,
         "pvsLostRank": 2,
-        "rankDelta": 1,
-        "wins": 9,
-        "percentage": 123.1,
-        "pvsLost": 204.8
-      },
-      {
-        "club": "Melbourne",
-        "season": 2026,
-        "ladderRank": 4,
-        "pvsLostRank": 11,
-        "rankDelta": -7,
-        "wins": 9,
-        "percentage": 105.7,
-        "pvsLost": 286.8
+        "rankDelta": 0,
+        "wins": 12,
+        "percentage": 135.7,
+        "pvsLost": 305.8
       },
       {
         "club": "Hawthorn",
         "season": 2026,
-        "ladderRank": 5,
-        "pvsLostRank": 6,
-        "rankDelta": -1,
-        "wins": 8,
-        "percentage": 113.2,
-        "pvsLost": 252.7
+        "ladderRank": 3,
+        "pvsLostRank": 10,
+        "rankDelta": -7,
+        "wins": 10,
+        "percentage": 113.7,
+        "pvsLost": 423.9
+      },
+      {
+        "club": "Geelong",
+        "season": 2026,
+        "ladderRank": 4,
+        "pvsLostRank": 1,
+        "rankDelta": 3,
+        "wins": 9,
+        "percentage": 120.6,
+        "pvsLost": 241.5
       },
       {
         "club": "Adelaide",
         "season": 2026,
-        "ladderRank": 6,
-        "pvsLostRank": 9,
-        "rankDelta": -3,
-        "wins": 8,
-        "percentage": 112.4,
-        "pvsLost": 280.3
+        "ladderRank": 5,
+        "pvsLostRank": 16,
+        "rankDelta": -11,
+        "wins": 9,
+        "percentage": 113.2,
+        "pvsLost": 517.7
       },
       {
         "club": "Brisbane Lions",
         "season": 2026,
+        "ladderRank": 6,
+        "pvsLostRank": 8,
+        "rankDelta": -2,
+        "wins": 9,
+        "percentage": 111.0,
+        "pvsLost": 412.5
+      },
+      {
+        "club": "Melbourne",
+        "season": 2026,
         "ladderRank": 7,
-        "pvsLostRank": 15,
-        "rankDelta": -8,
-        "wins": 8,
-        "percentage": 108.4,
-        "pvsLost": 351.6
+        "pvsLostRank": 3,
+        "rankDelta": 4,
+        "wins": 9,
+        "percentage": 104.2,
+        "pvsLost": 329.7
       },
       {
         "club": "Western Bulldogs",
         "season": 2026,
         "ladderRank": 8,
-        "pvsLostRank": 16,
-        "rankDelta": -8,
-        "wins": 8,
-        "percentage": 90.7,
-        "pvsLost": 371.2
+        "pvsLostRank": 11,
+        "rankDelta": -3,
+        "wins": 9,
+        "percentage": 92.8,
+        "pvsLost": 423.9
       },
       {
         "club": "Gold Coast",
         "season": 2026,
         "ladderRank": 9,
-        "pvsLostRank": 7,
-        "rankDelta": 2,
-        "wins": 7,
-        "percentage": 107.2,
-        "pvsLost": 267.8
-      },
-      {
-        "club": "St Kilda",
-        "season": 2026,
-        "ladderRank": 10,
         "pvsLostRank": 12,
-        "rankDelta": -2,
-        "wins": 6,
-        "percentage": 102.4,
-        "pvsLost": 300.8
-      },
-      {
-        "club": "Greater Western Sydney",
-        "season": 2026,
-        "ladderRank": 11,
-        "pvsLostRank": 13,
-        "rankDelta": -2,
-        "wins": 6,
-        "percentage": 102.3,
-        "pvsLost": 308.1
+        "rankDelta": -3,
+        "wins": 7,
+        "percentage": 105.3,
+        "pvsLost": 446.2
       },
       {
         "club": "North Melbourne",
         "season": 2026,
-        "ladderRank": 12,
-        "pvsLostRank": 3,
-        "rankDelta": 9,
-        "wins": 6,
-        "percentage": 88.5,
-        "pvsLost": 223.2
+        "ladderRank": 10,
+        "pvsLostRank": 7,
+        "rankDelta": 3,
+        "wins": 7,
+        "percentage": 90.7,
+        "pvsLost": 390.8
       },
       {
         "club": "Collingwood",
         "season": 2026,
+        "ladderRank": 11,
+        "pvsLostRank": 4,
+        "rankDelta": 7,
+        "wins": 6,
+        "percentage": 101.6,
+        "pvsLost": 331.5
+      },
+      {
+        "club": "St Kilda",
+        "season": 2026,
+        "ladderRank": 12,
+        "pvsLostRank": 5,
+        "rankDelta": 7,
+        "wins": 6,
+        "percentage": 100.6,
+        "pvsLost": 344.1
+      },
+      {
+        "club": "Greater Western Sydney",
+        "season": 2026,
         "ladderRank": 13,
-        "pvsLostRank": 1,
-        "rankDelta": 12,
-        "wins": 5,
-        "percentage": 99.2,
-        "pvsLost": 176.6
+        "pvsLostRank": 14,
+        "rankDelta": -1,
+        "wins": 6,
+        "percentage": 99.3,
+        "pvsLost": 474.5
       },
       {
         "club": "Carlton",
         "season": 2026,
         "ladderRank": 14,
-        "pvsLostRank": 10,
-        "rankDelta": 4,
-        "wins": 5,
-        "percentage": 88.7,
-        "pvsLost": 280.3
+        "pvsLostRank": 15,
+        "rankDelta": -1,
+        "wins": 6,
+        "percentage": 91.1,
+        "pvsLost": 487.1
       },
       {
         "club": "Port Adelaide",
         "season": 2026,
         "ladderRank": 15,
-        "pvsLostRank": 5,
-        "rankDelta": 10,
+        "pvsLostRank": 9,
+        "rankDelta": 6,
         "wins": 4,
-        "percentage": 101.0,
-        "pvsLost": 252.2
+        "percentage": 98.6,
+        "pvsLost": 420.5
       },
       {
         "club": "West Coast",
         "season": 2026,
         "ladderRank": 16,
-        "pvsLostRank": 14,
-        "rankDelta": 2,
+        "pvsLostRank": 13,
+        "rankDelta": 3,
         "wins": 4,
         "percentage": 72.7,
-        "pvsLost": 316.0
+        "pvsLost": 459.5
       },
       {
         "club": "Richmond",
@@ -2911,8 +3115,8 @@
         "pvsLostRank": 18,
         "rankDelta": -1,
         "wins": 2,
-        "percentage": 61.1,
-        "pvsLost": 450.8
+        "percentage": 61.3,
+        "pvsLost": 683.3
       },
       {
         "club": "Essendon",
@@ -2922,52 +3126,52 @@
         "rankDelta": 1,
         "wins": 1,
         "percentage": 70.4,
-        "pvsLost": 449.4
+        "pvsLost": 593.7
       }
     ],
     "byClub": {
       "Adelaide": [
         {
           "season": 2026,
-          "ladderRank": 6,
-          "pvsLostRank": 9,
-          "rankDelta": -3,
-          "wins": 8,
-          "percentage": 112.4,
-          "pvsLost": 280.3
+          "ladderRank": 5,
+          "pvsLostRank": 16,
+          "rankDelta": -11,
+          "wins": 9,
+          "percentage": 113.2,
+          "pvsLost": 517.7
         }
       ],
       "Brisbane Lions": [
         {
           "season": 2026,
-          "ladderRank": 7,
-          "pvsLostRank": 15,
-          "rankDelta": -8,
-          "wins": 8,
-          "percentage": 108.4,
-          "pvsLost": 351.6
+          "ladderRank": 6,
+          "pvsLostRank": 8,
+          "rankDelta": -2,
+          "wins": 9,
+          "percentage": 111.0,
+          "pvsLost": 412.5
         }
       ],
       "Carlton": [
         {
           "season": 2026,
           "ladderRank": 14,
-          "pvsLostRank": 10,
-          "rankDelta": 4,
-          "wins": 5,
-          "percentage": 88.7,
-          "pvsLost": 280.3
+          "pvsLostRank": 15,
+          "rankDelta": -1,
+          "wins": 6,
+          "percentage": 91.1,
+          "pvsLost": 487.1
         }
       ],
       "Collingwood": [
         {
           "season": 2026,
-          "ladderRank": 13,
-          "pvsLostRank": 1,
-          "rankDelta": 12,
-          "wins": 5,
-          "percentage": 99.2,
-          "pvsLost": 176.6
+          "ladderRank": 11,
+          "pvsLostRank": 4,
+          "rankDelta": 7,
+          "wins": 6,
+          "percentage": 101.6,
+          "pvsLost": 331.5
         }
       ],
       "Essendon": [
@@ -2978,95 +3182,95 @@
           "rankDelta": 1,
           "wins": 1,
           "percentage": 70.4,
-          "pvsLost": 449.4
+          "pvsLost": 593.7
         }
       ],
       "Fremantle": [
         {
           "season": 2026,
           "ladderRank": 1,
-          "pvsLostRank": 4,
-          "rankDelta": -3,
-          "wins": 12,
-          "percentage": 147.9,
-          "pvsLost": 234.8
+          "pvsLostRank": 6,
+          "rankDelta": -5,
+          "wins": 13,
+          "percentage": 144.4,
+          "pvsLost": 379.7
         }
       ],
       "Geelong": [
         {
           "season": 2026,
-          "ladderRank": 3,
-          "pvsLostRank": 2,
-          "rankDelta": 1,
+          "ladderRank": 4,
+          "pvsLostRank": 1,
+          "rankDelta": 3,
           "wins": 9,
-          "percentage": 123.1,
-          "pvsLost": 204.8
+          "percentage": 120.6,
+          "pvsLost": 241.5
         }
       ],
       "Gold Coast": [
         {
           "season": 2026,
           "ladderRank": 9,
-          "pvsLostRank": 7,
-          "rankDelta": 2,
+          "pvsLostRank": 12,
+          "rankDelta": -3,
           "wins": 7,
-          "percentage": 107.2,
-          "pvsLost": 267.8
+          "percentage": 105.3,
+          "pvsLost": 446.2
         }
       ],
       "Greater Western Sydney": [
         {
           "season": 2026,
-          "ladderRank": 11,
-          "pvsLostRank": 13,
-          "rankDelta": -2,
+          "ladderRank": 13,
+          "pvsLostRank": 14,
+          "rankDelta": -1,
           "wins": 6,
-          "percentage": 102.3,
-          "pvsLost": 308.1
+          "percentage": 99.3,
+          "pvsLost": 474.5
         }
       ],
       "Hawthorn": [
         {
           "season": 2026,
-          "ladderRank": 5,
-          "pvsLostRank": 6,
-          "rankDelta": -1,
-          "wins": 8,
-          "percentage": 113.2,
-          "pvsLost": 252.7
+          "ladderRank": 3,
+          "pvsLostRank": 10,
+          "rankDelta": -7,
+          "wins": 10,
+          "percentage": 113.7,
+          "pvsLost": 423.9
         }
       ],
       "Melbourne": [
         {
           "season": 2026,
-          "ladderRank": 4,
-          "pvsLostRank": 11,
-          "rankDelta": -7,
+          "ladderRank": 7,
+          "pvsLostRank": 3,
+          "rankDelta": 4,
           "wins": 9,
-          "percentage": 105.7,
-          "pvsLost": 286.8
+          "percentage": 104.2,
+          "pvsLost": 329.7
         }
       ],
       "North Melbourne": [
         {
           "season": 2026,
-          "ladderRank": 12,
-          "pvsLostRank": 3,
-          "rankDelta": 9,
-          "wins": 6,
-          "percentage": 88.5,
-          "pvsLost": 223.2
+          "ladderRank": 10,
+          "pvsLostRank": 7,
+          "rankDelta": 3,
+          "wins": 7,
+          "percentage": 90.7,
+          "pvsLost": 390.8
         }
       ],
       "Port Adelaide": [
         {
           "season": 2026,
           "ladderRank": 15,
-          "pvsLostRank": 5,
-          "rankDelta": 10,
+          "pvsLostRank": 9,
+          "rankDelta": 6,
           "wins": 4,
-          "percentage": 101.0,
-          "pvsLost": 252.2
+          "percentage": 98.6,
+          "pvsLost": 420.5
         }
       ],
       "Richmond": [
@@ -3076,71 +3280,71 @@
           "pvsLostRank": 18,
           "rankDelta": -1,
           "wins": 2,
-          "percentage": 61.1,
-          "pvsLost": 450.8
+          "percentage": 61.3,
+          "pvsLost": 683.3
         }
       ],
       "St Kilda": [
         {
           "season": 2026,
-          "ladderRank": 10,
-          "pvsLostRank": 12,
-          "rankDelta": -2,
+          "ladderRank": 12,
+          "pvsLostRank": 5,
+          "rankDelta": 7,
           "wins": 6,
-          "percentage": 102.4,
-          "pvsLost": 300.8
+          "percentage": 100.6,
+          "pvsLost": 344.1
         }
       ],
       "Sydney": [
         {
           "season": 2026,
           "ladderRank": 2,
-          "pvsLostRank": 8,
-          "rankDelta": -6,
+          "pvsLostRank": 2,
+          "rankDelta": 0,
           "wins": 12,
-          "percentage": 143.7,
-          "pvsLost": 278.8
+          "percentage": 135.7,
+          "pvsLost": 305.8
         }
       ],
       "West Coast": [
         {
           "season": 2026,
           "ladderRank": 16,
-          "pvsLostRank": 14,
-          "rankDelta": 2,
+          "pvsLostRank": 13,
+          "rankDelta": 3,
           "wins": 4,
           "percentage": 72.7,
-          "pvsLost": 316.0
+          "pvsLost": 459.5
         }
       ],
       "Western Bulldogs": [
         {
           "season": 2026,
           "ladderRank": 8,
-          "pvsLostRank": 16,
-          "rankDelta": -8,
-          "wins": 8,
-          "percentage": 90.7,
-          "pvsLost": 371.2
+          "pvsLostRank": 11,
+          "rankDelta": -3,
+          "wins": 9,
+          "percentage": 92.8,
+          "pvsLost": 423.9
         }
       ]
     },
-    "interpretation": "Through round 14 of 2026. Ladder from Squiggle; PVS-lost rank uses season-to-date injury-counted games-missed PVS."
+    "interpretation": "Through round 16 of 2026. Ladder from Squiggle; PVS-lost rank uses season-to-date injury-counted games-missed PVS."
   },
   "draftClass": {
     "draftYear": 2025,
     "season": 2026,
     "firstRoundMaxPick": 25,
     "totalPicks": 25,
-    "debuted": 17,
+    "debuted": 18,
     "players": [
       {
         "pick": 1,
         "player": "Willem Duursma",
         "club": "West Coast",
         "games": 13,
-        "performanceScore": 4.19,
-        "pvs": 6.14,
+        "performanceScore": 4.28,
+        "pvs": 6.17,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3149,9 +3353,9 @@
         "pick": 2,
         "player": "Zeke Uwland",
         "club": "Gold Coast",
-        "games": 10,
-        "performanceScore": 2.65,
-        "pvs": 5.35,
+        "games": 11,
+        "performanceScore": 2.62,
+        "pvs": 5.34,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3160,9 +3364,9 @@
         "pick": 3,
         "player": "Harry Dean",
         "club": "Carlton",
-        "games": 11,
-        "performanceScore": 2.61,
-        "pvs": 5.02,
+        "games": 12,
+        "performanceScore": 2.65,
+        "pvs": 5.03,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3172,8 +3376,8 @@
         "player": "Cooper Duff-Tytler",
         "club": "West Coast",
         "games": 11,
-        "performanceScore": 2.37,
-        "pvs": 4.66,
+        "performanceScore": 2.43,
+        "pvs": 4.67,
         "archetype": "ruck",
         "archetypeLabel": "Ruck",
         "hasDebuted": true
@@ -3194,8 +3398,8 @@
         "player": "Daniel Annable",
         "club": "Brisbane Lions",
         "games": 1,
-        "performanceScore": 2.74,
-        "pvs": 4.24,
+        "performanceScore": 2.81,
+        "pvs": 4.26,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3204,9 +3408,9 @@
         "pick": 7,
         "player": "Sam Cumming",
         "club": "Richmond",
-        "games": 7,
-        "performanceScore": 3.35,
-        "pvs": 4.19,
+        "games": 8,
+        "performanceScore": 3.55,
+        "pvs": 4.25,
         "archetype": "pressure_forward",
         "archetypeLabel": "Pressure Forward",
         "hasDebuted": true
@@ -3215,9 +3419,9 @@
         "pick": 8,
         "player": "Sam Grlj",
         "club": "Richmond",
-        "games": 12,
-        "performanceScore": 3.26,
-        "pvs": 3.94,
+        "games": 13,
+        "performanceScore": 3.19,
+        "pvs": 3.92,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3227,8 +3431,8 @@
         "player": "Sullivan Robey",
         "club": "Essendon",
         "games": 10,
-        "performanceScore": 3.26,
-        "pvs": 3.74,
+        "performanceScore": 3.34,
+        "pvs": 3.76,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3238,8 +3442,8 @@
         "player": "Jacob Farrow",
         "club": "Essendon",
         "games": 12,
-        "performanceScore": 4.14,
-        "pvs": 4.14,
+        "performanceScore": 4.23,
+        "pvs": 4.24,
         "archetype": "rebound_defender",
         "archetypeLabel": "Rebound Defender",
         "hasDebuted": true
@@ -3249,8 +3453,8 @@
         "player": "Xavier Taylor",
         "club": "Melbourne",
         "games": 2,
-        "performanceScore": 1.58,
-        "pvs": 2.87,
+        "performanceScore": 1.62,
+        "pvs": 2.88,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3260,8 +3464,8 @@
         "player": "Latrelle Pickett",
         "club": "Melbourne",
         "games": 12,
-        "performanceScore": 1.79,
-        "pvs": 2.77,
+        "performanceScore": 1.83,
+        "pvs": 2.78,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3271,8 +3475,8 @@
         "player": "Dyson Sharp",
         "club": "Essendon",
         "games": 6,
-        "performanceScore": 2.8,
-        "pvs": 2.91,
+        "performanceScore": 2.86,
+        "pvs": 2.93,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3282,8 +3486,8 @@
         "player": "Harry Kyle",
         "club": "Sydney",
         "games": 3,
-        "performanceScore": 2.99,
-        "pvs": 2.99,
+        "performanceScore": 3.05,
+        "pvs": 3.06,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3304,8 +3508,8 @@
         "player": "Lachy Dovaston",
         "club": "North Melbourne",
         "games": 6,
-        "performanceScore": 1.97,
-        "pvs": 2.26,
+        "performanceScore": 2.01,
+        "pvs": 2.28,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3314,9 +3518,9 @@
         "pick": 17,
         "player": "Jai Murray",
         "club": "Gold Coast",
-        "games": 2,
-        "performanceScore": 2.65,
-        "pvs": 2.65,
+        "games": 3,
+        "performanceScore": 3.22,
+        "pvs": 3.22,
         "archetype": "rebound_defender",
         "archetypeLabel": "Rebound Defender",
         "hasDebuted": true
@@ -3325,20 +3529,20 @@
         "pick": 18,
         "player": "Beau Addinsall",
         "club": "Gold Coast",
-        "games": 0,
-        "performanceScore": null,
-        "pvs": null,
-        "archetype": "",
-        "archetypeLabel": "\u2014",
-        "hasDebuted": false
+        "games": 1,
+        "performanceScore": 3.0,
+        "pvs": 3.0,
+        "archetype": "key_defender",
+        "archetypeLabel": "Key Defender",
+        "hasDebuted": true
       },
       {
         "pick": 19,
         "player": "Josh Lindsay",
         "club": "West Coast",
         "games": 12,
-        "performanceScore": 4.31,
-        "pvs": 4.31,
+        "performanceScore": 4.41,
+        "pvs": 4.41,
         "archetype": "rebound_defender",
         "archetypeLabel": "Rebound Defender",
         "hasDebuted": true
@@ -3347,9 +3551,9 @@
         "pick": 20,
         "player": "Cameron Nairn",
         "club": "Hawthorn",
-        "games": 3,
-        "performanceScore": 2.49,
-        "pvs": 2.49,
+        "games": 4,
+        "performanceScore": 2.57,
+        "pvs": 2.57,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3410,15 +3614,15 @@
         "hasDebuted": false
       }
     ],
-    "interpretation": "2025 national draft first round (picks 1\u201325) in 2026 through the latest completed round. Performance score is stats-only (0\u20137); PVS shown for reference includes draft-potential top-up for young players. 17 of 25 have played AFL.",
+    "interpretation": "2025 national draft first round (picks 1\u201325) in 2026 through the latest completed round. Performance score is stats-only (0\u20137); PVS shown for reference includes draft-potential top-up for young players. 18 of 25 have played AFL.",
     "topPerformance": [
       {
         "pick": 19,
         "player": "Josh Lindsay",
         "club": "West Coast",
         "games": 12,
-        "performanceScore": 4.31,
-        "pvs": 4.31,
+        "performanceScore": 4.41,
+        "pvs": 4.41,
         "archetype": "rebound_defender",
         "archetypeLabel": "Rebound Defender",
         "hasDebuted": true
@@ -3428,8 +3632,8 @@
         "player": "Willem Duursma",
         "club": "West Coast",
         "games": 13,
-        "performanceScore": 4.19,
-        "pvs": 6.14,
+        "performanceScore": 4.28,
+        "pvs": 6.17,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
@@ -3439,8 +3643,8 @@
         "player": "Jacob Farrow",
         "club": "Essendon",
         "games": 12,
-        "performanceScore": 4.14,
-        "pvs": 4.14,
+        "performanceScore": 4.23,
+        "pvs": 4.24,
         "archetype": "rebound_defender",
         "archetypeLabel": "Rebound Defender",
         "hasDebuted": true
@@ -3449,24 +3653,2363 @@
         "pick": 7,
         "player": "Sam Cumming",
         "club": "Richmond",
-        "games": 7,
-        "performanceScore": 3.35,
-        "pvs": 4.19,
+        "games": 8,
+        "performanceScore": 3.55,
+        "pvs": 4.25,
         "archetype": "pressure_forward",
         "archetypeLabel": "Pressure Forward",
         "hasDebuted": true
       },
       {
-        "pick": 8,
-        "player": "Sam Grlj",
-        "club": "Richmond",
-        "games": 12,
-        "performanceScore": 3.26,
-        "pvs": 3.94,
+        "pick": 9,
+        "player": "Sullivan Robey",
+        "club": "Essendon",
+        "games": 10,
+        "performanceScore": 3.34,
+        "pvs": 3.76,
         "archetype": "utility",
         "archetypeLabel": "Utility",
         "hasDebuted": true
       }
     ]
+  },
+  "weeklyTeamImpact": {
+    "round": 16,
+    "teamsAnnounced": true,
+    "teamSize": 23,
+    "roleMinimums": {
+      "ruck": 1,
+      "key_defender": 2,
+      "rebound_defender": 1,
+      "key_forward": 2,
+      "pressure_forward": 1,
+      "inside_mid": 3,
+      "outside_mid": 1
+    },
+    "selectionSource": "afl.com team line-ups",
+    "lastUpdated": "2026-06-27T02:44:00.490+0000",
+    "teamsFinal": false,
+    "interpretation": "Round 16 2026, provisional teams (not yet finalised) from AFL.com team line-ups. Optimal 23 uses season injury-weighted PVS with minimum counts per role. Impact = combined PVS of a club's optimal-23 players who are not named this week (injured, rested, omitted or suspended). Bye teams are excluded.",
+    "ladder": [
+      {
+        "club": "Collingwood",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:01.646+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 100.0,
+        "selectedTeamPvs": 96.5,
+        "impactPvs": 11.5,
+        "injuredImpactPvs": 8.4,
+        "pvsGap": 3.5,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Brayden Maynard",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.7,
+            "injured": true
+          },
+          {
+            "player": "Jamie Elliott",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Angus Anderson",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 3.1,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.7
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 3.6
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 3.1
+          }
+        ],
+        "impactRank": 1
+      },
+      {
+        "club": "Fremantle",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:03.819+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 101.1,
+        "selectedTeamPvs": 98.0,
+        "impactPvs": 14.4,
+        "injuredImpactPvs": 0,
+        "pvsGap": 3.1,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Jaeger O'Meara",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.0,
+            "injured": false
+          },
+          {
+            "player": "Corey Wagner",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.0,
+            "injured": false
+          },
+          {
+            "player": "Jeremy Sharp",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.5,
+            "injured": false
+          },
+          {
+            "player": "Oscar McDonald",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 2.9,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 7.5
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.0
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 2.9
+          }
+        ],
+        "impactRank": 2
+      },
+      {
+        "club": "Adelaide",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:02.385+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 104.8,
+        "selectedTeamPvs": 99.6,
+        "impactPvs": 14.9,
+        "injuredImpactPvs": 0,
+        "pvsGap": 5.2,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Wayne Milera",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 6.3,
+            "injured": false
+          },
+          {
+            "player": "Reilly O'Brien",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 4.9,
+            "injured": false
+          },
+          {
+            "player": "Mitchell Hinge",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 3.7,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 6.3
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 4.9
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 3.7
+          }
+        ],
+        "impactRank": 3
+      },
+      {
+        "club": "Sydney",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-25T12:30:41.036+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 100.6,
+        "selectedTeamPvs": 94.3,
+        "impactPvs": 20.2,
+        "injuredImpactPvs": 12.4,
+        "pvsGap": 6.3,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Justin McInerney",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 5.3,
+            "injured": true
+          },
+          {
+            "player": "Matt Roberts",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.3,
+            "injured": false
+          },
+          {
+            "player": "Dane Rampe",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Tom Papley",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 3.5,
+            "injured": true
+          },
+          {
+            "player": "Hayden McLean",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 3.5,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 5.3
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.3
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 3.6
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 3.5
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 3.5
+          }
+        ],
+        "impactRank": 4
+      },
+      {
+        "club": "West Coast",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-27T02:44:00.490+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 97.7,
+        "selectedTeamPvs": 91.3,
+        "impactPvs": 20.8,
+        "injuredImpactPvs": 7.4,
+        "pvsGap": 6.4,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Tim Kelly",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 5.1,
+            "injured": false
+          },
+          {
+            "player": "Josh Lindsay",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.4,
+            "injured": false
+          },
+          {
+            "player": "Matt Flynn",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 3.8,
+            "injured": false
+          },
+          {
+            "player": "Deven Robertson",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 3.8,
+            "injured": true
+          },
+          {
+            "player": "Reuben Ginbey",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.6,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 8.9
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.4
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 3.8
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 3.6
+          }
+        ],
+        "impactRank": 5
+      },
+      {
+        "club": "Greater Western Sydney",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-26T12:48:59.653+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 102.3,
+        "selectedTeamPvs": 97.6,
+        "impactPvs": 21.6,
+        "injuredImpactPvs": 17.6,
+        "pvsGap": 4.7,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Jesse Hogan",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 4.2,
+            "injured": true
+          },
+          {
+            "player": "Nicholas Madden",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 3.9,
+            "injured": false
+          },
+          {
+            "player": "Jake Riccardi",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Jayden Laverde",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Jack Buckley",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.1,
+            "injured": true
+          },
+          {
+            "player": "Xavier O'Halloran",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 3.1,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 7.5
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 6.7
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 4.2
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 3.1
+          }
+        ],
+        "impactRank": 6
+      },
+      {
+        "club": "Gold Coast",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:03.819+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 106.1,
+        "selectedTeamPvs": 100.0,
+        "impactPvs": 22.9,
+        "injuredImpactPvs": 15.6,
+        "pvsGap": 6.1,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Daniel Rioli",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 4.6,
+            "injured": true
+          },
+          {
+            "player": "Lachie Weller",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.1,
+            "injured": true
+          },
+          {
+            "player": "Sam Clohesy",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 3.9,
+            "injured": false
+          },
+          {
+            "player": "Will Graham",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Ethan Read",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.4,
+            "injured": false
+          },
+          {
+            "player": "Alex Davies",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.3,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 7.4
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 4.6
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 3.9
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 3.6
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 3.4
+          }
+        ],
+        "impactRank": 7
+      },
+      {
+        "club": "Brisbane Lions",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-25T12:30:41.036+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 99.1,
+        "selectedTeamPvs": 88.7,
+        "impactPvs": 23.7,
+        "injuredImpactPvs": 16.3,
+        "pvsGap": 10.4,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Hugh McCluggage",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 6.0,
+            "injured": true
+          },
+          {
+            "player": "Dayne Zorko",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 5.9,
+            "injured": true
+          },
+          {
+            "player": "Keidean Coleman",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.4,
+            "injured": true
+          },
+          {
+            "player": "Daniel Annable",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.3,
+            "injured": false
+          },
+          {
+            "player": "Sam Marshall",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.1,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 7.4
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 6.0
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 5.9
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.4
+          }
+        ],
+        "impactRank": 8
+      },
+      {
+        "club": "Richmond",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:01.646+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 96.3,
+        "selectedTeamPvs": 86.4,
+        "impactPvs": 25.7,
+        "injuredImpactPvs": 17.9,
+        "pvsGap": 9.9,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Sam Lalor",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 6.0,
+            "injured": true
+          },
+          {
+            "player": "Jacob Hopper",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 5.1,
+            "injured": true
+          },
+          {
+            "player": "Kane McAuliffe",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.1,
+            "injured": false
+          },
+          {
+            "player": "Tyler Sonsie",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 3.7,
+            "injured": false
+          },
+          {
+            "player": "Tom Lynch",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.4,
+            "injured": true
+          },
+          {
+            "player": "Josh Gibcus",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.3,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 9.4
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 7.8
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 5.1
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 3.3
+          }
+        ],
+        "impactRank": 9
+      },
+      {
+        "club": "Hawthorn",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-26T12:48:59.653+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 102.7,
+        "selectedTeamPvs": 92.7,
+        "impactPvs": 26.4,
+        "injuredImpactPvs": 18.1,
+        "pvsGap": 10.0,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Jarman Impey",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 5.3,
+            "injured": true
+          },
+          {
+            "player": "Conor Nash",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 4.5,
+            "injured": true
+          },
+          {
+            "player": "Jack Gunston",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 4.4,
+            "injured": true
+          },
+          {
+            "player": "Henry Hustwaite",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 4.3,
+            "injured": false
+          },
+          {
+            "player": "Josh Weddle",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.0,
+            "injured": false
+          },
+          {
+            "player": "Jack Scrimshaw",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.8,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 8.8
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 7.8
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 5.3
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 4.4
+          }
+        ],
+        "impactRank": 10
+      },
+      {
+        "club": "North Melbourne",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:03.106+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 103.5,
+        "selectedTeamPvs": 89.2,
+        "impactPvs": 29.1,
+        "injuredImpactPvs": 10.8,
+        "pvsGap": 14.3,
+        "selectedCount": 22,
+        "missingFromOptimal": [
+          {
+            "player": "Tristan Xerri",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 5.8,
+            "injured": true
+          },
+          {
+            "player": "Tom Powell",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 4.9,
+            "injured": true
+          },
+          {
+            "player": "Zac Fisher",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.8,
+            "injured": false
+          },
+          {
+            "player": "Luke McDonald",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.9,
+            "injured": false
+          },
+          {
+            "player": "Paul Curtis",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.5,
+            "injured": false
+          },
+          {
+            "player": "Riley Hardeman",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.2,
+            "injured": false
+          },
+          {
+            "player": "Griffin Logue",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 2.9,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 11.9
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 5.8
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 4.9
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 3.5
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 2.9
+          }
+        ],
+        "impactRank": 11
+      },
+      {
+        "club": "Essendon",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:03.106+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 98.5,
+        "selectedTeamPvs": 89.6,
+        "impactPvs": 30.2,
+        "injuredImpactPvs": 19.2,
+        "pvsGap": 8.9,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Elijah Tsatas",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 5.2,
+            "injured": false
+          },
+          {
+            "player": "Archie Roberts",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 4.8,
+            "injured": true
+          },
+          {
+            "player": "Peter Wright",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 4.4,
+            "injured": true
+          },
+          {
+            "player": "Zak Johnson",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Jade Gresham",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 3.3,
+            "injured": false
+          },
+          {
+            "player": "Brayden Fiorini",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.3,
+            "injured": true
+          },
+          {
+            "player": "Kyle Langford",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.1,
+            "injured": true
+          },
+          {
+            "player": "Thomas Edwards",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 2.5,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 7.9
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 6.9
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 5.2
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 4.4
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 3.3
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 2.5
+          }
+        ],
+        "impactRank": 12
+      },
+      {
+        "club": "Carlton",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-27T02:44:00.490+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 104.4,
+        "selectedTeamPvs": 96.9,
+        "impactPvs": 30.9,
+        "injuredImpactPvs": 3.5,
+        "pvsGap": 7.5,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Elijah Hollands",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.4,
+            "injured": false
+          },
+          {
+            "player": "Adam Saad",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.2,
+            "injured": false
+          },
+          {
+            "player": "Oliver Hollands",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.2,
+            "injured": false
+          },
+          {
+            "player": "Zac Williams",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.1,
+            "injured": false
+          },
+          {
+            "player": "Cooper Lord",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 3.9,
+            "injured": false
+          },
+          {
+            "player": "Matthew Carroll",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.8,
+            "injured": false
+          },
+          {
+            "player": "Jacob Weitering",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.5,
+            "injured": true
+          },
+          {
+            "player": "Lewis Young",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 2.8,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 12.5
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 6.3
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 4.4
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 3.9
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 3.8
+          }
+        ],
+        "impactRank": 13
+      },
+      {
+        "club": "Port Adelaide",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:02.385+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 95.3,
+        "selectedTeamPvs": 80.8,
+        "impactPvs": 31.2,
+        "injuredImpactPvs": 17.2,
+        "pvsGap": 14.5,
+        "selectedCount": 22,
+        "missingFromOptimal": [
+          {
+            "player": "Connor Rozee",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 5.7,
+            "injured": true
+          },
+          {
+            "player": "Kane Farrell",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.5,
+            "injured": true
+          },
+          {
+            "player": "Will Brodie",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 4.1,
+            "injured": false
+          },
+          {
+            "player": "Miles Bergman",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.9,
+            "injured": true
+          },
+          {
+            "player": "Will Lorenz",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.5,
+            "injured": false
+          },
+          {
+            "player": "Christian Moraes",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.3,
+            "injured": false
+          },
+          {
+            "player": "Esava Ratugolea",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.2,
+            "injured": true
+          },
+          {
+            "player": "Todd Marshall",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.0,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 13.7
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 5.7
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.5
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 4.1
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 3.2
+          }
+        ],
+        "impactRank": 14
+      }
+    ],
+    "matchups": [
+      {
+        "home": "Brisbane Lions",
+        "away": "Sydney",
+        "homeImpactPvs": 23.7,
+        "awayImpactPvs": 20.2,
+        "netAdvantage": 3.5,
+        "advantageClub": "Sydney",
+        "interpretation": "Sydney has 3.5 PVS less talent sidelined"
+      },
+      {
+        "home": "Carlton",
+        "away": "West Coast",
+        "homeImpactPvs": 30.9,
+        "awayImpactPvs": 20.8,
+        "netAdvantage": 10.1,
+        "advantageClub": "West Coast",
+        "interpretation": "West Coast has 10.1 PVS less talent sidelined"
+      },
+      {
+        "home": "Collingwood",
+        "away": "Richmond",
+        "homeImpactPvs": 11.5,
+        "awayImpactPvs": 25.7,
+        "netAdvantage": -14.2,
+        "advantageClub": "Collingwood",
+        "interpretation": "Collingwood has 14.2 PVS less talent sidelined"
+      },
+      {
+        "home": "Fremantle",
+        "away": "Gold Coast",
+        "homeImpactPvs": 14.4,
+        "awayImpactPvs": 22.9,
+        "netAdvantage": -8.5,
+        "advantageClub": "Fremantle",
+        "interpretation": "Fremantle has 8.5 PVS less talent sidelined"
+      },
+      {
+        "home": "Hawthorn",
+        "away": "Greater Western Sydney",
+        "homeImpactPvs": 26.4,
+        "awayImpactPvs": 21.6,
+        "netAdvantage": 4.8,
+        "advantageClub": "Greater Western Sydney",
+        "interpretation": "Greater Western Sydney has 4.8 PVS less talent sidelined"
+      },
+      {
+        "home": "North Melbourne",
+        "away": "Essendon",
+        "homeImpactPvs": 29.1,
+        "awayImpactPvs": 30.2,
+        "netAdvantage": -1.1,
+        "advantageClub": "North Melbourne",
+        "interpretation": "North Melbourne has 1.1 PVS less talent sidelined"
+      },
+      {
+        "home": "Port Adelaide",
+        "away": "Adelaide",
+        "homeImpactPvs": 31.2,
+        "awayImpactPvs": 14.9,
+        "netAdvantage": 16.3,
+        "advantageClub": "Adelaide",
+        "interpretation": "Adelaide has 16.3 PVS less talent sidelined"
+      }
+    ],
+    "byClub": {
+      "Adelaide": {
+        "club": "Adelaide",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:02.385+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 104.8,
+        "selectedTeamPvs": 99.6,
+        "impactPvs": 14.9,
+        "injuredImpactPvs": 0,
+        "pvsGap": 5.2,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Wayne Milera",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 6.3,
+            "injured": false
+          },
+          {
+            "player": "Reilly O'Brien",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 4.9,
+            "injured": false
+          },
+          {
+            "player": "Mitchell Hinge",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 3.7,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 6.3
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 4.9
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 3.7
+          }
+        ],
+        "impactRank": 3
+      },
+      "Brisbane Lions": {
+        "club": "Brisbane Lions",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-25T12:30:41.036+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 99.1,
+        "selectedTeamPvs": 88.7,
+        "impactPvs": 23.7,
+        "injuredImpactPvs": 16.3,
+        "pvsGap": 10.4,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Hugh McCluggage",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 6.0,
+            "injured": true
+          },
+          {
+            "player": "Dayne Zorko",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 5.9,
+            "injured": true
+          },
+          {
+            "player": "Keidean Coleman",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.4,
+            "injured": true
+          },
+          {
+            "player": "Daniel Annable",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.3,
+            "injured": false
+          },
+          {
+            "player": "Sam Marshall",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.1,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 7.4
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 6.0
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 5.9
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.4
+          }
+        ],
+        "impactRank": 8
+      },
+      "Carlton": {
+        "club": "Carlton",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-27T02:44:00.490+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 104.4,
+        "selectedTeamPvs": 96.9,
+        "impactPvs": 30.9,
+        "injuredImpactPvs": 3.5,
+        "pvsGap": 7.5,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Elijah Hollands",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.4,
+            "injured": false
+          },
+          {
+            "player": "Adam Saad",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.2,
+            "injured": false
+          },
+          {
+            "player": "Oliver Hollands",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.2,
+            "injured": false
+          },
+          {
+            "player": "Zac Williams",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.1,
+            "injured": false
+          },
+          {
+            "player": "Cooper Lord",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 3.9,
+            "injured": false
+          },
+          {
+            "player": "Matthew Carroll",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.8,
+            "injured": false
+          },
+          {
+            "player": "Jacob Weitering",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.5,
+            "injured": true
+          },
+          {
+            "player": "Lewis Young",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 2.8,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 12.5
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 6.3
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 4.4
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 3.9
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 3.8
+          }
+        ],
+        "impactRank": 13
+      },
+      "Collingwood": {
+        "club": "Collingwood",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:01.646+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 100.0,
+        "selectedTeamPvs": 96.5,
+        "impactPvs": 11.5,
+        "injuredImpactPvs": 8.4,
+        "pvsGap": 3.5,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Brayden Maynard",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.7,
+            "injured": true
+          },
+          {
+            "player": "Jamie Elliott",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Angus Anderson",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 3.1,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.7
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 3.6
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 3.1
+          }
+        ],
+        "impactRank": 1
+      },
+      "Essendon": {
+        "club": "Essendon",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:03.106+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 98.5,
+        "selectedTeamPvs": 89.6,
+        "impactPvs": 30.2,
+        "injuredImpactPvs": 19.2,
+        "pvsGap": 8.9,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Elijah Tsatas",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 5.2,
+            "injured": false
+          },
+          {
+            "player": "Archie Roberts",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 4.8,
+            "injured": true
+          },
+          {
+            "player": "Peter Wright",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 4.4,
+            "injured": true
+          },
+          {
+            "player": "Zak Johnson",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Jade Gresham",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 3.3,
+            "injured": false
+          },
+          {
+            "player": "Brayden Fiorini",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.3,
+            "injured": true
+          },
+          {
+            "player": "Kyle Langford",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.1,
+            "injured": true
+          },
+          {
+            "player": "Thomas Edwards",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 2.5,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 7.9
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 6.9
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 5.2
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 4.4
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 3.3
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 2.5
+          }
+        ],
+        "impactRank": 12
+      },
+      "Fremantle": {
+        "club": "Fremantle",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:03.819+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 101.1,
+        "selectedTeamPvs": 98.0,
+        "impactPvs": 14.4,
+        "injuredImpactPvs": 0,
+        "pvsGap": 3.1,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Jaeger O'Meara",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.0,
+            "injured": false
+          },
+          {
+            "player": "Corey Wagner",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.0,
+            "injured": false
+          },
+          {
+            "player": "Jeremy Sharp",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.5,
+            "injured": false
+          },
+          {
+            "player": "Oscar McDonald",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 2.9,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 7.5
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.0
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 2.9
+          }
+        ],
+        "impactRank": 2
+      },
+      "Gold Coast": {
+        "club": "Gold Coast",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:03.819+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 106.1,
+        "selectedTeamPvs": 100.0,
+        "impactPvs": 22.9,
+        "injuredImpactPvs": 15.6,
+        "pvsGap": 6.1,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Daniel Rioli",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 4.6,
+            "injured": true
+          },
+          {
+            "player": "Lachie Weller",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.1,
+            "injured": true
+          },
+          {
+            "player": "Sam Clohesy",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 3.9,
+            "injured": false
+          },
+          {
+            "player": "Will Graham",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Ethan Read",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.4,
+            "injured": false
+          },
+          {
+            "player": "Alex Davies",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.3,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 7.4
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 4.6
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 3.9
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 3.6
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 3.4
+          }
+        ],
+        "impactRank": 7
+      },
+      "Greater Western Sydney": {
+        "club": "Greater Western Sydney",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-26T12:48:59.653+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 102.3,
+        "selectedTeamPvs": 97.6,
+        "impactPvs": 21.6,
+        "injuredImpactPvs": 17.6,
+        "pvsGap": 4.7,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Jesse Hogan",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 4.2,
+            "injured": true
+          },
+          {
+            "player": "Nicholas Madden",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 3.9,
+            "injured": false
+          },
+          {
+            "player": "Jake Riccardi",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Jayden Laverde",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Jack Buckley",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.1,
+            "injured": true
+          },
+          {
+            "player": "Xavier O'Halloran",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 3.1,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 7.5
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 6.7
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 4.2
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 3.1
+          }
+        ],
+        "impactRank": 6
+      },
+      "Hawthorn": {
+        "club": "Hawthorn",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-26T12:48:59.653+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 102.7,
+        "selectedTeamPvs": 92.7,
+        "impactPvs": 26.4,
+        "injuredImpactPvs": 18.1,
+        "pvsGap": 10.0,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Jarman Impey",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 5.3,
+            "injured": true
+          },
+          {
+            "player": "Conor Nash",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 4.5,
+            "injured": true
+          },
+          {
+            "player": "Jack Gunston",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 4.4,
+            "injured": true
+          },
+          {
+            "player": "Henry Hustwaite",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 4.3,
+            "injured": false
+          },
+          {
+            "player": "Josh Weddle",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.0,
+            "injured": false
+          },
+          {
+            "player": "Jack Scrimshaw",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.8,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 8.8
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 7.8
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 5.3
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 4.4
+          }
+        ],
+        "impactRank": 10
+      },
+      "North Melbourne": {
+        "club": "North Melbourne",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:03.106+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 103.5,
+        "selectedTeamPvs": 89.2,
+        "impactPvs": 29.1,
+        "injuredImpactPvs": 10.8,
+        "pvsGap": 14.3,
+        "selectedCount": 22,
+        "missingFromOptimal": [
+          {
+            "player": "Tristan Xerri",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 5.8,
+            "injured": true
+          },
+          {
+            "player": "Tom Powell",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 4.9,
+            "injured": true
+          },
+          {
+            "player": "Zac Fisher",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 4.8,
+            "injured": false
+          },
+          {
+            "player": "Luke McDonald",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.9,
+            "injured": false
+          },
+          {
+            "player": "Paul Curtis",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.5,
+            "injured": false
+          },
+          {
+            "player": "Riley Hardeman",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.2,
+            "injured": false
+          },
+          {
+            "player": "Griffin Logue",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 2.9,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 11.9
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 5.8
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 4.9
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 3.5
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 2.9
+          }
+        ],
+        "impactRank": 11
+      },
+      "Port Adelaide": {
+        "club": "Port Adelaide",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:02.385+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 95.3,
+        "selectedTeamPvs": 80.8,
+        "impactPvs": 31.2,
+        "injuredImpactPvs": 17.2,
+        "pvsGap": 14.5,
+        "selectedCount": 22,
+        "missingFromOptimal": [
+          {
+            "player": "Connor Rozee",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 5.7,
+            "injured": true
+          },
+          {
+            "player": "Kane Farrell",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.5,
+            "injured": true
+          },
+          {
+            "player": "Will Brodie",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 4.1,
+            "injured": false
+          },
+          {
+            "player": "Miles Bergman",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.9,
+            "injured": true
+          },
+          {
+            "player": "Will Lorenz",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.5,
+            "injured": false
+          },
+          {
+            "player": "Christian Moraes",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.3,
+            "injured": false
+          },
+          {
+            "player": "Esava Ratugolea",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.2,
+            "injured": true
+          },
+          {
+            "player": "Todd Marshall",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.0,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 13.7
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 5.7
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.5
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 4.1
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 3.2
+          }
+        ],
+        "impactRank": 14
+      },
+      "Richmond": {
+        "club": "Richmond",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "PROVISIONAL_TEAM",
+        "lastUpdated": "2026-06-26T08:20:01.646+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 96.3,
+        "selectedTeamPvs": 86.4,
+        "impactPvs": 25.7,
+        "injuredImpactPvs": 17.9,
+        "pvsGap": 9.9,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Sam Lalor",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 6.0,
+            "injured": true
+          },
+          {
+            "player": "Jacob Hopper",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 5.1,
+            "injured": true
+          },
+          {
+            "player": "Kane McAuliffe",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.1,
+            "injured": false
+          },
+          {
+            "player": "Tyler Sonsie",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 3.7,
+            "injured": false
+          },
+          {
+            "player": "Tom Lynch",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.4,
+            "injured": true
+          },
+          {
+            "player": "Josh Gibcus",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.3,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 9.4
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 7.8
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 5.1
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 3.3
+          }
+        ],
+        "impactRank": 9
+      },
+      "Sydney": {
+        "club": "Sydney",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-25T12:30:41.036+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 100.6,
+        "selectedTeamPvs": 94.3,
+        "impactPvs": 20.2,
+        "injuredImpactPvs": 12.4,
+        "pvsGap": 6.3,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Justin McInerney",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 5.3,
+            "injured": true
+          },
+          {
+            "player": "Matt Roberts",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.3,
+            "injured": false
+          },
+          {
+            "player": "Dane Rampe",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.6,
+            "injured": true
+          },
+          {
+            "player": "Tom Papley",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 3.5,
+            "injured": true
+          },
+          {
+            "player": "Hayden McLean",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 3.5,
+            "injured": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 5.3
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.3
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 3.6
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 3.5
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 3.5
+          }
+        ],
+        "impactRank": 4
+      },
+      "West Coast": {
+        "club": "West Coast",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-27T02:44:00.490+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 97.7,
+        "selectedTeamPvs": 91.3,
+        "impactPvs": 20.8,
+        "injuredImpactPvs": 7.4,
+        "pvsGap": 6.4,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Tim Kelly",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 5.1,
+            "injured": false
+          },
+          {
+            "player": "Josh Lindsay",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.4,
+            "injured": false
+          },
+          {
+            "player": "Matt Flynn",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 3.8,
+            "injured": false
+          },
+          {
+            "player": "Deven Robertson",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 3.8,
+            "injured": true
+          },
+          {
+            "player": "Reuben Ginbey",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.6,
+            "injured": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 8.9
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 4.4
+          },
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 3.8
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 3.6
+          }
+        ],
+        "impactRank": 5
+      }
+    }
   }
 }
