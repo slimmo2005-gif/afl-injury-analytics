@@ -62,6 +62,28 @@ def fetch_season_matches(season: int) -> list[dict]:
     return [m for m in matches if m.get("status") == "CONCLUDED"]
 
 
+def fetch_all_season_matches(season: int) -> list[dict]:
+    """All premiership matches (any status) for team-announcement windows."""
+    comp_season_id = find_comp_season_id(season)
+    if comp_season_id is None:
+        return []
+
+    matches: list[dict] = []
+    for page in range(50):
+        resp = requests.get(
+            f"{AFL_API}/matches",
+            headers=_HEADERS,
+            params={"compSeasonId": comp_season_id, "page": page, "pageSize": 50},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        batch = resp.json().get("matches", [])
+        if not batch:
+            break
+        matches.extend(batch)
+    return matches
+
+
 def _team_lookup() -> dict[str, str]:
     resp = requests.get(
         f"{AFL_API}/teams",

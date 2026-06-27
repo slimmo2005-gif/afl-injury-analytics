@@ -160,6 +160,63 @@ export interface CurrentSeasonBundle extends SeasonBundle {
   }
   currentLadderPvs: CurrentLadderPvsSnapshot
   draftClass: DraftClassSnapshot
+  weeklyTeamImpact?: WeeklyTeamImpactSnapshot
+}
+
+export interface WeeklyTeamImpactPlayer {
+  player: string
+  archetype: string
+  archetypeLabel: string
+  pvs: number
+  injured?: boolean
+}
+
+export interface WeeklyTeamImpactRole {
+  roleId: string
+  role: string
+  pvs: number
+}
+
+export interface WeeklyTeamImpactClub {
+  club: string
+  round: number
+  teamsAnnounced: boolean
+  teamStatus?: string | null
+  lastUpdated?: string | null
+  namedCount?: number
+  impactRank?: number
+  bestTeamPvs: number
+  selectedTeamPvs: number | null
+  impactPvs: number
+  injuredImpactPvs?: number
+  pvsGap: number | null
+  selectedCount: number
+  missingFromOptimal: WeeklyTeamImpactPlayer[]
+  impactByRole: WeeklyTeamImpactRole[]
+}
+
+export interface WeeklyTeamImpactMatchup {
+  home: string
+  away: string
+  homeImpactPvs: number
+  awayImpactPvs: number
+  netAdvantage: number
+  advantageClub: string | null
+  interpretation: string
+}
+
+export interface WeeklyTeamImpactSnapshot {
+  round: number
+  teamsAnnounced: boolean
+  teamSize: number
+  roleMinimums: Record<string, number>
+  selectionSource?: string
+  lastUpdated?: string | null
+  teamsFinal?: boolean
+  interpretation: string
+  ladder: WeeklyTeamImpactClub[]
+  matchups: WeeklyTeamImpactMatchup[]
+  byClub: Record<string, WeeklyTeamImpactClub>
 }
 
 export interface SeasonBundle {

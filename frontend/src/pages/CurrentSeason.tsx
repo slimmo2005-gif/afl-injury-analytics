@@ -127,6 +127,12 @@ export default function CurrentSeason() {
           <p className="text-sm text-slate-400 mt-1">Through round {round} · ladder vs injury luck</p>
         </div>
         <Link
+          to="/injury-impact"
+          className="text-sm text-sky-300 hover:text-sky-200 border border-sky-700 rounded-lg px-3 py-2"
+        >
+          Weekly selection impact →
+        </Link>
+        <Link
           to="/"
           className="text-sm text-slate-400 hover:text-slate-200 border border-slate-700 rounded-lg px-3 py-2"
         >

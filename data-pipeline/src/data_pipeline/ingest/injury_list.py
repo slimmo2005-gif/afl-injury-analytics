@@ -17,7 +17,7 @@ _HEADERS = {
     "Referer": "https://www.afl.com.au/",
 }
 
-# Badge image filenames use these codes before _FA
+# Badge image filenames use these codes before _FA / _v2
 _BADGE_TO_TEAM: dict[str, str] = {
     "ADEL": "Adelaide",
     "BRIS": "Brisbane Lions",
@@ -30,6 +30,7 @@ _BADGE_TO_TEAM: dict[str, str] = {
     "GWS": "Greater Western Sydney",
     "HAW": "Hawthorn",
     "MELB": "Melbourne",
+    "NM": "North Melbourne",
     "NMFC": "North Melbourne",
     "PA": "Port Adelaide",
     "RICH": "Richmond",
@@ -38,6 +39,15 @@ _BADGE_TO_TEAM: dict[str, str] = {
     "WCE": "West Coast",
     "WB": "Western Bulldogs",
 }
+
+# AFL injury list always presents all 18 clubs in this order; used as a final
+# fallback if badge detection ever changes.
+_CANONICAL_CLUB_ORDER: list[str] = [
+    "Adelaide", "Brisbane Lions", "Carlton", "Collingwood", "Essendon",
+    "Fremantle", "Geelong", "Gold Coast", "Greater Western Sydney", "Hawthorn",
+    "Melbourne", "North Melbourne", "Port Adelaide", "Richmond", "St Kilda",
+    "Sydney", "West Coast", "Western Bulldogs",
+]
 
 _NON_INJURY_TYPES = frozenset(
     {
@@ -107,53 +117,78 @@ def _is_injury_table(table: Tag) -> bool:
     return "PLAYER" in headers and "INJURY" in headers
 
 
+def _ordered_clubs_from_badges(html: str) -> list[str]:
+    """Club order as it appears in the article, de-duplicating runs of badges."""
+    clubs: list[str] = []
+    for m in re.finditer(r"Badge-Refresh_([A-Z]+)(?:_FA|_v2)", html):
+        team = _BADGE_TO_TEAM.get(m.group(1))
+        if team and (not clubs or clubs[-1] != team):
+            clubs.append(team)
+    return clubs
+
+
+def _table_rows(table: Tag) -> tuple[list[tuple[str, str, str]], date | None]:
+    """Return (player, injury, est_return) tuples plus any per-table updated date."""
+    out: list[tuple[str, str, str]] = []
+    updated: date | None = None
+    for tr in table.find_all("tr"):
+        cells = [td.get_text(strip=True) for td in tr.find_all("td")]
+        if len(cells) == 1 and cells[0].startswith("Updated:"):
+            updated = _parse_updated_date(cells[0]) or updated
+            continue
+        if len(cells) != 3:
+            continue
+        player, injury, est_return = cells
+        if player.upper() == "PLAYER":
+            continue
+        out.append((player, injury, est_return))
+    return out, updated
+
+
 def parse_injury_list_html(html: str, *, fallback_date: date | None = None) -> pd.DataFrame:
-    """Parse injury tables; club badges are often inside HTML comments."""
+    """Parse the official AFL injury list.
+
+    The article presents one ``PLAYER / INJURY / ESTIMATED RETURN`` table per
+    club, preceded by that club's badge image. Badge images and tables both
+    appear in the same document order, so we pair the ordered club sequence with
+    the ordered injury tables (robust for all 18 clubs). Falls back to the AFL's
+    canonical club order if badge detection comes up short.
+    """
     soup = BeautifulSoup(html, "html.parser")
     article = soup.find("article", class_=re.compile("article")) or soup
-    body_html = str(article.find(class_=re.compile("article-body")) or article)
+
+    tables = [t for t in article.find_all("table") if _is_injury_table(t)]
+    clubs = _ordered_clubs_from_badges(html)
+
+    if len(clubs) != len(tables):
+        # Badge sequence didn't line up 1:1 with tables; use canonical order
+        # when the expected 18 tables are present.
+        if len(tables) == len(_CANONICAL_CLUB_ORDER):
+            clubs = list(_CANONICAL_CLUB_ORDER)
+        else:
+            clubs = []
 
     rows: list[dict] = []
-    current_list_date: date | None = fallback_date
-
-    for table in article.find_all("table"):
-        if not _is_injury_table(table):
-            continue
-
-        table_snip = str(table)[:120]
-        pos = body_html.find(table_snip)
-        current_team: str | None = None
-        if pos >= 0:
-            badges = list(re.finditer(r"Badge-Refresh_([A-Z]+)(?:_FA|_v2)", body_html[:pos]))
-            if badges:
-                current_team = _BADGE_TO_TEAM.get(badges[-1].group(1))
-
-        for tr in table.find_all("tr"):
-            cells = [td.get_text(strip=True) for td in tr.find_all("td")]
-            if len(cells) != 3:
-                if len(cells) == 1 and cells[0].startswith("Updated:"):
-                    updated = _parse_updated_date(cells[0])
-                    if updated:
-                        current_list_date = updated
+    if clubs:
+        for team, table in zip(clubs, tables):
+            entries, updated = _table_rows(table)
+            list_date = updated or fallback_date
+            if not list_date:
                 continue
-            if not current_team or not current_list_date:
-                continue
-            player, injury, est_return = cells
-            if player.upper() == "PLAYER":
-                continue
-            category, is_injury = categorize_injury(injury)
-            rows.append(
-                {
-                    "list_date": current_list_date,
-                    "team": normalize_team(current_team),
-                    "player_name": player,
-                    "player_name_norm": normalize_player_name(player),
-                    "injury_type": injury,
-                    "injury_category": category,
-                    "estimated_return": est_return,
-                    "is_injury": is_injury,
-                }
-            )
+            for player, injury, est_return in entries:
+                category, is_injury = categorize_injury(injury)
+                rows.append(
+                    {
+                        "list_date": list_date,
+                        "team": normalize_team(team),
+                        "player_name": player,
+                        "player_name_norm": normalize_player_name(player),
+                        "injury_type": injury,
+                        "injury_category": category,
+                        "estimated_return": est_return,
+                        "is_injury": is_injury,
+                    }
+                )
 
     if not rows:
         from .injury_common import parse_sequential_afl_tables

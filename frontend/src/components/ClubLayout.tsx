@@ -37,6 +37,12 @@ export default function ClubLayout() {
               Coleman heights story →
             </Link>
             <Link
+              to="/injury-impact"
+              className="text-xs font-medium text-sky-300 hover:text-sky-200 border border-sky-500/30 bg-sky-500/10 rounded-lg px-3 py-1.5"
+            >
+              Weekly selection impact →
+            </Link>
+            <Link
               to="/current"
               className="text-xs font-medium text-emerald-300 hover:text-emerald-200 border border-emerald-500/30 bg-emerald-500/10 rounded-lg px-3 py-1.5"
             >
