@@ -168,6 +168,14 @@ export interface WeeklyTeamImpactPlayer {
   archetype: string
   archetypeLabel: string
   pvs: number
+  /** Player's own PVS (same as pvs; the "gross" loss). */
+  grossPvs?: number
+  /** Gross PVS minus the PVS of the player who replaced them. */
+  netPvs?: number
+  /** Name of the cover player assigned to this missing star (if any). */
+  replacedBy?: string | null
+  /** PVS of the assigned replacement. */
+  replacementPvs?: number
   reason?: 'injured' | 'suspended'
   injured?: boolean
   suspended?: boolean
@@ -189,6 +197,9 @@ export interface WeeklyTeamImpactClub {
   impactRank?: number
   bestTeamPvs: number
   selectedTeamPvs: number | null
+  /** (C): selected side with injured/suspended best-23 stars reinstated over cover. */
+  cPvs?: number
+  /** Net selection impact = (C) − (B). */
   impactPvs: number
   injuredImpactPvs?: number
   pvsGap: number | null

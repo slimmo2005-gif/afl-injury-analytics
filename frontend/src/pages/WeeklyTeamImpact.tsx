@@ -11,7 +11,30 @@ function impactColor(pvs: number | null | undefined) {
   return 'text-orange-400'
 }
 
+function barColor(pvs: number | null | undefined) {
+  if (pvs == null) return 'bg-slate-600'
+  if (pvs <= 8) return 'bg-emerald-500/70'
+  if (pvs <= 20) return 'bg-amber-400/70'
+  return 'bg-orange-500/70'
+}
+
+function StatusBadge({ reason }: { reason?: 'injured' | 'suspended' }) {
+  if (reason === 'suspended') {
+    return (
+      <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-300">
+        suspended
+      </span>
+    )
+  }
+  return (
+    <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-rose-300">
+      injured
+    </span>
+  )
+}
+
 function ClubImpactCard({ row }: { row: WeeklyTeamImpactClub }) {
+  const top4 = row.missingFromOptimal.slice(0, 4)
   return (
     <article className="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -19,46 +42,68 @@ function ClubImpactCard({ row }: { row: WeeklyTeamImpactClub }) {
           <h3 className="text-lg font-semibold text-slate-100">{row.club}</h3>
           <p className="text-xs text-slate-500 mt-0.5">
             {row.teamsAnnounced
-              ? `${row.selectedCount} selected · optimal gap ${row.pvsGap ?? '—'} PVS`
+              ? `${row.selectedCount} selected · (C) best-fit ${row.cPvs ?? '—'} − (B) selected ${
+                  row.selectedTeamPvs ?? '—'
+                }`
               : 'Awaiting AFL team announcement'}
           </p>
         </div>
         <div className="text-right">
-          <p className="text-[10px] uppercase tracking-wider text-slate-500">Selection impact</p>
+          <p className="text-[10px] uppercase tracking-wider text-slate-500">Impact (C − B)</p>
           <p className={`text-2xl font-bold tabular-nums ${impactColor(row.impactPvs)}`}>
             {row.impactPvs != null ? `${row.impactPvs} PVS` : '—'}
           </p>
         </div>
       </div>
 
-      {row.missingFromOptimal.length > 0 ? (
+      {top4.length > 0 ? (
         <div className="mt-4">
           <p className="text-xs uppercase tracking-wider text-slate-500 mb-2">
-            Best-23 players out (injured or suspended)
+            Top players missing — gross vs net of replacement
           </p>
-          <ul className="space-y-1.5">
-            {row.missingFromOptimal.slice(0, 8).map((p) => (
-              <li
-                key={p.player}
-                className="flex items-center justify-between gap-2 text-sm px-2 py-1.5 rounded-lg bg-slate-800/40"
-              >
-                <span className="text-slate-200 truncate">
-                  {p.player}
-                  {p.suspended ? (
-                    <span className="ml-2 rounded bg-amber-500/15 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-300">
-                      suspended
-                    </span>
-                  ) : (
-                    <span className="ml-2 rounded bg-rose-500/15 px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-rose-300">
-                      injured
-                    </span>
-                  )}
-                  <span className="text-slate-500 text-xs ml-2">{p.archetypeLabel}</span>
-                </span>
-                <span className="text-slate-300 tabular-nums shrink-0">{p.pvs} PVS</span>
-              </li>
-            ))}
-          </ul>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-left text-[10px] uppercase tracking-wider text-slate-500">
+                  <th className="py-1.5 pr-2">Player</th>
+                  <th className="py-1.5 px-2 text-right">Gross</th>
+                  <th className="py-1.5 px-2">Replaced by</th>
+                  <th className="py-1.5 pl-2 text-right">Net</th>
+                </tr>
+              </thead>
+              <tbody>
+                {top4.map((p) => (
+                  <tr key={p.player} className="border-t border-slate-800/70">
+                    <td className="py-2 pr-2">
+                      <span className="text-slate-200">{p.player}</span>{' '}
+                      <StatusBadge reason={p.reason} />
+                      <span className="block text-[11px] text-slate-500">{p.archetypeLabel}</span>
+                    </td>
+                    <td className="py-2 px-2 text-right tabular-nums text-slate-300">
+                      {p.grossPvs ?? p.pvs}
+                    </td>
+                    <td className="py-2 px-2 text-slate-400">
+                      {p.replacedBy ? (
+                        <>
+                          <span className="truncate">{p.replacedBy}</span>
+                          <span className="text-slate-600"> ({p.replacementPvs})</span>
+                        </>
+                      ) : (
+                        <span className="text-slate-600">no cover</span>
+                      )}
+                    </td>
+                    <td
+                      className={`py-2 pl-2 text-right tabular-nums font-semibold ${impactColor(
+                        p.netPvs,
+                      )}`}
+                    >
+                      {p.netPvs ?? '—'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       ) : (
         <p className="mt-4 text-sm text-emerald-300/90">
@@ -75,6 +120,10 @@ export default function WeeklyTeamImpact() {
 
   const impact = data?.weeklyTeamImpact
   const ladder = impact?.ladder ?? []
+  const maxImpact = useMemo(
+    () => ladder.reduce((m, r) => Math.max(m, r.impactPvs ?? 0), 0),
+    [ladder],
+  )
 
   const activeClub = useMemo(() => {
     if (!ladder.length) return null
@@ -136,54 +185,57 @@ export default function WeeklyTeamImpact() {
       <section>
         <h2 className="text-lg font-semibold text-slate-200 mb-3">Selection impact ladder</h2>
         <p className="text-sm text-slate-500 mb-4">
-          Impact = PVS of a club's best-23 players unavailable through injury or suspension.
-          Lower is healthier; available players left out by selection don't count.
+          Impact = <span className="text-slate-300">(C) best-fit − (B) selected</span>: the net PVS
+          a club is missing through injury or suspension, after the players who replaced them are
+          counted. Lower is healthier; available players left out by selection don't count.
         </p>
-        <div className="overflow-x-auto rounded-xl border border-slate-800">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-slate-800 text-left text-xs uppercase tracking-wider text-slate-500">
-                <th className="px-4 py-3">Rank</th>
-                <th className="px-4 py-3">Club</th>
-                <th className="px-4 py-3 text-right">Impact PVS</th>
-                <th className="px-4 py-3 text-right hidden sm:table-cell">Optimal</th>
-                <th className="px-4 py-3 text-right hidden sm:table-cell">Selected</th>
-                <th className="px-4 py-3 hidden md:table-cell">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {ladder.map((row) => (
-                <tr
-                  key={row.club}
-                  className={`border-b border-slate-800/80 cursor-pointer transition hover:bg-slate-800/30 ${
-                    row.club === activeClub ? 'bg-slate-800/40' : ''
-                  }`}
-                  onClick={() => setClub(row.club)}
-                >
-                  <td className="px-4 py-3 tabular-nums text-slate-400">#{row.impactRank}</td>
-                  <td className="px-4 py-3 font-medium text-slate-100">{row.club}</td>
-                  <td className={`px-4 py-3 text-right tabular-nums font-semibold ${impactColor(row.impactPvs)}`}>
+        <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-3 sm:p-4 space-y-1.5">
+          {ladder.map((row) => {
+            const width = maxImpact > 0 ? Math.max((row.impactPvs / maxImpact) * 100, 1.5) : 0
+            return (
+              <button
+                key={row.club}
+                type="button"
+                onClick={() => setClub(row.club)}
+                className={`w-full text-left rounded-lg px-2 py-2 transition hover:bg-slate-800/40 ${
+                  row.club === activeClub ? 'bg-slate-800/50' : ''
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="w-7 shrink-0 text-right text-xs tabular-nums text-slate-500">
+                    #{row.impactRank}
+                  </span>
+                  <span className="w-28 sm:w-36 shrink-0 truncate text-sm font-medium text-slate-100">
+                    {row.club}
+                  </span>
+                  <div className="relative h-5 flex-1 rounded bg-slate-800/60">
+                    <div
+                      className={`absolute inset-y-0 left-0 rounded ${barColor(row.impactPvs)}`}
+                      style={{ width: `${width}%` }}
+                    />
+                  </div>
+                  <span
+                    className={`w-14 shrink-0 text-right text-sm font-semibold tabular-nums ${impactColor(
+                      row.impactPvs,
+                    )}`}
+                  >
                     {row.impactPvs ?? '—'}
-                  </td>
-                  <td className="px-4 py-3 text-right tabular-nums text-slate-400 hidden sm:table-cell">
-                    {row.bestTeamPvs}
-                  </td>
-                  <td className="px-4 py-3 text-right tabular-nums text-slate-400 hidden sm:table-cell">
-                    {row.selectedTeamPvs ?? '—'}
-                  </td>
-                  <td className="px-4 py-3 text-xs text-slate-500 hidden md:table-cell">
-                    {row.teamStatus === 'FINAL_TEAM'
-                      ? 'Final team'
-                      : row.teamStatus
-                        ? 'Provisional'
-                        : row.teamsAnnounced
-                          ? 'Named'
-                          : 'Pending'}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  </span>
+                </div>
+                <div className="mt-0.5 pl-10 text-[11px] text-slate-500">
+                  (C) {row.cPvs ?? '—'} − (B) {row.selectedTeamPvs ?? '—'}
+                  {' · '}
+                  {row.teamStatus === 'FINAL_TEAM'
+                    ? 'final team'
+                    : row.teamStatus
+                      ? 'provisional'
+                      : row.teamsAnnounced
+                        ? 'named'
+                        : 'pending'}
+                </div>
+              </button>
+            )
+          })}
         </div>
       </section>
 

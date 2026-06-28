@@ -177,9 +177,25 @@ def _team_impact(
     named_ids: list[str],
     unavailable: dict[str, str] | None = None,
 ) -> dict:
+    """Net selection impact of injuries/suspensions.
+
+    Impact = (C) - (B), where:
+      * (B) selectedTeamPvs  = PVS of the 23 actually named.
+      * (C) cPvs             = PVS of that same side with each injured/suspended
+                               best-23 player swapped back in for the cover the
+                               coach used in their place. Players the coach simply
+                               left out (available, not on the injury list) are
+                               kept as picked and never counted as a loss.
+
+    Per missing player we report ``grossPvs`` (their own PVS) and ``netPvs``
+    (their PVS minus the PVS of the player who replaced them). Replacements are
+    assigned to missing stars best-first: the highest-PVS unused cover player of
+    the same role, otherwise the highest-PVS remaining cover player.
+    """
     unavailable = unavailable or {}
     squad_by_id = {p.player_id: p for p in squad}
     named_set = set(named_ids)
+    best_ids = {p.player_id for p in best}
 
     best_total = round(sum(p.injury_pvs for p in best), 1)
     named_total = round(
@@ -190,9 +206,9 @@ def _team_impact(
     def _norm(name: str) -> str:
         return " ".join(name.lower().split())
 
-    # Only optimal-23 players who are genuinely unavailable (on the AFL injury
-    # list, injured or suspended) and not named count as a loss. Available
-    # depth that the PVS model rates highly but the coach omitted does NOT.
+    # Best-23 players who are genuinely unavailable (on the AFL injury list,
+    # injured or suspended) and not named. Available depth the coach omitted
+    # is NOT a loss and is excluded.
     out_players: list[tuple[SquadPlayer, str]] = []
     for p in best:
         if p.player_id in named_set:
@@ -201,30 +217,61 @@ def _team_impact(
         if reason:
             out_players.append((p, reason))
     out_players.sort(key=lambda t: t[0].injury_pvs, reverse=True)
-    impact_pvs = round(sum(p.injury_pvs for p, _ in out_players), 1)
 
+    # Cover pool = named players who are not part of the optimal best-23, i.e.
+    # the depth brought in. Sorted best-first so role matches pick the top option.
+    cover_pool = [
+        squad_by_id[pid]
+        for pid in named_set
+        if pid in squad_by_id and pid not in best_ids
+    ]
+    cover_pool.sort(key=lambda x: x.injury_pvs, reverse=True)
+
+    used_cover: set[str] = set()
+    missing: list[dict] = []
+    net_total = 0.0
     by_role: dict[str, float] = {}
-    for p, _ in out_players:
-        by_role[p.archetype] = round(by_role.get(p.archetype, 0) + p.injury_pvs, 1)
-
-    return {
-        "bestTeamPvs": best_total,
-        "selectedTeamPvs": named_total,
-        "impactPvs": impact_pvs,
-        "pvsGap": round(best_total - named_total, 1),
-        "selectedCount": len(named_set),
-        "missingFromOptimal": [
+    for p, reason in out_players:
+        same_role = [
+            c for c in cover_pool if c.player_id not in used_cover and c.archetype == p.archetype
+        ]
+        if same_role:
+            rep = same_role[0]
+        else:
+            rest = [c for c in cover_pool if c.player_id not in used_cover]
+            rep = rest[0] if rest else None
+        rep_pvs = rep.injury_pvs if rep else 0.0
+        if rep is not None:
+            used_cover.add(rep.player_id)
+        net = p.injury_pvs - rep_pvs
+        net_total += net
+        by_role[p.archetype] = round(by_role.get(p.archetype, 0) + net, 1)
+        missing.append(
             {
                 "player": p.player_name,
                 "archetype": p.archetype,
                 "archetypeLabel": ARCHETYPE_LABELS.get(p.archetype, p.archetype),
                 "pvs": round(p.injury_pvs, 1),
+                "grossPvs": round(p.injury_pvs, 1),
+                "netPvs": round(net, 1),
+                "replacedBy": rep.player_name if rep is not None else None,
+                "replacementPvs": round(rep_pvs, 1),
                 "reason": reason,
                 "injured": reason == "injured",
                 "suspended": reason == "suspended",
             }
-            for p, reason in out_players[:12]
-        ],
+        )
+
+    impact_pvs = round(net_total, 1)
+
+    return {
+        "bestTeamPvs": best_total,
+        "selectedTeamPvs": named_total,
+        "cPvs": round(named_total + net_total, 1),
+        "impactPvs": impact_pvs,
+        "pvsGap": round(best_total - named_total, 1),
+        "selectedCount": len(named_set),
+        "missingFromOptimal": missing[:12],
         "impactByRole": [
             {
                 "roleId": role,
@@ -335,9 +382,11 @@ def build_weekly_team_impact_bundle(
         "interpretation": (
             f"Round {target_round} {season}, {status_phrase} from AFL.com team line-ups. "
             "Optimal 23 uses season injury-weighted PVS with minimum counts per role. "
-            "Impact = combined PVS of a club's optimal-23 players who are unavailable "
-            "this week through injury or suspension (per the AFL injury list). Players "
-            "who are merely omitted or rested still count as available. Bye teams are "
+            "Impact = (C) − (B): the PVS the side would gain if its injured/suspended "
+            "best-23 players were fit (C) versus the team actually named (B). Each "
+            "missing star is offset by the player who replaced them (best same-role "
+            "cover, else best remaining cover), so impact is the net talent lost. "
+            "Players the coach simply left out still count as available. Bye teams are "
             "excluded."
         ),
         "ladder": ladder_rows,
