@@ -3693,68 +3693,21 @@
       "outside_mid": 1
     },
     "selectionSource": "afl.com team line-ups",
-    "lastUpdated": "2026-06-27T05:31:01.537+0000",
-    "teamsFinal": false,
-    "interpretation": "Round 16 2026, provisional teams (not yet finalised) from AFL.com team line-ups. Optimal 23 uses season injury-weighted PVS with minimum counts per role. Impact = combined PVS of a club's optimal-23 players who are unavailable this week through injury or suspension (per the AFL injury list). Players who are merely omitted or rested still count as available. Bye teams are excluded.",
+    "lastUpdated": "2026-06-28T07:10:35.084+0000",
+    "teamsFinal": true,
+    "interpretation": "Round 16 2026, final teams from AFL.com team line-ups. Optimal 23 uses season injury-weighted PVS with minimum counts per role. Impact = (C) \u2212 (B): the PVS the side would gain if its injured/suspended best-23 players were fit (C) versus the team actually named (B). Each missing star is offset by the player who replaced them (best same-role cover, else best remaining cover), so impact is the net talent lost. Players the coach simply left out still count as available. Bye teams are excluded.",
     "ladder": [
-      {
-        "club": "Fremantle",
-        "round": 16,
-        "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:03.819+0000",
-        "namedCount": 23,
-        "bestTeamPvs": 101.1,
-        "selectedTeamPvs": 98.0,
-        "impactPvs": 0,
-        "pvsGap": 3.1,
-        "selectedCount": 23,
-        "missingFromOptimal": [],
-        "impactByRole": [],
-        "impactRank": 1
-      },
-      {
-        "club": "Adelaide",
-        "round": 16,
-        "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:02.385+0000",
-        "namedCount": 23,
-        "bestTeamPvs": 104.8,
-        "selectedTeamPvs": 99.6,
-        "impactPvs": 3.5,
-        "pvsGap": 5.2,
-        "selectedCount": 23,
-        "missingFromOptimal": [
-          {
-            "player": "Callum Ah Chee",
-            "archetype": "utility",
-            "archetypeLabel": "Utility",
-            "pvs": 3.5,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          }
-        ],
-        "impactByRole": [
-          {
-            "roleId": "utility",
-            "role": "Utility",
-            "pvs": 3.5
-          }
-        ],
-        "impactRank": 2
-      },
       {
         "club": "Carlton",
         "round": 16,
         "teamsAnnounced": true,
         "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-27T03:16:04.403+0000",
+        "lastUpdated": "2026-06-27T06:01:20.721+0000",
         "namedCount": 23,
         "bestTeamPvs": 104.4,
         "selectedTeamPvs": 96.9,
-        "impactPvs": 3.5,
+        "cPvs": 96.6,
+        "impactPvs": -0.3,
         "pvsGap": 7.5,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -3763,6 +3716,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.5,
+            "grossPvs": 3.5,
+            "netPvs": -0.3,
+            "replacedBy": "Lachlan Cowan",
+            "replacementPvs": 3.8,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -3772,9 +3729,63 @@
           {
             "roleId": "key_defender",
             "role": "Key Defender",
-            "pvs": 3.5
+            "pvs": -0.3
           }
         ],
+        "impactRank": 1
+      },
+      {
+        "club": "Adelaide",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-27T12:29:01.006+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 104.8,
+        "selectedTeamPvs": 99.6,
+        "cPvs": 99.6,
+        "impactPvs": 0.0,
+        "pvsGap": 5.2,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Callum Ah Chee",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.5,
+            "grossPvs": 3.5,
+            "netPvs": 0.0,
+            "replacedBy": "Max Michalanney",
+            "replacementPvs": 3.5,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 0.0
+          }
+        ],
+        "impactRank": 2
+      },
+      {
+        "club": "Fremantle",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-28T07:10:35.084+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 101.1,
+        "selectedTeamPvs": 98.0,
+        "cPvs": 98.0,
+        "impactPvs": 0.0,
+        "pvsGap": 3.1,
+        "selectedCount": 23,
+        "missingFromOptimal": [],
+        "impactByRole": [],
         "impactRank": 3
       },
       {
@@ -3782,11 +3793,12 @@
         "round": 16,
         "teamsAnnounced": true,
         "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-27T03:16:04.403+0000",
+        "lastUpdated": "2026-06-27T06:01:20.721+0000",
         "namedCount": 23,
         "bestTeamPvs": 97.7,
         "selectedTeamPvs": 91.3,
-        "impactPvs": 7.4,
+        "cPvs": 92.1,
+        "impactPvs": 0.8,
         "pvsGap": 6.4,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -3795,6 +3807,10 @@
             "archetype": "inside_mid",
             "archetypeLabel": "Inside Mid",
             "pvs": 3.8,
+            "grossPvs": 3.8,
+            "netPvs": 0.4,
+            "replacedBy": "Tylar Young",
+            "replacementPvs": 3.4,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -3804,6 +3820,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.4,
+            "replacedBy": "Hamish Davis",
+            "replacementPvs": 3.2,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -3813,12 +3833,12 @@
           {
             "roleId": "inside_mid",
             "role": "Inside Mid",
-            "pvs": 3.8
+            "pvs": 0.4
           },
           {
             "roleId": "key_defender",
             "role": "Key Defender",
-            "pvs": 3.6
+            "pvs": 0.4
           }
         ],
         "impactRank": 4
@@ -3828,11 +3848,12 @@
         "round": 16,
         "teamsAnnounced": true,
         "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-27T05:31:01.537+0000",
+        "lastUpdated": "2026-06-27T08:59:28.642+0000",
         "namedCount": 23,
         "bestTeamPvs": 100.0,
         "selectedTeamPvs": 96.5,
-        "impactPvs": 8.4,
+        "cPvs": 99.1,
+        "impactPvs": 2.6,
         "pvsGap": 3.5,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -3841,6 +3862,10 @@
             "archetype": "rebound_defender",
             "archetypeLabel": "Rebound Defender",
             "pvs": 4.7,
+            "grossPvs": 4.7,
+            "netPvs": 1.6,
+            "replacedBy": "Roan Steele",
+            "replacementPvs": 3.1,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -3850,6 +3875,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.9,
+            "replacedBy": "Harvey Harrison",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -3859,343 +3888,15 @@
           {
             "roleId": "rebound_defender",
             "role": "Rebound Defender",
-            "pvs": 4.7
+            "pvs": 1.6
           },
           {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 3.6
+            "pvs": 0.9
           }
         ],
         "impactRank": 5
-      },
-      {
-        "club": "Sydney",
-        "round": 16,
-        "teamsAnnounced": true,
-        "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-25T12:30:41.036+0000",
-        "namedCount": 23,
-        "bestTeamPvs": 100.6,
-        "selectedTeamPvs": 94.3,
-        "impactPvs": 12.4,
-        "pvsGap": 6.3,
-        "selectedCount": 23,
-        "missingFromOptimal": [
-          {
-            "player": "Justin McInerney",
-            "archetype": "inside_mid",
-            "archetypeLabel": "Inside Mid",
-            "pvs": 5.3,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Dane Rampe",
-            "archetype": "utility",
-            "archetypeLabel": "Utility",
-            "pvs": 3.6,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Tom Papley",
-            "archetype": "pressure_forward",
-            "archetypeLabel": "Pressure Forward",
-            "pvs": 3.5,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          }
-        ],
-        "impactByRole": [
-          {
-            "roleId": "inside_mid",
-            "role": "Inside Mid",
-            "pvs": 5.3
-          },
-          {
-            "roleId": "utility",
-            "role": "Utility",
-            "pvs": 3.6
-          },
-          {
-            "roleId": "pressure_forward",
-            "role": "Pressure Forward",
-            "pvs": 3.5
-          }
-        ],
-        "impactRank": 6
-      },
-      {
-        "club": "North Melbourne",
-        "round": 16,
-        "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:03.106+0000",
-        "namedCount": 23,
-        "bestTeamPvs": 103.5,
-        "selectedTeamPvs": 89.3,
-        "impactPvs": 14.3,
-        "pvsGap": 14.2,
-        "selectedCount": 22,
-        "missingFromOptimal": [
-          {
-            "player": "Tristan Xerri",
-            "archetype": "ruck",
-            "archetypeLabel": "Ruck",
-            "pvs": 5.8,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Tom Powell",
-            "archetype": "pressure_forward",
-            "archetypeLabel": "Pressure Forward",
-            "pvs": 4.9,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Paul Curtis",
-            "archetype": "key_forward",
-            "archetypeLabel": "Key Forward",
-            "pvs": 3.5,
-            "reason": "suspended",
-            "injured": false,
-            "suspended": true
-          }
-        ],
-        "impactByRole": [
-          {
-            "roleId": "ruck",
-            "role": "Ruck",
-            "pvs": 5.8
-          },
-          {
-            "roleId": "pressure_forward",
-            "role": "Pressure Forward",
-            "pvs": 4.9
-          },
-          {
-            "roleId": "key_forward",
-            "role": "Key Forward",
-            "pvs": 3.5
-          }
-        ],
-        "impactRank": 7
-      },
-      {
-        "club": "Gold Coast",
-        "round": 16,
-        "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:03.819+0000",
-        "namedCount": 23,
-        "bestTeamPvs": 107.6,
-        "selectedTeamPvs": 100.0,
-        "impactPvs": 16.1,
-        "pvsGap": 7.6,
-        "selectedCount": 23,
-        "missingFromOptimal": [
-          {
-            "player": "Daniel Rioli",
-            "archetype": "outside_mid",
-            "archetypeLabel": "Outside Mid",
-            "pvs": 4.6,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Lachie Weller",
-            "archetype": "utility",
-            "archetypeLabel": "Utility",
-            "pvs": 4.1,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Sam Clohesy",
-            "archetype": "rebound_defender",
-            "archetypeLabel": "Rebound Defender",
-            "pvs": 3.9,
-            "reason": "suspended",
-            "injured": false,
-            "suspended": true
-          },
-          {
-            "player": "Will Graham",
-            "archetype": "pressure_forward",
-            "archetypeLabel": "Pressure Forward",
-            "pvs": 3.6,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          }
-        ],
-        "impactByRole": [
-          {
-            "roleId": "outside_mid",
-            "role": "Outside Mid",
-            "pvs": 4.6
-          },
-          {
-            "roleId": "utility",
-            "role": "Utility",
-            "pvs": 4.1
-          },
-          {
-            "roleId": "rebound_defender",
-            "role": "Rebound Defender",
-            "pvs": 3.9
-          },
-          {
-            "roleId": "pressure_forward",
-            "role": "Pressure Forward",
-            "pvs": 3.6
-          }
-        ],
-        "impactRank": 8
-      },
-      {
-        "club": "Brisbane Lions",
-        "round": 16,
-        "teamsAnnounced": true,
-        "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-25T12:30:41.036+0000",
-        "namedCount": 23,
-        "bestTeamPvs": 99.1,
-        "selectedTeamPvs": 88.7,
-        "impactPvs": 16.3,
-        "pvsGap": 10.4,
-        "selectedCount": 23,
-        "missingFromOptimal": [
-          {
-            "player": "Hugh McCluggage",
-            "archetype": "inside_mid",
-            "archetypeLabel": "Inside Mid",
-            "pvs": 6.0,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Dayne Zorko",
-            "archetype": "outside_mid",
-            "archetypeLabel": "Outside Mid",
-            "pvs": 5.9,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Keidean Coleman",
-            "archetype": "rebound_defender",
-            "archetypeLabel": "Rebound Defender",
-            "pvs": 4.4,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          }
-        ],
-        "impactByRole": [
-          {
-            "roleId": "inside_mid",
-            "role": "Inside Mid",
-            "pvs": 6.0
-          },
-          {
-            "roleId": "outside_mid",
-            "role": "Outside Mid",
-            "pvs": 5.9
-          },
-          {
-            "roleId": "rebound_defender",
-            "role": "Rebound Defender",
-            "pvs": 4.4
-          }
-        ],
-        "impactRank": 9
-      },
-      {
-        "club": "Port Adelaide",
-        "round": 16,
-        "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:02.385+0000",
-        "namedCount": 23,
-        "bestTeamPvs": 97.0,
-        "selectedTeamPvs": 81.2,
-        "impactPvs": 17.2,
-        "pvsGap": 15.8,
-        "selectedCount": 22,
-        "missingFromOptimal": [
-          {
-            "player": "Connor Rozee",
-            "archetype": "outside_mid",
-            "archetypeLabel": "Outside Mid",
-            "pvs": 5.7,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Kane Farrell",
-            "archetype": "rebound_defender",
-            "archetypeLabel": "Rebound Defender",
-            "pvs": 4.5,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Miles Bergman",
-            "archetype": "utility",
-            "archetypeLabel": "Utility",
-            "pvs": 3.9,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Esava Ratugolea",
-            "archetype": "key_defender",
-            "archetypeLabel": "Key Defender",
-            "pvs": 3.2,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          }
-        ],
-        "impactByRole": [
-          {
-            "roleId": "outside_mid",
-            "role": "Outside Mid",
-            "pvs": 5.7
-          },
-          {
-            "roleId": "rebound_defender",
-            "role": "Rebound Defender",
-            "pvs": 4.5
-          },
-          {
-            "roleId": "utility",
-            "role": "Utility",
-            "pvs": 3.9
-          },
-          {
-            "roleId": "key_defender",
-            "role": "Key Defender",
-            "pvs": 3.2
-          }
-        ],
-        "impactRank": 10
       },
       {
         "club": "Greater Western Sydney",
@@ -4206,7 +3907,8 @@
         "namedCount": 23,
         "bestTeamPvs": 102.3,
         "selectedTeamPvs": 97.6,
-        "impactPvs": 17.6,
+        "cPvs": 100.6,
+        "impactPvs": 3.0,
         "pvsGap": 4.7,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -4215,6 +3917,10 @@
             "archetype": "key_forward",
             "archetypeLabel": "Key Forward",
             "pvs": 4.2,
+            "grossPvs": 4.2,
+            "netPvs": 1.6,
+            "replacedBy": "Max Gruzewski",
+            "replacementPvs": 2.6,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4224,6 +3930,10 @@
             "archetype": "ruck",
             "archetypeLabel": "Ruck",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.9,
+            "replacedBy": "Leek Aleer",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4233,6 +3943,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.5,
+            "replacedBy": "Sam Taylor",
+            "replacementPvs": 3.1,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4242,6 +3956,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.1,
+            "grossPvs": 3.1,
+            "netPvs": -0.2,
+            "replacedBy": "Conor Stone",
+            "replacementPvs": 3.3,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4251,6 +3969,10 @@
             "archetype": "rebound_defender",
             "archetypeLabel": "Rebound Defender",
             "pvs": 3.1,
+            "grossPvs": 3.1,
+            "netPvs": 0.1,
+            "replacedBy": "Callum Brown",
+            "replacementPvs": 3.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4258,73 +3980,77 @@
         ],
         "impactByRole": [
           {
-            "roleId": "key_defender",
-            "role": "Key Defender",
-            "pvs": 6.7
-          },
-          {
             "roleId": "key_forward",
             "role": "Key Forward",
-            "pvs": 4.2
+            "pvs": 1.6
           },
           {
             "roleId": "ruck",
             "role": "Ruck",
-            "pvs": 3.6
+            "pvs": 0.9
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 0.3
           },
           {
             "roleId": "rebound_defender",
             "role": "Rebound Defender",
-            "pvs": 3.1
+            "pvs": 0.1
           }
         ],
-        "impactRank": 11
+        "impactRank": 6
       },
       {
-        "club": "Richmond",
+        "club": "Sydney",
         "round": 16,
         "teamsAnnounced": true,
         "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-27T05:31:01.537+0000",
+        "lastUpdated": "2026-06-25T12:30:41.036+0000",
         "namedCount": 23,
-        "bestTeamPvs": 96.3,
-        "selectedTeamPvs": 86.4,
-        "impactPvs": 17.9,
-        "pvsGap": 9.9,
+        "bestTeamPvs": 100.6,
+        "selectedTeamPvs": 94.3,
+        "cPvs": 98.2,
+        "impactPvs": 3.9,
+        "pvsGap": 6.3,
         "selectedCount": 23,
         "missingFromOptimal": [
           {
-            "player": "Sam Lalor",
-            "archetype": "key_forward",
-            "archetypeLabel": "Key Forward",
-            "pvs": 6.0,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Jacob Hopper",
+            "player": "Justin McInerney",
             "archetype": "inside_mid",
             "archetypeLabel": "Inside Mid",
-            "pvs": 5.1,
+            "pvs": 5.3,
+            "grossPvs": 5.3,
+            "netPvs": 2.3,
+            "replacedBy": "Joel Hamling",
+            "replacementPvs": 3.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
           },
           {
-            "player": "Tom Lynch",
-            "archetype": "key_forward",
-            "archetypeLabel": "Key Forward",
-            "pvs": 3.4,
+            "player": "Dane Rampe",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.9,
+            "replacedBy": "Caiden Cleary",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
           },
           {
-            "player": "Josh Gibcus",
-            "archetype": "key_defender",
-            "archetypeLabel": "Key Defender",
-            "pvs": 3.3,
+            "player": "Tom Papley",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 3.5,
+            "grossPvs": 3.5,
+            "netPvs": 0.8,
+            "replacedBy": "Malcolm Rosas",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4332,77 +4058,85 @@
         ],
         "impactByRole": [
           {
-            "roleId": "key_forward",
-            "role": "Key Forward",
-            "pvs": 9.4
-          },
-          {
             "roleId": "inside_mid",
             "role": "Inside Mid",
-            "pvs": 5.1
+            "pvs": 2.3
           },
           {
-            "roleId": "key_defender",
-            "role": "Key Defender",
-            "pvs": 3.3
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 0.9
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 0.8
           }
         ],
-        "impactRank": 12
+        "impactRank": 7
       },
       {
-        "club": "Essendon",
+        "club": "Gold Coast",
         "round": 16,
         "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:03.106+0000",
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-28T07:10:35.084+0000",
         "namedCount": 23,
-        "bestTeamPvs": 100.1,
-        "selectedTeamPvs": 89.6,
-        "impactPvs": 20.9,
-        "pvsGap": 10.5,
+        "bestTeamPvs": 107.6,
+        "selectedTeamPvs": 100.0,
+        "cPvs": 104.1,
+        "impactPvs": 4.1,
+        "pvsGap": 7.6,
         "selectedCount": 23,
         "missingFromOptimal": [
           {
-            "player": "Brayden Fiorini",
+            "player": "Daniel Rioli",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 4.6,
+            "grossPvs": 4.6,
+            "netPvs": 1.3,
+            "replacedBy": "Ben King",
+            "replacementPvs": 3.2,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Lachie Weller",
             "archetype": "utility",
             "archetypeLabel": "Utility",
-            "pvs": 5.0,
+            "pvs": 4.1,
+            "grossPvs": 4.1,
+            "netPvs": 1.5,
+            "replacedBy": "Nick Holman",
+            "replacementPvs": 2.6,
             "reason": "injured",
             "injured": true,
             "suspended": false
           },
           {
-            "player": "Archie Roberts",
-            "archetype": "key_defender",
-            "archetypeLabel": "Key Defender",
-            "pvs": 4.8,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
+            "player": "Sam Clohesy",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 3.9,
+            "grossPvs": 3.9,
+            "netPvs": 0.7,
+            "replacedBy": "Jai Murray",
+            "replacementPvs": 3.2,
+            "reason": "suspended",
+            "injured": false,
+            "suspended": true
           },
           {
-            "player": "Peter Wright",
-            "archetype": "ruck",
-            "archetypeLabel": "Ruck",
-            "pvs": 4.4,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Zak Johnson",
-            "archetype": "utility",
-            "archetypeLabel": "Utility",
+            "player": "Will Graham",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
             "pvs": 3.6,
-            "reason": "injured",
-            "injured": true,
-            "suspended": false
-          },
-          {
-            "player": "Kyle Langford",
-            "archetype": "key_defender",
-            "archetypeLabel": "Key Defender",
-            "pvs": 3.1,
+            "grossPvs": 3.6,
+            "netPvs": 0.6,
+            "replacedBy": "Beau Addinsall",
+            "replacementPvs": 3.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4412,17 +4146,444 @@
           {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 8.6
+            "pvs": 1.5
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 1.3
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 0.7
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 0.6
+          }
+        ],
+        "impactRank": 8
+      },
+      {
+        "club": "North Melbourne",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-28T05:15:37.589+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 103.5,
+        "selectedTeamPvs": 89.3,
+        "cPvs": 95.3,
+        "impactPvs": 6.0,
+        "pvsGap": 14.2,
+        "selectedCount": 22,
+        "missingFromOptimal": [
+          {
+            "player": "Tristan Xerri",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 5.8,
+            "grossPvs": 5.8,
+            "netPvs": 3.6,
+            "replacedBy": "Callum Coleman-Jones",
+            "replacementPvs": 2.2,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Tom Powell",
+            "archetype": "pressure_forward",
+            "archetypeLabel": "Pressure Forward",
+            "pvs": 4.9,
+            "grossPvs": 4.9,
+            "netPvs": 1.8,
+            "replacedBy": "Cameron Zurhaar",
+            "replacementPvs": 3.2,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Paul Curtis",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.5,
+            "grossPvs": 3.5,
+            "netPvs": 0.6,
+            "replacedBy": "Aidan Corr",
+            "replacementPvs": 2.9,
+            "reason": "suspended",
+            "injured": false,
+            "suspended": true
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "ruck",
+            "role": "Ruck",
+            "pvs": 3.6
+          },
+          {
+            "roleId": "pressure_forward",
+            "role": "Pressure Forward",
+            "pvs": 1.8
+          },
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 0.6
+          }
+        ],
+        "impactRank": 9
+      },
+      {
+        "club": "Essendon",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-28T05:15:37.589+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 100.1,
+        "selectedTeamPvs": 89.6,
+        "cPvs": 96.0,
+        "impactPvs": 6.4,
+        "pvsGap": 10.5,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Brayden Fiorini",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 5.0,
+            "grossPvs": 5.0,
+            "netPvs": 2.0,
+            "replacedBy": "Harrison Jones",
+            "replacementPvs": 3.0,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Archie Roberts",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 4.8,
+            "grossPvs": 4.8,
+            "netPvs": 1.7,
+            "replacedBy": "Zach Reid",
+            "replacementPvs": 3.0,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Peter Wright",
+            "archetype": "ruck",
+            "archetypeLabel": "Ruck",
+            "pvs": 4.4,
+            "grossPvs": 4.4,
+            "netPvs": 1.8,
+            "replacedBy": "Lachlan Blakiston",
+            "replacementPvs": 2.7,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Zak Johnson",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.6,
+            "replacedBy": "Dyson Sharp",
+            "replacementPvs": 2.9,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Kyle Langford",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.1,
+            "grossPvs": 3.1,
+            "netPvs": 0.3,
+            "replacedBy": "Ben McKay",
+            "replacementPvs": 2.8,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 2.6
           },
           {
             "roleId": "key_defender",
             "role": "Key Defender",
-            "pvs": 7.9
+            "pvs": 2.0
           },
           {
             "roleId": "ruck",
             "role": "Ruck",
-            "pvs": 4.4
+            "pvs": 1.8
+          }
+        ],
+        "impactRank": 10
+      },
+      {
+        "club": "Richmond",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-27T08:59:28.642+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 96.3,
+        "selectedTeamPvs": 86.4,
+        "cPvs": 93.0,
+        "impactPvs": 6.6,
+        "pvsGap": 9.9,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Sam Lalor",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 6.0,
+            "grossPvs": 6.0,
+            "netPvs": 2.9,
+            "replacedBy": "Jasper Alger",
+            "replacementPvs": 3.2,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Jacob Hopper",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 5.1,
+            "grossPvs": 5.1,
+            "netPvs": 2.0,
+            "replacedBy": "Kye Annand",
+            "replacementPvs": 3.1,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Tom Lynch",
+            "archetype": "key_forward",
+            "archetypeLabel": "Key Forward",
+            "pvs": 3.4,
+            "grossPvs": 3.4,
+            "netPvs": 1.0,
+            "replacedBy": "Mykelti Lefau",
+            "replacementPvs": 2.5,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Josh Gibcus",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.3,
+            "grossPvs": 3.3,
+            "netPvs": 0.7,
+            "replacedBy": "Steely Green",
+            "replacementPvs": 2.6,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "key_forward",
+            "role": "Key Forward",
+            "pvs": 3.9
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 2.0
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 0.7
+          }
+        ],
+        "impactRank": 11
+      },
+      {
+        "club": "Port Adelaide",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-27T12:29:01.006+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 97.0,
+        "selectedTeamPvs": 81.2,
+        "cPvs": 88.7,
+        "impactPvs": 7.5,
+        "pvsGap": 15.8,
+        "selectedCount": 22,
+        "missingFromOptimal": [
+          {
+            "player": "Connor Rozee",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 5.7,
+            "grossPvs": 5.7,
+            "netPvs": 2.8,
+            "replacedBy": "Xavier Bamert",
+            "replacementPvs": 2.9,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Kane Farrell",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.5,
+            "grossPvs": 4.5,
+            "netPvs": 1.7,
+            "replacedBy": "Jackson Mead",
+            "replacementPvs": 2.8,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Miles Bergman",
+            "archetype": "utility",
+            "archetypeLabel": "Utility",
+            "pvs": 3.9,
+            "grossPvs": 3.9,
+            "netPvs": 2.5,
+            "replacedBy": "Mitch Zadow",
+            "replacementPvs": 1.4,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Esava Ratugolea",
+            "archetype": "key_defender",
+            "archetypeLabel": "Key Defender",
+            "pvs": 3.2,
+            "grossPvs": 3.2,
+            "netPvs": 0.6,
+            "replacedBy": "Josh Lai",
+            "replacementPvs": 2.5,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 2.8
+          },
+          {
+            "roleId": "utility",
+            "role": "Utility",
+            "pvs": 2.5
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 1.7
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 0.6
+          }
+        ],
+        "impactRank": 12
+      },
+      {
+        "club": "Brisbane Lions",
+        "round": 16,
+        "teamsAnnounced": true,
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-25T12:30:41.036+0000",
+        "namedCount": 23,
+        "bestTeamPvs": 99.1,
+        "selectedTeamPvs": 88.7,
+        "cPvs": 96.4,
+        "impactPvs": 7.7,
+        "pvsGap": 10.4,
+        "selectedCount": 23,
+        "missingFromOptimal": [
+          {
+            "player": "Hugh McCluggage",
+            "archetype": "inside_mid",
+            "archetypeLabel": "Inside Mid",
+            "pvs": 6.0,
+            "grossPvs": 6.0,
+            "netPvs": 3.0,
+            "replacedBy": "Noah Answerth",
+            "replacementPvs": 3.0,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Dayne Zorko",
+            "archetype": "outside_mid",
+            "archetypeLabel": "Outside Mid",
+            "pvs": 5.9,
+            "grossPvs": 5.9,
+            "netPvs": 3.1,
+            "replacedBy": "Eric Hipwood",
+            "replacementPvs": 2.8,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          },
+          {
+            "player": "Keidean Coleman",
+            "archetype": "rebound_defender",
+            "archetypeLabel": "Rebound Defender",
+            "pvs": 4.4,
+            "grossPvs": 4.4,
+            "netPvs": 1.6,
+            "replacedBy": "Darcy Gardiner",
+            "replacementPvs": 2.7,
+            "reason": "injured",
+            "injured": true,
+            "suspended": false
+          }
+        ],
+        "impactByRole": [
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 3.1
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 3.0
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 1.6
           }
         ],
         "impactRank": 13
@@ -4436,7 +4597,8 @@
         "namedCount": 23,
         "bestTeamPvs": 102.7,
         "selectedTeamPvs": 92.7,
-        "impactPvs": 22.0,
+        "cPvs": 100.6,
+        "impactPvs": 7.9,
         "pvsGap": 10.0,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -4445,6 +4607,10 @@
             "archetype": "outside_mid",
             "archetypeLabel": "Outside Mid",
             "pvs": 5.3,
+            "grossPvs": 5.3,
+            "netPvs": 2.1,
+            "replacedBy": "Mabior Chol",
+            "replacementPvs": 3.3,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4454,6 +4620,10 @@
             "archetype": "inside_mid",
             "archetypeLabel": "Inside Mid",
             "pvs": 4.5,
+            "grossPvs": 4.5,
+            "netPvs": 1.3,
+            "replacedBy": "Tom Barrass",
+            "replacementPvs": 3.2,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4463,6 +4633,10 @@
             "archetype": "key_forward",
             "archetypeLabel": "Key Forward",
             "pvs": 4.4,
+            "grossPvs": 4.4,
+            "netPvs": 1.6,
+            "replacedBy": "Bailey Macdonald",
+            "replacementPvs": 2.8,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4472,6 +4646,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 4.0,
+            "grossPvs": 4.0,
+            "netPvs": 1.2,
+            "replacedBy": "Flynn Perez",
+            "replacementPvs": 2.8,
             "reason": "suspended",
             "injured": false,
             "suspended": true
@@ -4481,6 +4659,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 3.8,
+            "grossPvs": 3.8,
+            "netPvs": 1.8,
+            "replacedBy": "Jack Dalton",
+            "replacementPvs": 2.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4490,22 +4672,22 @@
           {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 7.8
+            "pvs": 3.0
           },
           {
             "roleId": "outside_mid",
             "role": "Outside Mid",
-            "pvs": 5.3
-          },
-          {
-            "roleId": "inside_mid",
-            "role": "Inside Mid",
-            "pvs": 4.5
+            "pvs": 2.1
           },
           {
             "roleId": "key_forward",
             "role": "Key Forward",
-            "pvs": 4.4
+            "pvs": 1.6
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 1.3
           }
         ],
         "impactRank": 14
@@ -4515,65 +4697,65 @@
       {
         "home": "Brisbane Lions",
         "away": "Sydney",
-        "homeImpactPvs": 16.3,
-        "awayImpactPvs": 12.4,
-        "netAdvantage": 3.9,
+        "homeImpactPvs": 7.7,
+        "awayImpactPvs": 3.9,
+        "netAdvantage": 3.8,
         "advantageClub": "Sydney",
-        "interpretation": "Sydney has 3.9 PVS less talent sidelined"
+        "interpretation": "Sydney has 3.8 PVS less talent sidelined"
       },
       {
         "home": "Carlton",
         "away": "West Coast",
-        "homeImpactPvs": 3.5,
-        "awayImpactPvs": 7.4,
-        "netAdvantage": -3.9,
+        "homeImpactPvs": -0.3,
+        "awayImpactPvs": 0.8,
+        "netAdvantage": -1.1,
         "advantageClub": "Carlton",
-        "interpretation": "Carlton has 3.9 PVS less talent sidelined"
+        "interpretation": "Carlton has 1.1 PVS less talent sidelined"
       },
       {
         "home": "Collingwood",
         "away": "Richmond",
-        "homeImpactPvs": 8.4,
-        "awayImpactPvs": 17.9,
-        "netAdvantage": -9.5,
+        "homeImpactPvs": 2.6,
+        "awayImpactPvs": 6.6,
+        "netAdvantage": -4.0,
         "advantageClub": "Collingwood",
-        "interpretation": "Collingwood has 9.5 PVS less talent sidelined"
+        "interpretation": "Collingwood has 4.0 PVS less talent sidelined"
       },
       {
         "home": "Fremantle",
         "away": "Gold Coast",
-        "homeImpactPvs": 0,
-        "awayImpactPvs": 16.1,
-        "netAdvantage": -16.1,
+        "homeImpactPvs": 0.0,
+        "awayImpactPvs": 4.1,
+        "netAdvantage": -4.1,
         "advantageClub": "Fremantle",
-        "interpretation": "Fremantle has 16.1 PVS less talent sidelined"
+        "interpretation": "Fremantle has 4.1 PVS less talent sidelined"
       },
       {
         "home": "Hawthorn",
         "away": "Greater Western Sydney",
-        "homeImpactPvs": 22.0,
-        "awayImpactPvs": 17.6,
-        "netAdvantage": 4.4,
+        "homeImpactPvs": 7.9,
+        "awayImpactPvs": 3.0,
+        "netAdvantage": 4.9,
         "advantageClub": "Greater Western Sydney",
-        "interpretation": "Greater Western Sydney has 4.4 PVS less talent sidelined"
+        "interpretation": "Greater Western Sydney has 4.9 PVS less talent sidelined"
       },
       {
         "home": "North Melbourne",
         "away": "Essendon",
-        "homeImpactPvs": 14.3,
-        "awayImpactPvs": 20.9,
-        "netAdvantage": -6.6,
+        "homeImpactPvs": 6.0,
+        "awayImpactPvs": 6.4,
+        "netAdvantage": -0.4,
         "advantageClub": "North Melbourne",
-        "interpretation": "North Melbourne has 6.6 PVS less talent sidelined"
+        "interpretation": "North Melbourne has 0.4 PVS less talent sidelined"
       },
       {
         "home": "Port Adelaide",
         "away": "Adelaide",
-        "homeImpactPvs": 17.2,
-        "awayImpactPvs": 3.5,
-        "netAdvantage": 13.7,
+        "homeImpactPvs": 7.5,
+        "awayImpactPvs": 0.0,
+        "netAdvantage": 7.5,
         "advantageClub": "Adelaide",
-        "interpretation": "Adelaide has 13.7 PVS less talent sidelined"
+        "interpretation": "Adelaide has 7.5 PVS less talent sidelined"
       }
     ],
     "byClub": {
@@ -4581,12 +4763,13 @@
         "club": "Adelaide",
         "round": 16,
         "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:02.385+0000",
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-27T12:29:01.006+0000",
         "namedCount": 23,
         "bestTeamPvs": 104.8,
         "selectedTeamPvs": 99.6,
-        "impactPvs": 3.5,
+        "cPvs": 99.6,
+        "impactPvs": 0.0,
         "pvsGap": 5.2,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -4595,6 +4778,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 3.5,
+            "grossPvs": 3.5,
+            "netPvs": 0.0,
+            "replacedBy": "Max Michalanney",
+            "replacementPvs": 3.5,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4604,7 +4791,7 @@
           {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 3.5
+            "pvs": 0.0
           }
         ],
         "impactRank": 2
@@ -4618,7 +4805,8 @@
         "namedCount": 23,
         "bestTeamPvs": 99.1,
         "selectedTeamPvs": 88.7,
-        "impactPvs": 16.3,
+        "cPvs": 96.4,
+        "impactPvs": 7.7,
         "pvsGap": 10.4,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -4627,6 +4815,10 @@
             "archetype": "inside_mid",
             "archetypeLabel": "Inside Mid",
             "pvs": 6.0,
+            "grossPvs": 6.0,
+            "netPvs": 3.0,
+            "replacedBy": "Noah Answerth",
+            "replacementPvs": 3.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4636,6 +4828,10 @@
             "archetype": "outside_mid",
             "archetypeLabel": "Outside Mid",
             "pvs": 5.9,
+            "grossPvs": 5.9,
+            "netPvs": 3.1,
+            "replacedBy": "Eric Hipwood",
+            "replacementPvs": 2.8,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4645,6 +4841,10 @@
             "archetype": "rebound_defender",
             "archetypeLabel": "Rebound Defender",
             "pvs": 4.4,
+            "grossPvs": 4.4,
+            "netPvs": 1.6,
+            "replacedBy": "Darcy Gardiner",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4652,33 +4852,34 @@
         ],
         "impactByRole": [
           {
-            "roleId": "inside_mid",
-            "role": "Inside Mid",
-            "pvs": 6.0
-          },
-          {
             "roleId": "outside_mid",
             "role": "Outside Mid",
-            "pvs": 5.9
+            "pvs": 3.1
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 3.0
           },
           {
             "roleId": "rebound_defender",
             "role": "Rebound Defender",
-            "pvs": 4.4
+            "pvs": 1.6
           }
         ],
-        "impactRank": 9
+        "impactRank": 13
       },
       "Carlton": {
         "club": "Carlton",
         "round": 16,
         "teamsAnnounced": true,
         "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-27T03:16:04.403+0000",
+        "lastUpdated": "2026-06-27T06:01:20.721+0000",
         "namedCount": 23,
         "bestTeamPvs": 104.4,
         "selectedTeamPvs": 96.9,
-        "impactPvs": 3.5,
+        "cPvs": 96.6,
+        "impactPvs": -0.3,
         "pvsGap": 7.5,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -4687,6 +4888,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.5,
+            "grossPvs": 3.5,
+            "netPvs": -0.3,
+            "replacedBy": "Lachlan Cowan",
+            "replacementPvs": 3.8,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4696,21 +4901,22 @@
           {
             "roleId": "key_defender",
             "role": "Key Defender",
-            "pvs": 3.5
+            "pvs": -0.3
           }
         ],
-        "impactRank": 3
+        "impactRank": 1
       },
       "Collingwood": {
         "club": "Collingwood",
         "round": 16,
         "teamsAnnounced": true,
         "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-27T05:31:01.537+0000",
+        "lastUpdated": "2026-06-27T08:59:28.642+0000",
         "namedCount": 23,
         "bestTeamPvs": 100.0,
         "selectedTeamPvs": 96.5,
-        "impactPvs": 8.4,
+        "cPvs": 99.1,
+        "impactPvs": 2.6,
         "pvsGap": 3.5,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -4719,6 +4925,10 @@
             "archetype": "rebound_defender",
             "archetypeLabel": "Rebound Defender",
             "pvs": 4.7,
+            "grossPvs": 4.7,
+            "netPvs": 1.6,
+            "replacedBy": "Roan Steele",
+            "replacementPvs": 3.1,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4728,6 +4938,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.9,
+            "replacedBy": "Harvey Harrison",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4737,12 +4951,12 @@
           {
             "roleId": "rebound_defender",
             "role": "Rebound Defender",
-            "pvs": 4.7
+            "pvs": 1.6
           },
           {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 3.6
+            "pvs": 0.9
           }
         ],
         "impactRank": 5
@@ -4751,12 +4965,13 @@
         "club": "Essendon",
         "round": 16,
         "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:03.106+0000",
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-28T05:15:37.589+0000",
         "namedCount": 23,
         "bestTeamPvs": 100.1,
         "selectedTeamPvs": 89.6,
-        "impactPvs": 20.9,
+        "cPvs": 96.0,
+        "impactPvs": 6.4,
         "pvsGap": 10.5,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -4765,6 +4980,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 5.0,
+            "grossPvs": 5.0,
+            "netPvs": 2.0,
+            "replacedBy": "Harrison Jones",
+            "replacementPvs": 3.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4774,6 +4993,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 4.8,
+            "grossPvs": 4.8,
+            "netPvs": 1.7,
+            "replacedBy": "Zach Reid",
+            "replacementPvs": 3.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4783,6 +5006,10 @@
             "archetype": "ruck",
             "archetypeLabel": "Ruck",
             "pvs": 4.4,
+            "grossPvs": 4.4,
+            "netPvs": 1.8,
+            "replacedBy": "Lachlan Blakiston",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4792,6 +5019,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.6,
+            "replacedBy": "Dyson Sharp",
+            "replacementPvs": 2.9,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4801,6 +5032,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.1,
+            "grossPvs": 3.1,
+            "netPvs": 0.3,
+            "replacedBy": "Ben McKay",
+            "replacementPvs": 2.8,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4810,47 +5045,49 @@
           {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 8.6
+            "pvs": 2.6
           },
           {
             "roleId": "key_defender",
             "role": "Key Defender",
-            "pvs": 7.9
+            "pvs": 2.0
           },
           {
             "roleId": "ruck",
             "role": "Ruck",
-            "pvs": 4.4
+            "pvs": 1.8
           }
         ],
-        "impactRank": 13
+        "impactRank": 10
       },
       "Fremantle": {
         "club": "Fremantle",
         "round": 16,
         "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:03.819+0000",
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-28T07:10:35.084+0000",
         "namedCount": 23,
         "bestTeamPvs": 101.1,
         "selectedTeamPvs": 98.0,
-        "impactPvs": 0,
+        "cPvs": 98.0,
+        "impactPvs": 0.0,
         "pvsGap": 3.1,
         "selectedCount": 23,
         "missingFromOptimal": [],
         "impactByRole": [],
-        "impactRank": 1
+        "impactRank": 3
       },
       "Gold Coast": {
         "club": "Gold Coast",
         "round": 16,
         "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:03.819+0000",
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-28T07:10:35.084+0000",
         "namedCount": 23,
         "bestTeamPvs": 107.6,
         "selectedTeamPvs": 100.0,
-        "impactPvs": 16.1,
+        "cPvs": 104.1,
+        "impactPvs": 4.1,
         "pvsGap": 7.6,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -4859,6 +5096,10 @@
             "archetype": "outside_mid",
             "archetypeLabel": "Outside Mid",
             "pvs": 4.6,
+            "grossPvs": 4.6,
+            "netPvs": 1.3,
+            "replacedBy": "Ben King",
+            "replacementPvs": 3.2,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4868,6 +5109,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 4.1,
+            "grossPvs": 4.1,
+            "netPvs": 1.5,
+            "replacedBy": "Nick Holman",
+            "replacementPvs": 2.6,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4877,6 +5122,10 @@
             "archetype": "rebound_defender",
             "archetypeLabel": "Rebound Defender",
             "pvs": 3.9,
+            "grossPvs": 3.9,
+            "netPvs": 0.7,
+            "replacedBy": "Jai Murray",
+            "replacementPvs": 3.2,
             "reason": "suspended",
             "injured": false,
             "suspended": true
@@ -4886,6 +5135,10 @@
             "archetype": "pressure_forward",
             "archetypeLabel": "Pressure Forward",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.6,
+            "replacedBy": "Beau Addinsall",
+            "replacementPvs": 3.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4893,24 +5146,24 @@
         ],
         "impactByRole": [
           {
-            "roleId": "outside_mid",
-            "role": "Outside Mid",
-            "pvs": 4.6
-          },
-          {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 4.1
+            "pvs": 1.5
+          },
+          {
+            "roleId": "outside_mid",
+            "role": "Outside Mid",
+            "pvs": 1.3
           },
           {
             "roleId": "rebound_defender",
             "role": "Rebound Defender",
-            "pvs": 3.9
+            "pvs": 0.7
           },
           {
             "roleId": "pressure_forward",
             "role": "Pressure Forward",
-            "pvs": 3.6
+            "pvs": 0.6
           }
         ],
         "impactRank": 8
@@ -4924,7 +5177,8 @@
         "namedCount": 23,
         "bestTeamPvs": 102.3,
         "selectedTeamPvs": 97.6,
-        "impactPvs": 17.6,
+        "cPvs": 100.6,
+        "impactPvs": 3.0,
         "pvsGap": 4.7,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -4933,6 +5187,10 @@
             "archetype": "key_forward",
             "archetypeLabel": "Key Forward",
             "pvs": 4.2,
+            "grossPvs": 4.2,
+            "netPvs": 1.6,
+            "replacedBy": "Max Gruzewski",
+            "replacementPvs": 2.6,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4942,6 +5200,10 @@
             "archetype": "ruck",
             "archetypeLabel": "Ruck",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.9,
+            "replacedBy": "Leek Aleer",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4951,6 +5213,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.5,
+            "replacedBy": "Sam Taylor",
+            "replacementPvs": 3.1,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4960,6 +5226,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.1,
+            "grossPvs": 3.1,
+            "netPvs": -0.2,
+            "replacedBy": "Conor Stone",
+            "replacementPvs": 3.3,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4969,6 +5239,10 @@
             "archetype": "rebound_defender",
             "archetypeLabel": "Rebound Defender",
             "pvs": 3.1,
+            "grossPvs": 3.1,
+            "netPvs": 0.1,
+            "replacedBy": "Callum Brown",
+            "replacementPvs": 3.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -4976,27 +5250,27 @@
         ],
         "impactByRole": [
           {
-            "roleId": "key_defender",
-            "role": "Key Defender",
-            "pvs": 6.7
-          },
-          {
             "roleId": "key_forward",
             "role": "Key Forward",
-            "pvs": 4.2
+            "pvs": 1.6
           },
           {
             "roleId": "ruck",
             "role": "Ruck",
-            "pvs": 3.6
+            "pvs": 0.9
+          },
+          {
+            "roleId": "key_defender",
+            "role": "Key Defender",
+            "pvs": 0.3
           },
           {
             "roleId": "rebound_defender",
             "role": "Rebound Defender",
-            "pvs": 3.1
+            "pvs": 0.1
           }
         ],
-        "impactRank": 11
+        "impactRank": 6
       },
       "Hawthorn": {
         "club": "Hawthorn",
@@ -5007,7 +5281,8 @@
         "namedCount": 23,
         "bestTeamPvs": 102.7,
         "selectedTeamPvs": 92.7,
-        "impactPvs": 22.0,
+        "cPvs": 100.6,
+        "impactPvs": 7.9,
         "pvsGap": 10.0,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -5016,6 +5291,10 @@
             "archetype": "outside_mid",
             "archetypeLabel": "Outside Mid",
             "pvs": 5.3,
+            "grossPvs": 5.3,
+            "netPvs": 2.1,
+            "replacedBy": "Mabior Chol",
+            "replacementPvs": 3.3,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5025,6 +5304,10 @@
             "archetype": "inside_mid",
             "archetypeLabel": "Inside Mid",
             "pvs": 4.5,
+            "grossPvs": 4.5,
+            "netPvs": 1.3,
+            "replacedBy": "Tom Barrass",
+            "replacementPvs": 3.2,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5034,6 +5317,10 @@
             "archetype": "key_forward",
             "archetypeLabel": "Key Forward",
             "pvs": 4.4,
+            "grossPvs": 4.4,
+            "netPvs": 1.6,
+            "replacedBy": "Bailey Macdonald",
+            "replacementPvs": 2.8,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5043,6 +5330,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 4.0,
+            "grossPvs": 4.0,
+            "netPvs": 1.2,
+            "replacedBy": "Flynn Perez",
+            "replacementPvs": 2.8,
             "reason": "suspended",
             "injured": false,
             "suspended": true
@@ -5052,6 +5343,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 3.8,
+            "grossPvs": 3.8,
+            "netPvs": 1.8,
+            "replacedBy": "Jack Dalton",
+            "replacementPvs": 2.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5061,22 +5356,22 @@
           {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 7.8
+            "pvs": 3.0
           },
           {
             "roleId": "outside_mid",
             "role": "Outside Mid",
-            "pvs": 5.3
-          },
-          {
-            "roleId": "inside_mid",
-            "role": "Inside Mid",
-            "pvs": 4.5
+            "pvs": 2.1
           },
           {
             "roleId": "key_forward",
             "role": "Key Forward",
-            "pvs": 4.4
+            "pvs": 1.6
+          },
+          {
+            "roleId": "inside_mid",
+            "role": "Inside Mid",
+            "pvs": 1.3
           }
         ],
         "impactRank": 14
@@ -5085,12 +5380,13 @@
         "club": "North Melbourne",
         "round": 16,
         "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:03.106+0000",
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-28T05:15:37.589+0000",
         "namedCount": 23,
         "bestTeamPvs": 103.5,
         "selectedTeamPvs": 89.3,
-        "impactPvs": 14.3,
+        "cPvs": 95.3,
+        "impactPvs": 6.0,
         "pvsGap": 14.2,
         "selectedCount": 22,
         "missingFromOptimal": [
@@ -5099,6 +5395,10 @@
             "archetype": "ruck",
             "archetypeLabel": "Ruck",
             "pvs": 5.8,
+            "grossPvs": 5.8,
+            "netPvs": 3.6,
+            "replacedBy": "Callum Coleman-Jones",
+            "replacementPvs": 2.2,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5108,6 +5408,10 @@
             "archetype": "pressure_forward",
             "archetypeLabel": "Pressure Forward",
             "pvs": 4.9,
+            "grossPvs": 4.9,
+            "netPvs": 1.8,
+            "replacedBy": "Cameron Zurhaar",
+            "replacementPvs": 3.2,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5117,6 +5421,10 @@
             "archetype": "key_forward",
             "archetypeLabel": "Key Forward",
             "pvs": 3.5,
+            "grossPvs": 3.5,
+            "netPvs": 0.6,
+            "replacedBy": "Aidan Corr",
+            "replacementPvs": 2.9,
             "reason": "suspended",
             "injured": false,
             "suspended": true
@@ -5126,31 +5434,32 @@
           {
             "roleId": "ruck",
             "role": "Ruck",
-            "pvs": 5.8
+            "pvs": 3.6
           },
           {
             "roleId": "pressure_forward",
             "role": "Pressure Forward",
-            "pvs": 4.9
+            "pvs": 1.8
           },
           {
             "roleId": "key_forward",
             "role": "Key Forward",
-            "pvs": 3.5
+            "pvs": 0.6
           }
         ],
-        "impactRank": 7
+        "impactRank": 9
       },
       "Port Adelaide": {
         "club": "Port Adelaide",
         "round": 16,
         "teamsAnnounced": true,
-        "teamStatus": "PROVISIONAL_TEAM",
-        "lastUpdated": "2026-06-26T08:20:02.385+0000",
+        "teamStatus": "FINAL_TEAM",
+        "lastUpdated": "2026-06-27T12:29:01.006+0000",
         "namedCount": 23,
         "bestTeamPvs": 97.0,
         "selectedTeamPvs": 81.2,
-        "impactPvs": 17.2,
+        "cPvs": 88.7,
+        "impactPvs": 7.5,
         "pvsGap": 15.8,
         "selectedCount": 22,
         "missingFromOptimal": [
@@ -5159,6 +5468,10 @@
             "archetype": "outside_mid",
             "archetypeLabel": "Outside Mid",
             "pvs": 5.7,
+            "grossPvs": 5.7,
+            "netPvs": 2.8,
+            "replacedBy": "Xavier Bamert",
+            "replacementPvs": 2.9,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5168,6 +5481,10 @@
             "archetype": "rebound_defender",
             "archetypeLabel": "Rebound Defender",
             "pvs": 4.5,
+            "grossPvs": 4.5,
+            "netPvs": 1.7,
+            "replacedBy": "Jackson Mead",
+            "replacementPvs": 2.8,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5177,6 +5494,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 3.9,
+            "grossPvs": 3.9,
+            "netPvs": 2.5,
+            "replacedBy": "Mitch Zadow",
+            "replacementPvs": 1.4,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5186,6 +5507,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.2,
+            "grossPvs": 3.2,
+            "netPvs": 0.6,
+            "replacedBy": "Josh Lai",
+            "replacementPvs": 2.5,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5195,36 +5520,37 @@
           {
             "roleId": "outside_mid",
             "role": "Outside Mid",
-            "pvs": 5.7
-          },
-          {
-            "roleId": "rebound_defender",
-            "role": "Rebound Defender",
-            "pvs": 4.5
+            "pvs": 2.8
           },
           {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 3.9
+            "pvs": 2.5
+          },
+          {
+            "roleId": "rebound_defender",
+            "role": "Rebound Defender",
+            "pvs": 1.7
           },
           {
             "roleId": "key_defender",
             "role": "Key Defender",
-            "pvs": 3.2
+            "pvs": 0.6
           }
         ],
-        "impactRank": 10
+        "impactRank": 12
       },
       "Richmond": {
         "club": "Richmond",
         "round": 16,
         "teamsAnnounced": true,
         "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-27T05:31:01.537+0000",
+        "lastUpdated": "2026-06-27T08:59:28.642+0000",
         "namedCount": 23,
         "bestTeamPvs": 96.3,
         "selectedTeamPvs": 86.4,
-        "impactPvs": 17.9,
+        "cPvs": 93.0,
+        "impactPvs": 6.6,
         "pvsGap": 9.9,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -5233,6 +5559,10 @@
             "archetype": "key_forward",
             "archetypeLabel": "Key Forward",
             "pvs": 6.0,
+            "grossPvs": 6.0,
+            "netPvs": 2.9,
+            "replacedBy": "Jasper Alger",
+            "replacementPvs": 3.2,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5242,6 +5572,10 @@
             "archetype": "inside_mid",
             "archetypeLabel": "Inside Mid",
             "pvs": 5.1,
+            "grossPvs": 5.1,
+            "netPvs": 2.0,
+            "replacedBy": "Kye Annand",
+            "replacementPvs": 3.1,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5251,6 +5585,10 @@
             "archetype": "key_forward",
             "archetypeLabel": "Key Forward",
             "pvs": 3.4,
+            "grossPvs": 3.4,
+            "netPvs": 1.0,
+            "replacedBy": "Mykelti Lefau",
+            "replacementPvs": 2.5,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5260,6 +5598,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.3,
+            "grossPvs": 3.3,
+            "netPvs": 0.7,
+            "replacedBy": "Steely Green",
+            "replacementPvs": 2.6,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5269,20 +5611,20 @@
           {
             "roleId": "key_forward",
             "role": "Key Forward",
-            "pvs": 9.4
+            "pvs": 3.9
           },
           {
             "roleId": "inside_mid",
             "role": "Inside Mid",
-            "pvs": 5.1
+            "pvs": 2.0
           },
           {
             "roleId": "key_defender",
             "role": "Key Defender",
-            "pvs": 3.3
+            "pvs": 0.7
           }
         ],
-        "impactRank": 12
+        "impactRank": 11
       },
       "Sydney": {
         "club": "Sydney",
@@ -5293,7 +5635,8 @@
         "namedCount": 23,
         "bestTeamPvs": 100.6,
         "selectedTeamPvs": 94.3,
-        "impactPvs": 12.4,
+        "cPvs": 98.2,
+        "impactPvs": 3.9,
         "pvsGap": 6.3,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -5302,6 +5645,10 @@
             "archetype": "inside_mid",
             "archetypeLabel": "Inside Mid",
             "pvs": 5.3,
+            "grossPvs": 5.3,
+            "netPvs": 2.3,
+            "replacedBy": "Joel Hamling",
+            "replacementPvs": 3.0,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5311,6 +5658,10 @@
             "archetype": "utility",
             "archetypeLabel": "Utility",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.9,
+            "replacedBy": "Caiden Cleary",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5320,6 +5671,10 @@
             "archetype": "pressure_forward",
             "archetypeLabel": "Pressure Forward",
             "pvs": 3.5,
+            "grossPvs": 3.5,
+            "netPvs": 0.8,
+            "replacedBy": "Malcolm Rosas",
+            "replacementPvs": 2.7,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5329,31 +5684,32 @@
           {
             "roleId": "inside_mid",
             "role": "Inside Mid",
-            "pvs": 5.3
+            "pvs": 2.3
           },
           {
             "roleId": "utility",
             "role": "Utility",
-            "pvs": 3.6
+            "pvs": 0.9
           },
           {
             "roleId": "pressure_forward",
             "role": "Pressure Forward",
-            "pvs": 3.5
+            "pvs": 0.8
           }
         ],
-        "impactRank": 6
+        "impactRank": 7
       },
       "West Coast": {
         "club": "West Coast",
         "round": 16,
         "teamsAnnounced": true,
         "teamStatus": "FINAL_TEAM",
-        "lastUpdated": "2026-06-27T03:16:04.403+0000",
+        "lastUpdated": "2026-06-27T06:01:20.721+0000",
         "namedCount": 23,
         "bestTeamPvs": 97.7,
         "selectedTeamPvs": 91.3,
-        "impactPvs": 7.4,
+        "cPvs": 92.1,
+        "impactPvs": 0.8,
         "pvsGap": 6.4,
         "selectedCount": 23,
         "missingFromOptimal": [
@@ -5362,6 +5718,10 @@
             "archetype": "inside_mid",
             "archetypeLabel": "Inside Mid",
             "pvs": 3.8,
+            "grossPvs": 3.8,
+            "netPvs": 0.4,
+            "replacedBy": "Tylar Young",
+            "replacementPvs": 3.4,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5371,6 +5731,10 @@
             "archetype": "key_defender",
             "archetypeLabel": "Key Defender",
             "pvs": 3.6,
+            "grossPvs": 3.6,
+            "netPvs": 0.4,
+            "replacedBy": "Hamish Davis",
+            "replacementPvs": 3.2,
             "reason": "injured",
             "injured": true,
             "suspended": false
@@ -5380,12 +5744,12 @@
           {
             "roleId": "inside_mid",
             "role": "Inside Mid",
-            "pvs": 3.8
+            "pvs": 0.4
           },
           {
             "roleId": "key_defender",
             "role": "Key Defender",
-            "pvs": 3.6
+            "pvs": 0.4
           }
         ],
         "impactRank": 4
