@@ -69,6 +69,9 @@ def _pick_best_team(pool: list[SquadPlayer], size: int = TEAM_SIZE) -> list[Squa
     return selected[:size]
 
 
+MIN_ESTABLISHED_GAMES = 10
+
+
 def _load_squad(con: duckdb.DuckDBPyConnection, season: int, team: str) -> list[SquadPlayer]:
     rows = con.execute(
         """
@@ -88,6 +91,69 @@ def _load_squad(con: duckdb.DuckDBPyConnection, season: int, team: str) -> list[
         """,
         [season, team, MIN_GAMES],
     ).fetchall()
+    squad = [
+        SquadPlayer(
+            player_id=str(r[0]),
+            player_name=str(r[1]),
+            archetype=str(r[2]),
+            injury_pvs=float(r[3] or 0),
+        )
+        for r in rows
+    ]
+    have = {p.player_id for p in squad}
+    squad.extend(p for p in _injured_absent_squad(con, season, team) if p.player_id not in have)
+    return squad
+
+
+def _injured_absent_squad(
+    con: duckdb.DuckDBPyConnection, season: int, team: str
+) -> list[SquadPlayer]:
+    """Established players on the current injury list with no games this season.
+
+    A season-ending injury (e.g. an ACL) means the player has no ``season``
+    games and therefore never appears in :func:`_load_squad`, which would make
+    a genuine best-23 loss invisible. We add them back at their most recent
+    established PVS (latest prior season with enough games) so they can earn a
+    best-23 spot and be counted as unavailable.
+    """
+    try:
+        rows = con.execute(
+            """
+            WITH latest AS (SELECT MAX(list_date) d FROM injury_list_entries),
+            injured AS (
+                SELECT player_id, MAX(player_name) AS player_name
+                FROM injury_list_entries
+                WHERE list_date = (SELECT d FROM latest)
+                  AND team = ?
+                  AND player_id IS NOT NULL
+                  AND (is_injury OR injury_category = 'suspension')
+                GROUP BY player_id
+            ),
+            recent_val AS (
+                SELECT player_id,
+                       COALESCE(injury_weight_pvs, pvs) AS pvs,
+                       ROW_NUMBER() OVER (PARTITION BY player_id ORDER BY season DESC) AS rn
+                FROM player_value
+                WHERE season < ? AND games >= ?
+            ),
+            recent_arch AS (
+                SELECT player_id, archetype,
+                       ROW_NUMBER() OVER (PARTITION BY player_id ORDER BY season DESC) AS rn
+                FROM player_profiles
+                WHERE season < ?
+            )
+            SELECT i.player_id,
+                   i.player_name,
+                   COALESCE(ra.archetype, 'utility') AS archetype,
+                   rv.pvs
+            FROM injured i
+            JOIN recent_val rv ON rv.player_id = i.player_id AND rv.rn = 1
+            LEFT JOIN recent_arch ra ON ra.player_id = i.player_id AND ra.rn = 1
+            """,
+            [team, season, MIN_ESTABLISHED_GAMES, season],
+        ).fetchall()
+    except duckdb.Error:
+        return []
     return [
         SquadPlayer(
             player_id=str(r[0]),
@@ -243,7 +309,9 @@ def _team_impact(
         rep_pvs = rep.injury_pvs if rep else 0.0
         if rep is not None:
             used_cover.add(rep.player_id)
-        net = p.injury_pvs - rep_pvs
+        # Floor at 0: a like-for-like or better replacement means no net loss.
+        # An injury can never make a side stronger, so impact is never negative.
+        net = max(0.0, p.injury_pvs - rep_pvs)
         net_total += net
         by_role[p.archetype] = round(by_role.get(p.archetype, 0) + net, 1)
         missing.append(
