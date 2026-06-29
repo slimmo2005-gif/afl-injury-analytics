@@ -1,5 +1,4 @@
 import { Link, Outlet } from 'react-router-dom'
-import OtherProducts from './OtherProducts'
 import SiteNavSelect from './SiteNavSelect'
 
 const logoSrc = `${import.meta.env.BASE_URL}brand/slim-analytics-logo.png`
@@ -23,7 +22,6 @@ export default function StoryLayout() {
         <Outlet />
       </main>
       <footer className="border-t border-slate-800 py-6 text-center text-xs text-slate-500 space-y-2">
-        <OtherProducts />
         <p>Slim Analytics · data from AFL Tables</p>
         <p>
           <Link to="/admin" className="text-slate-600 hover:text-slate-400">

@@ -83,6 +83,7 @@ def build_current_season_bundle(
 
     snapshot = _current_ladder_pvs_snapshot(con, season, ladder_round, official)
     draft_class = build_draft_class_bundle(con, draft_year=season - 1, season=season)
+    draft_class_2026 = build_draft_class_bundle(con, draft_year=season, season=season + 1)
     weekly_team_impact = build_weekly_team_impact_bundle(con, season)
 
     return {
@@ -99,6 +100,7 @@ def build_current_season_bundle(
         **season_data,
         "currentLadderPvs": snapshot,
         "draftClass": draft_class,
+        "draftClass2026": draft_class_2026,
         "weeklyTeamImpact": weekly_team_impact,
     }
 
