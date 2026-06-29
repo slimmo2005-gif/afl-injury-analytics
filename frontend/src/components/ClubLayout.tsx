@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { logPageSessionVisit } from '../lib/analytics'
-import { CURRENT_SEASON } from '../constants'
 import { useMetricsContext } from '../context/MetricsContext'
 import BrandHeader from './BrandHeader'
 import { FeedbackModal } from './FeedbackModal'
 import FeedbackPanel from './FeedbackPanel'
 import OtherProducts from './OtherProducts'
+import SiteNavSelect from './SiteNavSelect'
 
 export default function ClubLayout() {
   const { source, data, loading } = useMetricsContext()
@@ -30,24 +30,7 @@ export default function ClubLayout() {
             <span className={`text-xs px-2 py-1 rounded border ${badge.className}`}>
               {loading ? 'Loading…' : badge.text}
             </span>
-            <Link
-              to="/coleman-heights"
-              className="text-xs font-medium text-afl-gold/90 hover:text-afl-gold border border-afl-gold/30 bg-afl-gold/10 rounded-lg px-3 py-1.5"
-            >
-              Coleman heights story →
-            </Link>
-            <Link
-              to="/injury-impact"
-              className="text-xs font-medium text-sky-300 hover:text-sky-200 border border-sky-500/30 bg-sky-500/10 rounded-lg px-3 py-1.5"
-            >
-              Weekly selection impact →
-            </Link>
-            <Link
-              to="/current"
-              className="text-xs font-medium text-emerald-300 hover:text-emerald-200 border border-emerald-500/30 bg-emerald-500/10 rounded-lg px-3 py-1.5"
-            >
-              {CURRENT_SEASON} live season →
-            </Link>
+            <SiteNavSelect />
             <OtherProducts />
           </div>
         </div>

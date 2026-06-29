@@ -1,5 +1,6 @@
 import { Link, Outlet } from 'react-router-dom'
 import OtherProducts from './OtherProducts'
+import SiteNavSelect from './SiteNavSelect'
 
 const logoSrc = `${import.meta.env.BASE_URL}brand/slim-analytics-logo.png`
 
@@ -15,17 +16,7 @@ export default function StoryLayout() {
               className="h-16 sm:h-20 w-auto object-contain drop-shadow-lg transition-opacity group-hover:opacity-90"
             />
           </Link>
-          <nav className="flex flex-wrap items-center gap-3 text-xs sm:text-sm">
-            <Link to="/" className="text-slate-400 hover:text-slate-200 transition-colors">
-              Injury Luck Ladder
-            </Link>
-            <span className="text-slate-700">·</span>
-            <Link to="/current" className="text-slate-400 hover:text-slate-200 transition-colors">
-              Live season
-            </Link>
-            <span className="text-slate-700">·</span>
-            <span className="text-afl-gold font-medium">Coleman heights</span>
-          </nav>
+          <SiteNavSelect />
         </div>
       </header>
       <main className="flex-1 w-full">

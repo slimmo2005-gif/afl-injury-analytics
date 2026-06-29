@@ -118,27 +118,13 @@ export default function CurrentSeason() {
 
   return (
     <div>
-      <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="text-[10px] uppercase tracking-widest text-emerald-400/90 mb-1">Live season</p>
-          <h1 className="text-2xl sm:text-3xl font-semibold text-afl-gold tracking-tight">
-            {CURRENT_SEASON} — club view
-          </h1>
-          <p className="text-sm text-slate-400 mt-1">Through round {round} · ladder vs injury luck</p>
-        </div>
-        <Link
-          to="/injury-impact"
-          className="text-sm text-sky-300 hover:text-sky-200 border border-sky-700 rounded-lg px-3 py-2"
-        >
-          Weekly selection impact →
-        </Link>
-        <Link
-          to="/"
-          className="text-sm text-slate-400 hover:text-slate-200 border border-slate-700 rounded-lg px-3 py-2"
-        >
-          2021–2025 history →
-        </Link>
-      </div>
+      <header className="mb-6 space-y-1">
+        <p className="text-[10px] uppercase tracking-widest text-emerald-400/90">Live season</p>
+        <h1 className="text-2xl sm:text-3xl font-semibold text-afl-gold tracking-tight">
+          {CURRENT_SEASON} — club view
+        </h1>
+        <p className="text-sm text-slate-400">Through round {round} · ladder vs injury luck</p>
+      </header>
 
       <div className="flex flex-wrap gap-3 mb-6 p-3 rounded-lg bg-slate-900/50 border border-slate-800">
         <label className="flex flex-col gap-1 text-xs text-slate-500">
@@ -220,59 +206,6 @@ export default function CurrentSeason() {
           </div>
         </div>
       </section>
-
-      {data.draftClass && data.draftClass.players.length > 0 && (
-        <section className="mb-8 rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
-          <div className="flex flex-wrap items-end justify-between gap-3 mb-4">
-            <div>
-              <h2 className="text-lg font-medium text-slate-200">
-                {data.draftClass.draftYear} draft class — first round
-              </h2>
-              <p className="text-sm text-slate-500 mt-1">
-                {data.draftClass.debuted} of {data.draftClass.totalPicks} have played AFL in{' '}
-                {data.draftClass.season} · performance score is stats-only (no draft-potential boost)
-              </p>
-            </div>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="text-left text-xs uppercase tracking-wider text-slate-500 border-b border-slate-800">
-                  <th className="py-2 pr-3 font-medium">Pick</th>
-                  <th className="py-2 pr-3 font-medium">Player</th>
-                  <th className="py-2 pr-3 font-medium">Club</th>
-                  <th className="py-2 pr-3 font-medium text-right">Games</th>
-                  <th className="py-2 pr-3 font-medium text-right">Perf</th>
-                  <th className="py-2 font-medium text-right">PVS</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.draftClass.players.map((p) => (
-                  <tr
-                    key={p.pick}
-                    className={`border-b border-slate-800/60 ${!p.hasDebuted ? 'opacity-50' : ''}`}
-                  >
-                    <td className="py-2.5 pr-3 tabular-nums text-slate-400">{p.pick}</td>
-                    <td className="py-2.5 pr-3 text-slate-200 font-medium">{p.player}</td>
-                    <td className="py-2.5 pr-3 text-slate-400">{p.club}</td>
-                    <td className="py-2.5 pr-3 text-right tabular-nums text-slate-300">
-                      {p.hasDebuted ? p.games : '—'}
-                    </td>
-                    <td className="py-2.5 pr-3 text-right tabular-nums font-medium text-afl-gold">
-                      {p.performanceScore != null ? p.performanceScore.toFixed(2) : '—'}
-                    </td>
-                    <td className="py-2.5 text-right tabular-nums text-slate-500">
-                      {p.pvs != null ? p.pvs.toFixed(2) : '—'}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-slate-600 mt-3 leading-relaxed">{data.draftClass.interpretation}</p>
-        </section>
-      )}
 
       <section className="mb-8">
         <h2 className="text-sm font-medium text-slate-400 mb-3">All clubs — quick jump</h2>

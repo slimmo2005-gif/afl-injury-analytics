@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { CURRENT_SEASON } from '../constants'
 import { useCurrentSeason } from '../hooks/useCurrentSeason'
 import type { WeeklyTeamImpactClub } from '../types/metrics'
@@ -177,9 +176,6 @@ export default function WeeklyTeamImpact() {
             : ''}
           . Teams on a bye are excluded.
         </p>
-        <Link to="/current" className="text-xs text-emerald-300 hover:text-emerald-200">
-          ← Back to {CURRENT_SEASON} injury overview
-        </Link>
       </header>
 
       <section>

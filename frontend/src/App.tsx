@@ -9,6 +9,7 @@ import AdminInsights from './pages/AdminInsights'
 import ClubDetail from './pages/ClubDetail'
 import ColemanHeights from './pages/ColemanHeights'
 import CurrentSeason from './pages/CurrentSeason'
+import DraftClass from './pages/DraftClass'
 import WeeklyTeamImpact from './pages/WeeklyTeamImpact'
 import LeagueOverview from './pages/LeagueOverview'
 import Methodology from './pages/Methodology'
@@ -26,6 +27,7 @@ export default function App() {
           <Route element={<ClubLayout />}>
             <Route index element={<ClubDetail />} />
             <Route path="current" element={<CurrentSeason />} />
+            <Route path="draft-class" element={<DraftClass />} />
             <Route path="injury-impact" element={<WeeklyTeamImpact />} />
             <Route path="methodology" element={<Methodology />} />
           </Route>
