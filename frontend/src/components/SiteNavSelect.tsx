@@ -8,8 +8,7 @@ const NAV_ITEMS: Array<NavRoute | NavExternal> = [
   { kind: 'route', path: '/', label: 'Club injury view (2021–2025)' },
   { kind: 'route', path: '/current', label: `${CURRENT_SEASON} live season` },
   { kind: 'route', path: '/injury-impact', label: 'Weekly selection impact' },
-  { kind: 'route', path: '/draft-class/2025', label: '2025 draft class — first round' },
-  { kind: 'route', path: '/draft-class/2026', label: '2026 draft class — first round' },
+  { kind: 'route', path: '/draft-class', label: '2025 draft class — first round' },
   { kind: 'route', path: '/coleman-heights', label: 'Coleman heights story' },
   { kind: 'external', href: UKRAINE_TRACKER_URL, label: 'Ukraine War Territory Tracker ↗' },
 ]

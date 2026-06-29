@@ -160,7 +160,6 @@ export interface CurrentSeasonBundle extends SeasonBundle {
   }
   currentLadderPvs: CurrentLadderPvsSnapshot
   draftClass: DraftClassSnapshot
-  draftClass2026?: DraftClassSnapshot
   weeklyTeamImpact?: WeeklyTeamImpactSnapshot
 }
 

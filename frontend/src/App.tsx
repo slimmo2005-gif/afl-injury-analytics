@@ -27,8 +27,7 @@ export default function App() {
           <Route element={<ClubLayout />}>
             <Route index element={<ClubDetail />} />
             <Route path="current" element={<CurrentSeason />} />
-            <Route path="draft-class" element={<Navigate to="/draft-class/2025" replace />} />
-            <Route path="draft-class/:year" element={<DraftClass />} />
+            <Route path="draft-class" element={<DraftClass />} />
             <Route path="injury-impact" element={<WeeklyTeamImpact />} />
             <Route path="methodology" element={<Methodology />} />
           </Route>
