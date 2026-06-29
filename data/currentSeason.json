@@ -3,7 +3,7 @@
     "season": 2026,
     "round": 16,
     "ladderRound": 16,
-    "generatedAt": "2026-06-29T03:10:12.596461+00:00",
+    "generatedAt": "2026-06-29T04:01:26.662242+00:00",
     "note": "2026 season to date \u2014 in progress",
     "dataSource": "Squiggle + AFL.com API + VFL + injury lists",
     "isPartialSeason": true,
@@ -3675,13 +3675,6 @@
         "hasDebuted": true
       }
     ]
-  },
-  "draftClass2026": {
-    "draftYear": 2026,
-    "season": 2027,
-    "firstRoundMaxPick": 25,
-    "players": [],
-    "interpretation": "No 2026 first-round picks in draft_picks table."
   },
   "weeklyTeamImpact": {
     "round": 16,
