@@ -161,6 +161,10 @@ export interface CurrentSeasonBundle extends SeasonBundle {
   currentLadderPvs: CurrentLadderPvsSnapshot
   draftClass: DraftClassSnapshot
   weeklyTeamImpact?: WeeklyTeamImpactSnapshot
+  /** Archived weekly impact snapshots keyed by round number. */
+  weeklyTeamImpactByRound?: Record<string, WeeklyTeamImpactSnapshot>
+  /** Rounds with saved weekly impact data (includes current). */
+  weeklyTeamImpactRounds?: number[]
 }
 
 export interface WeeklyTeamImpactPlayer {

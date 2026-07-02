@@ -12,7 +12,7 @@ from ..config import CURRENT_SEASON, FRONTEND_DATA, SHARED_OUTPUT
 from .frontend import build_season_bundle
 from .draft_class import build_draft_class_bundle
 from .official_ladder import current_ladder_by_team, latest_completed_round
-from .weekly_team_impact import build_weekly_team_impact_bundle
+from .weekly_team_impact import build_weekly_team_impact_section
 
 
 def _current_ladder_pvs_snapshot(
@@ -83,7 +83,7 @@ def build_current_season_bundle(
 
     snapshot = _current_ladder_pvs_snapshot(con, season, ladder_round, official)
     draft_class = build_draft_class_bundle(con, draft_year=season - 1, season=season)
-    weekly_team_impact = build_weekly_team_impact_bundle(con, season)
+    impact_section = build_weekly_team_impact_section(con, season)
 
     return {
         "meta": {
@@ -99,7 +99,7 @@ def build_current_season_bundle(
         **season_data,
         "currentLadderPvs": snapshot,
         "draftClass": draft_class,
-        "weeklyTeamImpact": weekly_team_impact,
+        **impact_section,
     }
 
 

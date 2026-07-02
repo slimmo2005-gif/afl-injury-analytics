@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { CURRENT_SEASON } from '../constants'
 import { useCurrentSeason } from '../hooks/useCurrentSeason'
-import type { WeeklyTeamImpactClub } from '../types/metrics'
+import type { WeeklyTeamImpactClub, WeeklyTeamImpactSnapshot } from '../types/metrics'
 
 function impactColor(pvs: number | null | undefined) {
   if (pvs == null) return 'text-slate-500'
@@ -115,9 +116,21 @@ function ClubImpactCard({ row }: { row: WeeklyTeamImpactClub }) {
 
 export default function WeeklyTeamImpact() {
   const { data, loading, error } = useCurrentSeason()
+  const [searchParams, setSearchParams] = useSearchParams()
   const [club, setClub] = useState<string>('')
 
-  const impact = data?.weeklyTeamImpact
+  const availableRounds = data?.weeklyTeamImpactRounds ?? []
+  const currentRound = data?.weeklyTeamImpact?.round
+  const roundParam = Number(searchParams.get('round'))
+  const selectedRound =
+    roundParam && availableRounds.includes(roundParam) ? roundParam : currentRound
+
+  const impact: WeeklyTeamImpactSnapshot | undefined = useMemo(() => {
+    if (!data || !selectedRound) return data?.weeklyTeamImpact
+    if (selectedRound === data.weeklyTeamImpact?.round) return data.weeklyTeamImpact
+    return data.weeklyTeamImpactByRound?.[String(selectedRound)]
+  }, [data, selectedRound])
+
   const ladder = impact?.ladder ?? []
   const maxImpact = useMemo(
     () => ladder.reduce((m, r) => Math.max(m, r.impactPvs ?? 0), 0),
@@ -165,6 +178,7 @@ export default function WeeklyTeamImpact() {
           >
             AFL.com Team Line-ups
           </a>
+          {selectedRound !== currentRound ? ' · archived snapshot' : ''}
           {impact.teamsFinal === false ? ' (provisional teams)' : ' (final teams)'}
           {impact.lastUpdated
             ? ` · updated ${new Date(impact.lastUpdated).toLocaleString('en-AU', {
@@ -175,7 +189,41 @@ export default function WeeklyTeamImpact() {
               })}`
             : ''}
           . Teams on a bye are excluded.
+          {selectedRound === currentRound && ladder.length < 10
+            ? ' Not all teams have announced line-ups yet this week.'
+            : ''}
         </p>
+        {availableRounds.length > 1 && (
+          <div className="flex flex-wrap items-center gap-2 pt-1">
+            <span className="text-xs text-slate-500">Prior weeks:</span>
+            {[...availableRounds].reverse().map((rn) => {
+              const active = rn === selectedRound
+              return (
+                <button
+                  key={rn}
+                  type="button"
+                  onClick={() => {
+                    setClub('')
+                    if (rn === currentRound) {
+                      searchParams.delete('round')
+                      setSearchParams(searchParams, { replace: true })
+                    } else {
+                      setSearchParams({ round: String(rn) }, { replace: true })
+                    }
+                  }}
+                  className={`rounded-lg px-2.5 py-1 text-xs border transition ${
+                    active
+                      ? 'border-emerald-500/50 bg-emerald-500/15 text-emerald-300'
+                      : 'border-slate-700 text-slate-400 hover:border-slate-600 hover:text-slate-200'
+                  }`}
+                >
+                  Round {rn}
+                  {rn === currentRound ? ' (current)' : ''}
+                </button>
+              )
+            })}
+          </div>
+        )}
       </header>
 
       <section>

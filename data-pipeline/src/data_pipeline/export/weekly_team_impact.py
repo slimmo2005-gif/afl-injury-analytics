@@ -9,9 +9,12 @@ who are *not* named in this week's side (injured, omitted, rested or suspended).
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 
 import duckdb
+import requests
+from bs4 import BeautifulSoup
 
 from ..ingest.team_selections import current_round_with_teams, fetch_round_rosters
 from ..transform.archetypes import ARCHETYPE_LABELS
@@ -70,6 +73,27 @@ def _pick_best_team(pool: list[SquadPlayer], size: int = TEAM_SIZE) -> list[Squa
 
 
 MIN_ESTABLISHED_GAMES = 10
+SUSPENSIONS_TRACKER_URL = "https://aflratings.com.au/afl-suspensions/"
+_SUSP_CODE_TO_TEAM: dict[str, str] = {
+    "ADE": "Adelaide",
+    "BRI": "Brisbane Lions",
+    "CAR": "Carlton",
+    "COL": "Collingwood",
+    "ESS": "Essendon",
+    "FRE": "Fremantle",
+    "GEE": "Geelong",
+    "GC": "Gold Coast",
+    "GWS": "Greater Western Sydney",
+    "HAW": "Hawthorn",
+    "MEL": "Melbourne",
+    "NM": "North Melbourne",
+    "PA": "Port Adelaide",
+    "RIC": "Richmond",
+    "STK": "St Kilda",
+    "SYD": "Sydney",
+    "WC": "West Coast",
+    "WB": "Western Bulldogs",
+}
 
 
 def _load_squad(con: duckdb.DuckDBPyConnection, season: int, team: str) -> list[SquadPlayer]:
@@ -165,14 +189,104 @@ def _injured_absent_squad(
     ]
 
 
-def _unavailable_lookup(con: duckdb.DuckDBPyConnection) -> dict[str, dict[str, str]]:
-    """Latest AFL injury-list snapshot: team -> {normalized name: reason}.
+def _parse_suspension_return_round(estimated_return: str | None) -> int | None:
+    """Parse ``Round 19`` / ``R19`` style AFL estimated-return strings."""
+    if not estimated_return:
+        return None
+    m = re.search(r"round\s*(\d+)", str(estimated_return).strip(), re.I)
+    return int(m.group(1)) if m else None
 
-    ``reason`` is ``"injured"`` or ``"suspended"``. Only these players are
-    treated as genuinely unavailable when assessing selection impact; players
-    who are merely omitted or rested (and therefore not on the official list)
-    are still available and must not be counted as a loss.
+
+def _team_matches_before_round(
+    con: duckdb.DuckDBPyConnection, season: int, team: str, round_num: int
+) -> set[int]:
+    rows = con.execute(
+        """
+        SELECT round
+        FROM matches
+        WHERE season = ?
+          AND round < ?
+          AND (home_team = ? OR away_team = ?)
+        """,
+        [season, round_num, team, team],
+    ).fetchall()
+    return {int(r[0]) for r in rows}
+
+
+def _active_suspensions_from_tracker(
+    con: duckdb.DuckDBPyConnection, season: int, round_num: int
+) -> dict[str, dict[str, str]]:
+    """Active suspensions from public tracker using team fixtures (bye-aware).
+
+    Tracker gives offense round + suspension length. We count only the club's
+    own matches between offense round and target round (exclusive) so byes are
+    naturally handled.
     """
+    out: dict[str, dict[str, str]] = {}
+    try:
+        resp = requests.get(
+            SUSPENSIONS_TRACKER_URL,
+            timeout=20,
+            headers={"User-Agent": "afl-injury-analytics/0.4"},
+        )
+        if not resp.ok:
+            return {}
+        soup = BeautifulSoup(resp.text, "html.parser")
+    except requests.RequestException:
+        return {}
+
+    h2 = None
+    for node in soup.find_all("h2"):
+        if f"{season} AFL SUSPENSIONS" in node.get_text(" ", strip=True).upper():
+            h2 = node
+            break
+    if h2 is None:
+        return {}
+
+    table = h2.find_next("table")
+    if table is None:
+        return {}
+
+    for tr in table.find_all("tr"):
+        cells = [td.get_text(" ", strip=True) for td in tr.find_all(["th", "td"])]
+        if len(cells) < 4:
+            continue
+        player, club_code, round_token, suspension = cells[:4]
+        if player.upper() == "PLAYER":
+            continue
+        if re.fullmatch(r"\d{4}", player):
+            # Next-season section marker in the same table (e.g. "2025").
+            break
+        team = _SUSP_CODE_TO_TEAM.get(club_code.upper())
+        if not team:
+            continue
+        m_round = re.search(r"R(\d+)", round_token.upper())
+        m_len = re.search(r"(\d+)\s*match", suspension.lower())
+        if not m_round or not m_len:
+            continue
+        offense_round = int(m_round.group(1))
+        weeks = int(m_len.group(1))
+        prior_team_rounds = _team_matches_before_round(con, season, team, round_num)
+        served = sum(1 for rn in prior_team_rounds if rn > offense_round)
+        if served < weeks:
+            norm = " ".join(player.lower().split())
+            out.setdefault(team, {})[norm] = "suspended"
+    return out
+
+
+def _unavailable_lookup(
+    con: duckdb.DuckDBPyConnection,
+    season: int,
+    round_num: int,
+) -> dict[str, dict[str, str]]:
+    """Unavailable players for a given round: team -> {normalized name: reason}.
+
+    ``reason`` is ``"injured"`` or ``"suspended"``. Injuries come from the latest
+    AFL injury-list snapshot. Suspensions also carry forward when the AFL drops
+    a player from the list mid-ban but ``estimated_return`` is still in the
+    future (e.g. a 3-week ban listed once as ``Round 19``).
+    """
+    out: dict[str, dict[str, str]] = {}
     try:
         rows = con.execute(
             """
@@ -186,11 +300,45 @@ def _unavailable_lookup(con: duckdb.DuckDBPyConnection) -> dict[str, dict[str, s
               AND (is_injury OR injury_category = 'suspension')
             """
         ).fetchall()
+        for team, norm, reason in rows:
+            out.setdefault(str(team), {})[str(norm).strip()] = str(reason)
     except duckdb.Error:
-        return {}
-    out: dict[str, dict[str, str]] = {}
-    for team, norm, reason in rows:
-        out.setdefault(str(team), {})[str(norm).strip()] = str(reason)
+        pass
+
+    # Active suspensions removed from the latest list but not yet served out.
+    try:
+        susp_rows = con.execute(
+            """
+            WITH ranked AS (
+                SELECT team,
+                       LOWER(REGEXP_REPLACE(player_name, '\\s+', ' ', 'g')) AS norm,
+                       estimated_return,
+                       ROW_NUMBER() OVER (
+                           PARTITION BY team,
+                               LOWER(REGEXP_REPLACE(player_name, '\\s+', ' ', 'g'))
+                           ORDER BY list_date DESC
+                       ) AS rn
+                FROM injury_list_entries
+                WHERE injury_category = 'suspension'
+            )
+            SELECT team, norm, estimated_return
+            FROM ranked
+            WHERE rn = 1
+            """
+        ).fetchall()
+        for team, norm, est in susp_rows:
+            return_round = _parse_suspension_return_round(est)
+            if return_round is not None and return_round > round_num:
+                out.setdefault(str(team), {})[str(norm).strip()] = "suspended"
+    except duckdb.Error:
+        pass
+
+    # Independent suspension tracker (offense round + suspension length), with
+    # bye-aware carry-forward based on the club's actual fixtures.
+    tracker = _active_suspensions_from_tracker(con, season, round_num)
+    for team, players in tracker.items():
+        out.setdefault(team, {}).update(players)
+
     return out
 
 
@@ -371,7 +519,7 @@ def build_weekly_team_impact_bundle(
     rosters = fetch_round_rosters(season, target_round)
     name_lookup = _name_lookup(con, season)
     roster_ids = _resolve_roster_ids(rosters, name_lookup)
-    unavailable = _unavailable_lookup(con)
+    unavailable = _unavailable_lookup(con, season, target_round)
     playing_teams = sorted(rosters.keys())
     teams_announced = bool(playing_teams)
 
@@ -460,4 +608,34 @@ def build_weekly_team_impact_bundle(
         "ladder": ladder_rows,
         "matchups": matchups,
         "byClub": by_club,
+    }
+
+
+def build_weekly_team_impact_section(
+    con: duckdb.DuckDBPyConnection,
+    season: int,
+) -> dict:
+    """Current round plus archived snapshots for prior rounds with line-ups."""
+    current_round = current_round_with_teams(season)
+    if not current_round or current_round <= 0:
+        empty = build_weekly_team_impact_bundle(con, season, round_num=0)
+        return {
+            "weeklyTeamImpact": empty,
+            "weeklyTeamImpactByRound": {},
+            "weeklyTeamImpactRounds": [],
+        }
+
+    by_round: dict[str, dict] = {}
+    for rn in range(1, current_round + 1):
+        bundle = build_weekly_team_impact_bundle(con, season, round_num=rn)
+        if bundle.get("teamsAnnounced"):
+            by_round[str(rn)] = bundle
+
+    current = by_round.get(str(current_round)) or build_weekly_team_impact_bundle(
+        con, season, round_num=current_round
+    )
+    return {
+        "weeklyTeamImpact": current,
+        "weeklyTeamImpactByRound": by_round,
+        "weeklyTeamImpactRounds": sorted(int(k) for k in by_round),
     }
